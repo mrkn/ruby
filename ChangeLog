@@ -1,3 +1,9 @@
+Thu Jan  7 16:32:00 2010  Kenta Murata <mrkn@mrkn.jp>
+
+	* string.c (rb_str_hamming_distance, Init_String),
+	test/ruby/test_string.c (test_hamming_distance): Added support for
+	calculating hamming distance between two strings.
+
 Thu Jan  7 07:56:09 2010  Ryan Davis  <ryand-ruby@zenspider.com>
 
 	* lib/minitest/*.rb: Imported minitest 1.5.0 r5596.

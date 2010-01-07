@@ -6903,6 +6903,52 @@ rb_str_setter(VALUE val, ID id, VALUE *var)
     *var = val;
 }
 
+/*
+ */
+VALUE
+rb_str_hamming_distance(VALUE str1, VALUE str2)
+{
+    long d = 0;
+    rb_encoding *enc;
+    char *p1, *p1end, *p2, *p2end;
+
+    if (TYPE(str2) != T_STRING) return Qnil;
+
+    enc = rb_enc_compatible(str1, str2);
+    if (!enc) return Qnil;
+    if (str_strlen(str1, enc) != str_strlen(str2, enc)) return Qnil;
+
+    p1 = RSTRING_PTR(str1); p1end = RSTRING_END(str1);
+    p2 = RSTRING_PTR(str2); p2end = RSTRING_END(str2);
+    if (single_byte_optimizable(str1) && single_byte_optimizable(str2)) {
+        while (p1 < p1end) {
+            if (*p1 != *p2) ++d;
+            ++p1;
+            ++p2;
+        }
+    }
+    else {
+        while (p1 < p1end && p2 < p2end) {
+            int l1, c1 = rb_enc_ascget(p1, p1end, &l1, enc);
+            int l2, c2 = rb_enc_ascget(p2, p2end, &l2, enc);
+            if (0 <= c1 && 0 <= c2) {
+                if (c1 != c2) ++d;
+            }
+            else {
+                int r, len;
+                l1 = rb_enc_mbclen(p1, p1end, enc);
+                l2 = rb_enc_mbclen(p2, p2end, enc);
+                len = l1 < l2 ? l1 : l2; 
+                r = memcmp(p1, p2, len);
+                if (r != 0 || l1 != l2) ++d;
+            }
+            p1 += l1;
+            p2 += l2;
+        }
+    }
+    return LONG2NUM(d);
+}
+
 
 /*
  *  call-seq:
@@ -7467,6 +7513,9 @@ Init_String(void)
 
     rb_define_method(rb_cString, "partition", rb_str_partition, 1);
     rb_define_method(rb_cString, "rpartition", rb_str_rpartition, 1);
+
+    rb_define_method(rb_cString, "hamming_distance", rb_str_hamming_distance, 1);
+    rb_define_method(rb_cString, "^", rb_str_hamming_distance, 1);
 
     rb_define_method(rb_cString, "encoding", rb_obj_encoding, 0); /* in encoding.c */
     rb_define_method(rb_cString, "force_encoding", rb_str_force_encoding, 1);

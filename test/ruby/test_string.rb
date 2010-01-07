@@ -1850,4 +1850,15 @@ class TestString < Test::Unit::TestCase
     assert_equal(s, k, '[ruby-dev:39068]')
     assert_equal(Encoding::UTF_8, k.encoding, '[ruby-dev:39068]')
   end
+
+  def test_hamming_distance
+    assert_nil("a" ^ "abc")
+    assert_equal(0, "" ^ "")
+    assert_equal(2, "abc" ^ "dbf")
+    assert_equal(1, "aXb" ^ "a\u{ff38}b")
+    assert_equal(1, "\u3042\u3044\u3046" ^ "\u3042\u3044\u3048")
+    assert_equal(3, "\u3042a\u3044\u3046" ^ "\u3042\u3044b\u3048")
+    assert_equal(1, "aXb".force_encoding("EUC-JP") ^ "aYb".force_encoding("Shift_JIS"))
+    assert_nil("\u3042\u3044\u3046".force_encoding("EUC-JP") ^ "\u3042\u3044\u3046".force_encoding("Shift_JIS"))
+  end
 end
