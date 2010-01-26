@@ -1002,6 +1002,11 @@ Wed Jan 27 00:19:30 2010  Yusuke Endoh  <mame@tsg.ne.jp>
 	* ext/bigdecimal/bigdecimal.c (VpCtoV): do not raise infinity
 	  exception for BigDecimal("0E200000000000").
 
+Tue Jan 26 23:10:00 2010  Kenta Murata <mrkn@mrkn.jp>
+
+	* enc/trans/emoji.trans, enc/trans/utf8_emoji-tbl.rb, enc/utf_8_emoji.c,
+	  test/ruby/enc/test_emoji.rb: added for emoji encodings.
+
 Tue Jan 26 21:50:31 2010  Yusuke Endoh  <mame@tsg.ne.jp>
 
 	* ext/bigdecimal/bigdecimal.c (VpCtoV): BigDecimal("0E200000000000")
