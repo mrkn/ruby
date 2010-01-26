@@ -1,0 +1,36 @@
+#include "transcode_data.h"
+
+<%
+  require 'utf8_emoji-tbl'
+
+  nomap_table = [
+    ["{00-7f}", :nomap],
+    ["{c2-df}{80-bf}", :nomap0],
+    ["e0{a0-df}{80-bf}", :nomap0],
+    ["{e1-ec}{80-bf}{80-bf}", :nomap0],
+    ["ed{80-9f}{80-bf}", :nomap0],
+    ["{ee-ef}{80-bf}{80-bf}", :nomap0],
+    ["f0{90-bf}{80-bf}{80-bf}", :nomap0],
+    ["{f1-f3}{80-bf}{80-bf}{80-bf}", :nomap0],
+  ]
+
+  transcode_tblgen("UTF8-Google", "UTF-8",
+    UTF8_GOOGLE_TO_TBL + nomap_table)
+  transcode_tblgen("UTF-8", "UTF8-Google",
+    UTF8_TO_GOOGLE_TBL + nomap_table)
+
+  %w(DoCoMo KDDI SoftBank).each do |company|
+    transcode_tblgen("UTF8-Google", "UTF8-#{company}",
+      eval("UTF8_GOOGLE_TO_#{company.upcase}_TBL") + nomap_table)
+    transcode_tblgen("UTF8-#{company}", "UTF8-Google",
+      eval("UTF8_#{company.upcase}_TO_GOOGLE_TBL") + nomap_table)
+  end
+%>
+
+<%= transcode_generated_code %>
+
+void
+Init_emoji(void)
+{
+<%= transcode_register_code %>
+}
