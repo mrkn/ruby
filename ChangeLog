@@ -170,6 +170,11 @@ Wed Jan 27 22:26:25 2010  Yusuke Endoh  <mame@tsg.ne.jp>
 	  stdout except the first line.  All line is output to stderr now.
 	  [ruby-dev:40147]
 
+Wed Jan 27 10:12:00 2010  Kenta Murata <mrkn@mrkn.jp>
+
+	* enc/trans/emoji-docomo-fetch.rb, enc/trans/emoji-docomo-basic-tbl.rb,
+	  enc/trans/emoji-docomo-extension-tbl.rb: added.
+
 Wed Jan 27 00:22:20 2010  Yusuke Endoh  <mame@tsg.ne.jp>
 
 	* ext/bigdecimal/bigdecimal.c (BigDecimal_DoDivmod, BigDecimal_mod,
