@@ -1355,6 +1355,11 @@ class TestArray < Test::Unit::TestCase
     assert_equal(@cls[], @cls[1,2,3,4].combination(5).to_a)
   end
 
+  def test_combination_length
+    assert_equal(6, @cls[1,2,3,4].combination(2).length)
+    assert_equal(4, @cls[1,2,3,4].combination(3).length)
+  end
+
   def test_product
     assert_equal(@cls[[1,4],[1,5],[2,4],[2,5],[3,4],[3,5]],
                  @cls[1,2,3].product([4,5]))
@@ -1386,6 +1391,15 @@ class TestArray < Test::Unit::TestCase
     a.permutation {|x| b << x; a.replace(@cls[9, 8, 7, 6]) }
     assert_equal(@cls[9, 8, 7, 6], a)
     assert_equal(@cls[1, 2, 3, 4].permutation.to_a, b)
+  end
+
+  def test_permutation_length
+    assert_equal(6, @cls[1, 2, 3].permutation.length)
+    assert_equal(1, @cls[1, 2, 3].permutation(0).length)
+    assert_equal(3, @cls[1, 2, 3].permutation(1).length)
+    assert_equal(6, @cls[1, 2, 3].permutation(3).length)
+    assert_equal(0, @cls[1, 2, 3].permutation(4).length)
+    assert_equal(24, @cls[1, 2, 3, 4].permutation(3).length)
   end
 
   def test_take

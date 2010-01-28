@@ -3853,10 +3853,20 @@ rb_ary_permutation(int argc, VALUE *argv, VALUE ary)
     long r, n, i;
 
     n = RARRAY_LEN(ary);                  /* Array length */
-    RETURN_ENUMERATOR(ary, argc, argv);   /* Return enumerator if no block */
     rb_scan_args(argc, argv, "01", &num);
     r = NIL_P(num) ? n : NUM2LONG(num);   /* Permutation size from argument */
-
+    if (!rb_block_given_p()) {
+	VALUE enu = rb_enumeratorize(ary, ID2SYM(rb_frame_this_func()), argc, argv);
+	long nlen = 0;
+	if (0 <= r && r <= n) {
+	    nlen = 1;
+	    for (i = 0; i < r; ++i)
+		nlen *= n - i;
+	}
+	rb_iv_set(enu, "@length", LONG2NUM(nlen));
+	rb_define_attr(rb_singleton_class(enu), "length", 1, 0);
+	return enu;
+    }
     if (r < 0 || n < r) {
 	/* no permutations: yield nothing */
     }
@@ -3936,8 +3946,14 @@ rb_ary_combination(VALUE ary, VALUE num)
     long n, i, len;
 
     n = NUM2LONG(num);
-    RETURN_ENUMERATOR(ary, 1, &num);
     len = RARRAY_LEN(ary);
+    if (!rb_block_given_p()) {
+	VALUE enu = rb_enumeratorize(ary, ID2SYM(rb_frame_this_func()), 1, &num);
+	long nlen = combi_len(len, n);
+	rb_iv_set(enu, "@length", LONG2NUM(nlen));
+	rb_define_attr(rb_singleton_class(enu), "length", 1, 0);
+	return enu;
+    }
     if (n < 0 || len < n) {
 	/* yield nothing */
     }
