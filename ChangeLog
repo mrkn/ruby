@@ -47,6 +47,11 @@ Sun Jan 31 21:29:58 2010  Yusuke Endoh  <mame@tsg.ne.jp>
 	  parent is specified, since Text.check may need doctype.  partially
 	  revert r26518.
 
+Sun Jan 31 17:12:35 2010  Yoji SHIDARA <dara@shidara.net>
+
+	* enc/trans/emoji-exchange-tbl.rb, enc/trans/emoji.trans,
+	  tool/enc-emoji4unicode.rb: added for transcoding among carriers.
+
 Sun Jan 31 15:50:34 2010  Yusuke Endoh  <mame@tsg.ne.jp>
 
 	* lib/rexml/text.rb (REXML::Text#initialize): fix typo and a bug that
