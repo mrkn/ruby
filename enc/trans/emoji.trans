@@ -2,6 +2,7 @@
 
 <%
   require 'utf8_emoji-tbl'
+  require 'emoji-exchange-tbl'
 
   nomap_table = [
     ["{00-7f}", :nomap],
@@ -14,16 +15,16 @@
     ["{f1-f3}{80-bf}{80-bf}{80-bf}", :nomap0],
   ]
 
-  transcode_tblgen("UTF8-Google", "UTF-8",
-    UTF8_GOOGLE_TO_TBL + nomap_table)
-  transcode_tblgen("UTF-8", "UTF8-Google",
-    UTF8_TO_GOOGLE_TBL + nomap_table)
+  transcode_tblgen("UTF8-Google", "UTF-8", UTF8_GOOGLE_TO_TBL + nomap_table) # FIXME
+  transcode_tblgen("UTF-8", "UTF8-Google", UTF8_TO_GOOGLE_TBL + nomap_table) # FIXME
 
   %w(DoCoMo KDDI SoftBank).each do |company|
     transcode_tblgen("UTF8-Google", "UTF8-#{company}",
-      eval("UTF8_GOOGLE_TO_#{company.upcase}_TBL") + nomap_table)
+      EMOJI_EXCHANGE_TBL["UTF8-Google"]["UTF8-#{company}"] + nomap_table
+    )
     transcode_tblgen("UTF8-#{company}", "UTF8-Google",
-      eval("UTF8_#{company.upcase}_TO_GOOGLE_TBL") + nomap_table)
+      EMOJI_EXCHANGE_TBL["UTF8-#{company}"]["UTF8-Google"] + nomap_table
+    )
   end
 %>
 
