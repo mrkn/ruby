@@ -46,6 +46,14 @@ module JISX0208
       Integer(self) & 0xFF
     end
 
+    def row
+      self.hi - 0x20
+    end
+
+    def cell
+      self.lo - 0x20
+    end
+
     def succ
       succ_hi, succ_lo = self.hi, self.lo + 1
       if succ_lo > 0x7E
