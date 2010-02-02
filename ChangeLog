@@ -1,3 +1,7 @@
+Tue Feb  2 10:28:00 2010  Kenta Murata <mrkn@mrkn.jp>
+
+	* tool/jisx0208.rb, tool/test/test_jisx0208.rb: new tool for emoji.
+
 Mon Feb  1 21:26:41 2010  Yusuke Endoh  <mame@tsg.ne.jp>
 
 	* lib/matrix.rb (Vector#each2): returns a self.  [ruby-dev:40241]
