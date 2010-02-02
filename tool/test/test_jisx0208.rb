@@ -22,4 +22,14 @@ class Test_JISX0208_Char < Test::Unit::TestCase
     assert_raise(ArgumentError) { JISX0208::Char.from_sjis(0x10000) }
     assert_equal JISX0208::Char.new(0x313D), JISX0208::Char.from_sjis(0x895C)
   end
+
+  def test_row
+    assert_equal 1, JISX0208::Char.new(0x2121).row
+    assert_equal 94, JISX0208::Char.new(0x7E7E).row
+  end
+
+  def test_cell
+    assert_equal 1, JISX0208::Char.new(0x2121).cell
+    assert_equal 94, JISX0208::Char.new(0x7E7E).cell
+  end
 end
