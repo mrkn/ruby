@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 # coding: UTF-8
 
 require 'open-uri'
@@ -27,7 +28,8 @@ SOURCE_URLS = {
 
 SOURCE_URLS.each do |name, url|
   tbl = docomo_fetch_pictgraph_table(url)
-  open("emoji-docomo-#{name}-tbl.rb", "w") do |io|
+  dest = File.join(File.dirname(__FILE__), '..', 'enc', 'trans', "emoji-docomo-#{name}-tbl.rb")
+  open(dest, "w") do |io|
     io.puts "EMOJI_DOCOMO_#{name.upcase}_SJIS_UTF8_TBL = ["
     tbl.each do |sjis, utf8|
       io.puts %Q(  ["#{sjis}", "#{utf8}"],)
