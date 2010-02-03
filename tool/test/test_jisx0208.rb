@@ -20,6 +20,8 @@ class Test_JISX0208_Char < Test::Unit::TestCase
   def test_from_sjis
     assert_raise(ArgumentError) { JISX0208::Char.from_sjis(-1) }
     assert_raise(ArgumentError) { JISX0208::Char.from_sjis(0x10000) }
+    assert_nothing_raised { JISX0208::Char.from_sjis(0x8140) }
+    assert_nothing_raised { JISX0208::Char.from_sjis(0xFCFC) }
     assert_equal JISX0208::Char.new(0x313D), JISX0208::Char.from_sjis(0x895C)
   end
 
