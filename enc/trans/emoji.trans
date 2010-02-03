@@ -18,13 +18,13 @@
   transcode_tblgen("UTF8-Google", "UTF-8", UTF8_GOOGLE_TO_TBL + nomap_table) # FIXME
   transcode_tblgen("UTF-8", "UTF8-Google", UTF8_TO_GOOGLE_TBL + nomap_table) # FIXME
 
-  %w(DoCoMo KDDI SoftBank).each do |company|
-    transcode_tblgen("UTF8-Google", "UTF8-#{company}",
-      EMOJI_EXCHANGE_TBL["UTF8-Google"]["UTF8-#{company}"] + nomap_table
-    )
-    transcode_tblgen("UTF8-#{company}", "UTF8-Google",
-      EMOJI_EXCHANGE_TBL["UTF8-#{company}"]["UTF8-Google"] + nomap_table
-    )
+  companies = %w(DoCoMo KDDI SoftBank Google)
+  companies.each do |from_company|
+    companies.each do |to_company|
+      next if from_company == to_company
+      transcode_tblgen("UTF8-#{from_company}", "UTF8-#{to_company}",
+        EMOJI_EXCHANGE_TBL["UTF8-#{from_company}"]["UTF8-#{to_company}"] + nomap_table)
+    end
   end
 %>
 

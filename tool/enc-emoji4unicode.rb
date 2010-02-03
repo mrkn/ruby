@@ -57,11 +57,13 @@ if ARGV.empty?
 end
 emoji_table = EmojiTable.new(ARGV[0])
 
-carriers = %w(DoCoMo KDDI SoftBank)
+companies = %w(DoCoMo KDDI SoftBank Google)
 
 io = STDOUT
 io.puts "EMOJI_EXCHANGE_TBL = Hash.new{|h,k| h[k] = {}}"
-carriers.each do |carrier|
-  emoji_table.generate(io, carrier, "Google")
-  emoji_table.generate(io, "Google", carrier)
+companies.each do |from_company|
+  companies.each do |to_company|
+    next if from_company == to_company
+    emoji_table.generate(io, from_company, to_company)
+  end
 end
