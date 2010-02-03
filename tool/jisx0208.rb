@@ -2,7 +2,7 @@ module JISX0208
   class Char
     class << self
       def from_sjis(sjis)
-        unless 0x8140 <= sjis && sjis <= 0xEFFC
+        unless 0x8140 <= sjis && sjis <= 0xFCFC
           raise ArgumentError, "out of the range of JIS X 0208: 0x#{sjis.to_s(16)}"
         end
         sjis_hi, sjis_lo = sjis >> 8, sjis & 0xFF
