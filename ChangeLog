@@ -1,3 +1,8 @@
+Wed Feb  3 21:06:22 2010  Yoji SHIDARA <dara@shidara.net>
+
+	* enc/trans/emoji-exchange-tbl.rb, tool/enc-emoji4unicode.rb:
+	  support more complicated translation.
+
 Tue Feb  2 10:38:00 2010  Kenta Murata <mrkn@mrkn.jp>
 
 	* tool/jisx0208.rb (JISX0208::Char#row, JISX0208::Char#cell),
