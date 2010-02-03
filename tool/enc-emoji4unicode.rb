@@ -13,17 +13,29 @@ class EmojiTable
     REXML::XPath.each(@doc.root, '//e') do |e|
       from = e.attribute(from_carrier.downcase).to_s
       to = e.attribute(to_carrier.downcase).to_s
-      if from.empty? || to.empty?
+      text_fallback = e.attribute('text_fallback').to_s
+      name = e.attribute('name').to_s
+      if from.empty? || from !~ /^[0-9A-F]+$/
         # do nothing
-      elsif from !~ /^[0-9A-F]+$/ || to !~ /^[0-9A-F]+$/
-        # TODO must support this pattern
-        $stderr.puts "# unsupported conversion [%s] %s -> [%s] %s" % [
-          from_carrier, from, to_carrier, to
-        ]
       else
         from_utf8 = [from.hex].pack("U").unpack("H*").first
-        to_utf8 = [to.hex].pack("U").unpack("H*").first
-        block.call from_utf8, to_utf8
+        if to =~ /^(?:&gt;)?([0-9A-F\+]+)$/
+          tos = $1.split('+')
+          to_utf8 = tos.map(&:hex).pack("U*").unpack("H*").first
+          comment = "[%s] U+%X -> %s" % [name, from.hex, tos.map{|c| "U+%X"%c.hex}.join(' ')]
+          block.call from_utf8, to_utf8, comment
+        elsif to.empty?
+          if text_fallback.empty?
+            comment = "[%s] U+%X -> U+3013 (GETA)" % [name, from.hex]
+            block.call from_utf8, "\u{3013}".unpack("H*").first, comment # geta
+          else
+            to_utf8 = text_fallback.unpack("H*").first
+            comment = %([%s] U+%X -> "%s") % [name, from.hex, text_fallback]
+            block.call from_utf8, to_utf8, comment
+          end
+        else
+          raise "something wrong"
+        end
       end
     end
   end
@@ -31,8 +43,8 @@ class EmojiTable
     from_encoding = "UTF8-"+from_carrier
     to_encoding = "UTF8-"+to_carrier
       io.puts "EMOJI_EXCHANGE_TBL['#{from_encoding}']['#{to_encoding}'] = ["
-      self.conversion(from_carrier, to_carrier) do |from, to|
-        io.puts %{  ["#{from}", "#{to}"],}
+      self.conversion(from_carrier, to_carrier) do |from, to, comment|
+        io.puts %{  ["#{from}", "#{to}"], # #{comment}}
       end
       io.puts "]"
       io.puts
