@@ -10,7 +10,6 @@ ENCODES = [
               [0xEA80..0xEAFA, JISX0208::Char.new(0x7934)],
               [0xEAFB..0xEB0D, JISX0208::Char.new(0x7854)],
               [0xEB0E..0xEB8E, JISX0208::Char.new(0x7A51)] ],
-    :conv => lambda {|x| Integer(x) },
   },
   {
     :name => "SHIFT_JIS-KDDI",
@@ -22,7 +21,6 @@ ENCODES = [
               [0xEA80..0xEAFA, JISX0208::Char.from_sjis(0xF353)],
               [0xEAFB..0xEB0D, JISX0208::Char.from_sjis(0xF7D2)],
               [0xEB0E..0xEB8E, JISX0208::Char.from_sjis(0xF3CF)] ],
-    :conv => lambda {|x| x.to_sjis },
   },
 ]
 
@@ -46,7 +44,7 @@ end
 
 def generate_to_ucs(params, pairs)
   pairs.sort_by! {|u, c| c }
-  name = "#{params[:name]}%UCS"
+  name = "EMOJI_#{params[:name]}%UCS"
   open("#{name}.src", "w") do |io|
     io.print header(params.merge(name: name.tr('%', '/')))
     io.puts
@@ -58,7 +56,7 @@ end
 
 def generate_from_ucs(params, pairs)
   pairs.sort_by! {|u, c| u }
-  name = "UCS%#{params[:name]}"
+  name = "UCS%EMOJI_#{params[:name]}"
   open("#{name}.src", "w") do |io|
     io.print header(params.merge(name: name.tr('%', '/')))
     io.puts
@@ -70,7 +68,7 @@ end
 
 def make_pairs(code_map)
   pairs = code_map.inject([]) {|acc, (range, ch)|
-    acc += range.map{|uni| pair = [uni, yield(ch)]; ch = ch.succ; next pair }
+    acc += range.map{|uni| pair = [uni, Integer(ch)]; ch = ch.succ; next pair }
   }
 end
 

@@ -528,7 +528,7 @@ def citrus_cstomb(ces, csid, index)
   end
 end
 
-SUBDIR = %w/APPLE AST BIG5 CNS CP EBCDIC GB GEORGIAN ISO646 ISO-8859 JIS KAZAKH KOI KS MISC TCVN/
+SUBDIR = %w/APPLE AST BIG5 CNS CP EBCDIC EMOJI GB GEORGIAN ISO646 ISO-8859 JIS KAZAKH KOI KS MISC TCVN/
 
 
 def citrus_decode_mapsrc(ces, csid, mapsrcs)
