@@ -20,3 +20,9 @@ class TestUTF8_BLACK_SUN_WITH_RAYS < Test::Unit::TestCase
     end
   end
 end
+
+class TestKDDI < Test::Unit::TestCase
+  def test_sjis_to_utf8
+    assert_equal "\u{E488}".force_encoding("UTF8-KDDI"), "\xF6\x60".force_encoding("Shift_JIS-KDDI").encode("UTF8-KDDI")
+  end
+end
