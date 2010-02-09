@@ -854,6 +854,291 @@ EMOJI_EXCHANGE_TBL['UTF8-DoCoMo']['UTF8-Google'] = [
   ["ee9ba1", "f3bea0ad"], # [EMOJI COMPATIBILITY SYMBOL-66] U+E6E1 -> U+FE82D
 ]
 
+EMOJI_EXCHANGE_TBL['UTF8-DoCoMo']['UTF-8'] = [
+  ["ee98be", "e29880"], # [BLACK SUN WITH RAYS] U+E63E -> U+2600
+  ["ee98bf", "e29881"], # [CLOUD] U+E63F -> U+2601
+  ["ee9980", "e29894"], # [UMBRELLA WITH RAIN DROPS] U+E640 -> U+2614
+  ["ee9981", "e29b84"], # [SNOWMAN WITHOUT SNOW] U+E641 -> U+26C4
+  ["ee9982", "e29aa1"], # [HIGH VOLTAGE SIGN] U+E642 -> U+26A1
+  ["ee9983", "f09f8c80"], # [CYCLONE] U+E643 -> U+1F300
+  ["ee9984", "f09f8c81"], # [FOGGY] U+E644 -> U+1F301
+  ["ee9985", "f09f8c82"], # [CLOSED UMBRELLA] U+E645 -> U+1F302
+  ["ee9ab3", "f09f8c83"], # [NIGHT WITH STARS] U+E6B3 -> U+1F303
+  ["ee9cbf", "f09f8c8a"], # [WATER WAVE] U+E73F -> U+1F30A
+  ["ee9a9c", "f09f8c91"], # [NEW MOON SYMBOL] U+E69C -> U+1F311
+  ["ee9a9d", "f09f8c94"], # [WAXING GIBBOUS MOON SYMBOL] U+E69D -> U+1F314
+  ["ee9a9e", "f09f8c93"], # [FIRST QUARTER MOON SYMBOL] U+E69E -> U+1F313
+  ["ee9a9f", "f09f8c99"], # [CRESCENT MOON] U+E69F -> U+1F319
+  ["ee9aa0", "f09f8c95"], # [FULL MOON SYMBOL] U+E6A0 -> U+1F315
+  ["ee9c9f", "e28c9a"], # [WATCH] U+E71F -> U+231A
+  ["ee9aba", "e28fb0"], # [ALARM CLOCK] U+E6BA -> U+23F0
+  ["ee9c9c", "e28fb3"], # [HOURGLASS WITH FLOWING SAND] U+E71C -> U+23F3
+  ["ee9986", "e29988"], # [ARIES] U+E646 -> U+2648
+  ["ee9987", "e29989"], # [TAURUS] U+E647 -> U+2649
+  ["ee9988", "e2998a"], # [GEMINI] U+E648 -> U+264A
+  ["ee9989", "e2998b"], # [CANCER] U+E649 -> U+264B
+  ["ee998a", "e2998c"], # [LEO] U+E64A -> U+264C
+  ["ee998b", "e2998d"], # [VIRGO] U+E64B -> U+264D
+  ["ee998c", "e2998e"], # [LIBRA] U+E64C -> U+264E
+  ["ee998d", "e2998f"], # [SCORPIUS] U+E64D -> U+264F
+  ["ee998e", "e29990"], # [SAGITTARIUS] U+E64E -> U+2650
+  ["ee998f", "e29991"], # [CAPRICORN] U+E64F -> U+2651
+  ["ee9990", "e29992"], # [AQUARIUS] U+E650 -> U+2652
+  ["ee9991", "e29993"], # [PISCES] U+E651 -> U+2653
+  ["ee9d81", "f09f8d80"], # [FOUR LEAF CLOVER] U+E741 -> U+1F340
+  ["ee9d83", "f09f8cb7"], # [TULIP] U+E743 -> U+1F337
+  ["ee9d86", "f09f8cb1"], # [SEEDLING] U+E746 -> U+1F331
+  ["ee9d87", "f09f8d81"], # [MAPLE LEAF] U+E747 -> U+1F341
+  ["ee9d88", "f09f8cb8"], # [CHERRY BLOSSOM] U+E748 -> U+1F338
+  ["ee9d82", "f09f8d92"], # [CHERRIES] U+E742 -> U+1F352
+  ["ee9d84", "f09f8d8c"], # [BANANA] U+E744 -> U+1F34C
+  ["ee9d85", "f09f8d8e"], # [RED APPLE] U+E745 -> U+1F34E
+  ["ee9a91", "f09f9180"], # [EYES] U+E691 -> U+1F440
+  ["ee9a92", "f09f9182"], # [EAR] U+E692 -> U+1F442
+  ["ee9c90", "f09f9284"], # [LIPSTICK] U+E710 -> U+1F484
+  ["ee9ab1", "f09f91a4"], # [BUST IN SILHOUETTE] U+E6B1 -> U+1F464
+  ["ee9d8e", "f09f908c"], # [SNAIL] U+E74E -> U+1F40C
+  ["ee9d8f", "f09f90a4"], # [BABY CHICK] U+E74F -> U+1F424
+  ["ee9d90", "f09f90a7"], # [PENGUIN] U+E750 -> U+1F427
+  ["ee9d91", "f09f909f"], # [FISH] U+E751 -> U+1F41F
+  ["ee9aa2", "f09f90b1"], # [CAT FACE] U+E6A2 -> U+1F431
+  ["ee9d94", "f09f90b4"], # [HORSE FACE] U+E754 -> U+1F434
+  ["ee9aa1", "f09f90b6"], # [DOG FACE] U+E6A1 -> U+1F436
+  ["ee9d95", "f09f90b7"], # [PIG FACE] U+E755 -> U+1F437
+  ["ee9bb1", "f09f9880"], # [ANGRY FACE] U+E6F1 -> U+1F600
+  ["ee9bb2", "f09f9883"], # [DISAPPOINTED FACE] U+E6F2 -> U+1F603
+  ["ee9bb4", "f09f9884"], # [DIZZY FACE] U+E6F4 -> U+1F604
+  ["ee9ca5", "f09f9886"], # [EXPRESSIONLESS FACE] U+E725 -> U+1F606
+  ["ee9ca6", "f09f9887"], # [FACE WITH HEART-SHAPED EYES] U+E726 -> U+1F607
+  ["ee9ca8", "f09f9889"], # [WINKING FACE WITH STUCK-OUT TONGUE] U+E728 -> U+1F609
+  ["ee9d92", "f09f988b"], # [FACE SAVOURING DELICIOUS FOOD] U+E752 -> U+1F60B
+  ["ee9bb0", "f09f9890"], # [HAPPY FACE WITH OPEN MOUTH] U+E6F0 -> U+1F610
+  ["ee9ca2", "f09f9891"], # [HAPPY FACE WITH OPEN MOUTH AND COLD SWEAT] U+E722 -> U+1F611
+  ["ee9caa", "f09f9892"], # [HAPPY FACE WITH OPEN MOUTH AND CLOSED EYES] U+E72A -> U+1F612
+  ["ee9d93", "f09f9893"], # [HAPPY FACE WITH GRIN] U+E753 -> U+1F613
+  ["ee9cae", "f09f9897"], # [CRYING FACE] U+E72E -> U+1F617
+  ["ee9cad", "f09f9898"], # [LOUDLY CRYING FACE] U+E72D -> U+1F618
+  ["ee9cab", "f09f989a"], # [PERSEVERING FACE] U+E72B -> U+1F61A
+  ["ee9ca4", "f09f989b"], # [POUTING FACE] U+E724 -> U+1F61B
+  ["ee9ca1", "f09f989c"], # [RELIEVED FACE] U+E721 -> U+1F61C
+  ["ee9bb3", "f09f989d"], # [CONFOUNDED FACE] U+E6F3 -> U+1F61D
+  ["ee9ca0", "f09f989e"], # [PENSIVE FACE] U+E720 -> U+1F61E
+  ["ee9d97", "f09f989f"], # [FACE SCREAMING IN FEAR] U+E757 -> U+1F61F
+  ["ee9cac", "f09f98a1"], # [SMIRKING FACE] U+E72C -> U+1F621
+  ["ee9ca3", "f09f98a2"], # [FACE WITH COLD SWEAT] U+E723 -> U+1F622
+  ["ee9ca9", "f09f98a5"], # [WINKING FACE] U+E729 -> U+1F625
+  ["ee99a3", "f09f8fa0"], # [HOUSE BUILDING] U+E663 -> U+1F3E0
+  ["ee99a4", "f09f8fa2"], # [OFFICE BUILDING] U+E664 -> U+1F3E2
+  ["ee99a5", "f09f8fa3"], # [JAPANESE POST OFFICE] U+E665 -> U+1F3E3
+  ["ee99a6", "f09f8fa5"], # [HOSPITAL] U+E666 -> U+1F3E5
+  ["ee99a7", "f09f8fa6"], # [BANK] U+E667 -> U+1F3E6
+  ["ee99a8", "f09f8fa7"], # [AUTOMATED TELLER MACHINE] U+E668 -> U+1F3E7
+  ["ee99a9", "f09f8fa8"], # [HOTEL] U+E669 -> U+1F3E8
+  ["ee99aa", "f09f8faa"], # [CONVENIENCE STORE] U+E66A -> U+1F3EA
+  ["ee9cbe", "f09f8fab"], # [SCHOOL] U+E73E -> U+1F3EB
+  ["ee9d80", "f09f97bb"], # [MOUNT FUJI] U+E740 -> U+1F5FB
+  ["ee9a99", "f09f919f"], # [ATHLETIC SHOE] U+E699 -> U+1F45F
+  ["ee99b4", "f09f91a0"], # [HIGH-HEELED SHOE] U+E674 -> U+1F460
+  ["ee9a98", "f09f91a3"], # [FOOTPRINTS] U+E698 -> U+1F463
+  ["ee9a9a", "f09f9193"], # [EYEGLASSES] U+E69A -> U+1F453
+  ["ee9c8e", "f09f9195"], # [T-SHIRT] U+E70E -> U+1F455
+  ["ee9c91", "f09f9196"], # [JEANS] U+E711 -> U+1F456
+  ["ee9c9a", "f09f9191"], # [CROWN] U+E71A -> U+1F451
+  ["ee9c8f", "f09f919b"], # [PURSE] U+E70F -> U+1F45B
+  ["ee9a82", "f09f919c"], # [HANDBAG] U+E682 -> U+1F45C
+  ["ee9aad", "f09f919d"], # [POUCH] U+E6AD -> U+1F45D
+  ["ee9c95", "f09f92b0"], # [MONEY BAG] U+E715 -> U+1F4B0
+  ["ee9b96", "f09f92b4"], # [BANKNOTE WITH YEN SIGN] U+E6D6 -> U+1F4B4
+  ["ee9c98", "f09f94a7"], # [WRENCH] U+E718 -> U+1F527
+  ["ee9a84", "f09f8e80"], # [RIBBON] U+E684 -> U+1F380
+  ["ee9a85", "f09f8e81"], # [WRAPPED PRESENT] U+E685 -> U+1F381
+  ["ee9a86", "f09f8e82"], # [BIRTHDAY CAKE] U+E686 -> U+1F382
+  ["ee9aa4", "f09f8e84"], # [CHRISTMAS TREE] U+E6A4 -> U+1F384
+  ["ee999a", "f09f939f"], # [PAGER] U+E65A -> U+1F4DF
+  ["ee9a87", "e2988e"], # [BLACK TELEPHONE] U+E687 -> U+260E
+  ["ee9a88", "f09f93b1"], # [MOBILE PHONE] U+E688 -> U+1F4F1
+  ["ee9b8e", "f09f93b2"], # [MOBILE PHONE WITH RIGHTWARDS ARROW AT LEFT] U+E6CE -> U+1F4F2
+  ["ee9a89", "f09f939d"], # [MEMO] U+E689 -> U+1F4DD
+  ["ee9b90", "f09f93a0"], # [FAX MACHINE] U+E6D0 -> U+1F4E0
+  ["ee9b93", "e29c89"], # [ENVELOPE] U+E6D3 -> U+2709
+  ["ee9b8f", "f09f93a9"], # [ENVELOPE WITH DOWNWARDS ARROW ABOVE] U+E6CF -> U+1F4E9
+  ["ee9aae", "e29c92"], # [BLACK NIB] U+E6AE -> U+2712
+  ["ee9ab2", "f09f92ba"], # [SEAT] U+E6B2 -> U+1F4BA
+  ["ee9c96", "f09f92bb"], # [PERSONAL COMPUTER] U+E716 -> U+1F4BB
+  ["ee9c99", "e29c8f"], # [PENCIL] U+E719 -> U+270F
+  ["ee9cb0", "f09f938e"], # [PAPERCLIP] U+E730 -> U+1F4CE
+  ["ee9a8c", "f09f92bf"], # [OPTICAL DISC] U+E68C -> U+1F4BF
+  ["ee99b5", "e29c82"], # [BLACK SCISSORS] U+E675 -> U+2702
+  ["ee9a83", "f09f9396"], # [OPEN BOOK] U+E683 -> U+1F4D6
+  ["ee9992", "f09f8ebd"], # [RUNNING SHIRT WITH SASH] U+E652 -> U+1F3BD
+  ["ee9993", "e29abe"], # [BASEBALL] U+E653 -> U+26BE
+  ["ee9994", "e29bb3"], # [FLAG IN HOLE] U+E654 -> U+26F3
+  ["ee9995", "f09f8ebe"], # [TENNIS RACQUET AND BALL] U+E655 -> U+1F3BE
+  ["ee9996", "e29abd"], # [SOCCER BALL] U+E656 -> U+26BD
+  ["ee9997", "f09f8ebf"], # [SKI AND SKI BOOT] U+E657 -> U+1F3BF
+  ["ee9998", "f09f8f80"], # [BASKETBALL AND HOOP] U+E658 -> U+1F3C0
+  ["ee9999", "f09f8f81"], # [CHEQUERED FLAG] U+E659 -> U+1F3C1
+  ["ee9c92", "f09f8f82"], # [SNOWBOARDER] U+E712 -> U+1F3C2
+  ["ee9cb3", "f09f8f83"], # [RUNNER] U+E733 -> U+1F3C3
+  ["ee999b", "f09f9a86"], # [TRAIN] U+E65B -> U+1F686
+  ["ee999c", "e29382"], # [CIRCLED LATIN CAPITAL LETTER M] U+E65C -> U+24C2
+  ["ee999d", "f09f9a84"], # [HIGH-SPEED TRAIN] U+E65D -> U+1F684
+  ["ee999e", "f09f9a97"], # [AUTOMOBILE] U+E65E -> U+1F697
+  ["ee999f", "f09f9a99"], # [RECREATIONAL VEHICLE] U+E65F -> U+1F699
+  ["ee99a0", "f09f9a8d"], # [ONCOMING BUS] U+E660 -> U+1F68D
+  ["ee99a1", "f09f9aa2"], # [SHIP] U+E661 -> U+1F6A2
+  ["ee99a2", "e29c88"], # [AIRPLANE] U+E662 -> U+2708
+  ["ee9aa3", "e29bb5"], # [SAILBOAT] U+E6A3 -> U+26F5
+  ["ee99ab", "e29bbd"], # [FUEL PUMP] U+E66B -> U+26FD
+  ["ee99ac", "f09f85bf"], # [NEGATIVE SQUARED LATIN CAPITAL LETTER P] U+E66C -> U+1F17F
+  ["ee99ad", "f09f9aa5"], # [HORIZONTAL TRAFFIC LIGHT] U+E66D -> U+1F6A5
+  ["ee9bb7", "e299a8"], # [HOT SPRINGS] U+E6F7 -> U+2668
+  ["ee99b9", "f09f8ea0"], # [CAROUSEL HORSE] U+E679 -> U+1F3A0
+  ["ee99b6", "f09f8ea4"], # [MICROPHONE] U+E676 -> U+1F3A4
+  ["ee99b7", "f09f8ea5"], # [MOVIE CAMERA] U+E677 -> U+1F3A5
+  ["ee99ba", "f09f8ea7"], # [HEADPHONE] U+E67A -> U+1F3A7
+  ["ee99bb", "f09f8ea8"], # [ARTIST PALETTE] U+E67B -> U+1F3A8
+  ["ee99bc", "f09f8ea9"], # [TOP HAT] U+E67C -> U+1F3A9
+  ["ee99bd", "f09f8eaa"], # [CIRCUS TENT] U+E67D -> U+1F3AA
+  ["ee99be", "f09f8eab"], # [TICKET] U+E67E -> U+1F3AB
+  ["ee9aac", "f09f8eac"], # [CLAPPER BOARD] U+E6AC -> U+1F3AC
+  ["ee9a8b", "f09f8eae"], # [VIDEO GAME] U+E68B -> U+1F3AE
+  ["ee9bb6", "f09f8eb5"], # [MUSICAL NOTE] U+E6F6 -> U+1F3B5
+  ["ee9bbf", "f09f8eb6"], # [MULTIPLE MUSICAL NOTES] U+E6FF -> U+1F3B6
+  ["ee9a81", "f09f93b7"], # [CAMERA] U+E681 -> U+1F4F7
+  ["ee9a8a", "f09f93ba"], # [TELEVISION] U+E68A -> U+1F4FA
+  ["ee9bb9", "f09f928b"], # [KISS MARK] U+E6F9 -> U+1F48B
+  ["ee9c97", "f09f928c"], # [LOVE LETTER] U+E717 -> U+1F48C
+  ["ee9c9b", "f09f928d"], # [RING] U+E71B -> U+1F48D
+  ["ee9cb1", "c2a9"], # [COPYRIGHT SIGN] U+E731 -> U+A9
+  ["ee9cb6", "c2ae"], # [REGISTERED SIGN] U+E736 -> U+AE
+  ["ee9cb2", "e284a2"], # [TRADE MARK SIGN] U+E732 -> U+2122
+  ["ee9ba0", "23e283a3"], # [HASH KEY] U+E6E0 -> U+23 U+20E3
+  ["ee9ba2", "31e283a3"], # [KEYCAP 1] U+E6E2 -> U+31 U+20E3
+  ["ee9ba3", "32e283a3"], # [KEYCAP 2] U+E6E3 -> U+32 U+20E3
+  ["ee9ba4", "33e283a3"], # [KEYCAP 3] U+E6E4 -> U+33 U+20E3
+  ["ee9ba5", "34e283a3"], # [KEYCAP 4] U+E6E5 -> U+34 U+20E3
+  ["ee9ba6", "35e283a3"], # [KEYCAP 5] U+E6E6 -> U+35 U+20E3
+  ["ee9ba7", "36e283a3"], # [KEYCAP 6] U+E6E7 -> U+36 U+20E3
+  ["ee9ba8", "37e283a3"], # [KEYCAP 7] U+E6E8 -> U+37 U+20E3
+  ["ee9ba9", "38e283a3"], # [KEYCAP 8] U+E6E9 -> U+38 U+20E3
+  ["ee9baa", "39e283a3"], # [KEYCAP 9] U+E6EA -> U+39 U+20E3
+  ["ee9bab", "30e283a3"], # [KEYCAP 0] U+E6EB -> U+30 U+20E3
+  ["ee99b3", "f09f8d94"], # [HAMBURGER] U+E673 -> U+1F354
+  ["ee9d89", "f09f8d99"], # [RICE BALL] U+E749 -> U+1F359
+  ["ee9d8a", "f09f8db0"], # [SHORTCAKE] U+E74A -> U+1F370
+  ["ee9d8c", "f09f8d9c"], # [STEAMING BOWL] U+E74C -> U+1F35C
+  ["ee9d8d", "f09f8d9e"], # [BREAD] U+E74D -> U+1F35E
+  ["ee99af", "f09f8db4"], # [FORK AND KNIFE] U+E66F -> U+1F374
+  ["ee99b0", "e29895"], # [HOT BEVERAGE] U+E670 -> U+2615
+  ["ee99b1", "f09f8db8"], # [COCKTAIL GLASS] U+E671 -> U+1F378
+  ["ee99b2", "f09f8dba"], # [BEER MUG] U+E672 -> U+1F37A
+  ["ee9c9e", "f09f8db5"], # [TEACUP WITHOUT HANDLE] U+E71E -> U+1F375
+  ["ee9d8b", "f09f8db6"], # [SAKE BOTTLE AND CUP] U+E74B -> U+1F376
+  ["ee9d96", "f09f8db7"], # [WINE GLASS] U+E756 -> U+1F377
+  ["ee99b8", "e28697"], # [NORTH EAST ARROW] U+E678 -> U+2197
+  ["ee9a96", "e28698"], # [SOUTH EAST ARROW] U+E696 -> U+2198
+  ["ee9a97", "e28696"], # [NORTH WEST ARROW] U+E697 -> U+2196
+  ["ee9aa5", "e28699"], # [SOUTH WEST ARROW] U+E6A5 -> U+2199
+  ["ee9bb5", "e2a4b4"], # [ARROW POINTING RIGHTWARDS THEN CURVING UPWARDS] U+E6F5 -> U+2934
+  ["ee9c80", "e2a4b5"], # [ARROW POINTING RIGHTWARDS THEN CURVING DOWNWARDS] U+E700 -> U+2935
+  ["ee9cbc", "e28694"], # [LEFT RIGHT ARROW] U+E73C -> U+2194
+  ["ee9cbd", "e28695"], # [UP DOWN ARROW] U+E73D -> U+2195
+  ["ee9c82", "e29da2"], # [HEAVY EXCLAMATION MARK ORNAMENT] U+E702 -> U+2762
+  ["ee9c83", "e28189"], # [EXCLAMATION QUESTION MARK] U+E703 -> U+2049
+  ["ee9c84", "e280bc"], # [DOUBLE EXCLAMATION MARK] U+E704 -> U+203C
+  ["ee9c89", "e380b0"], # [WAVY DASH] U+E709 -> U+3030
+  ["ee9c8a", "e29eb0"], # [CURLY LOOP] U+E70A -> U+27B0
+  ["ee9b9f", "e29ebf"], # [DOUBLE CURLY LOOP] U+E6DF -> U+27BF
+  ["ee9bac", "e29da4"], # [HEAVY BLACK HEART] U+E6EC -> U+2764
+  ["ee9bad", "f09f9293"], # [BEATING HEART] U+E6ED -> U+1F493
+  ["ee9bae", "f09f9294"], # [BROKEN HEART] U+E6EE -> U+1F494
+  ["ee9baf", "f09f9295"], # [TWO HEARTS] U+E6EF -> U+1F495
+  ["ee9a8d", "e299a5"], # [BLACK HEART SUIT] U+E68D -> U+2665
+  ["ee9a8e", "e299a0"], # [BLACK SPADE SUIT] U+E68E -> U+2660
+  ["ee9a8f", "e299a6"], # [BLACK DIAMOND SUIT] U+E68F -> U+2666
+  ["ee9a90", "e299a3"], # [BLACK CLUB SUIT] U+E690 -> U+2663
+  ["ee99bf", "f09f9aac"], # [SMOKING SYMBOL] U+E67F -> U+1F6AC
+  ["ee9a80", "f09f9aad"], # [NO SMOKING SYMBOL] U+E680 -> U+1F6AD
+  ["ee9a9b", "e299bf"], # [WHEELCHAIR SYMBOL] U+E69B -> U+267F
+  ["ee9b9e", "f09f9aa9"], # [TRIANGULAR FLAG ON POST] U+E6DE -> U+1F6A9
+  ["ee9cb7", "e29aa0"], # [WARNING SIGN] U+E737 -> U+26A0
+  ["ee9cb5", "e299bb"], # [BLACK UNIVERSAL RECYCLING SYMBOL] U+E735 -> U+267B
+  ["ee9c9d", "f09f9ab2"], # [BICYCLE] U+E71D -> U+1F6B2
+  ["ee99ae", "f09f9abb"], # [RESTROOM] U+E66E -> U+1F6BB
+  ["ee9c94", "f09f9aaa"], # [DOOR] U+E714 -> U+1F6AA
+  ["ee9b9b", "f09f8691"], # [SQUARED CL] U+E6DB -> U+1F191
+  ["ee9b97", "f09f8693"], # [SQUARED FREE] U+E6D7 -> U+1F193
+  ["ee9b98", "f09f8694"], # [SQUARED ID] U+E6D8 -> U+1F194
+  ["ee9b9d", "f09f8695"], # [SQUARED NEW] U+E6DD -> U+1F195
+  ["ee9caf", "f09f8696"], # [SQUARED NG] U+E72F -> U+1F196
+  ["ee9c8b", "f09f8697"], # [SQUARED OK] U+E70B -> U+1F197
+  ["ee9cb8", "f09f88b2"], # [SQUARED CJK UNIFIED IDEOGRAPH-7981] U+E738 -> U+1F232
+  ["ee9cb9", "f09f88b3"], # [SQUARED CJK UNIFIED IDEOGRAPH-7A7A] U+E739 -> U+1F233
+  ["ee9cba", "f09f88b4"], # [SQUARED CJK UNIFIED IDEOGRAPH-5408] U+E73A -> U+1F234
+  ["ee9cbb", "f09f88b5"], # [SQUARED CJK UNIFIED IDEOGRAPH-6E80] U+E73B -> U+1F235
+  ["ee9cb4", "e38a99"], # [CIRCLED IDEOGRAPH SECRET] U+E734 -> U+3299
+  ["ee9bb8", "f09f92a0"], # [DIAMOND SHAPE WITH A DOT INSIDE] U+E6F8 -> U+1F4A0
+  ["ee9bbb", "f09f92a1"], # [ELECTRIC LIGHT BULB] U+E6FB -> U+1F4A1
+  ["ee9bbc", "f09f92a2"], # [ANGER SYMBOL] U+E6FC -> U+1F4A2
+  ["ee9bbe", "f09f92a3"], # [BOMB] U+E6FE -> U+1F4A3
+  ["ee9c81", "f09f92a4"], # [SLEEPING SYMBOL] U+E701 -> U+1F4A4
+  ["ee9c85", "f09f92a5"], # [COLLISION SYMBOL] U+E705 -> U+1F4A5
+  ["ee9c86", "f09f92a6"], # [SPLASHING SWEAT SYMBOL] U+E706 -> U+1F4A6
+  ["ee9c87", "f09f92a7"], # [DROP OF WATER] U+E707 -> U+1F4A7
+  ["ee9c88", "f09f92a8"], # [DASH SYMBOL] U+E708 -> U+1F4A8
+  ["ee9bba", "e29ca8"], # [SPARKLES] U+E6FA -> U+2728
+  ["ee9b9a", "e286a9"], # [LEFTWARDS ARROW WITH HOOK] U+E6DA -> U+21A9
+  ["ee9b9c", "f09f948d"], # [LEFT-POINTING MAGNIFYING GLASS] U+E6DC -> U+1F50D
+  ["ee9b99", "f09f9491"], # [KEY] U+E6D9 -> U+1F511
+  ["ee9c93", "f09f9494"], # [BELL] U+E713 -> U+1F514
+  ["ee9ab9", "f09f949a"], # [END WITH LEFTWARDS ARROW ABOVE] U+E6B9 -> U+1F51A
+  ["ee9ab8", "f09f949b"], # [ON WITH EXCLAMATION MARK WITH LEFT RIGHT ARROW ABOVE] U+E6B8 -> U+1F51B
+  ["ee9ab7", "f09f949c"], # [SOON WITH RIGHTWARDS ARROW ABOVE] U+E6B7 -> U+1F51C
+  ["ee9a93", "e29c8a"], # [RAISED FIST] U+E693 -> U+270A
+  ["ee9a95", "e29c8b"], # [RAISED HAND] U+E695 -> U+270B
+  ["ee9a94", "e29c8c"], # [VICTORY HAND] U+E694 -> U+270C
+  ["ee9bbd", "f09f918a"], # [FISTED HAND SIGN] U+E6FD -> U+1F44A
+  ["ee9ca7", "f09f918d"], # [THUMBS UP SIGN] U+E727 -> U+1F44D
+  ["ee9b91", "5b69e383a2e383bce383895d"], # [EMOJI COMPATIBILITY SYMBOL-1] U+E6D1 -> "[iモード]"
+  ["ee9b92", "5b69e383a2e383bce383895d"], # [EMOJI COMPATIBILITY SYMBOL-2] U+E6D2 -> "[iモード]"
+  ["ee9b94", "5be38389e382b3e383a25d"], # [EMOJI COMPATIBILITY SYMBOL-3] U+E6D4 -> "[ドコモ]"
+  ["ee9b95", "5be38389e382b3e383a2e3839de382a4e383b3e383885d"], # [EMOJI COMPATIBILITY SYMBOL-4] U+E6D5 -> "[ドコモポイント]"
+  ["ee9c8c", "5b69e382a2e38397e383aa5d"], # [EMOJI COMPATIBILITY SYMBOL-5] U+E70C -> "[iアプリ]"
+  ["ee9c8d", "5b69e382a2e38397e383aa5d"], # [EMOJI COMPATIBILITY SYMBOL-6] U+E70D -> "[iアプリ]"
+  ["ee9aa6", "5be381b45d"], # [EMOJI COMPATIBILITY SYMBOL-7] U+E6A6 -> "[ぴ]"
+  ["ee9aa7", "5be381825d"], # [EMOJI COMPATIBILITY SYMBOL-8] U+E6A7 -> "[あ]"
+  ["ee9aa8", "5be38381e382b1e38383e383885d"], # [EMOJI COMPATIBILITY SYMBOL-9] U+E6A8 -> "[チケット]"
+  ["ee9aa9", "5be38381e382b1e38383e383885d"], # [EMOJI COMPATIBILITY SYMBOL-10] U+E6A9 -> "[チケット]"
+  ["ee9aaa", "5be99bbbe8a9b1e58588e8a18c5d"], # [EMOJI COMPATIBILITY SYMBOL-11] U+E6AA -> "[電話先行]"
+  ["ee9aab", "5b50e382b3e383bce383895d"], # [EMOJI COMPATIBILITY SYMBOL-12] U+E6AB -> "[Pコード]"
+  ["ee9aaf", "e38093"], # [EMOJI COMPATIBILITY SYMBOL-13] U+E6AF -> U+3013 (GETA)
+  ["ee9ab0", "5be381b45d"], # [EMOJI COMPATIBILITY SYMBOL-14] U+E6B0 -> "[ぴ]"
+  ["ee9ab4", "28e381b429"], # [EMOJI COMPATIBILITY SYMBOL-15] U+E6B4 -> "(ぴ)"
+  ["ee9ab5", "5be381b45d"], # [EMOJI COMPATIBILITY SYMBOL-16] U+E6B5 -> "[ぴ]"
+  ["ee9ab6", "5be38381e382a7e38383e382af5d"], # [EMOJI COMPATIBILITY SYMBOL-17] U+E6B6 -> "[チェック]"
+  ["ee9abb", "5b465d"], # [EMOJI COMPATIBILITY SYMBOL-18] U+E6BB -> "[F]"
+  ["ee9abc", "5b445d"], # [EMOJI COMPATIBILITY SYMBOL-19] U+E6BC -> "[D]"
+  ["ee9abd", "5b535d"], # [EMOJI COMPATIBILITY SYMBOL-20] U+E6BD -> "[S]"
+  ["ee9abe", "5b435d"], # [EMOJI COMPATIBILITY SYMBOL-21] U+E6BE -> "[C]"
+  ["ee9abf", "5b525d"], # [EMOJI COMPATIBILITY SYMBOL-22] U+E6BF -> "[R]"
+  ["ee9b80", "e296a0"], # [EMOJI COMPATIBILITY SYMBOL-23] U+E6C0 -> "■"
+  ["ee9b81", "e296a0"], # [EMOJI COMPATIBILITY SYMBOL-24] U+E6C1 -> "■"
+  ["ee9b82", "e296bc"], # [EMOJI COMPATIBILITY SYMBOL-25] U+E6C2 -> "▼"
+  ["ee9b83", "e280a0e280a0e280a0e280a0"], # [EMOJI COMPATIBILITY SYMBOL-26] U+E6C3 -> "††††"
+  ["ee9b84", "e280a0e280a0e280a0"], # [EMOJI COMPATIBILITY SYMBOL-27] U+E6C4 -> "†††"
+  ["ee9b85", "e280a0e280a0"], # [EMOJI COMPATIBILITY SYMBOL-28] U+E6C5 -> "††"
+  ["ee9b86", "e280a0"], # [EMOJI COMPATIBILITY SYMBOL-29] U+E6C6 -> "†"
+  ["ee9b87", "5b495d"], # [EMOJI COMPATIBILITY SYMBOL-30] U+E6C7 -> "[I]"
+  ["ee9b88", "5b4d5d"], # [EMOJI COMPATIBILITY SYMBOL-31] U+E6C8 -> "[M]"
+  ["ee9b89", "5b455d"], # [EMOJI COMPATIBILITY SYMBOL-32] U+E6C9 -> "[E]"
+  ["ee9b8a", "5b56455d"], # [EMOJI COMPATIBILITY SYMBOL-33] U+E6CA -> "[VE]"
+  ["ee9b8b", "e2978f"], # [EMOJI COMPATIBILITY SYMBOL-34] U+E6CB -> "●"
+  ["ee9b8c", "5be382abe383bce38389e4bdbfe794a8e4b88de58faf5d"], # [EMOJI COMPATIBILITY SYMBOL-35] U+E6CC -> "[カード使用不可]"
+  ["ee9b8d", "5be38381e382a7e38383e382afe3839ce38383e382afe382b95d"], # [EMOJI COMPATIBILITY SYMBOL-36] U+E6CD -> "[チェックボックス]"
+  ["ee9ba1", "5b515d"], # [EMOJI COMPATIBILITY SYMBOL-66] U+E6E1 -> "[Q]"
+]
+
 EMOJI_EXCHANGE_TBL['UTF8-KDDI']['UTF8-DoCoMo'] = [
   ["ee9288", "ee98be"], # [BLACK SUN WITH RAYS] U+E488 -> U+E63E
   ["ee928d", "ee98bf"], # [CLOUD] U+E48D -> U+E63F
@@ -2804,6 +3089,656 @@ EMOJI_EXCHANGE_TBL['UTF8-KDDI']['UTF8-Google'] = [
   ["ee94ac", "f3bea0ad"], # [EMOJI COMPATIBILITY SYMBOL-66] U+E52C -> U+FE82D
 ]
 
+EMOJI_EXCHANGE_TBL['UTF8-KDDI']['UTF-8'] = [
+  ["ee9288", "e29880"], # [BLACK SUN WITH RAYS] U+E488 -> U+2600
+  ["ee928d", "e29881"], # [CLOUD] U+E48D -> U+2601
+  ["ee928c", "e29894"], # [UMBRELLA WITH RAIN DROPS] U+E48C -> U+2614
+  ["ee9285", "e29b84"], # [SNOWMAN WITHOUT SNOW] U+E485 -> U+26C4
+  ["ee9287", "e29aa1"], # [HIGH VOLTAGE SIGN] U+E487 -> U+26A1
+  ["ee91a9", "f09f8c80"], # [CYCLONE] U+E469 -> U+1F300
+  ["ee9698", "f09f8c81"], # [FOGGY] U+E598 -> U+1F301
+  ["eeaba8", "f09f8c82"], # [CLOSED UMBRELLA] U+EAE8 -> U+1F302
+  ["eeabb1", "f09f8c83"], # [NIGHT WITH STARS] U+EAF1 -> U+1F303
+  ["eeabb4", "f09f8c85"], # [SUNRISE] U+EAF4 -> U+1F305
+  ["ee979a", "5be5a495e784bce381915d"], # [CITYSCAPE AT DUSK] U+E5DA -> "[夕焼け]"
+  ["eeabb2", "f09f8c88"], # [RAINBOW] U+EAF2 -> U+1F308
+  ["ee928a", "e29d84"], # [SNOWFLAKE] U+E48A -> U+2744
+  ["ee928e", "e29b85"], # [SUN BEHIND CLOUD] U+E48E -> U+26C5
+  ["ee92bf", "f09f8c89"], # [BRIDGE AT NIGHT] U+E4BF -> U+1F309
+  ["eeadbc", "f09f8c8a"], # [WATER WAVE] U+EB7C -> U+1F30A
+  ["eead93", "f09f8c8b"], # [VOLCANO] U+EB53 -> U+1F30B
+  ["eead9f", "f09f8c8c"], # [MILKY WAY] U+EB5F -> U+1F30C
+  ["ee96b3", "f09f8c8f"], # [EARTH GLOBE ASIA-AUSTRALIA] U+E5B3 -> U+1F30F
+  ["ee96a8", "f09f8c91"], # [NEW MOON SYMBOL] U+E5A8 -> U+1F311
+  ["ee96a9", "f09f8c94"], # [WAXING GIBBOUS MOON SYMBOL] U+E5A9 -> U+1F314
+  ["ee96aa", "f09f8c93"], # [FIRST QUARTER MOON SYMBOL] U+E5AA -> U+1F313
+  ["ee9286", "f09f8c99"], # [CRESCENT MOON] U+E486 -> U+1F319
+  ["ee9289", "f09f8c9b"], # [FIRST QUARTER MOON WITH FACE] U+E489 -> U+1F31B
+  ["ee91a8", "f09f8ca0"], # [SHOOTING STAR] U+E468 -> U+1F320
+  ["ee95ba", "e28c9a"], # [WATCH] U+E57A -> U+231A
+  ["ee95bb", "e28c9b"], # [HOURGLASS] U+E57B -> U+231B
+  ["ee9694", "e28fb0"], # [ALARM CLOCK] U+E594 -> U+23F0
+  ["ee91bc", "e28fb3"], # [HOURGLASS WITH FLOWING SAND] U+E47C -> U+23F3
+  ["ee928f", "e29988"], # [ARIES] U+E48F -> U+2648
+  ["ee9290", "e29989"], # [TAURUS] U+E490 -> U+2649
+  ["ee9291", "e2998a"], # [GEMINI] U+E491 -> U+264A
+  ["ee9292", "e2998b"], # [CANCER] U+E492 -> U+264B
+  ["ee9293", "e2998c"], # [LEO] U+E493 -> U+264C
+  ["ee9294", "e2998d"], # [VIRGO] U+E494 -> U+264D
+  ["ee9295", "e2998e"], # [LIBRA] U+E495 -> U+264E
+  ["ee9296", "e2998f"], # [SCORPIUS] U+E496 -> U+264F
+  ["ee9297", "e29990"], # [SAGITTARIUS] U+E497 -> U+2650
+  ["ee9298", "e29991"], # [CAPRICORN] U+E498 -> U+2651
+  ["ee9299", "e29992"], # [AQUARIUS] U+E499 -> U+2652
+  ["ee929a", "e29993"], # [PISCES] U+E49A -> U+2653
+  ["ee929b", "e29b8e"], # [OPHIUCHUS] U+E49B -> U+26CE
+  ["ee9493", "f09f8d80"], # [FOUR LEAF CLOVER] U+E513 -> U+1F340
+  ["ee93a4", "f09f8cb7"], # [TULIP] U+E4E4 -> U+1F337
+  ["eeadbd", "f09f8cb1"], # [SEEDLING] U+EB7D -> U+1F331
+  ["ee938e", "f09f8d81"], # [MAPLE LEAF] U+E4CE -> U+1F341
+  ["ee938a", "f09f8cb8"], # [CHERRY BLOSSOM] U+E4CA -> U+1F338
+  ["ee96ba", "f09f8cb9"], # [ROSE] U+E5BA -> U+1F339
+  ["ee978d", "f09f8d82"], # [FALLEN LEAF] U+E5CD -> U+1F342
+  ["eeaa94", "f09f8cba"], # [HIBISCUS] U+EA94 -> U+1F33A
+  ["ee93a3", "f09f8cbb"], # [SUNFLOWER] U+E4E3 -> U+1F33B
+  ["ee93a2", "f09f8cb4"], # [PALM TREE] U+E4E2 -> U+1F334
+  ["eeaa96", "f09f8cb5"], # [CACTUS] U+EA96 -> U+1F335
+  ["eeacb6", "f09f8cbd"], # [EAR OF MAIZE] U+EB36 -> U+1F33D
+  ["eeacb7", "f09f8d84"], # [MUSHROOM] U+EB37 -> U+1F344
+  ["eeacb8", "f09f8cb0"], # [CHESTNUT] U+EB38 -> U+1F330
+  ["eead89", "f09f8cbc"], # [BLOSSOM] U+EB49 -> U+1F33C
+  ["eeae82", "f09f8cbf"], # [HERB] U+EB82 -> U+1F33F
+  ["ee9392", "f09f8d92"], # [CHERRIES] U+E4D2 -> U+1F352
+  ["eeacb5", "f09f8d8c"], # [BANANA] U+EB35 -> U+1F34C
+  ["eeaab9", "f09f8d8e"], # [RED APPLE] U+EAB9 -> U+1F34E
+  ["eeaaba", "f09f8d8a"], # [TANGERINE] U+EABA -> U+1F34A
+  ["ee9394", "f09f8d93"], # [STRAWBERRY] U+E4D4 -> U+1F353
+  ["ee938d", "f09f8d89"], # [WATERMELON] U+E4CD -> U+1F349
+  ["eeaabb", "f09f8d85"], # [TOMATO] U+EABB -> U+1F345
+  ["eeaabc", "f09f8d86"], # [AUBERGINE] U+EABC -> U+1F346
+  ["eeacb2", "f09f8d88"], # [MELON] U+EB32 -> U+1F348
+  ["eeacb3", "f09f8d8d"], # [PINEAPPLE] U+EB33 -> U+1F34D
+  ["eeacb4", "f09f8d87"], # [GRAPES] U+EB34 -> U+1F347
+  ["eeacb9", "f09f8d91"], # [PEACH] U+EB39 -> U+1F351
+  ["eead9a", "f09f8d8f"], # [GREEN APPLE] U+EB5A -> U+1F34F
+  ["ee96a4", "f09f9180"], # [EYES] U+E5A4 -> U+1F440
+  ["ee96a5", "f09f9182"], # [EAR] U+E5A5 -> U+1F442
+  ["eeab90", "f09f9183"], # [NOSE] U+EAD0 -> U+1F443
+  ["eeab91", "f09f9184"], # [MOUTH] U+EAD1 -> U+1F444
+  ["eead87", "f09f9185"], # [TONGUE] U+EB47 -> U+1F445
+  ["ee9489", "f09f9284"], # [LIPSTICK] U+E509 -> U+1F484
+  ["eeaaa0", "f09f9285"], # [NAIL POLISH] U+EAA0 -> U+1F485
+  ["ee948b", "f09f9286"], # [FACE MASSAGE] U+E50B -> U+1F486
+  ["eeaaa1", "f09f9287"], # [HAIRCUT] U+EAA1 -> U+1F487
+  ["eeaaa2", "f09f9288"], # [BARBER POLE] U+EAA2 -> U+1F488
+  ["ee93bc", "f09f91a6"], # [BOY] U+E4FC -> U+1F466
+  ["ee93ba", "f09f91a7"], # [GIRL] U+E4FA -> U+1F467
+  ["ee9481", "f09f91aa"], # [FAMILY] U+E501 -> U+1F46A
+  ["ee979d", "f09f91ae"], # [POLICE OFFICER] U+E5DD -> U+1F46E
+  ["eeab9b", "f09f91af"], # [WOMAN WITH BUNNY EARS] U+EADB -> U+1F46F
+  ["eeaba9", "f09f91b0"], # [BRIDE WITH VEIL] U+EAE9 -> U+1F470
+  ["eeac93", "f09f91b1"], # [WESTERN PERSON] U+EB13 -> U+1F471
+  ["eeac94", "f09f91b2"], # [MAN WITH GUA PI MAO] U+EB14 -> U+1F472
+  ["eeac95", "f09f91b3"], # [MAN WITH TURBAN] U+EB15 -> U+1F473
+  ["eeac96", "f09f91b4"], # [OLDER MAN] U+EB16 -> U+1F474
+  ["eeac97", "f09f91b5"], # [OLDER WOMAN] U+EB17 -> U+1F475
+  ["eeac98", "f09f91b6"], # [BABY] U+EB18 -> U+1F476
+  ["eeac99", "f09f91b7"], # [CONSTRUCTION WORKER] U+EB19 -> U+1F477
+  ["eeac9a", "f09f91b8"], # [PRINCESS] U+EB1A -> U+1F478
+  ["eead84", "f09f91b9"], # [JAPANESE OGRE] U+EB44 -> U+1F479
+  ["eead85", "f09f91ba"], # [JAPANESE GOBLIN] U+EB45 -> U+1F47A
+  ["ee938b", "f09f91bb"], # [GHOST] U+E4CB -> U+1F47B
+  ["ee96bf", "f09f91bc"], # [BABY ANGEL] U+E5BF -> U+1F47C
+  ["ee948e", "f09f91bd"], # [EXTRATERRESTRIAL ALIEN] U+E50E -> U+1F47D
+  ["ee93ac", "f09f91be"], # [ALIEN MONSTER] U+E4EC -> U+1F47E
+  ["ee93af", "f09f91bf"], # [IMP] U+E4EF -> U+1F47F
+  ["ee93b8", "f09f9280"], # [SKULL] U+E4F8 -> U+1F480
+  ["eeac9c", "f09f9283"], # [DANCER] U+EB1C -> U+1F483
+  ["eeadbe", "f09f908c"], # [SNAIL] U+EB7E -> U+1F40C
+  ["eeaca2", "f09f908d"], # [SNAKE] U+EB22 -> U+1F40D
+  ["eeaca3", "f09f9094"], # [CHICKEN] U+EB23 -> U+1F414
+  ["eeaca4", "f09f9097"], # [BOAR] U+EB24 -> U+1F417
+  ["eeaca5", "f09f90ab"], # [BACTRIAN CAMEL] U+EB25 -> U+1F42B
+  ["eeac9f", "f09f9098"], # [ELEPHANT] U+EB1F -> U+1F418
+  ["eeaca0", "f09f90a8"], # [KOALA] U+EB20 -> U+1F428
+  ["ee9787", "f09f9099"], # [OCTOPUS] U+E5C7 -> U+1F419
+  ["eeabac", "f09f909a"], # [SPIRAL SHELL] U+EAEC -> U+1F41A
+  ["eeac9e", "f09f909b"], # [BUG] U+EB1E -> U+1F41B
+  ["ee939d", "f09f909c"], # [ANT] U+E4DD -> U+1F41C
+  ["eead97", "f09f909d"], # [HONEYBEE] U+EB57 -> U+1F41D
+  ["eead98", "f09f909e"], # [LADY BEETLE] U+EB58 -> U+1F41E
+  ["eeac9d", "f09f90a0"], # [TROPICAL FISH] U+EB1D -> U+1F420
+  ["ee9393", "f09f90a1"], # [BLOWFISH] U+E4D3 -> U+1F421
+  ["ee9794", "f09f90a2"], # [TURTLE] U+E5D4 -> U+1F422
+  ["ee93a0", "f09f90a4"], # [BABY CHICK] U+E4E0 -> U+1F424
+  ["eeadb6", "f09f90a5"], # [FRONT-FACING BABY CHICK] U+EB76 -> U+1F425
+  ["ee979b", "f09f90a3"], # [HATCHING CHICK] U+E5DB -> U+1F423
+  ["ee939c", "f09f90a7"], # [PENGUIN] U+E4DC -> U+1F427
+  ["ee939f", "f09f90a9"], # [POODLE] U+E4DF -> U+1F429
+  ["eeac9b", "f09f90ac"], # [DOLPHIN] U+EB1B -> U+1F42C
+  ["ee9782", "f09f90ad"], # [MOUSE FACE] U+E5C2 -> U+1F42D
+  ["ee9780", "f09f90af"], # [TIGER FACE] U+E5C0 -> U+1F42F
+  ["ee939b", "f09f90b1"], # [CAT FACE] U+E4DB -> U+1F431
+  ["ee91b0", "f09f90b3"], # [SPOUTING WHALE] U+E470 -> U+1F433
+  ["ee9398", "f09f90b4"], # [HORSE FACE] U+E4D8 -> U+1F434
+  ["ee9399", "f09f90b5"], # [MONKEY FACE] U+E4D9 -> U+1F435
+  ["ee93a1", "f09f90b6"], # [DOG FACE] U+E4E1 -> U+1F436
+  ["ee939e", "f09f90b7"], # [PIG FACE] U+E4DE -> U+1F437
+  ["ee9781", "f09f90bb"], # [BEAR FACE] U+E5C1 -> U+1F43B
+  ["eeaca1", "f09f90ae"], # [COW FACE] U+EB21 -> U+1F42E
+  ["ee9397", "f09f90b0"], # [RABBIT FACE] U+E4D7 -> U+1F430
+  ["ee939a", "f09f90b8"], # [FROG FACE] U+E4DA -> U+1F438
+  ["ee93ae", "f09f90be"], # [PAW PRINTS] U+E4EE -> U+1F43E
+  ["eeacbf", "f09f90b2"], # [DRAGON FACE] U+EB3F -> U+1F432
+  ["eead86", "f09f90bc"], # [PANDA FACE] U+EB46 -> U+1F43C
+  ["eead88", "f09f90bd"], # [PIG NOSE] U+EB48 -> U+1F43D
+  ["ee91b2", "f09f9880"], # [ANGRY FACE] U+E472 -> U+1F600
+  ["eeada7", "f09f9881"], # [ANGUISHED FACE] U+EB67 -> U+1F601
+  ["eeab8a", "f09f9882"], # [ASTONISHED FACE] U+EACA -> U+1F602
+  ["ee96ae", "f09f9884"], # [DIZZY FACE] U+E5AE -> U+1F604
+  ["eeab8b", "f09f9885"], # [EXASPERATED FACE] U+EACB -> U+1F605
+  ["eeab89", "f09f9886"], # [EXPRESSIONLESS FACE] U+EAC9 -> U+1F606
+  ["ee9784", "f09f9887"], # [FACE WITH HEART-SHAPED EYES] U+E5C4 -> U+1F607
+  ["eeab81", "f09f9888"], # [FACE WITH LOOK OF TRIUMPH] U+EAC1 -> U+1F608
+  ["ee93a7", "f09f9889"], # [WINKING FACE WITH STUCK-OUT TONGUE] U+E4E7 -> U+1F609
+  ["eeab8f", "f09f988c"], # [FACE THROWING A KISS] U+EACF -> U+1F60C
+  ["eeab8e", "f09f988d"], # [FACE KISSING] U+EACE -> U+1F60D
+  ["eeab87", "f09f988e"], # [FACE WITH MASK] U+EAC7 -> U+1F60E
+  ["eeab88", "f09f988f"], # [FLUSHED FACE] U+EAC8 -> U+1F60F
+  ["ee91b1", "f09f9890"], # [HAPPY FACE WITH OPEN MOUTH] U+E471 -> U+1F610
+  ["eeae80", "f09f9893"], # [HAPPY FACE WITH GRIN] U+EB80 -> U+1F613
+  ["eeada4", "f09f9894"], # [HAPPY AND CRYING FACE] U+EB64 -> U+1F614
+  ["eeab8d", "f09f9895"], # [HAPPY FACE WITH WIDE MOUTH AND RAISED EYEBROWS] U+EACD -> U+1F615
+  ["ee93bb", "e298ba"], # [WHITE SMILING FACE] U+E4FB -> U+263A
+  ["eeada9", "f09f9897"], # [CRYING FACE] U+EB69 -> U+1F617
+  ["ee91b3", "f09f9898"], # [LOUDLY CRYING FACE] U+E473 -> U+1F618
+  ["eeab86", "f09f9899"], # [FEARFUL FACE] U+EAC6 -> U+1F619
+  ["eeab82", "f09f989a"], # [PERSEVERING FACE] U+EAC2 -> U+1F61A
+  ["eead9d", "f09f989b"], # [POUTING FACE] U+EB5D -> U+1F61B
+  ["eeab85", "f09f989c"], # [RELIEVED FACE] U+EAC5 -> U+1F61C
+  ["eeab83", "f09f989d"], # [CONFOUNDED FACE] U+EAC3 -> U+1F61D
+  ["eeab80", "f09f989e"], # [PENSIVE FACE] U+EAC0 -> U+1F61E
+  ["ee9785", "f09f989f"], # [FACE SCREAMING IN FEAR] U+E5C5 -> U+1F61F
+  ["eeab84", "f09f98a0"], # [SLEEPY FACE] U+EAC4 -> U+1F620
+  ["eeaabf", "f09f98a1"], # [SMIRKING FACE] U+EABF -> U+1F621
+  ["ee9786", "f09f98a2"], # [FACE WITH COLD SWEAT] U+E5C6 -> U+1F622
+  ["ee91b4", "f09f98a4"], # [TIRED FACE] U+E474 -> U+1F624
+  ["ee9783", "f09f98a5"], # [WINKING FACE] U+E5C3 -> U+1F625
+  ["eeada1", "f09f98ab"], # [CAT FACE WITH OPEN MOUTH] U+EB61 -> U+1F62B
+  ["eeadbf", "f09f98ac"], # [HAPPY CAT FACE WITH GRIN] U+EB7F -> U+1F62C
+  ["eeada3", "f09f98ad"], # [HAPPY AND CRYING CAT FACE] U+EB63 -> U+1F62D
+  ["eeada0", "f09f98ae"], # [CAT FACE KISSING] U+EB60 -> U+1F62E
+  ["eeada5", "f09f98af"], # [CAT FACE WITH HEART-SHAPED EYES] U+EB65 -> U+1F62F
+  ["eeada8", "f09f98b0"], # [CRYING CAT FACE] U+EB68 -> U+1F630
+  ["eead9e", "f09f98b1"], # [POUTING CAT FACE] U+EB5E -> U+1F631
+  ["eeadaa", "f09f98b2"], # [CAT FACE WITH TIGHTLY-CLOSED LIPS] U+EB6A -> U+1F632
+  ["eeada6", "f09f98b3"], # [ANGUISHED CAT FACE] U+EB66 -> U+1F633
+  ["eeab97", "f09f98b4"], # [FACE WITH NO GOOD GESTURE] U+EAD7 -> U+1F634
+  ["eeab98", "f09f98b5"], # [FACE WITH OK GESTURE] U+EAD8 -> U+1F635
+  ["eeab99", "f09f98b6"], # [PERSON BOWING DEEPLY] U+EAD9 -> U+1F636
+  ["eead90", "f09f98b7"], # [SEE-NO-EVIL MONKEY] U+EB50 -> U+1F637
+  ["eead91", "f09f98b9"], # [SPEAK-NO-EVIL MONKEY] U+EB51 -> U+1F639
+  ["eead92", "f09f98b8"], # [HEAR-NO-EVIL MONKEY] U+EB52 -> U+1F638
+  ["eeae85", "f09f98ba"], # [PERSON RAISING ONE HAND] U+EB85 -> U+1F63A
+  ["eeae86", "f09f98bb"], # [PERSON RAISING BOTH HANDS IN CELEBRATION] U+EB86 -> U+1F63B
+  ["eeae87", "f09f98bc"], # [PERSON FROWNING] U+EB87 -> U+1F63C
+  ["eeae88", "f09f98bd"], # [PERSON WITH POUTING FACE] U+EB88 -> U+1F63D
+  ["eeab92", "f09f98be"], # [PERSON WITH FOLDED HANDS] U+EAD2 -> U+1F63E
+  ["ee92ab", "f09f8fa0"], # [HOUSE BUILDING] U+E4AB -> U+1F3E0
+  ["eeac89", "f09f8fa1"], # [HOUSE WITH GARDEN] U+EB09 -> U+1F3E1
+  ["ee92ad", "f09f8fa2"], # [OFFICE BUILDING] U+E4AD -> U+1F3E2
+  ["ee979e", "f09f8fa3"], # [JAPANESE POST OFFICE] U+E5DE -> U+1F3E3
+  ["ee979f", "f09f8fa5"], # [HOSPITAL] U+E5DF -> U+1F3E5
+  ["ee92aa", "f09f8fa6"], # [BANK] U+E4AA -> U+1F3E6
+  ["ee92a3", "f09f8fa7"], # [AUTOMATED TELLER MACHINE] U+E4A3 -> U+1F3E7
+  ["eeaa81", "f09f8fa8"], # [HOTEL] U+EA81 -> U+1F3E8
+  ["eeabb3", "f09f8fa9"], # [LOVE HOTEL] U+EAF3 -> U+1F3E9
+  ["ee92a4", "f09f8faa"], # [CONVENIENCE STORE] U+E4A4 -> U+1F3EA
+  ["eeaa80", "f09f8fab"], # [SCHOOL] U+EA80 -> U+1F3EB
+  ["ee96bb", "e29baa"], # [CHURCH] U+E5BB -> U+26EA
+  ["ee978f", "e29bb2"], # [FOUNTAIN] U+E5CF -> U+26F2
+  ["eeabb6", "f09f8fac"], # [DEPARTMENT STORE] U+EAF6 -> U+1F3EC
+  ["eeabb7", "f09f8faf"], # [JAPANESE CASTLE] U+EAF7 -> U+1F3EF
+  ["eeabb8", "f09f8fb0"], # [EUROPEAN CASTLE] U+EAF8 -> U+1F3F0
+  ["eeabb9", "f09f8fad"], # [FACTORY] U+EAF9 -> U+1F3ED
+  ["ee92a9", "e29a93"], # [ANCHOR] U+E4A9 -> U+2693
+  ["ee92bd", "f09f8fae"], # [IZAKAYA LANTERN] U+E4BD -> U+1F3EE
+  ["ee96bd", "f09f97bb"], # [MOUNT FUJI] U+E5BD -> U+1F5FB
+  ["ee9380", "f09f97bc"], # [TOKYO TOWER] U+E4C0 -> U+1F5FC
+  ["ee95b2", "f09f97be"], # [SILHOUETTE OF JAPAN] U+E572 -> U+1F5FE
+  ["eeadac", "f09f97bf"], # [MOYAI] U+EB6C -> U+1F5FF
+  ["ee96b7", "f09f919e"], # [MANS SHOE] U+E5B7 -> U+1F45E
+  ["eeacab", "f09f919f"], # [ATHLETIC SHOE] U+EB2B -> U+1F45F
+  ["ee949a", "f09f91a0"], # [HIGH-HEELED SHOE] U+E51A -> U+1F460
+  ["eeaa9f", "f09f91a2"], # [WOMANS BOOTS] U+EA9F -> U+1F462
+  ["eeacaa", "f09f91a3"], # [FOOTPRINTS] U+EB2A -> U+1F463
+  ["ee93be", "f09f9193"], # [EYEGLASSES] U+E4FE -> U+1F453
+  ["ee96b6", "f09f9195"], # [T-SHIRT] U+E5B6 -> U+1F455
+  ["eeadb7", "f09f9196"], # [JEANS] U+EB77 -> U+1F456
+  ["ee9789", "f09f9191"], # [CROWN] U+E5C9 -> U+1F451
+  ["eeaa93", "f09f9194"], # [NECKTIE] U+EA93 -> U+1F454
+  ["eeaa9e", "f09f9192"], # [WOMANS HAT] U+EA9E -> U+1F452
+  ["eeadab", "f09f9197"], # [DRESS] U+EB6B -> U+1F457
+  ["eeaaa3", "f09f9198"], # [KIMONO] U+EAA3 -> U+1F458
+  ["eeaaa4", "f09f9199"], # [BIKINI] U+EAA4 -> U+1F459
+  ["ee948d", "f09f919a"], # [WOMANS CLOTHES] U+E50D -> U+1F45A
+  ["ee9484", "f09f919b"], # [PURSE] U+E504 -> U+1F45B
+  ["ee929c", "f09f919c"], # [HANDBAG] U+E49C -> U+1F45C
+  ["ee9387", "f09f92b0"], # [MONEY BAG] U+E4C7 -> U+1F4B0
+  ["ee979c", "f09f92b9"], # [CHART WITH UPWARDS TREND AND YEN SIGN] U+E5DC -> U+1F4B9
+  ["ee95b9", "f09f92b2"], # [HEAVY DOLLAR SIGN] U+E579 -> U+1F4B2
+  ["ee95bc", "f09f92b3"], # [CREDIT CARD] U+E57C -> U+1F4B3
+  ["ee95bd", "f09f92b4"], # [BANKNOTE WITH YEN SIGN] U+E57D -> U+1F4B4
+  ["ee9685", "f09f92b5"], # [BANKNOTE WITH DOLLAR SIGN] U+E585 -> U+1F4B5
+  ["eead9b", "f09f92b8"], # [MONEY WITH WINGS] U+EB5B -> U+1F4B8
+  ["eeac91", "f09f87a8f09f87b3"], # [REGIONAL INDICATOR SYMBOL LETTERS CN] U+EB11 -> U+1F1E8 U+1F1F3
+  ["eeac8e", "f09f87a9f09f87aa"], # [REGIONAL INDICATOR SYMBOL LETTERS DE] U+EB0E -> U+1F1E9 U+1F1EA
+  ["ee9795", "f09f87aaf09f87b8"], # [REGIONAL INDICATOR SYMBOL LETTERS ES] U+E5D5 -> U+1F1EA U+1F1F8
+  ["eeabba", "f09f87abf09f87b7"], # [REGIONAL INDICATOR SYMBOL LETTERS FR] U+EAFA -> U+1F1EB U+1F1F7
+  ["eeac90", "f09f87baf09f87b0"], # [REGIONAL INDICATOR SYMBOL LETTERS GB] U+EB10 -> U+1F1FA U+1F1F0
+  ["eeac8f", "f09f87aef09f87b9"], # [REGIONAL INDICATOR SYMBOL LETTERS IT] U+EB0F -> U+1F1EE U+1F1F9
+  ["ee938c", "f09f87aff09f87b5"], # [REGIONAL INDICATOR SYMBOL LETTERS JP] U+E4CC -> U+1F1EF U+1F1F5
+  ["eeac92", "f09f87b0f09f87b7"], # [REGIONAL INDICATOR SYMBOL LETTERS KR] U+EB12 -> U+1F1F0 U+1F1F7
+  ["ee9796", "f09f87b7f09f87ba"], # [REGIONAL INDICATOR SYMBOL LETTERS RU] U+E5D6 -> U+1F1F7 U+1F1FA
+  ["ee95b3", "f09f87baf09f87b8"], # [REGIONAL INDICATOR SYMBOL LETTERS US] U+E573 -> U+1F1FA U+1F1F8
+  ["ee91bb", "f09f94a5"], # [FIRE] U+E47B -> U+1F525
+  ["ee9683", "f09f94a6"], # [ELECTRIC TORCH] U+E583 -> U+1F526
+  ["ee9687", "f09f94a7"], # [WRENCH] U+E587 -> U+1F527
+  ["ee978b", "f09f94a8"], # [HAMMER] U+E5CB -> U+1F528
+  ["ee9681", "f09f94a9"], # [NUT AND BOLT] U+E581 -> U+1F529
+  ["ee95bf", "f09f94aa"], # [HOCHO] U+E57F -> U+1F52A
+  ["ee948a", "f09f94ab"], # [PISTOL] U+E50A -> U+1F52B
+  ["eeaa8f", "f09f94ae"], # [CRYSTAL BALL] U+EA8F -> U+1F52E
+  ["ee9280", "f09f94b0"], # [JAPANESE SYMBOL FOR BEGINNER] U+E480 -> U+1F530
+  ["ee9490", "f09f9289"], # [SYRINGE] U+E510 -> U+1F489
+  ["eeaa9a", "f09f928a"], # [PILL] U+EA9A -> U+1F48A
+  ["eeaca6", "f09f85b0"], # [NEGATIVE SQUARED LATIN CAPITAL LETTER A] U+EB26 -> U+1F170
+  ["eeaca7", "f09f85b1"], # [NEGATIVE SQUARED LATIN CAPITAL LETTER B] U+EB27 -> U+1F171
+  ["eeaca9", "f09f868e"], # [NEGATIVE SQUARED AB] U+EB29 -> U+1F18E
+  ["eeaca8", "f09f85be"], # [NEGATIVE SQUARED LATIN CAPITAL LETTER O] U+EB28 -> U+1F17E
+  ["ee969f", "f09f8e80"], # [RIBBON] U+E59F -> U+1F380
+  ["ee938f", "f09f8e81"], # [WRAPPED PRESENT] U+E4CF -> U+1F381
+  ["ee96a0", "f09f8e82"], # [BIRTHDAY CAKE] U+E5A0 -> U+1F382
+  ["ee9389", "f09f8e84"], # [CHRISTMAS TREE] U+E4C9 -> U+1F384
+  ["eeabb0", "f09f8e85"], # [FATHER CHRISTMAS] U+EAF0 -> U+1F385
+  ["ee9799", "f09f8e8c"], # [CROSSED FLAGS] U+E5D9 -> U+1F38C
+  ["ee978c", "f09f8e86"], # [FIREWORKS] U+E5CC -> U+1F386
+  ["eeaa9b", "f09f8e88"], # [BALLOON] U+EA9B -> U+1F388
+  ["eeaa9c", "f09f8e89"], # [PARTY POPPER] U+EA9C -> U+1F389
+  ["eeaba3", "f09f8e8d"], # [PINE DECORATION] U+EAE3 -> U+1F38D
+  ["eeaba4", "f09f8e8e"], # [JAPANESE DOLLS] U+EAE4 -> U+1F38E
+  ["eeaba5", "f09f8e93"], # [GRADUATION CAP] U+EAE5 -> U+1F393
+  ["eeaba6", "f09f8e92"], # [SCHOOL SATCHEL] U+EAE6 -> U+1F392
+  ["eeaba7", "f09f8e8f"], # [CARP STREAMER] U+EAE7 -> U+1F38F
+  ["eeabab", "f09f8e87"], # [FIREWORK SPARKLER] U+EAEB -> U+1F387
+  ["eeabad", "f09f8e90"], # [WIND CHIME] U+EAED -> U+1F390
+  ["eeabae", "f09f8e83"], # [JACK-O-LANTERN] U+EAEE -> U+1F383
+  ["ee91af", "f09f8e8a"], # [CONFETTI BALL] U+E46F -> U+1F38A
+  ["eeacbd", "f09f8e8b"], # [TANABATA TREE] U+EB3D -> U+1F38B
+  ["eeabaf", "f09f8e91"], # [MOON VIEWING CEREMONY] U+EAEF -> U+1F391
+  ["ee969b", "f09f939f"], # [PAGER] U+E59B -> U+1F4DF
+  ["ee9696", "e2988e"], # [BLACK TELEPHONE] U+E596 -> U+260E
+  ["ee949e", "f09f939e"], # [TELEPHONE RECEIVER] U+E51E -> U+1F4DE
+  ["ee9688", "f09f93b1"], # [MOBILE PHONE] U+E588 -> U+1F4F1
+  ["eeac88", "f09f93b2"], # [MOBILE PHONE WITH RIGHTWARDS ARROW AT LEFT] U+EB08 -> U+1F4F2
+  ["eeaa92", "f09f939d"], # [MEMO] U+EA92 -> U+1F4DD
+  ["ee94a0", "f09f93a0"], # [FAX MACHINE] U+E520 -> U+1F4E0
+  ["ee94a1", "e29c89"], # [ENVELOPE] U+E521 -> U+2709
+  ["ee9691", "f09f93a8"], # [INCOMING ENVELOPE] U+E591 -> U+1F4E8
+  ["eeada2", "f09f93a9"], # [ENVELOPE WITH DOWNWARDS ARROW ABOVE] U+EB62 -> U+1F4E9
+  ["ee949b", "f09f93aa"], # [CLOSED MAILBOX WITH LOWERED FLAG] U+E51B -> U+1F4EA
+  ["eeac8a", "f09f93ab"], # [CLOSED MAILBOX WITH RAISED FLAG] U+EB0A -> U+1F4EB
+  ["ee968b", "f09f93b0"], # [NEWSPAPER] U+E58B -> U+1F4F0
+  ["ee92a8", "f09f93a1"], # [SATELLITE ANTENNA] U+E4A8 -> U+1F4E1
+  ["ee9692", "f09f93a4"], # [OUTBOX TRAY] U+E592 -> U+1F4E4
+  ["ee9693", "f09f93a5"], # [INBOX TRAY] U+E593 -> U+1F4E5
+  ["ee949f", "f09f93a6"], # [PACKAGE] U+E51F -> U+1F4E6
+  ["eeadb1", "f09f93a7"], # [E-MAIL SYMBOL] U+EB71 -> U+1F4E7
+  ["eeabbd", "f09f94a0"], # [INPUT SYMBOL FOR LATIN CAPITAL LETTERS] U+EAFD -> U+1F520
+  ["eeabbe", "f09f94a1"], # [INPUT SYMBOL FOR LATIN SMALL LETTERS] U+EAFE -> U+1F521
+  ["eeabbf", "f09f94a2"], # [INPUT SYMBOL FOR NUMBERS] U+EAFF -> U+1F522
+  ["eeac80", "f09f94a3"], # [INPUT SYMBOL FOR SYMBOLS] U+EB00 -> U+1F523
+  ["eead95", "f09f94a4"], # [INPUT SYMBOL FOR LATIN LETTERS] U+EB55 -> U+1F524
+  ["eeac83", "e29c92"], # [BLACK NIB] U+EB03 -> U+2712
+  ["ee96b8", "f09f92bb"], # [PERSONAL COMPUTER] U+E5B8 -> U+1F4BB
+  ["ee92a1", "e29c8f"], # [PENCIL] U+E4A1 -> U+270F
+  ["ee92a0", "f09f938e"], # [PAPERCLIP] U+E4A0 -> U+1F4CE
+  ["ee978e", "f09f92bc"], # [BRIEFCASE] U+E5CE -> U+1F4BC
+  ["ee9682", "f09f92bd"], # [MINIDISC] U+E582 -> U+1F4BD
+  ["ee95a2", "f09f92be"], # [FLOPPY DISK] U+E562 -> U+1F4BE
+  ["ee948c", "f09f92bf"], # [OPTICAL DISC] U+E50C -> U+1F4BF
+  ["ee9496", "e29c82"], # [BLACK SCISSORS] U+E516 -> U+2702
+  ["ee95a0", "f09f938d"], # [ROUND PUSHPIN] U+E560 -> U+1F4CD
+  ["ee95a1", "f09f9383"], # [PAGE WITH CURL] U+E561 -> U+1F4C3
+  ["ee95a9", "f09f9384"], # [PAGE FACING UP] U+E569 -> U+1F4C4
+  ["ee95a3", "f09f9385"], # [CALENDAR] U+E563 -> U+1F4C5
+  ["ee968f", "f09f9381"], # [FILE FOLDER] U+E58F -> U+1F4C1
+  ["ee9690", "f09f9382"], # [OPEN FILE FOLDER] U+E590 -> U+1F4C2
+  ["ee95ab", "f09f9393"], # [NOTEBOOK] U+E56B -> U+1F4D3
+  ["ee929f", "f09f9396"], # [OPEN BOOK] U+E49F -> U+1F4D6
+  ["ee929d", "f09f9394"], # [NOTEBOOK WITH DECORATIVE COVER] U+E49D -> U+1F4D4
+  ["ee95a8", "f09f9395"], # [CLOSED BOOK] U+E568 -> U+1F4D5
+  ["ee95a5", "f09f9397"], # [GREEN BOOK] U+E565 -> U+1F4D7
+  ["ee95a6", "f09f9398"], # [BLUE BOOK] U+E566 -> U+1F4D8
+  ["ee95a7", "f09f9399"], # [ORANGE BOOK] U+E567 -> U+1F4D9
+  ["ee95af", "f09f939a"], # [BOOKS] U+E56F -> U+1F4DA
+  ["ee949d", "f09f939b"], # [NAME BADGE] U+E51D -> U+1F4DB
+  ["ee959f", "f09f939c"], # [SCROLL] U+E55F -> U+1F4DC
+  ["ee95a4", "f09f938b"], # [CLIPBOARD] U+E564 -> U+1F4CB
+  ["ee95aa", "f09f9386"], # [TEAR-OFF CALENDAR] U+E56A -> U+1F4C6
+  ["ee95b4", "f09f938a"], # [BAR CHART] U+E574 -> U+1F4CA
+  ["ee95b5", "f09f9388"], # [CHART WITH UPWARDS TREND] U+E575 -> U+1F4C8
+  ["ee95b6", "f09f9389"], # [CHART WITH DOWNWARDS TREND] U+E576 -> U+1F4C9
+  ["ee95ac", "f09f9387"], # [CARD INDEX] U+E56C -> U+1F4C7
+  ["ee95ad", "f09f938c"], # [PUSHPIN] U+E56D -> U+1F4CC
+  ["ee95ae", "f09f9392"], # [LEDGER] U+E56E -> U+1F4D2
+  ["ee95b0", "f09f938f"], # [STRAIGHT RULER] U+E570 -> U+1F4CF
+  ["ee92a2", "f09f9390"], # [TRIANGULAR RULER] U+E4A2 -> U+1F4D0
+  ["eeac8b", "f09f9391"], # [BOOKMARK TABS] U+EB0B -> U+1F4D1
+  ["ee92ba", "e29abe"], # [BASEBALL] U+E4BA -> U+26BE
+  ["ee9699", "e29bb3"], # [FLAG IN HOLE] U+E599 -> U+26F3
+  ["ee92b7", "f09f8ebe"], # [TENNIS RACQUET AND BALL] U+E4B7 -> U+1F3BE
+  ["ee92b6", "e29abd"], # [SOCCER BALL] U+E4B6 -> U+26BD
+  ["eeaaac", "f09f8ebf"], # [SKI AND SKI BOOT] U+EAAC -> U+1F3BF
+  ["ee969a", "f09f8f80"], # [BASKETBALL AND HOOP] U+E59A -> U+1F3C0
+  ["ee92b9", "f09f8f81"], # [CHEQUERED FLAG] U+E4B9 -> U+1F3C1
+  ["ee92b8", "f09f8f82"], # [SNOWBOARDER] U+E4B8 -> U+1F3C2
+  ["ee91ab", "f09f8f83"], # [RUNNER] U+E46B -> U+1F3C3
+  ["eead81", "f09f8f84"], # [SURFER] U+EB41 -> U+1F3C4
+  ["ee9793", "f09f8f86"], # [TROPHY] U+E5D3 -> U+1F3C6
+  ["ee92bb", "f09f8f88"], # [AMERICAN FOOTBALL] U+E4BB -> U+1F3C8
+  ["eeab9e", "f09f8f8a"], # [SWIMMER] U+EADE -> U+1F3CA
+  ["ee92b5", "f09f9a86"], # [TRAIN] U+E4B5 -> U+1F686
+  ["ee96bc", "f09f9a87"], # [METRO] U+E5BC -> U+1F687
+  ["ee92b0", "f09f9a85"], # [HIGH-SPEED TRAIN WITH BULLET NOSE] U+E4B0 -> U+1F685
+  ["ee92b1", "f09f9a97"], # [AUTOMOBILE] U+E4B1 -> U+1F697
+  ["ee92af", "f09f9a8d"], # [ONCOMING BUS] U+E4AF -> U+1F68D
+  ["ee92a7", "f09f9a8f"], # [BUS STOP] U+E4A7 -> U+1F68F
+  ["eeaa82", "f09f9aa2"], # [SHIP] U+EA82 -> U+1F6A2
+  ["ee92b3", "e29c88"], # [AIRPLANE] U+E4B3 -> U+2708
+  ["ee92b4", "e29bb5"], # [SAILBOAT] U+E4B4 -> U+26F5
+  ["eeadad", "f09f9a89"], # [STATION] U+EB6D -> U+1F689
+  ["ee9788", "f09f9a80"], # [ROCKET] U+E5C8 -> U+1F680
+  ["ee92b2", "f09f9a9a"], # [DELIVERY TRUCK] U+E4B2 -> U+1F69A
+  ["eeab9f", "f09f9a92"], # [FIRE ENGINE] U+EADF -> U+1F692
+  ["eeaba0", "f09f9a91"], # [AMBULANCE] U+EAE0 -> U+1F691
+  ["eeaba1", "f09f9a93"], # [POLICE CAR] U+EAE1 -> U+1F693
+  ["ee95b1", "e29bbd"], # [FUEL PUMP] U+E571 -> U+26FD
+  ["ee92a6", "f09f85bf"], # [NEGATIVE SQUARED LATIN CAPITAL LETTER P] U+E4A6 -> U+1F17F
+  ["ee91aa", "f09f9aa5"], # [HORIZONTAL TRAFFIC LIGHT] U+E46A -> U+1F6A5
+  ["ee9797", "f09f9aa7"], # [CONSTRUCTION SIGN] U+E5D7 -> U+1F6A7
+  ["eeadb3", "f09f9aa8"], # [POLICE CARS REVOLVING LIGHT] U+EB73 -> U+1F6A8
+  ["ee92bc", "e299a8"], # [HOT SPRINGS] U+E4BC -> U+2668
+  ["ee9790", "e29bba"], # [TENT] U+E5D0 -> U+26FA
+  ["ee91ad", "f09f8ea1"], # [FERRIS WHEEL] U+E46D -> U+1F3A1
+  ["eeaba2", "f09f8ea2"], # [ROLLER COASTER] U+EAE2 -> U+1F3A2
+  ["eead82", "f09f8ea3"], # [FISHING POLE AND FISH] U+EB42 -> U+1F3A3
+  ["ee9483", "f09f8ea4"], # [MICROPHONE] U+E503 -> U+1F3A4
+  ["ee9497", "f09f8ea5"], # [MOVIE CAMERA] U+E517 -> U+1F3A5
+  ["ee9488", "f09f8ea7"], # [HEADPHONE] U+E508 -> U+1F3A7
+  ["ee969c", "f09f8ea8"], # [ARTIST PALETTE] U+E59C -> U+1F3A8
+  ["eeabb5", "f09f8ea9"], # [TOP HAT] U+EAF5 -> U+1F3A9
+  ["ee969e", "f09f8eaa"], # [CIRCUS TENT] U+E59E -> U+1F3AA
+  ["ee929e", "f09f8eab"], # [TICKET] U+E49E -> U+1F3AB
+  ["ee92be", "f09f8eac"], # [CLAPPER BOARD] U+E4BE -> U+1F3AC
+  ["ee969d", "f09f8ead"], # [PERFORMING ARTS] U+E59D -> U+1F3AD
+  ["ee9386", "f09f8eae"], # [VIDEO GAME] U+E4C6 -> U+1F3AE
+  ["ee9791", "f09f8084"], # [MAHJONG TILE RED DRAGON] U+E5D1 -> U+1F004
+  ["ee9385", "f09f8eaf"], # [DIRECT HIT] U+E4C5 -> U+1F3AF
+  ["ee91ae", "f09f8eb0"], # [SLOT MACHINE] U+E46E -> U+1F3B0
+  ["eeab9d", "f09f8eb1"], # [BILLIARDS] U+EADD -> U+1F3B1
+  ["ee9388", "f09f8eb2"], # [GAME DIE] U+E4C8 -> U+1F3B2
+  ["eead83", "f09f8eb3"], # [BOWLING] U+EB43 -> U+1F3B3
+  ["eeadae", "f09f8eb4"], # [FLOWER PLAYING CARDS] U+EB6E -> U+1F3B4
+  ["eeadaf", "f09f838f"], # [PLAYING CARD BLACK JOKER] U+EB6F -> U+1F0CF
+  ["ee96be", "f09f8eb5"], # [MUSICAL NOTE] U+E5BE -> U+1F3B5
+  ["ee9485", "f09f8eb6"], # [MULTIPLE MUSICAL NOTES] U+E505 -> U+1F3B6
+  ["ee9486", "f09f8eb8"], # [GUITAR] U+E506 -> U+1F3B8
+  ["eead80", "f09f8eb9"], # [MUSICAL KEYBOARD] U+EB40 -> U+1F3B9
+  ["eeab9c", "f09f8eba"], # [TRUMPET] U+EADC -> U+1F3BA
+  ["ee9487", "f09f8ebb"], # [VIOLIN] U+E507 -> U+1F3BB
+  ["eeab8c", "f09f8ebc"], # [MUSICAL SCORE] U+EACC -> U+1F3BC
+  ["ee9495", "f09f93b7"], # [CAMERA] U+E515 -> U+1F4F7
+  ["ee95be", "f09f93b9"], # [VIDEO CAMERA] U+E57E -> U+1F4F9
+  ["ee9482", "f09f93ba"], # [TELEVISION] U+E502 -> U+1F4FA
+  ["ee96b9", "f09f93bb"], # [RADIO] U+E5B9 -> U+1F4FB
+  ["ee9680", "f09f93bc"], # [VIDEOCASSETTE] U+E580 -> U+1F4FC
+  ["ee93ab", "f09f928b"], # [KISS MARK] U+E4EB -> U+1F48B
+  ["eeadb8", "f09f928c"], # [LOVE LETTER] U+EB78 -> U+1F48C
+  ["ee9494", "f09f928d"], # [RING] U+E514 -> U+1F48D
+  ["ee978a", "f09f928f"], # [KISS] U+E5CA -> U+1F48F
+  ["eeaa95", "f09f9290"], # [BOUQUET] U+EA95 -> U+1F490
+  ["eeab9a", "f09f9291"], # [COUPLE WITH HEART] U+EADA -> U+1F491
+  ["eeaa83", "f09f949e"], # [NO ONE UNDER EIGHTEEN SYMBOL] U+EA83 -> U+1F51E
+  ["ee9598", "c2a9"], # [COPYRIGHT SIGN] U+E558 -> U+A9
+  ["ee9599", "c2ae"], # [REGISTERED SIGN] U+E559 -> U+AE
+  ["ee958e", "e284a2"], # [TRADE MARK SIGN] U+E54E -> U+2122
+  ["ee94b3", "e284b9"], # [INFORMATION SOURCE] U+E533 -> U+2139
+  ["eeae84", "23e283a3"], # [HASH KEY] U+EB84 -> U+23 U+20E3
+  ["ee94a2", "31e283a3"], # [KEYCAP 1] U+E522 -> U+31 U+20E3
+  ["ee94a3", "32e283a3"], # [KEYCAP 2] U+E523 -> U+32 U+20E3
+  ["ee94a4", "33e283a3"], # [KEYCAP 3] U+E524 -> U+33 U+20E3
+  ["ee94a5", "34e283a3"], # [KEYCAP 4] U+E525 -> U+34 U+20E3
+  ["ee94a6", "35e283a3"], # [KEYCAP 5] U+E526 -> U+35 U+20E3
+  ["ee94a7", "36e283a3"], # [KEYCAP 6] U+E527 -> U+36 U+20E3
+  ["ee94a8", "37e283a3"], # [KEYCAP 7] U+E528 -> U+37 U+20E3
+  ["ee94a9", "38e283a3"], # [KEYCAP 8] U+E529 -> U+38 U+20E3
+  ["ee94aa", "39e283a3"], # [KEYCAP 9] U+E52A -> U+39 U+20E3
+  ["ee96ac", "30e283a3"], # [KEYCAP 0] U+E5AC -> U+30 U+20E3
+  ["ee94ab", "f09f949f"], # [KEYCAP TEN] U+E52B -> U+1F51F
+  ["eeaa84", "f09f93b6"], # [ANTENNA WITH BARS] U+EA84 -> U+1F4F6
+  ["eeaa90", "f09f93b3"], # [VIBRATION MODE] U+EA90 -> U+1F4F3
+  ["eeaa91", "f09f93b4"], # [MOBILE PHONE OFF] U+EA91 -> U+1F4F4
+  ["ee9396", "f09f8d94"], # [HAMBURGER] U+E4D6 -> U+1F354
+  ["ee9395", "f09f8d99"], # [RICE BALL] U+E4D5 -> U+1F359
+  ["ee9390", "f09f8db0"], # [SHORTCAKE] U+E4D0 -> U+1F370
+  ["ee96b4", "f09f8d9c"], # [STEAMING BOWL] U+E5B4 -> U+1F35C
+  ["eeaaaf", "f09f8d9e"], # [BREAD] U+EAAF -> U+1F35E
+  ["ee9391", "f09f8db3"], # [COOKING] U+E4D1 -> U+1F373
+  ["eeaab0", "f09f8da6"], # [SOFT ICE CREAM] U+EAB0 -> U+1F366
+  ["eeaab1", "f09f8d9f"], # [FRENCH FRIES] U+EAB1 -> U+1F35F
+  ["eeaab2", "f09f8da1"], # [DANGO] U+EAB2 -> U+1F361
+  ["eeaab3", "f09f8d98"], # [RICE CRACKER] U+EAB3 -> U+1F358
+  ["eeaab4", "f09f8d9a"], # [COOKED RICE] U+EAB4 -> U+1F35A
+  ["eeaab5", "f09f8d9d"], # [SPAGHETTI] U+EAB5 -> U+1F35D
+  ["eeaab6", "f09f8d9b"], # [CURRY AND RICE] U+EAB6 -> U+1F35B
+  ["eeaab7", "f09f8da2"], # [ODEN] U+EAB7 -> U+1F362
+  ["eeaab8", "f09f8da3"], # [SUSHI] U+EAB8 -> U+1F363
+  ["eeaabd", "f09f8db1"], # [BENTO BOX] U+EABD -> U+1F371
+  ["eeaabe", "f09f8db2"], # [POT OF FOOD] U+EABE -> U+1F372
+  ["eeabaa", "f09f8da7"], # [SHAVED ICE] U+EAEA -> U+1F367
+  ["ee9384", "f09f8d96"], # [MEAT ON BONE] U+E4C4 -> U+1F356
+  ["ee93ad", "f09f8da5"], # [FISH CAKE WITH SWIRL DESIGN] U+E4ED -> U+1F365
+  ["eeacba", "f09f8da0"], # [ROASTED SWEET POTATO] U+EB3A -> U+1F360
+  ["eeacbb", "f09f8d95"], # [SLICE OF PIZZA] U+EB3B -> U+1F355
+  ["eeacbc", "f09f8d97"], # [POULTRY LEG] U+EB3C -> U+1F357
+  ["eead8a", "f09f8da8"], # [ICE CREAM] U+EB4A -> U+1F368
+  ["eead8b", "f09f8da9"], # [DOUGHNUT] U+EB4B -> U+1F369
+  ["eead8c", "f09f8daa"], # [COOKIE] U+EB4C -> U+1F36A
+  ["eead8d", "f09f8dab"], # [CHOCOLATE BAR] U+EB4D -> U+1F36B
+  ["eead8e", "f09f8dac"], # [CANDY] U+EB4E -> U+1F36C
+  ["eead8f", "f09f8dad"], # [LOLLIPOP] U+EB4F -> U+1F36D
+  ["eead96", "f09f8dae"], # [CUSTARD] U+EB56 -> U+1F36E
+  ["eead99", "f09f8daf"], # [HONEY POT] U+EB59 -> U+1F36F
+  ["eeadb0", "f09f8da4"], # [FRIED SHRIMP] U+EB70 -> U+1F364
+  ["ee92ac", "f09f8db4"], # [FORK AND KNIFE] U+E4AC -> U+1F374
+  ["ee9697", "e29895"], # [HOT BEVERAGE] U+E597 -> U+2615
+  ["ee9382", "f09f8db8"], # [COCKTAIL GLASS] U+E4C2 -> U+1F378
+  ["ee9383", "f09f8dba"], # [BEER MUG] U+E4C3 -> U+1F37A
+  ["eeaaae", "f09f8db5"], # [TEACUP WITHOUT HANDLE] U+EAAE -> U+1F375
+  ["eeaa97", "f09f8db6"], # [SAKE BOTTLE AND CUP] U+EA97 -> U+1F376
+  ["ee9381", "f09f8db7"], # [WINE GLASS] U+E4C1 -> U+1F377
+  ["eeaa98", "f09f8dbb"], # [CLINKING BEER MUGS] U+EA98 -> U+1F37B
+  ["eeacbe", "f09f8db9"], # [TROPICAL DRINK] U+EB3E -> U+1F379
+  ["ee9595", "e28697"], # [NORTH EAST ARROW] U+E555 -> U+2197
+  ["ee958d", "e28698"], # [SOUTH EAST ARROW] U+E54D -> U+2198
+  ["ee958c", "e28696"], # [NORTH WEST ARROW] U+E54C -> U+2196
+  ["ee9596", "e28699"], # [SOUTH WEST ARROW] U+E556 -> U+2199
+  ["eeacad", "e2a4b4"], # [ARROW POINTING RIGHTWARDS THEN CURVING UPWARDS] U+EB2D -> U+2934
+  ["eeacae", "e2a4b5"], # [ARROW POINTING RIGHTWARDS THEN CURVING DOWNWARDS] U+EB2E -> U+2935
+  ["eeadba", "e28694"], # [LEFT RIGHT ARROW] U+EB7A -> U+2194
+  ["eeadbb", "e28695"], # [UP DOWN ARROW] U+EB7B -> U+2195
+  ["ee94bf", "e2ac86"], # [UPWARDS BLACK ARROW] U+E53F -> U+2B06
+  ["ee9580", "e2ac87"], # [DOWNWARDS BLACK ARROW] U+E540 -> U+2B07
+  ["ee9592", "e29ea1"], # [BLACK RIGHTWARDS ARROW] U+E552 -> U+27A1
+  ["ee9593", "e2ac85"], # [LEFTWARDS BLACK ARROW] U+E553 -> U+2B05
+  ["ee94ae", "e296b6"], # [BLACK RIGHT-POINTING TRIANGLE] U+E52E -> U+25B6
+  ["ee94ad", "e29780"], # [BLACK LEFT-POINTING TRIANGLE] U+E52D -> U+25C0
+  ["ee94b0", "e28fa9"], # [BLACK RIGHT-POINTING DOUBLE TRIANGLE] U+E530 -> U+23E9
+  ["ee94af", "e28faa"], # [BLACK LEFT-POINTING DOUBLE TRIANGLE] U+E52F -> U+23EA
+  ["ee9585", "e28fab"], # [BLACK UP-POINTING DOUBLE TRIANGLE] U+E545 -> U+23EB
+  ["ee9584", "e28fac"], # [BLACK DOWN-POINTING DOUBLE TRIANGLE] U+E544 -> U+23EC
+  ["ee959a", "f09f94ba"], # [UP-POINTING RED TRIANGLE] U+E55A -> U+1F53A
+  ["ee959b", "f09f94bb"], # [DOWN-POINTING RED TRIANGLE] U+E55B -> U+1F53B
+  ["ee9583", "f09f94bc"], # [UP-POINTING SMALL RED TRIANGLE] U+E543 -> U+1F53C
+  ["ee9582", "f09f94bd"], # [DOWN-POINTING SMALL RED TRIANGLE] U+E542 -> U+1F53D
+  ["eeaaad", "e2ad95"], # [HEAVY LARGE CIRCLE] U+EAAD -> U+2B55
+  ["ee9590", "e29d8c"], # [CROSS MARK] U+E550 -> U+274C
+  ["ee9591", "e29d8e"], # [NEGATIVE SQUARED CROSS MARK] U+E551 -> U+274E
+  ["ee9282", "e29da2"], # [HEAVY EXCLAMATION MARK ORNAMENT] U+E482 -> U+2762
+  ["eeacaf", "e28189"], # [EXCLAMATION QUESTION MARK] U+EB2F -> U+2049
+  ["eeacb0", "e280bc"], # [DOUBLE EXCLAMATION MARK] U+EB30 -> U+203C
+  ["ee9283", "e29d93"], # [BLACK QUESTION MARK ORNAMENT] U+E483 -> U+2753
+  ["eeacb1", "e29eb0"], # [CURLY LOOP] U+EB31 -> U+27B0
+  ["ee9695", "e29da4"], # [HEAVY BLACK HEART] U+E595 -> U+2764
+  ["eeadb5", "f09f9293"], # [BEATING HEART] U+EB75 -> U+1F493
+  ["ee91b7", "f09f9294"], # [BROKEN HEART] U+E477 -> U+1F494
+  ["ee91b8", "f09f9295"], # [TWO HEARTS] U+E478 -> U+1F495
+  ["eeaaa6", "f09f9296"], # [SPARKLING HEART] U+EAA6 -> U+1F496
+  ["ee93aa", "f09f9298"], # [HEART WITH ARROW] U+E4EA -> U+1F498
+  ["eeaaa7", "f09f9299"], # [BLUE HEART] U+EAA7 -> U+1F499
+  ["eeaaa8", "f09f929a"], # [GREEN HEART] U+EAA8 -> U+1F49A
+  ["eeaaa9", "f09f929b"], # [YELLOW HEART] U+EAA9 -> U+1F49B
+  ["eeaaaa", "f09f929c"], # [PURPLE HEART] U+EAAA -> U+1F49C
+  ["eead94", "f09f929d"], # [HEART WITH RIBBON] U+EB54 -> U+1F49D
+  ["ee96af", "f09f929e"], # [REVOLVING HEARTS] U+E5AF -> U+1F49E
+  ["eeaaa5", "e299a5"], # [BLACK HEART SUIT] U+EAA5 -> U+2665
+  ["ee96a1", "e299a0"], # [BLACK SPADE SUIT] U+E5A1 -> U+2660
+  ["ee96a2", "e299a6"], # [BLACK DIAMOND SUIT] U+E5A2 -> U+2666
+  ["ee96a3", "e299a3"], # [BLACK CLUB SUIT] U+E5A3 -> U+2663
+  ["ee91bd", "f09f9aac"], # [SMOKING SYMBOL] U+E47D -> U+1F6AC
+  ["ee91be", "f09f9aad"], # [NO SMOKING SYMBOL] U+E47E -> U+1F6AD
+  ["ee91bf", "e299bf"], # [WHEELCHAIR SYMBOL] U+E47F -> U+267F
+  ["eeacac", "f09f9aa9"], # [TRIANGULAR FLAG ON POST] U+EB2C -> U+1F6A9
+  ["ee9281", "e29aa0"], # [WARNING SIGN] U+E481 -> U+26A0
+  ["ee9284", "e29b94"], # [NO ENTRY] U+E484 -> U+26D4
+  ["eeadb9", "e299bb"], # [BLACK UNIVERSAL RECYCLING SYMBOL] U+EB79 -> U+267B
+  ["ee92ae", "f09f9ab2"], # [BICYCLE] U+E4AE -> U+1F6B2
+  ["eeadb2", "f09f9ab6"], # [PEDESTRIAN] U+EB72 -> U+1F6B6
+  ["ee9798", "f09f9b80"], # [BATH] U+E5D8 -> U+1F6C0
+  ["ee92a5", "f09f9abb"], # [RESTROOM] U+E4A5 -> U+1F6BB
+  ["ee9581", "f09f9aab"], # [NO ENTRY SIGN] U+E541 -> U+1F6AB
+  ["ee9597", "e29c94"], # [HEAVY CHECK MARK] U+E557 -> U+2714
+  ["ee96ab", "f09f8691"], # [SQUARED CL] U+E5AB -> U+1F191
+  ["eeaa85", "f09f8692"], # [SQUARED COOL] U+EA85 -> U+1F192
+  ["ee95b8", "f09f8693"], # [SQUARED FREE] U+E578 -> U+1F193
+  ["eeaa88", "f09f8694"], # [SQUARED ID] U+EA88 -> U+1F194
+  ["ee96b5", "f09f8695"], # [SQUARED NEW] U+E5B5 -> U+1F195
+  ["ee96ad", "f09f8697"], # [SQUARED OK] U+E5AD -> U+1F197
+  ["ee93a8", "f09f8698"], # [SQUARED SOS] U+E4E8 -> U+1F198
+  ["ee948f", "f09f8699"], # [SQUARED UP WITH EXCLAMATION MARK] U+E50F -> U+1F199
+  ["ee9792", "f09f869a"], # [SQUARED VS] U+E5D2 -> U+1F19A
+  ["eeaa87", "f09f8882"], # [SQUARED KATAKANA SA] U+EA87 -> U+1F202
+  ["eeaa8a", "f09f88b3"], # [SQUARED CJK UNIFIED IDEOGRAPH-7A7A] U+EA8A -> U+1F233
+  ["eeaa89", "f09f88b5"], # [SQUARED CJK UNIFIED IDEOGRAPH-6E80] U+EA89 -> U+1F235
+  ["eeaa86", "f09f88b9"], # [SQUARED CJK UNIFIED IDEOGRAPH-5272] U+EA86 -> U+1F239
+  ["eeaa8b", "f09f88af"], # [SQUARED CJK UNIFIED IDEOGRAPH-6307] U+EA8B -> U+1F22F
+  ["eeaa8c", "f09f88ba"], # [SQUARED CJK UNIFIED IDEOGRAPH-55B6] U+EA8C -> U+1F23A
+  ["ee93b1", "e38a99"], # [CIRCLED IDEOGRAPH SECRET] U+E4F1 -> U+3299
+  ["eeaa99", "e38a97"], # [CIRCLED IDEOGRAPH CONGRATULATION] U+EA99 -> U+3297
+  ["ee93b7", "f09f8990"], # [CIRCLED IDEOGRAPH ADVANTAGE] U+E4F7 -> U+1F250
+  ["eeac81", "f09f8991"], # [CIRCLED IDEOGRAPH ACCEPT] U+EB01 -> U+1F251
+  ["ee94bc", "e29e95"], # [HEAVY PLUS SIGN] U+E53C -> U+2795
+  ["ee94bd", "e29e96"], # [HEAVY MINUS SIGN] U+E53D -> U+2796
+  ["ee958f", "e29c96"], # [HEAVY MULTIPLICATION X] U+E54F -> U+2716
+  ["ee9594", "e29e97"], # [HEAVY DIVISION SIGN] U+E554 -> U+2797
+  ["ee91b6", "f09f92a1"], # [ELECTRIC LIGHT BULB] U+E476 -> U+1F4A1
+  ["ee93a5", "f09f92a2"], # [ANGER SYMBOL] U+E4E5 -> U+1F4A2
+  ["ee91ba", "f09f92a3"], # [BOMB] U+E47A -> U+1F4A3
+  ["ee91b5", "f09f92a4"], # [SLEEPING SYMBOL] U+E475 -> U+1F4A4
+  ["ee96b0", "f09f92a5"], # [COLLISION SYMBOL] U+E5B0 -> U+1F4A5
+  ["ee96b1", "f09f92a6"], # [SPLASHING SWEAT SYMBOL] U+E5B1 -> U+1F4A6
+  ["ee93a6", "f09f92a7"], # [DROP OF WATER] U+E4E6 -> U+1F4A7
+  ["ee93b4", "f09f92a8"], # [DASH SYMBOL] U+E4F4 -> U+1F4A8
+  ["ee93b5", "f09f92a9"], # [PILE OF POO] U+E4F5 -> U+1F4A9
+  ["ee93a9", "f09f92aa"], # [FLEXED BICEPS] U+E4E9 -> U+1F4AA
+  ["eead9c", "f09f92ab"], # [DIZZY SYMBOL] U+EB5C -> U+1F4AB
+  ["ee93bd", "f09f92ac"], # [SPEECH BALLOON] U+E4FD -> U+1F4AC
+  ["eeaaab", "e29ca8"], # [SPARKLES] U+EAAB -> U+2728
+  ["ee91b9", "e29cb4"], # [EIGHT POINTED BLACK STAR] U+E479 -> U+2734
+  ["ee94be", "e29cb3"], # [EIGHT SPOKED ASTERISK] U+E53E -> U+2733
+  ["ee94ba", "e29aaa"], # [MEDIUM WHITE CIRCLE] U+E53A -> U+26AA
+  ["ee94bb", "e29aab"], # [MEDIUM BLACK CIRCLE] U+E53B -> U+26AB
+  ["ee958a", "f09f94b4"], # [LARGE RED CIRCLE] U+E54A -> U+1F534
+  ["ee958b", "f09f94b5"], # [LARGE BLUE CIRCLE] U+E54B -> U+1F535
+  ["ee928b", "e2ad90"], # [WHITE MEDIUM STAR] U+E48B -> U+2B50
+  ["ee9588", "e2ac9c"], # [WHITE LARGE SQUARE] U+E548 -> U+2B1C
+  ["ee9589", "e2ac9b"], # [BLACK LARGE SQUARE] U+E549 -> U+2B1B
+  ["ee94b1", "e296ab"], # [WHITE SMALL SQUARE] U+E531 -> U+25AB
+  ["ee94b2", "e296aa"], # [BLACK SMALL SQUARE] U+E532 -> U+25AA
+  ["ee94b4", "e297bd"], # [WHITE MEDIUM SMALL SQUARE] U+E534 -> U+25FD
+  ["ee94b5", "e297be"], # [BLACK MEDIUM SMALL SQUARE] U+E535 -> U+25FE
+  ["ee94b8", "e297bb"], # [WHITE MEDIUM SQUARE] U+E538 -> U+25FB
+  ["ee94b9", "e297bc"], # [BLACK MEDIUM SQUARE] U+E539 -> U+25FC
+  ["ee9586", "f09f94b6"], # [LARGE ORANGE DIAMOND] U+E546 -> U+1F536
+  ["ee9587", "f09f94b7"], # [LARGE BLUE DIAMOND] U+E547 -> U+1F537
+  ["ee94b6", "f09f94b8"], # [SMALL ORANGE DIAMOND] U+E536 -> U+1F538
+  ["ee94b7", "f09f94b9"], # [SMALL BLUE DIAMOND] U+E537 -> U+1F539
+  ["ee91ac", "e29d87"], # [SPARKLE] U+E46C -> U+2747
+  ["ee93b0", "f09f92ae"], # [WHITE FLOWER] U+E4F0 -> U+1F4AE
+  ["ee93b2", "f09f92af"], # [HUNDRED POINTS SYMBOL] U+E4F2 -> U+1F4AF
+  ["ee959d", "e286a9"], # [LEFTWARDS ARROW WITH HOOK] U+E55D -> U+21A9
+  ["ee959c", "e286aa"], # [RIGHTWARDS ARROW WITH HOOK] U+E55C -> U+21AA
+  ["eeac8d", "f09f9483"], # [CLOCKWISE DOWNWARDS AND UPWARDS OPEN CIRCLE ARROWS] U+EB0D -> U+1F503
+  ["ee9491", "f09f948a"], # [SPEAKER WITH THREE SOUND WAVES] U+E511 -> U+1F50A
+  ["ee9684", "f09f948b"], # [BATTERY] U+E584 -> U+1F50B
+  ["ee9689", "f09f948c"], # [ELECTRIC PLUG] U+E589 -> U+1F50C
+  ["ee9498", "f09f948d"], # [LEFT-POINTING MAGNIFYING GLASS] U+E518 -> U+1F50D
+  ["eeac85", "f09f948e"], # [RIGHT-POINTING MAGNIFYING GLASS] U+EB05 -> U+1F50E
+  ["ee949c", "f09f9492"], # [LOCK] U+E51C -> U+1F512
+  ["eeac8c", "f09f948f"], # [LOCK WITH INK PEN] U+EB0C -> U+1F50F
+  ["eeabbc", "f09f9490"], # [CLOSED LOCK WITH KEY] U+EAFC -> U+1F510
+  ["ee9499", "f09f9491"], # [KEY] U+E519 -> U+1F511
+  ["ee9492", "f09f9494"], # [BELL] U+E512 -> U+1F514
+  ["eeac82", "e29891"], # [BALLOT BOX WITH CHECK] U+EB02 -> U+2611
+  ["eeac84", "f09f9498"], # [RADIO BUTTON] U+EB04 -> U+1F518
+  ["eeac87", "f09f9496"], # [BOOKMARK] U+EB07 -> U+1F516
+  ["ee968a", "f09f9497"], # [LINK SYMBOL] U+E58A -> U+1F517
+  ["eeac86", "f09f9499"], # [BACK WITH LEFTWARDS ARROW ABOVE] U+EB06 -> U+1F519
+  ["ee968c", "e28083"], # [EM SPACE] U+E58C -> U+2003
+  ["ee968d", "e28082"], # [EN SPACE] U+E58D -> U+2002
+  ["ee968e", "e28085"], # [FOUR-PER-EM SPACE] U+E58E -> U+2005
+  ["ee959e", "e29c85"], # [WHITE HEAVY CHECK MARK] U+E55E -> U+2705
+  ["eeae83", "e29c8a"], # [RAISED FIST] U+EB83 -> U+270A
+  ["ee96a7", "e29c8b"], # [RAISED HAND] U+E5A7 -> U+270B
+  ["ee96a6", "e29c8c"], # [VICTORY HAND] U+E5A6 -> U+270C
+  ["ee93b3", "f09f918a"], # [FISTED HAND SIGN] U+E4F3 -> U+1F44A
+  ["ee93b9", "f09f918d"], # [THUMBS UP SIGN] U+E4F9 -> U+1F44D
+  ["ee93b6", "e2989d"], # [WHITE UP POINTING INDEX] U+E4F6 -> U+261D
+  ["eeaa8d", "f09f9186"], # [WHITE UP POINTING BACKHAND INDEX] U+EA8D -> U+1F446
+  ["eeaa8e", "f09f9187"], # [WHITE DOWN POINTING BACKHAND INDEX] U+EA8E -> U+1F447
+  ["ee93bf", "f09f9188"], # [WHITE LEFT POINTING BACKHAND INDEX] U+E4FF -> U+1F448
+  ["ee9480", "f09f9189"], # [WHITE RIGHT POINTING BACKHAND INDEX] U+E500 -> U+1F449
+  ["eeab96", "f09f918b"], # [WAVING HAND SIGN] U+EAD6 -> U+1F44B
+  ["eeab93", "f09f918f"], # [CLAPPING HANDS SIGN] U+EAD3 -> U+1F44F
+  ["eeab94", "f09f918c"], # [OK HAND SIGN] U+EAD4 -> U+1F44C
+  ["eeab95", "f09f918e"], # [THUMBS DOWN SIGN] U+EAD5 -> U+1F44E
+  ["ee95b7", "5b455a5d"], # [EMOJI COMPATIBILITY SYMBOL-37] U+E577 -> "[EZ]"
+  ["ee96b2", "5b657a706c75735d"], # [EMOJI COMPATIBILITY SYMBOL-38] U+E5B2 -> "[ezplus]"
+  ["eeaa9d", "5b455ae3838ae383935d"], # [EMOJI COMPATIBILITY SYMBOL-39] U+EA9D -> "[EZナビ]"
+  ["eeadb4", "5b455ae383a0e383bce38393e383bc5d"], # [EMOJI COMPATIBILITY SYMBOL-40] U+EB74 -> "[EZムービー]"
+  ["eeae81", "5b43e383a1e383bce383ab5d"], # [EMOJI COMPATIBILITY SYMBOL-41] U+EB81 -> "[Cメール]"
+  ["eeae89", "5b4a6176615d"], # [EMOJI COMPATIBILITY SYMBOL-42] U+EB89 -> "[Java]"
+  ["eeae8a", "5b425245575d"], # [EMOJI COMPATIBILITY SYMBOL-43] U+EB8A -> "[BREW]"
+  ["eeae8b", "5b455ae79d80e38186e3819f5d"], # [EMOJI COMPATIBILITY SYMBOL-44] U+EB8B -> "[EZ着うた]"
+  ["eeae8c", "5b455ae3838ae383935d"], # [EMOJI COMPATIBILITY SYMBOL-45] U+EB8C -> "[EZナビ]"
+  ["eeae8d", "5b57494e5d"], # [EMOJI COMPATIBILITY SYMBOL-46] U+EB8D -> "[WIN]"
+  ["eeae8e", "5be38397e383ace3839fe382a2e383a05d"], # [EMOJI COMPATIBILITY SYMBOL-47] U+EB8E -> "[プレミアム]"
+  ["eeabbb", "5be382aae383bce38397e383b3e382a6e382a7e383965d"], # [EMOJI COMPATIBILITY SYMBOL-48] U+EAFB -> "[オープンウェブ]"
+  ["ee9686", "5b5044435d"], # [EMOJI COMPATIBILITY SYMBOL-49] U+E586 -> "[PDC]"
+  ["ee94ac", "5b515d"], # [EMOJI COMPATIBILITY SYMBOL-66] U+E52C -> "[Q]"
+]
+
 EMOJI_EXCHANGE_TBL['UTF8-SoftBank']['UTF8-DoCoMo'] = [
   ["ee818a", "ee98be"], # [BLACK SUN WITH RAYS] U+E04A -> U+E63E
   ["ee8189", "ee98bf"], # [CLOUD] U+E049 -> U+E63F
@@ -4266,6 +5201,494 @@ EMOJI_EXCHANGE_TBL['UTF8-SoftBank']['UTF8-Google'] = [
   ["ee8999", "f3beb9bc"], # [EMOJI COMPATIBILITY SYMBOL-62] U+E259 -> U+FEE7C
   ["ee899a", "f3beb9bd"], # [EMOJI COMPATIBILITY SYMBOL-63] U+E25A -> U+FEE7D
   ["ee948a", "f3be9385"], # [EMOJI COMPATIBILITY SYMBOL-64] U+E50A -> U+FE4C5
+]
+
+EMOJI_EXCHANGE_TBL['UTF8-SoftBank']['UTF-8'] = [
+  ["ee818a", "e29880"], # [BLACK SUN WITH RAYS] U+E04A -> U+2600
+  ["ee8189", "e29881"], # [CLOUD] U+E049 -> U+2601
+  ["ee818b", "e29894"], # [UMBRELLA WITH RAIN DROPS] U+E04B -> U+2614
+  ["ee8188", "e29b84"], # [SNOWMAN WITHOUT SNOW] U+E048 -> U+26C4
+  ["ee84bd", "e29aa1"], # [HIGH VOLTAGE SIGN] U+E13D -> U+26A1
+  ["ee9183", "f09f8c80"], # [CYCLONE] U+E443 -> U+1F300
+  ["ee90bc", "f09f8c82"], # [CLOSED UMBRELLA] U+E43C -> U+1F302
+  ["ee918b", "f09f8c83"], # [NIGHT WITH STARS] U+E44B -> U+1F303
+  ["ee818d", "f09f8c84"], # [SUNRISE OVER MOUNTAINS] U+E04D -> U+1F304
+  ["ee9189", "f09f8c85"], # [SUNRISE] U+E449 -> U+1F305
+  ["ee8586", "5be5a495e784bce381915d"], # [CITYSCAPE AT DUSK] U+E146 -> "[夕焼け]"
+  ["ee918a", "f09f8c87"], # [SUNSET OVER BUILDINGS] U+E44A -> U+1F307
+  ["ee918c", "f09f8c88"], # [RAINBOW] U+E44C -> U+1F308
+  ["ee90be", "f09f8c8a"], # [WATER WAVE] U+E43E -> U+1F30A
+  ["ee818c", "f09f8c99"], # [CRESCENT MOON] U+E04C -> U+1F319
+  ["ee8cb5", "f09f8c9f"], # [GLOWING STAR] U+E335 -> U+1F31F
+  ["ee80a4", "f09f9590"], # [CLOCK FACE ONE OCLOCK] U+E024 -> U+1F550
+  ["ee80a5", "f09f9591"], # [CLOCK FACE TWO OCLOCK] U+E025 -> U+1F551
+  ["ee80a6", "f09f9592"], # [CLOCK FACE THREE OCLOCK] U+E026 -> U+1F552
+  ["ee80a7", "f09f9593"], # [CLOCK FACE FOUR OCLOCK] U+E027 -> U+1F553
+  ["ee80a8", "f09f9594"], # [CLOCK FACE FIVE OCLOCK] U+E028 -> U+1F554
+  ["ee80a9", "f09f9595"], # [CLOCK FACE SIX OCLOCK] U+E029 -> U+1F555
+  ["ee80aa", "f09f9596"], # [CLOCK FACE SEVEN OCLOCK] U+E02A -> U+1F556
+  ["ee80ab", "f09f9597"], # [CLOCK FACE EIGHT OCLOCK] U+E02B -> U+1F557
+  ["ee80ac", "f09f9598"], # [CLOCK FACE NINE OCLOCK] U+E02C -> U+1F558
+  ["ee80ad", "f09f9599"], # [CLOCK FACE TEN OCLOCK] U+E02D -> U+1F559
+  ["ee80ae", "f09f959a"], # [CLOCK FACE ELEVEN OCLOCK] U+E02E -> U+1F55A
+  ["ee80af", "f09f959b"], # [CLOCK FACE TWELVE OCLOCK] U+E02F -> U+1F55B
+  ["ee88bf", "e29988"], # [ARIES] U+E23F -> U+2648
+  ["ee8980", "e29989"], # [TAURUS] U+E240 -> U+2649
+  ["ee8981", "e2998a"], # [GEMINI] U+E241 -> U+264A
+  ["ee8982", "e2998b"], # [CANCER] U+E242 -> U+264B
+  ["ee8983", "e2998c"], # [LEO] U+E243 -> U+264C
+  ["ee8984", "e2998d"], # [VIRGO] U+E244 -> U+264D
+  ["ee8985", "e2998e"], # [LIBRA] U+E245 -> U+264E
+  ["ee8986", "e2998f"], # [SCORPIUS] U+E246 -> U+264F
+  ["ee8987", "e29990"], # [SAGITTARIUS] U+E247 -> U+2650
+  ["ee8988", "e29991"], # [CAPRICORN] U+E248 -> U+2651
+  ["ee8989", "e29992"], # [AQUARIUS] U+E249 -> U+2652
+  ["ee898a", "e29993"], # [PISCES] U+E24A -> U+2653
+  ["ee898b", "e29b8e"], # [OPHIUCHUS] U+E24B -> U+26CE
+  ["ee8490", "f09f8d80"], # [FOUR LEAF CLOVER] U+E110 -> U+1F340
+  ["ee8c84", "f09f8cb7"], # [TULIP] U+E304 -> U+1F337
+  ["ee8498", "f09f8d81"], # [MAPLE LEAF] U+E118 -> U+1F341
+  ["ee80b0", "f09f8cb8"], # [CHERRY BLOSSOM] U+E030 -> U+1F338
+  ["ee80b2", "f09f8cb9"], # [ROSE] U+E032 -> U+1F339
+  ["ee8499", "f09f8d82"], # [FALLEN LEAF] U+E119 -> U+1F342
+  ["ee9187", "f09f8d83"], # [LEAF FLUTTERING IN WIND] U+E447 -> U+1F343
+  ["ee8c83", "f09f8cba"], # [HIBISCUS] U+E303 -> U+1F33A
+  ["ee8c85", "f09f8cbb"], # [SUNFLOWER] U+E305 -> U+1F33B
+  ["ee8c87", "f09f8cb4"], # [PALM TREE] U+E307 -> U+1F334
+  ["ee8c88", "f09f8cb5"], # [CACTUS] U+E308 -> U+1F335
+  ["ee9184", "f09f8cbe"], # [EAR OF RICE] U+E444 -> U+1F33E
+  ["ee8d85", "f09f8d8e"], # [RED APPLE] U+E345 -> U+1F34E
+  ["ee8d86", "f09f8d8a"], # [TANGERINE] U+E346 -> U+1F34A
+  ["ee8d87", "f09f8d93"], # [STRAWBERRY] U+E347 -> U+1F353
+  ["ee8d88", "f09f8d89"], # [WATERMELON] U+E348 -> U+1F349
+  ["ee8d89", "f09f8d85"], # [TOMATO] U+E349 -> U+1F345
+  ["ee8d8a", "f09f8d86"], # [AUBERGINE] U+E34A -> U+1F346
+  ["ee9099", "f09f9180"], # [EYES] U+E419 -> U+1F440
+  ["ee909b", "f09f9182"], # [EAR] U+E41B -> U+1F442
+  ["ee909a", "f09f9183"], # [NOSE] U+E41A -> U+1F443
+  ["ee909c", "f09f9184"], # [MOUTH] U+E41C -> U+1F444
+  ["ee8c9c", "f09f9284"], # [LIPSTICK] U+E31C -> U+1F484
+  ["ee8c9d", "f09f9285"], # [NAIL POLISH] U+E31D -> U+1F485
+  ["ee8c9e", "f09f9286"], # [FACE MASSAGE] U+E31E -> U+1F486
+  ["ee8c9f", "f09f9287"], # [HAIRCUT] U+E31F -> U+1F487
+  ["ee8ca0", "f09f9288"], # [BARBER POLE] U+E320 -> U+1F488
+  ["ee8081", "f09f91a6"], # [BOY] U+E001 -> U+1F466
+  ["ee8082", "f09f91a7"], # [GIRL] U+E002 -> U+1F467
+  ["ee8084", "f09f91a8"], # [MAN] U+E004 -> U+1F468
+  ["ee8085", "f09f91a9"], # [WOMAN] U+E005 -> U+1F469
+  ["ee90a8", "f09f91ab"], # [MAN AND WOMAN HOLDING HANDS] U+E428 -> U+1F46B
+  ["ee8592", "f09f91ae"], # [POLICE OFFICER] U+E152 -> U+1F46E
+  ["ee90a9", "f09f91af"], # [WOMAN WITH BUNNY EARS] U+E429 -> U+1F46F
+  ["ee9495", "f09f91b1"], # [WESTERN PERSON] U+E515 -> U+1F471
+  ["ee9496", "f09f91b2"], # [MAN WITH GUA PI MAO] U+E516 -> U+1F472
+  ["ee9497", "f09f91b3"], # [MAN WITH TURBAN] U+E517 -> U+1F473
+  ["ee9498", "f09f91b4"], # [OLDER MAN] U+E518 -> U+1F474
+  ["ee9499", "f09f91b5"], # [OLDER WOMAN] U+E519 -> U+1F475
+  ["ee949a", "f09f91b6"], # [BABY] U+E51A -> U+1F476
+  ["ee949b", "f09f91b7"], # [CONSTRUCTION WORKER] U+E51B -> U+1F477
+  ["ee949c", "f09f91b8"], # [PRINCESS] U+E51C -> U+1F478
+  ["ee849b", "f09f91bb"], # [GHOST] U+E11B -> U+1F47B
+  ["ee818e", "f09f91bc"], # [BABY ANGEL] U+E04E -> U+1F47C
+  ["ee848c", "f09f91bd"], # [EXTRATERRESTRIAL ALIEN] U+E10C -> U+1F47D
+  ["ee84ab", "f09f91be"], # [ALIEN MONSTER] U+E12B -> U+1F47E
+  ["ee849a", "f09f91bf"], # [IMP] U+E11A -> U+1F47F
+  ["ee849c", "f09f9280"], # [SKULL] U+E11C -> U+1F480
+  ["ee8993", "f09f9281"], # [INFORMATION DESK PERSON] U+E253 -> U+1F481
+  ["ee949e", "f09f9282"], # [GUARDSMAN] U+E51E -> U+1F482
+  ["ee949f", "f09f9283"], # [DANCER] U+E51F -> U+1F483
+  ["ee94ad", "f09f908d"], # [SNAKE] U+E52D -> U+1F40D
+  ["ee84b4", "f09f908e"], # [HORSE] U+E134 -> U+1F40E
+  ["ee94ae", "f09f9094"], # [CHICKEN] U+E52E -> U+1F414
+  ["ee94af", "f09f9097"], # [BOAR] U+E52F -> U+1F417
+  ["ee94b0", "f09f90ab"], # [BACTRIAN CAMEL] U+E530 -> U+1F42B
+  ["ee94a6", "f09f9098"], # [ELEPHANT] U+E526 -> U+1F418
+  ["ee94a7", "f09f90a8"], # [KOALA] U+E527 -> U+1F428
+  ["ee94a8", "f09f9092"], # [MONKEY] U+E528 -> U+1F412
+  ["ee94a9", "f09f9091"], # [SHEEP] U+E529 -> U+1F411
+  ["ee848a", "f09f9099"], # [OCTOPUS] U+E10A -> U+1F419
+  ["ee9181", "f09f909a"], # [SPIRAL SHELL] U+E441 -> U+1F41A
+  ["ee94a5", "f09f909b"], # [BUG] U+E525 -> U+1F41B
+  ["ee94a2", "f09f90a0"], # [TROPICAL FISH] U+E522 -> U+1F420
+  ["ee94a3", "f09f90a4"], # [BABY CHICK] U+E523 -> U+1F424
+  ["ee94a1", "f09f90a6"], # [BIRD] U+E521 -> U+1F426
+  ["ee8195", "f09f90a7"], # [PENGUIN] U+E055 -> U+1F427
+  ["ee8099", "f09f909f"], # [FISH] U+E019 -> U+1F41F
+  ["ee94a0", "f09f90ac"], # [DOLPHIN] U+E520 -> U+1F42C
+  ["ee8193", "f09f90ad"], # [MOUSE FACE] U+E053 -> U+1F42D
+  ["ee8190", "f09f90af"], # [TIGER FACE] U+E050 -> U+1F42F
+  ["ee818f", "f09f90b1"], # [CAT FACE] U+E04F -> U+1F431
+  ["ee8194", "f09f90b3"], # [SPOUTING WHALE] U+E054 -> U+1F433
+  ["ee809a", "f09f90b4"], # [HORSE FACE] U+E01A -> U+1F434
+  ["ee8489", "f09f90b5"], # [MONKEY FACE] U+E109 -> U+1F435
+  ["ee8192", "f09f90b6"], # [DOG FACE] U+E052 -> U+1F436
+  ["ee848b", "f09f90b7"], # [PIG FACE] U+E10B -> U+1F437
+  ["ee8191", "f09f90bb"], # [BEAR FACE] U+E051 -> U+1F43B
+  ["ee94a4", "f09f90b9"], # [HAMSTER FACE] U+E524 -> U+1F439
+  ["ee94aa", "f09f90ba"], # [WOLF FACE] U+E52A -> U+1F43A
+  ["ee94ab", "f09f90ae"], # [COW FACE] U+E52B -> U+1F42E
+  ["ee94ac", "f09f90b0"], # [RABBIT FACE] U+E52C -> U+1F430
+  ["ee94b1", "f09f90b8"], # [FROG FACE] U+E531 -> U+1F438
+  ["ee8199", "f09f9880"], # [ANGRY FACE] U+E059 -> U+1F600
+  ["ee9090", "f09f9882"], # [ASTONISHED FACE] U+E410 -> U+1F602
+  ["ee8198", "f09f9883"], # [DISAPPOINTED FACE] U+E058 -> U+1F603
+  ["ee908f", "f09f9885"], # [EXASPERATED FACE] U+E40F -> U+1F605
+  ["ee908e", "f09f9886"], # [EXPRESSIONLESS FACE] U+E40E -> U+1F606
+  ["ee8486", "f09f9887"], # [FACE WITH HEART-SHAPED EYES] U+E106 -> U+1F607
+  ["ee8485", "f09f9889"], # [WINKING FACE WITH STUCK-OUT TONGUE] U+E105 -> U+1F609
+  ["ee9089", "f09f988a"], # [FACE WITH STUCK-OUT TONGUE] U+E409 -> U+1F60A
+  ["ee9098", "f09f988c"], # [FACE THROWING A KISS] U+E418 -> U+1F60C
+  ["ee9097", "f09f988d"], # [FACE KISSING] U+E417 -> U+1F60D
+  ["ee908c", "f09f988e"], # [FACE WITH MASK] U+E40C -> U+1F60E
+  ["ee908d", "f09f988f"], # [FLUSHED FACE] U+E40D -> U+1F60F
+  ["ee8197", "f09f9890"], # [HAPPY FACE WITH OPEN MOUTH] U+E057 -> U+1F610
+  ["ee9084", "f09f9893"], # [HAPPY FACE WITH GRIN] U+E404 -> U+1F613
+  ["ee9092", "f09f9894"], # [HAPPY AND CRYING FACE] U+E412 -> U+1F614
+  ["ee8196", "f09f9895"], # [HAPPY FACE WITH WIDE MOUTH AND RAISED EYEBROWS] U+E056 -> U+1F615
+  ["ee9094", "e298ba"], # [WHITE SMILING FACE] U+E414 -> U+263A
+  ["ee9095", "f09f9896"], # [HAPPY FACE WITH OPEN MOUTH AND RAISED EYEBROWS] U+E415 -> U+1F616
+  ["ee9093", "f09f9897"], # [CRYING FACE] U+E413 -> U+1F617
+  ["ee9091", "f09f9898"], # [LOUDLY CRYING FACE] U+E411 -> U+1F618
+  ["ee908b", "f09f9899"], # [FEARFUL FACE] U+E40B -> U+1F619
+  ["ee9086", "f09f989a"], # [PERSEVERING FACE] U+E406 -> U+1F61A
+  ["ee9096", "f09f989b"], # [POUTING FACE] U+E416 -> U+1F61B
+  ["ee908a", "f09f989c"], # [RELIEVED FACE] U+E40A -> U+1F61C
+  ["ee9087", "f09f989d"], # [CONFOUNDED FACE] U+E407 -> U+1F61D
+  ["ee9083", "f09f989e"], # [PENSIVE FACE] U+E403 -> U+1F61E
+  ["ee8487", "f09f989f"], # [FACE SCREAMING IN FEAR] U+E107 -> U+1F61F
+  ["ee9088", "f09f98a0"], # [SLEEPY FACE] U+E408 -> U+1F620
+  ["ee9082", "f09f98a1"], # [SMIRKING FACE] U+E402 -> U+1F621
+  ["ee8488", "f09f98a2"], # [FACE WITH COLD SWEAT] U+E108 -> U+1F622
+  ["ee9081", "f09f98a3"], # [DISAPPOINTED BUT RELIEVED FACE] U+E401 -> U+1F623
+  ["ee9085", "f09f98a5"], # [WINKING FACE] U+E405 -> U+1F625
+  ["ee90a3", "f09f98b4"], # [FACE WITH NO GOOD GESTURE] U+E423 -> U+1F634
+  ["ee90a4", "f09f98b5"], # [FACE WITH OK GESTURE] U+E424 -> U+1F635
+  ["ee90a6", "f09f98b6"], # [PERSON BOWING DEEPLY] U+E426 -> U+1F636
+  ["ee90a7", "f09f98bb"], # [PERSON RAISING BOTH HANDS IN CELEBRATION] U+E427 -> U+1F63B
+  ["ee909d", "f09f98be"], # [PERSON WITH FOLDED HANDS] U+E41D -> U+1F63E
+  ["ee80b6", "f09f8fa0"], # [HOUSE BUILDING] U+E036 -> U+1F3E0
+  ["ee80b8", "f09f8fa2"], # [OFFICE BUILDING] U+E038 -> U+1F3E2
+  ["ee8593", "f09f8fa3"], # [JAPANESE POST OFFICE] U+E153 -> U+1F3E3
+  ["ee8595", "f09f8fa5"], # [HOSPITAL] U+E155 -> U+1F3E5
+  ["ee858d", "f09f8fa6"], # [BANK] U+E14D -> U+1F3E6
+  ["ee8594", "f09f8fa7"], # [AUTOMATED TELLER MACHINE] U+E154 -> U+1F3E7
+  ["ee8598", "f09f8fa8"], # [HOTEL] U+E158 -> U+1F3E8
+  ["ee9481", "f09f8fa9"], # [LOVE HOTEL] U+E501 -> U+1F3E9
+  ["ee8596", "f09f8faa"], # [CONVENIENCE STORE] U+E156 -> U+1F3EA
+  ["ee8597", "f09f8fab"], # [SCHOOL] U+E157 -> U+1F3EB
+  ["ee80b7", "e29baa"], # [CHURCH] U+E037 -> U+26EA
+  ["ee84a1", "e29bb2"], # [FOUNTAIN] U+E121 -> U+26F2
+  ["ee9484", "f09f8fac"], # [DEPARTMENT STORE] U+E504 -> U+1F3EC
+  ["ee9485", "f09f8faf"], # [JAPANESE CASTLE] U+E505 -> U+1F3EF
+  ["ee9486", "f09f8fb0"], # [EUROPEAN CASTLE] U+E506 -> U+1F3F0
+  ["ee9488", "f09f8fad"], # [FACTORY] U+E508 -> U+1F3ED
+  ["ee80bb", "f09f97bb"], # [MOUNT FUJI] U+E03B -> U+1F5FB
+  ["ee9489", "f09f97bc"], # [TOKYO TOWER] U+E509 -> U+1F5FC
+  ["ee949d", "f09f97bd"], # [STATUE OF LIBERTY] U+E51D -> U+1F5FD
+  ["ee8087", "f09f919f"], # [ATHLETIC SHOE] U+E007 -> U+1F45F
+  ["ee84be", "f09f91a0"], # [HIGH-HEELED SHOE] U+E13E -> U+1F460
+  ["ee8c9a", "f09f91a1"], # [WOMANS SANDAL] U+E31A -> U+1F461
+  ["ee8c9b", "f09f91a2"], # [WOMANS BOOTS] U+E31B -> U+1F462
+  ["ee94b6", "f09f91a3"], # [FOOTPRINTS] U+E536 -> U+1F463
+  ["ee8086", "f09f9195"], # [T-SHIRT] U+E006 -> U+1F455
+  ["ee848e", "f09f9191"], # [CROWN] U+E10E -> U+1F451
+  ["ee8c82", "f09f9194"], # [NECKTIE] U+E302 -> U+1F454
+  ["ee8c98", "f09f9192"], # [WOMANS HAT] U+E318 -> U+1F452
+  ["ee8c99", "f09f9197"], # [DRESS] U+E319 -> U+1F457
+  ["ee8ca1", "f09f9198"], # [KIMONO] U+E321 -> U+1F458
+  ["ee8ca2", "f09f9199"], # [BIKINI] U+E322 -> U+1F459
+  ["ee8ca3", "f09f919c"], # [HANDBAG] U+E323 -> U+1F45C
+  ["ee84af", "f09f92b0"], # [MONEY BAG] U+E12F -> U+1F4B0
+  ["ee8589", "f09f92b1"], # [CURRENCY EXCHANGE] U+E149 -> U+1F4B1
+  ["ee858a", "f09f92b9"], # [CHART WITH UPWARDS TREND AND YEN SIGN] U+E14A -> U+1F4B9
+  ["ee9493", "f09f87a8f09f87b3"], # [REGIONAL INDICATOR SYMBOL LETTERS CN] U+E513 -> U+1F1E8 U+1F1F3
+  ["ee948e", "f09f87a9f09f87aa"], # [REGIONAL INDICATOR SYMBOL LETTERS DE] U+E50E -> U+1F1E9 U+1F1EA
+  ["ee9491", "f09f87aaf09f87b8"], # [REGIONAL INDICATOR SYMBOL LETTERS ES] U+E511 -> U+1F1EA U+1F1F8
+  ["ee948d", "f09f87abf09f87b7"], # [REGIONAL INDICATOR SYMBOL LETTERS FR] U+E50D -> U+1F1EB U+1F1F7
+  ["ee9490", "f09f87baf09f87b0"], # [REGIONAL INDICATOR SYMBOL LETTERS GB] U+E510 -> U+1F1FA U+1F1F0
+  ["ee948f", "f09f87aef09f87b9"], # [REGIONAL INDICATOR SYMBOL LETTERS IT] U+E50F -> U+1F1EE U+1F1F9
+  ["ee948b", "f09f87aff09f87b5"], # [REGIONAL INDICATOR SYMBOL LETTERS JP] U+E50B -> U+1F1EF U+1F1F5
+  ["ee9494", "f09f87b0f09f87b7"], # [REGIONAL INDICATOR SYMBOL LETTERS KR] U+E514 -> U+1F1F0 U+1F1F7
+  ["ee9492", "f09f87b7f09f87ba"], # [REGIONAL INDICATOR SYMBOL LETTERS RU] U+E512 -> U+1F1F7 U+1F1FA
+  ["ee948c", "f09f87baf09f87b8"], # [REGIONAL INDICATOR SYMBOL LETTERS US] U+E50C -> U+1F1FA U+1F1F8
+  ["ee849d", "f09f94a5"], # [FIRE] U+E11D -> U+1F525
+  ["ee8496", "f09f94a8"], # [HAMMER] U+E116 -> U+1F528
+  ["ee8493", "f09f94ab"], # [PISTOL] U+E113 -> U+1F52B
+  ["ee88be", "f09f94af"], # [SIX POINTED STAR WITH MIDDLE DOT] U+E23E -> U+1F52F
+  ["ee8889", "f09f94b0"], # [JAPANESE SYMBOL FOR BEGINNER] U+E209 -> U+1F530
+  ["ee80b1", "f09f94b1"], # [TRIDENT EMBLEM] U+E031 -> U+1F531
+  ["ee84bb", "f09f9289"], # [SYRINGE] U+E13B -> U+1F489
+  ["ee8c8f", "f09f928a"], # [PILL] U+E30F -> U+1F48A
+  ["ee94b2", "f09f85b0"], # [NEGATIVE SQUARED LATIN CAPITAL LETTER A] U+E532 -> U+1F170
+  ["ee94b3", "f09f85b1"], # [NEGATIVE SQUARED LATIN CAPITAL LETTER B] U+E533 -> U+1F171
+  ["ee94b4", "f09f868e"], # [NEGATIVE SQUARED AB] U+E534 -> U+1F18E
+  ["ee94b5", "f09f85be"], # [NEGATIVE SQUARED LATIN CAPITAL LETTER O] U+E535 -> U+1F17E
+  ["ee8c94", "f09f8e80"], # [RIBBON] U+E314 -> U+1F380
+  ["ee8492", "f09f8e81"], # [WRAPPED PRESENT] U+E112 -> U+1F381
+  ["ee8d8b", "f09f8e82"], # [BIRTHDAY CAKE] U+E34B -> U+1F382
+  ["ee80b3", "f09f8e84"], # [CHRISTMAS TREE] U+E033 -> U+1F384
+  ["ee9188", "f09f8e85"], # [FATHER CHRISTMAS] U+E448 -> U+1F385
+  ["ee8583", "f09f8e8c"], # [CROSSED FLAGS] U+E143 -> U+1F38C
+  ["ee8497", "f09f8e86"], # [FIREWORKS] U+E117 -> U+1F386
+  ["ee8c90", "f09f8e88"], # [BALLOON] U+E310 -> U+1F388
+  ["ee8c92", "f09f8e89"], # [PARTY POPPER] U+E312 -> U+1F389
+  ["ee90b6", "f09f8e8d"], # [PINE DECORATION] U+E436 -> U+1F38D
+  ["ee90b8", "f09f8e8e"], # [JAPANESE DOLLS] U+E438 -> U+1F38E
+  ["ee90b9", "f09f8e93"], # [GRADUATION CAP] U+E439 -> U+1F393
+  ["ee90ba", "f09f8e92"], # [SCHOOL SATCHEL] U+E43A -> U+1F392
+  ["ee90bb", "f09f8e8f"], # [CARP STREAMER] U+E43B -> U+1F38F
+  ["ee9180", "f09f8e87"], # [FIREWORK SPARKLER] U+E440 -> U+1F387
+  ["ee9182", "f09f8e90"], # [WIND CHIME] U+E442 -> U+1F390
+  ["ee9185", "f09f8e83"], # [JACK-O-LANTERN] U+E445 -> U+1F383
+  ["ee9186", "f09f8e91"], # [MOON VIEWING CEREMONY] U+E446 -> U+1F391
+  ["ee8089", "e2988e"], # [BLACK TELEPHONE] U+E009 -> U+260E
+  ["ee808a", "f09f93b1"], # [MOBILE PHONE] U+E00A -> U+1F4F1
+  ["ee8484", "f09f93b2"], # [MOBILE PHONE WITH RIGHTWARDS ARROW AT LEFT] U+E104 -> U+1F4F2
+  ["ee8c81", "f09f939d"], # [MEMO] U+E301 -> U+1F4DD
+  ["ee808b", "f09f93a0"], # [FAX MACHINE] U+E00B -> U+1F4E0
+  ["ee8483", "f09f93a9"], # [ENVELOPE WITH DOWNWARDS ARROW ABOVE] U+E103 -> U+1F4E9
+  ["ee8481", "f09f93ab"], # [CLOSED MAILBOX WITH RAISED FLAG] U+E101 -> U+1F4EB
+  ["ee8482", "f09f93ae"], # [POSTBOX] U+E102 -> U+1F4EE
+  ["ee8582", "f09f93a2"], # [PUBLIC ADDRESS LOUDSPEAKER] U+E142 -> U+1F4E2
+  ["ee8c97", "f09f93a3"], # [CHEERING MEGAPHONE] U+E317 -> U+1F4E3
+  ["ee858b", "f09f93a1"], # [SATELLITE ANTENNA] U+E14B -> U+1F4E1
+  ["ee849f", "f09f92ba"], # [SEAT] U+E11F -> U+1F4BA
+  ["ee808c", "f09f92bb"], # [PERSONAL COMPUTER] U+E00C -> U+1F4BB
+  ["ee849e", "f09f92bc"], # [BRIEFCASE] U+E11E -> U+1F4BC
+  ["ee8c96", "f09f92bd"], # [MINIDISC] U+E316 -> U+1F4BD
+  ["ee84a6", "f09f92bf"], # [OPTICAL DISC] U+E126 -> U+1F4BF
+  ["ee84a7", "f09f9380"], # [DVD] U+E127 -> U+1F4C0
+  ["ee8c93", "e29c82"], # [BLACK SCISSORS] U+E313 -> U+2702
+  ["ee8588", "f09f9396"], # [OPEN BOOK] U+E148 -> U+1F4D6
+  ["ee8096", "e29abe"], # [BASEBALL] U+E016 -> U+26BE
+  ["ee8094", "e29bb3"], # [FLAG IN HOLE] U+E014 -> U+26F3
+  ["ee8095", "f09f8ebe"], # [TENNIS RACQUET AND BALL] U+E015 -> U+1F3BE
+  ["ee8098", "e29abd"], # [SOCCER BALL] U+E018 -> U+26BD
+  ["ee8093", "f09f8ebf"], # [SKI AND SKI BOOT] U+E013 -> U+1F3BF
+  ["ee90aa", "f09f8f80"], # [BASKETBALL AND HOOP] U+E42A -> U+1F3C0
+  ["ee84b2", "f09f8f81"], # [CHEQUERED FLAG] U+E132 -> U+1F3C1
+  ["ee8495", "f09f8f83"], # [RUNNER] U+E115 -> U+1F3C3
+  ["ee8097", "f09f8f84"], # [SURFER] U+E017 -> U+1F3C4
+  ["ee84b1", "f09f8f86"], # [TROPHY] U+E131 -> U+1F3C6
+  ["ee90ab", "f09f8f88"], # [AMERICAN FOOTBALL] U+E42B -> U+1F3C8
+  ["ee90ad", "f09f8f8a"], # [SWIMMER] U+E42D -> U+1F3CA
+  ["ee809e", "f09f9a86"], # [TRAIN] U+E01E -> U+1F686
+  ["ee90b4", "f09f9a87"], # [METRO] U+E434 -> U+1F687
+  ["ee90b5", "f09f9a84"], # [HIGH-SPEED TRAIN] U+E435 -> U+1F684
+  ["ee809f", "f09f9a85"], # [HIGH-SPEED TRAIN WITH BULLET NOSE] U+E01F -> U+1F685
+  ["ee809b", "f09f9a97"], # [AUTOMOBILE] U+E01B -> U+1F697
+  ["ee90ae", "f09f9a99"], # [RECREATIONAL VEHICLE] U+E42E -> U+1F699
+  ["ee8599", "f09f9a8d"], # [ONCOMING BUS] U+E159 -> U+1F68D
+  ["ee8590", "f09f9a8f"], # [BUS STOP] U+E150 -> U+1F68F
+  ["ee8882", "f09f9aa2"], # [SHIP] U+E202 -> U+1F6A2
+  ["ee809d", "e29c88"], # [AIRPLANE] U+E01D -> U+2708
+  ["ee809c", "e29bb5"], # [SAILBOAT] U+E01C -> U+26F5
+  ["ee80b9", "f09f9a89"], # [STATION] U+E039 -> U+1F689
+  ["ee848d", "f09f9a80"], # [ROCKET] U+E10D -> U+1F680
+  ["ee84b5", "f09f9aa4"], # [SPEEDBOAT] U+E135 -> U+1F6A4
+  ["ee859a", "f09f9a95"], # [TAXI] U+E15A -> U+1F695
+  ["ee90af", "f09f9a9a"], # [DELIVERY TRUCK] U+E42F -> U+1F69A
+  ["ee90b0", "f09f9a92"], # [FIRE ENGINE] U+E430 -> U+1F692
+  ["ee90b1", "f09f9a91"], # [AMBULANCE] U+E431 -> U+1F691
+  ["ee90b2", "f09f9a93"], # [POLICE CAR] U+E432 -> U+1F693
+  ["ee80ba", "e29bbd"], # [FUEL PUMP] U+E03A -> U+26FD
+  ["ee858f", "f09f85bf"], # [NEGATIVE SQUARED LATIN CAPITAL LETTER P] U+E14F -> U+1F17F
+  ["ee858e", "f09f9aa5"], # [HORIZONTAL TRAFFIC LIGHT] U+E14E -> U+1F6A5
+  ["ee84b7", "f09f9aa7"], # [CONSTRUCTION SIGN] U+E137 -> U+1F6A7
+  ["ee84a3", "e299a8"], # [HOT SPRINGS] U+E123 -> U+2668
+  ["ee84a2", "e29bba"], # [TENT] U+E122 -> U+26FA
+  ["ee84a4", "f09f8ea1"], # [FERRIS WHEEL] U+E124 -> U+1F3A1
+  ["ee90b3", "f09f8ea2"], # [ROLLER COASTER] U+E433 -> U+1F3A2
+  ["ee80bc", "f09f8ea4"], # [MICROPHONE] U+E03C -> U+1F3A4
+  ["ee80bd", "f09f8ea5"], # [MOVIE CAMERA] U+E03D -> U+1F3A5
+  ["ee9487", "f09f8ea6"], # [CINEMA] U+E507 -> U+1F3A6
+  ["ee8c8a", "f09f8ea7"], # [HEADPHONE] U+E30A -> U+1F3A7
+  ["ee9482", "f09f8ea8"], # [ARTIST PALETTE] U+E502 -> U+1F3A8
+  ["ee9483", "f09f8ea9"], # [TOP HAT] U+E503 -> U+1F3A9
+  ["ee84a5", "f09f8eab"], # [TICKET] U+E125 -> U+1F3AB
+  ["ee8ca4", "f09f8eac"], # [CLAPPER BOARD] U+E324 -> U+1F3AC
+  ["ee84ad", "f09f8084"], # [MAHJONG TILE RED DRAGON] U+E12D -> U+1F004
+  ["ee84b0", "f09f8eaf"], # [DIRECT HIT] U+E130 -> U+1F3AF
+  ["ee84b3", "f09f8eb0"], # [SLOT MACHINE] U+E133 -> U+1F3B0
+  ["ee90ac", "f09f8eb1"], # [BILLIARDS] U+E42C -> U+1F3B1
+  ["ee80be", "f09f8eb5"], # [MUSICAL NOTE] U+E03E -> U+1F3B5
+  ["ee8ca6", "f09f8eb6"], # [MULTIPLE MUSICAL NOTES] U+E326 -> U+1F3B6
+  ["ee8180", "f09f8eb7"], # [SAXOPHONE] U+E040 -> U+1F3B7
+  ["ee8181", "f09f8eb8"], # [GUITAR] U+E041 -> U+1F3B8
+  ["ee8182", "f09f8eba"], # [TRUMPET] U+E042 -> U+1F3BA
+  ["ee84ac", "e380bd"], # [PART ALTERNATION MARK] U+E12C -> U+303D
+  ["ee8088", "f09f93b7"], # [CAMERA] U+E008 -> U+1F4F7
+  ["ee84aa", "f09f93ba"], # [TELEVISION] U+E12A -> U+1F4FA
+  ["ee84a8", "f09f93bb"], # [RADIO] U+E128 -> U+1F4FB
+  ["ee84a9", "f09f93bc"], # [VIDEOCASSETTE] U+E129 -> U+1F4FC
+  ["ee8083", "f09f928b"], # [KISS MARK] U+E003 -> U+1F48B
+  ["ee80b4", "f09f928d"], # [RING] U+E034 -> U+1F48D
+  ["ee80b5", "f09f928e"], # [GEM STONE] U+E035 -> U+1F48E
+  ["ee8491", "f09f928f"], # [KISS] U+E111 -> U+1F48F
+  ["ee8c86", "f09f9290"], # [BOUQUET] U+E306 -> U+1F490
+  ["ee90a5", "f09f9291"], # [COUPLE WITH HEART] U+E425 -> U+1F491
+  ["ee90bd", "f09f9292"], # [WEDDING] U+E43D -> U+1F492
+  ["ee8887", "f09f949e"], # [NO ONE UNDER EIGHTEEN SYMBOL] U+E207 -> U+1F51E
+  ["ee898e", "c2a9"], # [COPYRIGHT SIGN] U+E24E -> U+A9
+  ["ee898f", "c2ae"], # [REGISTERED SIGN] U+E24F -> U+AE
+  ["ee94b7", "e284a2"], # [TRADE MARK SIGN] U+E537 -> U+2122
+  ["ee8890", "23e283a3"], # [HASH KEY] U+E210 -> U+23 U+20E3
+  ["ee889c", "31e283a3"], # [KEYCAP 1] U+E21C -> U+31 U+20E3
+  ["ee889d", "32e283a3"], # [KEYCAP 2] U+E21D -> U+32 U+20E3
+  ["ee889e", "33e283a3"], # [KEYCAP 3] U+E21E -> U+33 U+20E3
+  ["ee889f", "34e283a3"], # [KEYCAP 4] U+E21F -> U+34 U+20E3
+  ["ee88a0", "35e283a3"], # [KEYCAP 5] U+E220 -> U+35 U+20E3
+  ["ee88a1", "36e283a3"], # [KEYCAP 6] U+E221 -> U+36 U+20E3
+  ["ee88a2", "37e283a3"], # [KEYCAP 7] U+E222 -> U+37 U+20E3
+  ["ee88a3", "38e283a3"], # [KEYCAP 8] U+E223 -> U+38 U+20E3
+  ["ee88a4", "39e283a3"], # [KEYCAP 9] U+E224 -> U+39 U+20E3
+  ["ee88a5", "30e283a3"], # [KEYCAP 0] U+E225 -> U+30 U+20E3
+  ["ee888b", "f09f93b6"], # [ANTENNA WITH BARS] U+E20B -> U+1F4F6
+  ["ee8990", "f09f93b3"], # [VIBRATION MODE] U+E250 -> U+1F4F3
+  ["ee8991", "f09f93b4"], # [MOBILE PHONE OFF] U+E251 -> U+1F4F4
+  ["ee84a0", "f09f8d94"], # [HAMBURGER] U+E120 -> U+1F354
+  ["ee8d82", "f09f8d99"], # [RICE BALL] U+E342 -> U+1F359
+  ["ee8186", "f09f8db0"], # [SHORTCAKE] U+E046 -> U+1F370
+  ["ee8d80", "f09f8d9c"], # [STEAMING BOWL] U+E340 -> U+1F35C
+  ["ee8cb9", "f09f8d9e"], # [BREAD] U+E339 -> U+1F35E
+  ["ee8587", "f09f8db3"], # [COOKING] U+E147 -> U+1F373
+  ["ee8cba", "f09f8da6"], # [SOFT ICE CREAM] U+E33A -> U+1F366
+  ["ee8cbb", "f09f8d9f"], # [FRENCH FRIES] U+E33B -> U+1F35F
+  ["ee8cbc", "f09f8da1"], # [DANGO] U+E33C -> U+1F361
+  ["ee8cbd", "f09f8d98"], # [RICE CRACKER] U+E33D -> U+1F358
+  ["ee8cbe", "f09f8d9a"], # [COOKED RICE] U+E33E -> U+1F35A
+  ["ee8cbf", "f09f8d9d"], # [SPAGHETTI] U+E33F -> U+1F35D
+  ["ee8d81", "f09f8d9b"], # [CURRY AND RICE] U+E341 -> U+1F35B
+  ["ee8d83", "f09f8da2"], # [ODEN] U+E343 -> U+1F362
+  ["ee8d84", "f09f8da3"], # [SUSHI] U+E344 -> U+1F363
+  ["ee8d8c", "f09f8db1"], # [BENTO BOX] U+E34C -> U+1F371
+  ["ee8d8d", "f09f8db2"], # [POT OF FOOD] U+E34D -> U+1F372
+  ["ee90bf", "f09f8da7"], # [SHAVED ICE] U+E43F -> U+1F367
+  ["ee8183", "f09f8db4"], # [FORK AND KNIFE] U+E043 -> U+1F374
+  ["ee8185", "e29895"], # [HOT BEVERAGE] U+E045 -> U+2615
+  ["ee8184", "f09f8db8"], # [COCKTAIL GLASS] U+E044 -> U+1F378
+  ["ee8187", "f09f8dba"], # [BEER MUG] U+E047 -> U+1F37A
+  ["ee8cb8", "f09f8db5"], # [TEACUP WITHOUT HANDLE] U+E338 -> U+1F375
+  ["ee8c8b", "f09f8db6"], # [SAKE BOTTLE AND CUP] U+E30B -> U+1F376
+  ["ee8c8c", "f09f8dbb"], # [CLINKING BEER MUGS] U+E30C -> U+1F37B
+  ["ee88b6", "e28697"], # [NORTH EAST ARROW] U+E236 -> U+2197
+  ["ee88b8", "e28698"], # [SOUTH EAST ARROW] U+E238 -> U+2198
+  ["ee88b7", "e28696"], # [NORTH WEST ARROW] U+E237 -> U+2196
+  ["ee88b9", "e28699"], # [SOUTH WEST ARROW] U+E239 -> U+2199
+  ["ee88b2", "e2ac86"], # [UPWARDS BLACK ARROW] U+E232 -> U+2B06
+  ["ee88b3", "e2ac87"], # [DOWNWARDS BLACK ARROW] U+E233 -> U+2B07
+  ["ee88b4", "e29ea1"], # [BLACK RIGHTWARDS ARROW] U+E234 -> U+27A1
+  ["ee88b5", "e2ac85"], # [LEFTWARDS BLACK ARROW] U+E235 -> U+2B05
+  ["ee88ba", "e296b6"], # [BLACK RIGHT-POINTING TRIANGLE] U+E23A -> U+25B6
+  ["ee88bb", "e29780"], # [BLACK LEFT-POINTING TRIANGLE] U+E23B -> U+25C0
+  ["ee88bc", "e28fa9"], # [BLACK RIGHT-POINTING DOUBLE TRIANGLE] U+E23C -> U+23E9
+  ["ee88bd", "e28faa"], # [BLACK LEFT-POINTING DOUBLE TRIANGLE] U+E23D -> U+23EA
+  ["ee8cb2", "e2ad95"], # [HEAVY LARGE CIRCLE] U+E332 -> U+2B55
+  ["ee8cb3", "e29d8c"], # [CROSS MARK] U+E333 -> U+274C
+  ["ee80a1", "e29da2"], # [HEAVY EXCLAMATION MARK ORNAMENT] U+E021 -> U+2762
+  ["ee80a0", "e29d93"], # [BLACK QUESTION MARK ORNAMENT] U+E020 -> U+2753
+  ["ee8cb6", "e29d94"], # [WHITE QUESTION MARK ORNAMENT] U+E336 -> U+2754
+  ["ee8cb7", "e29d95"], # [WHITE EXCLAMATION MARK ORNAMENT] U+E337 -> U+2755
+  ["ee8891", "e29ebf"], # [DOUBLE CURLY LOOP] U+E211 -> U+27BF
+  ["ee80a2", "e29da4"], # [HEAVY BLACK HEART] U+E022 -> U+2764
+  ["ee8ca7", "f09f9293"], # [BEATING HEART] U+E327 -> U+1F493
+  ["ee80a3", "f09f9294"], # [BROKEN HEART] U+E023 -> U+1F494
+  ["ee8ca8", "f09f9297"], # [GROWING HEART] U+E328 -> U+1F497
+  ["ee8ca9", "f09f9298"], # [HEART WITH ARROW] U+E329 -> U+1F498
+  ["ee8caa", "f09f9299"], # [BLUE HEART] U+E32A -> U+1F499
+  ["ee8cab", "f09f929a"], # [GREEN HEART] U+E32B -> U+1F49A
+  ["ee8cac", "f09f929b"], # [YELLOW HEART] U+E32C -> U+1F49B
+  ["ee8cad", "f09f929c"], # [PURPLE HEART] U+E32D -> U+1F49C
+  ["ee90b7", "f09f929d"], # [HEART WITH RIBBON] U+E437 -> U+1F49D
+  ["ee8884", "f09f929f"], # [HEART DECORATION] U+E204 -> U+1F49F
+  ["ee888c", "e299a5"], # [BLACK HEART SUIT] U+E20C -> U+2665
+  ["ee888e", "e299a0"], # [BLACK SPADE SUIT] U+E20E -> U+2660
+  ["ee888d", "e299a6"], # [BLACK DIAMOND SUIT] U+E20D -> U+2666
+  ["ee888f", "e299a3"], # [BLACK CLUB SUIT] U+E20F -> U+2663
+  ["ee8c8e", "f09f9aac"], # [SMOKING SYMBOL] U+E30E -> U+1F6AC
+  ["ee8888", "f09f9aad"], # [NO SMOKING SYMBOL] U+E208 -> U+1F6AD
+  ["ee888a", "e299bf"], # [WHEELCHAIR SYMBOL] U+E20A -> U+267F
+  ["ee8992", "e29aa0"], # [WARNING SIGN] U+E252 -> U+26A0
+  ["ee84b6", "f09f9ab2"], # [BICYCLE] U+E136 -> U+1F6B2
+  ["ee8881", "f09f9ab6"], # [PEDESTRIAN] U+E201 -> U+1F6B6
+  ["ee84b8", "f09f9ab9"], # [MENS SYMBOL] U+E138 -> U+1F6B9
+  ["ee84b9", "f09f9aba"], # [WOMENS SYMBOL] U+E139 -> U+1F6BA
+  ["ee84bf", "f09f9b80"], # [BATH] U+E13F -> U+1F6C0
+  ["ee8591", "f09f9abb"], # [RESTROOM] U+E151 -> U+1F6BB
+  ["ee8580", "f09f9abd"], # [TOILET] U+E140 -> U+1F6BD
+  ["ee8c89", "f09f9abe"], # [WATER CLOSET] U+E309 -> U+1F6BE
+  ["ee84ba", "f09f9abc"], # [BABY SYMBOL] U+E13A -> U+1F6BC
+  ["ee8894", "f09f8692"], # [SQUARED COOL] U+E214 -> U+1F192
+  ["ee88a9", "f09f8694"], # [SQUARED ID] U+E229 -> U+1F194
+  ["ee8892", "f09f8695"], # [SQUARED NEW] U+E212 -> U+1F195
+  ["ee898d", "f09f8697"], # [SQUARED OK] U+E24D -> U+1F197
+  ["ee8893", "f09f8699"], # [SQUARED UP WITH EXCLAMATION MARK] U+E213 -> U+1F199
+  ["ee84ae", "f09f869a"], # [SQUARED VS] U+E12E -> U+1F19A
+  ["ee8883", "f09f8881"], # [SQUARED KATAKANA KOKO] U+E203 -> U+1F201
+  ["ee88a8", "f09f8882"], # [SQUARED KATAKANA SA] U+E228 -> U+1F202
+  ["ee88ab", "f09f88b3"], # [SQUARED CJK UNIFIED IDEOGRAPH-7A7A] U+E22B -> U+1F233
+  ["ee88aa", "f09f88b5"], # [SQUARED CJK UNIFIED IDEOGRAPH-6E80] U+E22A -> U+1F235
+  ["ee8895", "f09f88b6"], # [SQUARED CJK UNIFIED IDEOGRAPH-6709] U+E215 -> U+1F236
+  ["ee8896", "f09f889a"], # [SQUARED CJK UNIFIED IDEOGRAPH-7121] U+E216 -> U+1F21A
+  ["ee8897", "f09f88b7"], # [SQUARED CJK UNIFIED IDEOGRAPH-6708] U+E217 -> U+1F237
+  ["ee8898", "f09f88b8"], # [SQUARED CJK UNIFIED IDEOGRAPH-7533] U+E218 -> U+1F238
+  ["ee88a7", "f09f88b9"], # [SQUARED CJK UNIFIED IDEOGRAPH-5272] U+E227 -> U+1F239
+  ["ee88ac", "f09f88af"], # [SQUARED CJK UNIFIED IDEOGRAPH-6307] U+E22C -> U+1F22F
+  ["ee88ad", "f09f88ba"], # [SQUARED CJK UNIFIED IDEOGRAPH-55B6] U+E22D -> U+1F23A
+  ["ee8c95", "e38a99"], # [CIRCLED IDEOGRAPH SECRET] U+E315 -> U+3299
+  ["ee8c8d", "e38a97"], # [CIRCLED IDEOGRAPH CONGRATULATION] U+E30D -> U+3297
+  ["ee88a6", "f09f8990"], # [CIRCLED IDEOGRAPH ADVANTAGE] U+E226 -> U+1F250
+  ["ee848f", "f09f92a1"], # [ELECTRIC LIGHT BULB] U+E10F -> U+1F4A1
+  ["ee8cb4", "f09f92a2"], # [ANGER SYMBOL] U+E334 -> U+1F4A2
+  ["ee8c91", "f09f92a3"], # [BOMB] U+E311 -> U+1F4A3
+  ["ee84bc", "f09f92a4"], # [SLEEPING SYMBOL] U+E13C -> U+1F4A4
+  ["ee8cb1", "f09f92a6"], # [SPLASHING SWEAT SYMBOL] U+E331 -> U+1F4A6
+  ["ee8cb0", "f09f92a8"], # [DASH SYMBOL] U+E330 -> U+1F4A8
+  ["ee819a", "f09f92a9"], # [PILE OF POO] U+E05A -> U+1F4A9
+  ["ee858c", "f09f92aa"], # [FLEXED BICEPS] U+E14C -> U+1F4AA
+  ["ee8cae", "e29ca8"], # [SPARKLES] U+E32E -> U+2728
+  ["ee8885", "e29cb4"], # [EIGHT POINTED BLACK STAR] U+E205 -> U+2734
+  ["ee8886", "e29cb3"], # [EIGHT SPOKED ASTERISK] U+E206 -> U+2733
+  ["ee8899", "f09f94b4"], # [LARGE RED CIRCLE] U+E219 -> U+1F534
+  ["ee889a", "f09f94b2"], # [BLACK SQUARE BUTTON] U+E21A -> U+1F532
+  ["ee889b", "f09f94b3"], # [WHITE SQUARE BUTTON] U+E21B -> U+1F533
+  ["ee8caf", "e2ad90"], # [WHITE MEDIUM STAR] U+E32F -> U+2B50
+  ["ee8581", "f09f948a"], # [SPEAKER WITH THREE SOUND WAVES] U+E141 -> U+1F50A
+  ["ee8494", "f09f948d"], # [LEFT-POINTING MAGNIFYING GLASS] U+E114 -> U+1F50D
+  ["ee8584", "f09f9492"], # [LOCK] U+E144 -> U+1F512
+  ["ee8585", "f09f9493"], # [OPEN LOCK] U+E145 -> U+1F513
+  ["ee80bf", "f09f9491"], # [KEY] U+E03F -> U+1F511
+  ["ee8ca5", "f09f9494"], # [BELL] U+E325 -> U+1F514
+  ["ee898c", "f09f949d"], # [TOP WITH UPWARDS ARROW ABOVE] U+E24C -> U+1F51D
+  ["ee8090", "e29c8a"], # [RAISED FIST] U+E010 -> U+270A
+  ["ee8092", "e29c8b"], # [RAISED HAND] U+E012 -> U+270B
+  ["ee8091", "e29c8c"], # [VICTORY HAND] U+E011 -> U+270C
+  ["ee808d", "f09f918a"], # [FISTED HAND SIGN] U+E00D -> U+1F44A
+  ["ee808e", "f09f918d"], # [THUMBS UP SIGN] U+E00E -> U+1F44D
+  ["ee808f", "e2989d"], # [WHITE UP POINTING INDEX] U+E00F -> U+261D
+  ["ee88ae", "f09f9186"], # [WHITE UP POINTING BACKHAND INDEX] U+E22E -> U+1F446
+  ["ee88af", "f09f9187"], # [WHITE DOWN POINTING BACKHAND INDEX] U+E22F -> U+1F447
+  ["ee88b0", "f09f9188"], # [WHITE LEFT POINTING BACKHAND INDEX] U+E230 -> U+1F448
+  ["ee88b1", "f09f9189"], # [WHITE RIGHT POINTING BACKHAND INDEX] U+E231 -> U+1F449
+  ["ee909e", "f09f918b"], # [WAVING HAND SIGN] U+E41E -> U+1F44B
+  ["ee909f", "f09f918f"], # [CLAPPING HANDS SIGN] U+E41F -> U+1F44F
+  ["ee90a0", "f09f918c"], # [OK HAND SIGN] U+E420 -> U+1F44C
+  ["ee90a1", "f09f918e"], # [THUMBS DOWN SIGN] U+E421 -> U+1F44E
+  ["ee90a2", "f09f9190"], # [OPEN HANDS SIGN] U+E422 -> U+1F450
+  ["ee94b8", "e38093"], # [EMOJI COMPATIBILITY SYMBOL-50] U+E538 -> U+3013 (GETA)
+  ["ee94b9", "e38093"], # [EMOJI COMPATIBILITY SYMBOL-51] U+E539 -> U+3013 (GETA)
+  ["ee94ba", "e38093"], # [EMOJI COMPATIBILITY SYMBOL-52] U+E53A -> U+3013 (GETA)
+  ["ee94bb", "e38093"], # [EMOJI COMPATIBILITY SYMBOL-53] U+E53B -> U+3013 (GETA)
+  ["ee94bc", "5b76"], # [EMOJI COMPATIBILITY SYMBOL-54] U+E53C -> "[v"
+  ["ee94bd", "6f6461"], # [EMOJI COMPATIBILITY SYMBOL-55] U+E53D -> "oda"
+  ["ee94be", "666f6e655d"], # [EMOJI COMPATIBILITY SYMBOL-56] U+E53E -> "fone]"
+  ["ee8994", "e38093"], # [EMOJI COMPATIBILITY SYMBOL-57] U+E254 -> U+3013 (GETA)
+  ["ee8995", "e38093"], # [EMOJI COMPATIBILITY SYMBOL-58] U+E255 -> U+3013 (GETA)
+  ["ee8996", "e38093"], # [EMOJI COMPATIBILITY SYMBOL-59] U+E256 -> U+3013 (GETA)
+  ["ee8997", "e38093"], # [EMOJI COMPATIBILITY SYMBOL-60] U+E257 -> U+3013 (GETA)
+  ["ee8998", "e38093"], # [EMOJI COMPATIBILITY SYMBOL-61] U+E258 -> U+3013 (GETA)
+  ["ee8999", "e38093"], # [EMOJI COMPATIBILITY SYMBOL-62] U+E259 -> U+3013 (GETA)
+  ["ee899a", "e38093"], # [EMOJI COMPATIBILITY SYMBOL-63] U+E25A -> U+3013 (GETA)
+  ["ee948a", "e38093"], # [EMOJI COMPATIBILITY SYMBOL-64] U+E50A -> U+3013 (GETA)
 ]
 
 EMOJI_EXCHANGE_TBL['UTF8-Google']['UTF8-DoCoMo'] = [
@@ -6690,5 +8113,3733 @@ EMOJI_EXCHANGE_TBL['UTF8-Google']['UTF8-SoftBank'] = [
   ["f3be9385", "ee948a"], # [EMOJI COMPATIBILITY SYMBOL-64] U+FE4C5 -> U+E50A
   ["f3bea0ad", "5b515d"], # [EMOJI COMPATIBILITY SYMBOL-66] U+FE82D -> "[Q]"
   ["f3bebaa0", "5b476f6f676c655d"], # [GOOGLE] U+FEEA0 -> "[Google]"
+]
+
+EMOJI_EXCHANGE_TBL['UTF8-Google']['UTF-8'] = [
+  ["f3be8080", "e29880"], # [BLACK SUN WITH RAYS] U+FE000 -> U+2600
+  ["f3be8081", "e29881"], # [CLOUD] U+FE001 -> U+2601
+  ["f3be8082", "e29894"], # [UMBRELLA WITH RAIN DROPS] U+FE002 -> U+2614
+  ["f3be8083", "e29b84"], # [SNOWMAN WITHOUT SNOW] U+FE003 -> U+26C4
+  ["f3be8084", "e29aa1"], # [HIGH VOLTAGE SIGN] U+FE004 -> U+26A1
+  ["f3be8085", "f09f8c80"], # [CYCLONE] U+FE005 -> U+1F300
+  ["f3be8086", "f09f8c81"], # [FOGGY] U+FE006 -> U+1F301
+  ["f3be8087", "f09f8c82"], # [CLOSED UMBRELLA] U+FE007 -> U+1F302
+  ["f3be8088", "f09f8c83"], # [NIGHT WITH STARS] U+FE008 -> U+1F303
+  ["f3be8089", "f09f8c84"], # [SUNRISE OVER MOUNTAINS] U+FE009 -> U+1F304
+  ["f3be808a", "f09f8c85"], # [SUNRISE] U+FE00A -> U+1F305
+  ["f3be808b", "5be5a495e784bce381915d"], # [CITYSCAPE AT DUSK] U+FE00B -> "[夕焼け]"
+  ["f3be808c", "f09f8c87"], # [SUNSET OVER BUILDINGS] U+FE00C -> U+1F307
+  ["f3be808d", "f09f8c88"], # [RAINBOW] U+FE00D -> U+1F308
+  ["f3be808e", "e29d84"], # [SNOWFLAKE] U+FE00E -> U+2744
+  ["f3be808f", "e29b85"], # [SUN BEHIND CLOUD] U+FE00F -> U+26C5
+  ["f3be8090", "f09f8c89"], # [BRIDGE AT NIGHT] U+FE010 -> U+1F309
+  ["f3be80b8", "f09f8c8a"], # [WATER WAVE] U+FE038 -> U+1F30A
+  ["f3be80ba", "f09f8c8b"], # [VOLCANO] U+FE03A -> U+1F30B
+  ["f3be80bb", "f09f8c8c"], # [MILKY WAY] U+FE03B -> U+1F30C
+  ["f3be80b9", "f09f8c8f"], # [EARTH GLOBE ASIA-AUSTRALIA] U+FE039 -> U+1F30F
+  ["f3be8091", "f09f8c91"], # [NEW MOON SYMBOL] U+FE011 -> U+1F311
+  ["f3be8092", "f09f8c94"], # [WAXING GIBBOUS MOON SYMBOL] U+FE012 -> U+1F314
+  ["f3be8093", "f09f8c93"], # [FIRST QUARTER MOON SYMBOL] U+FE013 -> U+1F313
+  ["f3be8094", "f09f8c99"], # [CRESCENT MOON] U+FE014 -> U+1F319
+  ["f3be8095", "f09f8c95"], # [FULL MOON SYMBOL] U+FE015 -> U+1F315
+  ["f3be8096", "f09f8c9b"], # [FIRST QUARTER MOON WITH FACE] U+FE016 -> U+1F31B
+  ["f3beada9", "f09f8c9f"], # [GLOWING STAR] U+FEB69 -> U+1F31F
+  ["f3beadaa", "f09f8ca0"], # [SHOOTING STAR] U+FEB6A -> U+1F320
+  ["f3be809e", "f09f9590"], # [CLOCK FACE ONE OCLOCK] U+FE01E -> U+1F550
+  ["f3be809f", "f09f9591"], # [CLOCK FACE TWO OCLOCK] U+FE01F -> U+1F551
+  ["f3be80a0", "f09f9592"], # [CLOCK FACE THREE OCLOCK] U+FE020 -> U+1F552
+  ["f3be80a1", "f09f9593"], # [CLOCK FACE FOUR OCLOCK] U+FE021 -> U+1F553
+  ["f3be80a2", "f09f9594"], # [CLOCK FACE FIVE OCLOCK] U+FE022 -> U+1F554
+  ["f3be80a3", "f09f9595"], # [CLOCK FACE SIX OCLOCK] U+FE023 -> U+1F555
+  ["f3be80a4", "f09f9596"], # [CLOCK FACE SEVEN OCLOCK] U+FE024 -> U+1F556
+  ["f3be80a5", "f09f9597"], # [CLOCK FACE EIGHT OCLOCK] U+FE025 -> U+1F557
+  ["f3be80a6", "f09f9598"], # [CLOCK FACE NINE OCLOCK] U+FE026 -> U+1F558
+  ["f3be80a7", "f09f9599"], # [CLOCK FACE TEN OCLOCK] U+FE027 -> U+1F559
+  ["f3be80a8", "f09f959a"], # [CLOCK FACE ELEVEN OCLOCK] U+FE028 -> U+1F55A
+  ["f3be80a9", "f09f959b"], # [CLOCK FACE TWELVE OCLOCK] U+FE029 -> U+1F55B
+  ["f3be809d", "e28c9a"], # [WATCH] U+FE01D -> U+231A
+  ["f3be809c", "e28c9b"], # [HOURGLASS] U+FE01C -> U+231B
+  ["f3be80aa", "e28fb0"], # [ALARM CLOCK] U+FE02A -> U+23F0
+  ["f3be809b", "e28fb3"], # [HOURGLASS WITH FLOWING SAND] U+FE01B -> U+23F3
+  ["f3be80ab", "e29988"], # [ARIES] U+FE02B -> U+2648
+  ["f3be80ac", "e29989"], # [TAURUS] U+FE02C -> U+2649
+  ["f3be80ad", "e2998a"], # [GEMINI] U+FE02D -> U+264A
+  ["f3be80ae", "e2998b"], # [CANCER] U+FE02E -> U+264B
+  ["f3be80af", "e2998c"], # [LEO] U+FE02F -> U+264C
+  ["f3be80b0", "e2998d"], # [VIRGO] U+FE030 -> U+264D
+  ["f3be80b1", "e2998e"], # [LIBRA] U+FE031 -> U+264E
+  ["f3be80b2", "e2998f"], # [SCORPIUS] U+FE032 -> U+264F
+  ["f3be80b3", "e29990"], # [SAGITTARIUS] U+FE033 -> U+2650
+  ["f3be80b4", "e29991"], # [CAPRICORN] U+FE034 -> U+2651
+  ["f3be80b5", "e29992"], # [AQUARIUS] U+FE035 -> U+2652
+  ["f3be80b6", "e29993"], # [PISCES] U+FE036 -> U+2653
+  ["f3be80b7", "e29b8e"], # [OPHIUCHUS] U+FE037 -> U+26CE
+  ["f3be80bc", "f09f8d80"], # [FOUR LEAF CLOVER] U+FE03C -> U+1F340
+  ["f3be80bd", "f09f8cb7"], # [TULIP] U+FE03D -> U+1F337
+  ["f3be80be", "f09f8cb1"], # [SEEDLING] U+FE03E -> U+1F331
+  ["f3be80bf", "f09f8d81"], # [MAPLE LEAF] U+FE03F -> U+1F341
+  ["f3be8180", "f09f8cb8"], # [CHERRY BLOSSOM] U+FE040 -> U+1F338
+  ["f3be8181", "f09f8cb9"], # [ROSE] U+FE041 -> U+1F339
+  ["f3be8182", "f09f8d82"], # [FALLEN LEAF] U+FE042 -> U+1F342
+  ["f3be8183", "f09f8d83"], # [LEAF FLUTTERING IN WIND] U+FE043 -> U+1F343
+  ["f3be8185", "f09f8cba"], # [HIBISCUS] U+FE045 -> U+1F33A
+  ["f3be8186", "f09f8cbb"], # [SUNFLOWER] U+FE046 -> U+1F33B
+  ["f3be8187", "f09f8cb4"], # [PALM TREE] U+FE047 -> U+1F334
+  ["f3be8188", "f09f8cb5"], # [CACTUS] U+FE048 -> U+1F335
+  ["f3be8189", "f09f8cbe"], # [EAR OF RICE] U+FE049 -> U+1F33E
+  ["f3be818a", "f09f8cbd"], # [EAR OF MAIZE] U+FE04A -> U+1F33D
+  ["f3be818b", "f09f8d84"], # [MUSHROOM] U+FE04B -> U+1F344
+  ["f3be818c", "f09f8cb0"], # [CHESTNUT] U+FE04C -> U+1F330
+  ["f3be818d", "f09f8cbc"], # [BLOSSOM] U+FE04D -> U+1F33C
+  ["f3be818e", "f09f8cbf"], # [HERB] U+FE04E -> U+1F33F
+  ["f3be818f", "f09f8d92"], # [CHERRIES] U+FE04F -> U+1F352
+  ["f3be8190", "f09f8d8c"], # [BANANA] U+FE050 -> U+1F34C
+  ["f3be8191", "f09f8d8e"], # [RED APPLE] U+FE051 -> U+1F34E
+  ["f3be8192", "f09f8d8a"], # [TANGERINE] U+FE052 -> U+1F34A
+  ["f3be8193", "f09f8d93"], # [STRAWBERRY] U+FE053 -> U+1F353
+  ["f3be8194", "f09f8d89"], # [WATERMELON] U+FE054 -> U+1F349
+  ["f3be8195", "f09f8d85"], # [TOMATO] U+FE055 -> U+1F345
+  ["f3be8196", "f09f8d86"], # [AUBERGINE] U+FE056 -> U+1F346
+  ["f3be8197", "f09f8d88"], # [MELON] U+FE057 -> U+1F348
+  ["f3be8198", "f09f8d8d"], # [PINEAPPLE] U+FE058 -> U+1F34D
+  ["f3be8199", "f09f8d87"], # [GRAPES] U+FE059 -> U+1F347
+  ["f3be819a", "f09f8d91"], # [PEACH] U+FE05A -> U+1F351
+  ["f3be819b", "f09f8d8f"], # [GREEN APPLE] U+FE05B -> U+1F34F
+  ["f3be8690", "f09f9180"], # [EYES] U+FE190 -> U+1F440
+  ["f3be8691", "f09f9182"], # [EAR] U+FE191 -> U+1F442
+  ["f3be8692", "f09f9183"], # [NOSE] U+FE192 -> U+1F443
+  ["f3be8693", "f09f9184"], # [MOUTH] U+FE193 -> U+1F444
+  ["f3be8694", "f09f9185"], # [TONGUE] U+FE194 -> U+1F445
+  ["f3be8695", "f09f9284"], # [LIPSTICK] U+FE195 -> U+1F484
+  ["f3be8696", "f09f9285"], # [NAIL POLISH] U+FE196 -> U+1F485
+  ["f3be8697", "f09f9286"], # [FACE MASSAGE] U+FE197 -> U+1F486
+  ["f3be8698", "f09f9287"], # [HAIRCUT] U+FE198 -> U+1F487
+  ["f3be8699", "f09f9288"], # [BARBER POLE] U+FE199 -> U+1F488
+  ["f3be869a", "f09f91a4"], # [BUST IN SILHOUETTE] U+FE19A -> U+1F464
+  ["f3be869b", "f09f91a6"], # [BOY] U+FE19B -> U+1F466
+  ["f3be869c", "f09f91a7"], # [GIRL] U+FE19C -> U+1F467
+  ["f3be869d", "f09f91a8"], # [MAN] U+FE19D -> U+1F468
+  ["f3be869e", "f09f91a9"], # [WOMAN] U+FE19E -> U+1F469
+  ["f3be869f", "f09f91aa"], # [FAMILY] U+FE19F -> U+1F46A
+  ["f3be86a0", "f09f91ab"], # [MAN AND WOMAN HOLDING HANDS] U+FE1A0 -> U+1F46B
+  ["f3be86a1", "f09f91ae"], # [POLICE OFFICER] U+FE1A1 -> U+1F46E
+  ["f3be86a2", "f09f91af"], # [WOMAN WITH BUNNY EARS] U+FE1A2 -> U+1F46F
+  ["f3be86a3", "f09f91b0"], # [BRIDE WITH VEIL] U+FE1A3 -> U+1F470
+  ["f3be86a4", "f09f91b1"], # [WESTERN PERSON] U+FE1A4 -> U+1F471
+  ["f3be86a5", "f09f91b2"], # [MAN WITH GUA PI MAO] U+FE1A5 -> U+1F472
+  ["f3be86a6", "f09f91b3"], # [MAN WITH TURBAN] U+FE1A6 -> U+1F473
+  ["f3be86a7", "f09f91b4"], # [OLDER MAN] U+FE1A7 -> U+1F474
+  ["f3be86a8", "f09f91b5"], # [OLDER WOMAN] U+FE1A8 -> U+1F475
+  ["f3be86a9", "f09f91b6"], # [BABY] U+FE1A9 -> U+1F476
+  ["f3be86aa", "f09f91b7"], # [CONSTRUCTION WORKER] U+FE1AA -> U+1F477
+  ["f3be86ab", "f09f91b8"], # [PRINCESS] U+FE1AB -> U+1F478
+  ["f3be86ac", "f09f91b9"], # [JAPANESE OGRE] U+FE1AC -> U+1F479
+  ["f3be86ad", "f09f91ba"], # [JAPANESE GOBLIN] U+FE1AD -> U+1F47A
+  ["f3be86ae", "f09f91bb"], # [GHOST] U+FE1AE -> U+1F47B
+  ["f3be86af", "f09f91bc"], # [BABY ANGEL] U+FE1AF -> U+1F47C
+  ["f3be86b0", "f09f91bd"], # [EXTRATERRESTRIAL ALIEN] U+FE1B0 -> U+1F47D
+  ["f3be86b1", "f09f91be"], # [ALIEN MONSTER] U+FE1B1 -> U+1F47E
+  ["f3be86b2", "f09f91bf"], # [IMP] U+FE1B2 -> U+1F47F
+  ["f3be86b3", "f09f9280"], # [SKULL] U+FE1B3 -> U+1F480
+  ["f3be86b4", "f09f9281"], # [INFORMATION DESK PERSON] U+FE1B4 -> U+1F481
+  ["f3be86b5", "f09f9282"], # [GUARDSMAN] U+FE1B5 -> U+1F482
+  ["f3be86b6", "f09f9283"], # [DANCER] U+FE1B6 -> U+1F483
+  ["f3be86b9", "f09f908c"], # [SNAIL] U+FE1B9 -> U+1F40C
+  ["f3be8793", "f09f908d"], # [SNAKE] U+FE1D3 -> U+1F40D
+  ["f3be9f9c", "f09f908e"], # [HORSE] U+FE7DC -> U+1F40E
+  ["f3be8794", "f09f9094"], # [CHICKEN] U+FE1D4 -> U+1F414
+  ["f3be8795", "f09f9097"], # [BOAR] U+FE1D5 -> U+1F417
+  ["f3be8796", "f09f90ab"], # [BACTRIAN CAMEL] U+FE1D6 -> U+1F42B
+  ["f3be878c", "f09f9098"], # [ELEPHANT] U+FE1CC -> U+1F418
+  ["f3be878d", "f09f90a8"], # [KOALA] U+FE1CD -> U+1F428
+  ["f3be878e", "f09f9092"], # [MONKEY] U+FE1CE -> U+1F412
+  ["f3be878f", "f09f9091"], # [SHEEP] U+FE1CF -> U+1F411
+  ["f3be8785", "f09f9099"], # [OCTOPUS] U+FE1C5 -> U+1F419
+  ["f3be8786", "f09f909a"], # [SPIRAL SHELL] U+FE1C6 -> U+1F41A
+  ["f3be878b", "f09f909b"], # [BUG] U+FE1CB -> U+1F41B
+  ["f3be879a", "f09f909c"], # [ANT] U+FE1DA -> U+1F41C
+  ["f3be87a1", "f09f909d"], # [HONEYBEE] U+FE1E1 -> U+1F41D
+  ["f3be87a2", "f09f909e"], # [LADY BEETLE] U+FE1E2 -> U+1F41E
+  ["f3be87a3", "5be382abe3838b5d"], # [CRAB] U+FE1E3 -> "[カニ]"
+  ["f3be8789", "f09f90a0"], # [TROPICAL FISH] U+FE1C9 -> U+1F420
+  ["f3be8799", "f09f90a1"], # [BLOWFISH] U+FE1D9 -> U+1F421
+  ["f3be879c", "f09f90a2"], # [TURTLE] U+FE1DC -> U+1F422
+  ["f3be86ba", "f09f90a4"], # [BABY CHICK] U+FE1BA -> U+1F424
+  ["f3be86bb", "f09f90a5"], # [FRONT-FACING BABY CHICK] U+FE1BB -> U+1F425
+  ["f3be8788", "f09f90a6"], # [BIRD] U+FE1C8 -> U+1F426
+  ["f3be879d", "f09f90a3"], # [HATCHING CHICK] U+FE1DD -> U+1F423
+  ["f3be86bc", "f09f90a7"], # [PENGUIN] U+FE1BC -> U+1F427
+  ["f3be8798", "f09f90a9"], # [POODLE] U+FE1D8 -> U+1F429
+  ["f3be86bd", "f09f909f"], # [FISH] U+FE1BD -> U+1F41F
+  ["f3be8787", "f09f90ac"], # [DOLPHIN] U+FE1C7 -> U+1F42C
+  ["f3be8782", "f09f90ad"], # [MOUSE FACE] U+FE1C2 -> U+1F42D
+  ["f3be8780", "f09f90af"], # [TIGER FACE] U+FE1C0 -> U+1F42F
+  ["f3be86b8", "f09f90b1"], # [CAT FACE] U+FE1B8 -> U+1F431
+  ["f3be8783", "f09f90b3"], # [SPOUTING WHALE] U+FE1C3 -> U+1F433
+  ["f3be86be", "f09f90b4"], # [HORSE FACE] U+FE1BE -> U+1F434
+  ["f3be8784", "f09f90b5"], # [MONKEY FACE] U+FE1C4 -> U+1F435
+  ["f3be86b7", "f09f90b6"], # [DOG FACE] U+FE1B7 -> U+1F436
+  ["f3be86bf", "f09f90b7"], # [PIG FACE] U+FE1BF -> U+1F437
+  ["f3be8781", "f09f90bb"], # [BEAR FACE] U+FE1C1 -> U+1F43B
+  ["f3be878a", "f09f90b9"], # [HAMSTER FACE] U+FE1CA -> U+1F439
+  ["f3be8790", "f09f90ba"], # [WOLF FACE] U+FE1D0 -> U+1F43A
+  ["f3be8791", "f09f90ae"], # [COW FACE] U+FE1D1 -> U+1F42E
+  ["f3be8792", "f09f90b0"], # [RABBIT FACE] U+FE1D2 -> U+1F430
+  ["f3be8797", "f09f90b8"], # [FROG FACE] U+FE1D7 -> U+1F438
+  ["f3be879b", "f09f90be"], # [PAW PRINTS] U+FE1DB -> U+1F43E
+  ["f3be879e", "f09f90b2"], # [DRAGON FACE] U+FE1DE -> U+1F432
+  ["f3be879f", "f09f90bc"], # [PANDA FACE] U+FE1DF -> U+1F43C
+  ["f3be87a0", "f09f90bd"], # [PIG NOSE] U+FE1E0 -> U+1F43D
+  ["f3be8ca0", "f09f9880"], # [ANGRY FACE] U+FE320 -> U+1F600
+  ["f3be8ca1", "f09f9881"], # [ANGUISHED FACE] U+FE321 -> U+1F601
+  ["f3be8ca2", "f09f9882"], # [ASTONISHED FACE] U+FE322 -> U+1F602
+  ["f3be8ca3", "f09f9883"], # [DISAPPOINTED FACE] U+FE323 -> U+1F603
+  ["f3be8ca4", "f09f9884"], # [DIZZY FACE] U+FE324 -> U+1F604
+  ["f3be8ca5", "f09f9885"], # [EXASPERATED FACE] U+FE325 -> U+1F605
+  ["f3be8ca6", "f09f9886"], # [EXPRESSIONLESS FACE] U+FE326 -> U+1F606
+  ["f3be8ca7", "f09f9887"], # [FACE WITH HEART-SHAPED EYES] U+FE327 -> U+1F607
+  ["f3be8ca8", "f09f9888"], # [FACE WITH LOOK OF TRIUMPH] U+FE328 -> U+1F608
+  ["f3be8ca9", "f09f9889"], # [WINKING FACE WITH STUCK-OUT TONGUE] U+FE329 -> U+1F609
+  ["f3be8caa", "f09f988a"], # [FACE WITH STUCK-OUT TONGUE] U+FE32A -> U+1F60A
+  ["f3be8cab", "f09f988b"], # [FACE SAVOURING DELICIOUS FOOD] U+FE32B -> U+1F60B
+  ["f3be8cac", "f09f988c"], # [FACE THROWING A KISS] U+FE32C -> U+1F60C
+  ["f3be8cad", "f09f988d"], # [FACE KISSING] U+FE32D -> U+1F60D
+  ["f3be8cae", "f09f988e"], # [FACE WITH MASK] U+FE32E -> U+1F60E
+  ["f3be8caf", "f09f988f"], # [FLUSHED FACE] U+FE32F -> U+1F60F
+  ["f3be8cb0", "f09f9890"], # [HAPPY FACE WITH OPEN MOUTH] U+FE330 -> U+1F610
+  ["f3be8cb1", "f09f9891"], # [HAPPY FACE WITH OPEN MOUTH AND COLD SWEAT] U+FE331 -> U+1F611
+  ["f3be8cb2", "f09f9892"], # [HAPPY FACE WITH OPEN MOUTH AND CLOSED EYES] U+FE332 -> U+1F612
+  ["f3be8cb3", "f09f9893"], # [HAPPY FACE WITH GRIN] U+FE333 -> U+1F613
+  ["f3be8cb4", "f09f9894"], # [HAPPY AND CRYING FACE] U+FE334 -> U+1F614
+  ["f3be8cb5", "f09f9895"], # [HAPPY FACE WITH WIDE MOUTH AND RAISED EYEBROWS] U+FE335 -> U+1F615
+  ["f3be8cb6", "e298ba"], # [WHITE SMILING FACE] U+FE336 -> U+263A
+  ["f3be8cb7", "e38093"], # [HAPPY FACE] U+FE337 -> U+3013 (GETA)
+  ["f3be8cb8", "f09f9896"], # [HAPPY FACE WITH OPEN MOUTH AND RAISED EYEBROWS] U+FE338 -> U+1F616
+  ["f3be8cb9", "f09f9897"], # [CRYING FACE] U+FE339 -> U+1F617
+  ["f3be8cba", "f09f9898"], # [LOUDLY CRYING FACE] U+FE33A -> U+1F618
+  ["f3be8cbb", "f09f9899"], # [FEARFUL FACE] U+FE33B -> U+1F619
+  ["f3be8cbc", "f09f989a"], # [PERSEVERING FACE] U+FE33C -> U+1F61A
+  ["f3be8cbd", "f09f989b"], # [POUTING FACE] U+FE33D -> U+1F61B
+  ["f3be8cbe", "f09f989c"], # [RELIEVED FACE] U+FE33E -> U+1F61C
+  ["f3be8cbf", "f09f989d"], # [CONFOUNDED FACE] U+FE33F -> U+1F61D
+  ["f3be8d80", "f09f989e"], # [PENSIVE FACE] U+FE340 -> U+1F61E
+  ["f3be8d81", "f09f989f"], # [FACE SCREAMING IN FEAR] U+FE341 -> U+1F61F
+  ["f3be8d82", "f09f98a0"], # [SLEEPY FACE] U+FE342 -> U+1F620
+  ["f3be8d83", "f09f98a1"], # [SMIRKING FACE] U+FE343 -> U+1F621
+  ["f3be8d84", "f09f98a2"], # [FACE WITH COLD SWEAT] U+FE344 -> U+1F622
+  ["f3be8d85", "f09f98a3"], # [DISAPPOINTED BUT RELIEVED FACE] U+FE345 -> U+1F623
+  ["f3be8d86", "f09f98a4"], # [TIRED FACE] U+FE346 -> U+1F624
+  ["f3be8d87", "f09f98a5"], # [WINKING FACE] U+FE347 -> U+1F625
+  ["f3be8d88", "f09f98ab"], # [CAT FACE WITH OPEN MOUTH] U+FE348 -> U+1F62B
+  ["f3be8d89", "f09f98ac"], # [HAPPY CAT FACE WITH GRIN] U+FE349 -> U+1F62C
+  ["f3be8d8a", "f09f98ad"], # [HAPPY AND CRYING CAT FACE] U+FE34A -> U+1F62D
+  ["f3be8d8b", "f09f98ae"], # [CAT FACE KISSING] U+FE34B -> U+1F62E
+  ["f3be8d8c", "f09f98af"], # [CAT FACE WITH HEART-SHAPED EYES] U+FE34C -> U+1F62F
+  ["f3be8d8d", "f09f98b0"], # [CRYING CAT FACE] U+FE34D -> U+1F630
+  ["f3be8d8e", "f09f98b1"], # [POUTING CAT FACE] U+FE34E -> U+1F631
+  ["f3be8d8f", "f09f98b2"], # [CAT FACE WITH TIGHTLY-CLOSED LIPS] U+FE34F -> U+1F632
+  ["f3be8d90", "f09f98b3"], # [ANGUISHED CAT FACE] U+FE350 -> U+1F633
+  ["f3be8d91", "f09f98b4"], # [FACE WITH NO GOOD GESTURE] U+FE351 -> U+1F634
+  ["f3be8d92", "f09f98b5"], # [FACE WITH OK GESTURE] U+FE352 -> U+1F635
+  ["f3be8d93", "f09f98b6"], # [PERSON BOWING DEEPLY] U+FE353 -> U+1F636
+  ["f3be8d94", "f09f98b7"], # [SEE-NO-EVIL MONKEY] U+FE354 -> U+1F637
+  ["f3be8d95", "f09f98b9"], # [SPEAK-NO-EVIL MONKEY] U+FE355 -> U+1F639
+  ["f3be8d96", "f09f98b8"], # [HEAR-NO-EVIL MONKEY] U+FE356 -> U+1F638
+  ["f3be8d97", "f09f98ba"], # [PERSON RAISING ONE HAND] U+FE357 -> U+1F63A
+  ["f3be8d98", "f09f98bb"], # [PERSON RAISING BOTH HANDS IN CELEBRATION] U+FE358 -> U+1F63B
+  ["f3be8d99", "f09f98bc"], # [PERSON FROWNING] U+FE359 -> U+1F63C
+  ["f3be8d9a", "f09f98bd"], # [PERSON WITH POUTING FACE] U+FE35A -> U+1F63D
+  ["f3be8d9b", "f09f98be"], # [PERSON WITH FOLDED HANDS] U+FE35B -> U+1F63E
+  ["f3be8d9c", "422d29"], # [COOL FACE] U+FE35C -> "B-)"
+  ["f3be8d9d", "efbcbc285e2d5e29efbc8f"], # [HUG FACE] U+FE35D -> "＼(^-^)／"
+  ["f3be8d9e", "382d7c"], # [GEEK] U+FE35E -> "8-|"
+  ["f3be8d9f", "5be88083e38188e4b8ad5d"], # [THINKING] U+FE35F -> "[考え中]"
+  ["f3be8da0", "5be38284e381a3e3819fe383bc5d"], # [BOUNCING HAPPY] U+FE360 -> "[やったー]"
+  ["f3be8da1", "5be382afe383a9e382afe383a95d"], # [FACE WITH ROLLING EYES] U+FE361 -> "[クラクラ]"
+  ["f3be8da2", "5be383a0e383a0e383a05d"], # [FACE WITH SLANTED MOUTH] U+FE362 -> "[ムムム]"
+  ["f3be8da3", "5be382a8e383833f5d"], # [FACE WITH UNBALANCED EYES] U+FE363 -> "[エッ?]"
+  ["f3be8da4", "5be98086e7ab8be381a15d"], # [UPSIDE DOWN FACE] U+FE364 -> "[逆立ち]"
+  ["f3be8da5", "5be680aae68891e38292e38197e3819fe9a1945d"], # [INJURED FACE] U+FE365 -> "[怪我をした顔]"
+  ["f3be8da6", "5be5bf83e9858de38197e3819fe9a1945d"], # [NERVOUS FACE] U+FE366 -> "[心配した顔]"
+  ["f3be8da7", "5be5908ce68385e38197e3819fe9a1945d"], # [SYMPATHETIC FACE] U+FE367 -> "[同情した顔]"
+  ["f3be8da8", "5be7b4b0e38184e9a1945d"], # [THIN FACE] U+FE368 -> "[細い顔]"
+  ["f3be8da9", "5be383ade3839ce38383e383885d"], # [ROBOT] U+FE369 -> "[ロボット]"
+  ["f3be92b0", "f09f8fa0"], # [HOUSE BUILDING] U+FE4B0 -> U+1F3E0
+  ["f3be92b1", "f09f8fa1"], # [HOUSE WITH GARDEN] U+FE4B1 -> U+1F3E1
+  ["f3be92b2", "f09f8fa2"], # [OFFICE BUILDING] U+FE4B2 -> U+1F3E2
+  ["f3be92b3", "f09f8fa3"], # [JAPANESE POST OFFICE] U+FE4B3 -> U+1F3E3
+  ["f3be92b4", "f09f8fa5"], # [HOSPITAL] U+FE4B4 -> U+1F3E5
+  ["f3be92b5", "f09f8fa6"], # [BANK] U+FE4B5 -> U+1F3E6
+  ["f3be92b6", "f09f8fa7"], # [AUTOMATED TELLER MACHINE] U+FE4B6 -> U+1F3E7
+  ["f3be92b7", "f09f8fa8"], # [HOTEL] U+FE4B7 -> U+1F3E8
+  ["f3be92b8", "f09f8fa9"], # [LOVE HOTEL] U+FE4B8 -> U+1F3E9
+  ["f3be92b9", "f09f8faa"], # [CONVENIENCE STORE] U+FE4B9 -> U+1F3EA
+  ["f3be92ba", "f09f8fab"], # [SCHOOL] U+FE4BA -> U+1F3EB
+  ["f3be92bb", "e29baa"], # [CHURCH] U+FE4BB -> U+26EA
+  ["f3be92bc", "e29bb2"], # [FOUNTAIN] U+FE4BC -> U+26F2
+  ["f3be92bd", "f09f8fac"], # [DEPARTMENT STORE] U+FE4BD -> U+1F3EC
+  ["f3be92be", "f09f8faf"], # [JAPANESE CASTLE] U+FE4BE -> U+1F3EF
+  ["f3be92bf", "f09f8fb0"], # [EUROPEAN CASTLE] U+FE4BF -> U+1F3F0
+  ["f3be9380", "f09f8fad"], # [FACTORY] U+FE4C0 -> U+1F3ED
+  ["f3be9381", "e29a93"], # [ANCHOR] U+FE4C1 -> U+2693
+  ["f3be9382", "f09f8fae"], # [IZAKAYA LANTERN] U+FE4C2 -> U+1F3EE
+  ["f3be9383", "f09f97bb"], # [MOUNT FUJI] U+FE4C3 -> U+1F5FB
+  ["f3be9384", "f09f97bc"], # [TOKYO TOWER] U+FE4C4 -> U+1F5FC
+  ["f3be9386", "f09f97bd"], # [STATUE OF LIBERTY] U+FE4C6 -> U+1F5FD
+  ["f3be9387", "f09f97be"], # [SILHOUETTE OF JAPAN] U+FE4C7 -> U+1F5FE
+  ["f3be9388", "f09f97bf"], # [MOYAI] U+FE4C8 -> U+1F5FF
+  ["f3be938c", "f09f919e"], # [MANS SHOE] U+FE4CC -> U+1F45E
+  ["f3be938d", "f09f919f"], # [ATHLETIC SHOE] U+FE4CD -> U+1F45F
+  ["f3be9396", "f09f91a0"], # [HIGH-HEELED SHOE] U+FE4D6 -> U+1F460
+  ["f3be9397", "f09f91a1"], # [WOMANS SANDAL] U+FE4D7 -> U+1F461
+  ["f3be9398", "f09f91a2"], # [WOMANS BOOTS] U+FE4D8 -> U+1F462
+  ["f3be9593", "f09f91a3"], # [FOOTPRINTS] U+FE553 -> U+1F463
+  ["f3be938e", "f09f9193"], # [EYEGLASSES] U+FE4CE -> U+1F453
+  ["f3be938f", "f09f9195"], # [T-SHIRT] U+FE4CF -> U+1F455
+  ["f3be9390", "f09f9196"], # [JEANS] U+FE4D0 -> U+1F456
+  ["f3be9391", "f09f9191"], # [CROWN] U+FE4D1 -> U+1F451
+  ["f3be9393", "f09f9194"], # [NECKTIE] U+FE4D3 -> U+1F454
+  ["f3be9394", "f09f9192"], # [WOMANS HAT] U+FE4D4 -> U+1F452
+  ["f3be9395", "f09f9197"], # [DRESS] U+FE4D5 -> U+1F457
+  ["f3be9399", "f09f9198"], # [KIMONO] U+FE4D9 -> U+1F458
+  ["f3be939a", "f09f9199"], # [BIKINI] U+FE4DA -> U+1F459
+  ["f3be939b", "f09f919a"], # [WOMANS CLOTHES] U+FE4DB -> U+1F45A
+  ["f3be939c", "f09f919b"], # [PURSE] U+FE4DC -> U+1F45B
+  ["f3be93b0", "f09f919c"], # [HANDBAG] U+FE4F0 -> U+1F45C
+  ["f3be93b1", "f09f919d"], # [POUCH] U+FE4F1 -> U+1F45D
+  ["f3be939d", "f09f92b0"], # [MONEY BAG] U+FE4DD -> U+1F4B0
+  ["f3be939e", "f09f92b1"], # [CURRENCY EXCHANGE] U+FE4DE -> U+1F4B1
+  ["f3be939f", "f09f92b9"], # [CHART WITH UPWARDS TREND AND YEN SIGN] U+FE4DF -> U+1F4B9
+  ["f3be93a0", "f09f92b2"], # [HEAVY DOLLAR SIGN] U+FE4E0 -> U+1F4B2
+  ["f3be93a1", "f09f92b3"], # [CREDIT CARD] U+FE4E1 -> U+1F4B3
+  ["f3be93a2", "f09f92b4"], # [BANKNOTE WITH YEN SIGN] U+FE4E2 -> U+1F4B4
+  ["f3be93a3", "f09f92b5"], # [BANKNOTE WITH DOLLAR SIGN] U+FE4E3 -> U+1F4B5
+  ["f3be93a4", "f09f92b8"], # [MONEY WITH WINGS] U+FE4E4 -> U+1F4B8
+  ["f3be93ad", "f09f87a8f09f87b3"], # [REGIONAL INDICATOR SYMBOL LETTERS CN] U+FE4ED -> U+1F1E8 U+1F1F3
+  ["f3be93a8", "f09f87a9f09f87aa"], # [REGIONAL INDICATOR SYMBOL LETTERS DE] U+FE4E8 -> U+1F1E9 U+1F1EA
+  ["f3be93ab", "f09f87aaf09f87b8"], # [REGIONAL INDICATOR SYMBOL LETTERS ES] U+FE4EB -> U+1F1EA U+1F1F8
+  ["f3be93a7", "f09f87abf09f87b7"], # [REGIONAL INDICATOR SYMBOL LETTERS FR] U+FE4E7 -> U+1F1EB U+1F1F7
+  ["f3be93aa", "f09f87baf09f87b0"], # [REGIONAL INDICATOR SYMBOL LETTERS GB] U+FE4EA -> U+1F1FA U+1F1F0
+  ["f3be93a9", "f09f87aef09f87b9"], # [REGIONAL INDICATOR SYMBOL LETTERS IT] U+FE4E9 -> U+1F1EE U+1F1F9
+  ["f3be93a5", "f09f87aff09f87b5"], # [REGIONAL INDICATOR SYMBOL LETTERS JP] U+FE4E5 -> U+1F1EF U+1F1F5
+  ["f3be93ae", "f09f87b0f09f87b7"], # [REGIONAL INDICATOR SYMBOL LETTERS KR] U+FE4EE -> U+1F1F0 U+1F1F7
+  ["f3be93ac", "f09f87b7f09f87ba"], # [REGIONAL INDICATOR SYMBOL LETTERS RU] U+FE4EC -> U+1F1F7 U+1F1FA
+  ["f3be93a6", "f09f87baf09f87b8"], # [REGIONAL INDICATOR SYMBOL LETTERS US] U+FE4E6 -> U+1F1FA U+1F1F8
+  ["f3be93b6", "f09f94a5"], # [FIRE] U+FE4F6 -> U+1F525
+  ["f3be93bb", "f09f94a6"], # [ELECTRIC TORCH] U+FE4FB -> U+1F526
+  ["f3be9389", "f09f94a7"], # [WRENCH] U+FE4C9 -> U+1F527
+  ["f3be938a", "f09f94a8"], # [HAMMER] U+FE4CA -> U+1F528
+  ["f3be938b", "f09f94a9"], # [NUT AND BOLT] U+FE4CB -> U+1F529
+  ["f3be93ba", "f09f94aa"], # [HOCHO] U+FE4FA -> U+1F52A
+  ["f3be93b5", "f09f94ab"], # [PISTOL] U+FE4F5 -> U+1F52B
+  ["f3be93b7", "f09f94ae"], # [CRYSTAL BALL] U+FE4F7 -> U+1F52E
+  ["f3be93b8", "f09f94af"], # [SIX POINTED STAR WITH MIDDLE DOT] U+FE4F8 -> U+1F52F
+  ["f3be8184", "f09f94b0"], # [JAPANESE SYMBOL FOR BEGINNER] U+FE044 -> U+1F530
+  ["f3be9392", "f09f94b1"], # [TRIDENT EMBLEM] U+FE4D2 -> U+1F531
+  ["f3be9489", "f09f9289"], # [SYRINGE] U+FE509 -> U+1F489
+  ["f3be948a", "f09f928a"], # [PILL] U+FE50A -> U+1F48A
+  ["f3be948b", "f09f85b0"], # [NEGATIVE SQUARED LATIN CAPITAL LETTER A] U+FE50B -> U+1F170
+  ["f3be948c", "f09f85b1"], # [NEGATIVE SQUARED LATIN CAPITAL LETTER B] U+FE50C -> U+1F171
+  ["f3be948d", "f09f868e"], # [NEGATIVE SQUARED AB] U+FE50D -> U+1F18E
+  ["f3be948e", "f09f85be"], # [NEGATIVE SQUARED LATIN CAPITAL LETTER O] U+FE50E -> U+1F17E
+  ["f3be948f", "f09f8e80"], # [RIBBON] U+FE50F -> U+1F380
+  ["f3be9490", "f09f8e81"], # [WRAPPED PRESENT] U+FE510 -> U+1F381
+  ["f3be9491", "f09f8e82"], # [BIRTHDAY CAKE] U+FE511 -> U+1F382
+  ["f3be9492", "f09f8e84"], # [CHRISTMAS TREE] U+FE512 -> U+1F384
+  ["f3be9493", "f09f8e85"], # [FATHER CHRISTMAS] U+FE513 -> U+1F385
+  ["f3be9494", "f09f8e8c"], # [CROSSED FLAGS] U+FE514 -> U+1F38C
+  ["f3be9495", "f09f8e86"], # [FIREWORKS] U+FE515 -> U+1F386
+  ["f3be9496", "f09f8e88"], # [BALLOON] U+FE516 -> U+1F388
+  ["f3be9497", "f09f8e89"], # [PARTY POPPER] U+FE517 -> U+1F389
+  ["f3be9498", "f09f8e8d"], # [PINE DECORATION] U+FE518 -> U+1F38D
+  ["f3be9499", "f09f8e8e"], # [JAPANESE DOLLS] U+FE519 -> U+1F38E
+  ["f3be949a", "f09f8e93"], # [GRADUATION CAP] U+FE51A -> U+1F393
+  ["f3be949b", "f09f8e92"], # [SCHOOL SATCHEL] U+FE51B -> U+1F392
+  ["f3be949c", "f09f8e8f"], # [CARP STREAMER] U+FE51C -> U+1F38F
+  ["f3be949d", "f09f8e87"], # [FIREWORK SPARKLER] U+FE51D -> U+1F387
+  ["f3be949e", "f09f8e90"], # [WIND CHIME] U+FE51E -> U+1F390
+  ["f3be949f", "f09f8e83"], # [JACK-O-LANTERN] U+FE51F -> U+1F383
+  ["f3be94a0", "f09f8e8a"], # [CONFETTI BALL] U+FE520 -> U+1F38A
+  ["f3be94a1", "f09f8e8b"], # [TANABATA TREE] U+FE521 -> U+1F38B
+  ["f3be8097", "f09f8e91"], # [MOON VIEWING CEREMONY] U+FE017 -> U+1F391
+  ["f3be94a2", "f09f939f"], # [PAGER] U+FE522 -> U+1F4DF
+  ["f3be94a3", "e2988e"], # [BLACK TELEPHONE] U+FE523 -> U+260E
+  ["f3be94a4", "f09f939e"], # [TELEPHONE RECEIVER] U+FE524 -> U+1F4DE
+  ["f3be94a5", "f09f93b1"], # [MOBILE PHONE] U+FE525 -> U+1F4F1
+  ["f3be94a6", "f09f93b2"], # [MOBILE PHONE WITH RIGHTWARDS ARROW AT LEFT] U+FE526 -> U+1F4F2
+  ["f3be94a7", "f09f939d"], # [MEMO] U+FE527 -> U+1F4DD
+  ["f3be94a8", "f09f93a0"], # [FAX MACHINE] U+FE528 -> U+1F4E0
+  ["f3be94a9", "e29c89"], # [ENVELOPE] U+FE529 -> U+2709
+  ["f3be94aa", "f09f93a8"], # [INCOMING ENVELOPE] U+FE52A -> U+1F4E8
+  ["f3be94ab", "f09f93a9"], # [ENVELOPE WITH DOWNWARDS ARROW ABOVE] U+FE52B -> U+1F4E9
+  ["f3be94ac", "f09f93aa"], # [CLOSED MAILBOX WITH LOWERED FLAG] U+FE52C -> U+1F4EA
+  ["f3be94ad", "f09f93ab"], # [CLOSED MAILBOX WITH RAISED FLAG] U+FE52D -> U+1F4EB
+  ["f3be94ae", "f09f93ae"], # [POSTBOX] U+FE52E -> U+1F4EE
+  ["f3bea0a2", "f09f93b0"], # [NEWSPAPER] U+FE822 -> U+1F4F0
+  ["f3be94af", "f09f93a2"], # [PUBLIC ADDRESS LOUDSPEAKER] U+FE52F -> U+1F4E2
+  ["f3be94b0", "f09f93a3"], # [CHEERING MEGAPHONE] U+FE530 -> U+1F4E3
+  ["f3be94b1", "f09f93a1"], # [SATELLITE ANTENNA] U+FE531 -> U+1F4E1
+  ["f3be94b3", "f09f93a4"], # [OUTBOX TRAY] U+FE533 -> U+1F4E4
+  ["f3be94b4", "f09f93a5"], # [INBOX TRAY] U+FE534 -> U+1F4E5
+  ["f3be94b5", "f09f93a6"], # [PACKAGE] U+FE535 -> U+1F4E6
+  ["f3beae92", "f09f93a7"], # [E-MAIL SYMBOL] U+FEB92 -> U+1F4E7
+  ["f3beadbc", "f09f94a0"], # [INPUT SYMBOL FOR LATIN CAPITAL LETTERS] U+FEB7C -> U+1F520
+  ["f3beadbd", "f09f94a1"], # [INPUT SYMBOL FOR LATIN SMALL LETTERS] U+FEB7D -> U+1F521
+  ["f3beadbe", "f09f94a2"], # [INPUT SYMBOL FOR NUMBERS] U+FEB7E -> U+1F522
+  ["f3beadbf", "f09f94a3"], # [INPUT SYMBOL FOR SYMBOLS] U+FEB7F -> U+1F523
+  ["f3beae80", "f09f94a4"], # [INPUT SYMBOL FOR LATIN LETTERS] U+FEB80 -> U+1F524
+  ["f3be94b6", "e29c92"], # [BLACK NIB] U+FE536 -> U+2712
+  ["f3be94b7", "f09f92ba"], # [SEAT] U+FE537 -> U+1F4BA
+  ["f3be94b8", "f09f92bb"], # [PERSONAL COMPUTER] U+FE538 -> U+1F4BB
+  ["f3be94b9", "e29c8f"], # [PENCIL] U+FE539 -> U+270F
+  ["f3be94ba", "f09f938e"], # [PAPERCLIP] U+FE53A -> U+1F4CE
+  ["f3be94bb", "f09f92bc"], # [BRIEFCASE] U+FE53B -> U+1F4BC
+  ["f3be94bc", "f09f92bd"], # [MINIDISC] U+FE53C -> U+1F4BD
+  ["f3be94bd", "f09f92be"], # [FLOPPY DISK] U+FE53D -> U+1F4BE
+  ["f3bea09d", "f09f92bf"], # [OPTICAL DISC] U+FE81D -> U+1F4BF
+  ["f3bea09e", "f09f9380"], # [DVD] U+FE81E -> U+1F4C0
+  ["f3be94be", "e29c82"], # [BLACK SCISSORS] U+FE53E -> U+2702
+  ["f3be94bf", "f09f938d"], # [ROUND PUSHPIN] U+FE53F -> U+1F4CD
+  ["f3be9580", "f09f9383"], # [PAGE WITH CURL] U+FE540 -> U+1F4C3
+  ["f3be9581", "f09f9384"], # [PAGE FACING UP] U+FE541 -> U+1F4C4
+  ["f3be9582", "f09f9385"], # [CALENDAR] U+FE542 -> U+1F4C5
+  ["f3be9583", "f09f9381"], # [FILE FOLDER] U+FE543 -> U+1F4C1
+  ["f3be9584", "f09f9382"], # [OPEN FILE FOLDER] U+FE544 -> U+1F4C2
+  ["f3be9585", "f09f9393"], # [NOTEBOOK] U+FE545 -> U+1F4D3
+  ["f3be9586", "f09f9396"], # [OPEN BOOK] U+FE546 -> U+1F4D6
+  ["f3be9587", "f09f9394"], # [NOTEBOOK WITH DECORATIVE COVER] U+FE547 -> U+1F4D4
+  ["f3be9482", "f09f9395"], # [CLOSED BOOK] U+FE502 -> U+1F4D5
+  ["f3be93bf", "f09f9397"], # [GREEN BOOK] U+FE4FF -> U+1F4D7
+  ["f3be9480", "f09f9398"], # [BLUE BOOK] U+FE500 -> U+1F4D8
+  ["f3be9481", "f09f9399"], # [ORANGE BOOK] U+FE501 -> U+1F4D9
+  ["f3be9483", "f09f939a"], # [BOOKS] U+FE503 -> U+1F4DA
+  ["f3be9484", "f09f939b"], # [NAME BADGE] U+FE504 -> U+1F4DB
+  ["f3be93bd", "f09f939c"], # [SCROLL] U+FE4FD -> U+1F4DC
+  ["f3be9588", "f09f938b"], # [CLIPBOARD] U+FE548 -> U+1F4CB
+  ["f3be9589", "f09f9386"], # [TEAR-OFF CALENDAR] U+FE549 -> U+1F4C6
+  ["f3be958a", "f09f938a"], # [BAR CHART] U+FE54A -> U+1F4CA
+  ["f3be958b", "f09f9388"], # [CHART WITH UPWARDS TREND] U+FE54B -> U+1F4C8
+  ["f3be958c", "f09f9389"], # [CHART WITH DOWNWARDS TREND] U+FE54C -> U+1F4C9
+  ["f3be958d", "f09f9387"], # [CARD INDEX] U+FE54D -> U+1F4C7
+  ["f3be958e", "f09f938c"], # [PUSHPIN] U+FE54E -> U+1F4CC
+  ["f3be958f", "f09f9392"], # [LEDGER] U+FE54F -> U+1F4D2
+  ["f3be9590", "f09f938f"], # [STRAIGHT RULER] U+FE550 -> U+1F4CF
+  ["f3be9591", "f09f9390"], # [TRIANGULAR RULER] U+FE551 -> U+1F4D0
+  ["f3be9592", "f09f9391"], # [BOOKMARK TABS] U+FE552 -> U+1F4D1
+  ["f3be9f90", "f09f8ebd"], # [RUNNING SHIRT WITH SASH] U+FE7D0 -> U+1F3BD
+  ["f3be9f91", "e29abe"], # [BASEBALL] U+FE7D1 -> U+26BE
+  ["f3be9f92", "e29bb3"], # [FLAG IN HOLE] U+FE7D2 -> U+26F3
+  ["f3be9f93", "f09f8ebe"], # [TENNIS RACQUET AND BALL] U+FE7D3 -> U+1F3BE
+  ["f3be9f94", "e29abd"], # [SOCCER BALL] U+FE7D4 -> U+26BD
+  ["f3be9f95", "f09f8ebf"], # [SKI AND SKI BOOT] U+FE7D5 -> U+1F3BF
+  ["f3be9f96", "f09f8f80"], # [BASKETBALL AND HOOP] U+FE7D6 -> U+1F3C0
+  ["f3be9f97", "f09f8f81"], # [CHEQUERED FLAG] U+FE7D7 -> U+1F3C1
+  ["f3be9f98", "f09f8f82"], # [SNOWBOARDER] U+FE7D8 -> U+1F3C2
+  ["f3be9f99", "f09f8f83"], # [RUNNER] U+FE7D9 -> U+1F3C3
+  ["f3be9f9a", "f09f8f84"], # [SURFER] U+FE7DA -> U+1F3C4
+  ["f3be9f9b", "f09f8f86"], # [TROPHY] U+FE7DB -> U+1F3C6
+  ["f3be9f9d", "f09f8f88"], # [AMERICAN FOOTBALL] U+FE7DD -> U+1F3C8
+  ["f3be9f9e", "f09f8f8a"], # [SWIMMER] U+FE7DE -> U+1F3CA
+  ["f3be9f9f", "f09f9a86"], # [TRAIN] U+FE7DF -> U+1F686
+  ["f3be9fa0", "f09f9a87"], # [METRO] U+FE7E0 -> U+1F687
+  ["f3be9fa1", "e29382"], # [CIRCLED LATIN CAPITAL LETTER M] U+FE7E1 -> U+24C2
+  ["f3be9fa2", "f09f9a84"], # [HIGH-SPEED TRAIN] U+FE7E2 -> U+1F684
+  ["f3be9fa3", "f09f9a85"], # [HIGH-SPEED TRAIN WITH BULLET NOSE] U+FE7E3 -> U+1F685
+  ["f3be9fa4", "f09f9a97"], # [AUTOMOBILE] U+FE7E4 -> U+1F697
+  ["f3be9fa5", "f09f9a99"], # [RECREATIONAL VEHICLE] U+FE7E5 -> U+1F699
+  ["f3be9fa6", "f09f9a8d"], # [ONCOMING BUS] U+FE7E6 -> U+1F68D
+  ["f3be9fa7", "f09f9a8f"], # [BUS STOP] U+FE7E7 -> U+1F68F
+  ["f3be9fa8", "f09f9aa2"], # [SHIP] U+FE7E8 -> U+1F6A2
+  ["f3be9fa9", "e29c88"], # [AIRPLANE] U+FE7E9 -> U+2708
+  ["f3be9faa", "e29bb5"], # [SAILBOAT] U+FE7EA -> U+26F5
+  ["f3be9fac", "f09f9a89"], # [STATION] U+FE7EC -> U+1F689
+  ["f3be9fad", "f09f9a80"], # [ROCKET] U+FE7ED -> U+1F680
+  ["f3be9fae", "f09f9aa4"], # [SPEEDBOAT] U+FE7EE -> U+1F6A4
+  ["f3be9faf", "f09f9a95"], # [TAXI] U+FE7EF -> U+1F695
+  ["f3be9fb1", "f09f9a9a"], # [DELIVERY TRUCK] U+FE7F1 -> U+1F69A
+  ["f3be9fb2", "f09f9a92"], # [FIRE ENGINE] U+FE7F2 -> U+1F692
+  ["f3be9fb3", "f09f9a91"], # [AMBULANCE] U+FE7F3 -> U+1F691
+  ["f3be9fb4", "f09f9a93"], # [POLICE CAR] U+FE7F4 -> U+1F693
+  ["f3be9fb5", "e29bbd"], # [FUEL PUMP] U+FE7F5 -> U+26FD
+  ["f3be9fb6", "f09f85bf"], # [NEGATIVE SQUARED LATIN CAPITAL LETTER P] U+FE7F6 -> U+1F17F
+  ["f3be9fb7", "f09f9aa5"], # [HORIZONTAL TRAFFIC LIGHT] U+FE7F7 -> U+1F6A5
+  ["f3be9fb8", "f09f9aa7"], # [CONSTRUCTION SIGN] U+FE7F8 -> U+1F6A7
+  ["f3be9fb9", "f09f9aa8"], # [POLICE CARS REVOLVING LIGHT] U+FE7F9 -> U+1F6A8
+  ["f3be9fba", "e299a8"], # [HOT SPRINGS] U+FE7FA -> U+2668
+  ["f3be9fbb", "e29bba"], # [TENT] U+FE7FB -> U+26FA
+  ["f3be9fbc", "f09f8ea0"], # [CAROUSEL HORSE] U+FE7FC -> U+1F3A0
+  ["f3be9fbd", "f09f8ea1"], # [FERRIS WHEEL] U+FE7FD -> U+1F3A1
+  ["f3be9fbe", "f09f8ea2"], # [ROLLER COASTER] U+FE7FE -> U+1F3A2
+  ["f3be9fbf", "f09f8ea3"], # [FISHING POLE AND FISH] U+FE7FF -> U+1F3A3
+  ["f3bea080", "f09f8ea4"], # [MICROPHONE] U+FE800 -> U+1F3A4
+  ["f3bea081", "f09f8ea5"], # [MOVIE CAMERA] U+FE801 -> U+1F3A5
+  ["f3bea082", "f09f8ea6"], # [CINEMA] U+FE802 -> U+1F3A6
+  ["f3bea083", "f09f8ea7"], # [HEADPHONE] U+FE803 -> U+1F3A7
+  ["f3bea084", "f09f8ea8"], # [ARTIST PALETTE] U+FE804 -> U+1F3A8
+  ["f3bea085", "f09f8ea9"], # [TOP HAT] U+FE805 -> U+1F3A9
+  ["f3bea086", "f09f8eaa"], # [CIRCUS TENT] U+FE806 -> U+1F3AA
+  ["f3bea087", "f09f8eab"], # [TICKET] U+FE807 -> U+1F3AB
+  ["f3bea088", "f09f8eac"], # [CLAPPER BOARD] U+FE808 -> U+1F3AC
+  ["f3bea089", "f09f8ead"], # [PERFORMING ARTS] U+FE809 -> U+1F3AD
+  ["f3bea08a", "f09f8eae"], # [VIDEO GAME] U+FE80A -> U+1F3AE
+  ["f3bea08b", "f09f8084"], # [MAHJONG TILE RED DRAGON] U+FE80B -> U+1F004
+  ["f3bea08c", "f09f8eaf"], # [DIRECT HIT] U+FE80C -> U+1F3AF
+  ["f3bea08d", "f09f8eb0"], # [SLOT MACHINE] U+FE80D -> U+1F3B0
+  ["f3bea08e", "f09f8eb1"], # [BILLIARDS] U+FE80E -> U+1F3B1
+  ["f3bea08f", "f09f8eb2"], # [GAME DIE] U+FE80F -> U+1F3B2
+  ["f3bea090", "f09f8eb3"], # [BOWLING] U+FE810 -> U+1F3B3
+  ["f3bea091", "f09f8eb4"], # [FLOWER PLAYING CARDS] U+FE811 -> U+1F3B4
+  ["f3bea092", "f09f838f"], # [PLAYING CARD BLACK JOKER] U+FE812 -> U+1F0CF
+  ["f3bea093", "f09f8eb5"], # [MUSICAL NOTE] U+FE813 -> U+1F3B5
+  ["f3bea094", "f09f8eb6"], # [MULTIPLE MUSICAL NOTES] U+FE814 -> U+1F3B6
+  ["f3bea095", "f09f8eb7"], # [SAXOPHONE] U+FE815 -> U+1F3B7
+  ["f3bea096", "f09f8eb8"], # [GUITAR] U+FE816 -> U+1F3B8
+  ["f3bea097", "f09f8eb9"], # [MUSICAL KEYBOARD] U+FE817 -> U+1F3B9
+  ["f3bea098", "f09f8eba"], # [TRUMPET] U+FE818 -> U+1F3BA
+  ["f3bea099", "f09f8ebb"], # [VIOLIN] U+FE819 -> U+1F3BB
+  ["f3bea09a", "f09f8ebc"], # [MUSICAL SCORE] U+FE81A -> U+1F3BC
+  ["f3bea09b", "e380bd"], # [PART ALTERNATION MARK] U+FE81B -> U+303D
+  ["f3be93af", "f09f93b7"], # [CAMERA] U+FE4EF -> U+1F4F7
+  ["f3be93b9", "f09f93b9"], # [VIDEO CAMERA] U+FE4F9 -> U+1F4F9
+  ["f3bea09c", "f09f93ba"], # [TELEVISION] U+FE81C -> U+1F4FA
+  ["f3bea09f", "f09f93bb"], # [RADIO] U+FE81F -> U+1F4FB
+  ["f3bea0a0", "f09f93bc"], # [VIDEOCASSETTE] U+FE820 -> U+1F4FC
+  ["f3bea0a3", "f09f928b"], # [KISS MARK] U+FE823 -> U+1F48B
+  ["f3bea0a4", "f09f928c"], # [LOVE LETTER] U+FE824 -> U+1F48C
+  ["f3bea0a5", "f09f928d"], # [RING] U+FE825 -> U+1F48D
+  ["f3bea0a6", "f09f928e"], # [GEM STONE] U+FE826 -> U+1F48E
+  ["f3bea0a7", "f09f928f"], # [KISS] U+FE827 -> U+1F48F
+  ["f3bea0a8", "f09f9290"], # [BOUQUET] U+FE828 -> U+1F490
+  ["f3bea0a9", "f09f9291"], # [COUPLE WITH HEART] U+FE829 -> U+1F491
+  ["f3bea0aa", "f09f9292"], # [WEDDING] U+FE82A -> U+1F492
+  ["f3beaca5", "f09f949e"], # [NO ONE UNDER EIGHTEEN SYMBOL] U+FEB25 -> U+1F51E
+  ["f3beaca9", "c2a9"], # [COPYRIGHT SIGN] U+FEB29 -> U+A9
+  ["f3beacad", "c2ae"], # [REGISTERED SIGN] U+FEB2D -> U+AE
+  ["f3beacaa", "e284a2"], # [TRADE MARK SIGN] U+FEB2A -> U+2122
+  ["f3bead87", "e284b9"], # [INFORMATION SOURCE] U+FEB47 -> U+2139
+  ["f3bea0ac", "23e283a3"], # [HASH KEY] U+FE82C -> U+23 U+20E3
+  ["f3bea0ae", "31e283a3"], # [KEYCAP 1] U+FE82E -> U+31 U+20E3
+  ["f3bea0af", "32e283a3"], # [KEYCAP 2] U+FE82F -> U+32 U+20E3
+  ["f3bea0b0", "33e283a3"], # [KEYCAP 3] U+FE830 -> U+33 U+20E3
+  ["f3bea0b1", "34e283a3"], # [KEYCAP 4] U+FE831 -> U+34 U+20E3
+  ["f3bea0b2", "35e283a3"], # [KEYCAP 5] U+FE832 -> U+35 U+20E3
+  ["f3bea0b3", "36e283a3"], # [KEYCAP 6] U+FE833 -> U+36 U+20E3
+  ["f3bea0b4", "37e283a3"], # [KEYCAP 7] U+FE834 -> U+37 U+20E3
+  ["f3bea0b5", "38e283a3"], # [KEYCAP 8] U+FE835 -> U+38 U+20E3
+  ["f3bea0b6", "39e283a3"], # [KEYCAP 9] U+FE836 -> U+39 U+20E3
+  ["f3bea0b7", "30e283a3"], # [KEYCAP 0] U+FE837 -> U+30 U+20E3
+  ["f3bea0bb", "f09f949f"], # [KEYCAP TEN] U+FE83B -> U+1F51F
+  ["f3bea0b8", "f09f93b6"], # [ANTENNA WITH BARS] U+FE838 -> U+1F4F6
+  ["f3bea0b9", "f09f93b3"], # [VIBRATION MODE] U+FE839 -> U+1F4F3
+  ["f3bea0ba", "f09f93b4"], # [MOBILE PHONE OFF] U+FE83A -> U+1F4F4
+  ["f3bea5a0", "f09f8d94"], # [HAMBURGER] U+FE960 -> U+1F354
+  ["f3bea5a1", "f09f8d99"], # [RICE BALL] U+FE961 -> U+1F359
+  ["f3bea5a2", "f09f8db0"], # [SHORTCAKE] U+FE962 -> U+1F370
+  ["f3bea5a3", "f09f8d9c"], # [STEAMING BOWL] U+FE963 -> U+1F35C
+  ["f3bea5a4", "f09f8d9e"], # [BREAD] U+FE964 -> U+1F35E
+  ["f3bea5a5", "f09f8db3"], # [COOKING] U+FE965 -> U+1F373
+  ["f3bea5a6", "f09f8da6"], # [SOFT ICE CREAM] U+FE966 -> U+1F366
+  ["f3bea5a7", "f09f8d9f"], # [FRENCH FRIES] U+FE967 -> U+1F35F
+  ["f3bea5a8", "f09f8da1"], # [DANGO] U+FE968 -> U+1F361
+  ["f3bea5a9", "f09f8d98"], # [RICE CRACKER] U+FE969 -> U+1F358
+  ["f3bea5aa", "f09f8d9a"], # [COOKED RICE] U+FE96A -> U+1F35A
+  ["f3bea5ab", "f09f8d9d"], # [SPAGHETTI] U+FE96B -> U+1F35D
+  ["f3bea5ac", "f09f8d9b"], # [CURRY AND RICE] U+FE96C -> U+1F35B
+  ["f3bea5ad", "f09f8da2"], # [ODEN] U+FE96D -> U+1F362
+  ["f3bea5ae", "f09f8da3"], # [SUSHI] U+FE96E -> U+1F363
+  ["f3bea5af", "f09f8db1"], # [BENTO BOX] U+FE96F -> U+1F371
+  ["f3bea5b0", "f09f8db2"], # [POT OF FOOD] U+FE970 -> U+1F372
+  ["f3bea5b1", "f09f8da7"], # [SHAVED ICE] U+FE971 -> U+1F367
+  ["f3bea5b2", "f09f8d96"], # [MEAT ON BONE] U+FE972 -> U+1F356
+  ["f3bea5b3", "f09f8da5"], # [FISH CAKE WITH SWIRL DESIGN] U+FE973 -> U+1F365
+  ["f3bea5b4", "f09f8da0"], # [ROASTED SWEET POTATO] U+FE974 -> U+1F360
+  ["f3bea5b5", "f09f8d95"], # [SLICE OF PIZZA] U+FE975 -> U+1F355
+  ["f3bea5b6", "f09f8d97"], # [POULTRY LEG] U+FE976 -> U+1F357
+  ["f3bea5b7", "f09f8da8"], # [ICE CREAM] U+FE977 -> U+1F368
+  ["f3bea5b8", "f09f8da9"], # [DOUGHNUT] U+FE978 -> U+1F369
+  ["f3bea5b9", "f09f8daa"], # [COOKIE] U+FE979 -> U+1F36A
+  ["f3bea5ba", "f09f8dab"], # [CHOCOLATE BAR] U+FE97A -> U+1F36B
+  ["f3bea5bb", "f09f8dac"], # [CANDY] U+FE97B -> U+1F36C
+  ["f3bea5bc", "f09f8dad"], # [LOLLIPOP] U+FE97C -> U+1F36D
+  ["f3bea5bd", "f09f8dae"], # [CUSTARD] U+FE97D -> U+1F36E
+  ["f3bea5be", "f09f8daf"], # [HONEY POT] U+FE97E -> U+1F36F
+  ["f3bea5bf", "f09f8da4"], # [FRIED SHRIMP] U+FE97F -> U+1F364
+  ["f3bea680", "f09f8db4"], # [FORK AND KNIFE] U+FE980 -> U+1F374
+  ["f3bea681", "e29895"], # [HOT BEVERAGE] U+FE981 -> U+2615
+  ["f3bea682", "f09f8db8"], # [COCKTAIL GLASS] U+FE982 -> U+1F378
+  ["f3bea683", "f09f8dba"], # [BEER MUG] U+FE983 -> U+1F37A
+  ["f3bea684", "f09f8db5"], # [TEACUP WITHOUT HANDLE] U+FE984 -> U+1F375
+  ["f3bea685", "f09f8db6"], # [SAKE BOTTLE AND CUP] U+FE985 -> U+1F376
+  ["f3bea686", "f09f8db7"], # [WINE GLASS] U+FE986 -> U+1F377
+  ["f3bea687", "f09f8dbb"], # [CLINKING BEER MUGS] U+FE987 -> U+1F37B
+  ["f3bea688", "f09f8db9"], # [TROPICAL DRINK] U+FE988 -> U+1F379
+  ["f3beabb0", "e28697"], # [NORTH EAST ARROW] U+FEAF0 -> U+2197
+  ["f3beabb1", "e28698"], # [SOUTH EAST ARROW] U+FEAF1 -> U+2198
+  ["f3beabb2", "e28696"], # [NORTH WEST ARROW] U+FEAF2 -> U+2196
+  ["f3beabb3", "e28699"], # [SOUTH WEST ARROW] U+FEAF3 -> U+2199
+  ["f3beabb4", "e2a4b4"], # [ARROW POINTING RIGHTWARDS THEN CURVING UPWARDS] U+FEAF4 -> U+2934
+  ["f3beabb5", "e2a4b5"], # [ARROW POINTING RIGHTWARDS THEN CURVING DOWNWARDS] U+FEAF5 -> U+2935
+  ["f3beabb6", "e28694"], # [LEFT RIGHT ARROW] U+FEAF6 -> U+2194
+  ["f3beabb7", "e28695"], # [UP DOWN ARROW] U+FEAF7 -> U+2195
+  ["f3beabb8", "e2ac86"], # [UPWARDS BLACK ARROW] U+FEAF8 -> U+2B06
+  ["f3beabb9", "e2ac87"], # [DOWNWARDS BLACK ARROW] U+FEAF9 -> U+2B07
+  ["f3beabba", "e29ea1"], # [BLACK RIGHTWARDS ARROW] U+FEAFA -> U+27A1
+  ["f3beabbb", "e2ac85"], # [LEFTWARDS BLACK ARROW] U+FEAFB -> U+2B05
+  ["f3beabbc", "e296b6"], # [BLACK RIGHT-POINTING TRIANGLE] U+FEAFC -> U+25B6
+  ["f3beabbd", "e29780"], # [BLACK LEFT-POINTING TRIANGLE] U+FEAFD -> U+25C0
+  ["f3beabbe", "e28fa9"], # [BLACK RIGHT-POINTING DOUBLE TRIANGLE] U+FEAFE -> U+23E9
+  ["f3beabbf", "e28faa"], # [BLACK LEFT-POINTING DOUBLE TRIANGLE] U+FEAFF -> U+23EA
+  ["f3beac83", "e28fab"], # [BLACK UP-POINTING DOUBLE TRIANGLE] U+FEB03 -> U+23EB
+  ["f3beac82", "e28fac"], # [BLACK DOWN-POINTING DOUBLE TRIANGLE] U+FEB02 -> U+23EC
+  ["f3beadb8", "f09f94ba"], # [UP-POINTING RED TRIANGLE] U+FEB78 -> U+1F53A
+  ["f3beadb9", "f09f94bb"], # [DOWN-POINTING RED TRIANGLE] U+FEB79 -> U+1F53B
+  ["f3beac81", "f09f94bc"], # [UP-POINTING SMALL RED TRIANGLE] U+FEB01 -> U+1F53C
+  ["f3beac80", "f09f94bd"], # [DOWN-POINTING SMALL RED TRIANGLE] U+FEB00 -> U+1F53D
+  ["f3bead84", "e2ad95"], # [HEAVY LARGE CIRCLE] U+FEB44 -> U+2B55
+  ["f3bead85", "e29d8c"], # [CROSS MARK] U+FEB45 -> U+274C
+  ["f3bead86", "e29d8e"], # [NEGATIVE SQUARED CROSS MARK] U+FEB46 -> U+274E
+  ["f3beac84", "e29da2"], # [HEAVY EXCLAMATION MARK ORNAMENT] U+FEB04 -> U+2762
+  ["f3beac85", "e28189"], # [EXCLAMATION QUESTION MARK] U+FEB05 -> U+2049
+  ["f3beac86", "e280bc"], # [DOUBLE EXCLAMATION MARK] U+FEB06 -> U+203C
+  ["f3beac89", "e29d93"], # [BLACK QUESTION MARK ORNAMENT] U+FEB09 -> U+2753
+  ["f3beac8a", "e29d94"], # [WHITE QUESTION MARK ORNAMENT] U+FEB0A -> U+2754
+  ["f3beac8b", "e29d95"], # [WHITE EXCLAMATION MARK ORNAMENT] U+FEB0B -> U+2755
+  ["f3beac87", "e380b0"], # [WAVY DASH] U+FEB07 -> U+3030
+  ["f3beac88", "e29eb0"], # [CURLY LOOP] U+FEB08 -> U+27B0
+  ["f3bea0ab", "e29ebf"], # [DOUBLE CURLY LOOP] U+FE82B -> U+27BF
+  ["f3beac8c", "e29da4"], # [HEAVY BLACK HEART] U+FEB0C -> U+2764
+  ["f3beac8d", "f09f9293"], # [BEATING HEART] U+FEB0D -> U+1F493
+  ["f3beac8e", "f09f9294"], # [BROKEN HEART] U+FEB0E -> U+1F494
+  ["f3beac8f", "f09f9295"], # [TWO HEARTS] U+FEB0F -> U+1F495
+  ["f3beac90", "f09f9296"], # [SPARKLING HEART] U+FEB10 -> U+1F496
+  ["f3beac91", "f09f9297"], # [GROWING HEART] U+FEB11 -> U+1F497
+  ["f3beac92", "f09f9298"], # [HEART WITH ARROW] U+FEB12 -> U+1F498
+  ["f3beac93", "f09f9299"], # [BLUE HEART] U+FEB13 -> U+1F499
+  ["f3beac94", "f09f929a"], # [GREEN HEART] U+FEB14 -> U+1F49A
+  ["f3beac95", "f09f929b"], # [YELLOW HEART] U+FEB15 -> U+1F49B
+  ["f3beac96", "f09f929c"], # [PURPLE HEART] U+FEB16 -> U+1F49C
+  ["f3beac97", "f09f929d"], # [HEART WITH RIBBON] U+FEB17 -> U+1F49D
+  ["f3beac98", "f09f929e"], # [REVOLVING HEARTS] U+FEB18 -> U+1F49E
+  ["f3beac99", "f09f929f"], # [HEART DECORATION] U+FEB19 -> U+1F49F
+  ["f3beac9a", "e299a5"], # [BLACK HEART SUIT] U+FEB1A -> U+2665
+  ["f3beac9b", "e299a0"], # [BLACK SPADE SUIT] U+FEB1B -> U+2660
+  ["f3beac9c", "e299a6"], # [BLACK DIAMOND SUIT] U+FEB1C -> U+2666
+  ["f3beac9d", "e299a3"], # [BLACK CLUB SUIT] U+FEB1D -> U+2663
+  ["f3beac9e", "f09f9aac"], # [SMOKING SYMBOL] U+FEB1E -> U+1F6AC
+  ["f3beac9f", "f09f9aad"], # [NO SMOKING SYMBOL] U+FEB1F -> U+1F6AD
+  ["f3beaca0", "e299bf"], # [WHEELCHAIR SYMBOL] U+FEB20 -> U+267F
+  ["f3beaca2", "f09f9aa9"], # [TRIANGULAR FLAG ON POST] U+FEB22 -> U+1F6A9
+  ["f3beaca3", "e29aa0"], # [WARNING SIGN] U+FEB23 -> U+26A0
+  ["f3beaca6", "e29b94"], # [NO ENTRY] U+FEB26 -> U+26D4
+  ["f3beacac", "e299bb"], # [BLACK UNIVERSAL RECYCLING SYMBOL] U+FEB2C -> U+267B
+  ["f3be9fab", "f09f9ab2"], # [BICYCLE] U+FE7EB -> U+1F6B2
+  ["f3be9fb0", "f09f9ab6"], # [PEDESTRIAN] U+FE7F0 -> U+1F6B6
+  ["f3beacb3", "f09f9ab9"], # [MENS SYMBOL] U+FEB33 -> U+1F6B9
+  ["f3beacb4", "f09f9aba"], # [WOMENS SYMBOL] U+FEB34 -> U+1F6BA
+  ["f3be9485", "f09f9b80"], # [BATH] U+FE505 -> U+1F6C0
+  ["f3be9486", "f09f9abb"], # [RESTROOM] U+FE506 -> U+1F6BB
+  ["f3be9487", "f09f9abd"], # [TOILET] U+FE507 -> U+1F6BD
+  ["f3be9488", "f09f9abe"], # [WATER CLOSET] U+FE508 -> U+1F6BE
+  ["f3beacb5", "f09f9abc"], # [BABY SYMBOL] U+FEB35 -> U+1F6BC
+  ["f3be93b3", "f09f9aaa"], # [DOOR] U+FE4F3 -> U+1F6AA
+  ["f3bead88", "f09f9aab"], # [NO ENTRY SIGN] U+FEB48 -> U+1F6AB
+  ["f3bead89", "e29c94"], # [HEAVY CHECK MARK] U+FEB49 -> U+2714
+  ["f3beae84", "f09f8691"], # [SQUARED CL] U+FEB84 -> U+1F191
+  ["f3beacb8", "f09f8692"], # [SQUARED COOL] U+FEB38 -> U+1F192
+  ["f3beaca1", "f09f8693"], # [SQUARED FREE] U+FEB21 -> U+1F193
+  ["f3beae81", "f09f8694"], # [SQUARED ID] U+FEB81 -> U+1F194
+  ["f3beacb6", "f09f8695"], # [SQUARED NEW] U+FEB36 -> U+1F195
+  ["f3beaca8", "f09f8696"], # [SQUARED NG] U+FEB28 -> U+1F196
+  ["f3beaca7", "f09f8697"], # [SQUARED OK] U+FEB27 -> U+1F197
+  ["f3bead8f", "f09f8698"], # [SQUARED SOS] U+FEB4F -> U+1F198
+  ["f3beacb7", "f09f8699"], # [SQUARED UP WITH EXCLAMATION MARK] U+FEB37 -> U+1F199
+  ["f3beacb2", "f09f869a"], # [SQUARED VS] U+FEB32 -> U+1F19A
+  ["f3beaca4", "f09f8881"], # [SQUARED KATAKANA KOKO] U+FEB24 -> U+1F201
+  ["f3beacbf", "f09f8882"], # [SQUARED KATAKANA SA] U+FEB3F -> U+1F202
+  ["f3beacae", "f09f88b2"], # [SQUARED CJK UNIFIED IDEOGRAPH-7981] U+FEB2E -> U+1F232
+  ["f3beacaf", "f09f88b3"], # [SQUARED CJK UNIFIED IDEOGRAPH-7A7A] U+FEB2F -> U+1F233
+  ["f3beacb0", "f09f88b4"], # [SQUARED CJK UNIFIED IDEOGRAPH-5408] U+FEB30 -> U+1F234
+  ["f3beacb1", "f09f88b5"], # [SQUARED CJK UNIFIED IDEOGRAPH-6E80] U+FEB31 -> U+1F235
+  ["f3beacb9", "f09f88b6"], # [SQUARED CJK UNIFIED IDEOGRAPH-6709] U+FEB39 -> U+1F236
+  ["f3beacba", "f09f889a"], # [SQUARED CJK UNIFIED IDEOGRAPH-7121] U+FEB3A -> U+1F21A
+  ["f3beacbb", "f09f88b7"], # [SQUARED CJK UNIFIED IDEOGRAPH-6708] U+FEB3B -> U+1F237
+  ["f3beacbc", "f09f88b8"], # [SQUARED CJK UNIFIED IDEOGRAPH-7533] U+FEB3C -> U+1F238
+  ["f3beacbe", "f09f88b9"], # [SQUARED CJK UNIFIED IDEOGRAPH-5272] U+FEB3E -> U+1F239
+  ["f3bead80", "f09f88af"], # [SQUARED CJK UNIFIED IDEOGRAPH-6307] U+FEB40 -> U+1F22F
+  ["f3bead81", "f09f88ba"], # [SQUARED CJK UNIFIED IDEOGRAPH-55B6] U+FEB41 -> U+1F23A
+  ["f3beacab", "e38a99"], # [CIRCLED IDEOGRAPH SECRET] U+FEB2B -> U+3299
+  ["f3bead83", "e38a97"], # [CIRCLED IDEOGRAPH CONGRATULATION] U+FEB43 -> U+3297
+  ["f3beacbd", "f09f8990"], # [CIRCLED IDEOGRAPH ADVANTAGE] U+FEB3D -> U+1F250
+  ["f3bead90", "f09f8991"], # [CIRCLED IDEOGRAPH ACCEPT] U+FEB50 -> U+1F251
+  ["f3bead91", "e29e95"], # [HEAVY PLUS SIGN] U+FEB51 -> U+2795
+  ["f3bead92", "e29e96"], # [HEAVY MINUS SIGN] U+FEB52 -> U+2796
+  ["f3bead93", "e29c96"], # [HEAVY MULTIPLICATION X] U+FEB53 -> U+2716
+  ["f3bead94", "e29e97"], # [HEAVY DIVISION SIGN] U+FEB54 -> U+2797
+  ["f3bead95", "f09f92a0"], # [DIAMOND SHAPE WITH A DOT INSIDE] U+FEB55 -> U+1F4A0
+  ["f3bead96", "f09f92a1"], # [ELECTRIC LIGHT BULB] U+FEB56 -> U+1F4A1
+  ["f3bead97", "f09f92a2"], # [ANGER SYMBOL] U+FEB57 -> U+1F4A2
+  ["f3bead98", "f09f92a3"], # [BOMB] U+FEB58 -> U+1F4A3
+  ["f3bead99", "f09f92a4"], # [SLEEPING SYMBOL] U+FEB59 -> U+1F4A4
+  ["f3bead9a", "f09f92a5"], # [COLLISION SYMBOL] U+FEB5A -> U+1F4A5
+  ["f3bead9b", "f09f92a6"], # [SPLASHING SWEAT SYMBOL] U+FEB5B -> U+1F4A6
+  ["f3bead9c", "f09f92a7"], # [DROP OF WATER] U+FEB5C -> U+1F4A7
+  ["f3bead9d", "f09f92a8"], # [DASH SYMBOL] U+FEB5D -> U+1F4A8
+  ["f3be93b4", "f09f92a9"], # [PILE OF POO] U+FE4F4 -> U+1F4A9
+  ["f3bead9e", "f09f92aa"], # [FLEXED BICEPS] U+FEB5E -> U+1F4AA
+  ["f3bead9f", "f09f92ab"], # [DIZZY SYMBOL] U+FEB5F -> U+1F4AB
+  ["f3be94b2", "f09f92ac"], # [SPEECH BALLOON] U+FE532 -> U+1F4AC
+  ["f3beada0", "e29ca8"], # [SPARKLES] U+FEB60 -> U+2728
+  ["f3beada1", "e29cb4"], # [EIGHT POINTED BLACK STAR] U+FEB61 -> U+2734
+  ["f3beada2", "e29cb3"], # [EIGHT SPOKED ASTERISK] U+FEB62 -> U+2733
+  ["f3beada5", "e29aaa"], # [MEDIUM WHITE CIRCLE] U+FEB65 -> U+26AA
+  ["f3beada6", "e29aab"], # [MEDIUM BLACK CIRCLE] U+FEB66 -> U+26AB
+  ["f3beada3", "f09f94b4"], # [LARGE RED CIRCLE] U+FEB63 -> U+1F534
+  ["f3beada4", "f09f94b5"], # [LARGE BLUE CIRCLE] U+FEB64 -> U+1F535
+  ["f3beada7", "f09f94b3"], # [WHITE SQUARE BUTTON] U+FEB67 -> U+1F533
+  ["f3beada8", "e2ad90"], # [WHITE MEDIUM STAR] U+FEB68 -> U+2B50
+  ["f3beadab", "e2ac9c"], # [WHITE LARGE SQUARE] U+FEB6B -> U+2B1C
+  ["f3beadac", "e2ac9b"], # [BLACK LARGE SQUARE] U+FEB6C -> U+2B1B
+  ["f3beadad", "e296ab"], # [WHITE SMALL SQUARE] U+FEB6D -> U+25AB
+  ["f3beadae", "e296aa"], # [BLACK SMALL SQUARE] U+FEB6E -> U+25AA
+  ["f3beadaf", "e297bd"], # [WHITE MEDIUM SMALL SQUARE] U+FEB6F -> U+25FD
+  ["f3beadb0", "e297be"], # [BLACK MEDIUM SMALL SQUARE] U+FEB70 -> U+25FE
+  ["f3beadb1", "e297bb"], # [WHITE MEDIUM SQUARE] U+FEB71 -> U+25FB
+  ["f3beadb2", "e297bc"], # [BLACK MEDIUM SQUARE] U+FEB72 -> U+25FC
+  ["f3beadb3", "f09f94b6"], # [LARGE ORANGE DIAMOND] U+FEB73 -> U+1F536
+  ["f3beadb4", "f09f94b7"], # [LARGE BLUE DIAMOND] U+FEB74 -> U+1F537
+  ["f3beadb5", "f09f94b8"], # [SMALL ORANGE DIAMOND] U+FEB75 -> U+1F538
+  ["f3beadb6", "f09f94b9"], # [SMALL BLUE DIAMOND] U+FEB76 -> U+1F539
+  ["f3beadb7", "e29d87"], # [SPARKLE] U+FEB77 -> U+2747
+  ["f3beadba", "f09f92ae"], # [WHITE FLOWER] U+FEB7A -> U+1F4AE
+  ["f3beadbb", "f09f92af"], # [HUNDRED POINTS SYMBOL] U+FEB7B -> U+1F4AF
+  ["f3beae83", "e286a9"], # [LEFTWARDS ARROW WITH HOOK] U+FEB83 -> U+21A9
+  ["f3beae88", "e286aa"], # [RIGHTWARDS ARROW WITH HOOK] U+FEB88 -> U+21AA
+  ["f3beae91", "f09f9483"], # [CLOCKWISE DOWNWARDS AND UPWARDS OPEN CIRCLE ARROWS] U+FEB91 -> U+1F503
+  ["f3bea0a1", "f09f948a"], # [SPEAKER WITH THREE SOUND WAVES] U+FE821 -> U+1F50A
+  ["f3be93bc", "f09f948b"], # [BATTERY] U+FE4FC -> U+1F50B
+  ["f3be93be", "f09f948c"], # [ELECTRIC PLUG] U+FE4FE -> U+1F50C
+  ["f3beae85", "f09f948d"], # [LEFT-POINTING MAGNIFYING GLASS] U+FEB85 -> U+1F50D
+  ["f3beae8d", "f09f948e"], # [RIGHT-POINTING MAGNIFYING GLASS] U+FEB8D -> U+1F50E
+  ["f3beae86", "f09f9492"], # [LOCK] U+FEB86 -> U+1F512
+  ["f3beae87", "f09f9493"], # [OPEN LOCK] U+FEB87 -> U+1F513
+  ["f3beae90", "f09f948f"], # [LOCK WITH INK PEN] U+FEB90 -> U+1F50F
+  ["f3beae8a", "f09f9490"], # [CLOSED LOCK WITH KEY] U+FEB8A -> U+1F510
+  ["f3beae82", "f09f9491"], # [KEY] U+FEB82 -> U+1F511
+  ["f3be93b2", "f09f9494"], # [BELL] U+FE4F2 -> U+1F514
+  ["f3beae8b", "e29891"], # [BALLOT BOX WITH CHECK] U+FEB8B -> U+2611
+  ["f3beae8c", "f09f9498"], # [RADIO BUTTON] U+FEB8C -> U+1F518
+  ["f3beae8f", "f09f9496"], # [BOOKMARK] U+FEB8F -> U+1F516
+  ["f3bead8b", "f09f9497"], # [LINK SYMBOL] U+FEB4B -> U+1F517
+  ["f3beae8e", "f09f9499"], # [BACK WITH LEFTWARDS ARROW ABOVE] U+FEB8E -> U+1F519
+  ["f3be809a", "f09f949a"], # [END WITH LEFTWARDS ARROW ABOVE] U+FE01A -> U+1F51A
+  ["f3be8099", "f09f949b"], # [ON WITH EXCLAMATION MARK WITH LEFT RIGHT ARROW ABOVE] U+FE019 -> U+1F51B
+  ["f3be8098", "f09f949c"], # [SOON WITH RIGHTWARDS ARROW ABOVE] U+FE018 -> U+1F51C
+  ["f3bead82", "f09f949d"], # [TOP WITH UPWARDS ARROW ABOVE] U+FEB42 -> U+1F51D
+  ["f3bead8c", "e28083"], # [EM SPACE] U+FEB4C -> U+2003
+  ["f3bead8d", "e28082"], # [EN SPACE] U+FEB4D -> U+2002
+  ["f3bead8e", "e28085"], # [FOUR-PER-EM SPACE] U+FEB4E -> U+2005
+  ["f3bead8a", "e29c85"], # [WHITE HEAVY CHECK MARK] U+FEB4A -> U+2705
+  ["f3beae93", "e29c8a"], # [RAISED FIST] U+FEB93 -> U+270A
+  ["f3beae95", "e29c8b"], # [RAISED HAND] U+FEB95 -> U+270B
+  ["f3beae94", "e29c8c"], # [VICTORY HAND] U+FEB94 -> U+270C
+  ["f3beae96", "f09f918a"], # [FISTED HAND SIGN] U+FEB96 -> U+1F44A
+  ["f3beae97", "f09f918d"], # [THUMBS UP SIGN] U+FEB97 -> U+1F44D
+  ["f3beae98", "e2989d"], # [WHITE UP POINTING INDEX] U+FEB98 -> U+261D
+  ["f3beae99", "f09f9186"], # [WHITE UP POINTING BACKHAND INDEX] U+FEB99 -> U+1F446
+  ["f3beae9a", "f09f9187"], # [WHITE DOWN POINTING BACKHAND INDEX] U+FEB9A -> U+1F447
+  ["f3beae9b", "f09f9188"], # [WHITE LEFT POINTING BACKHAND INDEX] U+FEB9B -> U+1F448
+  ["f3beae9c", "f09f9189"], # [WHITE RIGHT POINTING BACKHAND INDEX] U+FEB9C -> U+1F449
+  ["f3beae9d", "f09f918b"], # [WAVING HAND SIGN] U+FEB9D -> U+1F44B
+  ["f3beae9e", "f09f918f"], # [CLAPPING HANDS SIGN] U+FEB9E -> U+1F44F
+  ["f3beae9f", "f09f918c"], # [OK HAND SIGN] U+FEB9F -> U+1F44C
+  ["f3beaea0", "f09f918e"], # [THUMBS DOWN SIGN] U+FEBA0 -> U+1F44E
+  ["f3beaea1", "f09f9190"], # [OPEN HANDS SIGN] U+FEBA1 -> U+1F450
+  ["f3beaea2", "5be383ade38383e382afe382aae383b35d"], # [ROCK ON] U+FEBA2 -> "[ロックオン]"
+  ["f3beb890", "5b69e383a2e383bce383895d"], # [EMOJI COMPATIBILITY SYMBOL-1] U+FEE10 -> "[iモード]"
+  ["f3beb891", "5b69e383a2e383bce383895d"], # [EMOJI COMPATIBILITY SYMBOL-2] U+FEE11 -> "[iモード]"
+  ["f3beb892", "5be38389e382b3e383a25d"], # [EMOJI COMPATIBILITY SYMBOL-3] U+FEE12 -> "[ドコモ]"
+  ["f3beb893", "5be38389e382b3e383a2e3839de382a4e383b3e383885d"], # [EMOJI COMPATIBILITY SYMBOL-4] U+FEE13 -> "[ドコモポイント]"
+  ["f3beb894", "5b69e382a2e38397e383aa5d"], # [EMOJI COMPATIBILITY SYMBOL-5] U+FEE14 -> "[iアプリ]"
+  ["f3beb895", "5b69e382a2e38397e383aa5d"], # [EMOJI COMPATIBILITY SYMBOL-6] U+FEE15 -> "[iアプリ]"
+  ["f3beb896", "5be381b45d"], # [EMOJI COMPATIBILITY SYMBOL-7] U+FEE16 -> "[ぴ]"
+  ["f3beb897", "5be381825d"], # [EMOJI COMPATIBILITY SYMBOL-8] U+FEE17 -> "[あ]"
+  ["f3beb898", "5be38381e382b1e38383e383885d"], # [EMOJI COMPATIBILITY SYMBOL-9] U+FEE18 -> "[チケット]"
+  ["f3beb899", "5be38381e382b1e38383e383885d"], # [EMOJI COMPATIBILITY SYMBOL-10] U+FEE19 -> "[チケット]"
+  ["f3beb89a", "5be99bbbe8a9b1e58588e8a18c5d"], # [EMOJI COMPATIBILITY SYMBOL-11] U+FEE1A -> "[電話先行]"
+  ["f3beb89b", "5b50e382b3e383bce383895d"], # [EMOJI COMPATIBILITY SYMBOL-12] U+FEE1B -> "[Pコード]"
+  ["f3beb89c", "e38093"], # [EMOJI COMPATIBILITY SYMBOL-13] U+FEE1C -> U+3013 (GETA)
+  ["f3beb89d", "5be381b45d"], # [EMOJI COMPATIBILITY SYMBOL-14] U+FEE1D -> "[ぴ]"
+  ["f3beb89e", "28e381b429"], # [EMOJI COMPATIBILITY SYMBOL-15] U+FEE1E -> "(ぴ)"
+  ["f3beb89f", "5be381b45d"], # [EMOJI COMPATIBILITY SYMBOL-16] U+FEE1F -> "[ぴ]"
+  ["f3beb8a0", "5be38381e382a7e38383e382af5d"], # [EMOJI COMPATIBILITY SYMBOL-17] U+FEE20 -> "[チェック]"
+  ["f3beb8a1", "5b465d"], # [EMOJI COMPATIBILITY SYMBOL-18] U+FEE21 -> "[F]"
+  ["f3beb8a2", "5b445d"], # [EMOJI COMPATIBILITY SYMBOL-19] U+FEE22 -> "[D]"
+  ["f3beb8a3", "5b535d"], # [EMOJI COMPATIBILITY SYMBOL-20] U+FEE23 -> "[S]"
+  ["f3beb8a4", "5b435d"], # [EMOJI COMPATIBILITY SYMBOL-21] U+FEE24 -> "[C]"
+  ["f3beb8a5", "5b525d"], # [EMOJI COMPATIBILITY SYMBOL-22] U+FEE25 -> "[R]"
+  ["f3beb8a6", "e296a0"], # [EMOJI COMPATIBILITY SYMBOL-23] U+FEE26 -> "■"
+  ["f3beb8a7", "e296a0"], # [EMOJI COMPATIBILITY SYMBOL-24] U+FEE27 -> "■"
+  ["f3beb8a8", "e296bc"], # [EMOJI COMPATIBILITY SYMBOL-25] U+FEE28 -> "▼"
+  ["f3beb8a9", "e280a0e280a0e280a0e280a0"], # [EMOJI COMPATIBILITY SYMBOL-26] U+FEE29 -> "††††"
+  ["f3beb8aa", "e280a0e280a0e280a0"], # [EMOJI COMPATIBILITY SYMBOL-27] U+FEE2A -> "†††"
+  ["f3beb8ab", "e280a0e280a0"], # [EMOJI COMPATIBILITY SYMBOL-28] U+FEE2B -> "††"
+  ["f3beb8ac", "e280a0"], # [EMOJI COMPATIBILITY SYMBOL-29] U+FEE2C -> "†"
+  ["f3beb8ad", "5b495d"], # [EMOJI COMPATIBILITY SYMBOL-30] U+FEE2D -> "[I]"
+  ["f3beb8ae", "5b4d5d"], # [EMOJI COMPATIBILITY SYMBOL-31] U+FEE2E -> "[M]"
+  ["f3beb8af", "5b455d"], # [EMOJI COMPATIBILITY SYMBOL-32] U+FEE2F -> "[E]"
+  ["f3beb8b0", "5b56455d"], # [EMOJI COMPATIBILITY SYMBOL-33] U+FEE30 -> "[VE]"
+  ["f3beb8b1", "e2978f"], # [EMOJI COMPATIBILITY SYMBOL-34] U+FEE31 -> "●"
+  ["f3beb8b2", "5be382abe383bce38389e4bdbfe794a8e4b88de58faf5d"], # [EMOJI COMPATIBILITY SYMBOL-35] U+FEE32 -> "[カード使用不可]"
+  ["f3beb8b3", "5be38381e382a7e38383e382afe3839ce38383e382afe382b95d"], # [EMOJI COMPATIBILITY SYMBOL-36] U+FEE33 -> "[チェックボックス]"
+  ["f3beb980", "5b455a5d"], # [EMOJI COMPATIBILITY SYMBOL-37] U+FEE40 -> "[EZ]"
+  ["f3beb981", "5b657a706c75735d"], # [EMOJI COMPATIBILITY SYMBOL-38] U+FEE41 -> "[ezplus]"
+  ["f3beb982", "5b455ae3838ae383935d"], # [EMOJI COMPATIBILITY SYMBOL-39] U+FEE42 -> "[EZナビ]"
+  ["f3beb983", "5b455ae383a0e383bce38393e383bc5d"], # [EMOJI COMPATIBILITY SYMBOL-40] U+FEE43 -> "[EZムービー]"
+  ["f3beb984", "5b43e383a1e383bce383ab5d"], # [EMOJI COMPATIBILITY SYMBOL-41] U+FEE44 -> "[Cメール]"
+  ["f3beb985", "5b4a6176615d"], # [EMOJI COMPATIBILITY SYMBOL-42] U+FEE45 -> "[Java]"
+  ["f3beb986", "5b425245575d"], # [EMOJI COMPATIBILITY SYMBOL-43] U+FEE46 -> "[BREW]"
+  ["f3beb987", "5b455ae79d80e38186e3819f5d"], # [EMOJI COMPATIBILITY SYMBOL-44] U+FEE47 -> "[EZ着うた]"
+  ["f3beb988", "5b455ae3838ae383935d"], # [EMOJI COMPATIBILITY SYMBOL-45] U+FEE48 -> "[EZナビ]"
+  ["f3beb989", "5b57494e5d"], # [EMOJI COMPATIBILITY SYMBOL-46] U+FEE49 -> "[WIN]"
+  ["f3beb98a", "5be38397e383ace3839fe382a2e383a05d"], # [EMOJI COMPATIBILITY SYMBOL-47] U+FEE4A -> "[プレミアム]"
+  ["f3beae89", "5be382aae383bce38397e383b3e382a6e382a7e383965d"], # [EMOJI COMPATIBILITY SYMBOL-48] U+FEB89 -> "[オープンウェブ]"
+  ["f3bea0bc", "5b5044435d"], # [EMOJI COMPATIBILITY SYMBOL-49] U+FE83C -> "[PDC]"
+  ["f3beb9b0", "e38093"], # [EMOJI COMPATIBILITY SYMBOL-50] U+FEE70 -> U+3013 (GETA)
+  ["f3beb9b1", "e38093"], # [EMOJI COMPATIBILITY SYMBOL-51] U+FEE71 -> U+3013 (GETA)
+  ["f3beb9b2", "e38093"], # [EMOJI COMPATIBILITY SYMBOL-52] U+FEE72 -> U+3013 (GETA)
+  ["f3beb9b3", "e38093"], # [EMOJI COMPATIBILITY SYMBOL-53] U+FEE73 -> U+3013 (GETA)
+  ["f3beb9b4", "5b76"], # [EMOJI COMPATIBILITY SYMBOL-54] U+FEE74 -> "[v"
+  ["f3beb9b5", "6f6461"], # [EMOJI COMPATIBILITY SYMBOL-55] U+FEE75 -> "oda"
+  ["f3beb9b6", "666f6e655d"], # [EMOJI COMPATIBILITY SYMBOL-56] U+FEE76 -> "fone]"
+  ["f3beb9b7", "e38093"], # [EMOJI COMPATIBILITY SYMBOL-57] U+FEE77 -> U+3013 (GETA)
+  ["f3beb9b8", "e38093"], # [EMOJI COMPATIBILITY SYMBOL-58] U+FEE78 -> U+3013 (GETA)
+  ["f3beb9b9", "e38093"], # [EMOJI COMPATIBILITY SYMBOL-59] U+FEE79 -> U+3013 (GETA)
+  ["f3beb9ba", "e38093"], # [EMOJI COMPATIBILITY SYMBOL-60] U+FEE7A -> U+3013 (GETA)
+  ["f3beb9bb", "e38093"], # [EMOJI COMPATIBILITY SYMBOL-61] U+FEE7B -> U+3013 (GETA)
+  ["f3beb9bc", "e38093"], # [EMOJI COMPATIBILITY SYMBOL-62] U+FEE7C -> U+3013 (GETA)
+  ["f3beb9bd", "e38093"], # [EMOJI COMPATIBILITY SYMBOL-63] U+FEE7D -> U+3013 (GETA)
+  ["f3be9385", "e38093"], # [EMOJI COMPATIBILITY SYMBOL-64] U+FE4C5 -> U+3013 (GETA)
+  ["f3bea0ad", "5b515d"], # [EMOJI COMPATIBILITY SYMBOL-66] U+FE82D -> "[Q]"
+  ["f3bebaa0", "5b476f6f676c655d"], # [GOOGLE] U+FEEA0 -> "[Google]"
+]
+
+EMOJI_EXCHANGE_TBL['UTF-8']['UTF8-DoCoMo'] = [
+  ["e29880", "ee98be"], # [BLACK SUN WITH RAYS] U+2600 -> U+E63E
+  ["e29881", "ee98bf"], # [CLOUD] U+2601 -> U+E63F
+  ["e29894", "ee9980"], # [UMBRELLA WITH RAIN DROPS] U+2614 -> U+E640
+  ["e29b84", "ee9981"], # [SNOWMAN WITHOUT SNOW] U+26C4 -> U+E641
+  ["e29aa1", "ee9982"], # [HIGH VOLTAGE SIGN] U+26A1 -> U+E642
+  ["f09f8c80", "ee9983"], # [CYCLONE] U+1F300 -> U+E643
+  ["f09f8c81", "ee9984"], # [FOGGY] U+1F301 -> U+E644
+  ["f09f8c82", "ee9985"], # [CLOSED UMBRELLA] U+1F302 -> U+E645
+  ["f09f8c83", "ee9ab3"], # [NIGHT WITH STARS] U+1F303 -> U+E6B3
+  ["f09f8c84", "ee98be"], # [SUNRISE OVER MOUNTAINS] U+1F304 -> U+E63E
+  ["f09f8c85", "ee98be"], # [SUNRISE] U+1F305 -> U+E63E
+  ["f09f8c87", "ee98be"], # [SUNSET OVER BUILDINGS] U+1F307 -> U+E63E
+  ["f09f8c88", "5be899b95d"], # [RAINBOW] U+1F308 -> "[虹]"
+  ["e29d84", "5be99baae7b590e699b65d"], # [SNOWFLAKE] U+2744 -> "[雪結晶]"
+  ["e29b85", "ee98beee98bf"], # [SUN BEHIND CLOUD] U+26C5 -> U+E63E U+E63F
+  ["f09f8c89", "ee9ab3"], # [BRIDGE AT NIGHT] U+1F309 -> U+E6B3
+  ["f09f8c8a", "ee9cbf"], # [WATER WAVE] U+1F30A -> U+E73F
+  ["f09f8c8b", "5be781abe5b1b15d"], # [VOLCANO] U+1F30B -> "[火山]"
+  ["f09f8c8c", "ee9ab3"], # [MILKY WAY] U+1F30C -> U+E6B3
+  ["f09f8c8f", "5be59cb0e790835d"], # [EARTH GLOBE ASIA-AUSTRALIA] U+1F30F -> "[地球]"
+  ["f09f8c91", "ee9a9c"], # [NEW MOON SYMBOL] U+1F311 -> U+E69C
+  ["f09f8c94", "ee9a9d"], # [WAXING GIBBOUS MOON SYMBOL] U+1F314 -> U+E69D
+  ["f09f8c93", "ee9a9e"], # [FIRST QUARTER MOON SYMBOL] U+1F313 -> U+E69E
+  ["f09f8c99", "ee9a9f"], # [CRESCENT MOON] U+1F319 -> U+E69F
+  ["f09f8c95", "ee9aa0"], # [FULL MOON SYMBOL] U+1F315 -> U+E6A0
+  ["f09f8c9b", "ee9a9e"], # [FIRST QUARTER MOON WITH FACE] U+1F31B -> U+E69E
+  ["f09f8c9f", "5be298865d"], # [GLOWING STAR] U+1F31F -> "[☆]"
+  ["f09f8ca0", "e29886e5bda1"], # [SHOOTING STAR] U+1F320 -> "☆彡"
+  ["f09f9590", "ee9aba"], # [CLOCK FACE ONE OCLOCK] U+1F550 -> U+E6BA
+  ["f09f9591", "ee9aba"], # [CLOCK FACE TWO OCLOCK] U+1F551 -> U+E6BA
+  ["f09f9592", "ee9aba"], # [CLOCK FACE THREE OCLOCK] U+1F552 -> U+E6BA
+  ["f09f9593", "ee9aba"], # [CLOCK FACE FOUR OCLOCK] U+1F553 -> U+E6BA
+  ["f09f9594", "ee9aba"], # [CLOCK FACE FIVE OCLOCK] U+1F554 -> U+E6BA
+  ["f09f9595", "ee9aba"], # [CLOCK FACE SIX OCLOCK] U+1F555 -> U+E6BA
+  ["f09f9596", "ee9aba"], # [CLOCK FACE SEVEN OCLOCK] U+1F556 -> U+E6BA
+  ["f09f9597", "ee9aba"], # [CLOCK FACE EIGHT OCLOCK] U+1F557 -> U+E6BA
+  ["f09f9598", "ee9aba"], # [CLOCK FACE NINE OCLOCK] U+1F558 -> U+E6BA
+  ["f09f9599", "ee9aba"], # [CLOCK FACE TEN OCLOCK] U+1F559 -> U+E6BA
+  ["f09f959a", "ee9aba"], # [CLOCK FACE ELEVEN OCLOCK] U+1F55A -> U+E6BA
+  ["f09f959b", "ee9aba"], # [CLOCK FACE TWELVE OCLOCK] U+1F55B -> U+E6BA
+  ["e28c9a", "ee9c9f"], # [WATCH] U+231A -> U+E71F
+  ["e28c9b", "ee9c9c"], # [HOURGLASS] U+231B -> U+E71C
+  ["e28fb0", "ee9aba"], # [ALARM CLOCK] U+23F0 -> U+E6BA
+  ["e28fb3", "ee9c9c"], # [HOURGLASS WITH FLOWING SAND] U+23F3 -> U+E71C
+  ["e29988", "ee9986"], # [ARIES] U+2648 -> U+E646
+  ["e29989", "ee9987"], # [TAURUS] U+2649 -> U+E647
+  ["e2998a", "ee9988"], # [GEMINI] U+264A -> U+E648
+  ["e2998b", "ee9989"], # [CANCER] U+264B -> U+E649
+  ["e2998c", "ee998a"], # [LEO] U+264C -> U+E64A
+  ["e2998d", "ee998b"], # [VIRGO] U+264D -> U+E64B
+  ["e2998e", "ee998c"], # [LIBRA] U+264E -> U+E64C
+  ["e2998f", "ee998d"], # [SCORPIUS] U+264F -> U+E64D
+  ["e29990", "ee998e"], # [SAGITTARIUS] U+2650 -> U+E64E
+  ["e29991", "ee998f"], # [CAPRICORN] U+2651 -> U+E64F
+  ["e29992", "ee9990"], # [AQUARIUS] U+2652 -> U+E650
+  ["e29993", "ee9991"], # [PISCES] U+2653 -> U+E651
+  ["e29b8e", "5be89b87e4bdbfe5baa75d"], # [OPHIUCHUS] U+26CE -> "[蛇使座]"
+  ["f09f8d80", "ee9d81"], # [FOUR LEAF CLOVER] U+1F340 -> U+E741
+  ["f09f8cb7", "ee9d83"], # [TULIP] U+1F337 -> U+E743
+  ["f09f8cb1", "ee9d86"], # [SEEDLING] U+1F331 -> U+E746
+  ["f09f8d81", "ee9d87"], # [MAPLE LEAF] U+1F341 -> U+E747
+  ["f09f8cb8", "ee9d88"], # [CHERRY BLOSSOM] U+1F338 -> U+E748
+  ["f09f8cb9", "5be38390e383a95d"], # [ROSE] U+1F339 -> "[バラ]"
+  ["f09f8d82", "ee9d87"], # [FALLEN LEAF] U+1F342 -> U+E747
+  ["f09f8d83", "5be9a2a8e381abe8889ee38186e891895d"], # [LEAF FLUTTERING IN WIND] U+1F343 -> "[風に舞う葉]"
+  ["f09f8cba", "5be3838fe382a4e38393e382b9e382abe382b95d"], # [HIBISCUS] U+1F33A -> "[ハイビスカス]"
+  ["f09f8cbb", "5be381b2e381bee3828fe3828a5d"], # [SUNFLOWER] U+1F33B -> "[ひまわり]"
+  ["f09f8cb4", "5be383a4e382b75d"], # [PALM TREE] U+1F334 -> "[ヤシ]"
+  ["f09f8cb5", "5be382b5e3839ce38386e383b35d"], # [CACTUS] U+1F335 -> "[サボテン]"
+  ["f09f8cbe", "5be7a8b2e7a9825d"], # [EAR OF RICE] U+1F33E -> "[稲穂]"
+  ["f09f8cbd", "5be381a8e38186e38282e3828de38193e381975d"], # [EAR OF MAIZE] U+1F33D -> "[とうもろこし]"
+  ["f09f8d84", "5be382ade3838ee382b35d"], # [MUSHROOM] U+1F344 -> "[キノコ]"
+  ["f09f8cb0", "5be6a0975d"], # [CHESTNUT] U+1F330 -> "[栗]"
+  ["f09f8cbc", "5be88ab15d"], # [BLOSSOM] U+1F33C -> "[花]"
+  ["f09f8cbf", "ee9d81"], # [HERB] U+1F33F -> U+E741
+  ["f09f8d92", "ee9d82"], # [CHERRIES] U+1F352 -> U+E742
+  ["f09f8d8c", "ee9d84"], # [BANANA] U+1F34C -> U+E744
+  ["f09f8d8e", "ee9d85"], # [RED APPLE] U+1F34E -> U+E745
+  ["f09f8d8a", "5be381bfe3818be382935d"], # [TANGERINE] U+1F34A -> "[みかん]"
+  ["f09f8d93", "5be382a4e38381e382b45d"], # [STRAWBERRY] U+1F353 -> "[イチゴ]"
+  ["f09f8d89", "5be382b9e382a4e382ab5d"], # [WATERMELON] U+1F349 -> "[スイカ]"
+  ["f09f8d85", "5be38388e3839ee383885d"], # [TOMATO] U+1F345 -> "[トマト]"
+  ["f09f8d86", "5be3838ae382b95d"], # [AUBERGINE] U+1F346 -> "[ナス]"
+  ["f09f8d88", "5be383a1e383ade383b35d"], # [MELON] U+1F348 -> "[メロン]"
+  ["f09f8d8d", "5be38391e382a4e3838ae38383e38397e383ab5d"], # [PINEAPPLE] U+1F34D -> "[パイナップル]"
+  ["f09f8d87", "5be38396e38389e382a65d"], # [GRAPES] U+1F347 -> "[ブドウ]"
+  ["f09f8d91", "5be383a2e383a25d"], # [PEACH] U+1F351 -> "[モモ]"
+  ["f09f8d8f", "ee9d85"], # [GREEN APPLE] U+1F34F -> U+E745
+  ["f09f9180", "ee9a91"], # [EYES] U+1F440 -> U+E691
+  ["f09f9182", "ee9a92"], # [EAR] U+1F442 -> U+E692
+  ["f09f9183", "5be9bcbb5d"], # [NOSE] U+1F443 -> "[鼻]"
+  ["f09f9184", "ee9bb9"], # [MOUTH] U+1F444 -> U+E6F9
+  ["f09f9185", "ee9ca8"], # [TONGUE] U+1F445 -> U+E728
+  ["f09f9284", "ee9c90"], # [LIPSTICK] U+1F484 -> U+E710
+  ["f09f9285", "5be3839ee3838be382ade383a5e382a25d"], # [NAIL POLISH] U+1F485 -> "[マニキュア]"
+  ["f09f9286", "5be382a8e382b9e383865d"], # [FACE MASSAGE] U+1F486 -> "[エステ]"
+  ["f09f9287", "ee99b5"], # [HAIRCUT] U+1F487 -> U+E675
+  ["f09f9288", "5be5ba8ae5b18b5d"], # [BARBER POLE] U+1F488 -> "[床屋]"
+  ["f09f91a4", "ee9ab1"], # [BUST IN SILHOUETTE] U+1F464 -> U+E6B1
+  ["f09f91a6", "ee9bb0"], # [BOY] U+1F466 -> U+E6F0
+  ["f09f91a7", "ee9bb0"], # [GIRL] U+1F467 -> U+E6F0
+  ["f09f91a8", "ee9bb0"], # [MAN] U+1F468 -> U+E6F0
+  ["f09f91a9", "ee9bb0"], # [WOMAN] U+1F469 -> U+E6F0
+  ["f09f91aa", "5be5aeb6e6978f5d"], # [FAMILY] U+1F46A -> "[家族]"
+  ["f09f91ab", "5be382abe38383e38397e383ab5d"], # [MAN AND WOMAN HOLDING HANDS] U+1F46B -> "[カップル]"
+  ["f09f91ae", "5be8ada6e5ae985d"], # [POLICE OFFICER] U+1F46E -> "[警官]"
+  ["f09f91af", "5be38390e3838be383bc5d"], # [WOMAN WITH BUNNY EARS] U+1F46F -> "[バニー]"
+  ["f09f91b0", "5be88ab1e5ab815d"], # [BRIDE WITH VEIL] U+1F470 -> "[花嫁]"
+  ["f09f91b1", "5be799bde4baba5d"], # [WESTERN PERSON] U+1F471 -> "[白人]"
+  ["f09f91b2", "5be4b8ade59bbde4baba5d"], # [MAN WITH GUA PI MAO] U+1F472 -> "[中国人]"
+  ["f09f91b3", "5be382a4e383b3e38389e4baba5d"], # [MAN WITH TURBAN] U+1F473 -> "[インド人]"
+  ["f09f91b4", "5be3818ae38198e38184e38195e382935d"], # [OLDER MAN] U+1F474 -> "[おじいさん]"
+  ["f09f91b5", "5be3818ae381b0e38182e38195e382935d"], # [OLDER WOMAN] U+1F475 -> "[おばあさん]"
+  ["f09f91b6", "5be8b5a4e381a1e38283e382935d"], # [BABY] U+1F476 -> "[赤ちゃん]"
+  ["f09f91b7", "5be5b7a5e4ba8be78fbee5a0b4e381aee4baba5d"], # [CONSTRUCTION WORKER] U+1F477 -> "[工事現場の人]"
+  ["f09f91b8", "5be3818ae5a7abe6a7985d"], # [PRINCESS] U+1F478 -> "[お姫様]"
+  ["f09f91b9", "5be381aae381bee381afe381925d"], # [JAPANESE OGRE] U+1F479 -> "[なまはげ]"
+  ["f09f91ba", "5be5a4a9e78b975d"], # [JAPANESE GOBLIN] U+1F47A -> "[天狗]"
+  ["f09f91bb", "5be3818ae58c96e381915d"], # [GHOST] U+1F47B -> "[お化け]"
+  ["f09f91bc", "5be5a4a9e4bdbf5d"], # [BABY ANGEL] U+1F47C -> "[天使]"
+  ["f09f91bd", "5b55464f5d"], # [EXTRATERRESTRIAL ALIEN] U+1F47D -> "[UFO]"
+  ["f09f91be", "5be5ae87e5ae99e4baba5d"], # [ALIEN MONSTER] U+1F47E -> "[宇宙人]"
+  ["f09f91bf", "5be382a2e382afe3839e5d"], # [IMP] U+1F47F -> "[アクマ]"
+  ["f09f9280", "5be38389e382afe383ad5d"], # [SKULL] U+1F480 -> "[ドクロ]"
+  ["f09f9281", "5be6a188e586855d"], # [INFORMATION DESK PERSON] U+1F481 -> "[案内]"
+  ["f09f9282", "5be8a19be585b55d"], # [GUARDSMAN] U+1F482 -> "[衛兵]"
+  ["f09f9283", "5be38380e383b3e382b95d"], # [DANCER] U+1F483 -> "[ダンス]"
+  ["f09f908c", "ee9d8e"], # [SNAIL] U+1F40C -> U+E74E
+  ["f09f908d", "5be38398e383935d"], # [SNAKE] U+1F40D -> "[ヘビ]"
+  ["f09f908e", "ee9d94"], # [HORSE] U+1F40E -> U+E754
+  ["f09f9094", "5be3838be383afe38388e383aa5d"], # [CHICKEN] U+1F414 -> "[ニワトリ]"
+  ["f09f9097", "5be382a4e3838ee382b7e382b75d"], # [BOAR] U+1F417 -> "[イノシシ]"
+  ["f09f90ab", "5be383a9e382afe383805d"], # [BACTRIAN CAMEL] U+1F42B -> "[ラクダ]"
+  ["f09f9098", "5be382bee382a65d"], # [ELEPHANT] U+1F418 -> "[ゾウ]"
+  ["f09f90a8", "5be382b3e382a2e383a95d"], # [KOALA] U+1F428 -> "[コアラ]"
+  ["f09f9092", "5be382b5e383ab5d"], # [MONKEY] U+1F412 -> "[サル]"
+  ["f09f9091", "5be38392e38384e382b85d"], # [SHEEP] U+1F411 -> "[ヒツジ]"
+  ["f09f9099", "5be382bfe382b35d"], # [OCTOPUS] U+1F419 -> "[タコ]"
+  ["f09f909a", "5be5b7bbe8b29d5d"], # [SPIRAL SHELL] U+1F41A -> "[巻貝]"
+  ["f09f909b", "5be382b2e382b8e382b2e382b85d"], # [BUG] U+1F41B -> "[ゲジゲジ]"
+  ["f09f909c", "5be382a2e383aa5d"], # [ANT] U+1F41C -> "[アリ]"
+  ["f09f909d", "5be3839fe38384e38390e383815d"], # [HONEYBEE] U+1F41D -> "[ミツバチ]"
+  ["f09f909e", "5be381a6e38293e381a8e38186e899ab5d"], # [LADY BEETLE] U+1F41E -> "[てんとう虫]"
+  ["f09f90a0", "ee9d91"], # [TROPICAL FISH] U+1F420 -> U+E751
+  ["f09f90a1", "ee9d91"], # [BLOWFISH] U+1F421 -> U+E751
+  ["f09f90a2", "5be382abe383a15d"], # [TURTLE] U+1F422 -> "[カメ]"
+  ["f09f90a4", "ee9d8f"], # [BABY CHICK] U+1F424 -> U+E74F
+  ["f09f90a5", "ee9d8f"], # [FRONT-FACING BABY CHICK] U+1F425 -> U+E74F
+  ["f09f90a6", "ee9d8f"], # [BIRD] U+1F426 -> U+E74F
+  ["f09f90a3", "ee9d8f"], # [HATCHING CHICK] U+1F423 -> U+E74F
+  ["f09f90a7", "ee9d90"], # [PENGUIN] U+1F427 -> U+E750
+  ["f09f90a9", "ee9aa1"], # [POODLE] U+1F429 -> U+E6A1
+  ["f09f909f", "ee9d91"], # [FISH] U+1F41F -> U+E751
+  ["f09f90ac", "5be382a4e383abe382ab5d"], # [DOLPHIN] U+1F42C -> "[イルカ]"
+  ["f09f90ad", "5be3838de382bae3839f5d"], # [MOUSE FACE] U+1F42D -> "[ネズミ]"
+  ["f09f90af", "5be38388e383a95d"], # [TIGER FACE] U+1F42F -> "[トラ]"
+  ["f09f90b1", "ee9aa2"], # [CAT FACE] U+1F431 -> U+E6A2
+  ["f09f90b3", "5be382afe382b8e383a95d"], # [SPOUTING WHALE] U+1F433 -> "[クジラ]"
+  ["f09f90b4", "ee9d94"], # [HORSE FACE] U+1F434 -> U+E754
+  ["f09f90b5", "5be382b5e383ab5d"], # [MONKEY FACE] U+1F435 -> "[サル]"
+  ["f09f90b6", "ee9aa1"], # [DOG FACE] U+1F436 -> U+E6A1
+  ["f09f90b7", "ee9d95"], # [PIG FACE] U+1F437 -> U+E755
+  ["f09f90bb", "5be382afe3839e5d"], # [BEAR FACE] U+1F43B -> "[クマ]"
+  ["f09f90b9", "5be3838fe383a0e382b9e382bfe383bc5d"], # [HAMSTER FACE] U+1F439 -> "[ハムスター]"
+  ["f09f90ba", "ee9aa1"], # [WOLF FACE] U+1F43A -> U+E6A1
+  ["f09f90ae", "5be7899b5d"], # [COW FACE] U+1F42E -> "[牛]"
+  ["f09f90b0", "5be382a6e382b5e382ae5d"], # [RABBIT FACE] U+1F430 -> "[ウサギ]"
+  ["f09f90b8", "5be382abe382a8e383ab5d"], # [FROG FACE] U+1F438 -> "[カエル]"
+  ["f09f90be", "ee9a98"], # [PAW PRINTS] U+1F43E -> U+E698
+  ["f09f90b2", "5be8beb05d"], # [DRAGON FACE] U+1F432 -> "[辰]"
+  ["f09f90bc", "5be38391e383b3e383805d"], # [PANDA FACE] U+1F43C -> "[パンダ]"
+  ["f09f90bd", "ee9d95"], # [PIG NOSE] U+1F43D -> U+E755
+  ["f09f9880", "ee9bb1"], # [ANGRY FACE] U+1F600 -> U+E6F1
+  ["f09f9881", "ee9bb3"], # [ANGUISHED FACE] U+1F601 -> U+E6F3
+  ["f09f9882", "ee9bb4"], # [ASTONISHED FACE] U+1F602 -> U+E6F4
+  ["f09f9883", "ee9bb2"], # [DISAPPOINTED FACE] U+1F603 -> U+E6F2
+  ["f09f9884", "ee9bb4"], # [DIZZY FACE] U+1F604 -> U+E6F4
+  ["f09f9885", "ee9ca3"], # [EXASPERATED FACE] U+1F605 -> U+E723
+  ["f09f9886", "ee9ca5"], # [EXPRESSIONLESS FACE] U+1F606 -> U+E725
+  ["f09f9887", "ee9ca6"], # [FACE WITH HEART-SHAPED EYES] U+1F607 -> U+E726
+  ["f09f9888", "ee9d93"], # [FACE WITH LOOK OF TRIUMPH] U+1F608 -> U+E753
+  ["f09f9889", "ee9ca8"], # [WINKING FACE WITH STUCK-OUT TONGUE] U+1F609 -> U+E728
+  ["f09f988a", "ee9ca8"], # [FACE WITH STUCK-OUT TONGUE] U+1F60A -> U+E728
+  ["f09f988b", "ee9d92"], # [FACE SAVOURING DELICIOUS FOOD] U+1F60B -> U+E752
+  ["f09f988c", "ee9ca6"], # [FACE THROWING A KISS] U+1F60C -> U+E726
+  ["f09f988d", "ee9ca6"], # [FACE KISSING] U+1F60D -> U+E726
+  ["f09f988e", "5be9a2a8e982aae381b2e3818d5d"], # [FACE WITH MASK] U+1F60E -> "[風邪ひき]"
+  ["f09f988f", "ee9caa"], # [FLUSHED FACE] U+1F60F -> U+E72A
+  ["f09f9890", "ee9bb0"], # [HAPPY FACE WITH OPEN MOUTH] U+1F610 -> U+E6F0
+  ["f09f9891", "ee9ca2"], # [HAPPY FACE WITH OPEN MOUTH AND COLD SWEAT] U+1F611 -> U+E722
+  ["f09f9892", "ee9caa"], # [HAPPY FACE WITH OPEN MOUTH AND CLOSED EYES] U+1F612 -> U+E72A
+  ["f09f9893", "ee9d93"], # [HAPPY FACE WITH GRIN] U+1F613 -> U+E753
+  ["f09f9894", "ee9caa"], # [HAPPY AND CRYING FACE] U+1F614 -> U+E72A
+  ["f09f9895", "ee9bb0"], # [HAPPY FACE WITH WIDE MOUTH AND RAISED EYEBROWS] U+1F615 -> U+E6F0
+  ["e298ba", "ee9bb0"], # [WHITE SMILING FACE] U+263A -> U+E6F0
+  ["f09f9896", "ee9bb0"], # [HAPPY FACE WITH OPEN MOUTH AND RAISED EYEBROWS] U+1F616 -> U+E6F0
+  ["f09f9897", "ee9cae"], # [CRYING FACE] U+1F617 -> U+E72E
+  ["f09f9898", "ee9cad"], # [LOUDLY CRYING FACE] U+1F618 -> U+E72D
+  ["f09f9899", "ee9d97"], # [FEARFUL FACE] U+1F619 -> U+E757
+  ["f09f989a", "ee9cab"], # [PERSEVERING FACE] U+1F61A -> U+E72B
+  ["f09f989b", "ee9ca4"], # [POUTING FACE] U+1F61B -> U+E724
+  ["f09f989c", "ee9ca1"], # [RELIEVED FACE] U+1F61C -> U+E721
+  ["f09f989d", "ee9bb3"], # [CONFOUNDED FACE] U+1F61D -> U+E6F3
+  ["f09f989e", "ee9ca0"], # [PENSIVE FACE] U+1F61E -> U+E720
+  ["f09f989f", "ee9d97"], # [FACE SCREAMING IN FEAR] U+1F61F -> U+E757
+  ["f09f98a0", "ee9c81"], # [SLEEPY FACE] U+1F620 -> U+E701
+  ["f09f98a1", "ee9cac"], # [SMIRKING FACE] U+1F621 -> U+E72C
+  ["f09f98a2", "ee9ca3"], # [FACE WITH COLD SWEAT] U+1F622 -> U+E723
+  ["f09f98a3", "ee9ca3"], # [DISAPPOINTED BUT RELIEVED FACE] U+1F623 -> U+E723
+  ["f09f98a4", "ee9cab"], # [TIRED FACE] U+1F624 -> U+E72B
+  ["f09f98a5", "ee9ca9"], # [WINKING FACE] U+1F625 -> U+E729
+  ["f09f98ab", "ee9bb0"], # [CAT FACE WITH OPEN MOUTH] U+1F62B -> U+E6F0
+  ["f09f98ac", "ee9d93"], # [HAPPY CAT FACE WITH GRIN] U+1F62C -> U+E753
+  ["f09f98ad", "ee9caa"], # [HAPPY AND CRYING CAT FACE] U+1F62D -> U+E72A
+  ["f09f98ae", "ee9ca6"], # [CAT FACE KISSING] U+1F62E -> U+E726
+  ["f09f98af", "ee9ca6"], # [CAT FACE WITH HEART-SHAPED EYES] U+1F62F -> U+E726
+  ["f09f98b0", "ee9cae"], # [CRYING CAT FACE] U+1F630 -> U+E72E
+  ["f09f98b1", "ee9ca4"], # [POUTING CAT FACE] U+1F631 -> U+E724
+  ["f09f98b2", "ee9d93"], # [CAT FACE WITH TIGHTLY-CLOSED LIPS] U+1F632 -> U+E753
+  ["f09f98b3", "ee9bb3"], # [ANGUISHED CAT FACE] U+1F633 -> U+E6F3
+  ["f09f98b4", "ee9caf"], # [FACE WITH NO GOOD GESTURE] U+1F634 -> U+E72F
+  ["f09f98b5", "ee9c8b"], # [FACE WITH OK GESTURE] U+1F635 -> U+E70B
+  ["f09f98b6", "6d285f205f296d"], # [PERSON BOWING DEEPLY] U+1F636 -> "m(_ _)m"
+  ["f09f98b7", "282f5fefbcbc29"], # [SEE-NO-EVIL MONKEY] U+1F637 -> "(/_＼)"
+  ["f09f98b9", "28e383bbc397e383bb29"], # [SPEAK-NO-EVIL MONKEY] U+1F639 -> "(・×・)"
+  ["f09f98b8", "7c28e383bbc397e383bb297c"], # [HEAR-NO-EVIL MONKEY] U+1F638 -> "|(・×・)|"
+  ["f09f98ba", "285e2d5e292f"], # [PERSON RAISING ONE HAND] U+1F63A -> "(^-^)/"
+  ["f09f98bb", "efbcbc285e6f5e29efbc8f"], # [PERSON RAISING BOTH HANDS IN CELEBRATION] U+1F63B -> "＼(^o^)／"
+  ["f09f98bc", "ee9bb3"], # [PERSON FROWNING] U+1F63C -> U+E6F3
+  ["f09f98bd", "ee9bb1"], # [PERSON WITH POUTING FACE] U+1F63D -> U+E6F1
+  ["f09f98be", "282667743be4baba266c743b29"], # [PERSON WITH FOLDED HANDS] U+1F63E -> "(&gt;人&lt;)"
+  ["f09f8fa0", "ee99a3"], # [HOUSE BUILDING] U+1F3E0 -> U+E663
+  ["f09f8fa1", "ee99a3"], # [HOUSE WITH GARDEN] U+1F3E1 -> U+E663
+  ["f09f8fa2", "ee99a4"], # [OFFICE BUILDING] U+1F3E2 -> U+E664
+  ["f09f8fa3", "ee99a5"], # [JAPANESE POST OFFICE] U+1F3E3 -> U+E665
+  ["f09f8fa5", "ee99a6"], # [HOSPITAL] U+1F3E5 -> U+E666
+  ["f09f8fa6", "ee99a7"], # [BANK] U+1F3E6 -> U+E667
+  ["f09f8fa7", "ee99a8"], # [AUTOMATED TELLER MACHINE] U+1F3E7 -> U+E668
+  ["f09f8fa8", "ee99a9"], # [HOTEL] U+1F3E8 -> U+E669
+  ["f09f8fa9", "ee99a9ee9baf"], # [LOVE HOTEL] U+1F3E9 -> U+E669 U+E6EF
+  ["f09f8faa", "ee99aa"], # [CONVENIENCE STORE] U+1F3EA -> U+E66A
+  ["f09f8fab", "ee9cbe"], # [SCHOOL] U+1F3EB -> U+E73E
+  ["e29baa", "5be69599e4bc9a5d"], # [CHURCH] U+26EA -> "[教会]"
+  ["e29bb2", "5be599b4e6b0b45d"], # [FOUNTAIN] U+26F2 -> "[噴水]"
+  ["f09f8fac", "5be38387e38391e383bce383885d"], # [DEPARTMENT STORE] U+1F3EC -> "[デパート]"
+  ["f09f8faf", "5be59f8e5d"], # [JAPANESE CASTLE] U+1F3EF -> "[城]"
+  ["f09f8fb0", "5be59f8e5d"], # [EUROPEAN CASTLE] U+1F3F0 -> "[城]"
+  ["f09f8fad", "5be5b7a5e5a0b45d"], # [FACTORY] U+1F3ED -> "[工場]"
+  ["e29a93", "ee99a1"], # [ANCHOR] U+2693 -> U+E661
+  ["f09f8fae", "ee9d8b"], # [IZAKAYA LANTERN] U+1F3EE -> U+E74B
+  ["f09f97bb", "ee9d80"], # [MOUNT FUJI] U+1F5FB -> U+E740
+  ["f09f97bc", "5be69db1e4baace382bfe383afe383bc5d"], # [TOKYO TOWER] U+1F5FC -> "[東京タワー]"
+  ["f09f97bd", "5be887aae794b1e381aee5a5b3e7a59e5d"], # [STATUE OF LIBERTY] U+1F5FD -> "[自由の女神]"
+  ["f09f97be", "5be697a5e69cace59cb0e59bb35d"], # [SILHOUETTE OF JAPAN] U+1F5FE -> "[日本地図]"
+  ["f09f97bf", "5be383a2e382a2e382a45d"], # [MOYAI] U+1F5FF -> "[モアイ]"
+  ["f09f919e", "ee9a99"], # [MANS SHOE] U+1F45E -> U+E699
+  ["f09f919f", "ee9a99"], # [ATHLETIC SHOE] U+1F45F -> U+E699
+  ["f09f91a0", "ee99b4"], # [HIGH-HEELED SHOE] U+1F460 -> U+E674
+  ["f09f91a1", "ee99b4"], # [WOMANS SANDAL] U+1F461 -> U+E674
+  ["f09f91a2", "5be38396e383bce383845d"], # [WOMANS BOOTS] U+1F462 -> "[ブーツ]"
+  ["f09f91a3", "ee9a98"], # [FOOTPRINTS] U+1F463 -> U+E698
+  ["f09f9193", "ee9a9a"], # [EYEGLASSES] U+1F453 -> U+E69A
+  ["f09f9195", "ee9c8e"], # [T-SHIRT] U+1F455 -> U+E70E
+  ["f09f9196", "ee9c91"], # [JEANS] U+1F456 -> U+E711
+  ["f09f9191", "ee9c9a"], # [CROWN] U+1F451 -> U+E71A
+  ["f09f9194", "5be3838de382afe382bfe382a45d"], # [NECKTIE] U+1F454 -> "[ネクタイ]"
+  ["f09f9192", "5be5b8bde5ad905d"], # [WOMANS HAT] U+1F452 -> "[帽子]"
+  ["f09f9197", "5be38389e383ace382b95d"], # [DRESS] U+1F457 -> "[ドレス]"
+  ["f09f9198", "5be79d80e789a95d"], # [KIMONO] U+1F458 -> "[着物]"
+  ["f09f9199", "5be38393e382ade3838b5d"], # [BIKINI] U+1F459 -> "[ビキニ]"
+  ["f09f919a", "ee9c8e"], # [WOMANS CLOTHES] U+1F45A -> U+E70E
+  ["f09f919b", "ee9c8f"], # [PURSE] U+1F45B -> U+E70F
+  ["f09f919c", "ee9a82"], # [HANDBAG] U+1F45C -> U+E682
+  ["f09f919d", "ee9aad"], # [POUCH] U+1F45D -> U+E6AD
+  ["f09f92b0", "ee9c95"], # [MONEY BAG] U+1F4B0 -> U+E715
+  ["f09f92b1", "5b24efbfa55d"], # [CURRENCY EXCHANGE] U+1F4B1 -> "[$￥]"
+  ["f09f92b9", "5be6a0aae4bea15d"], # [CHART WITH UPWARDS TREND AND YEN SIGN] U+1F4B9 -> "[株価]"
+  ["f09f92b2", "ee9c95"], # [HEAVY DOLLAR SIGN] U+1F4B2 -> U+E715
+  ["f09f92b3", "5be382abe383bce383895d"], # [CREDIT CARD] U+1F4B3 -> "[カード]"
+  ["f09f92b4", "ee9b96"], # [BANKNOTE WITH YEN SIGN] U+1F4B4 -> U+E6D6
+  ["f09f92b5", "ee9c95"], # [BANKNOTE WITH DOLLAR SIGN] U+1F4B5 -> U+E715
+  ["f09f92b8", "5be9a39be38293e381a7e38184e3818fe3818ae987915d"], # [MONEY WITH WINGS] U+1F4B8 -> "[飛んでいくお金]"
+  ["f09f87a6", "5b415d"], # [REGIONAL INDICATOR SYMBOL LETTER A] U+1F1E6 -> "[A]"
+  ["f09f87a7", "5b425d"], # [REGIONAL INDICATOR SYMBOL LETTER B] U+1F1E7 -> "[B]"
+  ["f09f87a8", "5b435d"], # [REGIONAL INDICATOR SYMBOL LETTER C] U+1F1E8 -> "[C]"
+  ["f09f87a9", "5b445d"], # [REGIONAL INDICATOR SYMBOL LETTER D] U+1F1E9 -> "[D]"
+  ["f09f87aa", "5b455d"], # [REGIONAL INDICATOR SYMBOL LETTER E] U+1F1EA -> "[E]"
+  ["f09f87ab", "5b465d"], # [REGIONAL INDICATOR SYMBOL LETTER F] U+1F1EB -> "[F]"
+  ["f09f87ac", "5b475d"], # [REGIONAL INDICATOR SYMBOL LETTER G] U+1F1EC -> "[G]"
+  ["f09f87ad", "5b485d"], # [REGIONAL INDICATOR SYMBOL LETTER H] U+1F1ED -> "[H]"
+  ["f09f87ae", "5b495d"], # [REGIONAL INDICATOR SYMBOL LETTER I] U+1F1EE -> "[I]"
+  ["f09f87af", "5b4a5d"], # [REGIONAL INDICATOR SYMBOL LETTER J] U+1F1EF -> "[J]"
+  ["f09f87b0", "5b4b5d"], # [REGIONAL INDICATOR SYMBOL LETTER K] U+1F1F0 -> "[K]"
+  ["f09f87b1", "5b4c5d"], # [REGIONAL INDICATOR SYMBOL LETTER L] U+1F1F1 -> "[L]"
+  ["f09f87b2", "5b4d5d"], # [REGIONAL INDICATOR SYMBOL LETTER M] U+1F1F2 -> "[M]"
+  ["f09f87b3", "5b4e5d"], # [REGIONAL INDICATOR SYMBOL LETTER N] U+1F1F3 -> "[N]"
+  ["f09f87b4", "5b4f5d"], # [REGIONAL INDICATOR SYMBOL LETTER O] U+1F1F4 -> "[O]"
+  ["f09f87b5", "5b505d"], # [REGIONAL INDICATOR SYMBOL LETTER P] U+1F1F5 -> "[P]"
+  ["f09f87b6", "5b515d"], # [REGIONAL INDICATOR SYMBOL LETTER Q] U+1F1F6 -> "[Q]"
+  ["f09f87b7", "5b525d"], # [REGIONAL INDICATOR SYMBOL LETTER R] U+1F1F7 -> "[R]"
+  ["f09f87b8", "5b535d"], # [REGIONAL INDICATOR SYMBOL LETTER S] U+1F1F8 -> "[S]"
+  ["f09f87b9", "5b545d"], # [REGIONAL INDICATOR SYMBOL LETTER T] U+1F1F9 -> "[T]"
+  ["f09f87ba", "5b555d"], # [REGIONAL INDICATOR SYMBOL LETTER U] U+1F1FA -> "[U]"
+  ["f09f87bb", "5b565d"], # [REGIONAL INDICATOR SYMBOL LETTER V] U+1F1FB -> "[V]"
+  ["f09f87bc", "5b575d"], # [REGIONAL INDICATOR SYMBOL LETTER W] U+1F1FC -> "[W]"
+  ["f09f87bd", "5b585d"], # [REGIONAL INDICATOR SYMBOL LETTER X] U+1F1FD -> "[X]"
+  ["f09f87be", "5b595d"], # [REGIONAL INDICATOR SYMBOL LETTER Y] U+1F1FE -> "[Y]"
+  ["f09f87bf", "5b5a5d"], # [REGIONAL INDICATOR SYMBOL LETTER Z] U+1F1FF -> "[Z]"
+  ["f09f94a5", "5be7828e5d"], # [FIRE] U+1F525 -> "[炎]"
+  ["f09f94a6", "ee9bbb"], # [ELECTRIC TORCH] U+1F526 -> U+E6FB
+  ["f09f94a7", "ee9c98"], # [WRENCH] U+1F527 -> U+E718
+  ["f09f94a8", "5be3838fe383b3e3839ee383bc5d"], # [HAMMER] U+1F528 -> "[ハンマー]"
+  ["f09f94a9", "5be3838de382b85d"], # [NUT AND BOLT] U+1F529 -> "[ネジ]"
+  ["f09f94aa", "5be58c85e4b8815d"], # [HOCHO] U+1F52A -> "[包丁]"
+  ["f09f94ab", "5be38394e382b9e38388e383ab5d"], # [PISTOL] U+1F52B -> "[ピストル]"
+  ["f09f94ae", "5be58da0e381845d"], # [CRYSTAL BALL] U+1F52E -> "[占い]"
+  ["f09f94af", "5be58da0e381845d"], # [SIX POINTED STAR WITH MIDDLE DOT] U+1F52F -> "[占い]"
+  ["f09f94b0", "5be88ba5e89189e3839ee383bce382af5d"], # [JAPANESE SYMBOL FOR BEGINNER] U+1F530 -> "[若葉マーク]"
+  ["f09f94b1", "ee9c9a"], # [TRIDENT EMBLEM] U+1F531 -> U+E71A
+  ["f09f9289", "5be6b3a8e5b0845d"], # [SYRINGE] U+1F489 -> "[注射]"
+  ["f09f928a", "5be896ac5d"], # [PILL] U+1F48A -> "[薬]"
+  ["f09f85b0", "5b415d"], # [NEGATIVE SQUARED LATIN CAPITAL LETTER A] U+1F170 -> "[A]"
+  ["f09f85b1", "5b425d"], # [NEGATIVE SQUARED LATIN CAPITAL LETTER B] U+1F171 -> "[B]"
+  ["f09f868e", "5b41425d"], # [NEGATIVE SQUARED AB] U+1F18E -> "[AB]"
+  ["f09f85be", "5b4f5d"], # [NEGATIVE SQUARED LATIN CAPITAL LETTER O] U+1F17E -> "[O]"
+  ["f09f8e80", "ee9a84"], # [RIBBON] U+1F380 -> U+E684
+  ["f09f8e81", "ee9a85"], # [WRAPPED PRESENT] U+1F381 -> U+E685
+  ["f09f8e82", "ee9a86"], # [BIRTHDAY CAKE] U+1F382 -> U+E686
+  ["f09f8e84", "ee9aa4"], # [CHRISTMAS TREE] U+1F384 -> U+E6A4
+  ["f09f8e85", "5be382b5e383b3e382bf5d"], # [FATHER CHRISTMAS] U+1F385 -> "[サンタ]"
+  ["f09f8e8c", "5be7a59de697a55d"], # [CROSSED FLAGS] U+1F38C -> "[祝日]"
+  ["f09f8e86", "5be88ab1e781ab5d"], # [FIREWORKS] U+1F386 -> "[花火]"
+  ["f09f8e88", "5be9a2a8e888b95d"], # [BALLOON] U+1F388 -> "[風船]"
+  ["f09f8e89", "5be382afe383a9e38383e382abe383bc5d"], # [PARTY POPPER] U+1F389 -> "[クラッカー]"
+  ["f09f8e8d", "5be99680e69dbe5d"], # [PINE DECORATION] U+1F38D -> "[門松]"
+  ["f09f8e8e", "5be381b2e381aae7a5ade3828a5d"], # [JAPANESE DOLLS] U+1F38E -> "[ひな祭り]"
+  ["f09f8e93", "5be58d92e6a5ade5bc8f5d"], # [GRADUATION CAP] U+1F393 -> "[卒業式]"
+  ["f09f8e92", "5be383a9e383b3e38389e382bbe383ab5d"], # [SCHOOL SATCHEL] U+1F392 -> "[ランドセル]"
+  ["f09f8e8f", "5be38193e38184e381aee381bce3828a5d"], # [CARP STREAMER] U+1F38F -> "[こいのぼり]"
+  ["f09f8e87", "5be7b79ae9a699e88ab1e781ab5d"], # [FIREWORK SPARKLER] U+1F387 -> "[線香花火]"
+  ["f09f8e90", "5be9a2a8e988b45d"], # [WIND CHIME] U+1F390 -> "[風鈴]"
+  ["f09f8e83", "5be3838fe383ade382a6e382a3e383b35d"], # [JACK-O-LANTERN] U+1F383 -> "[ハロウィン]"
+  ["f09f8e8a", "5be382aae383a1e38387e38388e382a65d"], # [CONFETTI BALL] U+1F38A -> "[オメデトウ]"
+  ["f09f8e8b", "5be4b883e5a4955d"], # [TANABATA TREE] U+1F38B -> "[七夕]"
+  ["f09f8e91", "5be3818ae69c88e8a68b5d"], # [MOON VIEWING CEREMONY] U+1F391 -> "[お月見]"
+  ["f09f939f", "ee999a"], # [PAGER] U+1F4DF -> U+E65A
+  ["e2988e", "ee9a87"], # [BLACK TELEPHONE] U+260E -> U+E687
+  ["f09f939e", "ee9a87"], # [TELEPHONE RECEIVER] U+1F4DE -> U+E687
+  ["f09f93b1", "ee9a88"], # [MOBILE PHONE] U+1F4F1 -> U+E688
+  ["f09f93b2", "ee9b8e"], # [MOBILE PHONE WITH RIGHTWARDS ARROW AT LEFT] U+1F4F2 -> U+E6CE
+  ["f09f939d", "ee9a89"], # [MEMO] U+1F4DD -> U+E689
+  ["f09f93a0", "ee9b90"], # [FAX MACHINE] U+1F4E0 -> U+E6D0
+  ["e29c89", "ee9b93"], # [ENVELOPE] U+2709 -> U+E6D3
+  ["f09f93a8", "ee9b8f"], # [INCOMING ENVELOPE] U+1F4E8 -> U+E6CF
+  ["f09f93a9", "ee9b8f"], # [ENVELOPE WITH DOWNWARDS ARROW ABOVE] U+1F4E9 -> U+E6CF
+  ["f09f93aa", "ee99a5"], # [CLOSED MAILBOX WITH LOWERED FLAG] U+1F4EA -> U+E665
+  ["f09f93ab", "ee99a5"], # [CLOSED MAILBOX WITH RAISED FLAG] U+1F4EB -> U+E665
+  ["f09f93ae", "ee99a5"], # [POSTBOX] U+1F4EE -> U+E665
+  ["f09f93b0", "5be696b0e8819e5d"], # [NEWSPAPER] U+1F4F0 -> "[新聞]"
+  ["f09f93a2", "5be382b9e38394e383bce382ab5d"], # [PUBLIC ADDRESS LOUDSPEAKER] U+1F4E2 -> "[スピーカ]"
+  ["f09f93a3", "5be383a1e382ace3839be383b35d"], # [CHEERING MEGAPHONE] U+1F4E3 -> "[メガホン]"
+  ["f09f93a1", "5be382a2e383b3e38386e3838a5d"], # [SATELLITE ANTENNA] U+1F4E1 -> "[アンテナ]"
+  ["f09f93a4", "5be98081e4bfa1424f585d"], # [OUTBOX TRAY] U+1F4E4 -> "[送信BOX]"
+  ["f09f93a5", "5be58f97e4bfa1424f585d"], # [INBOX TRAY] U+1F4E5 -> "[受信BOX]"
+  ["f09f93a6", "ee9a85"], # [PACKAGE] U+1F4E6 -> U+E685
+  ["f09f93a7", "ee9b93"], # [E-MAIL SYMBOL] U+1F4E7 -> U+E6D3
+  ["f09f94a0", "5b414243445d"], # [INPUT SYMBOL FOR LATIN CAPITAL LETTERS] U+1F520 -> "[ABCD]"
+  ["f09f94a1", "5b616263645d"], # [INPUT SYMBOL FOR LATIN SMALL LETTERS] U+1F521 -> "[abcd]"
+  ["f09f94a2", "5b313233345d"], # [INPUT SYMBOL FOR NUMBERS] U+1F522 -> "[1234]"
+  ["f09f94a3", "5be8a898e58fb75d"], # [INPUT SYMBOL FOR SYMBOLS] U+1F523 -> "[記号]"
+  ["f09f94a4", "5b4142435d"], # [INPUT SYMBOL FOR LATIN LETTERS] U+1F524 -> "[ABC]"
+  ["e29c92", "ee9aae"], # [BLACK NIB] U+2712 -> U+E6AE
+  ["f09f92ba", "ee9ab2"], # [SEAT] U+1F4BA -> U+E6B2
+  ["f09f92bb", "ee9c96"], # [PERSONAL COMPUTER] U+1F4BB -> U+E716
+  ["e29c8f", "ee9c99"], # [PENCIL] U+270F -> U+E719
+  ["f09f938e", "ee9cb0"], # [PAPERCLIP] U+1F4CE -> U+E730
+  ["f09f92bc", "ee9a82"], # [BRIEFCASE] U+1F4BC -> U+E682
+  ["f09f92bd", "5b4d445d"], # [MINIDISC] U+1F4BD -> "[MD]"
+  ["f09f92be", "5be38395e383ade38383e38394e383bc5d"], # [FLOPPY DISK] U+1F4BE -> "[フロッピー]"
+  ["f09f92bf", "ee9a8c"], # [OPTICAL DISC] U+1F4BF -> U+E68C
+  ["f09f9380", "ee9a8c"], # [DVD] U+1F4C0 -> U+E68C
+  ["e29c82", "ee99b5"], # [BLACK SCISSORS] U+2702 -> U+E675
+  ["f09f938d", "5be794bbe381b3e38287e381865d"], # [ROUND PUSHPIN] U+1F4CD -> "[画びょう]"
+  ["f09f9383", "ee9a89"], # [PAGE WITH CURL] U+1F4C3 -> U+E689
+  ["f09f9384", "ee9a89"], # [PAGE FACING UP] U+1F4C4 -> U+E689
+  ["f09f9385", "5be382abe383ace383b3e38380e383bc5d"], # [CALENDAR] U+1F4C5 -> "[カレンダー]"
+  ["f09f9381", "5be38395e382a9e383abe383805d"], # [FILE FOLDER] U+1F4C1 -> "[フォルダ]"
+  ["f09f9382", "5be38395e382a9e383abe383805d"], # [OPEN FILE FOLDER] U+1F4C2 -> "[フォルダ]"
+  ["f09f9393", "ee9a83"], # [NOTEBOOK] U+1F4D3 -> U+E683
+  ["f09f9396", "ee9a83"], # [OPEN BOOK] U+1F4D6 -> U+E683
+  ["f09f9394", "ee9a83"], # [NOTEBOOK WITH DECORATIVE COVER] U+1F4D4 -> U+E683
+  ["f09f9395", "ee9a83"], # [CLOSED BOOK] U+1F4D5 -> U+E683
+  ["f09f9397", "ee9a83"], # [GREEN BOOK] U+1F4D7 -> U+E683
+  ["f09f9398", "ee9a83"], # [BLUE BOOK] U+1F4D8 -> U+E683
+  ["f09f9399", "ee9a83"], # [ORANGE BOOK] U+1F4D9 -> U+E683
+  ["f09f939a", "ee9a83"], # [BOOKS] U+1F4DA -> U+E683
+  ["f09f939b", "5be5908de69cad5d"], # [NAME BADGE] U+1F4DB -> "[名札]"
+  ["f09f939c", "ee9c8a"], # [SCROLL] U+1F4DC -> U+E70A
+  ["f09f938b", "ee9a89"], # [CLIPBOARD] U+1F4CB -> U+E689
+  ["f09f9386", "5be382abe383ace383b3e38380e383bc5d"], # [TEAR-OFF CALENDAR] U+1F4C6 -> "[カレンダー]"
+  ["f09f938a", "5be382b0e383a9e383955d"], # [BAR CHART] U+1F4CA -> "[グラフ]"
+  ["f09f9388", "5be382b0e383a9e383955d"], # [CHART WITH UPWARDS TREND] U+1F4C8 -> "[グラフ]"
+  ["f09f9389", "5be382b0e383a9e383955d"], # [CHART WITH DOWNWARDS TREND] U+1F4C9 -> "[グラフ]"
+  ["f09f9387", "ee9a83"], # [CARD INDEX] U+1F4C7 -> U+E683
+  ["f09f938c", "5be794bbe381b3e38287e381865d"], # [PUSHPIN] U+1F4CC -> "[画びょう]"
+  ["f09f9392", "ee9a83"], # [LEDGER] U+1F4D2 -> U+E683
+  ["f09f938f", "5be5ae9ae8a68f5d"], # [STRAIGHT RULER] U+1F4CF -> "[定規]"
+  ["f09f9390", "5be4b889e8a792e5ae9ae8a68f5d"], # [TRIANGULAR RULER] U+1F4D0 -> "[三角定規]"
+  ["f09f9391", "ee9a89"], # [BOOKMARK TABS] U+1F4D1 -> U+E689
+  ["f09f8ebd", "ee9992"], # [RUNNING SHIRT WITH SASH] U+1F3BD -> U+E652
+  ["e29abe", "ee9993"], # [BASEBALL] U+26BE -> U+E653
+  ["e29bb3", "ee9994"], # [FLAG IN HOLE] U+26F3 -> U+E654
+  ["f09f8ebe", "ee9995"], # [TENNIS RACQUET AND BALL] U+1F3BE -> U+E655
+  ["e29abd", "ee9996"], # [SOCCER BALL] U+26BD -> U+E656
+  ["f09f8ebf", "ee9997"], # [SKI AND SKI BOOT] U+1F3BF -> U+E657
+  ["f09f8f80", "ee9998"], # [BASKETBALL AND HOOP] U+1F3C0 -> U+E658
+  ["f09f8f81", "ee9999"], # [CHEQUERED FLAG] U+1F3C1 -> U+E659
+  ["f09f8f82", "ee9c92"], # [SNOWBOARDER] U+1F3C2 -> U+E712
+  ["f09f8f83", "ee9cb3"], # [RUNNER] U+1F3C3 -> U+E733
+  ["f09f8f84", "ee9c92"], # [SURFER] U+1F3C4 -> U+E712
+  ["f09f8f86", "5be38388e383ade38395e382a3e383bc5d"], # [TROPHY] U+1F3C6 -> "[トロフィー]"
+  ["f09f8f88", "5be38395e38383e38388e3839ce383bce383ab5d"], # [AMERICAN FOOTBALL] U+1F3C8 -> "[フットボール]"
+  ["f09f8f8a", "5be6b0b4e6b3b35d"], # [SWIMMER] U+1F3CA -> "[水泳]"
+  ["f09f9a86", "ee999b"], # [TRAIN] U+1F686 -> U+E65B
+  ["f09f9a87", "ee999c"], # [METRO] U+1F687 -> U+E65C
+  ["e29382", "ee999c"], # [CIRCLED LATIN CAPITAL LETTER M] U+24C2 -> U+E65C
+  ["f09f9a84", "ee999d"], # [HIGH-SPEED TRAIN] U+1F684 -> U+E65D
+  ["f09f9a85", "ee999d"], # [HIGH-SPEED TRAIN WITH BULLET NOSE] U+1F685 -> U+E65D
+  ["f09f9a97", "ee999e"], # [AUTOMOBILE] U+1F697 -> U+E65E
+  ["f09f9a99", "ee999f"], # [RECREATIONAL VEHICLE] U+1F699 -> U+E65F
+  ["f09f9a8d", "ee99a0"], # [ONCOMING BUS] U+1F68D -> U+E660
+  ["f09f9a8f", "5be38390e382b9e5819c5d"], # [BUS STOP] U+1F68F -> "[バス停]"
+  ["f09f9aa2", "ee99a1"], # [SHIP] U+1F6A2 -> U+E661
+  ["e29c88", "ee99a2"], # [AIRPLANE] U+2708 -> U+E662
+  ["e29bb5", "ee9aa3"], # [SAILBOAT] U+26F5 -> U+E6A3
+  ["f09f9a89", "5be9a7855d"], # [STATION] U+1F689 -> "[駅]"
+  ["f09f9a80", "5be383ade382b1e38383e383885d"], # [ROCKET] U+1F680 -> "[ロケット]"
+  ["f09f9aa4", "ee9aa3"], # [SPEEDBOAT] U+1F6A4 -> U+E6A3
+  ["f09f9a95", "ee999e"], # [TAXI] U+1F695 -> U+E65E
+  ["f09f9a9a", "5be38388e383a9e38383e382af5d"], # [DELIVERY TRUCK] U+1F69A -> "[トラック]"
+  ["f09f9a92", "5be6b688e998b2e8bb8a5d"], # [FIRE ENGINE] U+1F692 -> "[消防車]"
+  ["f09f9a91", "5be69591e680a5e8bb8a5d"], # [AMBULANCE] U+1F691 -> "[救急車]"
+  ["f09f9a93", "5be38391e38388e382abe383bc5d"], # [POLICE CAR] U+1F693 -> "[パトカー]"
+  ["e29bbd", "ee99ab"], # [FUEL PUMP] U+26FD -> U+E66B
+  ["f09f85bf", "ee99ac"], # [NEGATIVE SQUARED LATIN CAPITAL LETTER P] U+1F17F -> U+E66C
+  ["f09f9aa5", "ee99ad"], # [HORIZONTAL TRAFFIC LIGHT] U+1F6A5 -> U+E66D
+  ["f09f9aa7", "5be5b7a5e4ba8be4b8ad5d"], # [CONSTRUCTION SIGN] U+1F6A7 -> "[工事中]"
+  ["f09f9aa8", "5be38391e38388e382abe383bc5d"], # [POLICE CARS REVOLVING LIGHT] U+1F6A8 -> "[パトカー]"
+  ["e299a8", "ee9bb7"], # [HOT SPRINGS] U+2668 -> U+E6F7
+  ["e29bba", "5be382ade383a3e383b3e383975d"], # [TENT] U+26FA -> "[キャンプ]"
+  ["f09f8ea0", "ee99b9"], # [CAROUSEL HORSE] U+1F3A0 -> U+E679
+  ["f09f8ea1", "5be8a6b3e8a6a7e8bb8a5d"], # [FERRIS WHEEL] U+1F3A1 -> "[観覧車]"
+  ["f09f8ea2", "5be382b8e382a7e38383e38388e382b3e383bce382b9e382bfe383bc5d"], # [ROLLER COASTER] U+1F3A2 -> "[ジェットコースター]"
+  ["f09f8ea3", "ee9d91"], # [FISHING POLE AND FISH] U+1F3A3 -> U+E751
+  ["f09f8ea4", "ee99b6"], # [MICROPHONE] U+1F3A4 -> U+E676
+  ["f09f8ea5", "ee99b7"], # [MOVIE CAMERA] U+1F3A5 -> U+E677
+  ["f09f8ea6", "ee99b7"], # [CINEMA] U+1F3A6 -> U+E677
+  ["f09f8ea7", "ee99ba"], # [HEADPHONE] U+1F3A7 -> U+E67A
+  ["f09f8ea8", "ee99bb"], # [ARTIST PALETTE] U+1F3A8 -> U+E67B
+  ["f09f8ea9", "ee99bc"], # [TOP HAT] U+1F3A9 -> U+E67C
+  ["f09f8eaa", "ee99bd"], # [CIRCUS TENT] U+1F3AA -> U+E67D
+  ["f09f8eab", "ee99be"], # [TICKET] U+1F3AB -> U+E67E
+  ["f09f8eac", "ee9aac"], # [CLAPPER BOARD] U+1F3AC -> U+E6AC
+  ["f09f8ead", "5be6bc94e58a875d"], # [PERFORMING ARTS] U+1F3AD -> "[演劇]"
+  ["f09f8eae", "ee9a8b"], # [VIDEO GAME] U+1F3AE -> U+E68B
+  ["f09f8084", "5be9babbe99b805d"], # [MAHJONG TILE RED DRAGON] U+1F004 -> "[麻雀]"
+  ["f09f8eaf", "5be79a84e4b8ad5d"], # [DIRECT HIT] U+1F3AF -> "[的中]"
+  ["f09f8eb0", "5b3737375d"], # [SLOT MACHINE] U+1F3B0 -> "[777]"
+  ["f09f8eb1", "5be38393e383aae383a4e383bce383895d"], # [BILLIARDS] U+1F3B1 -> "[ビリヤード]"
+  ["f09f8eb2", "5be382b5e382a4e382b3e383ad5d"], # [GAME DIE] U+1F3B2 -> "[サイコロ]"
+  ["f09f8eb3", "5be3839ce383bce383aae383b3e382b05d"], # [BOWLING] U+1F3B3 -> "[ボーリング]"
+  ["f09f8eb4", "5be88ab1e69cad5d"], # [FLOWER PLAYING CARDS] U+1F3B4 -> "[花札]"
+  ["f09f838f", "5be382b8e383a7e383bce382abe383bc5d"], # [PLAYING CARD BLACK JOKER] U+1F0CF -> "[ジョーカー]"
+  ["f09f8eb5", "ee9bb6"], # [MUSICAL NOTE] U+1F3B5 -> U+E6F6
+  ["f09f8eb6", "ee9bbf"], # [MULTIPLE MUSICAL NOTES] U+1F3B6 -> U+E6FF
+  ["f09f8eb7", "5be382b5e38383e382afe382b95d"], # [SAXOPHONE] U+1F3B7 -> "[サックス]"
+  ["f09f8eb8", "5be382aee382bfe383bc5d"], # [GUITAR] U+1F3B8 -> "[ギター]"
+  ["f09f8eb9", "5be38394e382a2e3838e5d"], # [MUSICAL KEYBOARD] U+1F3B9 -> "[ピアノ]"
+  ["f09f8eba", "5be38388e383a9e383b3e3839ae38383e383885d"], # [TRUMPET] U+1F3BA -> "[トランペット]"
+  ["f09f8ebb", "5be38390e382a4e382aae383aae383b35d"], # [VIOLIN] U+1F3BB -> "[バイオリン]"
+  ["f09f8ebc", "ee9bbf"], # [MUSICAL SCORE] U+1F3BC -> U+E6FF
+  ["e380bd", "5be6ad8ce8a898e58fb75d"], # [PART ALTERNATION MARK] U+303D -> "[歌記号]"
+  ["f09f93b7", "ee9a81"], # [CAMERA] U+1F4F7 -> U+E681
+  ["f09f93b9", "ee99b7"], # [VIDEO CAMERA] U+1F4F9 -> U+E677
+  ["f09f93ba", "ee9a8a"], # [TELEVISION] U+1F4FA -> U+E68A
+  ["f09f93bb", "5be383a9e382b8e382aa5d"], # [RADIO] U+1F4FB -> "[ラジオ]"
+  ["f09f93bc", "5be38393e38387e382aa5d"], # [VIDEOCASSETTE] U+1F4FC -> "[ビデオ]"
+  ["f09f928b", "ee9bb9"], # [KISS MARK] U+1F48B -> U+E6F9
+  ["f09f928c", "ee9c97"], # [LOVE LETTER] U+1F48C -> U+E717
+  ["f09f928d", "ee9c9b"], # [RING] U+1F48D -> U+E71B
+  ["f09f928e", "ee9c9b"], # [GEM STONE] U+1F48E -> U+E71B
+  ["f09f928f", "ee9bb9"], # [KISS] U+1F48F -> U+E6F9
+  ["f09f9290", "5be88ab1e69d9f5d"], # [BOUQUET] U+1F490 -> "[花束]"
+  ["f09f9291", "ee9bad"], # [COUPLE WITH HEART] U+1F491 -> U+E6ED
+  ["f09f9292", "5be7b590e5a99ae5bc8f5d"], # [WEDDING] U+1F492 -> "[結婚式]"
+  ["f09f949e", "5b3138e7a6815d"], # [NO ONE UNDER EIGHTEEN SYMBOL] U+1F51E -> "[18禁]"
+  ["c2a9", "ee9cb1"], # [COPYRIGHT SIGN] U+A9 -> U+E731
+  ["c2ae", "ee9cb6"], # [REGISTERED SIGN] U+AE -> U+E736
+  ["e284a2", "ee9cb2"], # [TRADE MARK SIGN] U+2122 -> U+E732
+  ["e284b9", "5befbd895d"], # [INFORMATION SOURCE] U+2139 -> "[ｉ]"
+  ["f09f949f", "5b31305d"], # [KEYCAP TEN] U+1F51F -> "[10]"
+  ["f09f93b6", "5be38390e383aa335d"], # [ANTENNA WITH BARS] U+1F4F6 -> "[バリ3]"
+  ["f09f93b3", "5be3839ee3838ae383bce383a2e383bce383895d"], # [VIBRATION MODE] U+1F4F3 -> "[マナーモード]"
+  ["f09f93b4", "5be382b1e383bce382bfe382a44f46465d"], # [MOBILE PHONE OFF] U+1F4F4 -> "[ケータイOFF]"
+  ["f09f8d94", "ee99b3"], # [HAMBURGER] U+1F354 -> U+E673
+  ["f09f8d99", "ee9d89"], # [RICE BALL] U+1F359 -> U+E749
+  ["f09f8db0", "ee9d8a"], # [SHORTCAKE] U+1F370 -> U+E74A
+  ["f09f8d9c", "ee9d8c"], # [STEAMING BOWL] U+1F35C -> U+E74C
+  ["f09f8d9e", "ee9d8d"], # [BREAD] U+1F35E -> U+E74D
+  ["f09f8db3", "5be38395e383a9e382a4e38391e383b35d"], # [COOKING] U+1F373 -> "[フライパン]"
+  ["f09f8da6", "5be382bde38395e38388e382afe383aae383bce383a05d"], # [SOFT ICE CREAM] U+1F366 -> "[ソフトクリーム]"
+  ["f09f8d9f", "5be3839de38386e383885d"], # [FRENCH FRIES] U+1F35F -> "[ポテト]"
+  ["f09f8da1", "5be381a0e38293e381945d"], # [DANGO] U+1F361 -> "[だんご]"
+  ["f09f8d98", "5be3819be38293e381b9e381845d"], # [RICE CRACKER] U+1F358 -> "[せんべい]"
+  ["f09f8d9a", "ee9d8c"], # [COOKED RICE] U+1F35A -> U+E74C
+  ["f09f8d9d", "5be38391e382b9e382bf5d"], # [SPAGHETTI] U+1F35D -> "[パスタ]"
+  ["f09f8d9b", "5be382abe383ace383bc5d"], # [CURRY AND RICE] U+1F35B -> "[カレー]"
+  ["f09f8da2", "5be3818ae381a7e382935d"], # [ODEN] U+1F362 -> "[おでん]"
+  ["f09f8da3", "5be38199e381975d"], # [SUSHI] U+1F363 -> "[すし]"
+  ["f09f8db1", "5be5bc81e5bd935d"], # [BENTO BOX] U+1F371 -> "[弁当]"
+  ["f09f8db2", "5be98d8b5d"], # [POT OF FOOD] U+1F372 -> "[鍋]"
+  ["f09f8da7", "5be382abe382ade6b0b75d"], # [SHAVED ICE] U+1F367 -> "[カキ氷]"
+  ["f09f8d96", "5be882895d"], # [MEAT ON BONE] U+1F356 -> "[肉]"
+  ["f09f8da5", "ee9983"], # [FISH CAKE WITH SWIRL DESIGN] U+1F365 -> U+E643
+  ["f09f8da0", "5be38284e3818de38184e382825d"], # [ROASTED SWEET POTATO] U+1F360 -> "[やきいも]"
+  ["f09f8d95", "5be38394e382b65d"], # [SLICE OF PIZZA] U+1F355 -> "[ピザ]"
+  ["f09f8d97", "5be38381e382ade383b35d"], # [POULTRY LEG] U+1F357 -> "[チキン]"
+  ["f09f8da8", "5be382a2e382a4e382b9e382afe383aae383bce383a05d"], # [ICE CREAM] U+1F368 -> "[アイスクリーム]"
+  ["f09f8da9", "5be38389e383bce3838ae383845d"], # [DOUGHNUT] U+1F369 -> "[ドーナツ]"
+  ["f09f8daa", "5be382afe38383e382ade383bc5d"], # [COOKIE] U+1F36A -> "[クッキー]"
+  ["f09f8dab", "5be38381e383a7e382b35d"], # [CHOCOLATE BAR] U+1F36B -> "[チョコ]"
+  ["f09f8dac", "5be382ade383a3e383b3e38387e382a35d"], # [CANDY] U+1F36C -> "[キャンディ]"
+  ["f09f8dad", "5be382ade383a3e383b3e38387e382a35d"], # [LOLLIPOP] U+1F36D -> "[キャンディ]"
+  ["f09f8dae", "5be38397e383aae383b35d"], # [CUSTARD] U+1F36E -> "[プリン]"
+  ["f09f8daf", "5be3838fe38381e3839fe383845d"], # [HONEY POT] U+1F36F -> "[ハチミツ]"
+  ["f09f8da4", "5be382a8e38393e38395e383a9e382a45d"], # [FRIED SHRIMP] U+1F364 -> "[エビフライ]"
+  ["f09f8db4", "ee99af"], # [FORK AND KNIFE] U+1F374 -> U+E66F
+  ["e29895", "ee99b0"], # [HOT BEVERAGE] U+2615 -> U+E670
+  ["f09f8db8", "ee99b1"], # [COCKTAIL GLASS] U+1F378 -> U+E671
+  ["f09f8dba", "ee99b2"], # [BEER MUG] U+1F37A -> U+E672
+  ["f09f8db5", "ee9c9e"], # [TEACUP WITHOUT HANDLE] U+1F375 -> U+E71E
+  ["f09f8db6", "ee9d8b"], # [SAKE BOTTLE AND CUP] U+1F376 -> U+E74B
+  ["f09f8db7", "ee9d96"], # [WINE GLASS] U+1F377 -> U+E756
+  ["f09f8dbb", "ee99b2"], # [CLINKING BEER MUGS] U+1F37B -> U+E672
+  ["f09f8db9", "ee99b1"], # [TROPICAL DRINK] U+1F379 -> U+E671
+  ["e28697", "ee99b8"], # [NORTH EAST ARROW] U+2197 -> U+E678
+  ["e28698", "ee9a96"], # [SOUTH EAST ARROW] U+2198 -> U+E696
+  ["e28696", "ee9a97"], # [NORTH WEST ARROW] U+2196 -> U+E697
+  ["e28699", "ee9aa5"], # [SOUTH WEST ARROW] U+2199 -> U+E6A5
+  ["e2a4b4", "ee9bb5"], # [ARROW POINTING RIGHTWARDS THEN CURVING UPWARDS] U+2934 -> U+E6F5
+  ["e2a4b5", "ee9c80"], # [ARROW POINTING RIGHTWARDS THEN CURVING DOWNWARDS] U+2935 -> U+E700
+  ["e28694", "ee9cbc"], # [LEFT RIGHT ARROW] U+2194 -> U+E73C
+  ["e28695", "ee9cbd"], # [UP DOWN ARROW] U+2195 -> U+E73D
+  ["e2ac86", "5be286915d"], # [UPWARDS BLACK ARROW] U+2B06 -> "[↑]"
+  ["e2ac87", "5be286935d"], # [DOWNWARDS BLACK ARROW] U+2B07 -> "[↓]"
+  ["e29ea1", "5be286925d"], # [BLACK RIGHTWARDS ARROW] U+27A1 -> "[→]"
+  ["e2ac85", "5be286905d"], # [LEFTWARDS BLACK ARROW] U+2B05 -> "[←]"
+  ["e296b6", "5b2667743b5d"], # [BLACK RIGHT-POINTING TRIANGLE] U+25B6 -> "[&gt;]"
+  ["e29780", "5b266c743b5d"], # [BLACK LEFT-POINTING TRIANGLE] U+25C0 -> "[&lt;]"
+  ["e28fa9", "5b2667743b2667743b5d"], # [BLACK RIGHT-POINTING DOUBLE TRIANGLE] U+23E9 -> "[&gt;&gt;]"
+  ["e28faa", "5b266c743b266c743b5d"], # [BLACK LEFT-POINTING DOUBLE TRIANGLE] U+23EA -> "[&lt;&lt;]"
+  ["e28fab", "e296b2"], # [BLACK UP-POINTING DOUBLE TRIANGLE] U+23EB -> "▲"
+  ["e28fac", "e296bc"], # [BLACK DOWN-POINTING DOUBLE TRIANGLE] U+23EC -> "▼"
+  ["f09f94ba", "e296b2"], # [UP-POINTING RED TRIANGLE] U+1F53A -> "▲"
+  ["f09f94bb", "e296bc"], # [DOWN-POINTING RED TRIANGLE] U+1F53B -> "▼"
+  ["f09f94bc", "e296b2"], # [UP-POINTING SMALL RED TRIANGLE] U+1F53C -> "▲"
+  ["f09f94bd", "e296bc"], # [DOWN-POINTING SMALL RED TRIANGLE] U+1F53D -> "▼"
+  ["e2ad95", "ee9aa0"], # [HEAVY LARGE CIRCLE] U+2B55 -> U+E6A0
+  ["e29d8c", "5bc3975d"], # [CROSS MARK] U+274C -> "[×]"
+  ["e29d8e", "5bc3975d"], # [NEGATIVE SQUARED CROSS MARK] U+274E -> "[×]"
+  ["e29da2", "ee9c82"], # [HEAVY EXCLAMATION MARK ORNAMENT] U+2762 -> U+E702
+  ["e28189", "ee9c83"], # [EXCLAMATION QUESTION MARK] U+2049 -> U+E703
+  ["e280bc", "ee9c84"], # [DOUBLE EXCLAMATION MARK] U+203C -> U+E704
+  ["e29d93", "5befbc9f5d"], # [BLACK QUESTION MARK ORNAMENT] U+2753 -> "[？]"
+  ["e29d94", "5befbc9f5d"], # [WHITE QUESTION MARK ORNAMENT] U+2754 -> "[？]"
+  ["e29d95", "ee9c82"], # [WHITE EXCLAMATION MARK ORNAMENT] U+2755 -> U+E702
+  ["e380b0", "ee9c89"], # [WAVY DASH] U+3030 -> U+E709
+  ["e29eb0", "ee9c8a"], # [CURLY LOOP] U+27B0 -> U+E70A
+  ["e29ebf", "ee9b9f"], # [DOUBLE CURLY LOOP] U+27BF -> U+E6DF
+  ["e29da4", "ee9bac"], # [HEAVY BLACK HEART] U+2764 -> U+E6EC
+  ["f09f9293", "ee9bad"], # [BEATING HEART] U+1F493 -> U+E6ED
+  ["f09f9294", "ee9bae"], # [BROKEN HEART] U+1F494 -> U+E6EE
+  ["f09f9295", "ee9baf"], # [TWO HEARTS] U+1F495 -> U+E6EF
+  ["f09f9296", "ee9bac"], # [SPARKLING HEART] U+1F496 -> U+E6EC
+  ["f09f9297", "ee9bad"], # [GROWING HEART] U+1F497 -> U+E6ED
+  ["f09f9298", "ee9bac"], # [HEART WITH ARROW] U+1F498 -> U+E6EC
+  ["f09f9299", "ee9bac"], # [BLUE HEART] U+1F499 -> U+E6EC
+  ["f09f929a", "ee9bac"], # [GREEN HEART] U+1F49A -> U+E6EC
+  ["f09f929b", "ee9bac"], # [YELLOW HEART] U+1F49B -> U+E6EC
+  ["f09f929c", "ee9bac"], # [PURPLE HEART] U+1F49C -> U+E6EC
+  ["f09f929d", "ee9bac"], # [HEART WITH RIBBON] U+1F49D -> U+E6EC
+  ["f09f929e", "ee9bad"], # [REVOLVING HEARTS] U+1F49E -> U+E6ED
+  ["f09f929f", "ee9bb8"], # [HEART DECORATION] U+1F49F -> U+E6F8
+  ["e299a5", "ee9a8d"], # [BLACK HEART SUIT] U+2665 -> U+E68D
+  ["e299a0", "ee9a8e"], # [BLACK SPADE SUIT] U+2660 -> U+E68E
+  ["e299a6", "ee9a8f"], # [BLACK DIAMOND SUIT] U+2666 -> U+E68F
+  ["e299a3", "ee9a90"], # [BLACK CLUB SUIT] U+2663 -> U+E690
+  ["f09f9aac", "ee99bf"], # [SMOKING SYMBOL] U+1F6AC -> U+E67F
+  ["f09f9aad", "ee9a80"], # [NO SMOKING SYMBOL] U+1F6AD -> U+E680
+  ["e299bf", "ee9a9b"], # [WHEELCHAIR SYMBOL] U+267F -> U+E69B
+  ["f09f9aa9", "ee9b9e"], # [TRIANGULAR FLAG ON POST] U+1F6A9 -> U+E6DE
+  ["e29aa0", "ee9cb7"], # [WARNING SIGN] U+26A0 -> U+E737
+  ["e29b94", "ee9caf"], # [NO ENTRY] U+26D4 -> U+E72F
+  ["e299bb", "ee9cb5"], # [BLACK UNIVERSAL RECYCLING SYMBOL] U+267B -> U+E735
+  ["f09f9ab2", "ee9c9d"], # [BICYCLE] U+1F6B2 -> U+E71D
+  ["f09f9ab6", "ee9cb3"], # [PEDESTRIAN] U+1F6B6 -> U+E733
+  ["f09f9ab9", "5be299825d"], # [MENS SYMBOL] U+1F6B9 -> "[♂]"
+  ["f09f9aba", "5be299805d"], # [WOMENS SYMBOL] U+1F6BA -> "[♀]"
+  ["f09f9b80", "ee9bb7"], # [BATH] U+1F6C0 -> U+E6F7
+  ["f09f9abb", "ee99ae"], # [RESTROOM] U+1F6BB -> U+E66E
+  ["f09f9abd", "ee99ae"], # [TOILET] U+1F6BD -> U+E66E
+  ["f09f9abe", "ee99ae"], # [WATER CLOSET] U+1F6BE -> U+E66E
+  ["f09f9abc", "5be8b5a4e381a1e38283e382935d"], # [BABY SYMBOL] U+1F6BC -> "[赤ちゃん]"
+  ["f09f9aaa", "ee9c94"], # [DOOR] U+1F6AA -> U+E714
+  ["f09f9aab", "ee9cb8"], # [NO ENTRY SIGN] U+1F6AB -> U+E738
+  ["e29c94", "5be38381e382a7e38383e382afe3839ee383bce382af5d"], # [HEAVY CHECK MARK] U+2714 -> "[チェックマーク]"
+  ["f09f8691", "ee9b9b"], # [SQUARED CL] U+1F191 -> U+E6DB
+  ["f09f8692", "5b434f4f4c5d"], # [SQUARED COOL] U+1F192 -> "[COOL]"
+  ["f09f8693", "ee9b97"], # [SQUARED FREE] U+1F193 -> U+E6D7
+  ["f09f8694", "ee9b98"], # [SQUARED ID] U+1F194 -> U+E6D8
+  ["f09f8695", "ee9b9d"], # [SQUARED NEW] U+1F195 -> U+E6DD
+  ["f09f8696", "ee9caf"], # [SQUARED NG] U+1F196 -> U+E72F
+  ["f09f8697", "ee9c8b"], # [SQUARED OK] U+1F197 -> U+E70B
+  ["f09f8698", "5b534f535d"], # [SQUARED SOS] U+1F198 -> "[SOS]"
+  ["f09f8699", "5b5550215d"], # [SQUARED UP WITH EXCLAMATION MARK] U+1F199 -> "[UP!]"
+  ["f09f869a", "5b56535d"], # [SQUARED VS] U+1F19A -> "[VS]"
+  ["f09f8881", "5be382b3e382b35d"], # [SQUARED KATAKANA KOKO] U+1F201 -> "[ココ]"
+  ["f09f8882", "5be382b5e383bce38393e382b95d"], # [SQUARED KATAKANA SA] U+1F202 -> "[サービス]"
+  ["f09f88b2", "ee9cb8"], # [SQUARED CJK UNIFIED IDEOGRAPH-7981] U+1F232 -> U+E738
+  ["f09f88b3", "ee9cb9"], # [SQUARED CJK UNIFIED IDEOGRAPH-7A7A] U+1F233 -> U+E739
+  ["f09f88b4", "ee9cba"], # [SQUARED CJK UNIFIED IDEOGRAPH-5408] U+1F234 -> U+E73A
+  ["f09f88b5", "ee9cbb"], # [SQUARED CJK UNIFIED IDEOGRAPH-6E80] U+1F235 -> U+E73B
+  ["f09f88b6", "5be69c895d"], # [SQUARED CJK UNIFIED IDEOGRAPH-6709] U+1F236 -> "[有]"
+  ["f09f889a", "5be784a15d"], # [SQUARED CJK UNIFIED IDEOGRAPH-7121] U+1F21A -> "[無]"
+  ["f09f88b7", "5be69c885d"], # [SQUARED CJK UNIFIED IDEOGRAPH-6708] U+1F237 -> "[月]"
+  ["f09f88b8", "5be794b35d"], # [SQUARED CJK UNIFIED IDEOGRAPH-7533] U+1F238 -> "[申]"
+  ["f09f88b9", "5be589b25d"], # [SQUARED CJK UNIFIED IDEOGRAPH-5272] U+1F239 -> "[割]"
+  ["f09f88af", "5be68c875d"], # [SQUARED CJK UNIFIED IDEOGRAPH-6307] U+1F22F -> "[指]"
+  ["f09f88ba", "5be596b65d"], # [SQUARED CJK UNIFIED IDEOGRAPH-55B6] U+1F23A -> "[営]"
+  ["e38a99", "ee9cb4"], # [CIRCLED IDEOGRAPH SECRET] U+3299 -> U+E734
+  ["e38a97", "5be7a59d5d"], # [CIRCLED IDEOGRAPH CONGRATULATION] U+3297 -> "[祝]"
+  ["f09f8990", "5be5be975d"], # [CIRCLED IDEOGRAPH ADVANTAGE] U+1F250 -> "[得]"
+  ["f09f8991", "5be58faf5d"], # [CIRCLED IDEOGRAPH ACCEPT] U+1F251 -> "[可]"
+  ["e29e95", "5befbc8b5d"], # [HEAVY PLUS SIGN] U+2795 -> "[＋]"
+  ["e29e96", "5befbc8d5d"], # [HEAVY MINUS SIGN] U+2796 -> "[－]"
+  ["e29c96", "5bc3975d"], # [HEAVY MULTIPLICATION X] U+2716 -> "[×]"
+  ["e29e97", "5bc3b75d"], # [HEAVY DIVISION SIGN] U+2797 -> "[÷]"
+  ["f09f92a0", "ee9bb8"], # [DIAMOND SHAPE WITH A DOT INSIDE] U+1F4A0 -> U+E6F8
+  ["f09f92a1", "ee9bbb"], # [ELECTRIC LIGHT BULB] U+1F4A1 -> U+E6FB
+  ["f09f92a2", "ee9bbc"], # [ANGER SYMBOL] U+1F4A2 -> U+E6FC
+  ["f09f92a3", "ee9bbe"], # [BOMB] U+1F4A3 -> U+E6FE
+  ["f09f92a4", "ee9c81"], # [SLEEPING SYMBOL] U+1F4A4 -> U+E701
+  ["f09f92a5", "ee9c85"], # [COLLISION SYMBOL] U+1F4A5 -> U+E705
+  ["f09f92a6", "ee9c86"], # [SPLASHING SWEAT SYMBOL] U+1F4A6 -> U+E706
+  ["f09f92a7", "ee9c87"], # [DROP OF WATER] U+1F4A7 -> U+E707
+  ["f09f92a8", "ee9c88"], # [DASH SYMBOL] U+1F4A8 -> U+E708
+  ["f09f92a9", "5be382a6e383b3e383815d"], # [PILE OF POO] U+1F4A9 -> "[ウンチ]"
+  ["f09f92aa", "5be58a9be38193e381b65d"], # [FLEXED BICEPS] U+1F4AA -> "[力こぶ]"
+  ["f09f92ab", "5be382afe383a9e382afe383a95d"], # [DIZZY SYMBOL] U+1F4AB -> "[クラクラ]"
+  ["f09f92ac", "5be38395e382ade38380e382b75d"], # [SPEECH BALLOON] U+1F4AC -> "[フキダシ]"
+  ["e29ca8", "ee9bba"], # [SPARKLES] U+2728 -> U+E6FA
+  ["e29cb4", "ee9bb8"], # [EIGHT POINTED BLACK STAR] U+2734 -> U+E6F8
+  ["e29cb3", "ee9bb8"], # [EIGHT SPOKED ASTERISK] U+2733 -> U+E6F8
+  ["e29aaa", "ee9a9c"], # [MEDIUM WHITE CIRCLE] U+26AA -> U+E69C
+  ["e29aab", "ee9a9c"], # [MEDIUM BLACK CIRCLE] U+26AB -> U+E69C
+  ["f09f94b4", "ee9a9c"], # [LARGE RED CIRCLE] U+1F534 -> U+E69C
+  ["f09f94b5", "ee9a9c"], # [LARGE BLUE CIRCLE] U+1F535 -> U+E69C
+  ["f09f94b2", "ee9a9c"], # [BLACK SQUARE BUTTON] U+1F532 -> U+E69C
+  ["f09f94b3", "ee9a9c"], # [WHITE SQUARE BUTTON] U+1F533 -> U+E69C
+  ["e2ad90", "5be298865d"], # [WHITE MEDIUM STAR] U+2B50 -> "[☆]"
+  ["e2ac9c", "e296a0"], # [WHITE LARGE SQUARE] U+2B1C -> "■"
+  ["e2ac9b", "e296a0"], # [BLACK LARGE SQUARE] U+2B1B -> "■"
+  ["e296ab", "e296a0"], # [WHITE SMALL SQUARE] U+25AB -> "■"
+  ["e296aa", "e296a0"], # [BLACK SMALL SQUARE] U+25AA -> "■"
+  ["e297bd", "e296a0"], # [WHITE MEDIUM SMALL SQUARE] U+25FD -> "■"
+  ["e297be", "e296a0"], # [BLACK MEDIUM SMALL SQUARE] U+25FE -> "■"
+  ["e297bb", "e296a0"], # [WHITE MEDIUM SQUARE] U+25FB -> "■"
+  ["e297bc", "e296a0"], # [BLACK MEDIUM SQUARE] U+25FC -> "■"
+  ["f09f94b6", "e29786"], # [LARGE ORANGE DIAMOND] U+1F536 -> "◆"
+  ["f09f94b7", "e29786"], # [LARGE BLUE DIAMOND] U+1F537 -> "◆"
+  ["f09f94b8", "e29786"], # [SMALL ORANGE DIAMOND] U+1F538 -> "◆"
+  ["f09f94b9", "e29786"], # [SMALL BLUE DIAMOND] U+1F539 -> "◆"
+  ["e29d87", "ee9bba"], # [SPARKLE] U+2747 -> U+E6FA
+  ["f09f92ae", "5be88ab1e4b8b85d"], # [WHITE FLOWER] U+1F4AE -> "[花丸]"
+  ["f09f92af", "5b313030e782b95d"], # [HUNDRED POINTS SYMBOL] U+1F4AF -> "[100点]"
+  ["e286a9", "ee9b9a"], # [LEFTWARDS ARROW WITH HOOK] U+21A9 -> U+E6DA
+  ["e286aa", "e29494e28692"], # [RIGHTWARDS ARROW WITH HOOK] U+21AA -> "└→"
+  ["f09f9483", "ee9cb5"], # [CLOCKWISE DOWNWARDS AND UPWARDS OPEN CIRCLE ARROWS] U+1F503 -> U+E735
+  ["f09f948a", "5be382b9e38394e383bce382ab5d"], # [SPEAKER WITH THREE SOUND WAVES] U+1F50A -> "[スピーカ]"
+  ["f09f948b", "5be99bbbe6b1a05d"], # [BATTERY] U+1F50B -> "[電池]"
+  ["f09f948c", "5be382b3e383b3e382bbe383b3e383885d"], # [ELECTRIC PLUG] U+1F50C -> "[コンセント]"
+  ["f09f948d", "ee9b9c"], # [LEFT-POINTING MAGNIFYING GLASS] U+1F50D -> U+E6DC
+  ["f09f948e", "ee9b9c"], # [RIGHT-POINTING MAGNIFYING GLASS] U+1F50E -> U+E6DC
+  ["f09f9492", "ee9b99"], # [LOCK] U+1F512 -> U+E6D9
+  ["f09f9493", "ee9b99"], # [OPEN LOCK] U+1F513 -> U+E6D9
+  ["f09f948f", "ee9b99"], # [LOCK WITH INK PEN] U+1F50F -> U+E6D9
+  ["f09f9490", "ee9b99"], # [CLOSED LOCK WITH KEY] U+1F510 -> U+E6D9
+  ["f09f9491", "ee9b99"], # [KEY] U+1F511 -> U+E6D9
+  ["f09f9494", "ee9c93"], # [BELL] U+1F514 -> U+E713
+  ["e29891", "5be38381e382a7e38383e382afe3839ee383bce382af5d"], # [BALLOT BOX WITH CHECK] U+2611 -> "[チェックマーク]"
+  ["f09f9498", "5be383a9e382b8e382aae3839ce382bfe383b35d"], # [RADIO BUTTON] U+1F518 -> "[ラジオボタン]"
+  ["f09f9496", "5be38396e38383e382afe3839ee383bce382af5d"], # [BOOKMARK] U+1F516 -> "[ブックマーク]"
+  ["f09f9497", "5be383aae383b3e382af5d"], # [LINK SYMBOL] U+1F517 -> "[リンク]"
+  ["f09f9499", "5be286904241434b5d"], # [BACK WITH LEFTWARDS ARROW ABOVE] U+1F519 -> "[←BACK]"
+  ["f09f949a", "ee9ab9"], # [END WITH LEFTWARDS ARROW ABOVE] U+1F51A -> U+E6B9
+  ["f09f949b", "ee9ab8"], # [ON WITH EXCLAMATION MARK WITH LEFT RIGHT ARROW ABOVE] U+1F51B -> U+E6B8
+  ["f09f949c", "ee9ab7"], # [SOON WITH RIGHTWARDS ARROW ABOVE] U+1F51C -> U+E6B7
+  ["f09f949d", "5b544f505d"], # [TOP WITH UPWARDS ARROW ABOVE] U+1F51D -> "[TOP]"
+  ["e28083", "e38093"], # [EM SPACE] U+2003 -> U+3013 (GETA)
+  ["e28082", "e38093"], # [EN SPACE] U+2002 -> U+3013 (GETA)
+  ["e28085", "e38093"], # [FOUR-PER-EM SPACE] U+2005 -> U+3013 (GETA)
+  ["e29c85", "5be38381e382a7e38383e382afe3839ee383bce382af5d"], # [WHITE HEAVY CHECK MARK] U+2705 -> "[チェックマーク]"
+  ["e29c8a", "ee9a93"], # [RAISED FIST] U+270A -> U+E693
+  ["e29c8b", "ee9a95"], # [RAISED HAND] U+270B -> U+E695
+  ["e29c8c", "ee9a94"], # [VICTORY HAND] U+270C -> U+E694
+  ["f09f918a", "ee9bbd"], # [FISTED HAND SIGN] U+1F44A -> U+E6FD
+  ["f09f918d", "ee9ca7"], # [THUMBS UP SIGN] U+1F44D -> U+E727
+  ["e2989d", "5be4babae5b7aee38197e68c875d"], # [WHITE UP POINTING INDEX] U+261D -> "[人差し指]"
+  ["f09f9186", "5be286915d"], # [WHITE UP POINTING BACKHAND INDEX] U+1F446 -> "[↑]"
+  ["f09f9187", "5be286935d"], # [WHITE DOWN POINTING BACKHAND INDEX] U+1F447 -> "[↓]"
+  ["f09f9188", "5be286905d"], # [WHITE LEFT POINTING BACKHAND INDEX] U+1F448 -> "[←]"
+  ["f09f9189", "5be286925d"], # [WHITE RIGHT POINTING BACKHAND INDEX] U+1F449 -> "[→]"
+  ["f09f918b", "ee9a95"], # [WAVING HAND SIGN] U+1F44B -> U+E695
+  ["f09f918f", "5be68b8de6898b5d"], # [CLAPPING HANDS SIGN] U+1F44F -> "[拍手]"
+  ["f09f918c", "ee9c8b"], # [OK HAND SIGN] U+1F44C -> U+E70B
+  ["f09f918e", "ee9c80"], # [THUMBS DOWN SIGN] U+1F44E -> U+E700
+  ["f09f9190", "ee9a95"], # [OPEN HANDS SIGN] U+1F450 -> U+E695
+]
+
+EMOJI_EXCHANGE_TBL['UTF-8']['UTF8-KDDI'] = [
+  ["e29880", "ee9288"], # [BLACK SUN WITH RAYS] U+2600 -> U+E488
+  ["e29881", "ee928d"], # [CLOUD] U+2601 -> U+E48D
+  ["e29894", "ee928c"], # [UMBRELLA WITH RAIN DROPS] U+2614 -> U+E48C
+  ["e29b84", "ee9285"], # [SNOWMAN WITHOUT SNOW] U+26C4 -> U+E485
+  ["e29aa1", "ee9287"], # [HIGH VOLTAGE SIGN] U+26A1 -> U+E487
+  ["f09f8c80", "ee91a9"], # [CYCLONE] U+1F300 -> U+E469
+  ["f09f8c81", "ee9698"], # [FOGGY] U+1F301 -> U+E598
+  ["f09f8c82", "eeaba8"], # [CLOSED UMBRELLA] U+1F302 -> U+EAE8
+  ["f09f8c83", "eeabb1"], # [NIGHT WITH STARS] U+1F303 -> U+EAF1
+  ["f09f8c84", "eeabb4"], # [SUNRISE OVER MOUNTAINS] U+1F304 -> U+EAF4
+  ["f09f8c85", "eeabb4"], # [SUNRISE] U+1F305 -> U+EAF4
+  ["f09f8c87", "ee979a"], # [SUNSET OVER BUILDINGS] U+1F307 -> U+E5DA
+  ["f09f8c88", "eeabb2"], # [RAINBOW] U+1F308 -> U+EAF2
+  ["e29d84", "ee928a"], # [SNOWFLAKE] U+2744 -> U+E48A
+  ["e29b85", "ee928e"], # [SUN BEHIND CLOUD] U+26C5 -> U+E48E
+  ["f09f8c89", "ee92bf"], # [BRIDGE AT NIGHT] U+1F309 -> U+E4BF
+  ["f09f8c8a", "eeadbc"], # [WATER WAVE] U+1F30A -> U+EB7C
+  ["f09f8c8b", "eead93"], # [VOLCANO] U+1F30B -> U+EB53
+  ["f09f8c8c", "eead9f"], # [MILKY WAY] U+1F30C -> U+EB5F
+  ["f09f8c8f", "ee96b3"], # [EARTH GLOBE ASIA-AUSTRALIA] U+1F30F -> U+E5B3
+  ["f09f8c91", "ee96a8"], # [NEW MOON SYMBOL] U+1F311 -> U+E5A8
+  ["f09f8c94", "ee96a9"], # [WAXING GIBBOUS MOON SYMBOL] U+1F314 -> U+E5A9
+  ["f09f8c93", "ee96aa"], # [FIRST QUARTER MOON SYMBOL] U+1F313 -> U+E5AA
+  ["f09f8c99", "ee9286"], # [CRESCENT MOON] U+1F319 -> U+E486
+  ["f09f8c95", "e2978b"], # [FULL MOON SYMBOL] U+1F315 -> "○"
+  ["f09f8c9b", "ee9289"], # [FIRST QUARTER MOON WITH FACE] U+1F31B -> U+E489
+  ["f09f8c9f", "ee928b"], # [GLOWING STAR] U+1F31F -> U+E48B
+  ["f09f8ca0", "ee91a8"], # [SHOOTING STAR] U+1F320 -> U+E468
+  ["f09f9590", "ee9694"], # [CLOCK FACE ONE OCLOCK] U+1F550 -> U+E594
+  ["f09f9591", "ee9694"], # [CLOCK FACE TWO OCLOCK] U+1F551 -> U+E594
+  ["f09f9592", "ee9694"], # [CLOCK FACE THREE OCLOCK] U+1F552 -> U+E594
+  ["f09f9593", "ee9694"], # [CLOCK FACE FOUR OCLOCK] U+1F553 -> U+E594
+  ["f09f9594", "ee9694"], # [CLOCK FACE FIVE OCLOCK] U+1F554 -> U+E594
+  ["f09f9595", "ee9694"], # [CLOCK FACE SIX OCLOCK] U+1F555 -> U+E594
+  ["f09f9596", "ee9694"], # [CLOCK FACE SEVEN OCLOCK] U+1F556 -> U+E594
+  ["f09f9597", "ee9694"], # [CLOCK FACE EIGHT OCLOCK] U+1F557 -> U+E594
+  ["f09f9598", "ee9694"], # [CLOCK FACE NINE OCLOCK] U+1F558 -> U+E594
+  ["f09f9599", "ee9694"], # [CLOCK FACE TEN OCLOCK] U+1F559 -> U+E594
+  ["f09f959a", "ee9694"], # [CLOCK FACE ELEVEN OCLOCK] U+1F55A -> U+E594
+  ["f09f959b", "ee9694"], # [CLOCK FACE TWELVE OCLOCK] U+1F55B -> U+E594
+  ["e28c9a", "ee95ba"], # [WATCH] U+231A -> U+E57A
+  ["e28c9b", "ee95bb"], # [HOURGLASS] U+231B -> U+E57B
+  ["e28fb0", "ee9694"], # [ALARM CLOCK] U+23F0 -> U+E594
+  ["e28fb3", "ee91bc"], # [HOURGLASS WITH FLOWING SAND] U+23F3 -> U+E47C
+  ["e29988", "ee928f"], # [ARIES] U+2648 -> U+E48F
+  ["e29989", "ee9290"], # [TAURUS] U+2649 -> U+E490
+  ["e2998a", "ee9291"], # [GEMINI] U+264A -> U+E491
+  ["e2998b", "ee9292"], # [CANCER] U+264B -> U+E492
+  ["e2998c", "ee9293"], # [LEO] U+264C -> U+E493
+  ["e2998d", "ee9294"], # [VIRGO] U+264D -> U+E494
+  ["e2998e", "ee9295"], # [LIBRA] U+264E -> U+E495
+  ["e2998f", "ee9296"], # [SCORPIUS] U+264F -> U+E496
+  ["e29990", "ee9297"], # [SAGITTARIUS] U+2650 -> U+E497
+  ["e29991", "ee9298"], # [CAPRICORN] U+2651 -> U+E498
+  ["e29992", "ee9299"], # [AQUARIUS] U+2652 -> U+E499
+  ["e29993", "ee929a"], # [PISCES] U+2653 -> U+E49A
+  ["e29b8e", "ee929b"], # [OPHIUCHUS] U+26CE -> U+E49B
+  ["f09f8d80", "ee9493"], # [FOUR LEAF CLOVER] U+1F340 -> U+E513
+  ["f09f8cb7", "ee93a4"], # [TULIP] U+1F337 -> U+E4E4
+  ["f09f8cb1", "eeadbd"], # [SEEDLING] U+1F331 -> U+EB7D
+  ["f09f8d81", "ee938e"], # [MAPLE LEAF] U+1F341 -> U+E4CE
+  ["f09f8cb8", "ee938a"], # [CHERRY BLOSSOM] U+1F338 -> U+E4CA
+  ["f09f8cb9", "ee96ba"], # [ROSE] U+1F339 -> U+E5BA
+  ["f09f8d82", "ee978d"], # [FALLEN LEAF] U+1F342 -> U+E5CD
+  ["f09f8d83", "ee978d"], # [LEAF FLUTTERING IN WIND] U+1F343 -> U+E5CD
+  ["f09f8cba", "eeaa94"], # [HIBISCUS] U+1F33A -> U+EA94
+  ["f09f8cbb", "ee93a3"], # [SUNFLOWER] U+1F33B -> U+E4E3
+  ["f09f8cb4", "ee93a2"], # [PALM TREE] U+1F334 -> U+E4E2
+  ["f09f8cb5", "eeaa96"], # [CACTUS] U+1F335 -> U+EA96
+  ["f09f8cbe", "5be7a8b2e7a9825d"], # [EAR OF RICE] U+1F33E -> "[稲穂]"
+  ["f09f8cbd", "eeacb6"], # [EAR OF MAIZE] U+1F33D -> U+EB36
+  ["f09f8d84", "eeacb7"], # [MUSHROOM] U+1F344 -> U+EB37
+  ["f09f8cb0", "eeacb8"], # [CHESTNUT] U+1F330 -> U+EB38
+  ["f09f8cbc", "eead89"], # [BLOSSOM] U+1F33C -> U+EB49
+  ["f09f8cbf", "eeae82"], # [HERB] U+1F33F -> U+EB82
+  ["f09f8d92", "ee9392"], # [CHERRIES] U+1F352 -> U+E4D2
+  ["f09f8d8c", "eeacb5"], # [BANANA] U+1F34C -> U+EB35
+  ["f09f8d8e", "eeaab9"], # [RED APPLE] U+1F34E -> U+EAB9
+  ["f09f8d8a", "eeaaba"], # [TANGERINE] U+1F34A -> U+EABA
+  ["f09f8d93", "ee9394"], # [STRAWBERRY] U+1F353 -> U+E4D4
+  ["f09f8d89", "ee938d"], # [WATERMELON] U+1F349 -> U+E4CD
+  ["f09f8d85", "eeaabb"], # [TOMATO] U+1F345 -> U+EABB
+  ["f09f8d86", "eeaabc"], # [AUBERGINE] U+1F346 -> U+EABC
+  ["f09f8d88", "eeacb2"], # [MELON] U+1F348 -> U+EB32
+  ["f09f8d8d", "eeacb3"], # [PINEAPPLE] U+1F34D -> U+EB33
+  ["f09f8d87", "eeacb4"], # [GRAPES] U+1F347 -> U+EB34
+  ["f09f8d91", "eeacb9"], # [PEACH] U+1F351 -> U+EB39
+  ["f09f8d8f", "eead9a"], # [GREEN APPLE] U+1F34F -> U+EB5A
+  ["f09f9180", "ee96a4"], # [EYES] U+1F440 -> U+E5A4
+  ["f09f9182", "ee96a5"], # [EAR] U+1F442 -> U+E5A5
+  ["f09f9183", "eeab90"], # [NOSE] U+1F443 -> U+EAD0
+  ["f09f9184", "eeab91"], # [MOUTH] U+1F444 -> U+EAD1
+  ["f09f9185", "eead87"], # [TONGUE] U+1F445 -> U+EB47
+  ["f09f9284", "ee9489"], # [LIPSTICK] U+1F484 -> U+E509
+  ["f09f9285", "eeaaa0"], # [NAIL POLISH] U+1F485 -> U+EAA0
+  ["f09f9286", "ee948b"], # [FACE MASSAGE] U+1F486 -> U+E50B
+  ["f09f9287", "eeaaa1"], # [HAIRCUT] U+1F487 -> U+EAA1
+  ["f09f9288", "eeaaa2"], # [BARBER POLE] U+1F488 -> U+EAA2
+  ["f09f91a4", "e38093"], # [BUST IN SILHOUETTE] U+1F464 -> U+3013 (GETA)
+  ["f09f91a6", "ee93bc"], # [BOY] U+1F466 -> U+E4FC
+  ["f09f91a7", "ee93ba"], # [GIRL] U+1F467 -> U+E4FA
+  ["f09f91a8", "ee93bc"], # [MAN] U+1F468 -> U+E4FC
+  ["f09f91a9", "ee93ba"], # [WOMAN] U+1F469 -> U+E4FA
+  ["f09f91aa", "ee9481"], # [FAMILY] U+1F46A -> U+E501
+  ["f09f91ab", "5be382abe38383e38397e383ab5d"], # [MAN AND WOMAN HOLDING HANDS] U+1F46B -> "[カップル]"
+  ["f09f91ae", "ee979d"], # [POLICE OFFICER] U+1F46E -> U+E5DD
+  ["f09f91af", "eeab9b"], # [WOMAN WITH BUNNY EARS] U+1F46F -> U+EADB
+  ["f09f91b0", "eeaba9"], # [BRIDE WITH VEIL] U+1F470 -> U+EAE9
+  ["f09f91b1", "eeac93"], # [WESTERN PERSON] U+1F471 -> U+EB13
+  ["f09f91b2", "eeac94"], # [MAN WITH GUA PI MAO] U+1F472 -> U+EB14
+  ["f09f91b3", "eeac95"], # [MAN WITH TURBAN] U+1F473 -> U+EB15
+  ["f09f91b4", "eeac96"], # [OLDER MAN] U+1F474 -> U+EB16
+  ["f09f91b5", "eeac97"], # [OLDER WOMAN] U+1F475 -> U+EB17
+  ["f09f91b6", "eeac98"], # [BABY] U+1F476 -> U+EB18
+  ["f09f91b7", "eeac99"], # [CONSTRUCTION WORKER] U+1F477 -> U+EB19
+  ["f09f91b8", "eeac9a"], # [PRINCESS] U+1F478 -> U+EB1A
+  ["f09f91b9", "eead84"], # [JAPANESE OGRE] U+1F479 -> U+EB44
+  ["f09f91ba", "eead85"], # [JAPANESE GOBLIN] U+1F47A -> U+EB45
+  ["f09f91bb", "ee938b"], # [GHOST] U+1F47B -> U+E4CB
+  ["f09f91bc", "ee96bf"], # [BABY ANGEL] U+1F47C -> U+E5BF
+  ["f09f91bd", "ee948e"], # [EXTRATERRESTRIAL ALIEN] U+1F47D -> U+E50E
+  ["f09f91be", "ee93ac"], # [ALIEN MONSTER] U+1F47E -> U+E4EC
+  ["f09f91bf", "ee93af"], # [IMP] U+1F47F -> U+E4EF
+  ["f09f9280", "ee93b8"], # [SKULL] U+1F480 -> U+E4F8
+  ["f09f9281", "5be6a188e586855d"], # [INFORMATION DESK PERSON] U+1F481 -> "[案内]"
+  ["f09f9282", "5be8a19be585b55d"], # [GUARDSMAN] U+1F482 -> "[衛兵]"
+  ["f09f9283", "eeac9c"], # [DANCER] U+1F483 -> U+EB1C
+  ["f09f908c", "eeadbe"], # [SNAIL] U+1F40C -> U+EB7E
+  ["f09f908d", "eeaca2"], # [SNAKE] U+1F40D -> U+EB22
+  ["f09f908e", "ee9398"], # [HORSE] U+1F40E -> U+E4D8
+  ["f09f9094", "eeaca3"], # [CHICKEN] U+1F414 -> U+EB23
+  ["f09f9097", "eeaca4"], # [BOAR] U+1F417 -> U+EB24
+  ["f09f90ab", "eeaca5"], # [BACTRIAN CAMEL] U+1F42B -> U+EB25
+  ["f09f9098", "eeac9f"], # [ELEPHANT] U+1F418 -> U+EB1F
+  ["f09f90a8", "eeaca0"], # [KOALA] U+1F428 -> U+EB20
+  ["f09f9092", "ee9399"], # [MONKEY] U+1F412 -> U+E4D9
+  ["f09f9091", "ee928f"], # [SHEEP] U+1F411 -> U+E48F
+  ["f09f9099", "ee9787"], # [OCTOPUS] U+1F419 -> U+E5C7
+  ["f09f909a", "eeabac"], # [SPIRAL SHELL] U+1F41A -> U+EAEC
+  ["f09f909b", "eeac9e"], # [BUG] U+1F41B -> U+EB1E
+  ["f09f909c", "ee939d"], # [ANT] U+1F41C -> U+E4DD
+  ["f09f909d", "eead97"], # [HONEYBEE] U+1F41D -> U+EB57
+  ["f09f909e", "eead98"], # [LADY BEETLE] U+1F41E -> U+EB58
+  ["f09f90a0", "eeac9d"], # [TROPICAL FISH] U+1F420 -> U+EB1D
+  ["f09f90a1", "ee9393"], # [BLOWFISH] U+1F421 -> U+E4D3
+  ["f09f90a2", "ee9794"], # [TURTLE] U+1F422 -> U+E5D4
+  ["f09f90a4", "ee93a0"], # [BABY CHICK] U+1F424 -> U+E4E0
+  ["f09f90a5", "eeadb6"], # [FRONT-FACING BABY CHICK] U+1F425 -> U+EB76
+  ["f09f90a6", "ee93a0"], # [BIRD] U+1F426 -> U+E4E0
+  ["f09f90a3", "ee979b"], # [HATCHING CHICK] U+1F423 -> U+E5DB
+  ["f09f90a7", "ee939c"], # [PENGUIN] U+1F427 -> U+E4DC
+  ["f09f90a9", "ee939f"], # [POODLE] U+1F429 -> U+E4DF
+  ["f09f909f", "ee929a"], # [FISH] U+1F41F -> U+E49A
+  ["f09f90ac", "eeac9b"], # [DOLPHIN] U+1F42C -> U+EB1B
+  ["f09f90ad", "ee9782"], # [MOUSE FACE] U+1F42D -> U+E5C2
+  ["f09f90af", "ee9780"], # [TIGER FACE] U+1F42F -> U+E5C0
+  ["f09f90b1", "ee939b"], # [CAT FACE] U+1F431 -> U+E4DB
+  ["f09f90b3", "ee91b0"], # [SPOUTING WHALE] U+1F433 -> U+E470
+  ["f09f90b4", "ee9398"], # [HORSE FACE] U+1F434 -> U+E4D8
+  ["f09f90b5", "ee9399"], # [MONKEY FACE] U+1F435 -> U+E4D9
+  ["f09f90b6", "ee93a1"], # [DOG FACE] U+1F436 -> U+E4E1
+  ["f09f90b7", "ee939e"], # [PIG FACE] U+1F437 -> U+E4DE
+  ["f09f90bb", "ee9781"], # [BEAR FACE] U+1F43B -> U+E5C1
+  ["f09f90b9", "5be3838fe383a0e382b9e382bfe383bc5d"], # [HAMSTER FACE] U+1F439 -> "[ハムスター]"
+  ["f09f90ba", "ee93a1"], # [WOLF FACE] U+1F43A -> U+E4E1
+  ["f09f90ae", "eeaca1"], # [COW FACE] U+1F42E -> U+EB21
+  ["f09f90b0", "ee9397"], # [RABBIT FACE] U+1F430 -> U+E4D7
+  ["f09f90b8", "ee939a"], # [FROG FACE] U+1F438 -> U+E4DA
+  ["f09f90be", "ee93ae"], # [PAW PRINTS] U+1F43E -> U+E4EE
+  ["f09f90b2", "eeacbf"], # [DRAGON FACE] U+1F432 -> U+EB3F
+  ["f09f90bc", "eead86"], # [PANDA FACE] U+1F43C -> U+EB46
+  ["f09f90bd", "eead88"], # [PIG NOSE] U+1F43D -> U+EB48
+  ["f09f9880", "ee91b2"], # [ANGRY FACE] U+1F600 -> U+E472
+  ["f09f9881", "eeada7"], # [ANGUISHED FACE] U+1F601 -> U+EB67
+  ["f09f9882", "eeab8a"], # [ASTONISHED FACE] U+1F602 -> U+EACA
+  ["f09f9883", "eeab80"], # [DISAPPOINTED FACE] U+1F603 -> U+EAC0
+  ["f09f9884", "ee96ae"], # [DIZZY FACE] U+1F604 -> U+E5AE
+  ["f09f9885", "eeab8b"], # [EXASPERATED FACE] U+1F605 -> U+EACB
+  ["f09f9886", "eeab89"], # [EXPRESSIONLESS FACE] U+1F606 -> U+EAC9
+  ["f09f9887", "ee9784"], # [FACE WITH HEART-SHAPED EYES] U+1F607 -> U+E5C4
+  ["f09f9888", "eeab81"], # [FACE WITH LOOK OF TRIUMPH] U+1F608 -> U+EAC1
+  ["f09f9889", "ee93a7"], # [WINKING FACE WITH STUCK-OUT TONGUE] U+1F609 -> U+E4E7
+  ["f09f988a", "ee93a7"], # [FACE WITH STUCK-OUT TONGUE] U+1F60A -> U+E4E7
+  ["f09f988b", "eeab8d"], # [FACE SAVOURING DELICIOUS FOOD] U+1F60B -> U+EACD
+  ["f09f988c", "eeab8f"], # [FACE THROWING A KISS] U+1F60C -> U+EACF
+  ["f09f988d", "eeab8e"], # [FACE KISSING] U+1F60D -> U+EACE
+  ["f09f988e", "eeab87"], # [FACE WITH MASK] U+1F60E -> U+EAC7
+  ["f09f988f", "eeab88"], # [FLUSHED FACE] U+1F60F -> U+EAC8
+  ["f09f9890", "ee91b1"], # [HAPPY FACE WITH OPEN MOUTH] U+1F610 -> U+E471
+  ["f09f9891", "ee91b1ee96b1"], # [HAPPY FACE WITH OPEN MOUTH AND COLD SWEAT] U+1F611 -> U+E471 U+E5B1
+  ["f09f9892", "eeab85"], # [HAPPY FACE WITH OPEN MOUTH AND CLOSED EYES] U+1F612 -> U+EAC5
+  ["f09f9893", "eeae80"], # [HAPPY FACE WITH GRIN] U+1F613 -> U+EB80
+  ["f09f9894", "eeada4"], # [HAPPY AND CRYING FACE] U+1F614 -> U+EB64
+  ["f09f9895", "eeab8d"], # [HAPPY FACE WITH WIDE MOUTH AND RAISED EYEBROWS] U+1F615 -> U+EACD
+  ["e298ba", "ee93bb"], # [WHITE SMILING FACE] U+263A -> U+E4FB
+  ["f09f9896", "ee91b1"], # [HAPPY FACE WITH OPEN MOUTH AND RAISED EYEBROWS] U+1F616 -> U+E471
+  ["f09f9897", "eeada9"], # [CRYING FACE] U+1F617 -> U+EB69
+  ["f09f9898", "ee91b3"], # [LOUDLY CRYING FACE] U+1F618 -> U+E473
+  ["f09f9899", "eeab86"], # [FEARFUL FACE] U+1F619 -> U+EAC6
+  ["f09f989a", "eeab82"], # [PERSEVERING FACE] U+1F61A -> U+EAC2
+  ["f09f989b", "eead9d"], # [POUTING FACE] U+1F61B -> U+EB5D
+  ["f09f989c", "eeab85"], # [RELIEVED FACE] U+1F61C -> U+EAC5
+  ["f09f989d", "eeab83"], # [CONFOUNDED FACE] U+1F61D -> U+EAC3
+  ["f09f989e", "eeab80"], # [PENSIVE FACE] U+1F61E -> U+EAC0
+  ["f09f989f", "ee9785"], # [FACE SCREAMING IN FEAR] U+1F61F -> U+E5C5
+  ["f09f98a0", "eeab84"], # [SLEEPY FACE] U+1F620 -> U+EAC4
+  ["f09f98a1", "eeaabf"], # [SMIRKING FACE] U+1F621 -> U+EABF
+  ["f09f98a2", "ee9786"], # [FACE WITH COLD SWEAT] U+1F622 -> U+E5C6
+  ["f09f98a3", "ee9786"], # [DISAPPOINTED BUT RELIEVED FACE] U+1F623 -> U+E5C6
+  ["f09f98a4", "ee91b4"], # [TIRED FACE] U+1F624 -> U+E474
+  ["f09f98a5", "ee9783"], # [WINKING FACE] U+1F625 -> U+E5C3
+  ["f09f98ab", "eeada1"], # [CAT FACE WITH OPEN MOUTH] U+1F62B -> U+EB61
+  ["f09f98ac", "eeadbf"], # [HAPPY CAT FACE WITH GRIN] U+1F62C -> U+EB7F
+  ["f09f98ad", "eeada3"], # [HAPPY AND CRYING CAT FACE] U+1F62D -> U+EB63
+  ["f09f98ae", "eeada0"], # [CAT FACE KISSING] U+1F62E -> U+EB60
+  ["f09f98af", "eeada5"], # [CAT FACE WITH HEART-SHAPED EYES] U+1F62F -> U+EB65
+  ["f09f98b0", "eeada8"], # [CRYING CAT FACE] U+1F630 -> U+EB68
+  ["f09f98b1", "eead9e"], # [POUTING CAT FACE] U+1F631 -> U+EB5E
+  ["f09f98b2", "eeadaa"], # [CAT FACE WITH TIGHTLY-CLOSED LIPS] U+1F632 -> U+EB6A
+  ["f09f98b3", "eeada6"], # [ANGUISHED CAT FACE] U+1F633 -> U+EB66
+  ["f09f98b4", "eeab97"], # [FACE WITH NO GOOD GESTURE] U+1F634 -> U+EAD7
+  ["f09f98b5", "eeab98"], # [FACE WITH OK GESTURE] U+1F635 -> U+EAD8
+  ["f09f98b6", "eeab99"], # [PERSON BOWING DEEPLY] U+1F636 -> U+EAD9
+  ["f09f98b7", "eead90"], # [SEE-NO-EVIL MONKEY] U+1F637 -> U+EB50
+  ["f09f98b9", "eead91"], # [SPEAK-NO-EVIL MONKEY] U+1F639 -> U+EB51
+  ["f09f98b8", "eead92"], # [HEAR-NO-EVIL MONKEY] U+1F638 -> U+EB52
+  ["f09f98ba", "eeae85"], # [PERSON RAISING ONE HAND] U+1F63A -> U+EB85
+  ["f09f98bb", "eeae86"], # [PERSON RAISING BOTH HANDS IN CELEBRATION] U+1F63B -> U+EB86
+  ["f09f98bc", "eeae87"], # [PERSON FROWNING] U+1F63C -> U+EB87
+  ["f09f98bd", "eeae88"], # [PERSON WITH POUTING FACE] U+1F63D -> U+EB88
+  ["f09f98be", "eeab92"], # [PERSON WITH FOLDED HANDS] U+1F63E -> U+EAD2
+  ["f09f8fa0", "ee92ab"], # [HOUSE BUILDING] U+1F3E0 -> U+E4AB
+  ["f09f8fa1", "eeac89"], # [HOUSE WITH GARDEN] U+1F3E1 -> U+EB09
+  ["f09f8fa2", "ee92ad"], # [OFFICE BUILDING] U+1F3E2 -> U+E4AD
+  ["f09f8fa3", "ee979e"], # [JAPANESE POST OFFICE] U+1F3E3 -> U+E5DE
+  ["f09f8fa5", "ee979f"], # [HOSPITAL] U+1F3E5 -> U+E5DF
+  ["f09f8fa6", "ee92aa"], # [BANK] U+1F3E6 -> U+E4AA
+  ["f09f8fa7", "ee92a3"], # [AUTOMATED TELLER MACHINE] U+1F3E7 -> U+E4A3
+  ["f09f8fa8", "eeaa81"], # [HOTEL] U+1F3E8 -> U+EA81
+  ["f09f8fa9", "eeabb3"], # [LOVE HOTEL] U+1F3E9 -> U+EAF3
+  ["f09f8faa", "ee92a4"], # [CONVENIENCE STORE] U+1F3EA -> U+E4A4
+  ["f09f8fab", "eeaa80"], # [SCHOOL] U+1F3EB -> U+EA80
+  ["e29baa", "ee96bb"], # [CHURCH] U+26EA -> U+E5BB
+  ["e29bb2", "ee978f"], # [FOUNTAIN] U+26F2 -> U+E5CF
+  ["f09f8fac", "eeabb6"], # [DEPARTMENT STORE] U+1F3EC -> U+EAF6
+  ["f09f8faf", "eeabb7"], # [JAPANESE CASTLE] U+1F3EF -> U+EAF7
+  ["f09f8fb0", "eeabb8"], # [EUROPEAN CASTLE] U+1F3F0 -> U+EAF8
+  ["f09f8fad", "eeabb9"], # [FACTORY] U+1F3ED -> U+EAF9
+  ["e29a93", "ee92a9"], # [ANCHOR] U+2693 -> U+E4A9
+  ["f09f8fae", "ee92bd"], # [IZAKAYA LANTERN] U+1F3EE -> U+E4BD
+  ["f09f97bb", "ee96bd"], # [MOUNT FUJI] U+1F5FB -> U+E5BD
+  ["f09f97bc", "ee9380"], # [TOKYO TOWER] U+1F5FC -> U+E4C0
+  ["f09f97bd", "5be887aae794b1e381aee5a5b3e7a59e5d"], # [STATUE OF LIBERTY] U+1F5FD -> "[自由の女神]"
+  ["f09f97be", "ee95b2"], # [SILHOUETTE OF JAPAN] U+1F5FE -> U+E572
+  ["f09f97bf", "eeadac"], # [MOYAI] U+1F5FF -> U+EB6C
+  ["f09f919e", "ee96b7"], # [MANS SHOE] U+1F45E -> U+E5B7
+  ["f09f919f", "eeacab"], # [ATHLETIC SHOE] U+1F45F -> U+EB2B
+  ["f09f91a0", "ee949a"], # [HIGH-HEELED SHOE] U+1F460 -> U+E51A
+  ["f09f91a1", "ee949a"], # [WOMANS SANDAL] U+1F461 -> U+E51A
+  ["f09f91a2", "eeaa9f"], # [WOMANS BOOTS] U+1F462 -> U+EA9F
+  ["f09f91a3", "eeacaa"], # [FOOTPRINTS] U+1F463 -> U+EB2A
+  ["f09f9193", "ee93be"], # [EYEGLASSES] U+1F453 -> U+E4FE
+  ["f09f9195", "ee96b6"], # [T-SHIRT] U+1F455 -> U+E5B6
+  ["f09f9196", "eeadb7"], # [JEANS] U+1F456 -> U+EB77
+  ["f09f9191", "ee9789"], # [CROWN] U+1F451 -> U+E5C9
+  ["f09f9194", "eeaa93"], # [NECKTIE] U+1F454 -> U+EA93
+  ["f09f9192", "eeaa9e"], # [WOMANS HAT] U+1F452 -> U+EA9E
+  ["f09f9197", "eeadab"], # [DRESS] U+1F457 -> U+EB6B
+  ["f09f9198", "eeaaa3"], # [KIMONO] U+1F458 -> U+EAA3
+  ["f09f9199", "eeaaa4"], # [BIKINI] U+1F459 -> U+EAA4
+  ["f09f919a", "ee948d"], # [WOMANS CLOTHES] U+1F45A -> U+E50D
+  ["f09f919b", "ee9484"], # [PURSE] U+1F45B -> U+E504
+  ["f09f919c", "ee929c"], # [HANDBAG] U+1F45C -> U+E49C
+  ["f09f919d", "5be381b5e3818fe3828d5d"], # [POUCH] U+1F45D -> "[ふくろ]"
+  ["f09f92b0", "ee9387"], # [MONEY BAG] U+1F4B0 -> U+E4C7
+  ["f09f92b1", "5b24efbfa55d"], # [CURRENCY EXCHANGE] U+1F4B1 -> "[$￥]"
+  ["f09f92b9", "ee979c"], # [CHART WITH UPWARDS TREND AND YEN SIGN] U+1F4B9 -> U+E5DC
+  ["f09f92b2", "ee95b9"], # [HEAVY DOLLAR SIGN] U+1F4B2 -> U+E579
+  ["f09f92b3", "ee95bc"], # [CREDIT CARD] U+1F4B3 -> U+E57C
+  ["f09f92b4", "ee95bd"], # [BANKNOTE WITH YEN SIGN] U+1F4B4 -> U+E57D
+  ["f09f92b5", "ee9685"], # [BANKNOTE WITH DOLLAR SIGN] U+1F4B5 -> U+E585
+  ["f09f92b8", "eead9b"], # [MONEY WITH WINGS] U+1F4B8 -> U+EB5B
+  ["f09f87a6", "5b415d"], # [REGIONAL INDICATOR SYMBOL LETTER A] U+1F1E6 -> "[A]"
+  ["f09f87a7", "5b425d"], # [REGIONAL INDICATOR SYMBOL LETTER B] U+1F1E7 -> "[B]"
+  ["f09f87a8", "5b435d"], # [REGIONAL INDICATOR SYMBOL LETTER C] U+1F1E8 -> "[C]"
+  ["f09f87a9", "5b445d"], # [REGIONAL INDICATOR SYMBOL LETTER D] U+1F1E9 -> "[D]"
+  ["f09f87aa", "5b455d"], # [REGIONAL INDICATOR SYMBOL LETTER E] U+1F1EA -> "[E]"
+  ["f09f87ab", "5b465d"], # [REGIONAL INDICATOR SYMBOL LETTER F] U+1F1EB -> "[F]"
+  ["f09f87ac", "5b475d"], # [REGIONAL INDICATOR SYMBOL LETTER G] U+1F1EC -> "[G]"
+  ["f09f87ad", "5b485d"], # [REGIONAL INDICATOR SYMBOL LETTER H] U+1F1ED -> "[H]"
+  ["f09f87ae", "5b495d"], # [REGIONAL INDICATOR SYMBOL LETTER I] U+1F1EE -> "[I]"
+  ["f09f87af", "5b4a5d"], # [REGIONAL INDICATOR SYMBOL LETTER J] U+1F1EF -> "[J]"
+  ["f09f87b0", "5b4b5d"], # [REGIONAL INDICATOR SYMBOL LETTER K] U+1F1F0 -> "[K]"
+  ["f09f87b1", "5b4c5d"], # [REGIONAL INDICATOR SYMBOL LETTER L] U+1F1F1 -> "[L]"
+  ["f09f87b2", "5b4d5d"], # [REGIONAL INDICATOR SYMBOL LETTER M] U+1F1F2 -> "[M]"
+  ["f09f87b3", "5b4e5d"], # [REGIONAL INDICATOR SYMBOL LETTER N] U+1F1F3 -> "[N]"
+  ["f09f87b4", "5b4f5d"], # [REGIONAL INDICATOR SYMBOL LETTER O] U+1F1F4 -> "[O]"
+  ["f09f87b5", "5b505d"], # [REGIONAL INDICATOR SYMBOL LETTER P] U+1F1F5 -> "[P]"
+  ["f09f87b6", "5b515d"], # [REGIONAL INDICATOR SYMBOL LETTER Q] U+1F1F6 -> "[Q]"
+  ["f09f87b7", "5b525d"], # [REGIONAL INDICATOR SYMBOL LETTER R] U+1F1F7 -> "[R]"
+  ["f09f87b8", "5b535d"], # [REGIONAL INDICATOR SYMBOL LETTER S] U+1F1F8 -> "[S]"
+  ["f09f87b9", "5b545d"], # [REGIONAL INDICATOR SYMBOL LETTER T] U+1F1F9 -> "[T]"
+  ["f09f87ba", "5b555d"], # [REGIONAL INDICATOR SYMBOL LETTER U] U+1F1FA -> "[U]"
+  ["f09f87bb", "5b565d"], # [REGIONAL INDICATOR SYMBOL LETTER V] U+1F1FB -> "[V]"
+  ["f09f87bc", "5b575d"], # [REGIONAL INDICATOR SYMBOL LETTER W] U+1F1FC -> "[W]"
+  ["f09f87bd", "5b585d"], # [REGIONAL INDICATOR SYMBOL LETTER X] U+1F1FD -> "[X]"
+  ["f09f87be", "5b595d"], # [REGIONAL INDICATOR SYMBOL LETTER Y] U+1F1FE -> "[Y]"
+  ["f09f87bf", "5b5a5d"], # [REGIONAL INDICATOR SYMBOL LETTER Z] U+1F1FF -> "[Z]"
+  ["f09f94a5", "ee91bb"], # [FIRE] U+1F525 -> U+E47B
+  ["f09f94a6", "ee9683"], # [ELECTRIC TORCH] U+1F526 -> U+E583
+  ["f09f94a7", "ee9687"], # [WRENCH] U+1F527 -> U+E587
+  ["f09f94a8", "ee978b"], # [HAMMER] U+1F528 -> U+E5CB
+  ["f09f94a9", "ee9681"], # [NUT AND BOLT] U+1F529 -> U+E581
+  ["f09f94aa", "ee95bf"], # [HOCHO] U+1F52A -> U+E57F
+  ["f09f94ab", "ee948a"], # [PISTOL] U+1F52B -> U+E50A
+  ["f09f94ae", "eeaa8f"], # [CRYSTAL BALL] U+1F52E -> U+EA8F
+  ["f09f94af", "eeaa8f"], # [SIX POINTED STAR WITH MIDDLE DOT] U+1F52F -> U+EA8F
+  ["f09f94b0", "ee9280"], # [JAPANESE SYMBOL FOR BEGINNER] U+1F530 -> U+E480
+  ["f09f94b1", "ee9789"], # [TRIDENT EMBLEM] U+1F531 -> U+E5C9
+  ["f09f9289", "ee9490"], # [SYRINGE] U+1F489 -> U+E510
+  ["f09f928a", "eeaa9a"], # [PILL] U+1F48A -> U+EA9A
+  ["f09f85b0", "eeaca6"], # [NEGATIVE SQUARED LATIN CAPITAL LETTER A] U+1F170 -> U+EB26
+  ["f09f85b1", "eeaca7"], # [NEGATIVE SQUARED LATIN CAPITAL LETTER B] U+1F171 -> U+EB27
+  ["f09f868e", "eeaca9"], # [NEGATIVE SQUARED AB] U+1F18E -> U+EB29
+  ["f09f85be", "eeaca8"], # [NEGATIVE SQUARED LATIN CAPITAL LETTER O] U+1F17E -> U+EB28
+  ["f09f8e80", "ee969f"], # [RIBBON] U+1F380 -> U+E59F
+  ["f09f8e81", "ee938f"], # [WRAPPED PRESENT] U+1F381 -> U+E4CF
+  ["f09f8e82", "ee96a0"], # [BIRTHDAY CAKE] U+1F382 -> U+E5A0
+  ["f09f8e84", "ee9389"], # [CHRISTMAS TREE] U+1F384 -> U+E4C9
+  ["f09f8e85", "eeabb0"], # [FATHER CHRISTMAS] U+1F385 -> U+EAF0
+  ["f09f8e8c", "ee9799"], # [CROSSED FLAGS] U+1F38C -> U+E5D9
+  ["f09f8e86", "ee978c"], # [FIREWORKS] U+1F386 -> U+E5CC
+  ["f09f8e88", "eeaa9b"], # [BALLOON] U+1F388 -> U+EA9B
+  ["f09f8e89", "eeaa9c"], # [PARTY POPPER] U+1F389 -> U+EA9C
+  ["f09f8e8d", "eeaba3"], # [PINE DECORATION] U+1F38D -> U+EAE3
+  ["f09f8e8e", "eeaba4"], # [JAPANESE DOLLS] U+1F38E -> U+EAE4
+  ["f09f8e93", "eeaba5"], # [GRADUATION CAP] U+1F393 -> U+EAE5
+  ["f09f8e92", "eeaba6"], # [SCHOOL SATCHEL] U+1F392 -> U+EAE6
+  ["f09f8e8f", "eeaba7"], # [CARP STREAMER] U+1F38F -> U+EAE7
+  ["f09f8e87", "eeabab"], # [FIREWORK SPARKLER] U+1F387 -> U+EAEB
+  ["f09f8e90", "eeabad"], # [WIND CHIME] U+1F390 -> U+EAED
+  ["f09f8e83", "eeabae"], # [JACK-O-LANTERN] U+1F383 -> U+EAEE
+  ["f09f8e8a", "ee91af"], # [CONFETTI BALL] U+1F38A -> U+E46F
+  ["f09f8e8b", "eeacbd"], # [TANABATA TREE] U+1F38B -> U+EB3D
+  ["f09f8e91", "eeabaf"], # [MOON VIEWING CEREMONY] U+1F391 -> U+EAEF
+  ["f09f939f", "ee969b"], # [PAGER] U+1F4DF -> U+E59B
+  ["e2988e", "ee9696"], # [BLACK TELEPHONE] U+260E -> U+E596
+  ["f09f939e", "ee949e"], # [TELEPHONE RECEIVER] U+1F4DE -> U+E51E
+  ["f09f93b1", "ee9688"], # [MOBILE PHONE] U+1F4F1 -> U+E588
+  ["f09f93b2", "eeac88"], # [MOBILE PHONE WITH RIGHTWARDS ARROW AT LEFT] U+1F4F2 -> U+EB08
+  ["f09f939d", "eeaa92"], # [MEMO] U+1F4DD -> U+EA92
+  ["f09f93a0", "ee94a0"], # [FAX MACHINE] U+1F4E0 -> U+E520
+  ["e29c89", "ee94a1"], # [ENVELOPE] U+2709 -> U+E521
+  ["f09f93a8", "ee9691"], # [INCOMING ENVELOPE] U+1F4E8 -> U+E591
+  ["f09f93a9", "eeada2"], # [ENVELOPE WITH DOWNWARDS ARROW ABOVE] U+1F4E9 -> U+EB62
+  ["f09f93aa", "ee949b"], # [CLOSED MAILBOX WITH LOWERED FLAG] U+1F4EA -> U+E51B
+  ["f09f93ab", "eeac8a"], # [CLOSED MAILBOX WITH RAISED FLAG] U+1F4EB -> U+EB0A
+  ["f09f93ae", "ee949b"], # [POSTBOX] U+1F4EE -> U+E51B
+  ["f09f93b0", "ee968b"], # [NEWSPAPER] U+1F4F0 -> U+E58B
+  ["f09f93a2", "ee9491"], # [PUBLIC ADDRESS LOUDSPEAKER] U+1F4E2 -> U+E511
+  ["f09f93a3", "ee9491"], # [CHEERING MEGAPHONE] U+1F4E3 -> U+E511
+  ["f09f93a1", "ee92a8"], # [SATELLITE ANTENNA] U+1F4E1 -> U+E4A8
+  ["f09f93a4", "ee9692"], # [OUTBOX TRAY] U+1F4E4 -> U+E592
+  ["f09f93a5", "ee9693"], # [INBOX TRAY] U+1F4E5 -> U+E593
+  ["f09f93a6", "ee949f"], # [PACKAGE] U+1F4E6 -> U+E51F
+  ["f09f93a7", "eeadb1"], # [E-MAIL SYMBOL] U+1F4E7 -> U+EB71
+  ["f09f94a0", "eeabbd"], # [INPUT SYMBOL FOR LATIN CAPITAL LETTERS] U+1F520 -> U+EAFD
+  ["f09f94a1", "eeabbe"], # [INPUT SYMBOL FOR LATIN SMALL LETTERS] U+1F521 -> U+EAFE
+  ["f09f94a2", "eeabbf"], # [INPUT SYMBOL FOR NUMBERS] U+1F522 -> U+EAFF
+  ["f09f94a3", "eeac80"], # [INPUT SYMBOL FOR SYMBOLS] U+1F523 -> U+EB00
+  ["f09f94a4", "eead95"], # [INPUT SYMBOL FOR LATIN LETTERS] U+1F524 -> U+EB55
+  ["e29c92", "eeac83"], # [BLACK NIB] U+2712 -> U+EB03
+  ["f09f92ba", "5be38184e381995d"], # [SEAT] U+1F4BA -> "[いす]"
+  ["f09f92bb", "ee96b8"], # [PERSONAL COMPUTER] U+1F4BB -> U+E5B8
+  ["e29c8f", "ee92a1"], # [PENCIL] U+270F -> U+E4A1
+  ["f09f938e", "ee92a0"], # [PAPERCLIP] U+1F4CE -> U+E4A0
+  ["f09f92bc", "ee978e"], # [BRIEFCASE] U+1F4BC -> U+E5CE
+  ["f09f92bd", "ee9682"], # [MINIDISC] U+1F4BD -> U+E582
+  ["f09f92be", "ee95a2"], # [FLOPPY DISK] U+1F4BE -> U+E562
+  ["f09f92bf", "ee948c"], # [OPTICAL DISC] U+1F4BF -> U+E50C
+  ["f09f9380", "ee948c"], # [DVD] U+1F4C0 -> U+E50C
+  ["e29c82", "ee9496"], # [BLACK SCISSORS] U+2702 -> U+E516
+  ["f09f938d", "ee95a0"], # [ROUND PUSHPIN] U+1F4CD -> U+E560
+  ["f09f9383", "ee95a1"], # [PAGE WITH CURL] U+1F4C3 -> U+E561
+  ["f09f9384", "ee95a9"], # [PAGE FACING UP] U+1F4C4 -> U+E569
+  ["f09f9385", "ee95a3"], # [CALENDAR] U+1F4C5 -> U+E563
+  ["f09f9381", "ee968f"], # [FILE FOLDER] U+1F4C1 -> U+E58F
+  ["f09f9382", "ee9690"], # [OPEN FILE FOLDER] U+1F4C2 -> U+E590
+  ["f09f9393", "ee95ab"], # [NOTEBOOK] U+1F4D3 -> U+E56B
+  ["f09f9396", "ee929f"], # [OPEN BOOK] U+1F4D6 -> U+E49F
+  ["f09f9394", "ee929d"], # [NOTEBOOK WITH DECORATIVE COVER] U+1F4D4 -> U+E49D
+  ["f09f9395", "ee95a8"], # [CLOSED BOOK] U+1F4D5 -> U+E568
+  ["f09f9397", "ee95a5"], # [GREEN BOOK] U+1F4D7 -> U+E565
+  ["f09f9398", "ee95a6"], # [BLUE BOOK] U+1F4D8 -> U+E566
+  ["f09f9399", "ee95a7"], # [ORANGE BOOK] U+1F4D9 -> U+E567
+  ["f09f939a", "ee95af"], # [BOOKS] U+1F4DA -> U+E56F
+  ["f09f939b", "ee949d"], # [NAME BADGE] U+1F4DB -> U+E51D
+  ["f09f939c", "ee959f"], # [SCROLL] U+1F4DC -> U+E55F
+  ["f09f938b", "ee95a4"], # [CLIPBOARD] U+1F4CB -> U+E564
+  ["f09f9386", "ee95aa"], # [TEAR-OFF CALENDAR] U+1F4C6 -> U+E56A
+  ["f09f938a", "ee95b4"], # [BAR CHART] U+1F4CA -> U+E574
+  ["f09f9388", "ee95b5"], # [CHART WITH UPWARDS TREND] U+1F4C8 -> U+E575
+  ["f09f9389", "ee95b6"], # [CHART WITH DOWNWARDS TREND] U+1F4C9 -> U+E576
+  ["f09f9387", "ee95ac"], # [CARD INDEX] U+1F4C7 -> U+E56C
+  ["f09f938c", "ee95ad"], # [PUSHPIN] U+1F4CC -> U+E56D
+  ["f09f9392", "ee95ae"], # [LEDGER] U+1F4D2 -> U+E56E
+  ["f09f938f", "ee95b0"], # [STRAIGHT RULER] U+1F4CF -> U+E570
+  ["f09f9390", "ee92a2"], # [TRIANGULAR RULER] U+1F4D0 -> U+E4A2
+  ["f09f9391", "eeac8b"], # [BOOKMARK TABS] U+1F4D1 -> U+EB0B
+  ["f09f8ebd", "e38093"], # [RUNNING SHIRT WITH SASH] U+1F3BD -> U+3013 (GETA)
+  ["e29abe", "ee92ba"], # [BASEBALL] U+26BE -> U+E4BA
+  ["e29bb3", "ee9699"], # [FLAG IN HOLE] U+26F3 -> U+E599
+  ["f09f8ebe", "ee92b7"], # [TENNIS RACQUET AND BALL] U+1F3BE -> U+E4B7
+  ["e29abd", "ee92b6"], # [SOCCER BALL] U+26BD -> U+E4B6
+  ["f09f8ebf", "eeaaac"], # [SKI AND SKI BOOT] U+1F3BF -> U+EAAC
+  ["f09f8f80", "ee969a"], # [BASKETBALL AND HOOP] U+1F3C0 -> U+E59A
+  ["f09f8f81", "ee92b9"], # [CHEQUERED FLAG] U+1F3C1 -> U+E4B9
+  ["f09f8f82", "ee92b8"], # [SNOWBOARDER] U+1F3C2 -> U+E4B8
+  ["f09f8f83", "ee91ab"], # [RUNNER] U+1F3C3 -> U+E46B
+  ["f09f8f84", "eead81"], # [SURFER] U+1F3C4 -> U+EB41
+  ["f09f8f86", "ee9793"], # [TROPHY] U+1F3C6 -> U+E5D3
+  ["f09f8f88", "ee92bb"], # [AMERICAN FOOTBALL] U+1F3C8 -> U+E4BB
+  ["f09f8f8a", "eeab9e"], # [SWIMMER] U+1F3CA -> U+EADE
+  ["f09f9a86", "ee92b5"], # [TRAIN] U+1F686 -> U+E4B5
+  ["f09f9a87", "ee96bc"], # [METRO] U+1F687 -> U+E5BC
+  ["e29382", "ee96bc"], # [CIRCLED LATIN CAPITAL LETTER M] U+24C2 -> U+E5BC
+  ["f09f9a84", "ee92b0"], # [HIGH-SPEED TRAIN] U+1F684 -> U+E4B0
+  ["f09f9a85", "ee92b0"], # [HIGH-SPEED TRAIN WITH BULLET NOSE] U+1F685 -> U+E4B0
+  ["f09f9a97", "ee92b1"], # [AUTOMOBILE] U+1F697 -> U+E4B1
+  ["f09f9a99", "ee92b1"], # [RECREATIONAL VEHICLE] U+1F699 -> U+E4B1
+  ["f09f9a8d", "ee92af"], # [ONCOMING BUS] U+1F68D -> U+E4AF
+  ["f09f9a8f", "ee92a7"], # [BUS STOP] U+1F68F -> U+E4A7
+  ["f09f9aa2", "eeaa82"], # [SHIP] U+1F6A2 -> U+EA82
+  ["e29c88", "ee92b3"], # [AIRPLANE] U+2708 -> U+E4B3
+  ["e29bb5", "ee92b4"], # [SAILBOAT] U+26F5 -> U+E4B4
+  ["f09f9a89", "eeadad"], # [STATION] U+1F689 -> U+EB6D
+  ["f09f9a80", "ee9788"], # [ROCKET] U+1F680 -> U+E5C8
+  ["f09f9aa4", "ee92b4"], # [SPEEDBOAT] U+1F6A4 -> U+E4B4
+  ["f09f9a95", "ee92b1"], # [TAXI] U+1F695 -> U+E4B1
+  ["f09f9a9a", "ee92b2"], # [DELIVERY TRUCK] U+1F69A -> U+E4B2
+  ["f09f9a92", "eeab9f"], # [FIRE ENGINE] U+1F692 -> U+EADF
+  ["f09f9a91", "eeaba0"], # [AMBULANCE] U+1F691 -> U+EAE0
+  ["f09f9a93", "eeaba1"], # [POLICE CAR] U+1F693 -> U+EAE1
+  ["e29bbd", "ee95b1"], # [FUEL PUMP] U+26FD -> U+E571
+  ["f09f85bf", "ee92a6"], # [NEGATIVE SQUARED LATIN CAPITAL LETTER P] U+1F17F -> U+E4A6
+  ["f09f9aa5", "ee91aa"], # [HORIZONTAL TRAFFIC LIGHT] U+1F6A5 -> U+E46A
+  ["f09f9aa7", "ee9797"], # [CONSTRUCTION SIGN] U+1F6A7 -> U+E5D7
+  ["f09f9aa8", "eeadb3"], # [POLICE CARS REVOLVING LIGHT] U+1F6A8 -> U+EB73
+  ["e299a8", "ee92bc"], # [HOT SPRINGS] U+2668 -> U+E4BC
+  ["e29bba", "ee9790"], # [TENT] U+26FA -> U+E5D0
+  ["f09f8ea0", "e38093"], # [CAROUSEL HORSE] U+1F3A0 -> U+3013 (GETA)
+  ["f09f8ea1", "ee91ad"], # [FERRIS WHEEL] U+1F3A1 -> U+E46D
+  ["f09f8ea2", "eeaba2"], # [ROLLER COASTER] U+1F3A2 -> U+EAE2
+  ["f09f8ea3", "eead82"], # [FISHING POLE AND FISH] U+1F3A3 -> U+EB42
+  ["f09f8ea4", "ee9483"], # [MICROPHONE] U+1F3A4 -> U+E503
+  ["f09f8ea5", "ee9497"], # [MOVIE CAMERA] U+1F3A5 -> U+E517
+  ["f09f8ea6", "ee9497"], # [CINEMA] U+1F3A6 -> U+E517
+  ["f09f8ea7", "ee9488"], # [HEADPHONE] U+1F3A7 -> U+E508
+  ["f09f8ea8", "ee969c"], # [ARTIST PALETTE] U+1F3A8 -> U+E59C
+  ["f09f8ea9", "eeabb5"], # [TOP HAT] U+1F3A9 -> U+EAF5
+  ["f09f8eaa", "ee969e"], # [CIRCUS TENT] U+1F3AA -> U+E59E
+  ["f09f8eab", "ee929e"], # [TICKET] U+1F3AB -> U+E49E
+  ["f09f8eac", "ee92be"], # [CLAPPER BOARD] U+1F3AC -> U+E4BE
+  ["f09f8ead", "ee969d"], # [PERFORMING ARTS] U+1F3AD -> U+E59D
+  ["f09f8eae", "ee9386"], # [VIDEO GAME] U+1F3AE -> U+E4C6
+  ["f09f8084", "ee9791"], # [MAHJONG TILE RED DRAGON] U+1F004 -> U+E5D1
+  ["f09f8eaf", "ee9385"], # [DIRECT HIT] U+1F3AF -> U+E4C5
+  ["f09f8eb0", "ee91ae"], # [SLOT MACHINE] U+1F3B0 -> U+E46E
+  ["f09f8eb1", "eeab9d"], # [BILLIARDS] U+1F3B1 -> U+EADD
+  ["f09f8eb2", "ee9388"], # [GAME DIE] U+1F3B2 -> U+E4C8
+  ["f09f8eb3", "eead83"], # [BOWLING] U+1F3B3 -> U+EB43
+  ["f09f8eb4", "eeadae"], # [FLOWER PLAYING CARDS] U+1F3B4 -> U+EB6E
+  ["f09f838f", "eeadaf"], # [PLAYING CARD BLACK JOKER] U+1F0CF -> U+EB6F
+  ["f09f8eb5", "ee96be"], # [MUSICAL NOTE] U+1F3B5 -> U+E5BE
+  ["f09f8eb6", "ee9485"], # [MULTIPLE MUSICAL NOTES] U+1F3B6 -> U+E505
+  ["f09f8eb7", "5be382b5e38383e382afe382b95d"], # [SAXOPHONE] U+1F3B7 -> "[サックス]"
+  ["f09f8eb8", "ee9486"], # [GUITAR] U+1F3B8 -> U+E506
+  ["f09f8eb9", "eead80"], # [MUSICAL KEYBOARD] U+1F3B9 -> U+EB40
+  ["f09f8eba", "eeab9c"], # [TRUMPET] U+1F3BA -> U+EADC
+  ["f09f8ebb", "ee9487"], # [VIOLIN] U+1F3BB -> U+E507
+  ["f09f8ebc", "eeab8c"], # [MUSICAL SCORE] U+1F3BC -> U+EACC
+  ["e380bd", "5be6ad8ce8a898e58fb75d"], # [PART ALTERNATION MARK] U+303D -> "[歌記号]"
+  ["f09f93b7", "ee9495"], # [CAMERA] U+1F4F7 -> U+E515
+  ["f09f93b9", "ee95be"], # [VIDEO CAMERA] U+1F4F9 -> U+E57E
+  ["f09f93ba", "ee9482"], # [TELEVISION] U+1F4FA -> U+E502
+  ["f09f93bb", "ee96b9"], # [RADIO] U+1F4FB -> U+E5B9
+  ["f09f93bc", "ee9680"], # [VIDEOCASSETTE] U+1F4FC -> U+E580
+  ["f09f928b", "ee93ab"], # [KISS MARK] U+1F48B -> U+E4EB
+  ["f09f928c", "eeadb8"], # [LOVE LETTER] U+1F48C -> U+EB78
+  ["f09f928d", "ee9494"], # [RING] U+1F48D -> U+E514
+  ["f09f928e", "ee9494"], # [GEM STONE] U+1F48E -> U+E514
+  ["f09f928f", "ee978a"], # [KISS] U+1F48F -> U+E5CA
+  ["f09f9290", "eeaa95"], # [BOUQUET] U+1F490 -> U+EA95
+  ["f09f9291", "eeab9a"], # [COUPLE WITH HEART] U+1F491 -> U+EADA
+  ["f09f9292", "ee96bb"], # [WEDDING] U+1F492 -> U+E5BB
+  ["f09f949e", "eeaa83"], # [NO ONE UNDER EIGHTEEN SYMBOL] U+1F51E -> U+EA83
+  ["c2a9", "ee9598"], # [COPYRIGHT SIGN] U+A9 -> U+E558
+  ["c2ae", "ee9599"], # [REGISTERED SIGN] U+AE -> U+E559
+  ["e284a2", "ee958e"], # [TRADE MARK SIGN] U+2122 -> U+E54E
+  ["e284b9", "ee94b3"], # [INFORMATION SOURCE] U+2139 -> U+E533
+  ["f09f949f", "ee94ab"], # [KEYCAP TEN] U+1F51F -> U+E52B
+  ["f09f93b6", "eeaa84"], # [ANTENNA WITH BARS] U+1F4F6 -> U+EA84
+  ["f09f93b3", "eeaa90"], # [VIBRATION MODE] U+1F4F3 -> U+EA90
+  ["f09f93b4", "eeaa91"], # [MOBILE PHONE OFF] U+1F4F4 -> U+EA91
+  ["f09f8d94", "ee9396"], # [HAMBURGER] U+1F354 -> U+E4D6
+  ["f09f8d99", "ee9395"], # [RICE BALL] U+1F359 -> U+E4D5
+  ["f09f8db0", "ee9390"], # [SHORTCAKE] U+1F370 -> U+E4D0
+  ["f09f8d9c", "ee96b4"], # [STEAMING BOWL] U+1F35C -> U+E5B4
+  ["f09f8d9e", "eeaaaf"], # [BREAD] U+1F35E -> U+EAAF
+  ["f09f8db3", "ee9391"], # [COOKING] U+1F373 -> U+E4D1
+  ["f09f8da6", "eeaab0"], # [SOFT ICE CREAM] U+1F366 -> U+EAB0
+  ["f09f8d9f", "eeaab1"], # [FRENCH FRIES] U+1F35F -> U+EAB1
+  ["f09f8da1", "eeaab2"], # [DANGO] U+1F361 -> U+EAB2
+  ["f09f8d98", "eeaab3"], # [RICE CRACKER] U+1F358 -> U+EAB3
+  ["f09f8d9a", "eeaab4"], # [COOKED RICE] U+1F35A -> U+EAB4
+  ["f09f8d9d", "eeaab5"], # [SPAGHETTI] U+1F35D -> U+EAB5
+  ["f09f8d9b", "eeaab6"], # [CURRY AND RICE] U+1F35B -> U+EAB6
+  ["f09f8da2", "eeaab7"], # [ODEN] U+1F362 -> U+EAB7
+  ["f09f8da3", "eeaab8"], # [SUSHI] U+1F363 -> U+EAB8
+  ["f09f8db1", "eeaabd"], # [BENTO BOX] U+1F371 -> U+EABD
+  ["f09f8db2", "eeaabe"], # [POT OF FOOD] U+1F372 -> U+EABE
+  ["f09f8da7", "eeabaa"], # [SHAVED ICE] U+1F367 -> U+EAEA
+  ["f09f8d96", "ee9384"], # [MEAT ON BONE] U+1F356 -> U+E4C4
+  ["f09f8da5", "ee93ad"], # [FISH CAKE WITH SWIRL DESIGN] U+1F365 -> U+E4ED
+  ["f09f8da0", "eeacba"], # [ROASTED SWEET POTATO] U+1F360 -> U+EB3A
+  ["f09f8d95", "eeacbb"], # [SLICE OF PIZZA] U+1F355 -> U+EB3B
+  ["f09f8d97", "eeacbc"], # [POULTRY LEG] U+1F357 -> U+EB3C
+  ["f09f8da8", "eead8a"], # [ICE CREAM] U+1F368 -> U+EB4A
+  ["f09f8da9", "eead8b"], # [DOUGHNUT] U+1F369 -> U+EB4B
+  ["f09f8daa", "eead8c"], # [COOKIE] U+1F36A -> U+EB4C
+  ["f09f8dab", "eead8d"], # [CHOCOLATE BAR] U+1F36B -> U+EB4D
+  ["f09f8dac", "eead8e"], # [CANDY] U+1F36C -> U+EB4E
+  ["f09f8dad", "eead8f"], # [LOLLIPOP] U+1F36D -> U+EB4F
+  ["f09f8dae", "eead96"], # [CUSTARD] U+1F36E -> U+EB56
+  ["f09f8daf", "eead99"], # [HONEY POT] U+1F36F -> U+EB59
+  ["f09f8da4", "eeadb0"], # [FRIED SHRIMP] U+1F364 -> U+EB70
+  ["f09f8db4", "ee92ac"], # [FORK AND KNIFE] U+1F374 -> U+E4AC
+  ["e29895", "ee9697"], # [HOT BEVERAGE] U+2615 -> U+E597
+  ["f09f8db8", "ee9382"], # [COCKTAIL GLASS] U+1F378 -> U+E4C2
+  ["f09f8dba", "ee9383"], # [BEER MUG] U+1F37A -> U+E4C3
+  ["f09f8db5", "eeaaae"], # [TEACUP WITHOUT HANDLE] U+1F375 -> U+EAAE
+  ["f09f8db6", "eeaa97"], # [SAKE BOTTLE AND CUP] U+1F376 -> U+EA97
+  ["f09f8db7", "ee9381"], # [WINE GLASS] U+1F377 -> U+E4C1
+  ["f09f8dbb", "eeaa98"], # [CLINKING BEER MUGS] U+1F37B -> U+EA98
+  ["f09f8db9", "eeacbe"], # [TROPICAL DRINK] U+1F379 -> U+EB3E
+  ["e28697", "ee9595"], # [NORTH EAST ARROW] U+2197 -> U+E555
+  ["e28698", "ee958d"], # [SOUTH EAST ARROW] U+2198 -> U+E54D
+  ["e28696", "ee958c"], # [NORTH WEST ARROW] U+2196 -> U+E54C
+  ["e28699", "ee9596"], # [SOUTH WEST ARROW] U+2199 -> U+E556
+  ["e2a4b4", "eeacad"], # [ARROW POINTING RIGHTWARDS THEN CURVING UPWARDS] U+2934 -> U+EB2D
+  ["e2a4b5", "eeacae"], # [ARROW POINTING RIGHTWARDS THEN CURVING DOWNWARDS] U+2935 -> U+EB2E
+  ["e28694", "eeadba"], # [LEFT RIGHT ARROW] U+2194 -> U+EB7A
+  ["e28695", "eeadbb"], # [UP DOWN ARROW] U+2195 -> U+EB7B
+  ["e2ac86", "ee94bf"], # [UPWARDS BLACK ARROW] U+2B06 -> U+E53F
+  ["e2ac87", "ee9580"], # [DOWNWARDS BLACK ARROW] U+2B07 -> U+E540
+  ["e29ea1", "ee9592"], # [BLACK RIGHTWARDS ARROW] U+27A1 -> U+E552
+  ["e2ac85", "ee9593"], # [LEFTWARDS BLACK ARROW] U+2B05 -> U+E553
+  ["e296b6", "ee94ae"], # [BLACK RIGHT-POINTING TRIANGLE] U+25B6 -> U+E52E
+  ["e29780", "ee94ad"], # [BLACK LEFT-POINTING TRIANGLE] U+25C0 -> U+E52D
+  ["e28fa9", "ee94b0"], # [BLACK RIGHT-POINTING DOUBLE TRIANGLE] U+23E9 -> U+E530
+  ["e28faa", "ee94af"], # [BLACK LEFT-POINTING DOUBLE TRIANGLE] U+23EA -> U+E52F
+  ["e28fab", "ee9585"], # [BLACK UP-POINTING DOUBLE TRIANGLE] U+23EB -> U+E545
+  ["e28fac", "ee9584"], # [BLACK DOWN-POINTING DOUBLE TRIANGLE] U+23EC -> U+E544
+  ["f09f94ba", "ee959a"], # [UP-POINTING RED TRIANGLE] U+1F53A -> U+E55A
+  ["f09f94bb", "ee959b"], # [DOWN-POINTING RED TRIANGLE] U+1F53B -> U+E55B
+  ["f09f94bc", "ee9583"], # [UP-POINTING SMALL RED TRIANGLE] U+1F53C -> U+E543
+  ["f09f94bd", "ee9582"], # [DOWN-POINTING SMALL RED TRIANGLE] U+1F53D -> U+E542
+  ["e2ad95", "eeaaad"], # [HEAVY LARGE CIRCLE] U+2B55 -> U+EAAD
+  ["e29d8c", "ee9590"], # [CROSS MARK] U+274C -> U+E550
+  ["e29d8e", "ee9591"], # [NEGATIVE SQUARED CROSS MARK] U+274E -> U+E551
+  ["e29da2", "ee9282"], # [HEAVY EXCLAMATION MARK ORNAMENT] U+2762 -> U+E482
+  ["e28189", "eeacaf"], # [EXCLAMATION QUESTION MARK] U+2049 -> U+EB2F
+  ["e280bc", "eeacb0"], # [DOUBLE EXCLAMATION MARK] U+203C -> U+EB30
+  ["e29d93", "ee9283"], # [BLACK QUESTION MARK ORNAMENT] U+2753 -> U+E483
+  ["e29d94", "ee9283"], # [WHITE QUESTION MARK ORNAMENT] U+2754 -> U+E483
+  ["e29d95", "ee9282"], # [WHITE EXCLAMATION MARK ORNAMENT] U+2755 -> U+E482
+  ["e380b0", "e38093"], # [WAVY DASH] U+3030 -> U+3013 (GETA)
+  ["e29eb0", "eeacb1"], # [CURLY LOOP] U+27B0 -> U+EB31
+  ["e29ebf", "5be38395e383aae383bce38380e382a4e383a4e383ab5d"], # [DOUBLE CURLY LOOP] U+27BF -> "[フリーダイヤル]"
+  ["e29da4", "ee9695"], # [HEAVY BLACK HEART] U+2764 -> U+E595
+  ["f09f9293", "eeadb5"], # [BEATING HEART] U+1F493 -> U+EB75
+  ["f09f9294", "ee91b7"], # [BROKEN HEART] U+1F494 -> U+E477
+  ["f09f9295", "ee91b8"], # [TWO HEARTS] U+1F495 -> U+E478
+  ["f09f9296", "eeaaa6"], # [SPARKLING HEART] U+1F496 -> U+EAA6
+  ["f09f9297", "eeadb5"], # [GROWING HEART] U+1F497 -> U+EB75
+  ["f09f9298", "ee93aa"], # [HEART WITH ARROW] U+1F498 -> U+E4EA
+  ["f09f9299", "eeaaa7"], # [BLUE HEART] U+1F499 -> U+EAA7
+  ["f09f929a", "eeaaa8"], # [GREEN HEART] U+1F49A -> U+EAA8
+  ["f09f929b", "eeaaa9"], # [YELLOW HEART] U+1F49B -> U+EAA9
+  ["f09f929c", "eeaaaa"], # [PURPLE HEART] U+1F49C -> U+EAAA
+  ["f09f929d", "eead94"], # [HEART WITH RIBBON] U+1F49D -> U+EB54
+  ["f09f929e", "ee96af"], # [REVOLVING HEARTS] U+1F49E -> U+E5AF
+  ["f09f929f", "ee9695"], # [HEART DECORATION] U+1F49F -> U+E595
+  ["e299a5", "eeaaa5"], # [BLACK HEART SUIT] U+2665 -> U+EAA5
+  ["e299a0", "ee96a1"], # [BLACK SPADE SUIT] U+2660 -> U+E5A1
+  ["e299a6", "ee96a2"], # [BLACK DIAMOND SUIT] U+2666 -> U+E5A2
+  ["e299a3", "ee96a3"], # [BLACK CLUB SUIT] U+2663 -> U+E5A3
+  ["f09f9aac", "ee91bd"], # [SMOKING SYMBOL] U+1F6AC -> U+E47D
+  ["f09f9aad", "ee91be"], # [NO SMOKING SYMBOL] U+1F6AD -> U+E47E
+  ["e299bf", "ee91bf"], # [WHEELCHAIR SYMBOL] U+267F -> U+E47F
+  ["f09f9aa9", "eeacac"], # [TRIANGULAR FLAG ON POST] U+1F6A9 -> U+EB2C
+  ["e29aa0", "ee9281"], # [WARNING SIGN] U+26A0 -> U+E481
+  ["e29b94", "ee9284"], # [NO ENTRY] U+26D4 -> U+E484
+  ["e299bb", "eeadb9"], # [BLACK UNIVERSAL RECYCLING SYMBOL] U+267B -> U+EB79
+  ["f09f9ab2", "ee92ae"], # [BICYCLE] U+1F6B2 -> U+E4AE
+  ["f09f9ab6", "eeadb2"], # [PEDESTRIAN] U+1F6B6 -> U+EB72
+  ["f09f9ab9", "5be299825d"], # [MENS SYMBOL] U+1F6B9 -> "[♂]"
+  ["f09f9aba", "5be299805d"], # [WOMENS SYMBOL] U+1F6BA -> "[♀]"
+  ["f09f9b80", "ee9798"], # [BATH] U+1F6C0 -> U+E5D8
+  ["f09f9abb", "ee92a5"], # [RESTROOM] U+1F6BB -> U+E4A5
+  ["f09f9abd", "ee92a5"], # [TOILET] U+1F6BD -> U+E4A5
+  ["f09f9abe", "ee92a5"], # [WATER CLOSET] U+1F6BE -> U+E4A5
+  ["f09f9abc", "eeac98"], # [BABY SYMBOL] U+1F6BC -> U+EB18
+  ["f09f9aaa", "5be38389e382a25d"], # [DOOR] U+1F6AA -> "[ドア]"
+  ["f09f9aab", "ee9581"], # [NO ENTRY SIGN] U+1F6AB -> U+E541
+  ["e29c94", "ee9597"], # [HEAVY CHECK MARK] U+2714 -> U+E557
+  ["f09f8691", "ee96ab"], # [SQUARED CL] U+1F191 -> U+E5AB
+  ["f09f8692", "eeaa85"], # [SQUARED COOL] U+1F192 -> U+EA85
+  ["f09f8693", "ee95b8"], # [SQUARED FREE] U+1F193 -> U+E578
+  ["f09f8694", "eeaa88"], # [SQUARED ID] U+1F194 -> U+EA88
+  ["f09f8695", "ee96b5"], # [SQUARED NEW] U+1F195 -> U+E5B5
+  ["f09f8696", "5b4e475d"], # [SQUARED NG] U+1F196 -> "[NG]"
+  ["f09f8697", "ee96ad"], # [SQUARED OK] U+1F197 -> U+E5AD
+  ["f09f8698", "ee93a8"], # [SQUARED SOS] U+1F198 -> U+E4E8
+  ["f09f8699", "ee948f"], # [SQUARED UP WITH EXCLAMATION MARK] U+1F199 -> U+E50F
+  ["f09f869a", "ee9792"], # [SQUARED VS] U+1F19A -> U+E5D2
+  ["f09f8881", "5be382b3e382b35d"], # [SQUARED KATAKANA KOKO] U+1F201 -> "[ココ]"
+  ["f09f8882", "eeaa87"], # [SQUARED KATAKANA SA] U+1F202 -> U+EA87
+  ["f09f88b2", "5be7a6815d"], # [SQUARED CJK UNIFIED IDEOGRAPH-7981] U+1F232 -> "[禁]"
+  ["f09f88b3", "eeaa8a"], # [SQUARED CJK UNIFIED IDEOGRAPH-7A7A] U+1F233 -> U+EA8A
+  ["f09f88b4", "5be590885d"], # [SQUARED CJK UNIFIED IDEOGRAPH-5408] U+1F234 -> "[合]"
+  ["f09f88b5", "eeaa89"], # [SQUARED CJK UNIFIED IDEOGRAPH-6E80] U+1F235 -> U+EA89
+  ["f09f88b6", "5be69c895d"], # [SQUARED CJK UNIFIED IDEOGRAPH-6709] U+1F236 -> "[有]"
+  ["f09f889a", "5be784a15d"], # [SQUARED CJK UNIFIED IDEOGRAPH-7121] U+1F21A -> "[無]"
+  ["f09f88b7", "5be69c885d"], # [SQUARED CJK UNIFIED IDEOGRAPH-6708] U+1F237 -> "[月]"
+  ["f09f88b8", "5be794b35d"], # [SQUARED CJK UNIFIED IDEOGRAPH-7533] U+1F238 -> "[申]"
+  ["f09f88b9", "eeaa86"], # [SQUARED CJK UNIFIED IDEOGRAPH-5272] U+1F239 -> U+EA86
+  ["f09f88af", "eeaa8b"], # [SQUARED CJK UNIFIED IDEOGRAPH-6307] U+1F22F -> U+EA8B
+  ["f09f88ba", "eeaa8c"], # [SQUARED CJK UNIFIED IDEOGRAPH-55B6] U+1F23A -> U+EA8C
+  ["e38a99", "ee93b1"], # [CIRCLED IDEOGRAPH SECRET] U+3299 -> U+E4F1
+  ["e38a97", "eeaa99"], # [CIRCLED IDEOGRAPH CONGRATULATION] U+3297 -> U+EA99
+  ["f09f8990", "ee93b7"], # [CIRCLED IDEOGRAPH ADVANTAGE] U+1F250 -> U+E4F7
+  ["f09f8991", "eeac81"], # [CIRCLED IDEOGRAPH ACCEPT] U+1F251 -> U+EB01
+  ["e29e95", "ee94bc"], # [HEAVY PLUS SIGN] U+2795 -> U+E53C
+  ["e29e96", "ee94bd"], # [HEAVY MINUS SIGN] U+2796 -> U+E53D
+  ["e29c96", "ee958f"], # [HEAVY MULTIPLICATION X] U+2716 -> U+E54F
+  ["e29e97", "ee9594"], # [HEAVY DIVISION SIGN] U+2797 -> U+E554
+  ["f09f92a0", "e38093"], # [DIAMOND SHAPE WITH A DOT INSIDE] U+1F4A0 -> U+3013 (GETA)
+  ["f09f92a1", "ee91b6"], # [ELECTRIC LIGHT BULB] U+1F4A1 -> U+E476
+  ["f09f92a2", "ee93a5"], # [ANGER SYMBOL] U+1F4A2 -> U+E4E5
+  ["f09f92a3", "ee91ba"], # [BOMB] U+1F4A3 -> U+E47A
+  ["f09f92a4", "ee91b5"], # [SLEEPING SYMBOL] U+1F4A4 -> U+E475
+  ["f09f92a5", "ee96b0"], # [COLLISION SYMBOL] U+1F4A5 -> U+E5B0
+  ["f09f92a6", "ee96b1"], # [SPLASHING SWEAT SYMBOL] U+1F4A6 -> U+E5B1
+  ["f09f92a7", "ee93a6"], # [DROP OF WATER] U+1F4A7 -> U+E4E6
+  ["f09f92a8", "ee93b4"], # [DASH SYMBOL] U+1F4A8 -> U+E4F4
+  ["f09f92a9", "ee93b5"], # [PILE OF POO] U+1F4A9 -> U+E4F5
+  ["f09f92aa", "ee93a9"], # [FLEXED BICEPS] U+1F4AA -> U+E4E9
+  ["f09f92ab", "eead9c"], # [DIZZY SYMBOL] U+1F4AB -> U+EB5C
+  ["f09f92ac", "ee93bd"], # [SPEECH BALLOON] U+1F4AC -> U+E4FD
+  ["e29ca8", "eeaaab"], # [SPARKLES] U+2728 -> U+EAAB
+  ["e29cb4", "ee91b9"], # [EIGHT POINTED BLACK STAR] U+2734 -> U+E479
+  ["e29cb3", "ee94be"], # [EIGHT SPOKED ASTERISK] U+2733 -> U+E53E
+  ["e29aaa", "ee94ba"], # [MEDIUM WHITE CIRCLE] U+26AA -> U+E53A
+  ["e29aab", "ee94bb"], # [MEDIUM BLACK CIRCLE] U+26AB -> U+E53B
+  ["f09f94b4", "ee958a"], # [LARGE RED CIRCLE] U+1F534 -> U+E54A
+  ["f09f94b5", "ee958b"], # [LARGE BLUE CIRCLE] U+1F535 -> U+E54B
+  ["f09f94b2", "ee958b"], # [BLACK SQUARE BUTTON] U+1F532 -> U+E54B
+  ["f09f94b3", "ee958b"], # [WHITE SQUARE BUTTON] U+1F533 -> U+E54B
+  ["e2ad90", "ee928b"], # [WHITE MEDIUM STAR] U+2B50 -> U+E48B
+  ["e2ac9c", "ee9588"], # [WHITE LARGE SQUARE] U+2B1C -> U+E548
+  ["e2ac9b", "ee9589"], # [BLACK LARGE SQUARE] U+2B1B -> U+E549
+  ["e296ab", "ee94b1"], # [WHITE SMALL SQUARE] U+25AB -> U+E531
+  ["e296aa", "ee94b2"], # [BLACK SMALL SQUARE] U+25AA -> U+E532
+  ["e297bd", "ee94b4"], # [WHITE MEDIUM SMALL SQUARE] U+25FD -> U+E534
+  ["e297be", "ee94b5"], # [BLACK MEDIUM SMALL SQUARE] U+25FE -> U+E535
+  ["e297bb", "ee94b8"], # [WHITE MEDIUM SQUARE] U+25FB -> U+E538
+  ["e297bc", "ee94b9"], # [BLACK MEDIUM SQUARE] U+25FC -> U+E539
+  ["f09f94b6", "ee9586"], # [LARGE ORANGE DIAMOND] U+1F536 -> U+E546
+  ["f09f94b7", "ee9587"], # [LARGE BLUE DIAMOND] U+1F537 -> U+E547
+  ["f09f94b8", "ee94b6"], # [SMALL ORANGE DIAMOND] U+1F538 -> U+E536
+  ["f09f94b9", "ee94b7"], # [SMALL BLUE DIAMOND] U+1F539 -> U+E537
+  ["e29d87", "ee91ac"], # [SPARKLE] U+2747 -> U+E46C
+  ["f09f92ae", "ee93b0"], # [WHITE FLOWER] U+1F4AE -> U+E4F0
+  ["f09f92af", "ee93b2"], # [HUNDRED POINTS SYMBOL] U+1F4AF -> U+E4F2
+  ["e286a9", "ee959d"], # [LEFTWARDS ARROW WITH HOOK] U+21A9 -> U+E55D
+  ["e286aa", "ee959c"], # [RIGHTWARDS ARROW WITH HOOK] U+21AA -> U+E55C
+  ["f09f9483", "eeac8d"], # [CLOCKWISE DOWNWARDS AND UPWARDS OPEN CIRCLE ARROWS] U+1F503 -> U+EB0D
+  ["f09f948a", "ee9491"], # [SPEAKER WITH THREE SOUND WAVES] U+1F50A -> U+E511
+  ["f09f948b", "ee9684"], # [BATTERY] U+1F50B -> U+E584
+  ["f09f948c", "ee9689"], # [ELECTRIC PLUG] U+1F50C -> U+E589
+  ["f09f948d", "ee9498"], # [LEFT-POINTING MAGNIFYING GLASS] U+1F50D -> U+E518
+  ["f09f948e", "eeac85"], # [RIGHT-POINTING MAGNIFYING GLASS] U+1F50E -> U+EB05
+  ["f09f9492", "ee949c"], # [LOCK] U+1F512 -> U+E51C
+  ["f09f9493", "ee949c"], # [OPEN LOCK] U+1F513 -> U+E51C
+  ["f09f948f", "eeac8c"], # [LOCK WITH INK PEN] U+1F50F -> U+EB0C
+  ["f09f9490", "eeabbc"], # [CLOSED LOCK WITH KEY] U+1F510 -> U+EAFC
+  ["f09f9491", "ee9499"], # [KEY] U+1F511 -> U+E519
+  ["f09f9494", "ee9492"], # [BELL] U+1F514 -> U+E512
+  ["e29891", "eeac82"], # [BALLOT BOX WITH CHECK] U+2611 -> U+EB02
+  ["f09f9498", "eeac84"], # [RADIO BUTTON] U+1F518 -> U+EB04
+  ["f09f9496", "eeac87"], # [BOOKMARK] U+1F516 -> U+EB07
+  ["f09f9497", "ee968a"], # [LINK SYMBOL] U+1F517 -> U+E58A
+  ["f09f9499", "eeac86"], # [BACK WITH LEFTWARDS ARROW ABOVE] U+1F519 -> U+EB06
+  ["f09f949a", "5b656e645d"], # [END WITH LEFTWARDS ARROW ABOVE] U+1F51A -> "[end]"
+  ["f09f949b", "5b4f4e5d"], # [ON WITH EXCLAMATION MARK WITH LEFT RIGHT ARROW ABOVE] U+1F51B -> "[ON]"
+  ["f09f949c", "5b534f4f4e5d"], # [SOON WITH RIGHTWARDS ARROW ABOVE] U+1F51C -> "[SOON]"
+  ["f09f949d", "5b544f505d"], # [TOP WITH UPWARDS ARROW ABOVE] U+1F51D -> "[TOP]"
+  ["e28083", "ee968c"], # [EM SPACE] U+2003 -> U+E58C
+  ["e28082", "ee968d"], # [EN SPACE] U+2002 -> U+E58D
+  ["e28085", "ee968e"], # [FOUR-PER-EM SPACE] U+2005 -> U+E58E
+  ["e29c85", "ee959e"], # [WHITE HEAVY CHECK MARK] U+2705 -> U+E55E
+  ["e29c8a", "eeae83"], # [RAISED FIST] U+270A -> U+EB83
+  ["e29c8b", "ee96a7"], # [RAISED HAND] U+270B -> U+E5A7
+  ["e29c8c", "ee96a6"], # [VICTORY HAND] U+270C -> U+E5A6
+  ["f09f918a", "ee93b3"], # [FISTED HAND SIGN] U+1F44A -> U+E4F3
+  ["f09f918d", "ee93b9"], # [THUMBS UP SIGN] U+1F44D -> U+E4F9
+  ["e2989d", "ee93b6"], # [WHITE UP POINTING INDEX] U+261D -> U+E4F6
+  ["f09f9186", "eeaa8d"], # [WHITE UP POINTING BACKHAND INDEX] U+1F446 -> U+EA8D
+  ["f09f9187", "eeaa8e"], # [WHITE DOWN POINTING BACKHAND INDEX] U+1F447 -> U+EA8E
+  ["f09f9188", "ee93bf"], # [WHITE LEFT POINTING BACKHAND INDEX] U+1F448 -> U+E4FF
+  ["f09f9189", "ee9480"], # [WHITE RIGHT POINTING BACKHAND INDEX] U+1F449 -> U+E500
+  ["f09f918b", "eeab96"], # [WAVING HAND SIGN] U+1F44B -> U+EAD6
+  ["f09f918f", "eeab93"], # [CLAPPING HANDS SIGN] U+1F44F -> U+EAD3
+  ["f09f918c", "eeab94"], # [OK HAND SIGN] U+1F44C -> U+EAD4
+  ["f09f918e", "eeab95"], # [THUMBS DOWN SIGN] U+1F44E -> U+EAD5
+  ["f09f9190", "eeab96"], # [OPEN HANDS SIGN] U+1F450 -> U+EAD6
+]
+
+EMOJI_EXCHANGE_TBL['UTF-8']['UTF8-SoftBank'] = [
+  ["e29880", "ee818a"], # [BLACK SUN WITH RAYS] U+2600 -> U+E04A
+  ["e29881", "ee8189"], # [CLOUD] U+2601 -> U+E049
+  ["e29894", "ee818b"], # [UMBRELLA WITH RAIN DROPS] U+2614 -> U+E04B
+  ["e29b84", "ee8188"], # [SNOWMAN WITHOUT SNOW] U+26C4 -> U+E048
+  ["e29aa1", "ee84bd"], # [HIGH VOLTAGE SIGN] U+26A1 -> U+E13D
+  ["f09f8c80", "ee9183"], # [CYCLONE] U+1F300 -> U+E443
+  ["f09f8c81", "5be99ca75d"], # [FOGGY] U+1F301 -> "[霧]"
+  ["f09f8c82", "ee90bc"], # [CLOSED UMBRELLA] U+1F302 -> U+E43C
+  ["f09f8c83", "ee918b"], # [NIGHT WITH STARS] U+1F303 -> U+E44B
+  ["f09f8c84", "ee818d"], # [SUNRISE OVER MOUNTAINS] U+1F304 -> U+E04D
+  ["f09f8c85", "ee9189"], # [SUNRISE] U+1F305 -> U+E449
+  ["f09f8c87", "ee918a"], # [SUNSET OVER BUILDINGS] U+1F307 -> U+E44A
+  ["f09f8c88", "ee918c"], # [RAINBOW] U+1F308 -> U+E44C
+  ["e29d84", "5be99baae7b590e699b65d"], # [SNOWFLAKE] U+2744 -> "[雪結晶]"
+  ["e29b85", "ee818aee8189"], # [SUN BEHIND CLOUD] U+26C5 -> U+E04A U+E049
+  ["f09f8c89", "ee918b"], # [BRIDGE AT NIGHT] U+1F309 -> U+E44B
+  ["f09f8c8a", "ee90be"], # [WATER WAVE] U+1F30A -> U+E43E
+  ["f09f8c8b", "5be781abe5b1b15d"], # [VOLCANO] U+1F30B -> "[火山]"
+  ["f09f8c8c", "ee918b"], # [MILKY WAY] U+1F30C -> U+E44B
+  ["f09f8c8f", "5be59cb0e790835d"], # [EARTH GLOBE ASIA-AUSTRALIA] U+1F30F -> "[地球]"
+  ["f09f8c91", "e2978f"], # [NEW MOON SYMBOL] U+1F311 -> "●"
+  ["f09f8c94", "ee818c"], # [WAXING GIBBOUS MOON SYMBOL] U+1F314 -> U+E04C
+  ["f09f8c93", "ee818c"], # [FIRST QUARTER MOON SYMBOL] U+1F313 -> U+E04C
+  ["f09f8c99", "ee818c"], # [CRESCENT MOON] U+1F319 -> U+E04C
+  ["f09f8c95", "e2978b"], # [FULL MOON SYMBOL] U+1F315 -> "○"
+  ["f09f8c9b", "ee818c"], # [FIRST QUARTER MOON WITH FACE] U+1F31B -> U+E04C
+  ["f09f8c9f", "ee8cb5"], # [GLOWING STAR] U+1F31F -> U+E335
+  ["f09f8ca0", "e29886e5bda1"], # [SHOOTING STAR] U+1F320 -> "☆彡"
+  ["f09f9590", "ee80a4"], # [CLOCK FACE ONE OCLOCK] U+1F550 -> U+E024
+  ["f09f9591", "ee80a5"], # [CLOCK FACE TWO OCLOCK] U+1F551 -> U+E025
+  ["f09f9592", "ee80a6"], # [CLOCK FACE THREE OCLOCK] U+1F552 -> U+E026
+  ["f09f9593", "ee80a7"], # [CLOCK FACE FOUR OCLOCK] U+1F553 -> U+E027
+  ["f09f9594", "ee80a8"], # [CLOCK FACE FIVE OCLOCK] U+1F554 -> U+E028
+  ["f09f9595", "ee80a9"], # [CLOCK FACE SIX OCLOCK] U+1F555 -> U+E029
+  ["f09f9596", "ee80aa"], # [CLOCK FACE SEVEN OCLOCK] U+1F556 -> U+E02A
+  ["f09f9597", "ee80ab"], # [CLOCK FACE EIGHT OCLOCK] U+1F557 -> U+E02B
+  ["f09f9598", "ee80ac"], # [CLOCK FACE NINE OCLOCK] U+1F558 -> U+E02C
+  ["f09f9599", "ee80ad"], # [CLOCK FACE TEN OCLOCK] U+1F559 -> U+E02D
+  ["f09f959a", "ee80ae"], # [CLOCK FACE ELEVEN OCLOCK] U+1F55A -> U+E02E
+  ["f09f959b", "ee80af"], # [CLOCK FACE TWELVE OCLOCK] U+1F55B -> U+E02F
+  ["e28c9a", "5be88595e69982e8a8885d"], # [WATCH] U+231A -> "[腕時計]"
+  ["e28c9b", "5be7a082e69982e8a8885d"], # [HOURGLASS] U+231B -> "[砂時計]"
+  ["e28fb0", "ee80ad"], # [ALARM CLOCK] U+23F0 -> U+E02D
+  ["e28fb3", "5be7a082e69982e8a8885d"], # [HOURGLASS WITH FLOWING SAND] U+23F3 -> "[砂時計]"
+  ["e29988", "ee88bf"], # [ARIES] U+2648 -> U+E23F
+  ["e29989", "ee8980"], # [TAURUS] U+2649 -> U+E240
+  ["e2998a", "ee8981"], # [GEMINI] U+264A -> U+E241
+  ["e2998b", "ee8982"], # [CANCER] U+264B -> U+E242
+  ["e2998c", "ee8983"], # [LEO] U+264C -> U+E243
+  ["e2998d", "ee8984"], # [VIRGO] U+264D -> U+E244
+  ["e2998e", "ee8985"], # [LIBRA] U+264E -> U+E245
+  ["e2998f", "ee8986"], # [SCORPIUS] U+264F -> U+E246
+  ["e29990", "ee8987"], # [SAGITTARIUS] U+2650 -> U+E247
+  ["e29991", "ee8988"], # [CAPRICORN] U+2651 -> U+E248
+  ["e29992", "ee8989"], # [AQUARIUS] U+2652 -> U+E249
+  ["e29993", "ee898a"], # [PISCES] U+2653 -> U+E24A
+  ["e29b8e", "ee898b"], # [OPHIUCHUS] U+26CE -> U+E24B
+  ["f09f8d80", "ee8490"], # [FOUR LEAF CLOVER] U+1F340 -> U+E110
+  ["f09f8cb7", "ee8c84"], # [TULIP] U+1F337 -> U+E304
+  ["f09f8cb1", "ee8490"], # [SEEDLING] U+1F331 -> U+E110
+  ["f09f8d81", "ee8498"], # [MAPLE LEAF] U+1F341 -> U+E118
+  ["f09f8cb8", "ee80b0"], # [CHERRY BLOSSOM] U+1F338 -> U+E030
+  ["f09f8cb9", "ee80b2"], # [ROSE] U+1F339 -> U+E032
+  ["f09f8d82", "ee8499"], # [FALLEN LEAF] U+1F342 -> U+E119
+  ["f09f8d83", "ee9187"], # [LEAF FLUTTERING IN WIND] U+1F343 -> U+E447
+  ["f09f8cba", "ee8c83"], # [HIBISCUS] U+1F33A -> U+E303
+  ["f09f8cbb", "ee8c85"], # [SUNFLOWER] U+1F33B -> U+E305
+  ["f09f8cb4", "ee8c87"], # [PALM TREE] U+1F334 -> U+E307
+  ["f09f8cb5", "ee8c88"], # [CACTUS] U+1F335 -> U+E308
+  ["f09f8cbe", "ee9184"], # [EAR OF RICE] U+1F33E -> U+E444
+  ["f09f8cbd", "5be381a8e38186e38282e3828de38193e381975d"], # [EAR OF MAIZE] U+1F33D -> "[とうもろこし]"
+  ["f09f8d84", "5be382ade3838ee382b35d"], # [MUSHROOM] U+1F344 -> "[キノコ]"
+  ["f09f8cb0", "5be6a0975d"], # [CHESTNUT] U+1F330 -> "[栗]"
+  ["f09f8cbc", "ee8c85"], # [BLOSSOM] U+1F33C -> U+E305
+  ["f09f8cbf", "ee8490"], # [HERB] U+1F33F -> U+E110
+  ["f09f8d92", "5be38195e3818fe38289e38293e381bc5d"], # [CHERRIES] U+1F352 -> "[さくらんぼ]"
+  ["f09f8d8c", "5be38390e3838ae3838a5d"], # [BANANA] U+1F34C -> "[バナナ]"
+  ["f09f8d8e", "ee8d85"], # [RED APPLE] U+1F34E -> U+E345
+  ["f09f8d8a", "ee8d86"], # [TANGERINE] U+1F34A -> U+E346
+  ["f09f8d93", "ee8d87"], # [STRAWBERRY] U+1F353 -> U+E347
+  ["f09f8d89", "ee8d88"], # [WATERMELON] U+1F349 -> U+E348
+  ["f09f8d85", "ee8d89"], # [TOMATO] U+1F345 -> U+E349
+  ["f09f8d86", "ee8d8a"], # [AUBERGINE] U+1F346 -> U+E34A
+  ["f09f8d88", "5be383a1e383ade383b35d"], # [MELON] U+1F348 -> "[メロン]"
+  ["f09f8d8d", "5be38391e382a4e3838ae38383e38397e383ab5d"], # [PINEAPPLE] U+1F34D -> "[パイナップル]"
+  ["f09f8d87", "5be38396e38389e382a65d"], # [GRAPES] U+1F347 -> "[ブドウ]"
+  ["f09f8d91", "5be383a2e383a25d"], # [PEACH] U+1F351 -> "[モモ]"
+  ["f09f8d8f", "ee8d85"], # [GREEN APPLE] U+1F34F -> U+E345
+  ["f09f9180", "ee9099"], # [EYES] U+1F440 -> U+E419
+  ["f09f9182", "ee909b"], # [EAR] U+1F442 -> U+E41B
+  ["f09f9183", "ee909a"], # [NOSE] U+1F443 -> U+E41A
+  ["f09f9184", "ee909c"], # [MOUTH] U+1F444 -> U+E41C
+  ["f09f9185", "ee9089"], # [TONGUE] U+1F445 -> U+E409
+  ["f09f9284", "ee8c9c"], # [LIPSTICK] U+1F484 -> U+E31C
+  ["f09f9285", "ee8c9d"], # [NAIL POLISH] U+1F485 -> U+E31D
+  ["f09f9286", "ee8c9e"], # [FACE MASSAGE] U+1F486 -> U+E31E
+  ["f09f9287", "ee8c9f"], # [HAIRCUT] U+1F487 -> U+E31F
+  ["f09f9288", "ee8ca0"], # [BARBER POLE] U+1F488 -> U+E320
+  ["f09f91a4", "e38093"], # [BUST IN SILHOUETTE] U+1F464 -> U+3013 (GETA)
+  ["f09f91a6", "ee8081"], # [BOY] U+1F466 -> U+E001
+  ["f09f91a7", "ee8082"], # [GIRL] U+1F467 -> U+E002
+  ["f09f91a8", "ee8084"], # [MAN] U+1F468 -> U+E004
+  ["f09f91a9", "ee8085"], # [WOMAN] U+1F469 -> U+E005
+  ["f09f91aa", "5be5aeb6e6978f5d"], # [FAMILY] U+1F46A -> "[家族]"
+  ["f09f91ab", "ee90a8"], # [MAN AND WOMAN HOLDING HANDS] U+1F46B -> U+E428
+  ["f09f91ae", "ee8592"], # [POLICE OFFICER] U+1F46E -> U+E152
+  ["f09f91af", "ee90a9"], # [WOMAN WITH BUNNY EARS] U+1F46F -> U+E429
+  ["f09f91b0", "5be88ab1e5ab815d"], # [BRIDE WITH VEIL] U+1F470 -> "[花嫁]"
+  ["f09f91b1", "ee9495"], # [WESTERN PERSON] U+1F471 -> U+E515
+  ["f09f91b2", "ee9496"], # [MAN WITH GUA PI MAO] U+1F472 -> U+E516
+  ["f09f91b3", "ee9497"], # [MAN WITH TURBAN] U+1F473 -> U+E517
+  ["f09f91b4", "ee9498"], # [OLDER MAN] U+1F474 -> U+E518
+  ["f09f91b5", "ee9499"], # [OLDER WOMAN] U+1F475 -> U+E519
+  ["f09f91b6", "ee949a"], # [BABY] U+1F476 -> U+E51A
+  ["f09f91b7", "ee949b"], # [CONSTRUCTION WORKER] U+1F477 -> U+E51B
+  ["f09f91b8", "ee949c"], # [PRINCESS] U+1F478 -> U+E51C
+  ["f09f91b9", "5be381aae381bee381afe381925d"], # [JAPANESE OGRE] U+1F479 -> "[なまはげ]"
+  ["f09f91ba", "5be5a4a9e78b975d"], # [JAPANESE GOBLIN] U+1F47A -> "[天狗]"
+  ["f09f91bb", "ee849b"], # [GHOST] U+1F47B -> U+E11B
+  ["f09f91bc", "ee818e"], # [BABY ANGEL] U+1F47C -> U+E04E
+  ["f09f91bd", "ee848c"], # [EXTRATERRESTRIAL ALIEN] U+1F47D -> U+E10C
+  ["f09f91be", "ee84ab"], # [ALIEN MONSTER] U+1F47E -> U+E12B
+  ["f09f91bf", "ee849a"], # [IMP] U+1F47F -> U+E11A
+  ["f09f9280", "ee849c"], # [SKULL] U+1F480 -> U+E11C
+  ["f09f9281", "ee8993"], # [INFORMATION DESK PERSON] U+1F481 -> U+E253
+  ["f09f9282", "ee949e"], # [GUARDSMAN] U+1F482 -> U+E51E
+  ["f09f9283", "ee949f"], # [DANCER] U+1F483 -> U+E51F
+  ["f09f908c", "5be382abe382bfe38384e383a0e383aa5d"], # [SNAIL] U+1F40C -> "[カタツムリ]"
+  ["f09f908d", "ee94ad"], # [SNAKE] U+1F40D -> U+E52D
+  ["f09f908e", "ee84b4"], # [HORSE] U+1F40E -> U+E134
+  ["f09f9094", "ee94ae"], # [CHICKEN] U+1F414 -> U+E52E
+  ["f09f9097", "ee94af"], # [BOAR] U+1F417 -> U+E52F
+  ["f09f90ab", "ee94b0"], # [BACTRIAN CAMEL] U+1F42B -> U+E530
+  ["f09f9098", "ee94a6"], # [ELEPHANT] U+1F418 -> U+E526
+  ["f09f90a8", "ee94a7"], # [KOALA] U+1F428 -> U+E527
+  ["f09f9092", "ee94a8"], # [MONKEY] U+1F412 -> U+E528
+  ["f09f9091", "ee94a9"], # [SHEEP] U+1F411 -> U+E529
+  ["f09f9099", "ee848a"], # [OCTOPUS] U+1F419 -> U+E10A
+  ["f09f909a", "ee9181"], # [SPIRAL SHELL] U+1F41A -> U+E441
+  ["f09f909b", "ee94a5"], # [BUG] U+1F41B -> U+E525
+  ["f09f909c", "5be382a2e383aa5d"], # [ANT] U+1F41C -> "[アリ]"
+  ["f09f909d", "5be3839fe38384e38390e383815d"], # [HONEYBEE] U+1F41D -> "[ミツバチ]"
+  ["f09f909e", "5be381a6e38293e381a8e38186e899ab5d"], # [LADY BEETLE] U+1F41E -> "[てんとう虫]"
+  ["f09f90a0", "ee94a2"], # [TROPICAL FISH] U+1F420 -> U+E522
+  ["f09f90a1", "ee8099"], # [BLOWFISH] U+1F421 -> U+E019
+  ["f09f90a2", "5be382abe383a15d"], # [TURTLE] U+1F422 -> "[カメ]"
+  ["f09f90a4", "ee94a3"], # [BABY CHICK] U+1F424 -> U+E523
+  ["f09f90a5", "ee94a3"], # [FRONT-FACING BABY CHICK] U+1F425 -> U+E523
+  ["f09f90a6", "ee94a1"], # [BIRD] U+1F426 -> U+E521
+  ["f09f90a3", "ee94a3"], # [HATCHING CHICK] U+1F423 -> U+E523
+  ["f09f90a7", "ee8195"], # [PENGUIN] U+1F427 -> U+E055
+  ["f09f90a9", "ee8192"], # [POODLE] U+1F429 -> U+E052
+  ["f09f909f", "ee8099"], # [FISH] U+1F41F -> U+E019
+  ["f09f90ac", "ee94a0"], # [DOLPHIN] U+1F42C -> U+E520
+  ["f09f90ad", "ee8193"], # [MOUSE FACE] U+1F42D -> U+E053
+  ["f09f90af", "ee8190"], # [TIGER FACE] U+1F42F -> U+E050
+  ["f09f90b1", "ee818f"], # [CAT FACE] U+1F431 -> U+E04F
+  ["f09f90b3", "ee8194"], # [SPOUTING WHALE] U+1F433 -> U+E054
+  ["f09f90b4", "ee809a"], # [HORSE FACE] U+1F434 -> U+E01A
+  ["f09f90b5", "ee8489"], # [MONKEY FACE] U+1F435 -> U+E109
+  ["f09f90b6", "ee8192"], # [DOG FACE] U+1F436 -> U+E052
+  ["f09f90b7", "ee848b"], # [PIG FACE] U+1F437 -> U+E10B
+  ["f09f90bb", "ee8191"], # [BEAR FACE] U+1F43B -> U+E051
+  ["f09f90b9", "ee94a4"], # [HAMSTER FACE] U+1F439 -> U+E524
+  ["f09f90ba", "ee94aa"], # [WOLF FACE] U+1F43A -> U+E52A
+  ["f09f90ae", "ee94ab"], # [COW FACE] U+1F42E -> U+E52B
+  ["f09f90b0", "ee94ac"], # [RABBIT FACE] U+1F430 -> U+E52C
+  ["f09f90b8", "ee94b1"], # [FROG FACE] U+1F438 -> U+E531
+  ["f09f90be", "ee94b6"], # [PAW PRINTS] U+1F43E -> U+E536
+  ["f09f90b2", "5be8beb05d"], # [DRAGON FACE] U+1F432 -> "[辰]"
+  ["f09f90bc", "5be38391e383b3e383805d"], # [PANDA FACE] U+1F43C -> "[パンダ]"
+  ["f09f90bd", "ee848b"], # [PIG NOSE] U+1F43D -> U+E10B
+  ["f09f9880", "ee8199"], # [ANGRY FACE] U+1F600 -> U+E059
+  ["f09f9881", "ee9083"], # [ANGUISHED FACE] U+1F601 -> U+E403
+  ["f09f9882", "ee9090"], # [ASTONISHED FACE] U+1F602 -> U+E410
+  ["f09f9883", "ee8198"], # [DISAPPOINTED FACE] U+1F603 -> U+E058
+  ["f09f9884", "ee9086"], # [DIZZY FACE] U+1F604 -> U+E406
+  ["f09f9885", "ee908f"], # [EXASPERATED FACE] U+1F605 -> U+E40F
+  ["f09f9886", "ee908e"], # [EXPRESSIONLESS FACE] U+1F606 -> U+E40E
+  ["f09f9887", "ee8486"], # [FACE WITH HEART-SHAPED EYES] U+1F607 -> U+E106
+  ["f09f9888", "ee9084"], # [FACE WITH LOOK OF TRIUMPH] U+1F608 -> U+E404
+  ["f09f9889", "ee8485"], # [WINKING FACE WITH STUCK-OUT TONGUE] U+1F609 -> U+E105
+  ["f09f988a", "ee9089"], # [FACE WITH STUCK-OUT TONGUE] U+1F60A -> U+E409
+  ["f09f988b", "ee8196"], # [FACE SAVOURING DELICIOUS FOOD] U+1F60B -> U+E056
+  ["f09f988c", "ee9098"], # [FACE THROWING A KISS] U+1F60C -> U+E418
+  ["f09f988d", "ee9097"], # [FACE KISSING] U+1F60D -> U+E417
+  ["f09f988e", "ee908c"], # [FACE WITH MASK] U+1F60E -> U+E40C
+  ["f09f988f", "ee908d"], # [FLUSHED FACE] U+1F60F -> U+E40D
+  ["f09f9890", "ee8197"], # [HAPPY FACE WITH OPEN MOUTH] U+1F610 -> U+E057
+  ["f09f9891", "ee9095ee8cb1"], # [HAPPY FACE WITH OPEN MOUTH AND COLD SWEAT] U+1F611 -> U+E415 U+E331
+  ["f09f9892", "ee908a"], # [HAPPY FACE WITH OPEN MOUTH AND CLOSED EYES] U+1F612 -> U+E40A
+  ["f09f9893", "ee9084"], # [HAPPY FACE WITH GRIN] U+1F613 -> U+E404
+  ["f09f9894", "ee9092"], # [HAPPY AND CRYING FACE] U+1F614 -> U+E412
+  ["f09f9895", "ee8196"], # [HAPPY FACE WITH WIDE MOUTH AND RAISED EYEBROWS] U+1F615 -> U+E056
+  ["e298ba", "ee9094"], # [WHITE SMILING FACE] U+263A -> U+E414
+  ["f09f9896", "ee9095"], # [HAPPY FACE WITH OPEN MOUTH AND RAISED EYEBROWS] U+1F616 -> U+E415
+  ["f09f9897", "ee9093"], # [CRYING FACE] U+1F617 -> U+E413
+  ["f09f9898", "ee9091"], # [LOUDLY CRYING FACE] U+1F618 -> U+E411
+  ["f09f9899", "ee908b"], # [FEARFUL FACE] U+1F619 -> U+E40B
+  ["f09f989a", "ee9086"], # [PERSEVERING FACE] U+1F61A -> U+E406
+  ["f09f989b", "ee9096"], # [POUTING FACE] U+1F61B -> U+E416
+  ["f09f989c", "ee908a"], # [RELIEVED FACE] U+1F61C -> U+E40A
+  ["f09f989d", "ee9087"], # [CONFOUNDED FACE] U+1F61D -> U+E407
+  ["f09f989e", "ee9083"], # [PENSIVE FACE] U+1F61E -> U+E403
+  ["f09f989f", "ee8487"], # [FACE SCREAMING IN FEAR] U+1F61F -> U+E107
+  ["f09f98a0", "ee9088"], # [SLEEPY FACE] U+1F620 -> U+E408
+  ["f09f98a1", "ee9082"], # [SMIRKING FACE] U+1F621 -> U+E402
+  ["f09f98a2", "ee8488"], # [FACE WITH COLD SWEAT] U+1F622 -> U+E108
+  ["f09f98a3", "ee9081"], # [DISAPPOINTED BUT RELIEVED FACE] U+1F623 -> U+E401
+  ["f09f98a4", "ee9086"], # [TIRED FACE] U+1F624 -> U+E406
+  ["f09f98a5", "ee9085"], # [WINKING FACE] U+1F625 -> U+E405
+  ["f09f98ab", "ee8197"], # [CAT FACE WITH OPEN MOUTH] U+1F62B -> U+E057
+  ["f09f98ac", "ee9084"], # [HAPPY CAT FACE WITH GRIN] U+1F62C -> U+E404
+  ["f09f98ad", "ee9092"], # [HAPPY AND CRYING CAT FACE] U+1F62D -> U+E412
+  ["f09f98ae", "ee9098"], # [CAT FACE KISSING] U+1F62E -> U+E418
+  ["f09f98af", "ee8486"], # [CAT FACE WITH HEART-SHAPED EYES] U+1F62F -> U+E106
+  ["f09f98b0", "ee9093"], # [CRYING CAT FACE] U+1F630 -> U+E413
+  ["f09f98b1", "ee9096"], # [POUTING CAT FACE] U+1F631 -> U+E416
+  ["f09f98b2", "ee9084"], # [CAT FACE WITH TIGHTLY-CLOSED LIPS] U+1F632 -> U+E404
+  ["f09f98b3", "ee9083"], # [ANGUISHED CAT FACE] U+1F633 -> U+E403
+  ["f09f98b4", "ee90a3"], # [FACE WITH NO GOOD GESTURE] U+1F634 -> U+E423
+  ["f09f98b5", "ee90a4"], # [FACE WITH OK GESTURE] U+1F635 -> U+E424
+  ["f09f98b6", "ee90a6"], # [PERSON BOWING DEEPLY] U+1F636 -> U+E426
+  ["f09f98b7", "282f5fefbcbc29"], # [SEE-NO-EVIL MONKEY] U+1F637 -> "(/_＼)"
+  ["f09f98b9", "28e383bbc397e383bb29"], # [SPEAK-NO-EVIL MONKEY] U+1F639 -> "(・×・)"
+  ["f09f98b8", "7c28e383bbc397e383bb297c"], # [HEAR-NO-EVIL MONKEY] U+1F638 -> "|(・×・)|"
+  ["f09f98ba", "ee8092"], # [PERSON RAISING ONE HAND] U+1F63A -> U+E012
+  ["f09f98bb", "ee90a7"], # [PERSON RAISING BOTH HANDS IN CELEBRATION] U+1F63B -> U+E427
+  ["f09f98bc", "ee9083"], # [PERSON FROWNING] U+1F63C -> U+E403
+  ["f09f98bd", "ee9096"], # [PERSON WITH POUTING FACE] U+1F63D -> U+E416
+  ["f09f98be", "ee909d"], # [PERSON WITH FOLDED HANDS] U+1F63E -> U+E41D
+  ["f09f8fa0", "ee80b6"], # [HOUSE BUILDING] U+1F3E0 -> U+E036
+  ["f09f8fa1", "ee80b6"], # [HOUSE WITH GARDEN] U+1F3E1 -> U+E036
+  ["f09f8fa2", "ee80b8"], # [OFFICE BUILDING] U+1F3E2 -> U+E038
+  ["f09f8fa3", "ee8593"], # [JAPANESE POST OFFICE] U+1F3E3 -> U+E153
+  ["f09f8fa5", "ee8595"], # [HOSPITAL] U+1F3E5 -> U+E155
+  ["f09f8fa6", "ee858d"], # [BANK] U+1F3E6 -> U+E14D
+  ["f09f8fa7", "ee8594"], # [AUTOMATED TELLER MACHINE] U+1F3E7 -> U+E154
+  ["f09f8fa8", "ee8598"], # [HOTEL] U+1F3E8 -> U+E158
+  ["f09f8fa9", "ee9481"], # [LOVE HOTEL] U+1F3E9 -> U+E501
+  ["f09f8faa", "ee8596"], # [CONVENIENCE STORE] U+1F3EA -> U+E156
+  ["f09f8fab", "ee8597"], # [SCHOOL] U+1F3EB -> U+E157
+  ["e29baa", "ee80b7"], # [CHURCH] U+26EA -> U+E037
+  ["e29bb2", "ee84a1"], # [FOUNTAIN] U+26F2 -> U+E121
+  ["f09f8fac", "ee9484"], # [DEPARTMENT STORE] U+1F3EC -> U+E504
+  ["f09f8faf", "ee9485"], # [JAPANESE CASTLE] U+1F3EF -> U+E505
+  ["f09f8fb0", "ee9486"], # [EUROPEAN CASTLE] U+1F3F0 -> U+E506
+  ["f09f8fad", "ee9488"], # [FACTORY] U+1F3ED -> U+E508
+  ["e29a93", "ee8882"], # [ANCHOR] U+2693 -> U+E202
+  ["f09f8fae", "ee8c8b"], # [IZAKAYA LANTERN] U+1F3EE -> U+E30B
+  ["f09f97bb", "ee80bb"], # [MOUNT FUJI] U+1F5FB -> U+E03B
+  ["f09f97bc", "ee9489"], # [TOKYO TOWER] U+1F5FC -> U+E509
+  ["f09f97bd", "ee949d"], # [STATUE OF LIBERTY] U+1F5FD -> U+E51D
+  ["f09f97be", "5be697a5e69cace59cb0e59bb35d"], # [SILHOUETTE OF JAPAN] U+1F5FE -> "[日本地図]"
+  ["f09f97bf", "5be383a2e382a2e382a45d"], # [MOYAI] U+1F5FF -> "[モアイ]"
+  ["f09f919e", "ee8087"], # [MANS SHOE] U+1F45E -> U+E007
+  ["f09f919f", "ee8087"], # [ATHLETIC SHOE] U+1F45F -> U+E007
+  ["f09f91a0", "ee84be"], # [HIGH-HEELED SHOE] U+1F460 -> U+E13E
+  ["f09f91a1", "ee8c9a"], # [WOMANS SANDAL] U+1F461 -> U+E31A
+  ["f09f91a2", "ee8c9b"], # [WOMANS BOOTS] U+1F462 -> U+E31B
+  ["f09f91a3", "ee94b6"], # [FOOTPRINTS] U+1F463 -> U+E536
+  ["f09f9193", "5be383a1e382ace3838d5d"], # [EYEGLASSES] U+1F453 -> "[メガネ]"
+  ["f09f9195", "ee8086"], # [T-SHIRT] U+1F455 -> U+E006
+  ["f09f9196", "5be382b8e383bce383b3e382ba5d"], # [JEANS] U+1F456 -> "[ジーンズ]"
+  ["f09f9191", "ee848e"], # [CROWN] U+1F451 -> U+E10E
+  ["f09f9194", "ee8c82"], # [NECKTIE] U+1F454 -> U+E302
+  ["f09f9192", "ee8c98"], # [WOMANS HAT] U+1F452 -> U+E318
+  ["f09f9197", "ee8c99"], # [DRESS] U+1F457 -> U+E319
+  ["f09f9198", "ee8ca1"], # [KIMONO] U+1F458 -> U+E321
+  ["f09f9199", "ee8ca2"], # [BIKINI] U+1F459 -> U+E322
+  ["f09f919a", "ee8086"], # [WOMANS CLOTHES] U+1F45A -> U+E006
+  ["f09f919b", "5be8b2a1e5b8835d"], # [PURSE] U+1F45B -> "[財布]"
+  ["f09f919c", "ee8ca3"], # [HANDBAG] U+1F45C -> U+E323
+  ["f09f919d", "5be381b5e3818fe3828d5d"], # [POUCH] U+1F45D -> "[ふくろ]"
+  ["f09f92b0", "ee84af"], # [MONEY BAG] U+1F4B0 -> U+E12F
+  ["f09f92b1", "ee8589"], # [CURRENCY EXCHANGE] U+1F4B1 -> U+E149
+  ["f09f92b9", "ee858a"], # [CHART WITH UPWARDS TREND AND YEN SIGN] U+1F4B9 -> U+E14A
+  ["f09f92b2", "ee84af"], # [HEAVY DOLLAR SIGN] U+1F4B2 -> U+E12F
+  ["f09f92b3", "5be382abe383bce383895d"], # [CREDIT CARD] U+1F4B3 -> "[カード]"
+  ["f09f92b4", "efbfa5"], # [BANKNOTE WITH YEN SIGN] U+1F4B4 -> "￥"
+  ["f09f92b5", "ee84af"], # [BANKNOTE WITH DOLLAR SIGN] U+1F4B5 -> U+E12F
+  ["f09f92b8", "5be9a39be38293e381a7e38184e3818fe3818ae987915d"], # [MONEY WITH WINGS] U+1F4B8 -> "[飛んでいくお金]"
+  ["f09f87a6", "5b415d"], # [REGIONAL INDICATOR SYMBOL LETTER A] U+1F1E6 -> "[A]"
+  ["f09f87a7", "5b425d"], # [REGIONAL INDICATOR SYMBOL LETTER B] U+1F1E7 -> "[B]"
+  ["f09f87a8", "5b435d"], # [REGIONAL INDICATOR SYMBOL LETTER C] U+1F1E8 -> "[C]"
+  ["f09f87a9", "5b445d"], # [REGIONAL INDICATOR SYMBOL LETTER D] U+1F1E9 -> "[D]"
+  ["f09f87aa", "5b455d"], # [REGIONAL INDICATOR SYMBOL LETTER E] U+1F1EA -> "[E]"
+  ["f09f87ab", "5b465d"], # [REGIONAL INDICATOR SYMBOL LETTER F] U+1F1EB -> "[F]"
+  ["f09f87ac", "5b475d"], # [REGIONAL INDICATOR SYMBOL LETTER G] U+1F1EC -> "[G]"
+  ["f09f87ad", "5b485d"], # [REGIONAL INDICATOR SYMBOL LETTER H] U+1F1ED -> "[H]"
+  ["f09f87ae", "5b495d"], # [REGIONAL INDICATOR SYMBOL LETTER I] U+1F1EE -> "[I]"
+  ["f09f87af", "5b4a5d"], # [REGIONAL INDICATOR SYMBOL LETTER J] U+1F1EF -> "[J]"
+  ["f09f87b0", "5b4b5d"], # [REGIONAL INDICATOR SYMBOL LETTER K] U+1F1F0 -> "[K]"
+  ["f09f87b1", "5b4c5d"], # [REGIONAL INDICATOR SYMBOL LETTER L] U+1F1F1 -> "[L]"
+  ["f09f87b2", "5b4d5d"], # [REGIONAL INDICATOR SYMBOL LETTER M] U+1F1F2 -> "[M]"
+  ["f09f87b3", "5b4e5d"], # [REGIONAL INDICATOR SYMBOL LETTER N] U+1F1F3 -> "[N]"
+  ["f09f87b4", "5b4f5d"], # [REGIONAL INDICATOR SYMBOL LETTER O] U+1F1F4 -> "[O]"
+  ["f09f87b5", "5b505d"], # [REGIONAL INDICATOR SYMBOL LETTER P] U+1F1F5 -> "[P]"
+  ["f09f87b6", "5b515d"], # [REGIONAL INDICATOR SYMBOL LETTER Q] U+1F1F6 -> "[Q]"
+  ["f09f87b7", "5b525d"], # [REGIONAL INDICATOR SYMBOL LETTER R] U+1F1F7 -> "[R]"
+  ["f09f87b8", "5b535d"], # [REGIONAL INDICATOR SYMBOL LETTER S] U+1F1F8 -> "[S]"
+  ["f09f87b9", "5b545d"], # [REGIONAL INDICATOR SYMBOL LETTER T] U+1F1F9 -> "[T]"
+  ["f09f87ba", "5b555d"], # [REGIONAL INDICATOR SYMBOL LETTER U] U+1F1FA -> "[U]"
+  ["f09f87bb", "5b565d"], # [REGIONAL INDICATOR SYMBOL LETTER V] U+1F1FB -> "[V]"
+  ["f09f87bc", "5b575d"], # [REGIONAL INDICATOR SYMBOL LETTER W] U+1F1FC -> "[W]"
+  ["f09f87bd", "5b585d"], # [REGIONAL INDICATOR SYMBOL LETTER X] U+1F1FD -> "[X]"
+  ["f09f87be", "5b595d"], # [REGIONAL INDICATOR SYMBOL LETTER Y] U+1F1FE -> "[Y]"
+  ["f09f87bf", "5b5a5d"], # [REGIONAL INDICATOR SYMBOL LETTER Z] U+1F1FF -> "[Z]"
+  ["f09f94a5", "ee849d"], # [FIRE] U+1F525 -> U+E11D
+  ["f09f94a6", "5be68790e4b8ade99bbbe781af5d"], # [ELECTRIC TORCH] U+1F526 -> "[懐中電灯]"
+  ["f09f94a7", "5be383ace383b3e383815d"], # [WRENCH] U+1F527 -> "[レンチ]"
+  ["f09f94a8", "ee8496"], # [HAMMER] U+1F528 -> U+E116
+  ["f09f94a9", "5be3838de382b85d"], # [NUT AND BOLT] U+1F529 -> "[ネジ]"
+  ["f09f94aa", "5be58c85e4b8815d"], # [HOCHO] U+1F52A -> "[包丁]"
+  ["f09f94ab", "ee8493"], # [PISTOL] U+1F52B -> U+E113
+  ["f09f94ae", "ee88be"], # [CRYSTAL BALL] U+1F52E -> U+E23E
+  ["f09f94af", "ee88be"], # [SIX POINTED STAR WITH MIDDLE DOT] U+1F52F -> U+E23E
+  ["f09f94b0", "ee8889"], # [JAPANESE SYMBOL FOR BEGINNER] U+1F530 -> U+E209
+  ["f09f94b1", "ee80b1"], # [TRIDENT EMBLEM] U+1F531 -> U+E031
+  ["f09f9289", "ee84bb"], # [SYRINGE] U+1F489 -> U+E13B
+  ["f09f928a", "ee8c8f"], # [PILL] U+1F48A -> U+E30F
+  ["f09f85b0", "ee94b2"], # [NEGATIVE SQUARED LATIN CAPITAL LETTER A] U+1F170 -> U+E532
+  ["f09f85b1", "ee94b3"], # [NEGATIVE SQUARED LATIN CAPITAL LETTER B] U+1F171 -> U+E533
+  ["f09f868e", "ee94b4"], # [NEGATIVE SQUARED AB] U+1F18E -> U+E534
+  ["f09f85be", "ee94b5"], # [NEGATIVE SQUARED LATIN CAPITAL LETTER O] U+1F17E -> U+E535
+  ["f09f8e80", "ee8c94"], # [RIBBON] U+1F380 -> U+E314
+  ["f09f8e81", "ee8492"], # [WRAPPED PRESENT] U+1F381 -> U+E112
+  ["f09f8e82", "ee8d8b"], # [BIRTHDAY CAKE] U+1F382 -> U+E34B
+  ["f09f8e84", "ee80b3"], # [CHRISTMAS TREE] U+1F384 -> U+E033
+  ["f09f8e85", "ee9188"], # [FATHER CHRISTMAS] U+1F385 -> U+E448
+  ["f09f8e8c", "ee8583"], # [CROSSED FLAGS] U+1F38C -> U+E143
+  ["f09f8e86", "ee8497"], # [FIREWORKS] U+1F386 -> U+E117
+  ["f09f8e88", "ee8c90"], # [BALLOON] U+1F388 -> U+E310
+  ["f09f8e89", "ee8c92"], # [PARTY POPPER] U+1F389 -> U+E312
+  ["f09f8e8d", "ee90b6"], # [PINE DECORATION] U+1F38D -> U+E436
+  ["f09f8e8e", "ee90b8"], # [JAPANESE DOLLS] U+1F38E -> U+E438
+  ["f09f8e93", "ee90b9"], # [GRADUATION CAP] U+1F393 -> U+E439
+  ["f09f8e92", "ee90ba"], # [SCHOOL SATCHEL] U+1F392 -> U+E43A
+  ["f09f8e8f", "ee90bb"], # [CARP STREAMER] U+1F38F -> U+E43B
+  ["f09f8e87", "ee9180"], # [FIREWORK SPARKLER] U+1F387 -> U+E440
+  ["f09f8e90", "ee9182"], # [WIND CHIME] U+1F390 -> U+E442
+  ["f09f8e83", "ee9185"], # [JACK-O-LANTERN] U+1F383 -> U+E445
+  ["f09f8e8a", "5be382aae383a1e38387e38388e382a65d"], # [CONFETTI BALL] U+1F38A -> "[オメデトウ]"
+  ["f09f8e8b", "5be4b883e5a4955d"], # [TANABATA TREE] U+1F38B -> "[七夕]"
+  ["f09f8e91", "ee9186"], # [MOON VIEWING CEREMONY] U+1F391 -> U+E446
+  ["f09f939f", "5be3839de382b1e38399e383ab5d"], # [PAGER] U+1F4DF -> "[ポケベル]"
+  ["e2988e", "ee8089"], # [BLACK TELEPHONE] U+260E -> U+E009
+  ["f09f939e", "ee8089"], # [TELEPHONE RECEIVER] U+1F4DE -> U+E009
+  ["f09f93b1", "ee808a"], # [MOBILE PHONE] U+1F4F1 -> U+E00A
+  ["f09f93b2", "ee8484"], # [MOBILE PHONE WITH RIGHTWARDS ARROW AT LEFT] U+1F4F2 -> U+E104
+  ["f09f939d", "ee8c81"], # [MEMO] U+1F4DD -> U+E301
+  ["f09f93a0", "ee808b"], # [FAX MACHINE] U+1F4E0 -> U+E00B
+  ["e29c89", "ee8483"], # [ENVELOPE] U+2709 -> U+E103
+  ["f09f93a8", "ee8483"], # [INCOMING ENVELOPE] U+1F4E8 -> U+E103
+  ["f09f93a9", "ee8483"], # [ENVELOPE WITH DOWNWARDS ARROW ABOVE] U+1F4E9 -> U+E103
+  ["f09f93aa", "ee8481"], # [CLOSED MAILBOX WITH LOWERED FLAG] U+1F4EA -> U+E101
+  ["f09f93ab", "ee8481"], # [CLOSED MAILBOX WITH RAISED FLAG] U+1F4EB -> U+E101
+  ["f09f93ae", "ee8482"], # [POSTBOX] U+1F4EE -> U+E102
+  ["f09f93b0", "5be696b0e8819e5d"], # [NEWSPAPER] U+1F4F0 -> "[新聞]"
+  ["f09f93a2", "ee8582"], # [PUBLIC ADDRESS LOUDSPEAKER] U+1F4E2 -> U+E142
+  ["f09f93a3", "ee8c97"], # [CHEERING MEGAPHONE] U+1F4E3 -> U+E317
+  ["f09f93a1", "ee858b"], # [SATELLITE ANTENNA] U+1F4E1 -> U+E14B
+  ["f09f93a4", "5be98081e4bfa1424f585d"], # [OUTBOX TRAY] U+1F4E4 -> "[送信BOX]"
+  ["f09f93a5", "5be58f97e4bfa1424f585d"], # [INBOX TRAY] U+1F4E5 -> "[受信BOX]"
+  ["f09f93a6", "ee8492"], # [PACKAGE] U+1F4E6 -> U+E112
+  ["f09f93a7", "ee8483"], # [E-MAIL SYMBOL] U+1F4E7 -> U+E103
+  ["f09f94a0", "5b414243445d"], # [INPUT SYMBOL FOR LATIN CAPITAL LETTERS] U+1F520 -> "[ABCD]"
+  ["f09f94a1", "5b616263645d"], # [INPUT SYMBOL FOR LATIN SMALL LETTERS] U+1F521 -> "[abcd]"
+  ["f09f94a2", "5b313233345d"], # [INPUT SYMBOL FOR NUMBERS] U+1F522 -> "[1234]"
+  ["f09f94a3", "5be8a898e58fb75d"], # [INPUT SYMBOL FOR SYMBOLS] U+1F523 -> "[記号]"
+  ["f09f94a4", "5b4142435d"], # [INPUT SYMBOL FOR LATIN LETTERS] U+1F524 -> "[ABC]"
+  ["e29c92", "5be3839ae383b35d"], # [BLACK NIB] U+2712 -> "[ペン]"
+  ["f09f92ba", "ee849f"], # [SEAT] U+1F4BA -> U+E11F
+  ["f09f92bb", "ee808c"], # [PERSONAL COMPUTER] U+1F4BB -> U+E00C
+  ["e29c8f", "ee8c81"], # [PENCIL] U+270F -> U+E301
+  ["f09f938e", "5be382afe383aae38383e383975d"], # [PAPERCLIP] U+1F4CE -> "[クリップ]"
+  ["f09f92bc", "ee849e"], # [BRIEFCASE] U+1F4BC -> U+E11E
+  ["f09f92bd", "ee8c96"], # [MINIDISC] U+1F4BD -> U+E316
+  ["f09f92be", "ee8c96"], # [FLOPPY DISK] U+1F4BE -> U+E316
+  ["f09f92bf", "ee84a6"], # [OPTICAL DISC] U+1F4BF -> U+E126
+  ["f09f9380", "ee84a7"], # [DVD] U+1F4C0 -> U+E127
+  ["e29c82", "ee8c93"], # [BLACK SCISSORS] U+2702 -> U+E313
+  ["f09f938d", "5be794bbe381b3e38287e381865d"], # [ROUND PUSHPIN] U+1F4CD -> "[画びょう]"
+  ["f09f9383", "ee8c81"], # [PAGE WITH CURL] U+1F4C3 -> U+E301
+  ["f09f9384", "ee8c81"], # [PAGE FACING UP] U+1F4C4 -> U+E301
+  ["f09f9385", "5be382abe383ace383b3e38380e383bc5d"], # [CALENDAR] U+1F4C5 -> "[カレンダー]"
+  ["f09f9381", "5be38395e382a9e383abe383805d"], # [FILE FOLDER] U+1F4C1 -> "[フォルダ]"
+  ["f09f9382", "5be38395e382a9e383abe383805d"], # [OPEN FILE FOLDER] U+1F4C2 -> "[フォルダ]"
+  ["f09f9393", "ee8588"], # [NOTEBOOK] U+1F4D3 -> U+E148
+  ["f09f9396", "ee8588"], # [OPEN BOOK] U+1F4D6 -> U+E148
+  ["f09f9394", "ee8588"], # [NOTEBOOK WITH DECORATIVE COVER] U+1F4D4 -> U+E148
+  ["f09f9395", "ee8588"], # [CLOSED BOOK] U+1F4D5 -> U+E148
+  ["f09f9397", "ee8588"], # [GREEN BOOK] U+1F4D7 -> U+E148
+  ["f09f9398", "ee8588"], # [BLUE BOOK] U+1F4D8 -> U+E148
+  ["f09f9399", "ee8588"], # [ORANGE BOOK] U+1F4D9 -> U+E148
+  ["f09f939a", "ee8588"], # [BOOKS] U+1F4DA -> U+E148
+  ["f09f939b", "5be5908de69cad5d"], # [NAME BADGE] U+1F4DB -> "[名札]"
+  ["f09f939c", "5be382b9e382afe383ade383bce383ab5d"], # [SCROLL] U+1F4DC -> "[スクロール]"
+  ["f09f938b", "ee8c81"], # [CLIPBOARD] U+1F4CB -> U+E301
+  ["f09f9386", "5be382abe383ace383b3e38380e383bc5d"], # [TEAR-OFF CALENDAR] U+1F4C6 -> "[カレンダー]"
+  ["f09f938a", "ee858a"], # [BAR CHART] U+1F4CA -> U+E14A
+  ["f09f9388", "ee858a"], # [CHART WITH UPWARDS TREND] U+1F4C8 -> U+E14A
+  ["f09f9389", "5be382b0e383a9e383955d"], # [CHART WITH DOWNWARDS TREND] U+1F4C9 -> "[グラフ]"
+  ["f09f9387", "ee8588"], # [CARD INDEX] U+1F4C7 -> U+E148
+  ["f09f938c", "5be794bbe381b3e38287e381865d"], # [PUSHPIN] U+1F4CC -> "[画びょう]"
+  ["f09f9392", "ee8588"], # [LEDGER] U+1F4D2 -> U+E148
+  ["f09f938f", "5be5ae9ae8a68f5d"], # [STRAIGHT RULER] U+1F4CF -> "[定規]"
+  ["f09f9390", "5be4b889e8a792e5ae9ae8a68f5d"], # [TRIANGULAR RULER] U+1F4D0 -> "[三角定規]"
+  ["f09f9391", "ee8c81"], # [BOOKMARK TABS] U+1F4D1 -> U+E301
+  ["f09f8ebd", "e38093"], # [RUNNING SHIRT WITH SASH] U+1F3BD -> U+3013 (GETA)
+  ["e29abe", "ee8096"], # [BASEBALL] U+26BE -> U+E016
+  ["e29bb3", "ee8094"], # [FLAG IN HOLE] U+26F3 -> U+E014
+  ["f09f8ebe", "ee8095"], # [TENNIS RACQUET AND BALL] U+1F3BE -> U+E015
+  ["e29abd", "ee8098"], # [SOCCER BALL] U+26BD -> U+E018
+  ["f09f8ebf", "ee8093"], # [SKI AND SKI BOOT] U+1F3BF -> U+E013
+  ["f09f8f80", "ee90aa"], # [BASKETBALL AND HOOP] U+1F3C0 -> U+E42A
+  ["f09f8f81", "ee84b2"], # [CHEQUERED FLAG] U+1F3C1 -> U+E132
+  ["f09f8f82", "5be382b9e3838ee3839c5d"], # [SNOWBOARDER] U+1F3C2 -> "[スノボ]"
+  ["f09f8f83", "ee8495"], # [RUNNER] U+1F3C3 -> U+E115
+  ["f09f8f84", "ee8097"], # [SURFER] U+1F3C4 -> U+E017
+  ["f09f8f86", "ee84b1"], # [TROPHY] U+1F3C6 -> U+E131
+  ["f09f8f88", "ee90ab"], # [AMERICAN FOOTBALL] U+1F3C8 -> U+E42B
+  ["f09f8f8a", "ee90ad"], # [SWIMMER] U+1F3CA -> U+E42D
+  ["f09f9a86", "ee809e"], # [TRAIN] U+1F686 -> U+E01E
+  ["f09f9a87", "ee90b4"], # [METRO] U+1F687 -> U+E434
+  ["e29382", "ee90b4"], # [CIRCLED LATIN CAPITAL LETTER M] U+24C2 -> U+E434
+  ["f09f9a84", "ee90b5"], # [HIGH-SPEED TRAIN] U+1F684 -> U+E435
+  ["f09f9a85", "ee809f"], # [HIGH-SPEED TRAIN WITH BULLET NOSE] U+1F685 -> U+E01F
+  ["f09f9a97", "ee809b"], # [AUTOMOBILE] U+1F697 -> U+E01B
+  ["f09f9a99", "ee90ae"], # [RECREATIONAL VEHICLE] U+1F699 -> U+E42E
+  ["f09f9a8d", "ee8599"], # [ONCOMING BUS] U+1F68D -> U+E159
+  ["f09f9a8f", "ee8590"], # [BUS STOP] U+1F68F -> U+E150
+  ["f09f9aa2", "ee8882"], # [SHIP] U+1F6A2 -> U+E202
+  ["e29c88", "ee809d"], # [AIRPLANE] U+2708 -> U+E01D
+  ["e29bb5", "ee809c"], # [SAILBOAT] U+26F5 -> U+E01C
+  ["f09f9a89", "ee80b9"], # [STATION] U+1F689 -> U+E039
+  ["f09f9a80", "ee848d"], # [ROCKET] U+1F680 -> U+E10D
+  ["f09f9aa4", "ee84b5"], # [SPEEDBOAT] U+1F6A4 -> U+E135
+  ["f09f9a95", "ee859a"], # [TAXI] U+1F695 -> U+E15A
+  ["f09f9a9a", "ee90af"], # [DELIVERY TRUCK] U+1F69A -> U+E42F
+  ["f09f9a92", "ee90b0"], # [FIRE ENGINE] U+1F692 -> U+E430
+  ["f09f9a91", "ee90b1"], # [AMBULANCE] U+1F691 -> U+E431
+  ["f09f9a93", "ee90b2"], # [POLICE CAR] U+1F693 -> U+E432
+  ["e29bbd", "ee80ba"], # [FUEL PUMP] U+26FD -> U+E03A
+  ["f09f85bf", "ee858f"], # [NEGATIVE SQUARED LATIN CAPITAL LETTER P] U+1F17F -> U+E14F
+  ["f09f9aa5", "ee858e"], # [HORIZONTAL TRAFFIC LIGHT] U+1F6A5 -> U+E14E
+  ["f09f9aa7", "ee84b7"], # [CONSTRUCTION SIGN] U+1F6A7 -> U+E137
+  ["f09f9aa8", "ee90b2"], # [POLICE CARS REVOLVING LIGHT] U+1F6A8 -> U+E432
+  ["e299a8", "ee84a3"], # [HOT SPRINGS] U+2668 -> U+E123
+  ["e29bba", "ee84a2"], # [TENT] U+26FA -> U+E122
+  ["f09f8ea0", "e38093"], # [CAROUSEL HORSE] U+1F3A0 -> U+3013 (GETA)
+  ["f09f8ea1", "ee84a4"], # [FERRIS WHEEL] U+1F3A1 -> U+E124
+  ["f09f8ea2", "ee90b3"], # [ROLLER COASTER] U+1F3A2 -> U+E433
+  ["f09f8ea3", "ee8099"], # [FISHING POLE AND FISH] U+1F3A3 -> U+E019
+  ["f09f8ea4", "ee80bc"], # [MICROPHONE] U+1F3A4 -> U+E03C
+  ["f09f8ea5", "ee80bd"], # [MOVIE CAMERA] U+1F3A5 -> U+E03D
+  ["f09f8ea6", "ee9487"], # [CINEMA] U+1F3A6 -> U+E507
+  ["f09f8ea7", "ee8c8a"], # [HEADPHONE] U+1F3A7 -> U+E30A
+  ["f09f8ea8", "ee9482"], # [ARTIST PALETTE] U+1F3A8 -> U+E502
+  ["f09f8ea9", "ee9483"], # [TOP HAT] U+1F3A9 -> U+E503
+  ["f09f8eaa", "5be382a4e38399e383b3e383885d"], # [CIRCUS TENT] U+1F3AA -> "[イベント]"
+  ["f09f8eab", "ee84a5"], # [TICKET] U+1F3AB -> U+E125
+  ["f09f8eac", "ee8ca4"], # [CLAPPER BOARD] U+1F3AC -> U+E324
+  ["f09f8ead", "ee9483"], # [PERFORMING ARTS] U+1F3AD -> U+E503
+  ["f09f8eae", "5be382b2e383bce383a05d"], # [VIDEO GAME] U+1F3AE -> "[ゲーム]"
+  ["f09f8084", "ee84ad"], # [MAHJONG TILE RED DRAGON] U+1F004 -> U+E12D
+  ["f09f8eaf", "ee84b0"], # [DIRECT HIT] U+1F3AF -> U+E130
+  ["f09f8eb0", "ee84b3"], # [SLOT MACHINE] U+1F3B0 -> U+E133
+  ["f09f8eb1", "ee90ac"], # [BILLIARDS] U+1F3B1 -> U+E42C
+  ["f09f8eb2", "5be382b5e382a4e382b3e383ad5d"], # [GAME DIE] U+1F3B2 -> "[サイコロ]"
+  ["f09f8eb3", "5be3839ce383bce383aae383b3e382b05d"], # [BOWLING] U+1F3B3 -> "[ボーリング]"
+  ["f09f8eb4", "5be88ab1e69cad5d"], # [FLOWER PLAYING CARDS] U+1F3B4 -> "[花札]"
+  ["f09f838f", "5be382b8e383a7e383bce382abe383bc5d"], # [PLAYING CARD BLACK JOKER] U+1F0CF -> "[ジョーカー]"
+  ["f09f8eb5", "ee80be"], # [MUSICAL NOTE] U+1F3B5 -> U+E03E
+  ["f09f8eb6", "ee8ca6"], # [MULTIPLE MUSICAL NOTES] U+1F3B6 -> U+E326
+  ["f09f8eb7", "ee8180"], # [SAXOPHONE] U+1F3B7 -> U+E040
+  ["f09f8eb8", "ee8181"], # [GUITAR] U+1F3B8 -> U+E041
+  ["f09f8eb9", "5be38394e382a2e3838e5d"], # [MUSICAL KEYBOARD] U+1F3B9 -> "[ピアノ]"
+  ["f09f8eba", "ee8182"], # [TRUMPET] U+1F3BA -> U+E042
+  ["f09f8ebb", "5be38390e382a4e382aae383aae383b35d"], # [VIOLIN] U+1F3BB -> "[バイオリン]"
+  ["f09f8ebc", "ee8ca6"], # [MUSICAL SCORE] U+1F3BC -> U+E326
+  ["e380bd", "ee84ac"], # [PART ALTERNATION MARK] U+303D -> U+E12C
+  ["f09f93b7", "ee8088"], # [CAMERA] U+1F4F7 -> U+E008
+  ["f09f93b9", "ee80bd"], # [VIDEO CAMERA] U+1F4F9 -> U+E03D
+  ["f09f93ba", "ee84aa"], # [TELEVISION] U+1F4FA -> U+E12A
+  ["f09f93bb", "ee84a8"], # [RADIO] U+1F4FB -> U+E128
+  ["f09f93bc", "ee84a9"], # [VIDEOCASSETTE] U+1F4FC -> U+E129
+  ["f09f928b", "ee8083"], # [KISS MARK] U+1F48B -> U+E003
+  ["f09f928c", "ee8483ee8ca8"], # [LOVE LETTER] U+1F48C -> U+E103 U+E328
+  ["f09f928d", "ee80b4"], # [RING] U+1F48D -> U+E034
+  ["f09f928e", "ee80b5"], # [GEM STONE] U+1F48E -> U+E035
+  ["f09f928f", "ee8491"], # [KISS] U+1F48F -> U+E111
+  ["f09f9290", "ee8c86"], # [BOUQUET] U+1F490 -> U+E306
+  ["f09f9291", "ee90a5"], # [COUPLE WITH HEART] U+1F491 -> U+E425
+  ["f09f9292", "ee90bd"], # [WEDDING] U+1F492 -> U+E43D
+  ["f09f949e", "ee8887"], # [NO ONE UNDER EIGHTEEN SYMBOL] U+1F51E -> U+E207
+  ["c2a9", "ee898e"], # [COPYRIGHT SIGN] U+A9 -> U+E24E
+  ["c2ae", "ee898f"], # [REGISTERED SIGN] U+AE -> U+E24F
+  ["e284a2", "ee94b7"], # [TRADE MARK SIGN] U+2122 -> U+E537
+  ["e284b9", "5befbd895d"], # [INFORMATION SOURCE] U+2139 -> "[ｉ]"
+  ["f09f949f", "5b31305d"], # [KEYCAP TEN] U+1F51F -> "[10]"
+  ["f09f93b6", "ee888b"], # [ANTENNA WITH BARS] U+1F4F6 -> U+E20B
+  ["f09f93b3", "ee8990"], # [VIBRATION MODE] U+1F4F3 -> U+E250
+  ["f09f93b4", "ee8991"], # [MOBILE PHONE OFF] U+1F4F4 -> U+E251
+  ["f09f8d94", "ee84a0"], # [HAMBURGER] U+1F354 -> U+E120
+  ["f09f8d99", "ee8d82"], # [RICE BALL] U+1F359 -> U+E342
+  ["f09f8db0", "ee8186"], # [SHORTCAKE] U+1F370 -> U+E046
+  ["f09f8d9c", "ee8d80"], # [STEAMING BOWL] U+1F35C -> U+E340
+  ["f09f8d9e", "ee8cb9"], # [BREAD] U+1F35E -> U+E339
+  ["f09f8db3", "ee8587"], # [COOKING] U+1F373 -> U+E147
+  ["f09f8da6", "ee8cba"], # [SOFT ICE CREAM] U+1F366 -> U+E33A
+  ["f09f8d9f", "ee8cbb"], # [FRENCH FRIES] U+1F35F -> U+E33B
+  ["f09f8da1", "ee8cbc"], # [DANGO] U+1F361 -> U+E33C
+  ["f09f8d98", "ee8cbd"], # [RICE CRACKER] U+1F358 -> U+E33D
+  ["f09f8d9a", "ee8cbe"], # [COOKED RICE] U+1F35A -> U+E33E
+  ["f09f8d9d", "ee8cbf"], # [SPAGHETTI] U+1F35D -> U+E33F
+  ["f09f8d9b", "ee8d81"], # [CURRY AND RICE] U+1F35B -> U+E341
+  ["f09f8da2", "ee8d83"], # [ODEN] U+1F362 -> U+E343
+  ["f09f8da3", "ee8d84"], # [SUSHI] U+1F363 -> U+E344
+  ["f09f8db1", "ee8d8c"], # [BENTO BOX] U+1F371 -> U+E34C
+  ["f09f8db2", "ee8d8d"], # [POT OF FOOD] U+1F372 -> U+E34D
+  ["f09f8da7", "ee90bf"], # [SHAVED ICE] U+1F367 -> U+E43F
+  ["f09f8d96", "5be882895d"], # [MEAT ON BONE] U+1F356 -> "[肉]"
+  ["f09f8da5", "5be381aae3828be381a85d"], # [FISH CAKE WITH SWIRL DESIGN] U+1F365 -> "[なると]"
+  ["f09f8da0", "5be38284e3818de38184e382825d"], # [ROASTED SWEET POTATO] U+1F360 -> "[やきいも]"
+  ["f09f8d95", "5be38394e382b65d"], # [SLICE OF PIZZA] U+1F355 -> "[ピザ]"
+  ["f09f8d97", "5be38381e382ade383b35d"], # [POULTRY LEG] U+1F357 -> "[チキン]"
+  ["f09f8da8", "5be382a2e382a4e382b9e382afe383aae383bce383a05d"], # [ICE CREAM] U+1F368 -> "[アイスクリーム]"
+  ["f09f8da9", "5be38389e383bce3838ae383845d"], # [DOUGHNUT] U+1F369 -> "[ドーナツ]"
+  ["f09f8daa", "5be382afe38383e382ade383bc5d"], # [COOKIE] U+1F36A -> "[クッキー]"
+  ["f09f8dab", "5be38381e383a7e382b35d"], # [CHOCOLATE BAR] U+1F36B -> "[チョコ]"
+  ["f09f8dac", "5be382ade383a3e383b3e38387e382a35d"], # [CANDY] U+1F36C -> "[キャンディ]"
+  ["f09f8dad", "5be382ade383a3e383b3e38387e382a35d"], # [LOLLIPOP] U+1F36D -> "[キャンディ]"
+  ["f09f8dae", "5be38397e383aae383b35d"], # [CUSTARD] U+1F36E -> "[プリン]"
+  ["f09f8daf", "5be3838fe38381e3839fe383845d"], # [HONEY POT] U+1F36F -> "[ハチミツ]"
+  ["f09f8da4", "5be382a8e38393e38395e383a9e382a45d"], # [FRIED SHRIMP] U+1F364 -> "[エビフライ]"
+  ["f09f8db4", "ee8183"], # [FORK AND KNIFE] U+1F374 -> U+E043
+  ["e29895", "ee8185"], # [HOT BEVERAGE] U+2615 -> U+E045
+  ["f09f8db8", "ee8184"], # [COCKTAIL GLASS] U+1F378 -> U+E044
+  ["f09f8dba", "ee8187"], # [BEER MUG] U+1F37A -> U+E047
+  ["f09f8db5", "ee8cb8"], # [TEACUP WITHOUT HANDLE] U+1F375 -> U+E338
+  ["f09f8db6", "ee8c8b"], # [SAKE BOTTLE AND CUP] U+1F376 -> U+E30B
+  ["f09f8db7", "ee8184"], # [WINE GLASS] U+1F377 -> U+E044
+  ["f09f8dbb", "ee8c8c"], # [CLINKING BEER MUGS] U+1F37B -> U+E30C
+  ["f09f8db9", "ee8184"], # [TROPICAL DRINK] U+1F379 -> U+E044
+  ["e28697", "ee88b6"], # [NORTH EAST ARROW] U+2197 -> U+E236
+  ["e28698", "ee88b8"], # [SOUTH EAST ARROW] U+2198 -> U+E238
+  ["e28696", "ee88b7"], # [NORTH WEST ARROW] U+2196 -> U+E237
+  ["e28699", "ee88b9"], # [SOUTH WEST ARROW] U+2199 -> U+E239
+  ["e2a4b4", "ee88b6"], # [ARROW POINTING RIGHTWARDS THEN CURVING UPWARDS] U+2934 -> U+E236
+  ["e2a4b5", "ee88b8"], # [ARROW POINTING RIGHTWARDS THEN CURVING DOWNWARDS] U+2935 -> U+E238
+  ["e28694", "e28794"], # [LEFT RIGHT ARROW] U+2194 -> "⇔"
+  ["e28695", "e28691e28693"], # [UP DOWN ARROW] U+2195 -> "↑↓"
+  ["e2ac86", "ee88b2"], # [UPWARDS BLACK ARROW] U+2B06 -> U+E232
+  ["e2ac87", "ee88b3"], # [DOWNWARDS BLACK ARROW] U+2B07 -> U+E233
+  ["e29ea1", "ee88b4"], # [BLACK RIGHTWARDS ARROW] U+27A1 -> U+E234
+  ["e2ac85", "ee88b5"], # [LEFTWARDS BLACK ARROW] U+2B05 -> U+E235
+  ["e296b6", "ee88ba"], # [BLACK RIGHT-POINTING TRIANGLE] U+25B6 -> U+E23A
+  ["e29780", "ee88bb"], # [BLACK LEFT-POINTING TRIANGLE] U+25C0 -> U+E23B
+  ["e28fa9", "ee88bc"], # [BLACK RIGHT-POINTING DOUBLE TRIANGLE] U+23E9 -> U+E23C
+  ["e28faa", "ee88bd"], # [BLACK LEFT-POINTING DOUBLE TRIANGLE] U+23EA -> U+E23D
+  ["e28fab", "e296b2"], # [BLACK UP-POINTING DOUBLE TRIANGLE] U+23EB -> "▲"
+  ["e28fac", "e296bc"], # [BLACK DOWN-POINTING DOUBLE TRIANGLE] U+23EC -> "▼"
+  ["f09f94ba", "e296b2"], # [UP-POINTING RED TRIANGLE] U+1F53A -> "▲"
+  ["f09f94bb", "e296bc"], # [DOWN-POINTING RED TRIANGLE] U+1F53B -> "▼"
+  ["f09f94bc", "e296b2"], # [UP-POINTING SMALL RED TRIANGLE] U+1F53C -> "▲"
+  ["f09f94bd", "e296bc"], # [DOWN-POINTING SMALL RED TRIANGLE] U+1F53D -> "▼"
+  ["e2ad95", "ee8cb2"], # [HEAVY LARGE CIRCLE] U+2B55 -> U+E332
+  ["e29d8c", "ee8cb3"], # [CROSS MARK] U+274C -> U+E333
+  ["e29d8e", "ee8cb3"], # [NEGATIVE SQUARED CROSS MARK] U+274E -> U+E333
+  ["e29da2", "ee80a1"], # [HEAVY EXCLAMATION MARK ORNAMENT] U+2762 -> U+E021
+  ["e28189", "efbc81efbc9f"], # [EXCLAMATION QUESTION MARK] U+2049 -> "！？"
+  ["e280bc", "efbc81efbc81"], # [DOUBLE EXCLAMATION MARK] U+203C -> "！！"
+  ["e29d93", "ee80a0"], # [BLACK QUESTION MARK ORNAMENT] U+2753 -> U+E020
+  ["e29d94", "ee8cb6"], # [WHITE QUESTION MARK ORNAMENT] U+2754 -> U+E336
+  ["e29d95", "ee8cb7"], # [WHITE EXCLAMATION MARK ORNAMENT] U+2755 -> U+E337
+  ["e380b0", "e38093"], # [WAVY DASH] U+3030 -> U+3013 (GETA)
+  ["e29eb0", "efbd9e"], # [CURLY LOOP] U+27B0 -> "～"
+  ["e29ebf", "ee8891"], # [DOUBLE CURLY LOOP] U+27BF -> U+E211
+  ["e29da4", "ee80a2"], # [HEAVY BLACK HEART] U+2764 -> U+E022
+  ["f09f9293", "ee8ca7"], # [BEATING HEART] U+1F493 -> U+E327
+  ["f09f9294", "ee80a3"], # [BROKEN HEART] U+1F494 -> U+E023
+  ["f09f9295", "ee8ca7"], # [TWO HEARTS] U+1F495 -> U+E327
+  ["f09f9296", "ee8ca7"], # [SPARKLING HEART] U+1F496 -> U+E327
+  ["f09f9297", "ee8ca8"], # [GROWING HEART] U+1F497 -> U+E328
+  ["f09f9298", "ee8ca9"], # [HEART WITH ARROW] U+1F498 -> U+E329
+  ["f09f9299", "ee8caa"], # [BLUE HEART] U+1F499 -> U+E32A
+  ["f09f929a", "ee8cab"], # [GREEN HEART] U+1F49A -> U+E32B
+  ["f09f929b", "ee8cac"], # [YELLOW HEART] U+1F49B -> U+E32C
+  ["f09f929c", "ee8cad"], # [PURPLE HEART] U+1F49C -> U+E32D
+  ["f09f929d", "ee90b7"], # [HEART WITH RIBBON] U+1F49D -> U+E437
+  ["f09f929e", "ee8ca7"], # [REVOLVING HEARTS] U+1F49E -> U+E327
+  ["f09f929f", "ee8884"], # [HEART DECORATION] U+1F49F -> U+E204
+  ["e299a5", "ee888c"], # [BLACK HEART SUIT] U+2665 -> U+E20C
+  ["e299a0", "ee888e"], # [BLACK SPADE SUIT] U+2660 -> U+E20E
+  ["e299a6", "ee888d"], # [BLACK DIAMOND SUIT] U+2666 -> U+E20D
+  ["e299a3", "ee888f"], # [BLACK CLUB SUIT] U+2663 -> U+E20F
+  ["f09f9aac", "ee8c8e"], # [SMOKING SYMBOL] U+1F6AC -> U+E30E
+  ["f09f9aad", "ee8888"], # [NO SMOKING SYMBOL] U+1F6AD -> U+E208
+  ["e299bf", "ee888a"], # [WHEELCHAIR SYMBOL] U+267F -> U+E20A
+  ["f09f9aa9", "5be697975d"], # [TRIANGULAR FLAG ON POST] U+1F6A9 -> "[旗]"
+  ["e29aa0", "ee8992"], # [WARNING SIGN] U+26A0 -> U+E252
+  ["e29b94", "ee84b7"], # [NO ENTRY] U+26D4 -> U+E137
+  ["e299bb", "e28691e28693"], # [BLACK UNIVERSAL RECYCLING SYMBOL] U+267B -> "↑↓"
+  ["f09f9ab2", "ee84b6"], # [BICYCLE] U+1F6B2 -> U+E136
+  ["f09f9ab6", "ee8881"], # [PEDESTRIAN] U+1F6B6 -> U+E201
+  ["f09f9ab9", "ee84b8"], # [MENS SYMBOL] U+1F6B9 -> U+E138
+  ["f09f9aba", "ee84b9"], # [WOMENS SYMBOL] U+1F6BA -> U+E139
+  ["f09f9b80", "ee84bf"], # [BATH] U+1F6C0 -> U+E13F
+  ["f09f9abb", "ee8591"], # [RESTROOM] U+1F6BB -> U+E151
+  ["f09f9abd", "ee8580"], # [TOILET] U+1F6BD -> U+E140
+  ["f09f9abe", "ee8c89"], # [WATER CLOSET] U+1F6BE -> U+E309
+  ["f09f9abc", "ee84ba"], # [BABY SYMBOL] U+1F6BC -> U+E13A
+  ["f09f9aaa", "5be38389e382a25d"], # [DOOR] U+1F6AA -> "[ドア]"
+  ["f09f9aab", "5be7a681e6ada25d"], # [NO ENTRY SIGN] U+1F6AB -> "[禁止]"
+  ["e29c94", "5be38381e382a7e38383e382afe3839ee383bce382af5d"], # [HEAVY CHECK MARK] U+2714 -> "[チェックマーク]"
+  ["f09f8691", "5b434c5d"], # [SQUARED CL] U+1F191 -> "[CL]"
+  ["f09f8692", "ee8894"], # [SQUARED COOL] U+1F192 -> U+E214
+  ["f09f8693", "5b465245455d"], # [SQUARED FREE] U+1F193 -> "[FREE]"
+  ["f09f8694", "ee88a9"], # [SQUARED ID] U+1F194 -> U+E229
+  ["f09f8695", "ee8892"], # [SQUARED NEW] U+1F195 -> U+E212
+  ["f09f8696", "5b4e475d"], # [SQUARED NG] U+1F196 -> "[NG]"
+  ["f09f8697", "ee898d"], # [SQUARED OK] U+1F197 -> U+E24D
+  ["f09f8698", "5b534f535d"], # [SQUARED SOS] U+1F198 -> "[SOS]"
+  ["f09f8699", "ee8893"], # [SQUARED UP WITH EXCLAMATION MARK] U+1F199 -> U+E213
+  ["f09f869a", "ee84ae"], # [SQUARED VS] U+1F19A -> U+E12E
+  ["f09f8881", "ee8883"], # [SQUARED KATAKANA KOKO] U+1F201 -> U+E203
+  ["f09f8882", "ee88a8"], # [SQUARED KATAKANA SA] U+1F202 -> U+E228
+  ["f09f88b2", "5be7a6815d"], # [SQUARED CJK UNIFIED IDEOGRAPH-7981] U+1F232 -> "[禁]"
+  ["f09f88b3", "ee88ab"], # [SQUARED CJK UNIFIED IDEOGRAPH-7A7A] U+1F233 -> U+E22B
+  ["f09f88b4", "5be590885d"], # [SQUARED CJK UNIFIED IDEOGRAPH-5408] U+1F234 -> "[合]"
+  ["f09f88b5", "ee88aa"], # [SQUARED CJK UNIFIED IDEOGRAPH-6E80] U+1F235 -> U+E22A
+  ["f09f88b6", "ee8895"], # [SQUARED CJK UNIFIED IDEOGRAPH-6709] U+1F236 -> U+E215
+  ["f09f889a", "ee8896"], # [SQUARED CJK UNIFIED IDEOGRAPH-7121] U+1F21A -> U+E216
+  ["f09f88b7", "ee8897"], # [SQUARED CJK UNIFIED IDEOGRAPH-6708] U+1F237 -> U+E217
+  ["f09f88b8", "ee8898"], # [SQUARED CJK UNIFIED IDEOGRAPH-7533] U+1F238 -> U+E218
+  ["f09f88b9", "ee88a7"], # [SQUARED CJK UNIFIED IDEOGRAPH-5272] U+1F239 -> U+E227
+  ["f09f88af", "ee88ac"], # [SQUARED CJK UNIFIED IDEOGRAPH-6307] U+1F22F -> U+E22C
+  ["f09f88ba", "ee88ad"], # [SQUARED CJK UNIFIED IDEOGRAPH-55B6] U+1F23A -> U+E22D
+  ["e38a99", "ee8c95"], # [CIRCLED IDEOGRAPH SECRET] U+3299 -> U+E315
+  ["e38a97", "ee8c8d"], # [CIRCLED IDEOGRAPH CONGRATULATION] U+3297 -> U+E30D
+  ["f09f8990", "ee88a6"], # [CIRCLED IDEOGRAPH ADVANTAGE] U+1F250 -> U+E226
+  ["f09f8991", "5be58faf5d"], # [CIRCLED IDEOGRAPH ACCEPT] U+1F251 -> "[可]"
+  ["e29e95", "5befbc8b5d"], # [HEAVY PLUS SIGN] U+2795 -> "[＋]"
+  ["e29e96", "5befbc8d5d"], # [HEAVY MINUS SIGN] U+2796 -> "[－]"
+  ["e29c96", "ee8cb3"], # [HEAVY MULTIPLICATION X] U+2716 -> U+E333
+  ["e29e97", "5bc3b75d"], # [HEAVY DIVISION SIGN] U+2797 -> "[÷]"
+  ["f09f92a0", "e38093"], # [DIAMOND SHAPE WITH A DOT INSIDE] U+1F4A0 -> U+3013 (GETA)
+  ["f09f92a1", "ee848f"], # [ELECTRIC LIGHT BULB] U+1F4A1 -> U+E10F
+  ["f09f92a2", "ee8cb4"], # [ANGER SYMBOL] U+1F4A2 -> U+E334
+  ["f09f92a3", "ee8c91"], # [BOMB] U+1F4A3 -> U+E311
+  ["f09f92a4", "ee84bc"], # [SLEEPING SYMBOL] U+1F4A4 -> U+E13C
+  ["f09f92a5", "5be38389e383b3e383835d"], # [COLLISION SYMBOL] U+1F4A5 -> "[ドンッ]"
+  ["f09f92a6", "ee8cb1"], # [SPLASHING SWEAT SYMBOL] U+1F4A6 -> U+E331
+  ["f09f92a7", "ee8cb1"], # [DROP OF WATER] U+1F4A7 -> U+E331
+  ["f09f92a8", "ee8cb0"], # [DASH SYMBOL] U+1F4A8 -> U+E330
+  ["f09f92a9", "ee819a"], # [PILE OF POO] U+1F4A9 -> U+E05A
+  ["f09f92aa", "ee858c"], # [FLEXED BICEPS] U+1F4AA -> U+E14C
+  ["f09f92ab", "ee9087"], # [DIZZY SYMBOL] U+1F4AB -> U+E407
+  ["f09f92ac", "5be38395e382ade38380e382b75d"], # [SPEECH BALLOON] U+1F4AC -> "[フキダシ]"
+  ["e29ca8", "ee8cae"], # [SPARKLES] U+2728 -> U+E32E
+  ["e29cb4", "ee8885"], # [EIGHT POINTED BLACK STAR] U+2734 -> U+E205
+  ["e29cb3", "ee8886"], # [EIGHT SPOKED ASTERISK] U+2733 -> U+E206
+  ["e29aaa", "ee8899"], # [MEDIUM WHITE CIRCLE] U+26AA -> U+E219
+  ["e29aab", "ee8899"], # [MEDIUM BLACK CIRCLE] U+26AB -> U+E219
+  ["f09f94b4", "ee8899"], # [LARGE RED CIRCLE] U+1F534 -> U+E219
+  ["f09f94b5", "ee889a"], # [LARGE BLUE CIRCLE] U+1F535 -> U+E21A
+  ["f09f94b2", "ee889a"], # [BLACK SQUARE BUTTON] U+1F532 -> U+E21A
+  ["f09f94b3", "ee889b"], # [WHITE SQUARE BUTTON] U+1F533 -> U+E21B
+  ["e2ad90", "ee8caf"], # [WHITE MEDIUM STAR] U+2B50 -> U+E32F
+  ["e2ac9c", "ee889b"], # [WHITE LARGE SQUARE] U+2B1C -> U+E21B
+  ["e2ac9b", "ee889a"], # [BLACK LARGE SQUARE] U+2B1B -> U+E21A
+  ["e296ab", "ee889b"], # [WHITE SMALL SQUARE] U+25AB -> U+E21B
+  ["e296aa", "ee889a"], # [BLACK SMALL SQUARE] U+25AA -> U+E21A
+  ["e297bd", "ee889b"], # [WHITE MEDIUM SMALL SQUARE] U+25FD -> U+E21B
+  ["e297be", "ee889a"], # [BLACK MEDIUM SMALL SQUARE] U+25FE -> U+E21A
+  ["e297bb", "ee889b"], # [WHITE MEDIUM SQUARE] U+25FB -> U+E21B
+  ["e297bc", "ee889a"], # [BLACK MEDIUM SQUARE] U+25FC -> U+E21A
+  ["f09f94b6", "ee889b"], # [LARGE ORANGE DIAMOND] U+1F536 -> U+E21B
+  ["f09f94b7", "ee889b"], # [LARGE BLUE DIAMOND] U+1F537 -> U+E21B
+  ["f09f94b8", "ee889b"], # [SMALL ORANGE DIAMOND] U+1F538 -> U+E21B
+  ["f09f94b9", "ee889b"], # [SMALL BLUE DIAMOND] U+1F539 -> U+E21B
+  ["e29d87", "ee8cae"], # [SPARKLE] U+2747 -> U+E32E
+  ["f09f92ae", "5be88ab1e4b8b85d"], # [WHITE FLOWER] U+1F4AE -> "[花丸]"
+  ["f09f92af", "5b313030e782b95d"], # [HUNDRED POINTS SYMBOL] U+1F4AF -> "[100点]"
+  ["e286a9", "e28690e29498"], # [LEFTWARDS ARROW WITH HOOK] U+21A9 -> "←┘"
+  ["e286aa", "e29494e28692"], # [RIGHTWARDS ARROW WITH HOOK] U+21AA -> "└→"
+  ["f09f9483", "e28691e28693"], # [CLOCKWISE DOWNWARDS AND UPWARDS OPEN CIRCLE ARROWS] U+1F503 -> "↑↓"
+  ["f09f948a", "ee8581"], # [SPEAKER WITH THREE SOUND WAVES] U+1F50A -> U+E141
+  ["f09f948b", "5be99bbbe6b1a05d"], # [BATTERY] U+1F50B -> "[電池]"
+  ["f09f948c", "5be382b3e383b3e382bbe383b3e383885d"], # [ELECTRIC PLUG] U+1F50C -> "[コンセント]"
+  ["f09f948d", "ee8494"], # [LEFT-POINTING MAGNIFYING GLASS] U+1F50D -> U+E114
+  ["f09f948e", "ee8494"], # [RIGHT-POINTING MAGNIFYING GLASS] U+1F50E -> U+E114
+  ["f09f9492", "ee8584"], # [LOCK] U+1F512 -> U+E144
+  ["f09f9493", "ee8585"], # [OPEN LOCK] U+1F513 -> U+E145
+  ["f09f948f", "ee8584"], # [LOCK WITH INK PEN] U+1F50F -> U+E144
+  ["f09f9490", "ee8584"], # [CLOSED LOCK WITH KEY] U+1F510 -> U+E144
+  ["f09f9491", "ee80bf"], # [KEY] U+1F511 -> U+E03F
+  ["f09f9494", "ee8ca5"], # [BELL] U+1F514 -> U+E325
+  ["e29891", "5be38381e382a7e38383e382afe3839ee383bce382af5d"], # [BALLOT BOX WITH CHECK] U+2611 -> "[チェックマーク]"
+  ["f09f9498", "5be383a9e382b8e382aae3839ce382bfe383b35d"], # [RADIO BUTTON] U+1F518 -> "[ラジオボタン]"
+  ["f09f9496", "5be38396e38383e382afe3839ee383bce382af5d"], # [BOOKMARK] U+1F516 -> "[ブックマーク]"
+  ["f09f9497", "5be383aae383b3e382af5d"], # [LINK SYMBOL] U+1F517 -> "[リンク]"
+  ["f09f9499", "ee88b5"], # [BACK WITH LEFTWARDS ARROW ABOVE] U+1F519 -> U+E235
+  ["f09f949a", "5b656e645d"], # [END WITH LEFTWARDS ARROW ABOVE] U+1F51A -> "[end]"
+  ["f09f949b", "5b4f4e5d"], # [ON WITH EXCLAMATION MARK WITH LEFT RIGHT ARROW ABOVE] U+1F51B -> "[ON]"
+  ["f09f949c", "5b534f4f4e5d"], # [SOON WITH RIGHTWARDS ARROW ABOVE] U+1F51C -> "[SOON]"
+  ["f09f949d", "ee898c"], # [TOP WITH UPWARDS ARROW ABOVE] U+1F51D -> U+E24C
+  ["e28083", "e38093"], # [EM SPACE] U+2003 -> U+3013 (GETA)
+  ["e28082", "e38093"], # [EN SPACE] U+2002 -> U+3013 (GETA)
+  ["e28085", "e38093"], # [FOUR-PER-EM SPACE] U+2005 -> U+3013 (GETA)
+  ["e29c85", "5be38381e382a7e38383e382afe3839ee383bce382af5d"], # [WHITE HEAVY CHECK MARK] U+2705 -> "[チェックマーク]"
+  ["e29c8a", "ee8090"], # [RAISED FIST] U+270A -> U+E010
+  ["e29c8b", "ee8092"], # [RAISED HAND] U+270B -> U+E012
+  ["e29c8c", "ee8091"], # [VICTORY HAND] U+270C -> U+E011
+  ["f09f918a", "ee808d"], # [FISTED HAND SIGN] U+1F44A -> U+E00D
+  ["f09f918d", "ee808e"], # [THUMBS UP SIGN] U+1F44D -> U+E00E
+  ["e2989d", "ee808f"], # [WHITE UP POINTING INDEX] U+261D -> U+E00F
+  ["f09f9186", "ee88ae"], # [WHITE UP POINTING BACKHAND INDEX] U+1F446 -> U+E22E
+  ["f09f9187", "ee88af"], # [WHITE DOWN POINTING BACKHAND INDEX] U+1F447 -> U+E22F
+  ["f09f9188", "ee88b0"], # [WHITE LEFT POINTING BACKHAND INDEX] U+1F448 -> U+E230
+  ["f09f9189", "ee88b1"], # [WHITE RIGHT POINTING BACKHAND INDEX] U+1F449 -> U+E231
+  ["f09f918b", "ee909e"], # [WAVING HAND SIGN] U+1F44B -> U+E41E
+  ["f09f918f", "ee909f"], # [CLAPPING HANDS SIGN] U+1F44F -> U+E41F
+  ["f09f918c", "ee90a0"], # [OK HAND SIGN] U+1F44C -> U+E420
+  ["f09f918e", "ee90a1"], # [THUMBS DOWN SIGN] U+1F44E -> U+E421
+  ["f09f9190", "ee90a2"], # [OPEN HANDS SIGN] U+1F450 -> U+E422
+]
+
+EMOJI_EXCHANGE_TBL['UTF-8']['UTF8-Google'] = [
+  ["e29880", "f3be8080"], # [BLACK SUN WITH RAYS] U+2600 -> U+FE000
+  ["e29881", "f3be8081"], # [CLOUD] U+2601 -> U+FE001
+  ["e29894", "f3be8082"], # [UMBRELLA WITH RAIN DROPS] U+2614 -> U+FE002
+  ["e29b84", "f3be8083"], # [SNOWMAN WITHOUT SNOW] U+26C4 -> U+FE003
+  ["e29aa1", "f3be8084"], # [HIGH VOLTAGE SIGN] U+26A1 -> U+FE004
+  ["f09f8c80", "f3be8085"], # [CYCLONE] U+1F300 -> U+FE005
+  ["f09f8c81", "f3be8086"], # [FOGGY] U+1F301 -> U+FE006
+  ["f09f8c82", "f3be8087"], # [CLOSED UMBRELLA] U+1F302 -> U+FE007
+  ["f09f8c83", "f3be8088"], # [NIGHT WITH STARS] U+1F303 -> U+FE008
+  ["f09f8c84", "f3be8089"], # [SUNRISE OVER MOUNTAINS] U+1F304 -> U+FE009
+  ["f09f8c85", "f3be808a"], # [SUNRISE] U+1F305 -> U+FE00A
+  ["f09f8c87", "f3be808c"], # [SUNSET OVER BUILDINGS] U+1F307 -> U+FE00C
+  ["f09f8c88", "f3be808d"], # [RAINBOW] U+1F308 -> U+FE00D
+  ["e29d84", "f3be808e"], # [SNOWFLAKE] U+2744 -> U+FE00E
+  ["e29b85", "f3be808f"], # [SUN BEHIND CLOUD] U+26C5 -> U+FE00F
+  ["f09f8c89", "f3be8090"], # [BRIDGE AT NIGHT] U+1F309 -> U+FE010
+  ["f09f8c8a", "f3be80b8"], # [WATER WAVE] U+1F30A -> U+FE038
+  ["f09f8c8b", "f3be80ba"], # [VOLCANO] U+1F30B -> U+FE03A
+  ["f09f8c8c", "f3be80bb"], # [MILKY WAY] U+1F30C -> U+FE03B
+  ["f09f8c8f", "f3be80b9"], # [EARTH GLOBE ASIA-AUSTRALIA] U+1F30F -> U+FE039
+  ["f09f8c91", "f3be8091"], # [NEW MOON SYMBOL] U+1F311 -> U+FE011
+  ["f09f8c94", "f3be8092"], # [WAXING GIBBOUS MOON SYMBOL] U+1F314 -> U+FE012
+  ["f09f8c93", "f3be8093"], # [FIRST QUARTER MOON SYMBOL] U+1F313 -> U+FE013
+  ["f09f8c99", "f3be8094"], # [CRESCENT MOON] U+1F319 -> U+FE014
+  ["f09f8c95", "f3be8095"], # [FULL MOON SYMBOL] U+1F315 -> U+FE015
+  ["f09f8c9b", "f3be8096"], # [FIRST QUARTER MOON WITH FACE] U+1F31B -> U+FE016
+  ["f09f8c9f", "f3beada9"], # [GLOWING STAR] U+1F31F -> U+FEB69
+  ["f09f8ca0", "f3beadaa"], # [SHOOTING STAR] U+1F320 -> U+FEB6A
+  ["f09f9590", "f3be809e"], # [CLOCK FACE ONE OCLOCK] U+1F550 -> U+FE01E
+  ["f09f9591", "f3be809f"], # [CLOCK FACE TWO OCLOCK] U+1F551 -> U+FE01F
+  ["f09f9592", "f3be80a0"], # [CLOCK FACE THREE OCLOCK] U+1F552 -> U+FE020
+  ["f09f9593", "f3be80a1"], # [CLOCK FACE FOUR OCLOCK] U+1F553 -> U+FE021
+  ["f09f9594", "f3be80a2"], # [CLOCK FACE FIVE OCLOCK] U+1F554 -> U+FE022
+  ["f09f9595", "f3be80a3"], # [CLOCK FACE SIX OCLOCK] U+1F555 -> U+FE023
+  ["f09f9596", "f3be80a4"], # [CLOCK FACE SEVEN OCLOCK] U+1F556 -> U+FE024
+  ["f09f9597", "f3be80a5"], # [CLOCK FACE EIGHT OCLOCK] U+1F557 -> U+FE025
+  ["f09f9598", "f3be80a6"], # [CLOCK FACE NINE OCLOCK] U+1F558 -> U+FE026
+  ["f09f9599", "f3be80a7"], # [CLOCK FACE TEN OCLOCK] U+1F559 -> U+FE027
+  ["f09f959a", "f3be80a8"], # [CLOCK FACE ELEVEN OCLOCK] U+1F55A -> U+FE028
+  ["f09f959b", "f3be80a9"], # [CLOCK FACE TWELVE OCLOCK] U+1F55B -> U+FE029
+  ["e28c9a", "f3be809d"], # [WATCH] U+231A -> U+FE01D
+  ["e28c9b", "f3be809c"], # [HOURGLASS] U+231B -> U+FE01C
+  ["e28fb0", "f3be80aa"], # [ALARM CLOCK] U+23F0 -> U+FE02A
+  ["e28fb3", "f3be809b"], # [HOURGLASS WITH FLOWING SAND] U+23F3 -> U+FE01B
+  ["e29988", "f3be80ab"], # [ARIES] U+2648 -> U+FE02B
+  ["e29989", "f3be80ac"], # [TAURUS] U+2649 -> U+FE02C
+  ["e2998a", "f3be80ad"], # [GEMINI] U+264A -> U+FE02D
+  ["e2998b", "f3be80ae"], # [CANCER] U+264B -> U+FE02E
+  ["e2998c", "f3be80af"], # [LEO] U+264C -> U+FE02F
+  ["e2998d", "f3be80b0"], # [VIRGO] U+264D -> U+FE030
+  ["e2998e", "f3be80b1"], # [LIBRA] U+264E -> U+FE031
+  ["e2998f", "f3be80b2"], # [SCORPIUS] U+264F -> U+FE032
+  ["e29990", "f3be80b3"], # [SAGITTARIUS] U+2650 -> U+FE033
+  ["e29991", "f3be80b4"], # [CAPRICORN] U+2651 -> U+FE034
+  ["e29992", "f3be80b5"], # [AQUARIUS] U+2652 -> U+FE035
+  ["e29993", "f3be80b6"], # [PISCES] U+2653 -> U+FE036
+  ["e29b8e", "f3be80b7"], # [OPHIUCHUS] U+26CE -> U+FE037
+  ["f09f8d80", "f3be80bc"], # [FOUR LEAF CLOVER] U+1F340 -> U+FE03C
+  ["f09f8cb7", "f3be80bd"], # [TULIP] U+1F337 -> U+FE03D
+  ["f09f8cb1", "f3be80be"], # [SEEDLING] U+1F331 -> U+FE03E
+  ["f09f8d81", "f3be80bf"], # [MAPLE LEAF] U+1F341 -> U+FE03F
+  ["f09f8cb8", "f3be8180"], # [CHERRY BLOSSOM] U+1F338 -> U+FE040
+  ["f09f8cb9", "f3be8181"], # [ROSE] U+1F339 -> U+FE041
+  ["f09f8d82", "f3be8182"], # [FALLEN LEAF] U+1F342 -> U+FE042
+  ["f09f8d83", "f3be8183"], # [LEAF FLUTTERING IN WIND] U+1F343 -> U+FE043
+  ["f09f8cba", "f3be8185"], # [HIBISCUS] U+1F33A -> U+FE045
+  ["f09f8cbb", "f3be8186"], # [SUNFLOWER] U+1F33B -> U+FE046
+  ["f09f8cb4", "f3be8187"], # [PALM TREE] U+1F334 -> U+FE047
+  ["f09f8cb5", "f3be8188"], # [CACTUS] U+1F335 -> U+FE048
+  ["f09f8cbe", "f3be8189"], # [EAR OF RICE] U+1F33E -> U+FE049
+  ["f09f8cbd", "f3be818a"], # [EAR OF MAIZE] U+1F33D -> U+FE04A
+  ["f09f8d84", "f3be818b"], # [MUSHROOM] U+1F344 -> U+FE04B
+  ["f09f8cb0", "f3be818c"], # [CHESTNUT] U+1F330 -> U+FE04C
+  ["f09f8cbc", "f3be818d"], # [BLOSSOM] U+1F33C -> U+FE04D
+  ["f09f8cbf", "f3be818e"], # [HERB] U+1F33F -> U+FE04E
+  ["f09f8d92", "f3be818f"], # [CHERRIES] U+1F352 -> U+FE04F
+  ["f09f8d8c", "f3be8190"], # [BANANA] U+1F34C -> U+FE050
+  ["f09f8d8e", "f3be8191"], # [RED APPLE] U+1F34E -> U+FE051
+  ["f09f8d8a", "f3be8192"], # [TANGERINE] U+1F34A -> U+FE052
+  ["f09f8d93", "f3be8193"], # [STRAWBERRY] U+1F353 -> U+FE053
+  ["f09f8d89", "f3be8194"], # [WATERMELON] U+1F349 -> U+FE054
+  ["f09f8d85", "f3be8195"], # [TOMATO] U+1F345 -> U+FE055
+  ["f09f8d86", "f3be8196"], # [AUBERGINE] U+1F346 -> U+FE056
+  ["f09f8d88", "f3be8197"], # [MELON] U+1F348 -> U+FE057
+  ["f09f8d8d", "f3be8198"], # [PINEAPPLE] U+1F34D -> U+FE058
+  ["f09f8d87", "f3be8199"], # [GRAPES] U+1F347 -> U+FE059
+  ["f09f8d91", "f3be819a"], # [PEACH] U+1F351 -> U+FE05A
+  ["f09f8d8f", "f3be819b"], # [GREEN APPLE] U+1F34F -> U+FE05B
+  ["f09f9180", "f3be8690"], # [EYES] U+1F440 -> U+FE190
+  ["f09f9182", "f3be8691"], # [EAR] U+1F442 -> U+FE191
+  ["f09f9183", "f3be8692"], # [NOSE] U+1F443 -> U+FE192
+  ["f09f9184", "f3be8693"], # [MOUTH] U+1F444 -> U+FE193
+  ["f09f9185", "f3be8694"], # [TONGUE] U+1F445 -> U+FE194
+  ["f09f9284", "f3be8695"], # [LIPSTICK] U+1F484 -> U+FE195
+  ["f09f9285", "f3be8696"], # [NAIL POLISH] U+1F485 -> U+FE196
+  ["f09f9286", "f3be8697"], # [FACE MASSAGE] U+1F486 -> U+FE197
+  ["f09f9287", "f3be8698"], # [HAIRCUT] U+1F487 -> U+FE198
+  ["f09f9288", "f3be8699"], # [BARBER POLE] U+1F488 -> U+FE199
+  ["f09f91a4", "f3be869a"], # [BUST IN SILHOUETTE] U+1F464 -> U+FE19A
+  ["f09f91a6", "f3be869b"], # [BOY] U+1F466 -> U+FE19B
+  ["f09f91a7", "f3be869c"], # [GIRL] U+1F467 -> U+FE19C
+  ["f09f91a8", "f3be869d"], # [MAN] U+1F468 -> U+FE19D
+  ["f09f91a9", "f3be869e"], # [WOMAN] U+1F469 -> U+FE19E
+  ["f09f91aa", "f3be869f"], # [FAMILY] U+1F46A -> U+FE19F
+  ["f09f91ab", "f3be86a0"], # [MAN AND WOMAN HOLDING HANDS] U+1F46B -> U+FE1A0
+  ["f09f91ae", "f3be86a1"], # [POLICE OFFICER] U+1F46E -> U+FE1A1
+  ["f09f91af", "f3be86a2"], # [WOMAN WITH BUNNY EARS] U+1F46F -> U+FE1A2
+  ["f09f91b0", "f3be86a3"], # [BRIDE WITH VEIL] U+1F470 -> U+FE1A3
+  ["f09f91b1", "f3be86a4"], # [WESTERN PERSON] U+1F471 -> U+FE1A4
+  ["f09f91b2", "f3be86a5"], # [MAN WITH GUA PI MAO] U+1F472 -> U+FE1A5
+  ["f09f91b3", "f3be86a6"], # [MAN WITH TURBAN] U+1F473 -> U+FE1A6
+  ["f09f91b4", "f3be86a7"], # [OLDER MAN] U+1F474 -> U+FE1A7
+  ["f09f91b5", "f3be86a8"], # [OLDER WOMAN] U+1F475 -> U+FE1A8
+  ["f09f91b6", "f3be86a9"], # [BABY] U+1F476 -> U+FE1A9
+  ["f09f91b7", "f3be86aa"], # [CONSTRUCTION WORKER] U+1F477 -> U+FE1AA
+  ["f09f91b8", "f3be86ab"], # [PRINCESS] U+1F478 -> U+FE1AB
+  ["f09f91b9", "f3be86ac"], # [JAPANESE OGRE] U+1F479 -> U+FE1AC
+  ["f09f91ba", "f3be86ad"], # [JAPANESE GOBLIN] U+1F47A -> U+FE1AD
+  ["f09f91bb", "f3be86ae"], # [GHOST] U+1F47B -> U+FE1AE
+  ["f09f91bc", "f3be86af"], # [BABY ANGEL] U+1F47C -> U+FE1AF
+  ["f09f91bd", "f3be86b0"], # [EXTRATERRESTRIAL ALIEN] U+1F47D -> U+FE1B0
+  ["f09f91be", "f3be86b1"], # [ALIEN MONSTER] U+1F47E -> U+FE1B1
+  ["f09f91bf", "f3be86b2"], # [IMP] U+1F47F -> U+FE1B2
+  ["f09f9280", "f3be86b3"], # [SKULL] U+1F480 -> U+FE1B3
+  ["f09f9281", "f3be86b4"], # [INFORMATION DESK PERSON] U+1F481 -> U+FE1B4
+  ["f09f9282", "f3be86b5"], # [GUARDSMAN] U+1F482 -> U+FE1B5
+  ["f09f9283", "f3be86b6"], # [DANCER] U+1F483 -> U+FE1B6
+  ["f09f908c", "f3be86b9"], # [SNAIL] U+1F40C -> U+FE1B9
+  ["f09f908d", "f3be8793"], # [SNAKE] U+1F40D -> U+FE1D3
+  ["f09f908e", "f3be9f9c"], # [HORSE] U+1F40E -> U+FE7DC
+  ["f09f9094", "f3be8794"], # [CHICKEN] U+1F414 -> U+FE1D4
+  ["f09f9097", "f3be8795"], # [BOAR] U+1F417 -> U+FE1D5
+  ["f09f90ab", "f3be8796"], # [BACTRIAN CAMEL] U+1F42B -> U+FE1D6
+  ["f09f9098", "f3be878c"], # [ELEPHANT] U+1F418 -> U+FE1CC
+  ["f09f90a8", "f3be878d"], # [KOALA] U+1F428 -> U+FE1CD
+  ["f09f9092", "f3be878e"], # [MONKEY] U+1F412 -> U+FE1CE
+  ["f09f9091", "f3be878f"], # [SHEEP] U+1F411 -> U+FE1CF
+  ["f09f9099", "f3be8785"], # [OCTOPUS] U+1F419 -> U+FE1C5
+  ["f09f909a", "f3be8786"], # [SPIRAL SHELL] U+1F41A -> U+FE1C6
+  ["f09f909b", "f3be878b"], # [BUG] U+1F41B -> U+FE1CB
+  ["f09f909c", "f3be879a"], # [ANT] U+1F41C -> U+FE1DA
+  ["f09f909d", "f3be87a1"], # [HONEYBEE] U+1F41D -> U+FE1E1
+  ["f09f909e", "f3be87a2"], # [LADY BEETLE] U+1F41E -> U+FE1E2
+  ["f09f90a0", "f3be8789"], # [TROPICAL FISH] U+1F420 -> U+FE1C9
+  ["f09f90a1", "f3be8799"], # [BLOWFISH] U+1F421 -> U+FE1D9
+  ["f09f90a2", "f3be879c"], # [TURTLE] U+1F422 -> U+FE1DC
+  ["f09f90a4", "f3be86ba"], # [BABY CHICK] U+1F424 -> U+FE1BA
+  ["f09f90a5", "f3be86bb"], # [FRONT-FACING BABY CHICK] U+1F425 -> U+FE1BB
+  ["f09f90a6", "f3be8788"], # [BIRD] U+1F426 -> U+FE1C8
+  ["f09f90a3", "f3be879d"], # [HATCHING CHICK] U+1F423 -> U+FE1DD
+  ["f09f90a7", "f3be86bc"], # [PENGUIN] U+1F427 -> U+FE1BC
+  ["f09f90a9", "f3be8798"], # [POODLE] U+1F429 -> U+FE1D8
+  ["f09f909f", "f3be86bd"], # [FISH] U+1F41F -> U+FE1BD
+  ["f09f90ac", "f3be8787"], # [DOLPHIN] U+1F42C -> U+FE1C7
+  ["f09f90ad", "f3be8782"], # [MOUSE FACE] U+1F42D -> U+FE1C2
+  ["f09f90af", "f3be8780"], # [TIGER FACE] U+1F42F -> U+FE1C0
+  ["f09f90b1", "f3be86b8"], # [CAT FACE] U+1F431 -> U+FE1B8
+  ["f09f90b3", "f3be8783"], # [SPOUTING WHALE] U+1F433 -> U+FE1C3
+  ["f09f90b4", "f3be86be"], # [HORSE FACE] U+1F434 -> U+FE1BE
+  ["f09f90b5", "f3be8784"], # [MONKEY FACE] U+1F435 -> U+FE1C4
+  ["f09f90b6", "f3be86b7"], # [DOG FACE] U+1F436 -> U+FE1B7
+  ["f09f90b7", "f3be86bf"], # [PIG FACE] U+1F437 -> U+FE1BF
+  ["f09f90bb", "f3be8781"], # [BEAR FACE] U+1F43B -> U+FE1C1
+  ["f09f90b9", "f3be878a"], # [HAMSTER FACE] U+1F439 -> U+FE1CA
+  ["f09f90ba", "f3be8790"], # [WOLF FACE] U+1F43A -> U+FE1D0
+  ["f09f90ae", "f3be8791"], # [COW FACE] U+1F42E -> U+FE1D1
+  ["f09f90b0", "f3be8792"], # [RABBIT FACE] U+1F430 -> U+FE1D2
+  ["f09f90b8", "f3be8797"], # [FROG FACE] U+1F438 -> U+FE1D7
+  ["f09f90be", "f3be879b"], # [PAW PRINTS] U+1F43E -> U+FE1DB
+  ["f09f90b2", "f3be879e"], # [DRAGON FACE] U+1F432 -> U+FE1DE
+  ["f09f90bc", "f3be879f"], # [PANDA FACE] U+1F43C -> U+FE1DF
+  ["f09f90bd", "f3be87a0"], # [PIG NOSE] U+1F43D -> U+FE1E0
+  ["f09f9880", "f3be8ca0"], # [ANGRY FACE] U+1F600 -> U+FE320
+  ["f09f9881", "f3be8ca1"], # [ANGUISHED FACE] U+1F601 -> U+FE321
+  ["f09f9882", "f3be8ca2"], # [ASTONISHED FACE] U+1F602 -> U+FE322
+  ["f09f9883", "f3be8ca3"], # [DISAPPOINTED FACE] U+1F603 -> U+FE323
+  ["f09f9884", "f3be8ca4"], # [DIZZY FACE] U+1F604 -> U+FE324
+  ["f09f9885", "f3be8ca5"], # [EXASPERATED FACE] U+1F605 -> U+FE325
+  ["f09f9886", "f3be8ca6"], # [EXPRESSIONLESS FACE] U+1F606 -> U+FE326
+  ["f09f9887", "f3be8ca7"], # [FACE WITH HEART-SHAPED EYES] U+1F607 -> U+FE327
+  ["f09f9888", "f3be8ca8"], # [FACE WITH LOOK OF TRIUMPH] U+1F608 -> U+FE328
+  ["f09f9889", "f3be8ca9"], # [WINKING FACE WITH STUCK-OUT TONGUE] U+1F609 -> U+FE329
+  ["f09f988a", "f3be8caa"], # [FACE WITH STUCK-OUT TONGUE] U+1F60A -> U+FE32A
+  ["f09f988b", "f3be8cab"], # [FACE SAVOURING DELICIOUS FOOD] U+1F60B -> U+FE32B
+  ["f09f988c", "f3be8cac"], # [FACE THROWING A KISS] U+1F60C -> U+FE32C
+  ["f09f988d", "f3be8cad"], # [FACE KISSING] U+1F60D -> U+FE32D
+  ["f09f988e", "f3be8cae"], # [FACE WITH MASK] U+1F60E -> U+FE32E
+  ["f09f988f", "f3be8caf"], # [FLUSHED FACE] U+1F60F -> U+FE32F
+  ["f09f9890", "f3be8cb0"], # [HAPPY FACE WITH OPEN MOUTH] U+1F610 -> U+FE330
+  ["f09f9891", "f3be8cb1"], # [HAPPY FACE WITH OPEN MOUTH AND COLD SWEAT] U+1F611 -> U+FE331
+  ["f09f9892", "f3be8cb2"], # [HAPPY FACE WITH OPEN MOUTH AND CLOSED EYES] U+1F612 -> U+FE332
+  ["f09f9893", "f3be8cb3"], # [HAPPY FACE WITH GRIN] U+1F613 -> U+FE333
+  ["f09f9894", "f3be8cb4"], # [HAPPY AND CRYING FACE] U+1F614 -> U+FE334
+  ["f09f9895", "f3be8cb5"], # [HAPPY FACE WITH WIDE MOUTH AND RAISED EYEBROWS] U+1F615 -> U+FE335
+  ["e298ba", "f3be8cb6"], # [WHITE SMILING FACE] U+263A -> U+FE336
+  ["f09f9896", "f3be8cb8"], # [HAPPY FACE WITH OPEN MOUTH AND RAISED EYEBROWS] U+1F616 -> U+FE338
+  ["f09f9897", "f3be8cb9"], # [CRYING FACE] U+1F617 -> U+FE339
+  ["f09f9898", "f3be8cba"], # [LOUDLY CRYING FACE] U+1F618 -> U+FE33A
+  ["f09f9899", "f3be8cbb"], # [FEARFUL FACE] U+1F619 -> U+FE33B
+  ["f09f989a", "f3be8cbc"], # [PERSEVERING FACE] U+1F61A -> U+FE33C
+  ["f09f989b", "f3be8cbd"], # [POUTING FACE] U+1F61B -> U+FE33D
+  ["f09f989c", "f3be8cbe"], # [RELIEVED FACE] U+1F61C -> U+FE33E
+  ["f09f989d", "f3be8cbf"], # [CONFOUNDED FACE] U+1F61D -> U+FE33F
+  ["f09f989e", "f3be8d80"], # [PENSIVE FACE] U+1F61E -> U+FE340
+  ["f09f989f", "f3be8d81"], # [FACE SCREAMING IN FEAR] U+1F61F -> U+FE341
+  ["f09f98a0", "f3be8d82"], # [SLEEPY FACE] U+1F620 -> U+FE342
+  ["f09f98a1", "f3be8d83"], # [SMIRKING FACE] U+1F621 -> U+FE343
+  ["f09f98a2", "f3be8d84"], # [FACE WITH COLD SWEAT] U+1F622 -> U+FE344
+  ["f09f98a3", "f3be8d85"], # [DISAPPOINTED BUT RELIEVED FACE] U+1F623 -> U+FE345
+  ["f09f98a4", "f3be8d86"], # [TIRED FACE] U+1F624 -> U+FE346
+  ["f09f98a5", "f3be8d87"], # [WINKING FACE] U+1F625 -> U+FE347
+  ["f09f98ab", "f3be8d88"], # [CAT FACE WITH OPEN MOUTH] U+1F62B -> U+FE348
+  ["f09f98ac", "f3be8d89"], # [HAPPY CAT FACE WITH GRIN] U+1F62C -> U+FE349
+  ["f09f98ad", "f3be8d8a"], # [HAPPY AND CRYING CAT FACE] U+1F62D -> U+FE34A
+  ["f09f98ae", "f3be8d8b"], # [CAT FACE KISSING] U+1F62E -> U+FE34B
+  ["f09f98af", "f3be8d8c"], # [CAT FACE WITH HEART-SHAPED EYES] U+1F62F -> U+FE34C
+  ["f09f98b0", "f3be8d8d"], # [CRYING CAT FACE] U+1F630 -> U+FE34D
+  ["f09f98b1", "f3be8d8e"], # [POUTING CAT FACE] U+1F631 -> U+FE34E
+  ["f09f98b2", "f3be8d8f"], # [CAT FACE WITH TIGHTLY-CLOSED LIPS] U+1F632 -> U+FE34F
+  ["f09f98b3", "f3be8d90"], # [ANGUISHED CAT FACE] U+1F633 -> U+FE350
+  ["f09f98b4", "f3be8d91"], # [FACE WITH NO GOOD GESTURE] U+1F634 -> U+FE351
+  ["f09f98b5", "f3be8d92"], # [FACE WITH OK GESTURE] U+1F635 -> U+FE352
+  ["f09f98b6", "f3be8d93"], # [PERSON BOWING DEEPLY] U+1F636 -> U+FE353
+  ["f09f98b7", "f3be8d94"], # [SEE-NO-EVIL MONKEY] U+1F637 -> U+FE354
+  ["f09f98b9", "f3be8d95"], # [SPEAK-NO-EVIL MONKEY] U+1F639 -> U+FE355
+  ["f09f98b8", "f3be8d96"], # [HEAR-NO-EVIL MONKEY] U+1F638 -> U+FE356
+  ["f09f98ba", "f3be8d97"], # [PERSON RAISING ONE HAND] U+1F63A -> U+FE357
+  ["f09f98bb", "f3be8d98"], # [PERSON RAISING BOTH HANDS IN CELEBRATION] U+1F63B -> U+FE358
+  ["f09f98bc", "f3be8d99"], # [PERSON FROWNING] U+1F63C -> U+FE359
+  ["f09f98bd", "f3be8d9a"], # [PERSON WITH POUTING FACE] U+1F63D -> U+FE35A
+  ["f09f98be", "f3be8d9b"], # [PERSON WITH FOLDED HANDS] U+1F63E -> U+FE35B
+  ["f09f8fa0", "f3be92b0"], # [HOUSE BUILDING] U+1F3E0 -> U+FE4B0
+  ["f09f8fa1", "f3be92b1"], # [HOUSE WITH GARDEN] U+1F3E1 -> U+FE4B1
+  ["f09f8fa2", "f3be92b2"], # [OFFICE BUILDING] U+1F3E2 -> U+FE4B2
+  ["f09f8fa3", "f3be92b3"], # [JAPANESE POST OFFICE] U+1F3E3 -> U+FE4B3
+  ["f09f8fa5", "f3be92b4"], # [HOSPITAL] U+1F3E5 -> U+FE4B4
+  ["f09f8fa6", "f3be92b5"], # [BANK] U+1F3E6 -> U+FE4B5
+  ["f09f8fa7", "f3be92b6"], # [AUTOMATED TELLER MACHINE] U+1F3E7 -> U+FE4B6
+  ["f09f8fa8", "f3be92b7"], # [HOTEL] U+1F3E8 -> U+FE4B7
+  ["f09f8fa9", "f3be92b8"], # [LOVE HOTEL] U+1F3E9 -> U+FE4B8
+  ["f09f8faa", "f3be92b9"], # [CONVENIENCE STORE] U+1F3EA -> U+FE4B9
+  ["f09f8fab", "f3be92ba"], # [SCHOOL] U+1F3EB -> U+FE4BA
+  ["e29baa", "f3be92bb"], # [CHURCH] U+26EA -> U+FE4BB
+  ["e29bb2", "f3be92bc"], # [FOUNTAIN] U+26F2 -> U+FE4BC
+  ["f09f8fac", "f3be92bd"], # [DEPARTMENT STORE] U+1F3EC -> U+FE4BD
+  ["f09f8faf", "f3be92be"], # [JAPANESE CASTLE] U+1F3EF -> U+FE4BE
+  ["f09f8fb0", "f3be92bf"], # [EUROPEAN CASTLE] U+1F3F0 -> U+FE4BF
+  ["f09f8fad", "f3be9380"], # [FACTORY] U+1F3ED -> U+FE4C0
+  ["e29a93", "f3be9381"], # [ANCHOR] U+2693 -> U+FE4C1
+  ["f09f8fae", "f3be9382"], # [IZAKAYA LANTERN] U+1F3EE -> U+FE4C2
+  ["f09f97bb", "f3be9383"], # [MOUNT FUJI] U+1F5FB -> U+FE4C3
+  ["f09f97bc", "f3be9384"], # [TOKYO TOWER] U+1F5FC -> U+FE4C4
+  ["f09f97bd", "f3be9386"], # [STATUE OF LIBERTY] U+1F5FD -> U+FE4C6
+  ["f09f97be", "f3be9387"], # [SILHOUETTE OF JAPAN] U+1F5FE -> U+FE4C7
+  ["f09f97bf", "f3be9388"], # [MOYAI] U+1F5FF -> U+FE4C8
+  ["f09f919e", "f3be938c"], # [MANS SHOE] U+1F45E -> U+FE4CC
+  ["f09f919f", "f3be938d"], # [ATHLETIC SHOE] U+1F45F -> U+FE4CD
+  ["f09f91a0", "f3be9396"], # [HIGH-HEELED SHOE] U+1F460 -> U+FE4D6
+  ["f09f91a1", "f3be9397"], # [WOMANS SANDAL] U+1F461 -> U+FE4D7
+  ["f09f91a2", "f3be9398"], # [WOMANS BOOTS] U+1F462 -> U+FE4D8
+  ["f09f91a3", "f3be9593"], # [FOOTPRINTS] U+1F463 -> U+FE553
+  ["f09f9193", "f3be938e"], # [EYEGLASSES] U+1F453 -> U+FE4CE
+  ["f09f9195", "f3be938f"], # [T-SHIRT] U+1F455 -> U+FE4CF
+  ["f09f9196", "f3be9390"], # [JEANS] U+1F456 -> U+FE4D0
+  ["f09f9191", "f3be9391"], # [CROWN] U+1F451 -> U+FE4D1
+  ["f09f9194", "f3be9393"], # [NECKTIE] U+1F454 -> U+FE4D3
+  ["f09f9192", "f3be9394"], # [WOMANS HAT] U+1F452 -> U+FE4D4
+  ["f09f9197", "f3be9395"], # [DRESS] U+1F457 -> U+FE4D5
+  ["f09f9198", "f3be9399"], # [KIMONO] U+1F458 -> U+FE4D9
+  ["f09f9199", "f3be939a"], # [BIKINI] U+1F459 -> U+FE4DA
+  ["f09f919a", "f3be939b"], # [WOMANS CLOTHES] U+1F45A -> U+FE4DB
+  ["f09f919b", "f3be939c"], # [PURSE] U+1F45B -> U+FE4DC
+  ["f09f919c", "f3be93b0"], # [HANDBAG] U+1F45C -> U+FE4F0
+  ["f09f919d", "f3be93b1"], # [POUCH] U+1F45D -> U+FE4F1
+  ["f09f92b0", "f3be939d"], # [MONEY BAG] U+1F4B0 -> U+FE4DD
+  ["f09f92b1", "f3be939e"], # [CURRENCY EXCHANGE] U+1F4B1 -> U+FE4DE
+  ["f09f92b9", "f3be939f"], # [CHART WITH UPWARDS TREND AND YEN SIGN] U+1F4B9 -> U+FE4DF
+  ["f09f92b2", "f3be93a0"], # [HEAVY DOLLAR SIGN] U+1F4B2 -> U+FE4E0
+  ["f09f92b3", "f3be93a1"], # [CREDIT CARD] U+1F4B3 -> U+FE4E1
+  ["f09f92b4", "f3be93a2"], # [BANKNOTE WITH YEN SIGN] U+1F4B4 -> U+FE4E2
+  ["f09f92b5", "f3be93a3"], # [BANKNOTE WITH DOLLAR SIGN] U+1F4B5 -> U+FE4E3
+  ["f09f92b8", "f3be93a4"], # [MONEY WITH WINGS] U+1F4B8 -> U+FE4E4
+  ["f09f87a6", "5b415d"], # [REGIONAL INDICATOR SYMBOL LETTER A] U+1F1E6 -> "[A]"
+  ["f09f87a7", "5b425d"], # [REGIONAL INDICATOR SYMBOL LETTER B] U+1F1E7 -> "[B]"
+  ["f09f87a8", "5b435d"], # [REGIONAL INDICATOR SYMBOL LETTER C] U+1F1E8 -> "[C]"
+  ["f09f87a9", "5b445d"], # [REGIONAL INDICATOR SYMBOL LETTER D] U+1F1E9 -> "[D]"
+  ["f09f87aa", "5b455d"], # [REGIONAL INDICATOR SYMBOL LETTER E] U+1F1EA -> "[E]"
+  ["f09f87ab", "5b465d"], # [REGIONAL INDICATOR SYMBOL LETTER F] U+1F1EB -> "[F]"
+  ["f09f87ac", "5b475d"], # [REGIONAL INDICATOR SYMBOL LETTER G] U+1F1EC -> "[G]"
+  ["f09f87ad", "5b485d"], # [REGIONAL INDICATOR SYMBOL LETTER H] U+1F1ED -> "[H]"
+  ["f09f87ae", "5b495d"], # [REGIONAL INDICATOR SYMBOL LETTER I] U+1F1EE -> "[I]"
+  ["f09f87af", "5b4a5d"], # [REGIONAL INDICATOR SYMBOL LETTER J] U+1F1EF -> "[J]"
+  ["f09f87b0", "5b4b5d"], # [REGIONAL INDICATOR SYMBOL LETTER K] U+1F1F0 -> "[K]"
+  ["f09f87b1", "5b4c5d"], # [REGIONAL INDICATOR SYMBOL LETTER L] U+1F1F1 -> "[L]"
+  ["f09f87b2", "5b4d5d"], # [REGIONAL INDICATOR SYMBOL LETTER M] U+1F1F2 -> "[M]"
+  ["f09f87b3", "5b4e5d"], # [REGIONAL INDICATOR SYMBOL LETTER N] U+1F1F3 -> "[N]"
+  ["f09f87b4", "5b4f5d"], # [REGIONAL INDICATOR SYMBOL LETTER O] U+1F1F4 -> "[O]"
+  ["f09f87b5", "5b505d"], # [REGIONAL INDICATOR SYMBOL LETTER P] U+1F1F5 -> "[P]"
+  ["f09f87b6", "5b515d"], # [REGIONAL INDICATOR SYMBOL LETTER Q] U+1F1F6 -> "[Q]"
+  ["f09f87b7", "5b525d"], # [REGIONAL INDICATOR SYMBOL LETTER R] U+1F1F7 -> "[R]"
+  ["f09f87b8", "5b535d"], # [REGIONAL INDICATOR SYMBOL LETTER S] U+1F1F8 -> "[S]"
+  ["f09f87b9", "5b545d"], # [REGIONAL INDICATOR SYMBOL LETTER T] U+1F1F9 -> "[T]"
+  ["f09f87ba", "5b555d"], # [REGIONAL INDICATOR SYMBOL LETTER U] U+1F1FA -> "[U]"
+  ["f09f87bb", "5b565d"], # [REGIONAL INDICATOR SYMBOL LETTER V] U+1F1FB -> "[V]"
+  ["f09f87bc", "5b575d"], # [REGIONAL INDICATOR SYMBOL LETTER W] U+1F1FC -> "[W]"
+  ["f09f87bd", "5b585d"], # [REGIONAL INDICATOR SYMBOL LETTER X] U+1F1FD -> "[X]"
+  ["f09f87be", "5b595d"], # [REGIONAL INDICATOR SYMBOL LETTER Y] U+1F1FE -> "[Y]"
+  ["f09f87bf", "5b5a5d"], # [REGIONAL INDICATOR SYMBOL LETTER Z] U+1F1FF -> "[Z]"
+  ["f09f94a5", "f3be93b6"], # [FIRE] U+1F525 -> U+FE4F6
+  ["f09f94a6", "f3be93bb"], # [ELECTRIC TORCH] U+1F526 -> U+FE4FB
+  ["f09f94a7", "f3be9389"], # [WRENCH] U+1F527 -> U+FE4C9
+  ["f09f94a8", "f3be938a"], # [HAMMER] U+1F528 -> U+FE4CA
+  ["f09f94a9", "f3be938b"], # [NUT AND BOLT] U+1F529 -> U+FE4CB
+  ["f09f94aa", "f3be93ba"], # [HOCHO] U+1F52A -> U+FE4FA
+  ["f09f94ab", "f3be93b5"], # [PISTOL] U+1F52B -> U+FE4F5
+  ["f09f94ae", "f3be93b7"], # [CRYSTAL BALL] U+1F52E -> U+FE4F7
+  ["f09f94af", "f3be93b8"], # [SIX POINTED STAR WITH MIDDLE DOT] U+1F52F -> U+FE4F8
+  ["f09f94b0", "f3be8184"], # [JAPANESE SYMBOL FOR BEGINNER] U+1F530 -> U+FE044
+  ["f09f94b1", "f3be9392"], # [TRIDENT EMBLEM] U+1F531 -> U+FE4D2
+  ["f09f9289", "f3be9489"], # [SYRINGE] U+1F489 -> U+FE509
+  ["f09f928a", "f3be948a"], # [PILL] U+1F48A -> U+FE50A
+  ["f09f85b0", "f3be948b"], # [NEGATIVE SQUARED LATIN CAPITAL LETTER A] U+1F170 -> U+FE50B
+  ["f09f85b1", "f3be948c"], # [NEGATIVE SQUARED LATIN CAPITAL LETTER B] U+1F171 -> U+FE50C
+  ["f09f868e", "f3be948d"], # [NEGATIVE SQUARED AB] U+1F18E -> U+FE50D
+  ["f09f85be", "f3be948e"], # [NEGATIVE SQUARED LATIN CAPITAL LETTER O] U+1F17E -> U+FE50E
+  ["f09f8e80", "f3be948f"], # [RIBBON] U+1F380 -> U+FE50F
+  ["f09f8e81", "f3be9490"], # [WRAPPED PRESENT] U+1F381 -> U+FE510
+  ["f09f8e82", "f3be9491"], # [BIRTHDAY CAKE] U+1F382 -> U+FE511
+  ["f09f8e84", "f3be9492"], # [CHRISTMAS TREE] U+1F384 -> U+FE512
+  ["f09f8e85", "f3be9493"], # [FATHER CHRISTMAS] U+1F385 -> U+FE513
+  ["f09f8e8c", "f3be9494"], # [CROSSED FLAGS] U+1F38C -> U+FE514
+  ["f09f8e86", "f3be9495"], # [FIREWORKS] U+1F386 -> U+FE515
+  ["f09f8e88", "f3be9496"], # [BALLOON] U+1F388 -> U+FE516
+  ["f09f8e89", "f3be9497"], # [PARTY POPPER] U+1F389 -> U+FE517
+  ["f09f8e8d", "f3be9498"], # [PINE DECORATION] U+1F38D -> U+FE518
+  ["f09f8e8e", "f3be9499"], # [JAPANESE DOLLS] U+1F38E -> U+FE519
+  ["f09f8e93", "f3be949a"], # [GRADUATION CAP] U+1F393 -> U+FE51A
+  ["f09f8e92", "f3be949b"], # [SCHOOL SATCHEL] U+1F392 -> U+FE51B
+  ["f09f8e8f", "f3be949c"], # [CARP STREAMER] U+1F38F -> U+FE51C
+  ["f09f8e87", "f3be949d"], # [FIREWORK SPARKLER] U+1F387 -> U+FE51D
+  ["f09f8e90", "f3be949e"], # [WIND CHIME] U+1F390 -> U+FE51E
+  ["f09f8e83", "f3be949f"], # [JACK-O-LANTERN] U+1F383 -> U+FE51F
+  ["f09f8e8a", "f3be94a0"], # [CONFETTI BALL] U+1F38A -> U+FE520
+  ["f09f8e8b", "f3be94a1"], # [TANABATA TREE] U+1F38B -> U+FE521
+  ["f09f8e91", "f3be8097"], # [MOON VIEWING CEREMONY] U+1F391 -> U+FE017
+  ["f09f939f", "f3be94a2"], # [PAGER] U+1F4DF -> U+FE522
+  ["e2988e", "f3be94a3"], # [BLACK TELEPHONE] U+260E -> U+FE523
+  ["f09f939e", "f3be94a4"], # [TELEPHONE RECEIVER] U+1F4DE -> U+FE524
+  ["f09f93b1", "f3be94a5"], # [MOBILE PHONE] U+1F4F1 -> U+FE525
+  ["f09f93b2", "f3be94a6"], # [MOBILE PHONE WITH RIGHTWARDS ARROW AT LEFT] U+1F4F2 -> U+FE526
+  ["f09f939d", "f3be94a7"], # [MEMO] U+1F4DD -> U+FE527
+  ["f09f93a0", "f3be94a8"], # [FAX MACHINE] U+1F4E0 -> U+FE528
+  ["e29c89", "f3be94a9"], # [ENVELOPE] U+2709 -> U+FE529
+  ["f09f93a8", "f3be94aa"], # [INCOMING ENVELOPE] U+1F4E8 -> U+FE52A
+  ["f09f93a9", "f3be94ab"], # [ENVELOPE WITH DOWNWARDS ARROW ABOVE] U+1F4E9 -> U+FE52B
+  ["f09f93aa", "f3be94ac"], # [CLOSED MAILBOX WITH LOWERED FLAG] U+1F4EA -> U+FE52C
+  ["f09f93ab", "f3be94ad"], # [CLOSED MAILBOX WITH RAISED FLAG] U+1F4EB -> U+FE52D
+  ["f09f93ae", "f3be94ae"], # [POSTBOX] U+1F4EE -> U+FE52E
+  ["f09f93b0", "f3bea0a2"], # [NEWSPAPER] U+1F4F0 -> U+FE822
+  ["f09f93a2", "f3be94af"], # [PUBLIC ADDRESS LOUDSPEAKER] U+1F4E2 -> U+FE52F
+  ["f09f93a3", "f3be94b0"], # [CHEERING MEGAPHONE] U+1F4E3 -> U+FE530
+  ["f09f93a1", "f3be94b1"], # [SATELLITE ANTENNA] U+1F4E1 -> U+FE531
+  ["f09f93a4", "f3be94b3"], # [OUTBOX TRAY] U+1F4E4 -> U+FE533
+  ["f09f93a5", "f3be94b4"], # [INBOX TRAY] U+1F4E5 -> U+FE534
+  ["f09f93a6", "f3be94b5"], # [PACKAGE] U+1F4E6 -> U+FE535
+  ["f09f93a7", "f3beae92"], # [E-MAIL SYMBOL] U+1F4E7 -> U+FEB92
+  ["f09f94a0", "f3beadbc"], # [INPUT SYMBOL FOR LATIN CAPITAL LETTERS] U+1F520 -> U+FEB7C
+  ["f09f94a1", "f3beadbd"], # [INPUT SYMBOL FOR LATIN SMALL LETTERS] U+1F521 -> U+FEB7D
+  ["f09f94a2", "f3beadbe"], # [INPUT SYMBOL FOR NUMBERS] U+1F522 -> U+FEB7E
+  ["f09f94a3", "f3beadbf"], # [INPUT SYMBOL FOR SYMBOLS] U+1F523 -> U+FEB7F
+  ["f09f94a4", "f3beae80"], # [INPUT SYMBOL FOR LATIN LETTERS] U+1F524 -> U+FEB80
+  ["e29c92", "f3be94b6"], # [BLACK NIB] U+2712 -> U+FE536
+  ["f09f92ba", "f3be94b7"], # [SEAT] U+1F4BA -> U+FE537
+  ["f09f92bb", "f3be94b8"], # [PERSONAL COMPUTER] U+1F4BB -> U+FE538
+  ["e29c8f", "f3be94b9"], # [PENCIL] U+270F -> U+FE539
+  ["f09f938e", "f3be94ba"], # [PAPERCLIP] U+1F4CE -> U+FE53A
+  ["f09f92bc", "f3be94bb"], # [BRIEFCASE] U+1F4BC -> U+FE53B
+  ["f09f92bd", "f3be94bc"], # [MINIDISC] U+1F4BD -> U+FE53C
+  ["f09f92be", "f3be94bd"], # [FLOPPY DISK] U+1F4BE -> U+FE53D
+  ["f09f92bf", "f3bea09d"], # [OPTICAL DISC] U+1F4BF -> U+FE81D
+  ["f09f9380", "f3bea09e"], # [DVD] U+1F4C0 -> U+FE81E
+  ["e29c82", "f3be94be"], # [BLACK SCISSORS] U+2702 -> U+FE53E
+  ["f09f938d", "f3be94bf"], # [ROUND PUSHPIN] U+1F4CD -> U+FE53F
+  ["f09f9383", "f3be9580"], # [PAGE WITH CURL] U+1F4C3 -> U+FE540
+  ["f09f9384", "f3be9581"], # [PAGE FACING UP] U+1F4C4 -> U+FE541
+  ["f09f9385", "f3be9582"], # [CALENDAR] U+1F4C5 -> U+FE542
+  ["f09f9381", "f3be9583"], # [FILE FOLDER] U+1F4C1 -> U+FE543
+  ["f09f9382", "f3be9584"], # [OPEN FILE FOLDER] U+1F4C2 -> U+FE544
+  ["f09f9393", "f3be9585"], # [NOTEBOOK] U+1F4D3 -> U+FE545
+  ["f09f9396", "f3be9586"], # [OPEN BOOK] U+1F4D6 -> U+FE546
+  ["f09f9394", "f3be9587"], # [NOTEBOOK WITH DECORATIVE COVER] U+1F4D4 -> U+FE547
+  ["f09f9395", "f3be9482"], # [CLOSED BOOK] U+1F4D5 -> U+FE502
+  ["f09f9397", "f3be93bf"], # [GREEN BOOK] U+1F4D7 -> U+FE4FF
+  ["f09f9398", "f3be9480"], # [BLUE BOOK] U+1F4D8 -> U+FE500
+  ["f09f9399", "f3be9481"], # [ORANGE BOOK] U+1F4D9 -> U+FE501
+  ["f09f939a", "f3be9483"], # [BOOKS] U+1F4DA -> U+FE503
+  ["f09f939b", "f3be9484"], # [NAME BADGE] U+1F4DB -> U+FE504
+  ["f09f939c", "f3be93bd"], # [SCROLL] U+1F4DC -> U+FE4FD
+  ["f09f938b", "f3be9588"], # [CLIPBOARD] U+1F4CB -> U+FE548
+  ["f09f9386", "f3be9589"], # [TEAR-OFF CALENDAR] U+1F4C6 -> U+FE549
+  ["f09f938a", "f3be958a"], # [BAR CHART] U+1F4CA -> U+FE54A
+  ["f09f9388", "f3be958b"], # [CHART WITH UPWARDS TREND] U+1F4C8 -> U+FE54B
+  ["f09f9389", "f3be958c"], # [CHART WITH DOWNWARDS TREND] U+1F4C9 -> U+FE54C
+  ["f09f9387", "f3be958d"], # [CARD INDEX] U+1F4C7 -> U+FE54D
+  ["f09f938c", "f3be958e"], # [PUSHPIN] U+1F4CC -> U+FE54E
+  ["f09f9392", "f3be958f"], # [LEDGER] U+1F4D2 -> U+FE54F
+  ["f09f938f", "f3be9590"], # [STRAIGHT RULER] U+1F4CF -> U+FE550
+  ["f09f9390", "f3be9591"], # [TRIANGULAR RULER] U+1F4D0 -> U+FE551
+  ["f09f9391", "f3be9592"], # [BOOKMARK TABS] U+1F4D1 -> U+FE552
+  ["f09f8ebd", "f3be9f90"], # [RUNNING SHIRT WITH SASH] U+1F3BD -> U+FE7D0
+  ["e29abe", "f3be9f91"], # [BASEBALL] U+26BE -> U+FE7D1
+  ["e29bb3", "f3be9f92"], # [FLAG IN HOLE] U+26F3 -> U+FE7D2
+  ["f09f8ebe", "f3be9f93"], # [TENNIS RACQUET AND BALL] U+1F3BE -> U+FE7D3
+  ["e29abd", "f3be9f94"], # [SOCCER BALL] U+26BD -> U+FE7D4
+  ["f09f8ebf", "f3be9f95"], # [SKI AND SKI BOOT] U+1F3BF -> U+FE7D5
+  ["f09f8f80", "f3be9f96"], # [BASKETBALL AND HOOP] U+1F3C0 -> U+FE7D6
+  ["f09f8f81", "f3be9f97"], # [CHEQUERED FLAG] U+1F3C1 -> U+FE7D7
+  ["f09f8f82", "f3be9f98"], # [SNOWBOARDER] U+1F3C2 -> U+FE7D8
+  ["f09f8f83", "f3be9f99"], # [RUNNER] U+1F3C3 -> U+FE7D9
+  ["f09f8f84", "f3be9f9a"], # [SURFER] U+1F3C4 -> U+FE7DA
+  ["f09f8f86", "f3be9f9b"], # [TROPHY] U+1F3C6 -> U+FE7DB
+  ["f09f8f88", "f3be9f9d"], # [AMERICAN FOOTBALL] U+1F3C8 -> U+FE7DD
+  ["f09f8f8a", "f3be9f9e"], # [SWIMMER] U+1F3CA -> U+FE7DE
+  ["f09f9a86", "f3be9f9f"], # [TRAIN] U+1F686 -> U+FE7DF
+  ["f09f9a87", "f3be9fa0"], # [METRO] U+1F687 -> U+FE7E0
+  ["e29382", "f3be9fa1"], # [CIRCLED LATIN CAPITAL LETTER M] U+24C2 -> U+FE7E1
+  ["f09f9a84", "f3be9fa2"], # [HIGH-SPEED TRAIN] U+1F684 -> U+FE7E2
+  ["f09f9a85", "f3be9fa3"], # [HIGH-SPEED TRAIN WITH BULLET NOSE] U+1F685 -> U+FE7E3
+  ["f09f9a97", "f3be9fa4"], # [AUTOMOBILE] U+1F697 -> U+FE7E4
+  ["f09f9a99", "f3be9fa5"], # [RECREATIONAL VEHICLE] U+1F699 -> U+FE7E5
+  ["f09f9a8d", "f3be9fa6"], # [ONCOMING BUS] U+1F68D -> U+FE7E6
+  ["f09f9a8f", "f3be9fa7"], # [BUS STOP] U+1F68F -> U+FE7E7
+  ["f09f9aa2", "f3be9fa8"], # [SHIP] U+1F6A2 -> U+FE7E8
+  ["e29c88", "f3be9fa9"], # [AIRPLANE] U+2708 -> U+FE7E9
+  ["e29bb5", "f3be9faa"], # [SAILBOAT] U+26F5 -> U+FE7EA
+  ["f09f9a89", "f3be9fac"], # [STATION] U+1F689 -> U+FE7EC
+  ["f09f9a80", "f3be9fad"], # [ROCKET] U+1F680 -> U+FE7ED
+  ["f09f9aa4", "f3be9fae"], # [SPEEDBOAT] U+1F6A4 -> U+FE7EE
+  ["f09f9a95", "f3be9faf"], # [TAXI] U+1F695 -> U+FE7EF
+  ["f09f9a9a", "f3be9fb1"], # [DELIVERY TRUCK] U+1F69A -> U+FE7F1
+  ["f09f9a92", "f3be9fb2"], # [FIRE ENGINE] U+1F692 -> U+FE7F2
+  ["f09f9a91", "f3be9fb3"], # [AMBULANCE] U+1F691 -> U+FE7F3
+  ["f09f9a93", "f3be9fb4"], # [POLICE CAR] U+1F693 -> U+FE7F4
+  ["e29bbd", "f3be9fb5"], # [FUEL PUMP] U+26FD -> U+FE7F5
+  ["f09f85bf", "f3be9fb6"], # [NEGATIVE SQUARED LATIN CAPITAL LETTER P] U+1F17F -> U+FE7F6
+  ["f09f9aa5", "f3be9fb7"], # [HORIZONTAL TRAFFIC LIGHT] U+1F6A5 -> U+FE7F7
+  ["f09f9aa7", "f3be9fb8"], # [CONSTRUCTION SIGN] U+1F6A7 -> U+FE7F8
+  ["f09f9aa8", "f3be9fb9"], # [POLICE CARS REVOLVING LIGHT] U+1F6A8 -> U+FE7F9
+  ["e299a8", "f3be9fba"], # [HOT SPRINGS] U+2668 -> U+FE7FA
+  ["e29bba", "f3be9fbb"], # [TENT] U+26FA -> U+FE7FB
+  ["f09f8ea0", "f3be9fbc"], # [CAROUSEL HORSE] U+1F3A0 -> U+FE7FC
+  ["f09f8ea1", "f3be9fbd"], # [FERRIS WHEEL] U+1F3A1 -> U+FE7FD
+  ["f09f8ea2", "f3be9fbe"], # [ROLLER COASTER] U+1F3A2 -> U+FE7FE
+  ["f09f8ea3", "f3be9fbf"], # [FISHING POLE AND FISH] U+1F3A3 -> U+FE7FF
+  ["f09f8ea4", "f3bea080"], # [MICROPHONE] U+1F3A4 -> U+FE800
+  ["f09f8ea5", "f3bea081"], # [MOVIE CAMERA] U+1F3A5 -> U+FE801
+  ["f09f8ea6", "f3bea082"], # [CINEMA] U+1F3A6 -> U+FE802
+  ["f09f8ea7", "f3bea083"], # [HEADPHONE] U+1F3A7 -> U+FE803
+  ["f09f8ea8", "f3bea084"], # [ARTIST PALETTE] U+1F3A8 -> U+FE804
+  ["f09f8ea9", "f3bea085"], # [TOP HAT] U+1F3A9 -> U+FE805
+  ["f09f8eaa", "f3bea086"], # [CIRCUS TENT] U+1F3AA -> U+FE806
+  ["f09f8eab", "f3bea087"], # [TICKET] U+1F3AB -> U+FE807
+  ["f09f8eac", "f3bea088"], # [CLAPPER BOARD] U+1F3AC -> U+FE808
+  ["f09f8ead", "f3bea089"], # [PERFORMING ARTS] U+1F3AD -> U+FE809
+  ["f09f8eae", "f3bea08a"], # [VIDEO GAME] U+1F3AE -> U+FE80A
+  ["f09f8084", "f3bea08b"], # [MAHJONG TILE RED DRAGON] U+1F004 -> U+FE80B
+  ["f09f8eaf", "f3bea08c"], # [DIRECT HIT] U+1F3AF -> U+FE80C
+  ["f09f8eb0", "f3bea08d"], # [SLOT MACHINE] U+1F3B0 -> U+FE80D
+  ["f09f8eb1", "f3bea08e"], # [BILLIARDS] U+1F3B1 -> U+FE80E
+  ["f09f8eb2", "f3bea08f"], # [GAME DIE] U+1F3B2 -> U+FE80F
+  ["f09f8eb3", "f3bea090"], # [BOWLING] U+1F3B3 -> U+FE810
+  ["f09f8eb4", "f3bea091"], # [FLOWER PLAYING CARDS] U+1F3B4 -> U+FE811
+  ["f09f838f", "f3bea092"], # [PLAYING CARD BLACK JOKER] U+1F0CF -> U+FE812
+  ["f09f8eb5", "f3bea093"], # [MUSICAL NOTE] U+1F3B5 -> U+FE813
+  ["f09f8eb6", "f3bea094"], # [MULTIPLE MUSICAL NOTES] U+1F3B6 -> U+FE814
+  ["f09f8eb7", "f3bea095"], # [SAXOPHONE] U+1F3B7 -> U+FE815
+  ["f09f8eb8", "f3bea096"], # [GUITAR] U+1F3B8 -> U+FE816
+  ["f09f8eb9", "f3bea097"], # [MUSICAL KEYBOARD] U+1F3B9 -> U+FE817
+  ["f09f8eba", "f3bea098"], # [TRUMPET] U+1F3BA -> U+FE818
+  ["f09f8ebb", "f3bea099"], # [VIOLIN] U+1F3BB -> U+FE819
+  ["f09f8ebc", "f3bea09a"], # [MUSICAL SCORE] U+1F3BC -> U+FE81A
+  ["e380bd", "f3bea09b"], # [PART ALTERNATION MARK] U+303D -> U+FE81B
+  ["f09f93b7", "f3be93af"], # [CAMERA] U+1F4F7 -> U+FE4EF
+  ["f09f93b9", "f3be93b9"], # [VIDEO CAMERA] U+1F4F9 -> U+FE4F9
+  ["f09f93ba", "f3bea09c"], # [TELEVISION] U+1F4FA -> U+FE81C
+  ["f09f93bb", "f3bea09f"], # [RADIO] U+1F4FB -> U+FE81F
+  ["f09f93bc", "f3bea0a0"], # [VIDEOCASSETTE] U+1F4FC -> U+FE820
+  ["f09f928b", "f3bea0a3"], # [KISS MARK] U+1F48B -> U+FE823
+  ["f09f928c", "f3bea0a4"], # [LOVE LETTER] U+1F48C -> U+FE824
+  ["f09f928d", "f3bea0a5"], # [RING] U+1F48D -> U+FE825
+  ["f09f928e", "f3bea0a6"], # [GEM STONE] U+1F48E -> U+FE826
+  ["f09f928f", "f3bea0a7"], # [KISS] U+1F48F -> U+FE827
+  ["f09f9290", "f3bea0a8"], # [BOUQUET] U+1F490 -> U+FE828
+  ["f09f9291", "f3bea0a9"], # [COUPLE WITH HEART] U+1F491 -> U+FE829
+  ["f09f9292", "f3bea0aa"], # [WEDDING] U+1F492 -> U+FE82A
+  ["f09f949e", "f3beaca5"], # [NO ONE UNDER EIGHTEEN SYMBOL] U+1F51E -> U+FEB25
+  ["c2a9", "f3beaca9"], # [COPYRIGHT SIGN] U+A9 -> U+FEB29
+  ["c2ae", "f3beacad"], # [REGISTERED SIGN] U+AE -> U+FEB2D
+  ["e284a2", "f3beacaa"], # [TRADE MARK SIGN] U+2122 -> U+FEB2A
+  ["e284b9", "f3bead87"], # [INFORMATION SOURCE] U+2139 -> U+FEB47
+  ["f09f949f", "f3bea0bb"], # [KEYCAP TEN] U+1F51F -> U+FE83B
+  ["f09f93b6", "f3bea0b8"], # [ANTENNA WITH BARS] U+1F4F6 -> U+FE838
+  ["f09f93b3", "f3bea0b9"], # [VIBRATION MODE] U+1F4F3 -> U+FE839
+  ["f09f93b4", "f3bea0ba"], # [MOBILE PHONE OFF] U+1F4F4 -> U+FE83A
+  ["f09f8d94", "f3bea5a0"], # [HAMBURGER] U+1F354 -> U+FE960
+  ["f09f8d99", "f3bea5a1"], # [RICE BALL] U+1F359 -> U+FE961
+  ["f09f8db0", "f3bea5a2"], # [SHORTCAKE] U+1F370 -> U+FE962
+  ["f09f8d9c", "f3bea5a3"], # [STEAMING BOWL] U+1F35C -> U+FE963
+  ["f09f8d9e", "f3bea5a4"], # [BREAD] U+1F35E -> U+FE964
+  ["f09f8db3", "f3bea5a5"], # [COOKING] U+1F373 -> U+FE965
+  ["f09f8da6", "f3bea5a6"], # [SOFT ICE CREAM] U+1F366 -> U+FE966
+  ["f09f8d9f", "f3bea5a7"], # [FRENCH FRIES] U+1F35F -> U+FE967
+  ["f09f8da1", "f3bea5a8"], # [DANGO] U+1F361 -> U+FE968
+  ["f09f8d98", "f3bea5a9"], # [RICE CRACKER] U+1F358 -> U+FE969
+  ["f09f8d9a", "f3bea5aa"], # [COOKED RICE] U+1F35A -> U+FE96A
+  ["f09f8d9d", "f3bea5ab"], # [SPAGHETTI] U+1F35D -> U+FE96B
+  ["f09f8d9b", "f3bea5ac"], # [CURRY AND RICE] U+1F35B -> U+FE96C
+  ["f09f8da2", "f3bea5ad"], # [ODEN] U+1F362 -> U+FE96D
+  ["f09f8da3", "f3bea5ae"], # [SUSHI] U+1F363 -> U+FE96E
+  ["f09f8db1", "f3bea5af"], # [BENTO BOX] U+1F371 -> U+FE96F
+  ["f09f8db2", "f3bea5b0"], # [POT OF FOOD] U+1F372 -> U+FE970
+  ["f09f8da7", "f3bea5b1"], # [SHAVED ICE] U+1F367 -> U+FE971
+  ["f09f8d96", "f3bea5b2"], # [MEAT ON BONE] U+1F356 -> U+FE972
+  ["f09f8da5", "f3bea5b3"], # [FISH CAKE WITH SWIRL DESIGN] U+1F365 -> U+FE973
+  ["f09f8da0", "f3bea5b4"], # [ROASTED SWEET POTATO] U+1F360 -> U+FE974
+  ["f09f8d95", "f3bea5b5"], # [SLICE OF PIZZA] U+1F355 -> U+FE975
+  ["f09f8d97", "f3bea5b6"], # [POULTRY LEG] U+1F357 -> U+FE976
+  ["f09f8da8", "f3bea5b7"], # [ICE CREAM] U+1F368 -> U+FE977
+  ["f09f8da9", "f3bea5b8"], # [DOUGHNUT] U+1F369 -> U+FE978
+  ["f09f8daa", "f3bea5b9"], # [COOKIE] U+1F36A -> U+FE979
+  ["f09f8dab", "f3bea5ba"], # [CHOCOLATE BAR] U+1F36B -> U+FE97A
+  ["f09f8dac", "f3bea5bb"], # [CANDY] U+1F36C -> U+FE97B
+  ["f09f8dad", "f3bea5bc"], # [LOLLIPOP] U+1F36D -> U+FE97C
+  ["f09f8dae", "f3bea5bd"], # [CUSTARD] U+1F36E -> U+FE97D
+  ["f09f8daf", "f3bea5be"], # [HONEY POT] U+1F36F -> U+FE97E
+  ["f09f8da4", "f3bea5bf"], # [FRIED SHRIMP] U+1F364 -> U+FE97F
+  ["f09f8db4", "f3bea680"], # [FORK AND KNIFE] U+1F374 -> U+FE980
+  ["e29895", "f3bea681"], # [HOT BEVERAGE] U+2615 -> U+FE981
+  ["f09f8db8", "f3bea682"], # [COCKTAIL GLASS] U+1F378 -> U+FE982
+  ["f09f8dba", "f3bea683"], # [BEER MUG] U+1F37A -> U+FE983
+  ["f09f8db5", "f3bea684"], # [TEACUP WITHOUT HANDLE] U+1F375 -> U+FE984
+  ["f09f8db6", "f3bea685"], # [SAKE BOTTLE AND CUP] U+1F376 -> U+FE985
+  ["f09f8db7", "f3bea686"], # [WINE GLASS] U+1F377 -> U+FE986
+  ["f09f8dbb", "f3bea687"], # [CLINKING BEER MUGS] U+1F37B -> U+FE987
+  ["f09f8db9", "f3bea688"], # [TROPICAL DRINK] U+1F379 -> U+FE988
+  ["e28697", "f3beabb0"], # [NORTH EAST ARROW] U+2197 -> U+FEAF0
+  ["e28698", "f3beabb1"], # [SOUTH EAST ARROW] U+2198 -> U+FEAF1
+  ["e28696", "f3beabb2"], # [NORTH WEST ARROW] U+2196 -> U+FEAF2
+  ["e28699", "f3beabb3"], # [SOUTH WEST ARROW] U+2199 -> U+FEAF3
+  ["e2a4b4", "f3beabb4"], # [ARROW POINTING RIGHTWARDS THEN CURVING UPWARDS] U+2934 -> U+FEAF4
+  ["e2a4b5", "f3beabb5"], # [ARROW POINTING RIGHTWARDS THEN CURVING DOWNWARDS] U+2935 -> U+FEAF5
+  ["e28694", "f3beabb6"], # [LEFT RIGHT ARROW] U+2194 -> U+FEAF6
+  ["e28695", "f3beabb7"], # [UP DOWN ARROW] U+2195 -> U+FEAF7
+  ["e2ac86", "f3beabb8"], # [UPWARDS BLACK ARROW] U+2B06 -> U+FEAF8
+  ["e2ac87", "f3beabb9"], # [DOWNWARDS BLACK ARROW] U+2B07 -> U+FEAF9
+  ["e29ea1", "f3beabba"], # [BLACK RIGHTWARDS ARROW] U+27A1 -> U+FEAFA
+  ["e2ac85", "f3beabbb"], # [LEFTWARDS BLACK ARROW] U+2B05 -> U+FEAFB
+  ["e296b6", "f3beabbc"], # [BLACK RIGHT-POINTING TRIANGLE] U+25B6 -> U+FEAFC
+  ["e29780", "f3beabbd"], # [BLACK LEFT-POINTING TRIANGLE] U+25C0 -> U+FEAFD
+  ["e28fa9", "f3beabbe"], # [BLACK RIGHT-POINTING DOUBLE TRIANGLE] U+23E9 -> U+FEAFE
+  ["e28faa", "f3beabbf"], # [BLACK LEFT-POINTING DOUBLE TRIANGLE] U+23EA -> U+FEAFF
+  ["e28fab", "f3beac83"], # [BLACK UP-POINTING DOUBLE TRIANGLE] U+23EB -> U+FEB03
+  ["e28fac", "f3beac82"], # [BLACK DOWN-POINTING DOUBLE TRIANGLE] U+23EC -> U+FEB02
+  ["f09f94ba", "f3beadb8"], # [UP-POINTING RED TRIANGLE] U+1F53A -> U+FEB78
+  ["f09f94bb", "f3beadb9"], # [DOWN-POINTING RED TRIANGLE] U+1F53B -> U+FEB79
+  ["f09f94bc", "f3beac81"], # [UP-POINTING SMALL RED TRIANGLE] U+1F53C -> U+FEB01
+  ["f09f94bd", "f3beac80"], # [DOWN-POINTING SMALL RED TRIANGLE] U+1F53D -> U+FEB00
+  ["e2ad95", "f3bead84"], # [HEAVY LARGE CIRCLE] U+2B55 -> U+FEB44
+  ["e29d8c", "f3bead85"], # [CROSS MARK] U+274C -> U+FEB45
+  ["e29d8e", "f3bead86"], # [NEGATIVE SQUARED CROSS MARK] U+274E -> U+FEB46
+  ["e29da2", "f3beac84"], # [HEAVY EXCLAMATION MARK ORNAMENT] U+2762 -> U+FEB04
+  ["e28189", "f3beac85"], # [EXCLAMATION QUESTION MARK] U+2049 -> U+FEB05
+  ["e280bc", "f3beac86"], # [DOUBLE EXCLAMATION MARK] U+203C -> U+FEB06
+  ["e29d93", "f3beac89"], # [BLACK QUESTION MARK ORNAMENT] U+2753 -> U+FEB09
+  ["e29d94", "f3beac8a"], # [WHITE QUESTION MARK ORNAMENT] U+2754 -> U+FEB0A
+  ["e29d95", "f3beac8b"], # [WHITE EXCLAMATION MARK ORNAMENT] U+2755 -> U+FEB0B
+  ["e380b0", "f3beac87"], # [WAVY DASH] U+3030 -> U+FEB07
+  ["e29eb0", "f3beac88"], # [CURLY LOOP] U+27B0 -> U+FEB08
+  ["e29ebf", "f3bea0ab"], # [DOUBLE CURLY LOOP] U+27BF -> U+FE82B
+  ["e29da4", "f3beac8c"], # [HEAVY BLACK HEART] U+2764 -> U+FEB0C
+  ["f09f9293", "f3beac8d"], # [BEATING HEART] U+1F493 -> U+FEB0D
+  ["f09f9294", "f3beac8e"], # [BROKEN HEART] U+1F494 -> U+FEB0E
+  ["f09f9295", "f3beac8f"], # [TWO HEARTS] U+1F495 -> U+FEB0F
+  ["f09f9296", "f3beac90"], # [SPARKLING HEART] U+1F496 -> U+FEB10
+  ["f09f9297", "f3beac91"], # [GROWING HEART] U+1F497 -> U+FEB11
+  ["f09f9298", "f3beac92"], # [HEART WITH ARROW] U+1F498 -> U+FEB12
+  ["f09f9299", "f3beac93"], # [BLUE HEART] U+1F499 -> U+FEB13
+  ["f09f929a", "f3beac94"], # [GREEN HEART] U+1F49A -> U+FEB14
+  ["f09f929b", "f3beac95"], # [YELLOW HEART] U+1F49B -> U+FEB15
+  ["f09f929c", "f3beac96"], # [PURPLE HEART] U+1F49C -> U+FEB16
+  ["f09f929d", "f3beac97"], # [HEART WITH RIBBON] U+1F49D -> U+FEB17
+  ["f09f929e", "f3beac98"], # [REVOLVING HEARTS] U+1F49E -> U+FEB18
+  ["f09f929f", "f3beac99"], # [HEART DECORATION] U+1F49F -> U+FEB19
+  ["e299a5", "f3beac9a"], # [BLACK HEART SUIT] U+2665 -> U+FEB1A
+  ["e299a0", "f3beac9b"], # [BLACK SPADE SUIT] U+2660 -> U+FEB1B
+  ["e299a6", "f3beac9c"], # [BLACK DIAMOND SUIT] U+2666 -> U+FEB1C
+  ["e299a3", "f3beac9d"], # [BLACK CLUB SUIT] U+2663 -> U+FEB1D
+  ["f09f9aac", "f3beac9e"], # [SMOKING SYMBOL] U+1F6AC -> U+FEB1E
+  ["f09f9aad", "f3beac9f"], # [NO SMOKING SYMBOL] U+1F6AD -> U+FEB1F
+  ["e299bf", "f3beaca0"], # [WHEELCHAIR SYMBOL] U+267F -> U+FEB20
+  ["f09f9aa9", "f3beaca2"], # [TRIANGULAR FLAG ON POST] U+1F6A9 -> U+FEB22
+  ["e29aa0", "f3beaca3"], # [WARNING SIGN] U+26A0 -> U+FEB23
+  ["e29b94", "f3beaca6"], # [NO ENTRY] U+26D4 -> U+FEB26
+  ["e299bb", "f3beacac"], # [BLACK UNIVERSAL RECYCLING SYMBOL] U+267B -> U+FEB2C
+  ["f09f9ab2", "f3be9fab"], # [BICYCLE] U+1F6B2 -> U+FE7EB
+  ["f09f9ab6", "f3be9fb0"], # [PEDESTRIAN] U+1F6B6 -> U+FE7F0
+  ["f09f9ab9", "f3beacb3"], # [MENS SYMBOL] U+1F6B9 -> U+FEB33
+  ["f09f9aba", "f3beacb4"], # [WOMENS SYMBOL] U+1F6BA -> U+FEB34
+  ["f09f9b80", "f3be9485"], # [BATH] U+1F6C0 -> U+FE505
+  ["f09f9abb", "f3be9486"], # [RESTROOM] U+1F6BB -> U+FE506
+  ["f09f9abd", "f3be9487"], # [TOILET] U+1F6BD -> U+FE507
+  ["f09f9abe", "f3be9488"], # [WATER CLOSET] U+1F6BE -> U+FE508
+  ["f09f9abc", "f3beacb5"], # [BABY SYMBOL] U+1F6BC -> U+FEB35
+  ["f09f9aaa", "f3be93b3"], # [DOOR] U+1F6AA -> U+FE4F3
+  ["f09f9aab", "f3bead88"], # [NO ENTRY SIGN] U+1F6AB -> U+FEB48
+  ["e29c94", "f3bead89"], # [HEAVY CHECK MARK] U+2714 -> U+FEB49
+  ["f09f8691", "f3beae84"], # [SQUARED CL] U+1F191 -> U+FEB84
+  ["f09f8692", "f3beacb8"], # [SQUARED COOL] U+1F192 -> U+FEB38
+  ["f09f8693", "f3beaca1"], # [SQUARED FREE] U+1F193 -> U+FEB21
+  ["f09f8694", "f3beae81"], # [SQUARED ID] U+1F194 -> U+FEB81
+  ["f09f8695", "f3beacb6"], # [SQUARED NEW] U+1F195 -> U+FEB36
+  ["f09f8696", "f3beaca8"], # [SQUARED NG] U+1F196 -> U+FEB28
+  ["f09f8697", "f3beaca7"], # [SQUARED OK] U+1F197 -> U+FEB27
+  ["f09f8698", "f3bead8f"], # [SQUARED SOS] U+1F198 -> U+FEB4F
+  ["f09f8699", "f3beacb7"], # [SQUARED UP WITH EXCLAMATION MARK] U+1F199 -> U+FEB37
+  ["f09f869a", "f3beacb2"], # [SQUARED VS] U+1F19A -> U+FEB32
+  ["f09f8881", "f3beaca4"], # [SQUARED KATAKANA KOKO] U+1F201 -> U+FEB24
+  ["f09f8882", "f3beacbf"], # [SQUARED KATAKANA SA] U+1F202 -> U+FEB3F
+  ["f09f88b2", "f3beacae"], # [SQUARED CJK UNIFIED IDEOGRAPH-7981] U+1F232 -> U+FEB2E
+  ["f09f88b3", "f3beacaf"], # [SQUARED CJK UNIFIED IDEOGRAPH-7A7A] U+1F233 -> U+FEB2F
+  ["f09f88b4", "f3beacb0"], # [SQUARED CJK UNIFIED IDEOGRAPH-5408] U+1F234 -> U+FEB30
+  ["f09f88b5", "f3beacb1"], # [SQUARED CJK UNIFIED IDEOGRAPH-6E80] U+1F235 -> U+FEB31
+  ["f09f88b6", "f3beacb9"], # [SQUARED CJK UNIFIED IDEOGRAPH-6709] U+1F236 -> U+FEB39
+  ["f09f889a", "f3beacba"], # [SQUARED CJK UNIFIED IDEOGRAPH-7121] U+1F21A -> U+FEB3A
+  ["f09f88b7", "f3beacbb"], # [SQUARED CJK UNIFIED IDEOGRAPH-6708] U+1F237 -> U+FEB3B
+  ["f09f88b8", "f3beacbc"], # [SQUARED CJK UNIFIED IDEOGRAPH-7533] U+1F238 -> U+FEB3C
+  ["f09f88b9", "f3beacbe"], # [SQUARED CJK UNIFIED IDEOGRAPH-5272] U+1F239 -> U+FEB3E
+  ["f09f88af", "f3bead80"], # [SQUARED CJK UNIFIED IDEOGRAPH-6307] U+1F22F -> U+FEB40
+  ["f09f88ba", "f3bead81"], # [SQUARED CJK UNIFIED IDEOGRAPH-55B6] U+1F23A -> U+FEB41
+  ["e38a99", "f3beacab"], # [CIRCLED IDEOGRAPH SECRET] U+3299 -> U+FEB2B
+  ["e38a97", "f3bead83"], # [CIRCLED IDEOGRAPH CONGRATULATION] U+3297 -> U+FEB43
+  ["f09f8990", "f3beacbd"], # [CIRCLED IDEOGRAPH ADVANTAGE] U+1F250 -> U+FEB3D
+  ["f09f8991", "f3bead90"], # [CIRCLED IDEOGRAPH ACCEPT] U+1F251 -> U+FEB50
+  ["e29e95", "f3bead91"], # [HEAVY PLUS SIGN] U+2795 -> U+FEB51
+  ["e29e96", "f3bead92"], # [HEAVY MINUS SIGN] U+2796 -> U+FEB52
+  ["e29c96", "f3bead93"], # [HEAVY MULTIPLICATION X] U+2716 -> U+FEB53
+  ["e29e97", "f3bead94"], # [HEAVY DIVISION SIGN] U+2797 -> U+FEB54
+  ["f09f92a0", "f3bead95"], # [DIAMOND SHAPE WITH A DOT INSIDE] U+1F4A0 -> U+FEB55
+  ["f09f92a1", "f3bead96"], # [ELECTRIC LIGHT BULB] U+1F4A1 -> U+FEB56
+  ["f09f92a2", "f3bead97"], # [ANGER SYMBOL] U+1F4A2 -> U+FEB57
+  ["f09f92a3", "f3bead98"], # [BOMB] U+1F4A3 -> U+FEB58
+  ["f09f92a4", "f3bead99"], # [SLEEPING SYMBOL] U+1F4A4 -> U+FEB59
+  ["f09f92a5", "f3bead9a"], # [COLLISION SYMBOL] U+1F4A5 -> U+FEB5A
+  ["f09f92a6", "f3bead9b"], # [SPLASHING SWEAT SYMBOL] U+1F4A6 -> U+FEB5B
+  ["f09f92a7", "f3bead9c"], # [DROP OF WATER] U+1F4A7 -> U+FEB5C
+  ["f09f92a8", "f3bead9d"], # [DASH SYMBOL] U+1F4A8 -> U+FEB5D
+  ["f09f92a9", "f3be93b4"], # [PILE OF POO] U+1F4A9 -> U+FE4F4
+  ["f09f92aa", "f3bead9e"], # [FLEXED BICEPS] U+1F4AA -> U+FEB5E
+  ["f09f92ab", "f3bead9f"], # [DIZZY SYMBOL] U+1F4AB -> U+FEB5F
+  ["f09f92ac", "f3be94b2"], # [SPEECH BALLOON] U+1F4AC -> U+FE532
+  ["e29ca8", "f3beada0"], # [SPARKLES] U+2728 -> U+FEB60
+  ["e29cb4", "f3beada1"], # [EIGHT POINTED BLACK STAR] U+2734 -> U+FEB61
+  ["e29cb3", "f3beada2"], # [EIGHT SPOKED ASTERISK] U+2733 -> U+FEB62
+  ["e29aaa", "f3beada5"], # [MEDIUM WHITE CIRCLE] U+26AA -> U+FEB65
+  ["e29aab", "f3beada6"], # [MEDIUM BLACK CIRCLE] U+26AB -> U+FEB66
+  ["f09f94b4", "f3beada3"], # [LARGE RED CIRCLE] U+1F534 -> U+FEB63
+  ["f09f94b5", "f3beada4"], # [LARGE BLUE CIRCLE] U+1F535 -> U+FEB64
+  ["f09f94b2", "f3beada4"], # [BLACK SQUARE BUTTON] U+1F532 -> U+FEB64
+  ["f09f94b3", "f3beada7"], # [WHITE SQUARE BUTTON] U+1F533 -> U+FEB67
+  ["e2ad90", "f3beada8"], # [WHITE MEDIUM STAR] U+2B50 -> U+FEB68
+  ["e2ac9c", "f3beadab"], # [WHITE LARGE SQUARE] U+2B1C -> U+FEB6B
+  ["e2ac9b", "f3beadac"], # [BLACK LARGE SQUARE] U+2B1B -> U+FEB6C
+  ["e296ab", "f3beadad"], # [WHITE SMALL SQUARE] U+25AB -> U+FEB6D
+  ["e296aa", "f3beadae"], # [BLACK SMALL SQUARE] U+25AA -> U+FEB6E
+  ["e297bd", "f3beadaf"], # [WHITE MEDIUM SMALL SQUARE] U+25FD -> U+FEB6F
+  ["e297be", "f3beadb0"], # [BLACK MEDIUM SMALL SQUARE] U+25FE -> U+FEB70
+  ["e297bb", "f3beadb1"], # [WHITE MEDIUM SQUARE] U+25FB -> U+FEB71
+  ["e297bc", "f3beadb2"], # [BLACK MEDIUM SQUARE] U+25FC -> U+FEB72
+  ["f09f94b6", "f3beadb3"], # [LARGE ORANGE DIAMOND] U+1F536 -> U+FEB73
+  ["f09f94b7", "f3beadb4"], # [LARGE BLUE DIAMOND] U+1F537 -> U+FEB74
+  ["f09f94b8", "f3beadb5"], # [SMALL ORANGE DIAMOND] U+1F538 -> U+FEB75
+  ["f09f94b9", "f3beadb6"], # [SMALL BLUE DIAMOND] U+1F539 -> U+FEB76
+  ["e29d87", "f3beadb7"], # [SPARKLE] U+2747 -> U+FEB77
+  ["f09f92ae", "f3beadba"], # [WHITE FLOWER] U+1F4AE -> U+FEB7A
+  ["f09f92af", "f3beadbb"], # [HUNDRED POINTS SYMBOL] U+1F4AF -> U+FEB7B
+  ["e286a9", "f3beae83"], # [LEFTWARDS ARROW WITH HOOK] U+21A9 -> U+FEB83
+  ["e286aa", "f3beae88"], # [RIGHTWARDS ARROW WITH HOOK] U+21AA -> U+FEB88
+  ["f09f9483", "f3beae91"], # [CLOCKWISE DOWNWARDS AND UPWARDS OPEN CIRCLE ARROWS] U+1F503 -> U+FEB91
+  ["f09f948a", "f3bea0a1"], # [SPEAKER WITH THREE SOUND WAVES] U+1F50A -> U+FE821
+  ["f09f948b", "f3be93bc"], # [BATTERY] U+1F50B -> U+FE4FC
+  ["f09f948c", "f3be93be"], # [ELECTRIC PLUG] U+1F50C -> U+FE4FE
+  ["f09f948d", "f3beae85"], # [LEFT-POINTING MAGNIFYING GLASS] U+1F50D -> U+FEB85
+  ["f09f948e", "f3beae8d"], # [RIGHT-POINTING MAGNIFYING GLASS] U+1F50E -> U+FEB8D
+  ["f09f9492", "f3beae86"], # [LOCK] U+1F512 -> U+FEB86
+  ["f09f9493", "f3beae87"], # [OPEN LOCK] U+1F513 -> U+FEB87
+  ["f09f948f", "f3beae90"], # [LOCK WITH INK PEN] U+1F50F -> U+FEB90
+  ["f09f9490", "f3beae8a"], # [CLOSED LOCK WITH KEY] U+1F510 -> U+FEB8A
+  ["f09f9491", "f3beae82"], # [KEY] U+1F511 -> U+FEB82
+  ["f09f9494", "f3be93b2"], # [BELL] U+1F514 -> U+FE4F2
+  ["e29891", "f3beae8b"], # [BALLOT BOX WITH CHECK] U+2611 -> U+FEB8B
+  ["f09f9498", "f3beae8c"], # [RADIO BUTTON] U+1F518 -> U+FEB8C
+  ["f09f9496", "f3beae8f"], # [BOOKMARK] U+1F516 -> U+FEB8F
+  ["f09f9497", "f3bead8b"], # [LINK SYMBOL] U+1F517 -> U+FEB4B
+  ["f09f9499", "f3beae8e"], # [BACK WITH LEFTWARDS ARROW ABOVE] U+1F519 -> U+FEB8E
+  ["f09f949a", "f3be809a"], # [END WITH LEFTWARDS ARROW ABOVE] U+1F51A -> U+FE01A
+  ["f09f949b", "f3be8099"], # [ON WITH EXCLAMATION MARK WITH LEFT RIGHT ARROW ABOVE] U+1F51B -> U+FE019
+  ["f09f949c", "f3be8098"], # [SOON WITH RIGHTWARDS ARROW ABOVE] U+1F51C -> U+FE018
+  ["f09f949d", "f3bead82"], # [TOP WITH UPWARDS ARROW ABOVE] U+1F51D -> U+FEB42
+  ["e28083", "f3bead8c"], # [EM SPACE] U+2003 -> U+FEB4C
+  ["e28082", "f3bead8d"], # [EN SPACE] U+2002 -> U+FEB4D
+  ["e28085", "f3bead8e"], # [FOUR-PER-EM SPACE] U+2005 -> U+FEB4E
+  ["e29c85", "f3bead8a"], # [WHITE HEAVY CHECK MARK] U+2705 -> U+FEB4A
+  ["e29c8a", "f3beae93"], # [RAISED FIST] U+270A -> U+FEB93
+  ["e29c8b", "f3beae95"], # [RAISED HAND] U+270B -> U+FEB95
+  ["e29c8c", "f3beae94"], # [VICTORY HAND] U+270C -> U+FEB94
+  ["f09f918a", "f3beae96"], # [FISTED HAND SIGN] U+1F44A -> U+FEB96
+  ["f09f918d", "f3beae97"], # [THUMBS UP SIGN] U+1F44D -> U+FEB97
+  ["e2989d", "f3beae98"], # [WHITE UP POINTING INDEX] U+261D -> U+FEB98
+  ["f09f9186", "f3beae99"], # [WHITE UP POINTING BACKHAND INDEX] U+1F446 -> U+FEB99
+  ["f09f9187", "f3beae9a"], # [WHITE DOWN POINTING BACKHAND INDEX] U+1F447 -> U+FEB9A
+  ["f09f9188", "f3beae9b"], # [WHITE LEFT POINTING BACKHAND INDEX] U+1F448 -> U+FEB9B
+  ["f09f9189", "f3beae9c"], # [WHITE RIGHT POINTING BACKHAND INDEX] U+1F449 -> U+FEB9C
+  ["f09f918b", "f3beae9d"], # [WAVING HAND SIGN] U+1F44B -> U+FEB9D
+  ["f09f918f", "f3beae9e"], # [CLAPPING HANDS SIGN] U+1F44F -> U+FEB9E
+  ["f09f918c", "f3beae9f"], # [OK HAND SIGN] U+1F44C -> U+FEB9F
+  ["f09f918e", "f3beaea0"], # [THUMBS DOWN SIGN] U+1F44E -> U+FEBA0
+  ["f09f9190", "f3beaea1"], # [OPEN HANDS SIGN] U+1F450 -> U+FEBA1
 ]
 

@@ -15,12 +15,17 @@ class EmojiTable
       to = e.attribute(to_carrier.downcase).to_s
       text_fallback = e.attribute('text_fallback').to_s
       name = e.attribute('name').to_s
+      if from =~ /^(?:\*|\+)(.+)$/ # proposed or unified
+        from = $1
+      end
       if from.empty? || from !~ /^[0-9A-F]+$/
         # do nothing
       else
         from_utf8 = [from.hex].pack("U").unpack("H*").first
-        if to =~ /^(?:&gt;)?([0-9A-F\+]+)$/
-          tos = $1.split('+')
+        if to =~ /^(?:&gt;|\*)?([0-9A-F\+]+)$/
+          str_to = $1
+          str_to.sub!(/^\+/, '') # unicode "proposed" begins at "+"
+          tos = str_to.split('+')
           to_utf8 = tos.map(&:hex).pack("U*").unpack("H*").first
           comment = "[%s] U+%X -> %s" % [name, from.hex, tos.map{|c| "U+%X"%c.hex}.join(' ')]
           block.call from_utf8, to_utf8, comment
@@ -34,14 +39,14 @@ class EmojiTable
             block.call from_utf8, to_utf8, comment
           end
         else
-          raise "something wrong"
+          raise "something wrong: %s -> %s" % [from, to]
         end
       end
     end
   end
   def generate(io, from_carrier, to_carrier)
-    from_encoding = "UTF8-"+from_carrier
-    to_encoding = "UTF8-"+to_carrier
+    from_encoding = (from_carrier == "Unicode") ? "UTF-8" : "UTF8-"+from_carrier
+    to_encoding   = (to_carrier == "Unicode" )  ? "UTF-8" : "UTF8-"+to_carrier
       io.puts "EMOJI_EXCHANGE_TBL['#{from_encoding}']['#{to_encoding}'] = ["
       self.conversion(from_carrier, to_carrier) do |from, to, comment|
         io.puts %{  ["#{from}", "#{to}"], # #{comment}}
@@ -57,7 +62,7 @@ if ARGV.empty?
 end
 emoji_table = EmojiTable.new(ARGV[0])
 
-companies = %w(DoCoMo KDDI SoftBank Google)
+companies = %w(DoCoMo KDDI SoftBank Google Unicode)
 
 io = STDOUT
 io.puts "EMOJI_EXCHANGE_TBL = Hash.new{|h,k| h[k] = {}}"
