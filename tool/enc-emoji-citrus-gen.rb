@@ -2,36 +2,50 @@ require File.expand_path('../jisx0208', __FILE__)
 
 ENCODES = [
   {
+    :name => "SHIFT_JIS-DOCOMO",
+    :src_zone => [0xF8..0xFC, 0x40..0xFC, 8],
+    :dst_ilseq => 0xFFFE,
+    :map => [
+      [0xE63E..0xE757, JISX0208::Char.from_sjis(0xF89F)],
+    ],
+  },
+  {
     :name => "ISO-2022-JP-KDDI",
     :src_zone => [0x21..0x7E, 0x21..0x7E, 8],
     :dst_ilseq => 0xFFFE,
-    :map => [ [0xE468..0xE5B4, JISX0208::Char.new(0x7521)],
-              [0xE5B5..0xE5DF, JISX0208::Char.new(0x7867)],
-              [0xEA80..0xEAFA, JISX0208::Char.new(0x7934)],
-              [0xEAFB..0xEB0D, JISX0208::Char.new(0x7854)],
-              [0xEB0E..0xEB8E, JISX0208::Char.new(0x7A51)] ],
+    :map => [
+      [0xE468..0xE5B4, JISX0208::Char.new(0x7521)],
+      [0xE5B5..0xE5DF, JISX0208::Char.new(0x7867)],
+      [0xEA80..0xEAFA, JISX0208::Char.new(0x7934)],
+      [0xEAFB..0xEB0D, JISX0208::Char.new(0x7854)],
+      [0xEB0E..0xEB8E, JISX0208::Char.new(0x7A51)],
+    ],
   },
   {
     :name => "SHIFT_JIS-KDDI",
     :src_zone => [0xF3..0xFC, 0x40..0xFC, 8],
     :dst_ilseq => 0xFFFE,
-    :map => [ [0xE468..0xE5B4, JISX0208::Char.from_sjis(0xF640)],
-              [0xE5B5..0xE5CC, JISX0208::Char.from_sjis(0xF7E5)],
-              [0xE5CD..0xE5DF, JISX0208::Char.from_sjis(0xF340)],
-              [0xEA80..0xEAFA, JISX0208::Char.from_sjis(0xF353)],
-              [0xEAFB..0xEB0D, JISX0208::Char.from_sjis(0xF7D2)],
-              [0xEB0E..0xEB8E, JISX0208::Char.from_sjis(0xF3CF)] ],
+    :map => [
+      [0xE468..0xE5B4, JISX0208::Char.from_sjis(0xF640)],
+      [0xE5B5..0xE5CC, JISX0208::Char.from_sjis(0xF7E5)],
+      [0xE5CD..0xE5DF, JISX0208::Char.from_sjis(0xF340)],
+      [0xEA80..0xEAFA, JISX0208::Char.from_sjis(0xF353)],
+      [0xEAFB..0xEB0D, JISX0208::Char.from_sjis(0xF7D2)],
+      [0xEB0E..0xEB8E, JISX0208::Char.from_sjis(0xF3CF)],
+    ],
   },
   {
-    :name => "SHIFT_JIS-SoftBank",
+    :name => "SHIFT_JIS-SOFTBANK",
     :src_zone => [0xF3..0xFC, 0x40..0xFC, 8],
     :dst_ilseq => 0xFFFE,
-    :map => [ [0xE001..0xE05A, JISX0208::Char.from_sjis(0xF941)],
-              [0xE101..0xE15A, JISX0208::Char.from_sjis(0xF741)],
-              [0xE201..0xE25A, JISX0208::Char.from_sjis(0xF7A1)],
-              [0xE301..0xE34D, JISX0208::Char.from_sjis(0xF9A1)],
-              [0xE401..0xE44C, JISX0208::Char.from_sjis(0xFB41)],
-              [0xE501..0xE53E, JISX0208::Char.from_sjis(0xFBA1)]],
+    :map => [
+      [0xE001..0xE05A, JISX0208::Char.from_sjis(0xF941)],
+      [0xE101..0xE15A, JISX0208::Char.from_sjis(0xF741)],
+      [0xE201..0xE25A, JISX0208::Char.from_sjis(0xF7A1)],
+      [0xE301..0xE34D, JISX0208::Char.from_sjis(0xF9A1)],
+      [0xE401..0xE44C, JISX0208::Char.from_sjis(0xFB41)],
+      [0xE501..0xE53E, JISX0208::Char.from_sjis(0xFBA1)],
+    ],
   },
 ]
 
