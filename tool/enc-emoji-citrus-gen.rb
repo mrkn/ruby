@@ -102,3 +102,16 @@ ENCODES.each do |params|
   generate_to_ucs(params, pairs)
   generate_from_ucs(params, pairs)
 end
+
+# generate KDDI-UNDOC
+kddi_map = ENCODES.select{|enc| enc[:name] == "SHIFT_JIS-KDDI"}.first[:map]
+pairs = kddi_map.inject([]) {|acc, (range, ch)|
+  acc += range.map{|uni| pair = [ch.to_sjis - 0x700, Integer(ch)]; ch = ch.succ; next pair }
+}
+params = {
+  :name => "SHIFT_JIS-KDDI-UNDOC",
+  :src_zone => [0xF3..0xFC, 0x40..0xFC, 8],
+  :dst_ilseq => 0xFFFE,
+}
+generate_to_ucs(params, pairs)
+generate_from_ucs(params, pairs)

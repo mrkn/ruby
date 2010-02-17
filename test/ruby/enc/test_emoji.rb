@@ -3,11 +3,12 @@ require 'test/unit'
 class TestUTF8_BLACK_SUN_WITH_RAYS < Test::Unit::TestCase
   def setup
     @codes = {
-      "UTF8-Google"   => "\u{FE000}".force_encoding("UTF8-Google"),
-      "UTF8-DoCoMo"   => "\u{E63E}".force_encoding("UTF8-DoCoMo"),
-      "UTF8-KDDI"     => "\u{E488}".force_encoding("UTF8-KDDI"),
-      "UTF8-SoftBank" => "\u{E04A}".force_encoding("UTF8-SoftBank"),
-      "UTF-8"         => "\u{2600}".force_encoding("UTF-8"),
+      "UTF8-Google"     => "\u{FE000}".force_encoding("UTF8-Google"),
+      "UTF8-DoCoMo"     => "\u{E63E}".force_encoding("UTF8-DoCoMo"),
+      "UTF8-KDDI"       => "\u{E488}".force_encoding("UTF8-KDDI"),
+      "UTF8-KDDI-UNDOC" => "\u{EF60}".force_encoding("UTF8-KDDI-UNDOC"),
+      "UTF8-SoftBank"   => "\u{E04A}".force_encoding("UTF8-SoftBank"),
+      "UTF-8"           => "\u{2600}".force_encoding("UTF-8"),
     }
   end
 
