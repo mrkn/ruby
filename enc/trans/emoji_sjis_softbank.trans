@@ -11,7 +11,7 @@
                                           CP932UDA/UCS
                                           JISX0208:MS/UCS).join(","))
 
-  transcode_tblgen "UTF8-KDDI", "Shift_JIS-SoftBank",
+  transcode_tblgen "UTF8-SoftBank", "Shift_JIS-SoftBank",
     [["{00-7f}", :nomap]] +
     citrus_decode_mapsrc("mskanji", 1, "UCS/JISX0201-KANA") +
     citrus_decode_mapsrc("mskanji", 2, %w(UCS/EMOJI_SHIFT_JIS-SOFTBANK
