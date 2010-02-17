@@ -519,12 +519,18 @@ def citrus_euc_cstomb(csid, index)
   end.to_s(16)
 end
 
+def citrus_stateless_iso_cstomb(csid, index)
+  (index | 0x8080 | (csid << 16)).to_s(16)
+end
+
 def citrus_cstomb(ces, csid, index)
   case ces
   when 'mskanji'
     citrus_mskanji_cstomb(csid, index)
   when 'euc'
     citrus_euc_cstomb(csid, index)
+  when 'stateless_iso'
+    citrus_stateless_iso_cstomb(csid, index)
   end
 end
 
