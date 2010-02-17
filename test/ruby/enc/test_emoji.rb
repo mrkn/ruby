@@ -66,6 +66,7 @@ class TestKDDI < Test::Unit::TestCase
     @utf8_kddi = "\u{E488}".force_encoding("UTF8-KDDI")
     @sjis_kddi = "\xF6\x60".force_encoding("Shift_JIS-KDDI")
     @iso2022jp_kddi = "\x1B$B\x75\x41\x1B(B".force_encoding("ISO-2022-JP-KDDI")
+    @stateless_iso2022jp_kddi = "\222\xF5\xC1".force_encoding("stateless-ISO-2022-JP-KDDI")
   end
 
   def test_from_sjis
@@ -86,6 +87,10 @@ class TestKDDI < Test::Unit::TestCase
     assert_nothing_raised { @iso2022jp.encode("ISO-2022-JP-KDDI") }
   end
 
+  def test_from_stateless_iso2022jp_kddi
+    assert_nothing_raised { @stateless_iso2022jp_kddi.encode("ISO-2022-JP-KDDI") }
+  end
+
   def test_to_utf8
     # FIXME
   end
@@ -97,8 +102,19 @@ class TestKDDI < Test::Unit::TestCase
   def test_to_eucjp
     assert_raise(Encoding::UndefinedConversionError) { @utf8_kddi.encode("EUC-JP") }
     assert_raise(Encoding::UndefinedConversionError) { @sjis_kddi.encode("EUC-JP") }
-    assert_raise(Encoding::UndefinedConversionError) { @iso2022jp_kddi.encode("EUC-JP") }
+    assert_raise(Encoding::UndefinedConversionError) { @iso2022jp_kddi.encode("EUC-JP") } # XXX
   end
+
+  def test_utf8_and_stateless_iso2022jp
+    assert_equal @utf8_kddi, @stateless_iso2022jp_kddi.encode("UTF8-KDDI")
+    assert_equal @stateless_iso2022jp_kddi, @utf8_kddi.encode("stateless-ISO-2022-JP-KDDI")
+  end
+
+  def test_iso2022jp_and_stateless_iso2022jp
+    assert_equal @iso2022jp_kddi, @stateless_iso2022jp_kddi.encode("ISO-2022-JP-KDDI")
+    assert_equal @stateless_iso2022jp_kddi, @iso2022jp_kddi.encode("stateless-ISO-2022-JP-KDDI")
+  end
+
 
   def test_sjis_and_utf8
     assert_equal @utf8_kddi, @sjis_kddi.encode("UTF8-KDDI")
