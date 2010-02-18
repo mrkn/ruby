@@ -22,12 +22,40 @@ class TestUTF8_BLACK_SUN_WITH_RAYS < Test::Unit::TestCase
   end
 end
 
+class TestGoogle < Test::Unit::TestCase
+  def test_encoding_name
+    %w(UTF-8-Google
+       UTF8-Google).each do |n|
+      assert Encoding.name_list.include?(n), "encoding not found: #{n}"
+    end
+  end
+
+  def test_comparison
+    assert_equal Encoding::UTF_8_Google, Encoding::UTF8_Google
+    assert_not_equal Encoding::UTF_8, Encoding::UTF_8_Google
+  end
+end
+
 class TestDoCoMo < Test::Unit::TestCase
   def setup
     @utf8 = "\u{3042}\u{3044}\u{3046}\u{3048}\u{304A}"
     @sjis = @utf8.encode("Windows-31J")
     @utf8_docomo = "\u{E63E}".force_encoding("UTF8-DoCoMo")
     @sjis_docomo = "\xF8\x9F".force_encoding("Shift_JIS-DoCoMo")
+  end
+
+  def test_encoding_name
+    %w(UTF-8-DoCoMo
+       UTF8-DoCoMo
+       Shift_JIS-DoCoMo).each do |n|
+      assert Encoding.name_list.include?(n), "encoding not found: #{n}"
+    end
+  end
+
+  def test_comparison
+    assert_equal Encoding::UTF_8_DoCoMo, Encoding::UTF8_DoCoMo
+    assert_not_equal Encoding::UTF_8, Encoding::UTF_8_DoCoMo
+    assert_not_equal Encoding::Windows_31J, Encoding::Shift_JIS_DoCoMo
   end
 
   def test_from_utf8
@@ -41,14 +69,22 @@ class TestDoCoMo < Test::Unit::TestCase
   end
 
   def test_to_utf8
-    # FIXME
+    # assert_nothing_raised(Encoding::UndefinedConversionError) { @utf8_docomo_strict.encode("UTF-8") }
+    # assert_raise(Encoding::UndefinedConversionError) { @sjis_docomo_strict.encode("UTF-8") }
+    assert_nothing_raised { @utf8_docomo.encode("UTF-8") }
+    assert_nothing_raised { @sjis_docomo.encode("UTF-8") }
   end
 
   def test_to_sjis
-    # FIXME
+    # assert_raise(Encoding::UndefinedConversionError) { @utf8_docomo_strict.encode("Windows-31J") }
+    # assert_raise(Encoding::UndefinedConversionError) { @sjis_docomo_strict.encode("Windows-31J") }
+    assert_raise(Encoding::UndefinedConversionError) { @utf8_docomo.encode("Windows-31J") }
+    assert_raise(Encoding::UndefinedConversionError) { @sjis_docomo.encode("Windows-31J") }
   end
 
   def test_to_eucjp
+    # assert_raise(Encoding::UndefinedConversionError) { @utf8_docomo_strict.encode("EUC-JP") }
+    # assert_raise(Encoding::UndefinedConversionError) { @sjis_docomo_strict.encode("EUC-JP") }
     assert_raise(Encoding::UndefinedConversionError) { @utf8_docomo.encode("EUC-JP") }
     assert_raise(Encoding::UndefinedConversionError) { @sjis_docomo.encode("EUC-JP") }
   end
@@ -68,6 +104,27 @@ class TestKDDI < Test::Unit::TestCase
     @sjis_kddi = "\xF6\x60".force_encoding("Shift_JIS-KDDI")
     @iso2022jp_kddi = "\x1B$B\x75\x41\x1B(B".force_encoding("ISO-2022-JP-KDDI")
     @stateless_iso2022jp_kddi = "\222\xF5\xC1".force_encoding("stateless-ISO-2022-JP-KDDI")
+  end
+
+  def test_encoding_name
+    %w(UTF-8-KDDI
+       UTF8-KDDI
+       UTF-8-KDDI-UNDOC
+       UTF8-KDDI-UNDOC
+       Shift_JIS-KDDI
+       ISO-2022-JP-KDDI
+       stateless-ISO-2022-JP-KDDI).each do |n|
+      assert Encoding.name_list.include?(n), "encoding not found: #{n}"
+    end
+  end
+
+  def test_comparison
+    assert_equal Encoding::UTF_8_KDDI, Encoding::UTF8_KDDI
+    assert_not_equal Encoding::UTF_8, Encoding::UTF_8_KDDI
+    assert_not_equal Encoding::UTF_8, Encoding::UTF_8_KDDI_UNDOC
+    assert_not_equal Encoding::Windows_31J, Encoding::Shift_JIS_KDDI
+    assert_not_equal Encoding::ISO_2022_JP, Encoding::ISO_2022_JP_KDDI
+    assert_not_equal Encoding::Stateless_ISO_2022_JP, Encoding::Stateless_ISO_2022_JP_KDDI
   end
 
   def test_from_sjis
@@ -139,6 +196,20 @@ class TestSoftBank < Test::Unit::TestCase
     @sjis = @utf8.encode("Windows-31J")
     @utf8_softbank = "\u{E04A}".force_encoding("UTF8-SoftBank")
     @sjis_softbank = "\xF9\x8B".force_encoding("Shift_JIS-SoftBank")
+  end
+
+  def test_encoding_name
+    %w(UTF-8-SoftBank
+       UTF8-SoftBank
+       Shift_JIS-SoftBank).each do |n|
+      assert Encoding.name_list.include?(n), "encoding not found: #{n}"
+    end
+  end
+
+  def test_comparison
+    assert_equal Encoding::UTF_8_SoftBank, Encoding::UTF8_SoftBank
+    assert_not_equal Encoding::UTF_8, Encoding::UTF_8_SoftBank
+    assert_not_equal Encoding::Windows_31J, Encoding::Shift_JIS_SoftBank
   end
 
   def test_from_utf8
