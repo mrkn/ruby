@@ -65,6 +65,17 @@ class TestDoCoMo < Test::Unit::TestCase
     assert_not_equal Encoding::Windows_31J, Encoding::Shift_JIS_DoCoMo_strict
   end
 
+  def test_compatibility_with_strict
+    [@utf8_docomo, @sjis_docomo].each do |x|
+      assert_nothing_raised { x.encode("UTF8-DoCoMo_strict") }
+      assert_nothing_raised { x.encode("Shift_JIS-DoCoMo_strict") }
+    end
+    [@utf8_docomo_st, @sjis_docomo_st].each do |x|
+      assert_nothing_raised { x.encode("UTF8-DoCoMo") }
+      assert_nothing_raised { x.encode("Shift_JIS-DoCoMo") }
+    end
+  end
+
   def test_from_utf8
     assert_nothing_raised { @utf8.encode("UTF8-DoCoMo") }
     assert_nothing_raised { @utf8.encode("Shift_JIS-DoCoMo") }
@@ -145,6 +156,17 @@ class TestKDDI < Test::Unit::TestCase
     assert_not_equal Encoding::Shift_JIS_KDDI, Encoding::Shift_JIS_KDDI_strict
     assert_not_equal Encoding::ISO_2022_JP_KDDI, Encoding::ISO_2022_JP_KDDI_strict
     assert_not_equal Encoding::Stateless_ISO_2022_JP_KDDI, Encoding::Stateless_ISO_2022_JP_KDDI_strict
+  end
+
+  def test_compatibility_with_strict
+    [ @utf8_kddi, @utf8_kddi_undoc, @sjis_kddi,
+      @iso2022jp_kddi, @stateless_iso2022jp_kddi ].each do |x|
+      assert_nothing_raised { x.encode("UTF8-KDDI_strict") }
+      assert_nothing_raised { x.encode("UTF8-KDDI-UNDOC_strict") }
+      assert_nothing_raised { x.encode("Shift_JIS-KDDI_strict") }
+      assert_nothing_raised { x.encode("ISO-2022-JP-KDDI_strict") }
+      assert_nothing_raised { x.encode("stateless-ISO-2022-JP-KDDI_strict") }
+    end
   end
 
   def test_from_sjis
@@ -238,6 +260,13 @@ class TestSoftBank < Test::Unit::TestCase
 
     assert_not_equal Encoding::UTF_8_SoftBank, Encoding::UTF_8_SoftBank_strict
     assert_not_equal Encoding::Shift_JIS_SoftBank, Encoding::Shift_JIS_SoftBank_strict
+  end
+
+  def test_compatibility_with_strict
+    [@utf8_softbank, @sjis_softbank].each do |x|
+      assert_nothing_raised { x.encode("UTF8-SoftBank_strict") }
+      assert_nothing_raised { x.encode("Shift_JIS-SoftBank_strict") }
+    end
   end
 
   def test_from_utf8
