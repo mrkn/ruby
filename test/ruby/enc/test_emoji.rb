@@ -1,14 +1,27 @@
 require 'test/unit'
 
+class Test_RemoveEncoding
+  def test_remove
+    assert_raise(ArgumentError) { "".force_encoding("UTF8-DoCoMo_strict") }
+    assert_raise(ArgumentError) { "".force_encoding("Shift_JIS-DoCoMo_strict") }
+    assert_raise(ArgumentError) { "".force_encoding("UTF8-KDDI_strict") }
+    assert_raise(ArgumentError) { "".force_encoding("UTF8-KDDI-UNDOC") }
+    assert_raise(ArgumentError) { "".force_encoding("UTF8-KDDI-UNDOC_strict") }
+    assert_raise(ArgumentError) { "".force_encoding("Shift_JIS-KDDI_strict") }
+    assert_raise(ArgumentError) { "".force_encoding("ISO-2022-JP-KDDI_strict") }
+    assert_raise(ArgumentError) { "".force_encoding("UTF8-SoftBank_strict") }
+    assert_raise(ArgumentError) { "".force_encoding("Shift_JIS-SoftBank_strict") }
+  end
+end
+
 class TestUTF8_BLACK_SUN_WITH_RAYS < Test::Unit::TestCase
   def setup
     @codes = {
-      "UTF8-Google"     => "\u{FE000}".force_encoding("UTF8-Google"),
-      "UTF8-DoCoMo"     => "\u{E63E}".force_encoding("UTF8-DoCoMo"),
-      "UTF8-KDDI"       => "\u{E488}".force_encoding("UTF8-KDDI"),
-      "UTF8-KDDI-UNDOC" => "\u{EF60}".force_encoding("UTF8-KDDI-UNDOC"),
-      "UTF8-SoftBank"   => "\u{E04A}".force_encoding("UTF8-SoftBank"),
-      "UTF-8"           => "\u{2600}".force_encoding("UTF-8"),
+      "UTF8-Google"     => utf8_google("\u{FE000}"),
+      "UTF8-DoCoMo"     => utf8_docomo("\u{E63E}"),
+      "UTF8-KDDI"       => utf8_kddi("\u{E488}"),
+      "UTF8-SoftBank"   => utf8_softbank("\u{E04A}"),
+      "UTF-8"           => "\u{2600}",
     }
   end
 
@@ -16,7 +29,7 @@ class TestUTF8_BLACK_SUN_WITH_RAYS < Test::Unit::TestCase
     @codes.each do |from_enc, from_str|
       @codes.each do |to_enc, to_str|
         next if from_enc == to_enc
-        assert_equal to_str, from_str.encode(to_enc), "convert from #{from_enc} to #{to_str}"
+        assert_equal to_str, from_str.encode(to_enc), "convert from #{from_enc} to #{to_enc}"
       end
     end
   end
@@ -34,16 +47,26 @@ class TestGoogle < Test::Unit::TestCase
     assert_equal Encoding::UTF_8_Google, Encoding::UTF8_Google
     assert_not_equal Encoding::UTF_8, Encoding::UTF_8_Google
   end
+
+  def test_to_docomo
+    assert_nothing_raised { utf8_google("\u{FE000}").encode("UTF8-DoCoMo") }
+    assert_raise(Encoding::UndefinedConversionError) { utf8_google("\u{FE1CA}").encode("UTF8-DoCoMo") }
+  end
+
+  def test_to_kddi
+    assert_nothing_raised { utf8_google("\u{FE000}").encode("UTF8-KDDI") }
+    assert_raise(Encoding::UndefinedConversionError) { utf8_google("\u{FE1CA}").encode("UTF8-KDDI") }
+  end
+
+  def test_to_softbank
+    assert_nothing_raised { utf8_google("\u{FE000}").encode("UTF8-SoftBank") }
+    assert_raise(Encoding::UndefinedConversionError) { utf8_google("\u{FE039}").encode("UTF8-SoftBank") }
+  end
 end
 
 class TestDoCoMo < Test::Unit::TestCase
   def setup
-    @utf8 = "\u{3042}\u{3044}\u{3046}\u{3048}\u{304A}"
-    @sjis = @utf8.encode("Windows-31J")
-    @utf8_docomo = "\u{E63E}".force_encoding("UTF8-DoCoMo")
-    @sjis_docomo = "\xF8\x9F".force_encoding("Shift_JIS-DoCoMo")
-    @utf8_docomo_st = "\u{E63E}".force_encoding("UTF8-DoCoMo_strict")
-    @sjis_docomo_st = "\xF8\x9F".force_encoding("Shift_JIS-DoCoMo_strict")
+    setup_instance_variable(self)
   end
 
   def test_encoding_name
@@ -51,196 +74,228 @@ class TestDoCoMo < Test::Unit::TestCase
        UTF8-DoCoMo
        Shift_JIS-DoCoMo).each do |n|
       assert Encoding.name_list.include?(n), "encoding not found: #{n}"
-      assert Encoding.name_list.include?("#{n}_strict"), "encoding not found: #{n}_strict"
     end
   end
 
   def test_comparison
     assert_equal Encoding::UTF_8_DoCoMo, Encoding::UTF8_DoCoMo
-    assert_not_equal Encoding::UTF_8, Encoding::UTF_8_DoCoMo
+    assert_not_equal Encoding::UTF_8, Encoding::UTF8_DoCoMo
     assert_not_equal Encoding::Windows_31J, Encoding::Shift_JIS_DoCoMo
-
-    assert_equal Encoding::UTF_8_DoCoMo_strict, Encoding::UTF8_DoCoMo_strict
-    assert_not_equal Encoding::UTF_8_DoCoMo, Encoding::UTF_8_DoCoMo_strict
-    assert_not_equal Encoding::Shift_JIS_DoCoMo, Encoding::Shift_JIS_DoCoMo_strict
-    assert_not_equal Encoding::UTF_8, Encoding::UTF_8_DoCoMo_strict
-    assert_not_equal Encoding::Windows_31J, Encoding::Shift_JIS_DoCoMo_strict
-  end
-
-  def test_compatibility_with_strict
-    [@utf8_docomo, @sjis_docomo].each do |x|
-      assert_nothing_raised { x.encode("UTF8-DoCoMo_strict") }
-      assert_nothing_raised { x.encode("Shift_JIS-DoCoMo_strict") }
-    end
-    [@utf8_docomo_st, @sjis_docomo_st].each do |x|
-      assert_nothing_raised { x.encode("UTF8-DoCoMo") }
-      assert_nothing_raised { x.encode("Shift_JIS-DoCoMo") }
-    end
   end
 
   def test_from_utf8
-    assert_nothing_raised { @utf8.encode("UTF8-DoCoMo") }
-    assert_nothing_raised { @utf8.encode("Shift_JIS-DoCoMo") }
+    assert_nothing_raised { assert_equal utf8_docomo(@utf8), to_utf8_docomo(@utf8) }
+    assert_nothing_raised { assert_equal sjis_docomo(@sjis), to_sjis_docomo(@utf8) }
   end
 
   def test_from_sjis
-    assert_nothing_raised { @sjis.encode("UTF8-DoCoMo") }
-    assert_nothing_raised { @sjis.encode("Shift_JIS-DoCoMo") }
+    assert_nothing_raised { assert_equal utf8_docomo(@utf8), to_utf8_docomo(@sjis) }
+    assert_nothing_raised { assert_equal sjis_docomo(@sjis), to_sjis_docomo(@sjis) }
   end
 
   def test_to_utf8
-    # assert_nothing_raised(Encoding::UndefinedConversionError) { @utf8_docomo_strict.encode("UTF-8") }
-    # assert_raise(Encoding::UndefinedConversionError) { @sjis_docomo_strict.encode("UTF-8") }
-    assert_nothing_raised { @utf8_docomo.encode("UTF-8") }
-    assert_nothing_raised { @sjis_docomo.encode("UTF-8") }
+    assert_raise(Encoding::UndefinedConversionError) { to_utf8(@utf8_docomo) }
+    assert_raise(Encoding::UndefinedConversionError) { to_utf8(@sjis_docomo) }
   end
 
   def test_to_sjis
-    # assert_raise(Encoding::UndefinedConversionError) { @utf8_docomo_strict.encode("Windows-31J") }
-    # assert_raise(Encoding::UndefinedConversionError) { @sjis_docomo_strict.encode("Windows-31J") }
-    assert_raise(Encoding::UndefinedConversionError) { @utf8_docomo.encode("Windows-31J") }
-    assert_raise(Encoding::UndefinedConversionError) { @sjis_docomo.encode("Windows-31J") }
+    assert_raise(Encoding::UndefinedConversionError) { to_sjis(@utf8_docomo) }
+    assert_raise(Encoding::UndefinedConversionError) { to_sjis(@sjis_docomo) }
   end
 
   def test_to_eucjp
-    # assert_raise(Encoding::UndefinedConversionError) { @utf8_docomo_strict.encode("EUC-JP") }
-    # assert_raise(Encoding::UndefinedConversionError) { @sjis_docomo_strict.encode("EUC-JP") }
-    assert_raise(Encoding::UndefinedConversionError) { @utf8_docomo.encode("EUC-JP") }
-    assert_raise(Encoding::UndefinedConversionError) { @sjis_docomo.encode("EUC-JP") }
+    assert_raise(Encoding::UndefinedConversionError) { to_eucjp(@utf8_docomo) }
+    assert_raise(Encoding::UndefinedConversionError) { to_eucjp(@sjis_docomo) }
   end
 
-  def test_emoji_sjis_and_utf8
-    assert_equal @utf8_docomo, @sjis_docomo.encode("UTF8-DoCoMo")
-    assert_equal @sjis_docomo, @utf8_docomo.encode("Shift_JIS-DoCoMo")
+  def test_docomo
+    assert_nothing_raised { assert_equal @utf8_docomo, to_utf8_docomo(@sjis_docomo) }
+    assert_nothing_raised { assert_equal @sjis_docomo, to_sjis_docomo(@utf8_docomo) }
+  end
+
+  def test_to_kddi
+    assert_nothing_raised { assert_equal @utf8_kddi, to_utf8_kddi(@utf8_docomo) }
+    assert_nothing_raised { assert_equal @sjis_kddi, to_sjis_kddi(@utf8_docomo) }
+    assert_nothing_raised { assert_equal @iso2022jp_kddi, to_iso2022jp_kddi(@utf8_docomo) }
+
+    assert_nothing_raised { assert_equal @utf8_kddi, to_utf8_kddi(@sjis_docomo) }
+    assert_nothing_raised { assert_equal @sjis_kddi, to_sjis_kddi(@sjis_docomo) }
+    assert_nothing_raised { assert_equal @iso2022jp_kddi, to_iso2022jp_kddi(@sjis_docomo) }
+
+    assert_raise(Encoding::UndefinedConversionError) { to_utf8_kddi(@utf8_docomo_only) }
+    assert_raise(Encoding::UndefinedConversionError) { to_sjis_kddi(@utf8_docomo_only) }
+    assert_raise(Encoding::UndefinedConversionError) { to_iso2022jp_kddi(@utf8_docomo_only) }
+
+    assert_raise(Encoding::UndefinedConversionError) { to_utf8_kddi(@sjis_docomo_only) }
+    assert_raise(Encoding::UndefinedConversionError) { to_sjis_kddi(@sjis_docomo_only) }
+    assert_raise(Encoding::UndefinedConversionError) { to_iso2022jp_kddi(@sjis_docomo_only) }
+  end
+
+  def test_to_softbank
+    assert_nothing_raised { assert_equal @utf8_softbank, to_utf8_softbank(@utf8_docomo) }
+    assert_nothing_raised { assert_equal @sjis_softbank, to_sjis_softbank(@utf8_docomo) }
+
+    assert_nothing_raised { assert_equal @utf8_softbank, to_utf8_softbank(@sjis_docomo) }
+    assert_nothing_raised { assert_equal @sjis_softbank, to_sjis_softbank(@sjis_docomo) }
+
+    assert_raise(Encoding::UndefinedConversionError) { to_utf8_softbank(@utf8_docomo_only) }
+    assert_raise(Encoding::UndefinedConversionError) { to_sjis_softbank(@utf8_docomo_only) }
+
+    assert_raise(Encoding::UndefinedConversionError) { to_utf8_softbank(@sjis_docomo_only) }
+    assert_raise(Encoding::UndefinedConversionError) { to_sjis_softbank(@sjis_docomo_only) }
+  end
+
+  def test_to_google
+    assert_nothing_raised { assert_equal @utf8_google, to_utf8_google(@utf8_docomo) }
+    assert_nothing_raised { assert_equal @utf8_google, to_utf8_google(@sjis_docomo) }
+
+    assert_nothing_raised { assert_equal utf8_google("\u{FE19A}"), to_utf8_google(@utf8_docomo_only) }
+    assert_nothing_raised { assert_equal utf8_google("\u{FE19A}"), to_utf8_google(@sjis_docomo_only) }
   end
 end
 
 class TestKDDI < Test::Unit::TestCase
   def setup
-    @utf8 = "\u{3042}\u{3044}\u{3046}\u{3048}\u{304A}"
-    @sjis = @utf8.encode("Windows-31J")
-    @iso2022jp = @utf8.encode("ISO-2022-JP")
-    @utf8_kddi = "\u{E488}".force_encoding("UTF8-KDDI")
-    @utf8_kddi_undoc = "\u{E488}".force_encoding("UTF8-KDDI-UNDOC")
-    @sjis_kddi = "\xF6\x60".force_encoding("Shift_JIS-KDDI")
-    @iso2022jp_kddi = "\x1B$B\x75\x41\x1B(B".force_encoding("ISO-2022-JP-KDDI")
-    @stateless_iso2022jp_kddi = "\222\xF5\xC1".force_encoding("stateless-ISO-2022-JP-KDDI")
+    setup_instance_variable(self)
   end
 
   def test_encoding_name
     %w(UTF-8-KDDI
        UTF8-KDDI
-       UTF-8-KDDI-UNDOC
-       UTF8-KDDI-UNDOC
        Shift_JIS-KDDI
-       ISO-2022-JP-KDDI).each do |n|
+       ISO-2022-JP-KDDI
+       stateless-ISO-2022-JP-KDDI).each do |n|
       assert Encoding.name_list.include?(n), "encoding not found: #{n}"
-      assert Encoding.name_list.include?("#{n}_strict"), "encoding not found: #{n}_strict"
     end
-    assert Encoding.name_list.include?("stateless-ISO-2022-JP-KDDI"),
-      "encoding not found: stateless-ISO-2022-JP-KDDI"
   end
 
   def test_comparison
     assert_equal Encoding::UTF_8_KDDI, Encoding::UTF8_KDDI
     assert_not_equal Encoding::UTF_8, Encoding::UTF_8_KDDI
-    assert_not_equal Encoding::UTF_8, Encoding::UTF_8_KDDI_UNDOC
     assert_not_equal Encoding::Windows_31J, Encoding::Shift_JIS_KDDI
     assert_not_equal Encoding::ISO_2022_JP, Encoding::ISO_2022_JP_KDDI
     assert_not_equal Encoding::Stateless_ISO_2022_JP, Encoding::Stateless_ISO_2022_JP_KDDI
-
-    assert_equal Encoding::UTF_8_KDDI_strict, Encoding::UTF8_KDDI_strict
-    assert_not_equal Encoding::UTF_8, Encoding::UTF_8_KDDI_strict
-    assert_not_equal Encoding::UTF_8, Encoding::UTF_8_KDDI_UNDOC_strict
-    assert_not_equal Encoding::Windows_31J, Encoding::Shift_JIS_KDDI_strict
-    assert_not_equal Encoding::ISO_2022_JP, Encoding::ISO_2022_JP_KDDI_strict
-    assert_not_equal Encoding::Stateless_ISO_2022_JP, Encoding::Stateless_ISO_2022_JP_KDDI_strict
-
-    assert_not_equal Encoding::UTF_8_KDDI, Encoding::UTF_8_KDDI_strict
-    assert_not_equal Encoding::Shift_JIS_KDDI, Encoding::Shift_JIS_KDDI_strict
-    assert_not_equal Encoding::ISO_2022_JP_KDDI, Encoding::ISO_2022_JP_KDDI_strict
-    assert_not_equal Encoding::Stateless_ISO_2022_JP_KDDI, Encoding::Stateless_ISO_2022_JP_KDDI_strict
-  end
-
-  def test_compatibility_with_strict
-    [ @utf8_kddi, @utf8_kddi_undoc, @sjis_kddi,
-      @iso2022jp_kddi, @stateless_iso2022jp_kddi ].each do |x|
-      assert_nothing_raised { x.encode("UTF8-KDDI_strict") }
-      assert_nothing_raised { x.encode("UTF8-KDDI-UNDOC_strict") }
-      assert_nothing_raised { x.encode("Shift_JIS-KDDI_strict") }
-      assert_nothing_raised { x.encode("ISO-2022-JP-KDDI_strict") }
-    end
-  end
-
-  def test_from_sjis
-    assert_nothing_raised { @sjis.encode("Shift_JIS-KDDI") }
-    assert_nothing_raised { @sjis.encode("UTF8-KDDI") }
-    assert_nothing_raised { @sjis.encode("ISO-2022-JP-KDDI") }
   end
 
   def test_from_utf8
-    assert_nothing_raised { @utf8.encode("Shift_JIS-KDDI") }
-    assert_nothing_raised { @utf8.encode("UTF8-KDDI") }
-    assert_nothing_raised { @utf8.encode("ISO-2022-JP-KDDI") }
+    assert_nothing_raised { assert_equal utf8_kddi(@utf8), to_utf8_kddi(@utf8) }
+    assert_nothing_raised { assert_equal sjis_kddi(@sjis), to_sjis_kddi(@utf8) }
+    assert_nothing_raised { assert_equal iso2022jp_kddi(@iso2022jp), to_iso2022jp_kddi(@utf8) }
+  end
+
+  def test_from_sjis
+    assert_nothing_raised { assert_equal utf8_kddi(@utf8), to_utf8_kddi(@sjis) }
+    assert_nothing_raised { assert_equal sjis_kddi(@sjis), to_sjis_kddi(@sjis) }
+    assert_nothing_raised { assert_equal iso2022jp_kddi(@iso2022jp), to_iso2022jp_kddi(@sjis) }
   end
 
   def test_from_iso2022jp
-    assert_nothing_raised { @iso2022jp.encode("Shift_JIS-KDDI") }
-    assert_nothing_raised { @iso2022jp.encode("UTF8-KDDI") }
-    assert_nothing_raised { @iso2022jp.encode("ISO-2022-JP-KDDI") }
-  end
-
-  def test_from_stateless_iso2022jp_kddi
-    assert_nothing_raised { @stateless_iso2022jp_kddi.encode("ISO-2022-JP-KDDI") }
+    assert_nothing_raised { assert_equal utf8_kddi(@utf8), to_utf8_kddi(@iso2022jp) }
+    assert_nothing_raised { assert_equal sjis_kddi(@sjis), to_sjis_kddi(@iso2022jp) }
+    assert_nothing_raised { assert_equal iso2022jp_kddi(@iso2022jp), to_iso2022jp_kddi(@iso2022jp) }
   end
 
   def test_to_utf8
-    # FIXME
+    assert_raise(Encoding::UndefinedConversionError) { to_utf8(@utf8_kddi) }
+    assert_raise(Encoding::UndefinedConversionError) { to_utf8(@utf8_undoc_kddi) }
+    assert_raise(Encoding::UndefinedConversionError) { to_utf8(@sjis_kddi) }
+    assert_raise(Encoding::UndefinedConversionError) { to_utf8(@iso2022jp_kddi) }
   end
 
   def test_to_sjis
-    # FIXME
+    assert_raise(Encoding::UndefinedConversionError) { to_sjis(@utf8_kddi) }
+    assert_raise(Encoding::UndefinedConversionError) { to_sjis(@utf8_undoc_kddi) }
+    assert_raise(Encoding::UndefinedConversionError) { to_sjis(@sjis_kddi) }
+    assert_raise(Encoding::UndefinedConversionError) { to_sjis(@iso2022jp_kddi) }
   end
 
   def test_to_eucjp
-    assert_raise(Encoding::UndefinedConversionError) { @utf8_kddi.encode("EUC-JP") }
-    assert_raise(Encoding::UndefinedConversionError) { @sjis_kddi.encode("EUC-JP") }
-    assert_raise(Encoding::UndefinedConversionError) { @iso2022jp_kddi.encode("EUC-JP") } # XXX
+    assert_raise(Encoding::UndefinedConversionError) { to_eucjp(@utf8_kddi) }
+    assert_raise(Encoding::UndefinedConversionError) { to_eucjp(@utf8_undoc_kddi) }
+    assert_raise(Encoding::UndefinedConversionError) { to_eucjp(@sjis_kddi) }
+    assert_raise(Encoding::UndefinedConversionError) { to_eucjp(@iso2022jp_kddi) }
   end
 
-  def test_utf8_and_stateless_iso2022jp
-    assert_equal @utf8_kddi, @stateless_iso2022jp_kddi.encode("UTF8-KDDI")
-    assert_equal @stateless_iso2022jp_kddi, @utf8_kddi.encode("stateless-ISO-2022-JP-KDDI")
+  def test_kddi
+    assert_nothing_raised { assert_equal @utf8_kddi, to_utf8_kddi(@sjis_kddi) }
+    assert_nothing_raised { assert_equal @utf8_kddi, to_utf8_kddi(@utf8_undoc_kddi) }
+    assert_nothing_raised { assert_equal @utf8_kddi, to_utf8_kddi(@iso2022jp_kddi) }
+    assert_nothing_raised { assert_equal @sjis_kddi, to_sjis_kddi(@sjis_kddi) }
+    assert_nothing_raised { assert_equal @sjis_kddi, to_sjis_kddi(@utf8_undoc_kddi) }
+    assert_nothing_raised { assert_equal @sjis_kddi, to_sjis_kddi(@iso2022jp_kddi) }
+    assert_nothing_raised { assert_equal @iso2022jp_kddi, to_iso2022jp_kddi(@sjis_kddi) }
+    assert_nothing_raised { assert_equal @iso2022jp_kddi, to_iso2022jp_kddi(@utf8_kddi_undoc) }
+    assert_nothing_raised { assert_equal @iso2022jp_kddi, to_iso2022jp_kddi(@iso2022jp_kddi) }
   end
 
-  def test_iso2022jp_and_stateless_iso2022jp
-    assert_equal @iso2022jp_kddi, @stateless_iso2022jp_kddi.encode("ISO-2022-JP-KDDI")
-    assert_equal @stateless_iso2022jp_kddi, @iso2022jp_kddi.encode("stateless-ISO-2022-JP-KDDI")
+  def test_to_docomo
+    assert_nothing_raised { assert_equal @utf8_docomo, to_utf8_docomo(@utf8_kddi) }
+    assert_nothing_raised { assert_equal @sjis_docomo, to_sjis_docomo(@utf8_kddi) }
+
+    assert_nothing_raised { assert_equal @utf8_docomo, to_utf8_docomo(@utf8_undoc_kddi) }
+    assert_nothing_raised { assert_equal @sjis_docomo, to_sjis_docomo(@utf8_undoc_kddi) }
+
+    assert_nothing_raised { assert_equal @utf8_docomo, to_utf8_docomo(@sjis_kddi) }
+    assert_nothing_raised { assert_equal @sjis_docomo, to_sjis_docomo(@sjis_kddi) }
+
+    assert_nothing_raised { assert_equal @utf8_docomo, to_utf8_docomo(@iso2022jp_kddi) }
+    assert_nothing_raised { assert_equal @sjis_docomo, to_sjis_docomo(@iso2022jp_kddi) }
+
+    assert_raise(Encoding::UndefinedConversionError) { assert_equal @utf8_docomo, to_utf8_docomo(@utf8_kddi_only) }
+    assert_raise(Encoding::UndefinedConversionError) { assert_equal @sjis_docomo, to_sjis_docomo(@utf8_kddi_only) }
+
+    assert_raise(Encoding::UndefinedConversionError) { assert_equal @utf8_docomo, to_utf8_docomo(@utf8_undoc_kddi_only) }
+    assert_raise(Encoding::UndefinedConversionError) { assert_equal @sjis_docomo, to_sjis_docomo(@utf8_undoc_kddi_only) }
+
+    assert_raise(Encoding::UndefinedConversionError) { assert_equal @utf8_docomo, to_utf8_docomo(@sjis_kddi_only) }
+    assert_raise(Encoding::UndefinedConversionError) { assert_equal @sjis_docomo, to_sjis_docomo(@sjis_kddi_only) }
+
+    assert_raise(Encoding::UndefinedConversionError) { assert_equal @utf8_docomo, to_utf8_docomo(@iso2022jp_kddi_only) }
+    assert_raise(Encoding::UndefinedConversionError) { assert_equal @sjis_docomo, to_sjis_docomo(@iso2022jp_kddi_only) }
   end
 
+  def test_to_softbank
+    assert_nothing_raised { assert_equal @utf8_softbank, to_utf8_softbank(@utf8_kddi) }
+    assert_nothing_raised { assert_equal @sjis_softbank, to_sjis_softbank(@utf8_kddi) }
 
-  def test_sjis_and_utf8
-    assert_equal @utf8_kddi, @sjis_kddi.encode("UTF8-KDDI")
-    assert_equal @sjis_kddi, @utf8_kddi.encode("Shift_JIS-KDDI")
+    assert_nothing_raised { assert_equal @utf8_softbank, to_utf8_softbank(@utf8_undoc_kddi) }
+    assert_nothing_raised { assert_equal @sjis_softbank, to_sjis_softbank(@utf8_undoc_kddi) }
+
+    assert_nothing_raised { assert_equal @utf8_softbank, to_utf8_softbank(@sjis_kddi) }
+    assert_nothing_raised { assert_equal @sjis_softbank, to_sjis_softbank(@sjis_kddi) }
+
+    assert_nothing_raised { assert_equal @utf8_softbank, to_utf8_softbank(@iso2022jp_kddi) }
+    assert_nothing_raised { assert_equal @sjis_softbank, to_sjis_softbank(@iso2022jp_kddi) }
+
+    assert_raise(Encoding::UndefinedConversionError) { assert_equal @utf8_softbank, to_utf8_softbank(@utf8_kddi_only) }
+    assert_raise(Encoding::UndefinedConversionError) { assert_equal @sjis_softbank, to_sjis_softbank(@utf8_kddi_only) }
+
+    assert_raise(Encoding::UndefinedConversionError) { assert_equal @utf8_softbank, to_utf8_softbank(@utf8_undoc_kddi_only) }
+    assert_raise(Encoding::UndefinedConversionError) { assert_equal @sjis_softbank, to_sjis_softbank(@utf8_undoc_kddi_only) }
+
+    assert_raise(Encoding::UndefinedConversionError) { assert_equal @utf8_softbank, to_utf8_softbank(@sjis_kddi_only) }
+    assert_raise(Encoding::UndefinedConversionError) { assert_equal @sjis_softbank, to_sjis_softbank(@sjis_kddi_only) }
+
+    assert_raise(Encoding::UndefinedConversionError) { assert_equal @utf8_softbank, to_utf8_softbank(@iso2022jp_kddi_only) }
+    assert_raise(Encoding::UndefinedConversionError) { assert_equal @sjis_softbank, to_sjis_softbank(@iso2022jp_kddi_only) }
   end
 
-  def test_utf8_and_iso2022jp
-    assert_equal @utf8_kddi, @iso2022jp_kddi.encode("UTF8-KDDI")
-    assert_equal @iso2022jp_kddi, @utf8_kddi.encode("ISO-2022-JP-KDDI")
-  end
+  def test_to_google
+    assert_nothing_raised { assert_equal @utf8_google, to_utf8_google(@utf8_kddi) }
+    assert_nothing_raised { assert_equal @utf8_google, to_utf8_google(@utf8_undoc_kddi) }
+    assert_nothing_raised { assert_equal @utf8_google, to_utf8_google(@sjis_kddi) }
+    assert_nothing_raised { assert_equal @utf8_google, to_utf8_google(@iso2022jp_kddi) }
 
-  def test_sjis_and_iso2022jp
-    assert_equal @sjis_kddi, @iso2022jp_kddi.encode("Shift_JIS-KDDI")
-    assert_equal @iso2022jp_kddi, @sjis_kddi.encode("ISO-2022-JP-KDDI")
+    assert_nothing_raised { assert_equal utf8_google("\u{FE039}"), to_utf8_google(@utf8_kddi_only) }
+    assert_nothing_raised { assert_equal utf8_google("\u{FE039}"), to_utf8_google(@utf8_undoc_kddi_only) }
+    assert_nothing_raised { assert_equal utf8_google("\u{FE039}"), to_utf8_google(@sjis_kddi_only) }
+    assert_nothing_raised { assert_equal utf8_google("\u{FE039}"), to_utf8_google(@iso2022jp_kddi_only) }
   end
 end
 
 class TestSoftBank < Test::Unit::TestCase
   def setup
-    @utf8 = "\u{3042}\u{3044}\u{3046}\u{3048}\u{304A}"
-    @sjis = @utf8.encode("Windows-31J")
-    @utf8_softbank = "\u{E04A}".force_encoding("UTF8-SoftBank")
-    @sjis_softbank = "\xF9\x8B".force_encoding("Shift_JIS-SoftBank")
+    setup_instance_variable(self)
   end
 
   def test_encoding_name
@@ -248,7 +303,6 @@ class TestSoftBank < Test::Unit::TestCase
        UTF8-SoftBank
        Shift_JIS-SoftBank).each do |n|
       assert Encoding.name_list.include?(n), "encoding not found: #{n}"
-      assert Encoding.name_list.include?("#{n}_strict"), "encoding not found: #{n}_strict"
     end
   end
 
@@ -256,48 +310,200 @@ class TestSoftBank < Test::Unit::TestCase
     assert_equal Encoding::UTF_8_SoftBank, Encoding::UTF8_SoftBank
     assert_not_equal Encoding::UTF_8, Encoding::UTF_8_SoftBank
     assert_not_equal Encoding::Windows_31J, Encoding::Shift_JIS_SoftBank
-
-    assert_equal Encoding::UTF_8_SoftBank_strict, Encoding::UTF8_SoftBank_strict
-    assert_not_equal Encoding::UTF_8, Encoding::UTF_8_SoftBank_strict
-    assert_not_equal Encoding::Windows_31J, Encoding::Shift_JIS_SoftBank_strict
-
-    assert_not_equal Encoding::UTF_8_SoftBank, Encoding::UTF_8_SoftBank_strict
-    assert_not_equal Encoding::Shift_JIS_SoftBank, Encoding::Shift_JIS_SoftBank_strict
-  end
-
-  def test_compatibility_with_strict
-    [@utf8_softbank, @sjis_softbank].each do |x|
-      assert_nothing_raised { x.encode("UTF8-SoftBank_strict") }
-      assert_nothing_raised { x.encode("Shift_JIS-SoftBank_strict") }
-    end
   end
 
   def test_from_utf8
-    assert_nothing_raised { @utf8.encode("UTF8-SoftBank") }
-    assert_nothing_raised { @utf8.encode("Shift_JIS-SoftBank") }
+    assert_nothing_raised { assert_equal utf8_softbank(@utf8), to_utf8_softbank(@utf8) }
+    assert_nothing_raised { assert_equal sjis_softbank(@sjis), to_sjis_softbank(@utf8) }
   end
 
   def test_from_sjis
-    assert_nothing_raised { @sjis.encode("UTF8-SoftBank") }
-    assert_nothing_raised { @sjis.encode("Shift_JIS-SoftBank") }
+    assert_nothing_raised { assert_equal utf8_softbank(@utf8), to_utf8_softbank(@sjis) }
+    assert_nothing_raised { assert_equal sjis_softbank(@sjis), to_sjis_softbank(@sjis) }
   end
 
   def test_to_utf8
-    # FIXME
+    assert_raise(Encoding::UndefinedConversionError) { to_utf8(@utf8_softbank) }
+    assert_raise(Encoding::UndefinedConversionError) { to_utf8(@sjis_softbank) }
   end
 
   def test_to_sjis
-    # FIXME
+    assert_raise(Encoding::UndefinedConversionError) { to_sjis(@utf8_softbank) }
+    assert_raise(Encoding::UndefinedConversionError) { to_sjis(@sjis_softbank) }
   end
 
   def test_to_eucjp
-    assert_raise(Encoding::UndefinedConversionError) { @utf8_softbank.encode("EUC-JP") }
-    assert_raise(Encoding::UndefinedConversionError) { @sjis_softbank.encode("EUC-JP") }
+    assert_raise(Encoding::UndefinedConversionError) { to_eucjp(@utf8_softbank) }
+    assert_raise(Encoding::UndefinedConversionError) { to_eucjp(@sjis_softbank) }
   end
 
-  def test_sjis_and_utf8
-    assert_equal @utf8_softbank, @sjis_softbank.encode("UTF8-SoftBank")
-    assert_equal @sjis_softbank, @utf8_softbank.encode("Shift_JIS-SoftBank")
+  def test_softbank
+    assert_nothing_raised { assert_equal @utf8_softbank, to_utf8_softbank(@sjis_softbank) }
+    assert_nothing_raised { assert_equal @sjis_softbank, to_utf8_softbank(@utf8_softbank) }
+  end
+
+  def test_to_docomo
+    assert_nothing_raised { assert_equal @utf8_docomo, to_utf8_docomo(@utf8_softbank) }
+    assert_nothing_raised { assert_equal @sjis_docomo, to_sjis_docomo(@utf8_softbank) }
+
+    assert_nothing_raised { assert_equal @utf8_docomo, to_utf8_docomo(@sjis_softbank) }
+    assert_nothing_raised { assert_equal @sjis_docomo, to_sjis_docomo(@sjis_softbank) }
+
+    assert_raise(Encoding::UndefinedConversionError) { to_utf8_docomo(@utf8_softbank_only) }
+    assert_raise(Encoding::UndefinedConversionError) { to_sjis_docomo(@utf8_softbank_only) }
+
+    assert_raise(Encoding::UndefinedConversionError) { to_utf8_docomo(@sjis_softbank_only) }
+    assert_raise(Encoding::UndefinedConversionError) { to_sjis_docomo(@sjis_softbank_only) }
+  end
+
+  def test_to_kddi
+    assert_nothing_raised { assert_equal @utf8_kddi, to_utf8_kddi(@utf8_softbank) }
+    assert_nothing_raised { assert_equal @sjis_kddi, to_sjis_kddi(@utf8_softbank) }
+    assert_nothing_raised { assert_equal @iso2022jp_kddi, to_iso2022jp_kddi(@utf8_softbank) }
+
+    assert_nothing_raised { assert_equal @utf8_kddi, to_utf8_kddi(@sjis_softbank) }
+    assert_nothing_raised { assert_equal @sjis_kddi, to_sjis_kddi(@sjis_softbank) }
+    assert_nothing_raised { assert_equal @iso2022jp_kddi, to_iso2022jp_kddi(@sjis_softbank) }
+
+    assert_raise(Encoding::UndefinedConversionError) { to_utf8_kddi(@utf8_softbank_only) }
+    assert_raise(Encoding::UndefinedConversionError) { to_sjis_kddi(@utf8_softbank_only) }
+    assert_raise(Encoding::UndefinedConversionError) { to_iso2022jp_kddi(@utf8_softbank_only) }
+
+    assert_raise(Encoding::UndefinedConversionError) { to_utf8_kddi(@sjis_softbank_only) }
+    assert_raise(Encoding::UndefinedConversionError) { to_sjis_kddi(@sjis_softbank_only) }
+    assert_raise(Encoding::UndefinedConversionError) { to_iso2022jp_kddi(@sjis_softbank_only) }
+  end
+
+  def test_to_google
+    assert_nothing_raised { assert_equal @utf8_google, to_utf8_google(@utf8_softbank) }
+    assert_nothing_raised { assert_equal @utf8_google, to_utf8_google(@sjis_softbank) }
+
+    assert_nothing_raised { assert_equal utf8_google("\u{FE1CA}"), to_utf8_google(@utf8_softbank_only) }
+    assert_nothing_raised { assert_equal utf8_google("\u{FE1CA}"), to_utf8_google(@sjis_softbank_only) }
   end
 end
 
+private
+
+def setup_instance_variable(obj)
+  obj.instance_eval do
+    @utf8 = "\u{3042}\u{3044}\u{3046}\u{3048}\u{304A}"
+    @sjis = to_sjis(@utf8)
+    @iso2022jp = to_iso2022jp(@utf8)
+
+    @utf8_docomo = utf8_docomo("\u{E63E}")
+    @sjis_docomo = sjis_docomo("\xF8\x9F")
+    @utf8_docomo_only = utf8_docomo("\u{E6B1}")
+    @sjis_docomo_only = sjis_docomo("\xF9\x55")
+
+    @utf8_kddi = utf8_kddi("\u{E488}")
+    @utf8_undoc_kddi = utf8_kddi("\u{EF60}")
+    @sjis_kddi = sjis_kddi("\xF6\x60")
+    @iso2022jp_kddi = iso2022jp_kddi("\x1B$B\x75\x41\x1B(B")
+    @stateless_iso2022jp_kddi = stateless_iso2022jp_kddi("\x92\xF5\xC1")
+    @utf8_kddi_only = utf8_kddi("\u{E5B3}")
+    @utf8_undoc_kddi_only = utf8_kddi("\u{F0D0}")
+    @sjis_kddi_only = sjis_kddi("\xF7\xD0")
+    @iso2022jp_kddi_only = iso2022jp_kddi("\x1B$B\x78\x52\x1B(B")
+    @stateless_iso2022jp_kddi_only = stateless_iso2022jp_kddi("\x92\xF8\xD2")
+
+    @utf8_softbank = utf8_softbank("\u{E04A}")
+    @sjis_softbank = sjis_softbank("\xF9\x8B")
+    @utf8_softbank_only = utf8_softbank("\u{E524}")
+    @sjis_softbank_only = utf8_softbank("\xFB\xC4")
+
+    @utf8_google = utf8_google("\u{FE000}")
+  end
+end
+
+def utf8(str)
+  str.force_encoding("UTF-8")
+end
+
+def to_utf8(str)
+  str.encode("UTF-8")
+end
+
+def to_sjis(str)
+  str.encode("Windows-31J")
+end
+
+def to_eucjp(str)
+  str.encode("eucJP-ms")
+end
+
+def to_iso2022jp(str)
+  str.encode("ISO-2022-JP")
+end
+
+def utf8_google(str)
+  str.force_encoding("UTF8-Google")
+end
+
+def to_utf8_google(str)
+  str.encode("UTF8-Google")
+end
+
+def utf8_docomo(str)
+  str.force_encoding("UTF8-DoCoMo")
+end
+
+def to_utf8_docomo(str)
+  str.encode("UTF8-DoCoMo")
+end
+
+def utf8_kddi(str)
+  str.force_encoding("UTF8-KDDI")
+end
+
+def to_utf8_kddi(str)
+  str.encode("UTF8-KDDI")
+end
+
+def utf8_softbank(str)
+  str.force_encoding("UTF8-SoftBank")
+end
+
+def to_utf8_softbank(str)
+  str.encode("UTF8-SoftBank")
+end
+
+def sjis_docomo(str)
+  str.force_encoding("Shift_JIS-DoCoMo")
+end
+
+def to_sjis_docomo(str)
+  str.encode("Shift_JIS-DoCoMo")
+end
+
+def sjis_kddi(str)
+  str.force_encoding("Shift_JIS-KDDI")
+end
+
+def to_sjis_kddi(str)
+  str.encode("Shift_JIS-KDDI")
+end
+
+def sjis_softbank(str)
+  str.force_encoding("Shift_JIS-SoftBank")
+end
+
+def to_sjis_softbank(str)
+  str.encode("Shift_JIS-SoftBank")
+end
+
+def iso2022jp_kddi(str)
+  str.force_encoding("ISO-2022-JP-KDDI")
+end
+
+def to_iso2022jp_kddi(str)
+  str.encode("ISO-2022-JP-KDDI")
+end
+
+def stateless_iso2022jp_kddi(str)
+  str.force_encoding("stateless-ISO-2022-JP-KDDI")
+end
+
+def to_stateless_iso2022jp_kddi(str)
+  str.encode("stateless-ISO-2022-JP-KDDI")
+end
