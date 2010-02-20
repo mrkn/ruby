@@ -49,6 +49,7 @@ class TestDoCoMo < Test::Unit::TestCase
        UTF8-DoCoMo
        Shift_JIS-DoCoMo).each do |n|
       assert Encoding.name_list.include?(n), "encoding not found: #{n}"
+      assert Encoding.name_list.include?("#{n}_strict"), "encoding not found: #{n}_strict"
     end
   end
 
@@ -56,6 +57,12 @@ class TestDoCoMo < Test::Unit::TestCase
     assert_equal Encoding::UTF_8_DoCoMo, Encoding::UTF8_DoCoMo
     assert_not_equal Encoding::UTF_8, Encoding::UTF_8_DoCoMo
     assert_not_equal Encoding::Windows_31J, Encoding::Shift_JIS_DoCoMo
+
+    assert_equal Encoding::UTF_8_DoCoMo_strict, Encoding::UTF8_DoCoMo_strict
+    assert_not_equal Encoding::UTF_8_DoCoMo, Encoding::UTF_8_DoCoMo_strict
+    assert_not_equal Encoding::Shift_JIS_DoCoMo, Encoding::Shift_JIS_DoCoMo_strict
+    assert_not_equal Encoding::UTF_8, Encoding::UTF_8_DoCoMo_strict
+    assert_not_equal Encoding::Windows_31J, Encoding::Shift_JIS_DoCoMo_strict
   end
 
   def test_from_utf8
@@ -115,6 +122,7 @@ class TestKDDI < Test::Unit::TestCase
        ISO-2022-JP-KDDI
        stateless-ISO-2022-JP-KDDI).each do |n|
       assert Encoding.name_list.include?(n), "encoding not found: #{n}"
+      assert Encoding.name_list.include?("#{n}_strict"), "encoding not found: #{n}_strict"
     end
   end
 
@@ -125,6 +133,18 @@ class TestKDDI < Test::Unit::TestCase
     assert_not_equal Encoding::Windows_31J, Encoding::Shift_JIS_KDDI
     assert_not_equal Encoding::ISO_2022_JP, Encoding::ISO_2022_JP_KDDI
     assert_not_equal Encoding::Stateless_ISO_2022_JP, Encoding::Stateless_ISO_2022_JP_KDDI
+
+    assert_equal Encoding::UTF_8_KDDI_strict, Encoding::UTF8_KDDI_strict
+    assert_not_equal Encoding::UTF_8, Encoding::UTF_8_KDDI_strict
+    assert_not_equal Encoding::UTF_8, Encoding::UTF_8_KDDI_UNDOC_strict
+    assert_not_equal Encoding::Windows_31J, Encoding::Shift_JIS_KDDI_strict
+    assert_not_equal Encoding::ISO_2022_JP, Encoding::ISO_2022_JP_KDDI_strict
+    assert_not_equal Encoding::Stateless_ISO_2022_JP, Encoding::Stateless_ISO_2022_JP_KDDI_strict
+
+    assert_not_equal Encoding::UTF_8_KDDI, Encoding::UTF_8_KDDI_strict
+    assert_not_equal Encoding::Shift_JIS_KDDI, Encoding::Shift_JIS_KDDI_strict
+    assert_not_equal Encoding::ISO_2022_JP_KDDI, Encoding::ISO_2022_JP_KDDI_strict
+    assert_not_equal Encoding::Stateless_ISO_2022_JP_KDDI, Encoding::Stateless_ISO_2022_JP_KDDI_strict
   end
 
   def test_from_sjis
@@ -203,6 +223,7 @@ class TestSoftBank < Test::Unit::TestCase
        UTF8-SoftBank
        Shift_JIS-SoftBank).each do |n|
       assert Encoding.name_list.include?(n), "encoding not found: #{n}"
+      assert Encoding.name_list.include?("#{n}_strict"), "encoding not found: #{n}_strict"
     end
   end
 
@@ -210,6 +231,13 @@ class TestSoftBank < Test::Unit::TestCase
     assert_equal Encoding::UTF_8_SoftBank, Encoding::UTF8_SoftBank
     assert_not_equal Encoding::UTF_8, Encoding::UTF_8_SoftBank
     assert_not_equal Encoding::Windows_31J, Encoding::Shift_JIS_SoftBank
+
+    assert_equal Encoding::UTF_8_SoftBank_strict, Encoding::UTF8_SoftBank_strict
+    assert_not_equal Encoding::UTF_8, Encoding::UTF_8_SoftBank_strict
+    assert_not_equal Encoding::Windows_31J, Encoding::Shift_JIS_SoftBank_strict
+
+    assert_not_equal Encoding::UTF_8_SoftBank, Encoding::UTF_8_SoftBank_strict
+    assert_not_equal Encoding::Shift_JIS_SoftBank, Encoding::Shift_JIS_SoftBank_strict
   end
 
   def test_from_utf8
