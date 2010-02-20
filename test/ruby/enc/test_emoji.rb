@@ -42,6 +42,8 @@ class TestDoCoMo < Test::Unit::TestCase
     @sjis = @utf8.encode("Windows-31J")
     @utf8_docomo = "\u{E63E}".force_encoding("UTF8-DoCoMo")
     @sjis_docomo = "\xF8\x9F".force_encoding("Shift_JIS-DoCoMo")
+    @utf8_docomo_st = "\u{E63E}".force_encoding("UTF8-DoCoMo_strict")
+    @sjis_docomo_st = "\xF8\x9F".force_encoding("Shift_JIS-DoCoMo_strict")
   end
 
   def test_encoding_name
@@ -119,6 +121,7 @@ class TestKDDI < Test::Unit::TestCase
     @sjis = @utf8.encode("Windows-31J")
     @iso2022jp = @utf8.encode("ISO-2022-JP")
     @utf8_kddi = "\u{E488}".force_encoding("UTF8-KDDI")
+    @utf8_kddi_undoc = "\u{E488}".force_encoding("UTF8-KDDI-UNDOC")
     @sjis_kddi = "\xF6\x60".force_encoding("Shift_JIS-KDDI")
     @iso2022jp_kddi = "\x1B$B\x75\x41\x1B(B".force_encoding("ISO-2022-JP-KDDI")
     @stateless_iso2022jp_kddi = "\222\xF5\xC1".force_encoding("stateless-ISO-2022-JP-KDDI")
@@ -130,11 +133,12 @@ class TestKDDI < Test::Unit::TestCase
        UTF-8-KDDI-UNDOC
        UTF8-KDDI-UNDOC
        Shift_JIS-KDDI
-       ISO-2022-JP-KDDI
-       stateless-ISO-2022-JP-KDDI).each do |n|
+       ISO-2022-JP-KDDI).each do |n|
       assert Encoding.name_list.include?(n), "encoding not found: #{n}"
       assert Encoding.name_list.include?("#{n}_strict"), "encoding not found: #{n}_strict"
     end
+    assert Encoding.name_list.include?("stateless-ISO-2022-JP-KDDI"),
+      "encoding not found: stateless-ISO-2022-JP-KDDI"
   end
 
   def test_comparison
@@ -165,7 +169,6 @@ class TestKDDI < Test::Unit::TestCase
       assert_nothing_raised { x.encode("UTF8-KDDI-UNDOC_strict") }
       assert_nothing_raised { x.encode("Shift_JIS-KDDI_strict") }
       assert_nothing_raised { x.encode("ISO-2022-JP-KDDI_strict") }
-      assert_nothing_raised { x.encode("stateless-ISO-2022-JP-KDDI_strict") }
     end
   end
 

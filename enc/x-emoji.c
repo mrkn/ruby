@@ -18,7 +18,6 @@ ENC_REPLICATE("Shift_JIS-KDDI_strict", "Windows-31J")
 ENC_REPLICATE("Shift_JIS-SoftBank_strict", "Windows-31J")
 
 ENC_REPLICATE("ISO-2022-JP-KDDI_strict", "ISO-2022-JP")
-ENC_REPLICATE("stateless-ISO-2022-JP-KDDI_strict", "stateless-ISO-2022-JP")
 
 ENC_REPLICATE("UTF8-DoCoMo", "UTF8-DoCoMo_strict")
 ENC_REPLICATE("UTF8-KDDI", "UTF8-KDDI_strict")

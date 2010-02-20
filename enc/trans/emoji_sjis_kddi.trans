@@ -1,6 +1,13 @@
 #include "transcode_data.h"
 
 <%
+  sjis_nomap_table = [
+    ["{00-7f}", :nomap],
+    ["{81-9f,e0-fc}{40-7e,80-fc}", :nomap]
+  ]
+  transcode_tblgen "Shift_JIS-KDDI", "Shift_JIS-KDDI_strict", sjis_nomap_table
+  transcode_tblgen "Shift_JIS-KDDI_strict", "Shift_JIS-KDDI", sjis_nomap_table
+
   transcode_tblgen "Shift_JIS-KDDI", "UTF8-KDDI",
     [["{00-7f}", :nomap]] +
     citrus_decode_mapsrc("mskanji", 1, "JISX0201-KANA/UCS") +

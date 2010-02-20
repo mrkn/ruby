@@ -16,6 +16,11 @@
 
   companies = %w(DoCoMo KDDI SoftBank Google Unicode)
   companies.each do |from_company|
+    if %w(DoCoMo KDDI SoftBank).include? from_company
+      transcode_tblgen("UTF8-#{from_company}_strict", "UTF8-#{from_company}", nomap_table)
+      transcode_tblgen("UTF8-#{from_company}", "UTF8-#{from_company}_strict", nomap_table)
+    end
+
     companies.each do |to_company|
       next if from_company == to_company
       from_encoding = (from_company == "Unicode") ? "UTF-8" : "UTF8-"+from_company
@@ -25,6 +30,9 @@
         EMOJI_EXCHANGE_TBL[from_encoding][to_encoding] + nomap_table)
     end
   end
+
+  transcode_tblgen("UTF8-KDDI-UNDOC_strict", "UTF8-KDDI-UNDOC", nomap_table)
+  transcode_tblgen("UTF8-KDDI-UNDOC", "UTF8-KDDI-UNDOC_strict", nomap_table)
 %>
 
 <%= transcode_generated_code %>
