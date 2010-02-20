@@ -43,6 +43,26 @@
                                                    UCS/CP932VDC:IBM
                                                    UCS/CP932UDA
                                                    UCS/JISX0208:MS).join(","))
+
+  # mapping from stateless-ISO-2022-JP-KDDI to UTF8-KDDI_strict
+  transcode_tblgen "stateless-ISO-2022-JP-KDDI", "UTF8-KDDI_strict",
+    [["{00-7f}", :nomap]] +
+    citrus_decode_mapsrc("stateless_iso", 0222, %w(EMOJI_ISO-2022-JP-KDDI/UCS
+                                                   JISX0208VDC:NEC/UCS
+                                                   CP932VDC:NEC_IBM/UCS
+                                                   CP932VDC:IBM/UCS
+                                                   CP932UDA/UCS
+                                                   JISX0208:MS/UCS).join(","))
+
+  # mapping from UTF8-KDDI_strict to stateless-ISO-2022-JP-KDDI
+  transcode_tblgen "UTF8-KDDI_strict", "stateless-ISO-2022-JP-KDDI",
+    [["{00-7f}", :nomap]] +
+    citrus_decode_mapsrc("stateless_iso", 0222, %w(UCS/EMOJI_ISO-2022-JP-KDDI
+                                                   UCS/JISX0208VDC:NEC
+                                                   UCS/CP932VDC:NEC_IBM
+                                                   UCS/CP932VDC:IBM
+                                                   UCS/CP932UDA
+                                                   UCS/JISX0208:MS).join(","))
 %>
 
 <%= transcode_generated_code %>
@@ -115,6 +135,18 @@ fun_so_iso2022jp_kddi_decoder(void *statep, const unsigned char *s, size_t l, un
 static const rb_transcoder
 rb_iso2022jp_kddi_decoder = {
     "ISO-2022-JP-KDDI", "stateless-ISO-2022-JP-KDDI", iso2022jp_kddi_decoder,
+    TRANSCODE_TABLE_INFO,
+    1, /* input_unit_length */
+    3, /* max_input */
+    3, /* max_output */
+    asciicompat_decoder, /* asciicompat_type */
+    1, iso2022jp_kddi_init, iso2022jp_kddi_init, /* state_size, state_init, state_fini */
+    NULL, fun_si_iso2022jp_kddi_decoder, NULL, fun_so_iso2022jp_kddi_decoder
+};
+
+static const rb_transcoder
+rb_iso2022jp_kddi_strict_decoder = {
+    "ISO-2022-JP-KDDI_strict", "stateless-ISO-2022-JP-KDDI", iso2022jp_kddi_decoder,
     TRANSCODE_TABLE_INFO,
     1, /* input_unit_length */
     3, /* max_input */
@@ -207,10 +239,26 @@ rb_iso2022jp_kddi_encoder = {
     iso2022jp_kddi_encoder_reset_sequence_size, finish_iso2022jp_kddi_encoder
 };
 
+static const rb_transcoder
+rb_iso2022jp_kddi_strict_encoder = {
+    "stateless-ISO-2022-JP-KDDI", "ISO-2022-JP-KDDI_strict", iso2022jp_kddi_encoder,
+    TRANSCODE_TABLE_INFO,
+    1, /* input_unit_length */
+    3, /* max_input */
+    5, /* max_output */
+    asciicompat_encoder, /* asciicompat_type */
+    1, iso2022jp_kddi_init, iso2022jp_kddi_init, /* state_size, state_init, state_fini */
+    NULL, NULL, NULL, fun_so_iso2022jp_kddi_encoder,
+    finish_iso2022jp_kddi_encoder,
+    iso2022jp_kddi_encoder_reset_sequence_size, finish_iso2022jp_kddi_encoder
+};
+
 void
 Init_emoji_iso2022_kddi(void)
 {
     rb_register_transcoder(&rb_iso2022jp_kddi_decoder);
     rb_register_transcoder(&rb_iso2022jp_kddi_encoder);
+    rb_register_transcoder(&rb_iso2022jp_kddi_strict_decoder);
+    rb_register_transcoder(&rb_iso2022jp_kddi_strict_encoder);
 <%= transcode_register_code %>
 }
