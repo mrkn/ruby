@@ -84,18 +84,18 @@ class TestDoCoMo < Test::Unit::TestCase
   end
 
   def test_from_utf8
-    assert_nothing_raised { assert_equal utf8_docomo(@utf8), to_utf8_docomo(@utf8) }
-    assert_nothing_raised { assert_equal sjis_docomo(@sjis), to_sjis_docomo(@utf8) }
+    assert_nothing_raised { assert_equal utf8_docomo(@aiueo_utf8), to_utf8_docomo(@aiueo_utf8) }
+    assert_nothing_raised { assert_equal sjis_docomo(@aiueo_sjis), to_sjis_docomo(@aiueo_utf8) }
   end
 
   def test_from_sjis
-    assert_nothing_raised { assert_equal utf8_docomo(@utf8), to_utf8_docomo(@sjis) }
-    assert_nothing_raised { assert_equal sjis_docomo(@sjis), to_sjis_docomo(@sjis) }
+    assert_nothing_raised { assert_equal utf8_docomo(@aiueo_utf8), to_utf8_docomo(@aiueo_sjis) }
+    assert_nothing_raised { assert_equal sjis_docomo(@aiueo_sjis), to_sjis_docomo(@aiueo_sjis) }
   end
 
   def test_to_utf8
-    assert_raise(Encoding::UndefinedConversionError) { to_utf8(@utf8_docomo) }
-    assert_raise(Encoding::UndefinedConversionError) { to_utf8(@sjis_docomo) }
+    assert_nothing_raised { assert_equal @utf8, to_utf8(@utf8_docomo) }
+    assert_nothing_raised { assert_equal @utf8, to_utf8(@sjis_docomo) }
   end
 
   def test_to_sjis
@@ -178,28 +178,28 @@ class TestKDDI < Test::Unit::TestCase
   end
 
   def test_from_utf8
-    assert_nothing_raised { assert_equal utf8_kddi(@utf8), to_utf8_kddi(@utf8) }
-    assert_nothing_raised { assert_equal sjis_kddi(@sjis), to_sjis_kddi(@utf8) }
-    assert_nothing_raised { assert_equal iso2022jp_kddi(@iso2022jp), to_iso2022jp_kddi(@utf8) }
+    assert_nothing_raised { assert_equal utf8_kddi(@aiueo_utf8), to_utf8_kddi(@aiueo_utf8) }
+    assert_nothing_raised { assert_equal sjis_kddi(@aiueo_sjis), to_sjis_kddi(@aiueo_utf8) }
+    assert_nothing_raised { assert_equal iso2022jp_kddi(@aiueo_iso2022jp), to_iso2022jp_kddi(@aiueo_utf8) }
   end
 
   def test_from_sjis
-    assert_nothing_raised { assert_equal utf8_kddi(@utf8), to_utf8_kddi(@sjis) }
-    assert_nothing_raised { assert_equal sjis_kddi(@sjis), to_sjis_kddi(@sjis) }
-    assert_nothing_raised { assert_equal iso2022jp_kddi(@iso2022jp), to_iso2022jp_kddi(@sjis) }
+    assert_nothing_raised { assert_equal utf8_kddi(@aiueo_utf8), to_utf8_kddi(@aiueo_sjis) }
+    assert_nothing_raised { assert_equal sjis_kddi(@aiueo_sjis), to_sjis_kddi(@aiueo_sjis) }
+    assert_nothing_raised { assert_equal iso2022jp_kddi(@aiueo_iso2022jp), to_iso2022jp_kddi(@aiueo_sjis) }
   end
 
   def test_from_iso2022jp
-    assert_nothing_raised { assert_equal utf8_kddi(@utf8), to_utf8_kddi(@iso2022jp) }
-    assert_nothing_raised { assert_equal sjis_kddi(@sjis), to_sjis_kddi(@iso2022jp) }
-    assert_nothing_raised { assert_equal iso2022jp_kddi(@iso2022jp), to_iso2022jp_kddi(@iso2022jp) }
+    assert_nothing_raised { assert_equal utf8_kddi(@aiueo_utf8), to_utf8_kddi(@aiueo_iso2022jp) }
+    assert_nothing_raised { assert_equal sjis_kddi(@aiueo_sjis), to_sjis_kddi(@aiueo_iso2022jp) }
+    assert_nothing_raised { assert_equal iso2022jp_kddi(@aiueo_iso2022jp), to_iso2022jp_kddi(@aiueo_iso2022jp) }
   end
 
   def test_to_utf8
-    assert_raise(Encoding::UndefinedConversionError) { to_utf8(@utf8_kddi) }
-    assert_raise(Encoding::UndefinedConversionError) { to_utf8(@utf8_undoc_kddi) }
-    assert_raise(Encoding::UndefinedConversionError) { to_utf8(@sjis_kddi) }
-    assert_raise(Encoding::UndefinedConversionError) { to_utf8(@iso2022jp_kddi) }
+    assert_nothing_raised { assert_equal @utf8, to_utf8(@utf8_kddi) }
+    assert_nothing_raised { assert_equal @utf8, to_utf8(@utf8_undoc_kddi) }
+    assert_nothing_raised { assert_equal @utf8, to_utf8(@sjis_kddi) }
+    assert_nothing_raised { assert_equal @utf8, to_utf8(@iso2022jp_kddi) }
   end
 
   def test_to_sjis
@@ -313,18 +313,18 @@ class TestSoftBank < Test::Unit::TestCase
   end
 
   def test_from_utf8
-    assert_nothing_raised { assert_equal utf8_softbank(@utf8), to_utf8_softbank(@utf8) }
-    assert_nothing_raised { assert_equal sjis_softbank(@sjis), to_sjis_softbank(@utf8) }
+    assert_nothing_raised { assert_equal utf8_softbank(@aiueo_utf8), to_utf8_softbank(@aiueo_utf8) }
+    assert_nothing_raised { assert_equal sjis_softbank(@aiueo_sjis), to_sjis_softbank(@aiueo_utf8) }
   end
 
   def test_from_sjis
-    assert_nothing_raised { assert_equal utf8_softbank(@utf8), to_utf8_softbank(@sjis) }
-    assert_nothing_raised { assert_equal sjis_softbank(@sjis), to_sjis_softbank(@sjis) }
+    assert_nothing_raised { assert_equal utf8_softbank(@aiueo_utf8), to_utf8_softbank(@aiueo_sjis) }
+    assert_nothing_raised { assert_equal sjis_softbank(@aiueo_sjis), to_sjis_softbank(@aiueo_sjis) }
   end
 
   def test_to_utf8
-    assert_raise(Encoding::UndefinedConversionError) { to_utf8(@utf8_softbank) }
-    assert_raise(Encoding::UndefinedConversionError) { to_utf8(@sjis_softbank) }
+    assert_nothing_raised { assert_equal @utf8, to_utf8(@utf8_softbank) }
+    assert_nothing_raised { assert_equal @utf8, to_utf8(@sjis_softbank) }
   end
 
   def test_to_sjis
@@ -339,7 +339,7 @@ class TestSoftBank < Test::Unit::TestCase
 
   def test_softbank
     assert_nothing_raised { assert_equal @utf8_softbank, to_utf8_softbank(@sjis_softbank) }
-    assert_nothing_raised { assert_equal @sjis_softbank, to_utf8_softbank(@utf8_softbank) }
+    assert_nothing_raised { assert_equal @sjis_softbank, to_sjis_softbank(@utf8_softbank) }
   end
 
   def test_to_docomo
@@ -387,9 +387,11 @@ private
 
 def setup_instance_variable(obj)
   obj.instance_eval do
-    @utf8 = "\u{3042}\u{3044}\u{3046}\u{3048}\u{304A}"
-    @sjis = to_sjis(@utf8)
-    @iso2022jp = to_iso2022jp(@utf8)
+    @aiueo_utf8 = "\u{3042}\u{3044}\u{3046}\u{3048}\u{304A}"
+    @aiueo_sjis = to_sjis(@aiueo_utf8)
+    @aiueo_iso2022jp = to_iso2022jp(@aiueo_utf8)
+
+    @utf8 = "\u{2600}"
 
     @utf8_docomo = utf8_docomo("\u{E63E}")
     @sjis_docomo = sjis_docomo("\xF8\x9F")
@@ -410,7 +412,7 @@ def setup_instance_variable(obj)
     @utf8_softbank = utf8_softbank("\u{E04A}")
     @sjis_softbank = sjis_softbank("\xF9\x8B")
     @utf8_softbank_only = utf8_softbank("\u{E524}")
-    @sjis_softbank_only = utf8_softbank("\xFB\xC4")
+    @sjis_softbank_only = sjis_softbank("\xFB\xC4")
 
     @utf8_google = utf8_google("\u{FE000}")
   end

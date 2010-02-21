@@ -24,19 +24,36 @@ class EmojiTable
         from_utf8 = [from.hex].pack("U").unpack("H*").first
         if to =~ /^(?:&gt;|\*)?([0-9A-F\+]+)$/
           str_to = $1
-          str_to.sub!(/^\+/, '') # unicode "proposed" begins at "+"
+          if str_to =~ /^\+/ # unicode "proposed" begins at "+"
+            proposal = true
+            str_to.sub!(/^\+/, '')
+          else
+            proposal = false
+          end
           tos = str_to.split('+')
           to_utf8 = tos.map(&:hex).pack("U*").unpack("H*").first
           comment = "[%s] U+%X -> %s" % [name, from.hex, tos.map{|c| "U+%X"%c.hex}.join(' ')]
-          block.call from_utf8, to_utf8, comment
+          block.call(:from => from_utf8,
+                     :to => to_utf8,
+                     :comment => comment,
+                     :fallback => false,
+                     :proposal => proposal)
         elsif to.empty?
           if text_fallback.empty?
             comment = "[%s] U+%X -> U+3013 (GETA)" % [name, from.hex]
-            block.call from_utf8, "\u{3013}".unpack("H*").first, comment # geta
+            block.call(:from => from_utf8,
+                       :to => "\u{3013}".unpack("H*").first,
+                       :comment => comment, # geta
+                       :fallback => true,
+                       :proposal => false)
           else
             to_utf8 = text_fallback.unpack("H*").first
             comment = %([%s] U+%X -> "%s") % [name, from.hex, text_fallback]
-            block.call from_utf8, to_utf8, comment
+            block.call(:from => from_utf8,
+                       :to => to_utf8,
+                       :comment => comment,
+                       :fallback => true,
+                       :proposal => false)
           end
         else
           raise "something wrong: %s -> %s" % [from, to]
@@ -48,8 +65,8 @@ class EmojiTable
     from_encoding = (from_carrier == "Unicode") ? "UTF-8" : "UTF8-"+from_carrier
     to_encoding   = (to_carrier == "Unicode" )  ? "UTF-8" : "UTF8-"+to_carrier
       io.puts "EMOJI_EXCHANGE_TBL['#{from_encoding}']['#{to_encoding}'] = ["
-      self.conversion(from_carrier, to_carrier) do |from, to, comment|
-        io.puts %{  ["#{from}", "#{to}"], # #{comment}}
+      self.conversion(from_carrier, to_carrier) do |params|
+        io.puts %{  ["#{params[:from]}", "#{params[:to]}", #{params[:fallback]}, #{params[:proposal]}], # #{params[:comment]}}
       end
       io.puts "]"
       io.puts
