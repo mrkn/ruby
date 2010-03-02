@@ -37,15 +37,11 @@ end
 
 class TestGoogle < Test::Unit::TestCase
   def test_encoding_name
-    %w(UTF-8-Google
-       UTF8-Google).each do |n|
-      assert Encoding.name_list.include?(n), "encoding not found: #{n}"
-    end
+    assert Encoding.name_list.include?("UTF8-Google"), "encoding not found: UTF8-Google"
   end
 
   def test_comparison
-    assert_equal Encoding::UTF_8_Google, Encoding::UTF8_Google
-    assert_not_equal Encoding::UTF_8, Encoding::UTF_8_Google
+    assert_not_equal Encoding::UTF_8, Encoding::UTF8_Google
   end
 
   def test_to_docomo
@@ -70,15 +66,13 @@ class TestDoCoMo < Test::Unit::TestCase
   end
 
   def test_encoding_name
-    %w(UTF-8-DoCoMo
-       UTF8-DoCoMo
+    %w(UTF8-DoCoMo
        Shift_JIS-DoCoMo).each do |n|
       assert Encoding.name_list.include?(n), "encoding not found: #{n}"
     end
   end
 
   def test_comparison
-    assert_equal Encoding::UTF_8_DoCoMo, Encoding::UTF8_DoCoMo
     assert_not_equal Encoding::UTF_8, Encoding::UTF8_DoCoMo
     assert_not_equal Encoding::Windows_31J, Encoding::Shift_JIS_DoCoMo
   end
@@ -160,8 +154,7 @@ class TestKDDI < Test::Unit::TestCase
   end
 
   def test_encoding_name
-    %w(UTF-8-KDDI
-       UTF8-KDDI
+    %w(UTF8-KDDI
        Shift_JIS-KDDI
        ISO-2022-JP-KDDI
        stateless-ISO-2022-JP-KDDI).each do |n|
@@ -170,8 +163,7 @@ class TestKDDI < Test::Unit::TestCase
   end
 
   def test_comparison
-    assert_equal Encoding::UTF_8_KDDI, Encoding::UTF8_KDDI
-    assert_not_equal Encoding::UTF_8, Encoding::UTF_8_KDDI
+    assert_not_equal Encoding::UTF_8, Encoding::UTF8_KDDI
     assert_not_equal Encoding::Windows_31J, Encoding::Shift_JIS_KDDI
     assert_not_equal Encoding::ISO_2022_JP, Encoding::ISO_2022_JP_KDDI
     assert_not_equal Encoding::Stateless_ISO_2022_JP, Encoding::Stateless_ISO_2022_JP_KDDI
@@ -218,7 +210,6 @@ class TestKDDI < Test::Unit::TestCase
 
   def test_kddi
     assert_nothing_raised { assert_equal @utf8_kddi, to_utf8_kddi(@sjis_kddi) }
-    assert_nothing_raised { assert_equal @utf8_kddi, to_utf8_kddi(to_sjis_kddi(@utf8_undoc_kddi)) } # TODO
     assert_nothing_raised { assert_equal @utf8_kddi, to_utf8_kddi(@iso2022jp_kddi) }
     assert_nothing_raised { assert_equal @sjis_kddi, to_sjis_kddi(@sjis_kddi) }
     assert_nothing_raised { assert_equal @sjis_kddi, to_sjis_kddi(@utf8_undoc_kddi) }
@@ -299,16 +290,14 @@ class TestSoftBank < Test::Unit::TestCase
   end
 
   def test_encoding_name
-    %w(UTF-8-SoftBank
-       UTF8-SoftBank
+    %w(UTF8-SoftBank
        Shift_JIS-SoftBank).each do |n|
       assert Encoding.name_list.include?(n), "encoding not found: #{n}"
     end
   end
 
   def test_comparison
-    assert_equal Encoding::UTF_8_SoftBank, Encoding::UTF8_SoftBank
-    assert_not_equal Encoding::UTF_8, Encoding::UTF_8_SoftBank
+    assert_not_equal Encoding::UTF_8, Encoding::UTF8_SoftBank
     assert_not_equal Encoding::Windows_31J, Encoding::Shift_JIS_SoftBank
   end
 

@@ -5,7 +5,6 @@
     [["{00-7f}", :nomap]] +
     citrus_decode_mapsrc("mskanji", 1, "JISX0201-KANA/UCS") +
     citrus_decode_mapsrc("mskanji", 2, %w(EMOJI_SHIFT_JIS-KDDI/UCS
-                                          EMOJI_SHIFT_JIS-KDDI-UNDOC/UCS
                                           JISX0208VDC:NEC/UCS
                                           CP932VDC:NEC_IBM/UCS
                                           CP932VDC:IBM/UCS

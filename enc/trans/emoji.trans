@@ -3,6 +3,14 @@
 <%
   require 'emoji-exchange-tbl'
 
+  kddi_public_to_sjis = citrus_decode_mapsrc(
+    "mskanji", 2, %q(UCS/EMOJI_SHIFT_JIS-KDDI)).sort_by{|u, s| s}
+  kddi_sjis_to_undoc  = citrus_decode_mapsrc(
+    "mskanji", 2, %q(EMOJI_SHIFT_JIS-KDDI-UNDOC/UCS)).sort_by{|s, u| s}
+  kddi_undoc = kddi_public_to_sjis.zip(kddi_sjis_to_undoc).inject({}) {|h, rec|
+    raise "no match sjis codepoint" if rec[0][1] != rec[1][0]
+    h[rec[0][0]] = rec[1][1]; next h }
+
   nomap_table = [
     ["{00-7f}", :nomap],
     ["{c2-df}{80-bf}", :nomap0],
@@ -28,6 +36,11 @@
           [from, to]
         end
       }
+      strict_mapping += strict_mapping.map {|from, to|
+        unicode = [from].pack("H*").unpack("U").first  # retrieve the unicode codepoint
+        undoc = [kddi_undoc[unicode]].pack("U").unpack("H*").first  # convert to undoc codepoint of utf8
+        next [ undoc, to ]
+      } if from_company == "KDDI"
       transcode_tblgen(from_encoding, to_encoding, strict_mapping + nomap_table)
     end
   end

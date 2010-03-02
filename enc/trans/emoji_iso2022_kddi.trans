@@ -38,6 +38,7 @@
   transcode_tblgen "UTF8-KDDI", "stateless-ISO-2022-JP-KDDI",
     [["{00-7f}", :nomap]] +
     citrus_decode_mapsrc("stateless_iso", 0222, %w(UCS/EMOJI_ISO-2022-JP-KDDI
+                                                   UCS/EMOJI_ISO-2022-JP-KDDI-UNDOC
                                                    UCS/JISX0208VDC:NEC
                                                    UCS/CP932VDC:NEC_IBM
                                                    UCS/CP932VDC:IBM

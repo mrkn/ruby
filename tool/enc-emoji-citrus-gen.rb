@@ -15,7 +15,8 @@ ENCODES = [
     :dst_ilseq => 0xFFFE,
     :map => [
       [0xE468..0xE5B4, JISX0208::Char.new(0x7521)],
-      [0xE5B5..0xE5DF, JISX0208::Char.new(0x7867)],
+      [0xE5B5..0xE5CC, JISX0208::Char.new(0x7867)],
+      [0xE5CD..0xE5DF, JISX0208::Char.new(0x7921)],
       [0xEA80..0xEAFA, JISX0208::Char.new(0x7934)],
       [0xEAFB..0xEB0D, JISX0208::Char.new(0x7854)],
       [0xEB0E..0xEB8E, JISX0208::Char.new(0x7A51)],
@@ -103,9 +104,9 @@ ENCODES.each do |params|
   generate_from_ucs(params, pairs)
 end
 
-# generate KDDI-UNDOC
-kddi_map = ENCODES.select{|enc| enc[:name] == "SHIFT_JIS-KDDI"}.first[:map]
-pairs = kddi_map.inject([]) {|acc, (range, ch)|
+# generate KDDI-UNDOC for Shift_JIS-KDDI
+kddi_sjis_map = ENCODES.select{|enc| enc[:name] == "SHIFT_JIS-KDDI"}.first[:map]
+pairs = kddi_sjis_map.inject([]) {|acc, (range, ch)|
   acc += range.map{|uni| pair = [ch.to_sjis - 0x700, Integer(ch)]; ch = ch.succ; next pair }
 }
 params = {
@@ -113,5 +114,17 @@ params = {
   :src_zone => [0xF3..0xFC, 0x40..0xFC, 8],
   :dst_ilseq => 0xFFFE,
 }
-generate_to_ucs(params, pairs)
+generate_from_ucs(params, pairs)
+
+# generate KDDI-UNDOC for ISO-2022-JP-KDDI
+kddi_2022_map = ENCODES.select{|enc| enc[:name] == "ISO-2022-JP-KDDI"}.first[:map]
+pairs = kddi_2022_map.each_with_index.inject([]) {|acc, ((range, ch), i)|
+  sjis = kddi_sjis_map[i][1]
+  acc += range.map{|uni| pair = [sjis.to_sjis - 0x700, Integer(ch)]; ch = ch.succ; sjis = sjis.succ; next pair }
+}
+params = {
+  :name => "ISO-2022-JP-KDDI-UNDOC",
+  :src_zone => [0x21..0x7E, 0x21..0x7E, 8],
+  :dst_ilseq => 0xFFFE,
+}
 generate_from_ucs(params, pairs)
