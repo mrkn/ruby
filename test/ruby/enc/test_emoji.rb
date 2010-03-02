@@ -218,13 +218,13 @@ class TestKDDI < Test::Unit::TestCase
 
   def test_kddi
     assert_nothing_raised { assert_equal @utf8_kddi, to_utf8_kddi(@sjis_kddi) }
-    assert_nothing_raised { assert_equal @utf8_kddi, to_utf8_kddi(@utf8_undoc_kddi) }
+    assert_nothing_raised { assert_equal @utf8_kddi, to_utf8_kddi(to_sjis_kddi(@utf8_undoc_kddi)) } # TODO
     assert_nothing_raised { assert_equal @utf8_kddi, to_utf8_kddi(@iso2022jp_kddi) }
     assert_nothing_raised { assert_equal @sjis_kddi, to_sjis_kddi(@sjis_kddi) }
     assert_nothing_raised { assert_equal @sjis_kddi, to_sjis_kddi(@utf8_undoc_kddi) }
     assert_nothing_raised { assert_equal @sjis_kddi, to_sjis_kddi(@iso2022jp_kddi) }
     assert_nothing_raised { assert_equal @iso2022jp_kddi, to_iso2022jp_kddi(@sjis_kddi) }
-    assert_nothing_raised { assert_equal @iso2022jp_kddi, to_iso2022jp_kddi(@utf8_kddi_undoc) }
+    assert_nothing_raised { assert_equal @iso2022jp_kddi, to_iso2022jp_kddi(@utf8_undoc_kddi) }
     assert_nothing_raised { assert_equal @iso2022jp_kddi, to_iso2022jp_kddi(@iso2022jp_kddi) }
   end
 

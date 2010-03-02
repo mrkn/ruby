@@ -1,17 +1,11 @@
 #include "transcode_data.h"
 
 <%
-  sjis_nomap_table = [
-    ["{00-7f}", :nomap],
-    ["{81-9f,e0-fc}{40-7e,80-fc}", :nomap]
-  ]
-  transcode_tblgen "Shift_JIS-KDDI", "Shift_JIS-KDDI_strict", sjis_nomap_table
-  transcode_tblgen "Shift_JIS-KDDI_strict", "Shift_JIS-KDDI", sjis_nomap_table
-
   transcode_tblgen "Shift_JIS-KDDI", "UTF8-KDDI",
     [["{00-7f}", :nomap]] +
     citrus_decode_mapsrc("mskanji", 1, "JISX0201-KANA/UCS") +
     citrus_decode_mapsrc("mskanji", 2, %w(EMOJI_SHIFT_JIS-KDDI/UCS
+                                          EMOJI_SHIFT_JIS-KDDI-UNDOC/UCS
                                           JISX0208VDC:NEC/UCS
                                           CP932VDC:NEC_IBM/UCS
                                           CP932VDC:IBM/UCS
@@ -22,26 +16,7 @@
     [["{00-7f}", :nomap]] +
     citrus_decode_mapsrc("mskanji", 1, "UCS/JISX0201-KANA") +
     citrus_decode_mapsrc("mskanji", 2, %w(UCS/EMOJI_SHIFT_JIS-KDDI
-                                          UCS/JISX0208VDC:NEC
-                                          UCS/CP932VDC:NEC_IBM
-                                          UCS/CP932VDC:IBM
-                                          UCS/CP932UDA
-                                          UCS/JISX0208:MS).join(","))
-
-  transcode_tblgen "Shift_JIS-KDDI", "UTF8-KDDI-UNDOC",
-    [["{00-7f}", :nomap]] +
-    citrus_decode_mapsrc("mskanji", 1, "JISX0201-KANA/UCS") +
-    citrus_decode_mapsrc("mskanji", 2, %w(EMOJI_SHIFT_JIS-KDDI-UNDOC/UCS
-                                          JISX0208VDC:NEC/UCS
-                                          CP932VDC:NEC_IBM/UCS
-                                          CP932VDC:IBM/UCS
-                                          CP932UDA/UCS
-                                          JISX0208:MS/UCS).join(","))
-
-  transcode_tblgen "UTF8-KDDI-UNDOC", "Shift_JIS-KDDI",
-    [["{00-7f}", :nomap]] +
-    citrus_decode_mapsrc("mskanji", 1, "UCS/JISX0201-KANA") +
-    citrus_decode_mapsrc("mskanji", 2, %w(UCS/EMOJI_SHIFT_JIS-KDDI-UNDOC
+                                          UCS/EMOJI_SHIFT_JIS-KDDI-UNDOC
                                           UCS/JISX0208VDC:NEC
                                           UCS/CP932VDC:NEC_IBM
                                           UCS/CP932VDC:IBM

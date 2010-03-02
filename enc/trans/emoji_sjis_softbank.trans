@@ -1,13 +1,6 @@
 #include "transcode_data.h"
 
 <%
-  sjis_nomap_table = [
-    ["{00-7f}", :nomap],
-    ["{81-9f,e0-fc}{40-7e,80-fc}", :nomap]
-  ]
-  transcode_tblgen "Shift_JIS-SoftBank", "Shift_JIS-SoftBank_strict", sjis_nomap_table
-  transcode_tblgen "Shift_JIS-SoftBank_strict", "Shift_JIS-SoftBank", sjis_nomap_table
-
   transcode_tblgen "Shift_JIS-SoftBank", "UTF8-SoftBank",
     [["{00-7f}", :nomap]] +
     citrus_decode_mapsrc("mskanji", 1, "JISX0201-KANA/UCS") +
