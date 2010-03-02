@@ -1,19 +1,5 @@
 require 'test/unit'
 
-class Test_RemoveEncoding
-  def test_remove
-    assert_raise(ArgumentError) { "".force_encoding("UTF8-DoCoMo_strict") }
-    assert_raise(ArgumentError) { "".force_encoding("Shift_JIS-DoCoMo_strict") }
-    assert_raise(ArgumentError) { "".force_encoding("UTF8-KDDI_strict") }
-    assert_raise(ArgumentError) { "".force_encoding("UTF8-KDDI-UNDOC") }
-    assert_raise(ArgumentError) { "".force_encoding("UTF8-KDDI-UNDOC_strict") }
-    assert_raise(ArgumentError) { "".force_encoding("Shift_JIS-KDDI_strict") }
-    assert_raise(ArgumentError) { "".force_encoding("ISO-2022-JP-KDDI_strict") }
-    assert_raise(ArgumentError) { "".force_encoding("UTF8-SoftBank_strict") }
-    assert_raise(ArgumentError) { "".force_encoding("Shift_JIS-SoftBank_strict") }
-  end
-end
-
 class TestUTF8_BLACK_SUN_WITH_RAYS < Test::Unit::TestCase
   def setup
     @codes = {
