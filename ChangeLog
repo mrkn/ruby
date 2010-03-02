@@ -868,11 +868,6 @@ Sun Jan 31 21:29:58 2010  Yusuke Endoh  <mame@tsg.ne.jp>
 	  parent is specified, since Text.check may need doctype.  partially
 	  revert r26518.
 
-Sun Jan 31 17:12:35 2010  Yoji SHIDARA <dara@shidara.net>
-
-	* enc/trans/emoji-exchange-tbl.rb, enc/trans/emoji.trans,
-	  tool/enc-emoji4unicode.rb: added for transcoding among carriers.
-
 Sun Jan 31 15:50:34 2010  Yusuke Endoh  <mame@tsg.ne.jp>
 
 	* lib/rexml/text.rb (REXML::Text#initialize): fix typo and a bug that
@@ -996,11 +991,6 @@ Wed Jan 27 22:26:25 2010  Yusuke Endoh  <mame@tsg.ne.jp>
 	  stdout except the first line.  All line is output to stderr now.
 	  [ruby-dev:40147]
 
-Wed Jan 27 10:12:00 2010  Kenta Murata <mrkn@mrkn.jp>
-
-	* enc/trans/emoji-docomo-fetch.rb, enc/trans/emoji-docomo-basic-tbl.rb,
-	  enc/trans/emoji-docomo-extension-tbl.rb: added.
-
 Wed Jan 27 00:22:20 2010  Yusuke Endoh  <mame@tsg.ne.jp>
 
 	* ext/bigdecimal/bigdecimal.c (BigDecimal_DoDivmod, BigDecimal_mod,
@@ -1011,11 +1001,6 @@ Wed Jan 27 00:19:30 2010  Yusuke Endoh  <mame@tsg.ne.jp>
 
 	* ext/bigdecimal/bigdecimal.c (VpCtoV): do not raise infinity
 	  exception for BigDecimal("0E200000000000").
-
-Tue Jan 26 23:10:00 2010  Kenta Murata <mrkn@mrkn.jp>
-
-	* enc/trans/emoji.trans, enc/trans/utf8_emoji-tbl.rb, enc/utf_8_emoji.c,
-	  test/ruby/enc/test_emoji.rb: added for emoji encodings.
 
 Tue Jan 26 21:50:31 2010  Yusuke Endoh  <mame@tsg.ne.jp>
 
