@@ -115,6 +115,7 @@ params = {
   :dst_ilseq => 0xFFFE,
 }
 generate_from_ucs(params, pairs)
+generate_to_ucs(params, pairs)
 
 # generate KDDI-UNDOC for ISO-2022-JP-KDDI
 kddi_2022_map = ENCODES.select{|enc| enc[:name] == "ISO-2022-JP-KDDI"}.first[:map]
