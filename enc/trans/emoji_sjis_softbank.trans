@@ -1,7 +1,7 @@
 #include "transcode_data.h"
 
 <%
-  transcode_tblgen "Shift_JIS-SoftBank", "UTF8-SoftBank",
+  transcode_tblgen "SJIS-SoftBank", "UTF8-SoftBank",
     [["{00-7f}", :nomap]] +
     citrus_decode_mapsrc("mskanji", 1, "JISX0201-KANA/UCS") +
     citrus_decode_mapsrc("mskanji", 2, %w(EMOJI_SHIFT_JIS-SOFTBANK/UCS
@@ -11,7 +11,7 @@
                                           CP932UDA/UCS
                                           JISX0208:MS/UCS).join(","))
 
-  transcode_tblgen "UTF8-SoftBank", "Shift_JIS-SoftBank",
+  transcode_tblgen "UTF8-SoftBank", "SJIS-SoftBank",
     [["{00-7f}", :nomap]] +
     citrus_decode_mapsrc("mskanji", 1, "UCS/JISX0201-KANA") +
     citrus_decode_mapsrc("mskanji", 2, %w(UCS/EMOJI_SHIFT_JIS-SOFTBANK

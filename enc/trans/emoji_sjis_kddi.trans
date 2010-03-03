@@ -1,7 +1,7 @@
 #include "transcode_data.h"
 
 <%
-  transcode_tblgen "Shift_JIS-KDDI", "UTF8-KDDI",
+  transcode_tblgen "SJIS-KDDI", "UTF8-KDDI",
     [["{00-7f}", :nomap]] +
     citrus_decode_mapsrc("mskanji", 1, "JISX0201-KANA/UCS") +
     citrus_decode_mapsrc("mskanji", 2, %w(EMOJI_SHIFT_JIS-KDDI/UCS
@@ -11,7 +11,7 @@
                                           CP932UDA/UCS
                                           JISX0208:MS/UCS).join(","))
 
-  transcode_tblgen "UTF8-KDDI", "Shift_JIS-KDDI",
+  transcode_tblgen "UTF8-KDDI", "SJIS-KDDI",
     [["{00-7f}", :nomap]] +
     citrus_decode_mapsrc("mskanji", 1, "UCS/JISX0201-KANA") +
     citrus_decode_mapsrc("mskanji", 2, %w(UCS/EMOJI_SHIFT_JIS-KDDI

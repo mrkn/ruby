@@ -1,5 +1,13 @@
 require 'test/unit'
 
+class TestRenameSJIS < Test::Unit::TestCase
+  def test_shift_jis
+    assert_raise(ArgumentError) { "".force_encoding("Shift_JIS-DoCoMo") }
+    assert_raise(ArgumentError) { "".force_encoding("Shift_JIS-KDDI") }
+    assert_raise(ArgumentError) { "".force_encoding("Shift_JIS-SoftBank") }
+  end
+end
+
 class TestUTF8_BLACK_SUN_WITH_RAYS < Test::Unit::TestCase
   def setup
     @codes = {
@@ -53,14 +61,14 @@ class TestDoCoMo < Test::Unit::TestCase
 
   def test_encoding_name
     %w(UTF8-DoCoMo
-       Shift_JIS-DoCoMo).each do |n|
+       SJIS-DoCoMo).each do |n|
       assert Encoding.name_list.include?(n), "encoding not found: #{n}"
     end
   end
 
   def test_comparison
     assert_not_equal Encoding::UTF_8, Encoding::UTF8_DoCoMo
-    assert_not_equal Encoding::Windows_31J, Encoding::Shift_JIS_DoCoMo
+    assert_not_equal Encoding::Windows_31J, Encoding::SJIS_DoCoMo
   end
 
   def test_from_utf8
@@ -141,7 +149,7 @@ class TestKDDI < Test::Unit::TestCase
 
   def test_encoding_name
     %w(UTF8-KDDI
-       Shift_JIS-KDDI
+       SJIS-KDDI
        ISO-2022-JP-KDDI
        stateless-ISO-2022-JP-KDDI).each do |n|
       assert Encoding.name_list.include?(n), "encoding not found: #{n}"
@@ -150,7 +158,7 @@ class TestKDDI < Test::Unit::TestCase
 
   def test_comparison
     assert_not_equal Encoding::UTF_8, Encoding::UTF8_KDDI
-    assert_not_equal Encoding::Windows_31J, Encoding::Shift_JIS_KDDI
+    assert_not_equal Encoding::Windows_31J, Encoding::SJIS_KDDI
     assert_not_equal Encoding::ISO_2022_JP, Encoding::ISO_2022_JP_KDDI
     assert_not_equal Encoding::Stateless_ISO_2022_JP, Encoding::Stateless_ISO_2022_JP_KDDI
   end
@@ -277,14 +285,14 @@ class TestSoftBank < Test::Unit::TestCase
 
   def test_encoding_name
     %w(UTF8-SoftBank
-       Shift_JIS-SoftBank).each do |n|
+       SJIS-SoftBank).each do |n|
       assert Encoding.name_list.include?(n), "encoding not found: #{n}"
     end
   end
 
   def test_comparison
     assert_not_equal Encoding::UTF_8, Encoding::UTF8_SoftBank
-    assert_not_equal Encoding::Windows_31J, Encoding::Shift_JIS_SoftBank
+    assert_not_equal Encoding::Windows_31J, Encoding::SJIS_SoftBank
   end
 
   def test_from_utf8
@@ -446,27 +454,27 @@ def to_utf8_softbank(str)
 end
 
 def sjis_docomo(str)
-  str.force_encoding("Shift_JIS-DoCoMo")
+  str.force_encoding("SJIS-DoCoMo")
 end
 
 def to_sjis_docomo(str)
-  str.encode("Shift_JIS-DoCoMo")
+  str.encode("SJIS-DoCoMo")
 end
 
 def sjis_kddi(str)
-  str.force_encoding("Shift_JIS-KDDI")
+  str.force_encoding("SJIS-KDDI")
 end
 
 def to_sjis_kddi(str)
-  str.encode("Shift_JIS-KDDI")
+  str.encode("SJIS-KDDI")
 end
 
 def sjis_softbank(str)
-  str.force_encoding("Shift_JIS-SoftBank")
+  str.force_encoding("SJIS-SoftBank")
 end
 
 def to_sjis_softbank(str)
-  str.encode("Shift_JIS-SoftBank")
+  str.encode("SJIS-SoftBank")
 end
 
 def iso2022jp_kddi(str)
