@@ -990,6 +990,57 @@ rb_hash_select(VALUE hash)
 }
 
 static int
+keep_if_i(VALUE key, VALUE value, VALUE hash)
+{
+    if (key == Qundef) return ST_CONTINUE;
+    if (!RTEST(rb_yield_values(2, key, value))) {
+	return ST_DELETE;
+    }
+    return ST_CONTINUE;
+}
+
+/*
+ *  call-seq:
+ *     hsh.select! {| key, value | block }  -> hsh or nil
+ *
+ *  Equivalent to <code>Hash#keep_if</code>, but returns
+ *  <code>nil</code> if no changes were made.
+ */
+
+VALUE
+rb_hash_select_bang(VALUE hash)
+{
+    st_index_t n;
+
+    RETURN_ENUMERATOR(hash, 0, 0);
+    rb_hash_modify(hash);
+    if (!RHASH(hash)->ntbl)
+        return Qnil;
+    n = RHASH(hash)->ntbl->num_entries;
+    rb_hash_foreach(hash, keep_if_i, hash);
+    if (n == RHASH(hash)->ntbl->num_entries) return Qnil;
+    return hash;
+}
+
+/*
+ *  call-seq:
+ *     hsh.keep_if {| key, value | block }  -> hsh
+ *
+ *  Deletes every key-value pair from <i>hsh</i> for which <i>block</i>
+ *  evaluates to <code>false</code>.
+ *
+ */
+
+VALUE
+rb_hash_keep_if(VALUE hash)
+{
+    RETURN_ENUMERATOR(hash, 0, 0);
+    rb_hash_modify(hash);
+    rb_hash_foreach(hash, keep_if_i, hash);
+    return hash;
+}
+
+static int
 clear_i(VALUE key, VALUE value, VALUE dummy)
 {
     return ST_DELETE;
@@ -1664,7 +1715,7 @@ rb_hash_update_block_i(VALUE key, VALUE value, VALUE hash)
  *     hsh.update(other_hash){|key, oldval, newval| block}    => hsh
  *
  *  Adds the contents of <i>other_hash</i> to <i>hsh</i>.  If no
- *  block is specified entries with duplicate keys are overwritten
+ *  block is specified, entries with duplicate keys are overwritten
  *  with the values from <i>other_hash</i>, otherwise the value
  *  of each duplicate key is determined by calling the block with
  *  the key, its value in <i>hsh</i> and its value in <i>other_hash</i>.
@@ -1699,12 +1750,16 @@ rb_hash_update(VALUE hash1, VALUE hash2)
  *     hsh.merge(other_hash){|key, oldval, newval| block} -> a_hash
  *
  *  Returns a new hash containing the contents of <i>other_hash</i> and
- *  the contents of <i>hsh</i>, overwriting entries in <i>hsh</i> with
- *  duplicate keys with those from <i>other_hash</i>.
+ *  the contents of <i>hsh</i>. If no block is specified, the value for
+ *  entries with duplicate keys will be that of <i>other_hash</i>. Otherwise
+ *  the value for each duplicate key is determined by calling the block
+ *  with the key, its value in <i>hsh</i> and its value in <i>other_hash</i>.
  *
  *     h1 = { "a" => 100, "b" => 200 }
  *     h2 = { "b" => 254, "c" => 300 }
  *     h1.merge(h2)   #=> {"a"=>100, "b"=>254, "c"=>300}
+ *     h1.merge(h2){|key, oldval, newval| newval - oldval}
+ *                    #=> {"a"=>100, "b"=>54,  "c"=>300}
  *     h1             #=> {"a"=>100, "b"=>200}
  *
  */
@@ -2367,6 +2422,37 @@ env_select(VALUE ehash)
     return result;
 }
 
+static VALUE
+env_select_bang(VALUE ehash)
+{
+    volatile VALUE keys;
+    long i;
+    int del = 0;
+
+    RETURN_ENUMERATOR(ehash, 0, 0);
+    keys = env_keys();	/* rb_secure(4); */
+    for (i=0; i<RARRAY_LEN(keys); i++) {
+	VALUE val = rb_f_getenv(Qnil, RARRAY_PTR(keys)[i]);
+	if (!NIL_P(val)) {
+	    if (!RTEST(rb_yield_values(2, RARRAY_PTR(keys)[i], val))) {
+		FL_UNSET(RARRAY_PTR(keys)[i], FL_TAINT);
+		env_delete(Qnil, RARRAY_PTR(keys)[i]);
+		del++;
+	    }
+	}
+    }
+    if (del == 0) return Qnil;
+    return envtbl;
+}
+
+static VALUE
+env_keep_if(VALUE ehash)
+{
+    RETURN_ENUMERATOR(ehash, 0, 0);
+    env_select_bang(ehash);
+    return envtbl;
+}
+
 VALUE
 rb_env_clear(void)
 {
@@ -2755,7 +2841,9 @@ Init_Hash(void)
     rb_define_method(rb_cHash,"shift", rb_hash_shift, 0);
     rb_define_method(rb_cHash,"delete", rb_hash_delete, 1);
     rb_define_method(rb_cHash,"delete_if", rb_hash_delete_if, 0);
+    rb_define_method(rb_cHash,"keep_if", rb_hash_keep_if, 0);
     rb_define_method(rb_cHash,"select", rb_hash_select, 0);
+    rb_define_method(rb_cHash,"select!", rb_hash_select_bang, 0);
     rb_define_method(rb_cHash,"reject", rb_hash_reject, 0);
     rb_define_method(rb_cHash,"reject!", rb_hash_reject_bang, 0);
     rb_define_method(rb_cHash,"clear", rb_hash_clear, 0);
@@ -2792,10 +2880,12 @@ Init_Hash(void)
     rb_define_singleton_method(envtbl,"each_value", env_each_value, 0);
     rb_define_singleton_method(envtbl,"delete", env_delete_m, 1);
     rb_define_singleton_method(envtbl,"delete_if", env_delete_if, 0);
+    rb_define_singleton_method(envtbl,"keep_if", env_keep_if, 0);
     rb_define_singleton_method(envtbl,"clear", rb_env_clear, 0);
     rb_define_singleton_method(envtbl,"reject", env_reject, 0);
     rb_define_singleton_method(envtbl,"reject!", env_reject_bang, 0);
     rb_define_singleton_method(envtbl,"select", env_select, 0);
+    rb_define_singleton_method(envtbl,"select!", env_select_bang, 0);
     rb_define_singleton_method(envtbl,"shift", env_shift, 0);
     rb_define_singleton_method(envtbl,"invert", env_invert, 0);
     rb_define_singleton_method(envtbl,"replace", env_replace, 1);

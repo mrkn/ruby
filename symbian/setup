@@ -75,6 +75,18 @@ define config_h
 @echo>>$(1) #define HAVE_ST_BLOCKS 1
 @echo>>$(1) #define HAVE_STRUCT_STAT_ST_RDEV 1
 @echo>>$(1) #define HAVE_ST_RDEV 1
+@echo>>$(1) #define HAVE_INT8_T 1
+@echo>>$(1) #define HAVE_UINT8_T 1
+@echo>>$(1) #define SIZEOF_INT8_T 1
+@echo>>$(1) #define HAVE_INT16_T 1
+@echo>>$(1) #define HAVE_UINT16_T 1
+@echo>>$(1) #define SIZEOF_INT16_T 2
+@echo>>$(1) #define HAVE_INT32_T 1
+@echo>>$(1) #define HAVE_UINT32_T 1
+@echo>>$(1) #define SIZEOF_INT32_T 4
+@echo>>$(1) #define HAVE_INT64_T 1
+@echo>>$(1) #define HAVE_UINT64_T 1
+@echo>>$(1) #define SIZEOF_INT64_T 8
 @echo>>$(1) #define HAVE_STRUCT_STAT_ST_ATIMESPEC 1
 @echo>>$(1) #define HAVE_STRUCT_STAT_ST_MTIMESPEC 1
 @echo>>$(1) #define HAVE_STRUCT_STAT_ST_CTIMESPEC 1
@@ -240,6 +252,7 @@ define ruby_mmp
 @echo>>$(1) SOURCE debug.c
 @echo>>$(1) SOURCE dir.c
 @echo>>$(1) SOURCE $(DLN).c
+@echo>>$(1) SOURCE dln_find.c
 @echo>>$(1) SOURCE dmyext.c
 @echo>>$(1) SOURCE encoding.c
 @echo>>$(1) SOURCE enum.c
@@ -381,7 +394,7 @@ endef
 
 define ext_pkg
 @echo>>$(1) "$(EPOCROOT)epoc32\release\gcce\urel\$(2).dll"-"!:\sys\bin\$(2).dll"
-@echo>>$(1) "$(EPOCROOT)epoc32\release\gcce\urel\$(2).dll"-"!:\Data\Ruby\$(MAJOR).$(MINOR).$(TEENY)\$(arch)\$(2).dll"
+@echo>>$(1) "$(EPOCROOT)epoc32\release\gcce\urel\$(2).dll"-"!:\Data\Ruby\lib\$(MAJOR).$(MINOR).$(TEENY)\$(arch)\$(2).dll"
 endef
 
 define ext_bigdecimal

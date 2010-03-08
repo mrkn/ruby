@@ -1081,6 +1081,7 @@ end
 #
 class Vector
   include ExceptionForMatrix
+  include Enumerable
 
   #INSTANCE CREATION
 
@@ -1141,6 +1142,15 @@ class Vector
   #++
 
   #
+  # Iterate over the elements of this vector
+  #
+  def each(&block)
+    return to_enum(:each) unless block_given?
+    @elements.each(&block)
+    self
+  end
+
+  #
   # Iterate over the elements of this vector and +v+ in conjunction.
   #
   def each2(v) # :yield: e1, e2
@@ -1159,7 +1169,7 @@ class Vector
   def collect2(v) # :yield: e1, e2
     Vector.Raise ErrDimensionMismatch if size != v.size
     return to_enum(:collect2, v) unless block_given?
-    (0 ... size).collect do |i|
+    size.times.collect do |i|
       yield @elements[i], v[i]
     end
   end

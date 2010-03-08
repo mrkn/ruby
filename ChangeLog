@@ -1,3 +1,160 @@
+Sun Mar  7 02:27:03 2010  Alexander Zavorine  <alexandre.zavorine@nokia.com>
+
+	* dln.c [DLN_NEEDS_ALT_SEPARATOR] (translit_separator): small typo fixed.
+	* symbian/setup (*.pkg): Shared library installation path fixed to match changes in version.c.
+	* symbian/setup (ruby.mmp): SOURCE dln_find.c added.
+
+Sun Mar  7 23:14:22 2010  Tanaka Akira  <akr@fsij.org>
+
+	* bignum.c (rb_big_pack): use DIGSPERLONG and BITSPERDIG.
+	  (rb_big_unpack): use DIGSPERLONG.
+
+Sun Mar  7 19:21:10 2010  Marc-Andre Lafortune  <ruby-core@marc-andre.ca>
+
+	* io.c: Fix documentation for each/each_line/lines, bytes/each_byte,
+	  codepoints/each_code_point [ruby-core:23948]
+
+	* string.c: ditto
+
+	* ext/stringio/stringio.c: ditto
+
+Sun Mar  7 13:49:49 2010  Tanaka Akira  <akr@fsij.org>
+
+	* file.c: add optional basedir argument for realpath/realdirpath.
+	  (realpath_internal): handle basedir.
+	  (rb_file_s_realpath): extract basedir from argument list.
+	  (rb_file_s_realdirpath): extract basedir from argument list.
+
+	* lib/pathname.rb (realpath): pass basedir.
+	  (realdirpath): ditto.
+
+Sun Mar  7 02:05:38 2010  NARUSE, Yui  <naruse@ruby-lang.org>
+
+	* encoding.c (enc_set_filesystem_encoding):
+	  filesystem encoding on Mac OS X is now
+	  default external encoding. so Mac OS X is now
+	  treated as one of Unix. [ruby-dev:40439]
+
+	* file.c (file_path_convert): ditto.
+
+Sat Mar  6 22:07:09 2010  Tanaka Akira  <akr@fsij.org>
+
+	* pack.c: fix the prototype of rb_big2ulong_pack.
+
+Sat Mar  6 13:45:37 2010  Yusuke Endoh  <mame@tsg.ne.jp>
+
+	* io.c (rb_io_s_write, rb_io_s_binwrite): delete File#write and
+	  #binwrite.  It may take a long time to make them stable, so 1.9.2
+	  should not include them.  We need refactoring to implement them
+	  again.
+
+	* test/ruby/test_io.rb: delete tests for them.
+
+Sat Mar  6 10:03:35 2010  Yusuke Endoh  <mame@tsg.ne.jp>
+
+	* io.c (rb_io_s_binwrite): use mode "r+b" instead of "ab" to handle
+	  offset correctly.  [ruby-core:28517]
+
+	* test/ruby/test_io.rb: use assert_equal instead of assert.
+
+Sat Mar  6 01:08:54 2010  NAKAMURA Usaku  <usa@ruby-lang.org>
+
+	* win32/Makefile.sub (config.h): VC6 has __int64.
+
+Fri Mar  5 19:36:12 2010  NARUSE, Yui  <naruse@ruby-lang.org>
+
+	* transcode.c (econv_opts): set :undef => :replace when
+	  :replace is given and :invalid is not given. [ruby-dev:40554]
+
+Fri Mar  5 17:51:09 2010  Nobuyoshi Nakada  <nobu@ruby-lang.org>
+
+	* io.c (pipe_open): suppressed a warning.
+
+	* win32/win32.c (rb_w32_map_errno, winnt_stat, rb_chsize): ditto.
+
+	* win32/win32.c (rb_w32_aspawn): get rid of overflow.
+
+Fri Mar  5 11:59:30 2010  Nobuyoshi Nakada  <nobu@ruby-lang.org>
+
+	* win32/win32.c (signbit): defined on mingw.
+
+Thu Mar  4 22:49:42 2010  Yusuke Endoh  <mame@tsg.ne.jp>
+
+	* eval.c (setup_exception): avoid line number 0 when setting
+	  $DEBUG=true.  [ruby-dev:39116]
+
+Thu Mar  4 22:45:02 2010  Yusuke Endoh  <mame@tsg.ne.jp>
+
+	* io.c (io_s_write, io_s_binwrite): add File#write and #binwrite.
+	  [ruby-core:21701]
+
+	* test/ruby/test_io.rb: add tests for above.
+
+Mon Mar  4 13:14:34 2010  wanabe  <s.wanabe@gmail.com>
+
+	* gc.c (gc_profile_total_time): add GC::Profiler.total_time.
+	  [ruby-core:27169]
+
+	* NEWS: ditto.
+
+Thu Mar  4 10:15:10 2010  NARUSE, Yui  <naruse@ruby-lang.org>
+
+	* complex.c (m_log, m_exp): remove unused functions.
+
+Thu Mar  4 02:34:59 2010  Yusuke Endoh  <mame@tsg.ne.jp>
+
+	* test/ruby/test_env.rb (TestEnv#test_select_bang): add tests.
+
+Thu Mar  4 02:29:52 2010  Kazuhiro NISHIYAMA  <zn@mbf.nifty.com>
+
+	* test/ruby/test_hash.rb (TestHash#test_keep_if): fix typo.
+
+Thu Mar  4 00:10:54 2010  Tanaka Akira  <akr@fsij.org>
+
+	* tool/transcode-tblgen.rb (HEX2): extracted from regexps.
+
+Wed Mar  3 23:16:32 2010  Marc-Andre Lafortune  <ruby-core@marc-andre.ca>
+
+	* complex.c (nucomp_real_check): raise TypeError instead of
+	  ArgumentError when argument is not a real as expected
+	  [ruby-core:28395]
+
+	* rational.c (nurat_int_check): ditto (for integers)
+
+Wed Mar  3 23:07:08 2010  Marc-Andre Lafortune  <ruby-core@marc-andre.ca>
+
+	* lib/matrix.rb (Vector#each): Return self and optimization
+	  [ruby-core:28405]
+
+Wed Mar  3 18:35:55 2010  Yukihiro Matsumoto  <matz@ruby-lang.org>
+
+	* hash.c (rb_hash_select_bang): add #select! and keep_if to Hash.
+
+	* hash.c (env_select_bang): ..and to ENV.
+
+Wed Mar  3 15:54:20 2010  Yukihiro Matsumoto  <matz@ruby-lang.org>
+
+	* lib/matrix.rb (Vector#each2, collect2): small refactoring.
+
+Wed Mar  3 16:14:24 2010  Yukihiro Matsumoto  <matz@ruby-lang.org>
+
+	* lib/matrix.rb (Vector#each): make Vector enumerable.  
+	  [ruby-core:28405]
+
+Wed Mar  3 14:28:23 2010  Yukihiro Matsumoto  <matz@ruby-lang.org>
+
+	* array.c (rb_ary_select_bang): select! removes all elements for
+	  which block returns false.  [ruby-core:27286]
+
+	* array.c (rb_ary_keep_if): #keep_if, new method.
+
+Wed Mar  3 06:19:25 2010  Nobuyoshi Nakada  <nobu@ruby-lang.org>
+
+	* win32/win32.c (signbig): defined.
+
+	* win32/Makefile.sub, symbian/setup (config.h): pack.c requires
+	  SIZEOF_INT*_T now.
+
 Tue Mar  2 21:16:48 2010  Yusuke Endoh  <mame@tsg.ne.jp>
 
 	* io.c (rb_io_lines, rb_io_bytes, rb_io_chars, rb_io_codepoints):
@@ -65,7 +222,7 @@ Sun Feb 28 18:58:00 2010  Kenta Murata  <mrkn@mrkn.jp>
 	  math_gamma, math_lgamma): mathematical domain errors
 	  are checked and raised before calling libm's functions.
 
-	* test/ruby/test_math.rb: updated for changes of maht.c.
+	* test/ruby/test_math.rb: updated for changes of math.c.
 
 Sun Feb 28 15:07:28 2010  Tanaka Akira  <akr@fsij.org>
 
@@ -79,9 +236,6 @@ Sun Feb 28 11:49:35 2010  NARUSE, Yui  <naruse@ruby-lang.org>
 	  fixed by Nobuyoshi Nakada [ruby-core:25238],
 	  Hongli Lai [ruby-core:27417],
 	  and Motohiro KOSAKI [ruby-core:28063]
-
-	* ext/openssl/ossl_ssl.c (ossl_ssl_method_tab),
-	  (ossl_ssl_cipher_to_ary): constified.
 
 	* ext/openssl/ossl_pkcs7.c (pkcs7_get_certs, pkcs7_get_crls):
 	  split pkcs7_get_certs_or_crls.
