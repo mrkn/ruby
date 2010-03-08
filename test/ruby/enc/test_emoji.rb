@@ -11,7 +11,6 @@ end
 class TestUTF8_BLACK_SUN_WITH_RAYS < Test::Unit::TestCase
   def setup
     @codes = {
-      "UTF8-Google"     => utf8_google("\u{FE000}"),
       "UTF8-DoCoMo"     => utf8_docomo("\u{E63E}"),
       "UTF8-KDDI"       => utf8_kddi("\u{E488}"),
       "UTF8-SoftBank"   => utf8_softbank("\u{E04A}"),
@@ -26,31 +25,6 @@ class TestUTF8_BLACK_SUN_WITH_RAYS < Test::Unit::TestCase
         assert_equal to_str, from_str.encode(to_enc), "convert from #{from_enc} to #{to_enc}"
       end
     end
-  end
-end
-
-class TestGoogle < Test::Unit::TestCase
-  def test_encoding_name
-    assert Encoding.name_list.include?("UTF8-Google"), "encoding not found: UTF8-Google"
-  end
-
-  def test_comparison
-    assert_not_equal Encoding::UTF_8, Encoding::UTF8_Google
-  end
-
-  def test_to_docomo
-    assert_nothing_raised { utf8_google("\u{FE000}").encode("UTF8-DoCoMo") }
-    assert_raise(Encoding::UndefinedConversionError) { utf8_google("\u{FE1CA}").encode("UTF8-DoCoMo") }
-  end
-
-  def test_to_kddi
-    assert_nothing_raised { utf8_google("\u{FE000}").encode("UTF8-KDDI") }
-    assert_raise(Encoding::UndefinedConversionError) { utf8_google("\u{FE1CA}").encode("UTF8-KDDI") }
-  end
-
-  def test_to_softbank
-    assert_nothing_raised { utf8_google("\u{FE000}").encode("UTF8-SoftBank") }
-    assert_raise(Encoding::UndefinedConversionError) { utf8_google("\u{FE039}").encode("UTF8-SoftBank") }
   end
 end
 
@@ -131,14 +105,6 @@ class TestDoCoMo < Test::Unit::TestCase
 
     assert_raise(Encoding::UndefinedConversionError) { to_utf8_softbank(@sjis_docomo_only) }
     assert_raise(Encoding::UndefinedConversionError) { to_sjis_softbank(@sjis_docomo_only) }
-  end
-
-  def test_to_google
-    assert_nothing_raised { assert_equal @utf8_google, to_utf8_google(@utf8_docomo) }
-    assert_nothing_raised { assert_equal @utf8_google, to_utf8_google(@sjis_docomo) }
-
-    assert_nothing_raised { assert_equal utf8_google("\u{FE19A}"), to_utf8_google(@utf8_docomo_only) }
-    assert_nothing_raised { assert_equal utf8_google("\u{FE19A}"), to_utf8_google(@sjis_docomo_only) }
   end
 end
 
@@ -264,18 +230,6 @@ class TestKDDI < Test::Unit::TestCase
     assert_raise(Encoding::UndefinedConversionError) { assert_equal @utf8_softbank, to_utf8_softbank(@iso2022jp_kddi_only) }
     assert_raise(Encoding::UndefinedConversionError) { assert_equal @sjis_softbank, to_sjis_softbank(@iso2022jp_kddi_only) }
   end
-
-  def test_to_google
-    assert_nothing_raised { assert_equal @utf8_google, to_utf8_google(@utf8_kddi) }
-    assert_nothing_raised { assert_equal @utf8_google, to_utf8_google(@utf8_undoc_kddi) }
-    assert_nothing_raised { assert_equal @utf8_google, to_utf8_google(@sjis_kddi) }
-    assert_nothing_raised { assert_equal @utf8_google, to_utf8_google(@iso2022jp_kddi) }
-
-    assert_nothing_raised { assert_equal utf8_google("\u{FE039}"), to_utf8_google(@utf8_kddi_only) }
-    assert_nothing_raised { assert_equal utf8_google("\u{FE039}"), to_utf8_google(@utf8_undoc_kddi_only) }
-    assert_nothing_raised { assert_equal utf8_google("\u{FE039}"), to_utf8_google(@sjis_kddi_only) }
-    assert_nothing_raised { assert_equal utf8_google("\u{FE039}"), to_utf8_google(@iso2022jp_kddi_only) }
-  end
 end
 
 class TestSoftBank < Test::Unit::TestCase
@@ -356,14 +310,6 @@ class TestSoftBank < Test::Unit::TestCase
     assert_raise(Encoding::UndefinedConversionError) { to_sjis_kddi(@sjis_softbank_only) }
     assert_raise(Encoding::UndefinedConversionError) { to_iso2022jp_kddi(@sjis_softbank_only) }
   end
-
-  def test_to_google
-    assert_nothing_raised { assert_equal @utf8_google, to_utf8_google(@utf8_softbank) }
-    assert_nothing_raised { assert_equal @utf8_google, to_utf8_google(@sjis_softbank) }
-
-    assert_nothing_raised { assert_equal utf8_google("\u{FE1CA}"), to_utf8_google(@utf8_softbank_only) }
-    assert_nothing_raised { assert_equal utf8_google("\u{FE1CA}"), to_utf8_google(@sjis_softbank_only) }
-  end
 end
 
 private
@@ -396,8 +342,6 @@ def setup_instance_variable(obj)
     @sjis_softbank = sjis_softbank("\xF9\x8B")
     @utf8_softbank_only = utf8_softbank("\u{E524}")
     @sjis_softbank_only = sjis_softbank("\xFB\xC4")
-
-    @utf8_google = utf8_google("\u{FE000}")
   end
 end
 
@@ -419,14 +363,6 @@ end
 
 def to_iso2022jp(str)
   str.encode("ISO-2022-JP")
-end
-
-def utf8_google(str)
-  str.force_encoding("UTF8-Google")
-end
-
-def to_utf8_google(str)
-  str.encode("UTF8-Google")
 end
 
 def utf8_docomo(str)

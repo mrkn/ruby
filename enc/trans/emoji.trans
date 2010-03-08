@@ -14,7 +14,7 @@
     ["{f1-f3}{80-bf}{80-bf}{80-bf}", :nomap0],
   ]
 
-  companies = %w(DoCoMo KDDI SoftBank Google Unicode)
+  companies = %w(DoCoMo KDDI SoftBank Unicode)
   companies.each do |from_company|
     companies.each do |to_company|
       next if from_company == to_company

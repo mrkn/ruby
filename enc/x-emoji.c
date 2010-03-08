@@ -1,12 +1,6 @@
 #include "regint.h"
 
 /*
- * Name: UTF8-Google
- * Link: http://www.unicode.org/~scherer/emoji4unicode/snapshot/full.html
- */
-ENC_REPLICATE("UTF8-Google", "UTF-8")
-
-/*
  * Name: UTF8-DoCoMo, SJIS-DoCoMo
  * Link: http://www.nttdocomo.co.jp/english/service/imode/make/content/pictograph/basic/index.html
  * Link: http://www.nttdocomo.co.jp/english/service/imode/make/content/pictograph/extention/index.html
