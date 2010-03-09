@@ -121,7 +121,6 @@ end
 $srcdir = File.expand_path("../../enc/trans", __FILE__)
 emoji_table = EmojiTable.new(ARGV[0])
 
-#companies = %w(DoCoMo KDDI SoftBank Google Unicode)
 companies = %w(DoCoMo KDDI SoftBank Unicode)
 
 io = STDOUT
