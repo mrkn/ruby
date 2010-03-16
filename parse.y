@@ -1227,6 +1227,28 @@ stmt		: keyword_alias fitem {lex_state = EXPR_FNAME;} fitem
 		    %*/
 		    }
 		| expr
+		| keyword_def { lex_state = EXPR_BEG; } ':' { lex_state = EXPR_FNAME; } fname
+		    {
+			$<id>$ = cur_mid;
+			cur_mid = $5;
+			in_def++;
+			local_push(0);
+		    }
+		  f_arglist
+		  expr
+		    {
+		    /*%%%*/
+			NODE *body = remove_begin($8);
+			reduce_nodes(&body);
+			$$ = NEW_DEFN($5, $7, body, NOEX_PRIVATE);
+			nd_set_line($$, $<num>1);
+		    /*%
+			$$ = dispatch3(def, $5, $7, $8);
+		    %*/
+			local_pop();
+			in_def--;
+			cur_mid = $<id>6;
+		    }
 		;
 
 expr		: command_call
