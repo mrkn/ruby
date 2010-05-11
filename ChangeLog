@@ -1,3 +1,10 @@
+Tue May 11 13:46:00 2010  Kenta Murata <mrkn@mrkn.jp>
+
+	* ext/bigdecimal/lib/bigdecimal/math.rb (atan),
+	  test/bigdecimal/test_bigmath.rb (test_atan): explicitly specify
+	  the precision for calculating a reciprocal number of an argument.
+	  [Bug #3267]
+
 Tue May 11 09:57:05 2010  Nobuyoshi Nakada  <nobu@ruby-lang.org>
 
 	* eval_intern.h (rb_vm_get_sourceline): add prototype.
