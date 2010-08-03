@@ -24,6 +24,8 @@ VALUE rb_cArray;
 
 static ID id_cmp;
 
+static VALUE sym_replace;
+
 #define ARY_DEFAULT_SIZE 16
 #define ARY_MAX_SIZE (LONG_MAX / (int)sizeof(VALUE))
 
@@ -3787,18 +3789,18 @@ ary_sample_with_replace(VALUE const ary, long const n)
 
     switch (n) {
       case 0:
-        return rb_ary_new2(0);
+	return rb_ary_new2(0);
       case 1:
-        return rb_ary_new4(1, &ptr[(long)(rb_genrand_real()*len)]);
+	return rb_ary_new4(1, &ptr[(long)(rb_genrand_real()*len)]);
       default:
-        break;
+	break;
     }
     result = rb_ary_new2(n);
     ptr_result = RARRAY_PTR(result);
     RB_GC_GUARD(ary);
     for (i = 0; i < n; ++i) {
-        long const j = (long)(rb_genrand_real()*len);
-        ptr_result[i] = ptr[j];
+	long const j = (long)(rb_genrand_real()*len);
+	ptr_result[i] = ptr[j];
     }
     ARY_SET_LEN(result, n);
     return result;
@@ -3821,7 +3823,7 @@ ary_sample_with_replace(VALUE const ary, long const n)
 static VALUE
 rb_ary_sample(int argc, VALUE *argv, VALUE ary)
 {
-    VALUE nv, replace, result, *ptr;
+    VALUE nv, opts, replace=Qfalse, result, *ptr;
     long n, len, i, j, k, idx[10];
 
     len = RARRAY_LEN(ary);
@@ -3830,12 +3832,14 @@ rb_ary_sample(int argc, VALUE *argv, VALUE ary)
 	i = len == 1 ? 0 : (long)(rb_genrand_real()*len);
 	return RARRAY_PTR(ary)[i];
     }
-    rb_scan_args(argc, argv, "12", &nv, &replace);
+    rb_scan_args(argc, argv, "12", &nv, &opts);
     n = NUM2LONG(nv);
     if (n < 0) rb_raise(rb_eArgError, "negative sample number");
-    if (RTEST(replace)) {
-      return ary_sample_with_replace(ary, n);
+    if (!NIL_P(opts) && TYPE(opts) == T_HASH) {
+	replace = rb_hash_aref(opts, sym_replace);
     }
+    if (RTEST(replace))
+	return ary_sample_with_replace(ary, n);
     ptr = RARRAY_PTR(ary);
     len = RARRAY_LEN(ary);
     if (n > len) n = len;
@@ -4641,4 +4645,5 @@ Init_Array(void)
     rb_define_method(rb_cArray, "drop_while", rb_ary_drop_while, 0);
 
     id_cmp = rb_intern("<=>");
+    sym_replace = ID2SYM(rb_intern("replace"));
 }

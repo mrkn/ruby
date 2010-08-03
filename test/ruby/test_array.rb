@@ -1911,7 +1911,7 @@ class TestArray < Test::Unit::TestCase
 
   def test_sample_without_replace
     100.times do
-      samples = [2, 1, 0].sample(2, false)
+      samples = [2, 1, 0].sample(2, replace: false)
       samples.each{|sample|
         assert([0, 1, 2].include?(sample))
       }
@@ -1921,7 +1921,7 @@ class TestArray < Test::Unit::TestCase
     a = (1..18).to_a
     (0..20).each do |n|
       100.times do
-        b = a.sample(n, false)
+        b = a.sample(n, replace: false)
         assert_equal([n, 18].min, b.size)
         assert_equal(a, (a | b).sort)
         assert_equal(b.sort, (a & b).sort)
@@ -1929,17 +1929,17 @@ class TestArray < Test::Unit::TestCase
 
       h = Hash.new(0)
       1000.times do
-        a.sample(n, false).each {|x| h[x] += 1 }
+        a.sample(n, replace: false).each {|x| h[x] += 1 }
       end
       assert_operator(h.values.min * 2, :>=, h.values.max) if n != 0
     end
 
-    assert_raise(ArgumentError, '[ruby-core:23374]') {[1, 2].sample(-1, false)}
+    assert_raise(ArgumentError, '[ruby-core:23374]') {[1, 2].sample(-1, replace: false)}
   end
 
   def test_sample_with_replace
     100.times do
-      samples = [2, 1, 0].sample(2, true)
+      samples = [2, 1, 0].sample(2, replace: true)
       samples.each{|sample|
         assert([0, 1, 2].include?(sample))
       }
@@ -1949,7 +1949,7 @@ class TestArray < Test::Unit::TestCase
     a = (1..18).to_a
     (0..20).each do |n|
       100.times do
-        b = a.sample(n, true)
+        b = a.sample(n, replace: true)
         assert_equal(n, b.size)
         assert_equal(a, (a | b).sort)
         assert_equal(b.sort.uniq, (a & b).sort)
@@ -1957,12 +1957,12 @@ class TestArray < Test::Unit::TestCase
 
       h = Hash.new(0)
       1000.times do
-        a.sample(n, true).each {|x| h[x] += 1 }
+        a.sample(n, replace: true).each {|x| h[x] += 1 }
       end
       assert_operator(h.values.min * 2, :>=, h.values.max) if n != 0
     end
 
-    assert_raise(ArgumentError, '[ruby-core:23374]') {[1, 2].sample(-1, true)}
+    assert_raise(ArgumentError, '[ruby-core:23374]') {[1, 2].sample(-1, replace: true)}
   end
 
   def test_cycle
