@@ -3736,8 +3736,6 @@ rb_ary_flatten(int argc, VALUE *argv, VALUE ary)
  *     ary.shuffle!(random: RANDOM)  -> ary
  *
  *  Shuffles elements in +self+ in place.
- *  Unless an Random object is passed with :random keyword,
- *  use default random number generator.
  */
 
 
@@ -3769,7 +3767,8 @@ rb_ary_shuffle_bang(int argc, VALUE* argv, VALUE ary)
 
 /*
  *  call-seq:
- *     ary.shuffle -> new_ary
+ *     ary.shuffle                 -> new_ary
+ *     ary.shuffle(random: random) -> new_ary
  *
  *  Returns a new array with elements of this array shuffled.
  *
@@ -3788,8 +3787,10 @@ rb_ary_shuffle(int argc, VALUE* argv, VALUE ary)
 
 /*
  *  call-seq:
- *     ary.sample        -> obj
- *     ary.sample(n)     -> new_ary
+ *     ary.sample                     -> obj
+ *     ary.sample(random: random)     -> obj
+ *     ary.sample(n)                  -> new_ary
+ *     ary.sample(n, random: random)  -> new_ary
  *
  *  Choose a random element or +n+ random elements from the array. The elements
  *  are chosen by using random and unique indices into the array in order to
@@ -3804,14 +3805,13 @@ static VALUE
 rb_ary_sample(int argc, VALUE *argv, VALUE ary)
 {
     VALUE nv, result, *ptr;
-    VALUE opt, replace = Qnil, random = Qnil;
+    VALUE opt, random = Qnil;
     long n, len, i, j, k, idx[10];
 #define RAND_UPTO(n) (long)(rb_random_real(random)*(n))
 
     len = RARRAY_LEN(ary);
     if (argc > 0 && !NIL_P(opt = rb_check_hash_type(argv[argc-1]))) {
 	--argc;
-	replace = rb_hash_aref(opt, ID2SYM(rb_intern("replace")));
 	random = rb_hash_aref(opt, ID2SYM(rb_intern("random")));
     }
     if (NIL_P(random)) {
@@ -3828,13 +3828,6 @@ rb_ary_sample(int argc, VALUE *argv, VALUE ary)
     ptr = RARRAY_PTR(ary);
     len = RARRAY_LEN(ary);
     RB_GC_GUARD(ary);
-    if (RTEST(replace)) {
-	result = rb_ary_new2(n);
-	while (n-- > 0) {
-	    rb_ary_push(result, ptr[RAND_UPTO(len)]);
-	}
-	return result;
-    }
     if (n > len) n = len;
     switch (n) {
       case 0: return rb_ary_new2(0);
@@ -3879,7 +3872,6 @@ rb_ary_sample(int argc, VALUE *argv, VALUE ary)
 	VALUE *ptr_result;
 	result = rb_ary_new4(len, ptr);
 	ptr_result = RARRAY_PTR(result);
-	RB_GC_GUARD(ary);
 	for (i=0; i<n; i++) {
 	    j = RAND_UPTO(len-i) + i;
 	    nv = ptr_result[j];
