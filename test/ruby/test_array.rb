@@ -1878,6 +1878,12 @@ class TestArray < Test::Unit::TestCase
     100.times do
       assert_equal([0, 1, 2], [2, 1, 0].shuffle.sort)
     end
+
+    gen = Random.new(0)
+    srand(0)
+    100.times do
+      assert_equal([0, 1, 2].shuffle, [0, 1, 2].shuffle(random: gen))
+    end
   end
 
   def test_sample
@@ -1907,6 +1913,15 @@ class TestArray < Test::Unit::TestCase
     end
 
     assert_raise(ArgumentError, '[ruby-core:23374]') {[1, 2].sample(-1)}
+
+    gen = Random.new(0)
+    srand(0)
+    a = (1..18).to_a
+    (0..20).each do |n|
+      100.times do
+        assert_equal(a.sample(n), a.sample(n, random: gen))
+      end
+    end
   end
 
   def test_sample_without_replace
@@ -1935,6 +1950,15 @@ class TestArray < Test::Unit::TestCase
     end
 
     assert_raise(ArgumentError, '[ruby-core:23374]') {[1, 2].sample(-1, replace: false)}
+
+    gen = Random.new(0)
+    srand(0)
+    a = (1..18).to_a
+    (0..20).each do |n|
+      100.times do
+        assert_equal(a.sample(n, replace: false), a.sample(n, replace: false, random: gen))
+      end
+    end
   end
 
   def test_sample_with_replace
@@ -1963,6 +1987,15 @@ class TestArray < Test::Unit::TestCase
     end
 
     assert_raise(ArgumentError, '[ruby-core:23374]') {[1, 2].sample(-1, replace: true)}
+
+    gen = Random.new(0)
+    srand(0)
+    a = (1..18).to_a
+    (0..20).each do |n|
+      100.times do
+        assert_equal(a.sample(n, replace: true), a.sample(n, replace: true, random: gen))
+      end
+    end
   end
 
   def test_cycle

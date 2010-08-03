@@ -24,8 +24,6 @@ VALUE rb_cArray;
 
 static ID id_cmp;
 
-static VALUE sym_replace;
-
 #define ARY_DEFAULT_SIZE 16
 #define ARY_MAX_SIZE (LONG_MAX / (int)sizeof(VALUE))
 
@@ -3734,22 +3732,33 @@ rb_ary_flatten(int argc, VALUE *argv, VALUE ary)
 
 /*
  *  call-seq:
- *     ary.shuffle!        -> ary
+ *     ary.shuffle!                  -> ary
+ *     ary.shuffle!(random: RANDOM)  -> ary
  *
  *  Shuffles elements in +self+ in place.
+ *  Unless an Random object is passed with :random keyword,
+ *  use default random number generator.
  */
 
 
 static VALUE
-rb_ary_shuffle_bang(VALUE ary)
+rb_ary_shuffle_bang(int argc, VALUE* argv, VALUE ary)
 {
     VALUE *ptr;
+    VALUE opt, random = Qnil;
     long i = RARRAY_LEN(ary);
 
+    if (argc > 0 && !NIL_P(opt = rb_check_hash_type(argv[argc-1]))) {
+	--argc;
+	random = rb_hash_aref(opt, ID2SYM(rb_intern("random")));
+    }
+    if (NIL_P(random)) {
+	random = rb_const_get_at(rb_cRandom, rb_intern("DEFAULT"));
+    }
     rb_ary_modify(ary);
     ptr = RARRAY_PTR(ary);
     while (i) {
-	long j = (long)(rb_genrand_real()*i);
+	long j = (long)(rb_random_real(random)*(i));
 	VALUE tmp = ptr[--i];
 	ptr[i] = ptr[j];
 	ptr[j] = tmp;
@@ -3769,42 +3778,13 @@ rb_ary_shuffle_bang(VALUE ary)
  */
 
 static VALUE
-rb_ary_shuffle(VALUE ary)
+rb_ary_shuffle(int argc, VALUE* argv, VALUE ary)
 {
     ary = rb_ary_dup(ary);
-    rb_ary_shuffle_bang(ary);
+    rb_ary_shuffle_bang(argc, argv, ary);
     return ary;
 }
 
-
-static VALUE
-ary_sample_with_replace(VALUE const ary, long const n)
-{
-    VALUE result;
-    VALUE* ptr_result;
-    long i;
-
-    VALUE const* const ptr = RARRAY_PTR(ary);
-    long const len = RARRAY_LEN(ary);
-
-    switch (n) {
-      case 0:
-	return rb_ary_new2(0);
-      case 1:
-	return rb_ary_new4(1, &ptr[(long)(rb_genrand_real()*len)]);
-      default:
-	break;
-    }
-    result = rb_ary_new2(n);
-    ptr_result = RARRAY_PTR(result);
-    RB_GC_GUARD(ary);
-    for (i = 0; i < n; ++i) {
-	long const j = (long)(rb_genrand_real()*len);
-	ptr_result[i] = ptr[j];
-    }
-    ARY_SET_LEN(result, n);
-    return result;
-}
 
 /*
  *  call-seq:
@@ -3823,39 +3803,52 @@ ary_sample_with_replace(VALUE const ary, long const n)
 static VALUE
 rb_ary_sample(int argc, VALUE *argv, VALUE ary)
 {
-    VALUE nv, opts, replace=Qfalse, result, *ptr;
+    VALUE nv, result, *ptr;
+    VALUE opt, replace = Qnil, random = Qnil;
     long n, len, i, j, k, idx[10];
+#define RAND_UPTO(n) (long)(rb_random_real(random)*(n))
 
     len = RARRAY_LEN(ary);
+    if (argc > 0 && !NIL_P(opt = rb_check_hash_type(argv[argc-1]))) {
+	--argc;
+	replace = rb_hash_aref(opt, ID2SYM(rb_intern("replace")));
+	random = rb_hash_aref(opt, ID2SYM(rb_intern("random")));
+    }
+    if (NIL_P(random)) {
+	random = rb_const_get_at(rb_cRandom, rb_intern("DEFAULT"));
+    }
     if (argc == 0) {
 	if (len == 0) return Qnil;
-	i = len == 1 ? 0 : (long)(rb_genrand_real()*len);
+	i = len == 1 ? 0 : RAND_UPTO(len);
 	return RARRAY_PTR(ary)[i];
     }
-    rb_scan_args(argc, argv, "12", &nv, &opts);
+    rb_scan_args(argc, argv, "1", &nv);
     n = NUM2LONG(nv);
     if (n < 0) rb_raise(rb_eArgError, "negative sample number");
-    if (!NIL_P(opts) && TYPE(opts) == T_HASH) {
-	replace = rb_hash_aref(opts, sym_replace);
-    }
-    if (RTEST(replace))
-	return ary_sample_with_replace(ary, n);
     ptr = RARRAY_PTR(ary);
     len = RARRAY_LEN(ary);
+    RB_GC_GUARD(ary);
+    if (RTEST(replace)) {
+	result = rb_ary_new2(n);
+	while (n-- > 0) {
+	    rb_ary_push(result, ptr[RAND_UPTO(len)]);
+	}
+	return result;
+    }
     if (n > len) n = len;
     switch (n) {
       case 0: return rb_ary_new2(0);
       case 1:
-	return rb_ary_new4(1, &ptr[(long)(rb_genrand_real()*len)]);
+	return rb_ary_new4(1, &ptr[RAND_UPTO(len)]);
       case 2:
-	i = (long)(rb_genrand_real()*len);
-	j = (long)(rb_genrand_real()*(len-1));
+	i = RAND_UPTO(len);
+	j = RAND_UPTO(len-1);
 	if (j >= i) j++;
 	return rb_ary_new3(2, ptr[i], ptr[j]);
       case 3:
-	i = (long)(rb_genrand_real()*len);
-	j = (long)(rb_genrand_real()*(len-1));
-	k = (long)(rb_genrand_real()*(len-2));
+	i = RAND_UPTO(len);
+	j = RAND_UPTO(len-1);
+	k = RAND_UPTO(len-2);
 	{
 	    long l = j, g = i;
 	    if (j >= i) l = i, g = ++j;
@@ -3866,9 +3859,9 @@ rb_ary_sample(int argc, VALUE *argv, VALUE ary)
     if ((size_t)n < sizeof(idx)/sizeof(idx[0])) {
 	VALUE *ptr_result;
 	long sorted[sizeof(idx)/sizeof(idx[0])];
-	sorted[0] = idx[0] = (long)(rb_genrand_real()*len);
+	sorted[0] = idx[0] = RAND_UPTO(len);
 	for (i=1; i<n; i++) {
-	    k = (long)(rb_genrand_real()*--len);
+	    k = RAND_UPTO(--len);
 	    for (j = 0; j < i; ++j) {
 		if (k < sorted[j]) break;
 		++k;
@@ -3888,7 +3881,7 @@ rb_ary_sample(int argc, VALUE *argv, VALUE ary)
 	ptr_result = RARRAY_PTR(result);
 	RB_GC_GUARD(ary);
 	for (i=0; i<n; i++) {
-	    j = (long)(rb_genrand_real()*(len-i)) + i;
+	    j = RAND_UPTO(len-i) + i;
 	    nv = ptr_result[j];
 	    ptr_result[j] = ptr_result[i];
 	    ptr_result[i] = nv;
@@ -3897,6 +3890,7 @@ rb_ary_sample(int argc, VALUE *argv, VALUE ary)
     ARY_SET_LEN(result, n);
 
     return result;
+#undef RAND_UPTO
 }
 
 
@@ -4629,8 +4623,8 @@ Init_Array(void)
     rb_define_method(rb_cArray, "flatten", rb_ary_flatten, -1);
     rb_define_method(rb_cArray, "flatten!", rb_ary_flatten_bang, -1);
     rb_define_method(rb_cArray, "count", rb_ary_count, -1);
-    rb_define_method(rb_cArray, "shuffle!", rb_ary_shuffle_bang, 0);
-    rb_define_method(rb_cArray, "shuffle", rb_ary_shuffle, 0);
+    rb_define_method(rb_cArray, "shuffle!", rb_ary_shuffle_bang, -1);
+    rb_define_method(rb_cArray, "shuffle", rb_ary_shuffle, -1);
     rb_define_method(rb_cArray, "sample", rb_ary_sample, -1);
     rb_define_method(rb_cArray, "cycle", rb_ary_cycle, -1);
     rb_define_method(rb_cArray, "permutation", rb_ary_permutation, -1);
@@ -4645,5 +4639,4 @@ Init_Array(void)
     rb_define_method(rb_cArray, "drop_while", rb_ary_drop_while, 0);
 
     id_cmp = rb_intern("<=>");
-    sym_replace = ID2SYM(rb_intern("replace"));
 }
