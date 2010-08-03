@@ -3775,6 +3775,35 @@ rb_ary_shuffle(VALUE ary)
 }
 
 
+static VALUE
+ary_sample_with_replace(VALUE const ary, long const n)
+{
+    VALUE result;
+    VALUE* ptr_result;
+    long i;
+
+    VALUE const* const ptr = RARRAY_PTR(ary);
+    long const len = RARRAY_LEN(ary);
+
+    switch (n) {
+      case 0:
+        return rb_ary_new2(0);
+      case 1:
+        return rb_ary_new4(1, &ptr[(long)(rb_genrand_real()*len)]);
+      default:
+        break;
+    }
+    result = rb_ary_new2(n);
+    ptr_result = RARRAY_PTR(result);
+    RB_GC_GUARD(ary);
+    for (i = 0; i < n; ++i) {
+        long const j = (long)(rb_genrand_real()*len);
+        ptr_result[i] = ptr[j];
+    }
+    ARY_SET_LEN(result, n);
+    return result;
+}
+
 /*
  *  call-seq:
  *     ary.sample        -> obj
@@ -3792,7 +3821,7 @@ rb_ary_shuffle(VALUE ary)
 static VALUE
 rb_ary_sample(int argc, VALUE *argv, VALUE ary)
 {
-    VALUE nv, result, *ptr;
+    VALUE nv, replace, result, *ptr;
     long n, len, i, j, k, idx[10];
 
     len = RARRAY_LEN(ary);
@@ -3801,9 +3830,12 @@ rb_ary_sample(int argc, VALUE *argv, VALUE ary)
 	i = len == 1 ? 0 : (long)(rb_genrand_real()*len);
 	return RARRAY_PTR(ary)[i];
     }
-    rb_scan_args(argc, argv, "1", &nv);
+    rb_scan_args(argc, argv, "12", &nv, &replace);
     n = NUM2LONG(nv);
     if (n < 0) rb_raise(rb_eArgError, "negative sample number");
+    if (RTEST(replace)) {
+      return ary_sample_with_replace(ary, n);
+    }
     ptr = RARRAY_PTR(ary);
     len = RARRAY_LEN(ary);
     if (n > len) n = len;
