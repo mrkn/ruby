@@ -20,6 +20,7 @@
 #endif
 #include <assert.h>
 
+/* #define BIGNUM_DEBUG 1 */
 VALUE rb_cBignum;
 
 #if defined __MINGW32__
@@ -2222,17 +2223,31 @@ big_sparse_p(VALUE x)
     return (c <= 1) ? Qtrue : Qfalse;
 }
 
-#if 0
+#if BIGNUM_DEBUG
+#define ON_DEBUG(x) x
 static void
 dump_bignum(VALUE x)
 {
     long i;
     printf("0x0");
     for (i = RBIGNUM_LEN(x); i--; ) {
-	printf("_%08x", BDIGITS(x)[i]);
+	printf("_%08"PRIxBDIGIT, BDIGITS(x)[i]);
     }
     puts("");
 }
+
+static void
+dump_bignum_float(VALUE x, long exp)
+{
+    long i;
+    printf("%s0x0", RBIGNUM_SIGN(x) ? "+" : "-");
+    for (i = RBIGNUM_LEN(x); i--; ) {
+	printf("_%08"PRIxBDIGIT, RBIGNUM_DIGITS(x)[i]);
+    }
+    printf("E%+ld\n", exp);
+}
+#else
+#define ON_DEBUG(x)
 #endif
 
 static VALUE
@@ -2350,6 +2365,188 @@ bigdivrem1(void *ptr)
     return Qnil;
 }
 
+/*
+ * (x, x_exp) := x * BIGRAD^(-x_exp)
+ */
+static VALUE
+bigtrunc_tail_with_exp(VALUE x, long* x_exp)
+{
+    long i, nx = RBIGNUM_LEN(x);
+    BDIGIT* xds = RBIGNUM_DIGITS(x);
+    for (i = 0; !xds[i]; ++i);
+    MEMMOVE(xds, xds + i, BDIGIT, nx - i);
+    rb_big_resize(x, nx - i);
+    *x_exp -= i;
+    return bigtrunc(x);
+}
+
+static VALUE
+bigadd_with_exp(VALUE x, long x_exp, VALUE y, long y_exp, int sign, long* exp_out)
+{
+    VALUE z;
+
+    if (x_exp < y_exp) {
+	VALUE xx = rb_big_clone(x);
+	rb_big_resize(xx, RBIGNUM_LEN(x) + (y_exp - x_exp));
+	MEMMOVE(RBIGNUM_DIGITS(xx) + (y_exp - x_exp),
+		RBIGNUM_DIGITS(xx), BDIGIT, RBIGNUM_LEN(x));
+	MEMZERO(RBIGNUM_DIGITS(xx), BDIGIT, y_exp - x_exp);
+	RB_GC_GUARD(x) = xx;
+	x_exp = y_exp;
+    }
+    else if (x_exp > y_exp) {
+	VALUE yy = rb_big_clone(y);
+	rb_big_resize(yy, RBIGNUM_LEN(y) + (x_exp - y_exp));
+	MEMMOVE(RBIGNUM_DIGITS(yy) + (x_exp - y_exp),
+		RBIGNUM_DIGITS(yy), BDIGIT, RBIGNUM_LEN(y));
+	MEMZERO(RBIGNUM_DIGITS(yy), BDIGIT, x_exp - y_exp);
+	RB_GC_GUARD(y) = yy;
+	y_exp = x_exp;
+    }
+    z = bigadd(x, y, sign);
+    *exp_out = x_exp;
+    return bigtrunc_tail_with_exp(z, exp_out);
+}
+
+static VALUE
+bigsqr_fast_with_exp(VALUE x, long x_exp, long* exp_out)
+{
+    VALUE z = bigsqr_fast(x);
+    *exp_out = 2*x_exp;
+    return bigtrunc_tail_with_exp(z, exp_out);
+}
+
+static VALUE
+bigmul0_with_exp(VALUE x, long x_exp, VALUE y, long y_exp, long* exp_out)
+{
+    VALUE z = bigmul0(x, y);
+    *exp_out = x_exp + y_exp;
+    return bigtrunc_tail_with_exp(z, exp_out);
+}
+
+static VALUE
+bigreciprocal_newton_make_initial(VALUE y, long* exp_out)
+{
+    VALUE num, den, u;
+    long ny = RBIGNUM_LEN(y);
+    BDIGIT* yds = RBIGNUM_DIGITS(y);
+
+    num = bignew(4, 1);
+    RBIGNUM_DIGITS(num)[3] = 1;
+    RBIGNUM_DIGITS(num)[2] = 0;
+    RBIGNUM_DIGITS(num)[1] = 0;
+    RBIGNUM_DIGITS(num)[0] = 0;
+
+    den = bignew(2, 1);
+    RBIGNUM_DIGITS(den)[1] = yds[ny-1];
+    RBIGNUM_DIGITS(den)[0] = yds[ny-2];
+
+    bigdivmod(num, den, &u, 0);
+    *exp_out = 1;
+    return u;
+}
+
+static int
+bigreciprocal_newton_is_converged(VALUE d, long exp, long prec)
+{
+    if (BIGZEROP(d)) return 1;
+
+    if (exp < 0) return 0;
+
+    if (RBIGNUM_LEN(d) < exp) {
+	if (prec < exp - RBIGNUM_LEN(d)) {
+	    ON_DEBUG({ printf("converged: prec(%ld) < exp(%ld) - len(%ld)\n",
+			prec, exp, RBIGNUM_LEN(d)); });
+	    return 1;
+	}
+    }
+    return 0;
+}
+
+static VALUE
+bigreciprocal_newton(VALUE y, long* exp_out)
+{
+    VALUE u, one;
+    long k, ny, u_exp;
+
+    ny = RBIGNUM_LEN(y);
+    assert(ny >= 3);
+    ON_DEBUG({ printf("y = "); dump_bignum_float(y, ny); });
+
+    u = bigreciprocal_newton_make_initial(y, &u_exp);
+    ON_DEBUG({ printf("u[%ld] = ", 0l); dump_bignum_float(u, u_exp); });
+
+    one = bignew(1, 1);
+    RBIGNUM_DIGITS(one)[0] = 1;
+
+    k = 0;
+    for (;; ++k) { 
+	VALUE d, ud, uy;
+	long i, d_exp, ud_exp, uy_exp;
+
+	/* calculate u <- u + u*(1 - u*y) */
+
+	uy = bigmul0_with_exp(u, u_exp, y, ny, &uy_exp);
+	ON_DEBUG({ printf("uy[%ld] = ", k); dump_bignum_float(uy, uy_exp); });
+	d = bigadd_with_exp(one, 0, uy, uy_exp, 0, &d_exp);
+	ON_DEBUG({ printf("d[%ld] = ", k); dump_bignum_float(d, d_exp); });
+	if (bigreciprocal_newton_is_converged(d, d_exp, ny + 1)) break;
+
+	ud = bigmul0_with_exp(u, u_exp, d, d_exp, &ud_exp);
+	ON_DEBUG({ printf("ud[%ld] = ", k); dump_bignum_float(ud, ud_exp); });
+
+	u = bigadd_with_exp(u, u_exp, ud, ud_exp, 1, &u_exp);
+	ON_DEBUG({ printf("u[%ld] = ", k); dump_bignum_float(u, u_exp); puts(""); });
+    }
+
+    *exp_out = u_exp + ny;
+    return u;
+}
+
+static VALUE
+bigdivrem_newton(VALUE x, VALUE y, volatile VALUE *divp, volatile VALUE *modp)
+{
+    VALUE q, r, w;
+    long w_exp;
+
+    assert(RBIGNUM_LEN(y) >= 3);
+
+    w = bigreciprocal_newton(y, &w_exp);
+    ON_DEBUG({ printf("1/y = "); dump_bignum_float(w, w_exp); });
+    w = bigtrunc(bigmul0(x, w));
+    ON_DEBUG({ printf("x/y = "); dump_bignum_float(w, w_exp); });
+
+    if (RBIGNUM_LEN(w) > w_exp) {
+	q = bignew(RBIGNUM_LEN(w) - w_exp, 1);
+	MEMCPY(RBIGNUM_DIGITS(q), RBIGNUM_DIGITS(w) + w_exp,
+		BDIGIT, RBIGNUM_LEN(w) - w_exp);
+
+	r = rb_big_minus(x, rb_big_mul(q, y));
+	if (big_lt(r, INT2FIX(0))) {
+	    r = rb_big_plus(r, y);
+	    q = rb_big_minus(q, INT2FIX(1));
+	}
+	else if (big_gt(r, y)) {
+	    r = rb_big_minus(r, y);
+	    q = rb_big_plus(q, INT2FIX(1));
+	}
+    }
+    else {
+	q = INT2FIX(0);
+	r = x;
+    }
+
+    RBIGNUM_SET_SIGN(q, RBIGNUM_SIGN(x)==RBIGNUM_SIGN(y));
+    if (modp) {
+	*modp = r;
+	RBIGNUM_SET_SIGN(*modp, RBIGNUM_SIGN(x));
+    }
+    if (divp) *divp = q;
+
+    ON_DEBUG({ fflush(stdout); });
+    return q;
+}
+
 static void
 rb_big_stop(void *ptr)
 {
@@ -2394,6 +2591,13 @@ bigdivrem(VALUE x, VALUE y, volatile VALUE *divp, volatile VALUE *modp)
 	if (divp) *divp = z;
 	return Qnil;
     }
+
+#if 0
+    if (ny >= 3) {
+	return bigdivrem_newton(x, y, divp, modp);
+    }
+#endif
+
     z = bignew(nx==ny?nx+2:nx+1, RBIGNUM_SIGN(x)==RBIGNUM_SIGN(y));
     zds = BDIGITS(z);
     if (nx==ny) zds[nx+1] = 0;
@@ -2470,6 +2674,24 @@ bigdivrem(VALUE x, VALUE y, volatile VALUE *divp, volatile VALUE *modp)
 	RBIGNUM_SET_SIGN(zz, RBIGNUM_SIGN(x));
     }
     return z;
+}
+
+static void
+bigdivmod_newton(VALUE x, VALUE y, volatile VALUE *divp, volatile VALUE *modp)
+{
+    VALUE div, mod;
+
+    assert(RBIGNUM_LEN(y) >= 3);
+
+    bigdivrem_newton(x, y, &div, &mod);
+    if (RBIGNUM_SIGN(x) != RBIGNUM_SIGN(y) && !BIGZEROP(mod)) {
+	if (divp) *divp = bigadd(*divp, rb_int2big(1), 0);
+	if (modp) *modp = bigadd(mod, y, 1);
+    }
+    else {
+	if (divp) *divp = div;
+	if (modp) *modp = mod;
+    }
 }
 
 static void
@@ -2632,6 +2854,20 @@ rb_big_divmod(VALUE x, VALUE y)
 	return rb_num_coerce_bin(x, y, rb_intern("divmod"));
     }
     bigdivmod(x, y, &div, &mod);
+
+    return rb_assoc_new(bignorm(div), bignorm(mod));
+}
+
+VALUE
+rb_big_newton_divmod(VALUE x, VALUE y)
+{
+    VALUE div, mod;
+
+    Check_Type(y, T_BIGNUM);
+    if (RBIGNUM_LEN(y) < 3) {
+	rb_raise(rb_eArgError, "absolute value of the argument is too small");
+    }
+    bigdivmod_newton(x, y, &div, &mod);
 
     return rb_assoc_new(bignorm(div), bignorm(mod));
 }
@@ -3488,6 +3724,7 @@ Init_Bignum(void)
     rb_define_method(rb_cBignum, "%", rb_big_modulo, 1);
     rb_define_method(rb_cBignum, "div", rb_big_idiv, 1);
     rb_define_method(rb_cBignum, "divmod", rb_big_divmod, 1);
+    rb_define_method(rb_cBignum, "newton_divmod", rb_big_newton_divmod, 1);
     rb_define_method(rb_cBignum, "modulo", rb_big_modulo, 1);
     rb_define_method(rb_cBignum, "remainder", rb_big_remainder, 1);
     rb_define_method(rb_cBignum, "fdiv", rb_big_fdiv, 1);
