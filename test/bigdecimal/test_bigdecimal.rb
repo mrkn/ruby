@@ -27,6 +27,16 @@ class TestBigDecimal < Test::Unit::TestCase
     assert_equal(1, BigDecimal("1"))
     assert_equal(1, BigDecimal("1", 1))
     assert_raise(ArgumentError) { BigDecimal("1", -1) }
+
+    assert_equal(BigDecimal("1"), BigDecimal(1))
+    assert_equal(BigDecimal("-1"), BigDecimal(-1))
+    assert_equal(BigDecimal("0.333333333333333333333"), BigDecimal(1.quo(3), 21))
+    assert_equal(BigDecimal("-0.333333333333333333333"), BigDecimal(-1.quo(3), 21))
+    assert_equal(BigDecimal("0.1235"), BigDecimal(0.1234567, 4))
+    assert_equal(BigDecimal("-0.1235"), BigDecimal(-0.1234567, 4))
+    assert_raise(ArgumentError) { BigDecimal(1.quo(3)) }
+    assert_raise(ArgumentError) { BigDecimal(0.1) }
+    assert_raise(ArgumentError) { BigDecimal(0.1, Float::DIG + 1) }
   end
 
   def test_new
@@ -42,6 +52,15 @@ class TestBigDecimal < Test::Unit::TestCase
     assert_equal(-1, BigDecimal.new("-Infinity").infinite?)
     assert_equal(true, BigDecimal.new("NaN").nan?)
     assert_equal( 1, BigDecimal.new("1E1111111111111111111").infinite?)
+
+    assert_equal(BigDecimal("1"), BigDecimal.new(1))
+    assert_equal(BigDecimal("-1"), BigDecimal.new(-1))
+    assert_equal(BigDecimal("0.333333333333333333333"), BigDecimal.new(1.quo(3), 21))
+    assert_equal(BigDecimal("-0.333333333333333333333"), BigDecimal.new(-1.quo(3), 21))
+    assert_equal(BigDecimal("0.1235"), BigDecimal(0.1234567, 4))
+    assert_equal(BigDecimal("-0.1235"), BigDecimal(-0.1234567, 4))
+    assert_raise(ArgumentError) { BigDecimal.new(1.quo(3)) }
+    assert_raise(ArgumentError) { BigDecimal.new(0.1) }
   end
 
   def _test_mode(type)
@@ -459,6 +478,12 @@ class TestBigDecimal < Test::Unit::TestCase
     assert_instance_of(Float, a)
     assert_instance_of(Float, b)
     assert_equal(2, 1 + BigDecimal.new("1"), '[ruby-core:25697]')
+
+    a, b = BigDecimal("1").coerce(1.quo(10))
+    assert_equal(BigDecimal("0.1"), a, '[ruby-core:34318]')
+
+    a, b = BigDecimal("0.11111").coerce(1.quo(3))
+    assert_equal(BigDecimal("0." + "3"*a.precs[0]), a)
   end
 
   def test_uplus
