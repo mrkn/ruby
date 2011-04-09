@@ -1855,6 +1855,20 @@ class TestArray < Test::Unit::TestCase
     assert_equal([['a', 5], ['b', 6]], %w(a b).zip(ary))
   end
 
+  def test_zip_with_block
+    a = [*1..10]
+    b = [*1..10]
+    assert_equal(a.zip(b) {|x, y| x+y},
+                 a.zip(b).map {|x, y| x+y})
+  end
+
+  def test_zip_with_symbol
+    a = [*1..10]
+    b = [*1..10]
+    assert_equal(a.zip(b, :+),
+                 a.zip(b).map {|x, y| x+y})
+  end
+
   def test_transpose
     assert_equal([[1, :a], [2, :b], [3, :c]],
       [[1, 2, 3], [:a, :b, :c]].transpose)

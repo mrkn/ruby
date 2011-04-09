@@ -2668,7 +2668,8 @@ take_items(VALUE obj, long n)
 /*
  *  call-seq:
  *     ary.zip(arg, ...)                   -> new_ary
- *     ary.zip(arg, ...) {| arr | block }  -> nil
+ *     ary.zip(arg, ...) {| arr | block }  -> new_ary
+ *     ary.zip(arg, ..., sym)              -> new_ary
  *
  *  Converts any arguments to arrays, then merges elements of
  *  +self+ with corresponding elements from each argument. This
@@ -2676,8 +2677,10 @@ take_items(VALUE obj, long n)
  *  arrays, where <em>n</em> is one more that the count of arguments. If
  *  the size of any argument is less than <code>enumObj.size</code>,
  *  <code>nil</code> values are supplied. If a block is given, it is
- *  invoked for each output array, otherwise an array of arrays is
- *  returned.
+ *  invoked for each output array, and an array of the result of the
+ *  block is returned. If a symbol is given at last, each output array
+ *  is reduced by Enumerable#reduce with the symbol, and an array of the
+ *  reduced values is returned. Otherwise an array of arrays is returned.
  *
  *     a = [ 4, 5, 6 ]
  *     b = [ 7, 8, 9 ]
@@ -2691,15 +2694,20 @@ rb_ary_zip(int argc, VALUE *argv, VALUE ary)
 {
     int i, j;
     long len;
+    VALUE sym = Qnil;
     VALUE result = Qnil;
+
+    if (!rb_block_given_p() && SYMBOL_P(argv[argc-1])) {
+	sym = argv[argc-1];
+	--argc;
+    }
 
     len = RARRAY_LEN(ary);
     for (i=0; i<argc; i++) {
 	argv[i] = take_items(argv[i], len);
     }
-    if (!rb_block_given_p()) {
-	result = rb_ary_new2(len);
-    }
+
+    result = rb_ary_new2(len);
 
     for (i=0; i<RARRAY_LEN(ary); i++) {
 	VALUE tmp = rb_ary_new2(argc+1);
@@ -2708,12 +2716,15 @@ rb_ary_zip(int argc, VALUE *argv, VALUE ary)
 	for (j=0; j<argc; j++) {
 	    rb_ary_push(tmp, rb_ary_elt(argv[j], i));
 	}
-	if (NIL_P(result)) {
-	    rb_yield(tmp);
+
+	if (rb_block_given_p()) {
+	    tmp = rb_yield(tmp);
 	}
-	else {
-	    rb_ary_push(result, tmp);
+	else if (!NIL_P(sym)) {
+	    tmp = rb_funcall(tmp, rb_intern("reduce"), 1, sym);
 	}
+
+	rb_ary_push(result, tmp);
     }
     return result;
 }
