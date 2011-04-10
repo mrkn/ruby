@@ -591,6 +591,14 @@ enum_inject(int argc, VALUE *argv, VALUE obj)
     return memo[0];
 }
 
+VALUE
+rb_enum_inject_by_symbol(VALUE obj, VALUE sym)
+{
+    if (!SYMBOL_P(sym))
+	rb_raise(rb_eArgError, "argument needs to be a symbol");
+    return enum_inject(1, &sym, obj);
+}
+
 static VALUE
 partition_i(VALUE i, VALUE *ary, int argc, VALUE *argv)
 {

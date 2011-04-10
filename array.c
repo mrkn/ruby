@@ -2664,7 +2664,6 @@ take_items(VALUE obj, long n)
     return result;
 }
 
-
 /*
  *  call-seq:
  *     ary.zip(arg, ...)                   -> new_ary
@@ -2721,7 +2720,7 @@ rb_ary_zip(int argc, VALUE *argv, VALUE ary)
 	    tmp = rb_yield(tmp);
 	}
 	else if (!NIL_P(sym)) {
-	    tmp = rb_funcall(tmp, rb_intern("reduce"), 1, sym);
+	    tmp = rb_enum_inject_by_symbol(tmp, sym);
 	}
 
 	rb_ary_push(result, tmp);
