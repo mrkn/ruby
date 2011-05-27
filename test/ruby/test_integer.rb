@@ -198,4 +198,37 @@ class TestInteger < Test::Unit::TestCase
     assert_equal(-1111_1111_1111_1111_1111_1111_1111_1110, (-1111_1111_1111_1111_1111_1111_1111_1111).round(-1))
     assert_equal(Bignum, (-1111_1111_1111_1111_1111_1111_1111_1111).round(-1).class)
   end
+
+  def test_each_modulo_returns_Enumerator_unless_block_given
+    assert_instance_of(Enumerator, 1111.each_modulo(10))
+    assert_instance_of(Enumerator, 1111.each_modulo(2**100))
+    assert_instance_of(Enumerator, (2**100).each_modulo(10))
+    assert_instance_of(Enumerator, (2**100).each_modulo(2**100))
+  end
+
+  def test_each_modulo_calls_block_with_values_of_iterated_modulo
+    assert_equal([1, 2, 2, 1, 1], 133.each_modulo(3).to_a)
+    assert_equal([133], 133.each_modulo(2**100).to_a)
+    assert_equal([1, 2, 1], (2**200).each_modulo(2**100-1).to_a)
+  end
+
+  def test_each_modulo_raise_ArgumentError_when_arg_le_1
+    assert_raise(ArgumentError) { 111.each_modulo(1) }
+    assert_raise(ArgumentError) { 111.each_modulo(0) }
+    assert_raise(ArgumentError) { 111.each_modulo(-42) }
+    assert_raise(ArgumentError) { (2**100).each_modulo(1) }
+    assert_raise(ArgumentError) { (2**100).each_modulo(0) }
+    assert_raise(ArgumentError) { (2**100).each_modulo(-42) }
+  end
+
+  def test_each_modulo_raise_ArgumentError_when_arg_not_int
+    assert_raise(ArgumentError) { 111.each_modulo(Object.new) }
+    assert_raise(ArgumentError) { 111.each_modulo(1.0) }
+    assert_raise(ArgumentError) { 111.each_modulo(1.quo(3)) }
+    assert_raise(ArgumentError) { 111.each_modulo(Complex(1, 1)) }
+    assert_raise(ArgumentError) { (2**100).each_modulo(Object.new) }
+    assert_raise(ArgumentError) { (2**100).each_modulo(1.0) }
+    assert_raise(ArgumentError) { (2**100).each_modulo(1.quo(3)) }
+    assert_raise(ArgumentError) { (2**100).each_modulo(Complex(1, 1)) }
+  end
 end

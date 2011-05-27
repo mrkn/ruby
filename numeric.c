@@ -3296,6 +3296,72 @@ int_round(int argc, VALUE* argv, VALUE num)
 
 /*
  *  call-seq:
+ *     int.each_modulo(n) -> 
+ *
+ *  If a block given, enumerates with iterated modulo and returns self.
+ *  Otherwise, returns an Enumerator.
+ */
+
+static VALUE
+int_each_modulo(VALUE num, VALUE modulus)
+{
+    VALUE big_q, qr;
+    long q, r, m;
+
+    switch (TYPE(modulus)) {
+    case T_BIGNUM:
+	if (rb_big_cmp(modulus, rb_int2big(1)) <= 0) {
+	    goto arg_must_be_lt_1;
+	}
+	break;
+
+    case T_FIXNUM:
+	if (FIX2INT(modulus) <= 1) {
+arg_must_be_lt_1:
+	    rb_raise(rb_eArgError, "argument must be larger than 1");
+	}
+	break;
+
+    default:
+	rb_raise(rb_eArgError, "argument must be an Integer (%s)",
+		 rb_obj_classname(modulus));
+    }
+
+    RETURN_ENUMERATOR(num, 1, &modulus);
+
+    big_q = num;
+    if (TYPE(big_q) == T_BIGNUM) {
+	while (TYPE(big_q) == T_BIGNUM) {
+	    qr = rb_big_divmod(big_q, modulus);
+	    rb_yield(RARRAY_PTR(qr)[1]);
+	    big_q = RARRAY_PTR(qr)[0];
+	}
+    }
+
+    q = NUM2INT(big_q);
+    switch (TYPE(modulus)) {
+    case T_BIGNUM:
+	while (q > 0) {
+	    qr = rb_big_divmod(rb_int2big(q), modulus);
+	    rb_yield(RARRAY_PTR(qr)[1]);
+	    q = NUM2INT(RARRAY_PTR(qr)[0]);
+	}
+	break;
+
+    case T_FIXNUM:
+	m = FIX2INT(modulus);
+	while (q > 0) {
+	    fixdivmod(q, m, &q, &r);
+	    rb_yield(INT2FIX(r));
+	}
+	break;
+    }
+
+    return num;
+}
+
+/*
+ *  call-seq:
  *     fix.zero?  ->  true or false
  *
  *  Returns <code>true</code> if <i>fix</i> is zero.
@@ -3453,6 +3519,8 @@ Init_Numeric(void)
     rb_define_method(rb_cInteger, "ceil", int_to_i, 0);
     rb_define_method(rb_cInteger, "truncate", int_to_i, 0);
     rb_define_method(rb_cInteger, "round", int_round, -1);
+
+    rb_define_method(rb_cInteger, "each_modulo", int_each_modulo, 1);
 
     rb_cFixnum = rb_define_class("Fixnum", rb_cInteger);
 
