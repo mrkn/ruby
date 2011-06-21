@@ -1834,6 +1834,9 @@ BigDecimal_inspect(VALUE self)
     return obj;
 }
 
+static VALUE BigMath_s_exp(VALUE, VALUE, VALUE);
+static VALUE BigMath_s_log(VALUE, VALUE, VALUE);
+
 /* call-seq:
  * power(n)
  *
