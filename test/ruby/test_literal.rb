@@ -26,7 +26,8 @@ class TestRubyLiteral < Test::Unit::TestCase
     assert_raise(SyntaxError) { eval("0b") }
     assert_equal '123456789012345678901234567890', 123456789012345678901234567890.inspect
     assert_instance_of Bignum, 123456789012345678901234567890
-    assert_instance_of Float, 1.3
+    assert_instance_of Rational, 1.3
+    assert_instance_of Float, 1.3e0
   end
 
   def test_self
@@ -277,6 +278,30 @@ class TestRubyLiteral < Test::Unit::TestCase
           end
           r2 = :err if Range === r2
           assert_equal(r1, r2, "Float(#{s.inspect}) != eval(#{s.inspect})")
+        }
+      }
+    }
+  end
+
+  def test_rational_decimal
+    head = ['', '-', '+']
+    chars = ['0', '1', '_', '9', 'f', '.']
+    head.each {|h|
+      6.times {|len|
+        a = [h]
+        len.times { a = a.product(chars).map {|x| x.join('') } }
+        a.each {|s|
+          next if s.empty?
+          next if /\.\z/ =~ s
+          next if /\A[-+]?\./ =~ s
+          next if /\A[-+]?0/ =~ s
+          next unless /\./ =~ s
+          begin
+            Float(s)
+            assert_instance_of Rational, eval(s), "eval('#{s}') isn't Rational"
+          rescue ArgumentError
+            r1 = :err
+          end
         }
       }
     }
