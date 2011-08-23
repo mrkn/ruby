@@ -677,7 +677,7 @@ static void token_info_pop(struct parser_params*, const char *token);
 	keyword__ENCODING__
 
 %token <id>   tIDENTIFIER tFID tGVAR tIVAR tCONSTANT tCVAR tLABEL
-%token <node> tINTEGER tFLOAT tSTRING_CONTENT tCHAR
+%token <node> tINTEGER tRATIONAL tFLOAT tSTRING_CONTENT tCHAR
 %token <node> tNTH_REF tBACK_REF
 %token <num>  tREGEXP_END
 
@@ -2164,6 +2164,15 @@ arg		: lhs '=' arg
 		    %*/
 		    }
 		| tUMINUS_NUM tINTEGER tPOW arg
+		    {
+		    /*%%%*/
+			$$ = NEW_CALL(call_bin_op($2, tPOW, $4), tUMINUS, 0);
+		    /*%
+			$$ = dispatch3(binary, $2, ripper_intern("**"), $4);
+			$$ = dispatch2(unary, ripper_intern("-@"), $$);
+		    %*/
+		    }
+		| tUMINUS_NUM tRATIONAL tPOW arg
 		    {
 		    /*%%%*/
 			$$ = NEW_CALL(call_bin_op($2, tPOW, $4), tUMINUS, 0);
@@ -4253,8 +4262,17 @@ dsym		: tSYMBEG xstring_contents tSTRING_END
 		;
 
 numeric 	: tINTEGER
+		| tRATIONAL
 		| tFLOAT
 		| tUMINUS_NUM tINTEGER	       %prec tLOWEST
+		    {
+		    /*%%%*/
+			$$ = negate_lit($2);
+		    /*%
+			$$ = dispatch2(unary, ripper_intern("-@"), $2);
+		    %*/
+		    }
+		| tUMINUS_NUM tRATIONAL	       %prec tLOWEST
 		    {
 		    /*%%%*/
 			$$ = negate_lit($2);
@@ -7168,9 +7186,9 @@ parser_yylex(struct parser_params *parser)
       case '0': case '1': case '2': case '3': case '4':
       case '5': case '6': case '7': case '8': case '9':
 	{
-	    int is_float, seen_point, seen_e, nondigit;
+	    int is_decimal, seen_point, seen_e, nondigit, point_index;
 
-	    is_float = seen_point = seen_e = nondigit = 0;
+	    is_decimal = seen_point = seen_e = nondigit = point_index = 0;
 	    lex_state = EXPR_END;
 	    newtok();
 	    if (c == '-' || c == '+') {
@@ -7325,9 +7343,10 @@ parser_yylex(struct parser_params *parser)
 			}
 			c = c0;
 		    }
+		    point_index = tokidx;
 		    tokadd('.');
 		    tokadd(c);
-		    is_float++;
+		    is_decimal++;
 		    seen_point++;
 		    nondigit = 0;
 		    break;
@@ -7344,7 +7363,7 @@ parser_yylex(struct parser_params *parser)
 		    }
 		    tokadd(c);
 		    seen_e++;
-		    is_float++;
+		    is_decimal++;
 		    nondigit = c;
 		    c = nextc();
 		    if (c != '-' && c != '+') continue;
@@ -7372,14 +7391,45 @@ parser_yylex(struct parser_params *parser)
 		yyerror(tmp);
 	    }
 	    tokfix();
-	    if (is_float) {
-		double d = strtod(tok(), 0);
-		if (errno == ERANGE) {
-		    rb_warningS("Float %s out of range", tok());
-		    errno = 0;
+	    if (is_decimal) {
+		if (seen_e) {
+		    double d = strtod(tok(), 0);
+		    if (errno == ERANGE) {
+			rb_warningS("Float %s out of range", tok());
+			errno = 0;
+		    }
+		    set_yylval_literal(DBL2NUM(d));
+		    return tFLOAT;
 		}
-                set_yylval_literal(DBL2NUM(d));
-		return tFLOAT;
+		else {
+		    char *ppoint = tok() + point_index;
+		    char *den_buf;
+		    int exponent;
+		    VALUE num, den;
+
+		    exponent = toklen() - point_index - 1;
+#if 0
+		    fprintf(stderr, "%s\n", tok());
+		    fprintf(stderr, "toklen() = %d\n", toklen());
+		    fprintf(stderr, "point_index = %d\n", point_index);
+		    fprintf(stderr, "exponent = %d\n", exponent);
+#endif
+
+		    MEMMOVE(ppoint, ppoint + 1, char, exponent);
+		    --tokidx;
+		    tokfix();
+		    num = rb_cstr_to_inum(tok(), 10, FALSE);
+
+		    den_buf = ALLOC_N(char, exponent + 2);
+		    den_buf[0] = '1';
+		    memset(den_buf + 1, '0', sizeof(char)*exponent);
+		    den_buf[exponent + 1] = '\0';
+		    den = rb_cstr_to_inum(den_buf, 10, FALSE);
+		    xfree(den_buf);
+
+		    set_yylval_literal(rb_rational_new(num, den));
+		    return tRATIONAL;
+		}
 	    }
 	    set_yylval_literal(rb_cstr_to_inum(tok(), 10, FALSE));
 	    return tINTEGER;
@@ -9045,6 +9095,8 @@ negate_lit(NODE *node)
 	node->nd_lit = LONG2FIX(-FIX2LONG(node->nd_lit));
 	break;
       case T_BIGNUM:
+	/* fall through */
+      case T_RATIONAL:
 	node->nd_lit = rb_funcall(node->nd_lit,tUMINUS,0,0);
 	break;
       case T_FLOAT:
@@ -10535,6 +10587,7 @@ ripper_validate_object(VALUE self, VALUE x)
       case T_OBJECT:
       case T_ARRAY:
       case T_BIGNUM:
+      case T_RATIONAL:
       case T_FLOAT:
         return x;
       case T_NODE:
