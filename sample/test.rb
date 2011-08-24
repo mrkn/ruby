@@ -1396,16 +1396,16 @@ end
 test_ok(ITER_TEST6.new.xx([24]) == 2)
 
 test_check "float"
-test_ok(2.6.floor == 2)
-test_ok((-2.6).floor == -3)
-test_ok(2.6.ceil == 3)
-test_ok((-2.6).ceil == -2)
-test_ok(2.6.truncate == 2)
-test_ok((-2.6).truncate == -2)
-test_ok(2.6.round == 3)
-test_ok((-2.4).truncate == -2)
-test_ok((13.4 % 1 - 0.4).abs < 0.0001)
-nan = 0.0/0
+test_ok(2.6e0.floor == 2)
+test_ok((-2.6e0).floor == -3)
+test_ok(2.6e0.ceil == 3)
+test_ok((-2.6e0).ceil == -2)
+test_ok(2.6e0.truncate == 2)
+test_ok((-2.6e0).truncate == -2)
+test_ok(2.6e0.round == 3)
+test_ok((-2.4e0).truncate == -2)
+test_ok((13.4e0 % 1 - 0.4e0).abs < 0.0001e0)
+nan = Float::NAN
 def nan_test(x,y)
   test_ok(x != y)
   test_ok((x < y) == false)
@@ -1421,12 +1421,12 @@ nan_test(nan, 1000)
 nan_test(nan, -1000)
 nan_test(nan, 1_000_000_000_000)
 nan_test(nan, -1_000_000_000_000)
-nan_test(nan, 100.0);
-nan_test(nan, -100.0);
-nan_test(nan, 0.001);
-nan_test(nan, -0.001);
-nan_test(nan, 1.0/0);
-nan_test(nan, -1.0/0);
+nan_test(nan, 100.0e0);
+nan_test(nan, -100.0e0);
+nan_test(nan, 0.001e0);
+nan_test(nan, -0.001e0);
+nan_test(nan, 1.0e0/0);
+nan_test(nan, -1.0e0/0);
 
 #s = "3.7517675036461267e+17"
 #test_ok(s == sprintf("%.16e", s.to_f))
@@ -1997,7 +1997,7 @@ test_check "pack"
 $format = "c2x5CCxsdils_l_a6";
 # Need the expression in here to force ary[5] to be numeric.  This avoids
 # test2 failing because ary2 goes str->numeric->str and ary does not.
-ary = [1,-100,127,128,32767,987.654321098 / 100.0,12345,123456,-32767,-123456,"abcdef"]
+ary = [1,-100,127,128,32767,987.654321098e0 / 100.0e0,12345,123456,-32767,-123456,"abcdef"]
 $x = ary.pack($format)
 ary2 = $x.unpack($format)
 

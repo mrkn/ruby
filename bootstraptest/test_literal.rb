@@ -26,8 +26,9 @@ assert_equal '5',               '0b101'
 assert_equal 'Fixnum',          '0b101.class'
 assert_equal '123456789012345678901234567890', '123456789012345678901234567890'
 assert_equal 'Bignum',          '123456789012345678901234567890.class'
-assert_equal '2.0',             '2.0'
-assert_equal 'Float',           '1.3.class'
+assert_equal '2.0',             '2.0e0'
+assert_equal 'Rational',        '1.3.class'
+assert_equal 'Float',           '1.3e0.class'
 
 # self
 assert_equal 'main',            'self'

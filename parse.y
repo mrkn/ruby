@@ -7408,13 +7408,6 @@ parser_yylex(struct parser_params *parser)
 		    VALUE num, den;
 
 		    exponent = toklen() - point_index - 1;
-#if 0
-		    fprintf(stderr, "%s\n", tok());
-		    fprintf(stderr, "toklen() = %d\n", toklen());
-		    fprintf(stderr, "point_index = %d\n", point_index);
-		    fprintf(stderr, "exponent = %d\n", exponent);
-#endif
-
 		    MEMMOVE(ppoint, ppoint + 1, char, exponent);
 		    --tokidx;
 		    tokfix();
