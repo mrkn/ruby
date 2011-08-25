@@ -708,21 +708,50 @@ nurat_add(VALUE self, VALUE other)
       case T_FIXNUM:
       case T_BIGNUM:
 	{
+	    VALUE sum;
 	    get_dat1(self);
 
-	    return f_addsub(self,
-			    dat->num, dat->den,
-			    other, ONE, '+');
+	    sum = f_addsub(self,
+			   dat->num, dat->den,
+			   other, ONE, '+');
+	    if (RRATIONAL_DECIMAL_P(self)) {
+		FL_SET_DECIMAL(sum);
+		RRATIONAL(sum)->den_exp = dat->den_exp;
+	    }
+
+	    RB_GC_GUARD(sum);
+	    return sum;
 	}
       case T_FLOAT:
 	return f_add(f_to_f(self), other);
       case T_RATIONAL:
 	{
+	    VALUE sum;
 	    get_dat2(self, other);
 
-	    return f_addsub(self,
-			    adat->num, adat->den,
-			    bdat->num, bdat->den, '+');
+	    sum = f_addsub(self,
+			   adat->num, adat->den,
+			   bdat->num, bdat->den, '+');
+	    if (RRATIONAL_DECIMAL_P(self) && RRATIONAL_DECIMAL_P(other)) {
+		FL_SET_DECIMAL(sum);
+		if (adat->den_exp < bdat->den_exp) {
+		    RRATIONAL(sum)->den_exp = bdat->den_exp;
+		}
+		else {
+		    RRATIONAL(sum)->den_exp = adat->den_exp;
+		}
+	    }
+	    else if (RTEST(f_one_p(adat->den)) && RRATIONAL_DECIMAL_P(other)) {
+		FL_SET_DECIMAL(sum);
+		RRATIONAL(sum)->den_exp = bdat->den_exp;
+	    }
+	    else if (RRATIONAL_DECIMAL_P(self) && RTEST(f_one_p(bdat->den))) {
+		FL_SET_DECIMAL(sum);
+		RRATIONAL(sum)->den_exp = adat->den_exp;
+	    }
+
+	    RB_GC_GUARD(sum);
+	    return sum;
 	}
       default:
 	return rb_num_coerce_bin(self, other, '+');

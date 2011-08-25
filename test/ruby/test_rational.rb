@@ -262,6 +262,29 @@ class Rational_Test < Test::Unit::TestCase
     assert_equal(2.5, c + 2.0)
   end
 
+  def test_add_for_decimal_and_decimal
+    assert_equal('12.345', (10.305 + 2.04).to_s)
+  end
+
+  def test_add_for_decimal_and_nondecimal
+    assert_equal(12345.quo(1000).to_s, (10.305 + 204.quo(100)).to_s)
+    assert_equal(12345.quo(1000).to_s, (10305.quo(1000) + 2.04).to_s)
+  end
+
+  def test_add_for_decimal_and_integral_rational
+    assert_equal('12.345', (12.345 + 0.quo(1)).to_s)
+    assert_equal('42.345', (0.345 + 42.quo(1)).to_s)
+    assert_equal('12.345', (0.quo(1) + 12.345).to_s)
+    assert_equal('42.345', (42.quo(1) + 0.345).to_s)
+  end
+
+  def test_add_for_decimal_and_integer
+    assert_equal('12.345', (12.345 + 0).to_s)
+    assert_equal('42.345', (0.345 + 42).to_s)
+    assert_equal('12.345', (0 + 12.345).to_s)
+    assert_equal('42.345', (42 + 0.345).to_s)
+  end
+
   def test_sub
     c = Rational(1,2)
     c2 = Rational(2,3)
