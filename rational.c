@@ -27,6 +27,11 @@ static ID id_abs, id_cmp, id_convert, id_eqeq_p, id_expt, id_fdiv,
     id_floor, id_idiv, id_inspect, id_integer_p, id_negate, id_to_f,
     id_to_i, id_to_s, id_truncate;
 
+#define FL_SET_DECIMAL(rat) do { \
+    assert(!OBJ_FLOZEN(rat)); \
+    FL_SET((rat), RRATIONAL_DECIMAL_FLAG); \
+} while (0)
+
 #define f_boolcast(x) ((x) ? Qtrue : Qfalse)
 
 #define binop(n,op) \
@@ -745,21 +750,50 @@ nurat_sub(VALUE self, VALUE other)
       case T_FIXNUM:
       case T_BIGNUM:
 	{
+	    VALUE diff;
 	    get_dat1(self);
 
-	    return f_addsub(self,
+	    diff = f_addsub(self,
 			    dat->num, dat->den,
 			    other, ONE, '-');
+	    if (RRATIONAL_DECIMAL_P(self)) {
+		FL_SET_DECIMAL(diff);
+		RRATIONAL(diff)->den_exp = dat->den_exp;
+	    }
+
+	    RB_GC_GUARD(diff);
+	    return diff;
 	}
       case T_FLOAT:
 	return f_sub(f_to_f(self), other);
       case T_RATIONAL:
 	{
+	    VALUE diff;
 	    get_dat2(self, other);
 
-	    return f_addsub(self,
+	    diff = f_addsub(self,
 			    adat->num, adat->den,
 			    bdat->num, bdat->den, '-');
+	    if (RRATIONAL_DECIMAL_P(self) && RRATIONAL_DECIMAL_P(other)) {
+		FL_SET_DECIMAL(diff);
+		if (adat->den_exp < bdat->den_exp) {
+		    RRATIONAL(diff)->den_exp = bdat->den_exp;
+		}
+		else {
+		    RRATIONAL(diff)->den_exp = adat->den_exp;
+		}
+	    }
+	    else if (RTEST(f_one_p(adat->den)) && RRATIONAL_DECIMAL_P(other)) {
+		FL_SET_DECIMAL(diff);
+		RRATIONAL(diff)->den_exp = bdat->den_exp;
+	    }
+	    else if (RRATIONAL_DECIMAL_P(self) && RTEST(f_one_p(bdat->den))) {
+		FL_SET_DECIMAL(diff);
+		RRATIONAL(diff)->den_exp = adat->den_exp;
+	    }
+
+	    RB_GC_GUARD(diff);
+	    return diff;
 	}
       default:
 	return rb_num_coerce_bin(self, other, '-');
@@ -1546,6 +1580,60 @@ f_format(VALUE self, VALUE (*func)(VALUE))
     return s;
 }
 
+static VALUE
+make_denominator_from_exponent(long den_exp)
+{
+    VALUE den;
+    char* den_buf;
+
+    den_buf = ALLOC_N(char, den_exp + 2);
+    den_buf[0] = '1';
+    memset(den_buf + 1, '0', sizeof(char)*den_exp);
+    den_buf[den_exp + 1] = '\0';
+    den = rb_cstr_to_inum(den_buf, 10, FALSE);
+    xfree(den_buf);
+
+    return den;
+}
+
+static VALUE
+rb_decimal_rational_to_s(VALUE self)
+{
+    VALUE den, num, mult, s;
+    long len;
+    get_dat1(self);
+
+    assert(RRATIONAL_DECIMAL_P(self));
+
+    den = make_denominator_from_exponent(dat->den_exp);
+    mult = rb_funcall(den, id_idiv, 1, dat->den);
+    num = rb_funcall(mult, '*', 1, dat->num);
+
+    if (FIXNUM_P(num) && FIX2LONG(num) == 0) {
+	return rb_str_new2("0.0");
+    }
+
+    s = rb_funcall(num, id_to_s, 0);
+    len = RSTRING_LEN(s);
+    if (len <= dat->den_exp) {
+	rb_str_resize(s, dat->den_exp + 2);
+	MEMMOVE(RSTRING_PTR(s) + 2 + dat->den_exp - len,
+		RSTRING_PTR(s), char, len);
+	memset(RSTRING_PTR(s), '0', sizeof(char)*(2 + dat->den_exp - len));
+	RSTRING_PTR(s)[1] = '.';
+    }
+    else {
+	rb_str_resize(s, len + 1);
+	MEMMOVE(RSTRING_PTR(s) + (len + 1) - dat->den_exp,
+		RSTRING_PTR(s) + len       - dat->den_exp,
+		char, dat->den_exp);
+	RSTRING_PTR(s)[len - dat->den_exp] = '.';
+    }
+
+    RB_GC_GUARD(s);
+    return s;
+}
+
 /*
  * call-seq:
  *    rat.to_s  ->  string
@@ -1561,7 +1649,12 @@ f_format(VALUE self, VALUE (*func)(VALUE))
 static VALUE
 nurat_to_s(VALUE self)
 {
-    return f_format(self, f_to_s);
+    if (RRATIONAL_DECIMAL_P(self)) {
+	return rb_decimal_rational_to_s(self);
+    }
+    else {
+	return f_format(self, f_to_s);
+    }
 }
 
 /*
@@ -1580,6 +1673,10 @@ static VALUE
 nurat_inspect(VALUE self)
 {
     VALUE s;
+
+    if (RRATIONAL_DECIMAL_P(self)) {
+	return rb_decimal_rational_to_s(self);
+    }
 
     s = rb_usascii_str_new2("(");
     rb_str_concat(s, f_format(self, f_inspect));
@@ -1705,6 +1802,28 @@ rb_Rational(VALUE x, VALUE y)
     a[0] = x;
     a[1] = y;
     return nurat_s_convert(2, a, rb_cRational);
+}
+
+VALUE
+rb_decimal_rational_new(VALUE num, long den_exp)
+{
+    VALUE den, rat;
+
+    if (den_exp < 0) {
+	rb_bug("negative exponent of denominator");
+    }
+    else if (den_exp == 0) {
+	rat = rb_rational_new1(num);
+    }
+    else {
+	den = make_denominator_from_exponent(den_exp);
+	rat = rb_rational_new(num, den);
+    }
+
+    FL_SET_DECIMAL(rat);
+    RRATIONAL(rat)->den_exp = den_exp;
+
+    return rat;
 }
 
 #define id_numerator rb_intern("numerator")

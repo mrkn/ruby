@@ -135,12 +135,8 @@ class Rational_Test < Test::Unit::TestCase
     assert_raise(ArgumentError){Rational()}
     assert_raise(ArgumentError){Rational(1,2,3)}
 
-    if (0.0/0).nan?
-      assert_raise(FloatDomainError){Rational(0.0/0)}
-    end
-    if (1.0/0).infinite?
-      assert_raise(FloatDomainError){Rational(1.0/0)}
-    end
+    assert_raise(FloatDomainError){Rational(Float::NAN)}
+    assert_raise(FloatDomainError){Rational(Float::INFINITY)}
   end
 
   def test_attr
@@ -276,6 +272,29 @@ class Rational_Test < Test::Unit::TestCase
     assert_equal(-1.5, c - 2.0)
   end
 
+  def test_sub_for_decimal_and_decimal
+    assert_equal('2.009', (3.45 - 1.441).to_s)
+  end
+
+  def test_sub_for_decimal_and_nondecimal
+    assert_equal(2009.quo(1000).to_s, (3.45 - 1441.quo(1000)).to_s)
+    assert_equal(2009.quo(1000).to_s, (345.quo(100) - 1.441).to_s)
+  end
+
+  def test_sub_for_decimal_and_integral_rational
+    assert_equal('3.45', (3.45 - 0.quo(1)).to_s)
+    assert_equal('2.45', (3.45 - 1.quo(1)).to_s)
+    assert_equal('-3.45', (0.quo(1) - 3.45).to_s)
+    assert_equal('-2.45', (1.quo(1) - 3.45).to_s)
+  end
+
+  def test_sub_for_decimal_and_integer
+    assert_equal('3.45', (3.45 - 0).to_s)
+    assert_equal('2.45', (3.45 - 1).to_s)
+    assert_equal('-3.45', (0 - 3.45).to_s)
+    assert_equal('-2.45', (1 - 3.45).to_s)
+  end
+
   def test_mul
     c = Rational(1,2)
     c2 = Rational(2,3)
@@ -299,7 +318,7 @@ class Rational_Test < Test::Unit::TestCase
     assert_raise(ZeroDivisionError){Rational(1, 3) / Rational(0)}
 
     assert_equal(0, Rational(1, 3) / Float::INFINITY)
-    assert((Rational(1, 3) / 0.0).infinite?, '[ruby-core:31626]')
+    assert((Rational(1, 3) / 0.0e0).infinite?, '[ruby-core:31626]')
   end
 
   def assert_eql(exp, act, *args)
@@ -806,6 +825,15 @@ class Rational_Test < Test::Unit::TestCase
     assert_equal('1/2', Rational(-1,-2).to_s)
   end
 
+  def test_to_s_for_decimal
+    c = 3.141592
+    assert_instance_of(String, c.to_s)
+    assert_equal('3.141592', c.to_s)
+
+    assert_equal('0.0', 0.0.to_s)
+    assert_equal('-4.2', (-4.2).to_s)
+  end
+
   def test_inspect
     c = Rational(1,2)
 
@@ -990,7 +1018,7 @@ class Rational_Test < Test::Unit::TestCase
     c = 1.to_r
     assert_equal([1,1], [c.numerator, c.denominator])
 
-    c = 1.1.to_r
+    c = 1.1e0.to_r
     assert_equal([2476979795053773, 2251799813685248],
 		 [c.numerator, c.denominator])
 
@@ -1005,12 +1033,8 @@ class Rational_Test < Test::Unit::TestCase
       end
     end
 
-    if (0.0/0).nan?
-      assert_raise(FloatDomainError){(0.0/0).to_r}
-    end
-    if (1.0/0).infinite?
-      assert_raise(FloatDomainError){(1.0/0).to_r}
-    end
+    assert_raise(FloatDomainError){(Float::NAN).to_r}
+    assert_raise(FloatDomainError){(Float::INFINITY).to_r}
   end
 
   def test_rationalize
@@ -1060,12 +1084,8 @@ class Rational_Test < Test::Unit::TestCase
       end
     end
 
-    if (0.0/0).nan?
-      assert_raise(FloatDomainError){(0.0/0).rationalize}
-    end
-    if (1.0/0).infinite?
-      assert_raise(FloatDomainError){(1.0/0).rationalize}
-    end
+    assert_raise(FloatDomainError){(Float::NAN).rationalize}
+    assert_raise(FloatDomainError){(Float::INFINITY).rationalize}
   end
 
   def test_gcdlcm
@@ -1111,7 +1131,7 @@ class Rational_Test < Test::Unit::TestCase
     assert_equal(0.5, 1.0.quo(2))
     assert_equal(Rational(1,4), Rational(1,2).quo(2))
     assert_equal(0, Rational(1,2).quo(Float::INFINITY))
-    assert(Rational(1,2).quo(0.0).infinite?, '[ruby-core:31626]')
+    assert(Rational(1,2).quo(0.0e0).infinite?, '[ruby-core:31626]')
 
     assert_equal(0.5, 1.fdiv(2))
     assert_equal(5000000000.0, 10000000000.fdiv(2))

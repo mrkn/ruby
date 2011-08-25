@@ -7403,9 +7403,8 @@ parser_yylex(struct parser_params *parser)
 		}
 		else {
 		    char *ppoint = tok() + point_index;
-		    char *den_buf;
 		    int exponent;
-		    VALUE num, den;
+		    VALUE num, rat;
 
 		    exponent = toklen() - point_index - 1;
 		    MEMMOVE(ppoint, ppoint + 1, char, exponent);
@@ -7413,14 +7412,9 @@ parser_yylex(struct parser_params *parser)
 		    tokfix();
 		    num = rb_cstr_to_inum(tok(), 10, FALSE);
 
-		    den_buf = ALLOC_N(char, exponent + 2);
-		    den_buf[0] = '1';
-		    memset(den_buf + 1, '0', sizeof(char)*exponent);
-		    den_buf[exponent + 1] = '\0';
-		    den = rb_cstr_to_inum(den_buf, 10, FALSE);
-		    xfree(den_buf);
+		    rat = rb_decimal_rational_new(num, exponent);
 
-		    set_yylval_literal(rb_rational_new(num, den));
+		    set_yylval_literal(rat);
 		    return tRATIONAL;
 		}
 	    }

@@ -730,10 +730,13 @@ struct RFile {
     struct rb_io_t *fptr;
 };
 
+#define RRATIONAL_DECIMAL_FLAG FL_USER1
+#define RRATIONAL_DECIMAL_P(rat) (FL_TEST((rat), RRATIONAL_DECIMAL_FLAG)!=0)
 struct RRational {
     struct RBasic basic;
     VALUE num;
     VALUE den;
+    long den_exp;
 };
 
 struct RComplex {
