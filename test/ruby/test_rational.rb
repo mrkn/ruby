@@ -878,6 +878,8 @@ class Rational_Test < Test::Unit::TestCase
 
     assert_equal('0.0', 0.0.to_s)
     assert_equal('-4.2', (-4.2).to_s)
+
+    assert_equal('3.0', (0.375 * 8).to_s)
   end
 
   def test_inspect

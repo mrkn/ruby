@@ -1689,6 +1689,13 @@ rb_decimal_rational_to_s(VALUE self)
 	RSTRING_PTR(s)[len - dat->den_exp] = '.';
     }
 
+    len = RSTRING_LEN(s);
+    while (RSTRING_PTR(s)[len - 1] == '0' &&
+	   RSTRING_PTR(s)[len - 2] != '.') {
+	--len;
+    }
+    rb_str_resize(s, len);
+
     RB_GC_GUARD(s);
     return s;
 }
