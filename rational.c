@@ -714,6 +714,7 @@ nurat_add(VALUE self, VALUE other)
 	    sum = f_addsub(self,
 			   dat->num, dat->den,
 			   other, ONE, '+');
+
 	    if (RRATIONAL_DECIMAL_P(self)) {
 		FL_SET_DECIMAL(sum);
 		RRATIONAL(sum)->den_exp = dat->den_exp;
@@ -732,6 +733,7 @@ nurat_add(VALUE self, VALUE other)
 	    sum = f_addsub(self,
 			   adat->num, adat->den,
 			   bdat->num, bdat->den, '+');
+
 	    if (RRATIONAL_DECIMAL_P(self) && RRATIONAL_DECIMAL_P(other)) {
 		FL_SET_DECIMAL(sum);
 		if (adat->den_exp < bdat->den_exp) {
@@ -785,6 +787,7 @@ nurat_sub(VALUE self, VALUE other)
 	    diff = f_addsub(self,
 			    dat->num, dat->den,
 			    other, ONE, '-');
+
 	    if (RRATIONAL_DECIMAL_P(self)) {
 		FL_SET_DECIMAL(diff);
 		RRATIONAL(diff)->den_exp = dat->den_exp;
@@ -803,6 +806,7 @@ nurat_sub(VALUE self, VALUE other)
 	    diff = f_addsub(self,
 			    adat->num, adat->den,
 			    bdat->num, bdat->den, '-');
+
 	    if (RRATIONAL_DECIMAL_P(self) && RRATIONAL_DECIMAL_P(other)) {
 		FL_SET_DECIMAL(diff);
 		if (adat->den_exp < bdat->den_exp) {
@@ -889,21 +893,47 @@ nurat_mul(VALUE self, VALUE other)
       case T_FIXNUM:
       case T_BIGNUM:
 	{
+	    VALUE prod;
 	    get_dat1(self);
 
-	    return f_muldiv(self,
+	    prod = f_muldiv(self,
 			    dat->num, dat->den,
 			    other, ONE, '*');
+
+	    if (RRATIONAL_DECIMAL_P(self)) {
+		FL_SET_DECIMAL(prod);
+		RRATIONAL(prod)->den_exp = dat->den_exp;
+	    }
+
+	    RB_GC_GUARD(prod);
+	    return prod;
 	}
       case T_FLOAT:
 	return f_mul(f_to_f(self), other);
       case T_RATIONAL:
 	{
+	    VALUE prod;
 	    get_dat2(self, other);
 
-	    return f_muldiv(self,
+	    prod = f_muldiv(self,
 			    adat->num, adat->den,
 			    bdat->num, bdat->den, '*');
+
+	    if (RRATIONAL_DECIMAL_P(self) && RRATIONAL_DECIMAL_P(other)) {
+		FL_SET_DECIMAL(prod);
+		RRATIONAL(prod)->den_exp = adat->den_exp + bdat->den_exp;
+	    }
+	    else if (RTEST(f_one_p(adat->den)) && RRATIONAL_DECIMAL_P(other)) {
+		FL_SET_DECIMAL(prod);
+		RRATIONAL(prod)->den_exp = bdat->den_exp;
+	    }
+	    else if (RRATIONAL_DECIMAL_P(self) && RTEST(f_one_p(bdat->den))) {
+		FL_SET_DECIMAL(prod);
+		RRATIONAL(prod)->den_exp = adat->den_exp;
+	    }
+
+	    RB_GC_GUARD(prod);
+	    return prod;
 	}
       default:
 	return rb_num_coerce_bin(self, other, '*');

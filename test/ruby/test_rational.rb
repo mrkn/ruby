@@ -328,6 +328,29 @@ class Rational_Test < Test::Unit::TestCase
     assert_equal(1.0, c * 2.0)
   end
 
+  def test_mul_for_decimal_and_decimal
+    assert_equal('0.02468', (12.34 * 0.002).to_s)
+  end
+
+  def test_mul_for_decimal_and_nondecimal
+    assert_equal(2468.quo(100000).to_s, (12.34 * 2.quo(1000)).to_s)
+    assert_equal(2468.quo(100000).to_s, (2.quo(1000) * 12.34).to_s)
+  end
+
+  def test_mul_for_decimal_and_integral_rational
+    assert_equal('0.0', (12.34 * 0.quo(1)).to_s)
+    assert_equal('24.68', (12.34 * 2.quo(1)).to_s)
+    assert_equal('0.0', (0.quo(1) * 12.34).to_s)
+    assert_equal('24.68', (2.quo(1) * 12.34).to_s)
+  end
+
+  def test_mul_for_decimal_and_integer
+    assert_equal('0.0', (12.34 * 0).to_s)
+    assert_equal('24.68', (12.34 * 2).to_s)
+    assert_equal('0.0', (0 * 12.34).to_s)
+    assert_equal('24.68', (2 * 12.34).to_s)
+  end
+
   def test_div
     c = Rational(1,2)
     c2 = Rational(2,3)
