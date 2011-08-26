@@ -1,4 +1,5 @@
 require 'test/unit'
+require_relative 'envutil'
 
 class TestRubyLiteral < Test::Unit::TestCase
 
@@ -307,4 +308,41 @@ class TestRubyLiteral < Test::Unit::TestCase
     }
   end
 
+  def test_rational_decimal_warning_on_division
+    line = __LINE__ + 2
+    stderr = EnvUtil.verbose_warning do
+      eval("0.0 / 0.0")
+    end
+    assert_match(/:#{line}: warning: use Float::NAN for generating NaN/, stderr)
+
+    line = __LINE__ + 2
+    stderr = EnvUtil.verbose_warning do
+      eval("0 / 0.0")
+    end
+    assert_match(/:#{line}: warning: use Float::NAN for generating NaN/, stderr)
+
+    line = __LINE__ + 2
+    stderr = EnvUtil.verbose_warning do
+      eval("0.0 / 0")
+    end
+    assert_match(/:#{line}: warning: use Float::NAN for generating NaN/, stderr)
+
+    line = __LINE__ + 2
+    stderr = EnvUtil.verbose_warning do
+      eval("1.0 / 0.0")
+    end
+    assert_match(/:#{line}: warning: use Float::INFINITY for generating Infinity/, stderr)
+
+    line = __LINE__ + 2
+    stderr = EnvUtil.verbose_warning do
+      eval("1 / 0.0")
+    end
+    assert_match(/:#{line}: warning: use Float::INFINITY for generating Infinity/, stderr)
+
+    line = __LINE__ + 2
+    stderr = EnvUtil.verbose_warning do
+      eval("1.0 / 0")
+    end
+    assert_match(/:#{line}: warning: use Float::INFINITY for generating Infinity/, stderr)
+  end
 end

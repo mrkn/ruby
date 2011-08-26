@@ -8237,6 +8237,34 @@ call_bin_op_gen(struct parser_params *parser, NODE *recv, ID id, NODE *arg1)
 {
     value_expr(recv);
     value_expr(arg1);
+
+    if (id == '/' && nd_type(recv) == NODE_LIT && nd_type(arg1) == NODE_LIT) {
+	VALUE x = recv->nd_lit;
+	VALUE y = arg1->nd_lit;
+
+#define OBJ_IS_DECIMAL_RATIONAL_P(obj) \
+    (TYPE(obj) == T_RATIONAL && RRATIONAL_DECIMAL_P(obj))
+
+	if (TYPE(x) != T_FLOAT && TYPE(y) != T_FLOAT &&
+	    (OBJ_IS_DECIMAL_RATIONAL_P(x) || OBJ_IS_DECIMAL_RATIONAL_P(y))) {
+	    if (rb_equal(y, INT2FIX(0))) {
+		if (rb_equal(x, INT2FIX(0))) {
+		    rb_warning("use Float::NAN for generating NaN");
+		    return NEW_LIT(DBL2NUM(NAN));
+		}
+		else {
+		    rb_warning("use Float::INFINITY for generating Infinity");
+		    return NEW_LIT(DBL2NUM(INFINITY));
+		}
+	    }
+	}
+
+#undef OBJ_IS_DECIMAL_RATIONAL_P
+
+	RB_GC_GUARD(x);
+	RB_GC_GUARD(y);
+    }
+
     return NEW_CALL(recv, id, NEW_LIST(arg1));
 }
 
