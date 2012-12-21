@@ -3165,15 +3165,19 @@ fix_rev(VALUE num)
     return ~num | FIXNUM_FLAG;
 }
 
-static VALUE
-bit_coerce(VALUE x)
+static int
+bit_coerce(VALUE *x, VALUE *y, int err)
 {
-    while (!FIXNUM_P(x) && !RB_TYPE_P(x, T_BIGNUM)) {
-	rb_raise(rb_eTypeError,
-		 "can't convert %s into Integer for bitwise arithmetic",
-		 rb_obj_classname(x));
+    if (!FIXNUM_P(y) && !RB_TYPE_P(y, T_BIGNUM)) {
+	do_coerce(&x, &y, err);
+	if (!FIXNUM_P(x) && !RB_TYPE_P(x, T_BIGNUM)
+	    && !FIXNUM_P(y) && !RB_TYPE_P(y, T_BIGNUM)) {
+	    rb_raise(rb_eTypeError,
+		     "can't convert %s into Integer for bitwise arithmetic",
+		     rb_obj_classname(y));
+	}
     }
-    return x;
+    return TRUE;
 }
 
 /*
@@ -3188,7 +3192,11 @@ fix_and(VALUE x, VALUE y)
 {
     long val;
 
-    if (!FIXNUM_P(y = bit_coerce(y))) {
+    bit_coerce(&x, &y, TRUE);
+    if (!FIXNUM_P(x)) {
+	return rb_big_and(x, y);
+    }
+    if (!FIXNUM_P(y)) {
 	return rb_big_and(y, x);
     }
     val = FIX2LONG(x) & FIX2LONG(y);
@@ -3207,7 +3215,11 @@ fix_or(VALUE x, VALUE y)
 {
     long val;
 
-    if (!FIXNUM_P(y = bit_coerce(y))) {
+    bit_coerce(&x, &y, TRUE);
+    if (!FIXNUM_P(x)) {
+	return rb_big_or(x, y);
+    }
+    if (!FIXNUM_P(y)) {
 	return rb_big_or(y, x);
     }
     val = FIX2LONG(x) | FIX2LONG(y);
@@ -3226,7 +3238,11 @@ fix_xor(VALUE x, VALUE y)
 {
     long val;
 
-    if (!FIXNUM_P(y = bit_coerce(y))) {
+    bit_coerce(&x, &y, TRUE);
+    if (!FIXNUM_P(x)) {
+	return rb_big_xor(x, y);
+    }
+    if (!FIXNUM_P(y)) {
 	return rb_big_xor(y, x);
     }
     val = FIX2LONG(x) ^ FIX2LONG(y);
