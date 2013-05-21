@@ -752,7 +752,7 @@ static void token_info_pop(struct parser_params*, const char *token);
 	keyword__ENCODING__
 
 %token <id>   tIDENTIFIER tFID tGVAR tIVAR tCONSTANT tCVAR tLABEL
-%token <node> tINTEGER tFLOAT tSTRING_CONTENT tCHAR
+%token <node> tINTEGER tFLOAT tRATIONAL tSTRING_CONTENT tCHAR
 %token <node> tNTH_REF tBACK_REF
 %token <num>  tREGEXP_END
 
@@ -2118,6 +2118,15 @@ arg		: lhs '=' arg
 		    %*/
 		    }
 		| tUMINUS_NUM tFLOAT tPOW arg
+		    {
+		    /*%%%*/
+			$$ = NEW_CALL(call_bin_op($2, tPOW, $4), tUMINUS, 0);
+		    /*%
+			$$ = dispatch3(binary, $2, ripper_intern("**"), $4);
+			$$ = dispatch2(unary, ripper_intern("-@"), $$);
+		    %*/
+		    }
+		| tUMINUS_NUM tRATIONAL tPOW arg
 		    {
 		    /*%%%*/
 			$$ = NEW_CALL(call_bin_op($2, tPOW, $4), tUMINUS, 0);
@@ -4292,6 +4301,7 @@ dsym		: tSYMBEG xstring_contents tSTRING_END
 
 numeric 	: tINTEGER
 		| tFLOAT
+		| tRATIONAL
 		| tUMINUS_NUM tINTEGER	       %prec tLOWEST
 		    {
 		    /*%%%*/
@@ -4301,6 +4311,14 @@ numeric 	: tINTEGER
 		    %*/
 		    }
 		| tUMINUS_NUM tFLOAT	       %prec tLOWEST
+		    {
+		    /*%%%*/
+			$$ = negate_lit($2);
+		    /*%
+			$$ = dispatch2(unary, ripper_intern("-@"), $2);
+		    %*/
+		    }
+		| tUMINUS_NUM tRATIONAL        %prec tLOWEST
 		    {
 		    /*%%%*/
 			$$ = negate_lit($2);
@@ -7370,9 +7388,9 @@ parser_yylex(struct parser_params *parser)
       case '0': case '1': case '2': case '3': case '4':
       case '5': case '6': case '7': case '8': case '9':
 	{
-	    int is_float, seen_point, seen_e, nondigit;
+	    int is_float, is_rational, seen_div, seen_point, seen_e, nondigit, den_pos;
 
-	    is_float = seen_point = seen_e = nondigit = 0;
+	    is_float = is_rational = seen_div = seen_point = seen_e = nondigit = den_pos = 0;
 	    lex_state = EXPR_END;
 	    newtok();
 	    if (c == '-' || c == '+') {
@@ -7496,7 +7514,7 @@ parser_yylex(struct parser_params *parser)
 		  invalid_octal:
 		    yyerror("Invalid octal digit");
 		}
-		else if (c == '.' || c == 'e' || c == 'E') {
+		else if (c == '.' || c == 'e' || c == 'E' || c == '/') {
 		    tokadd('0');
 		}
 		else {
@@ -7516,7 +7534,7 @@ parser_yylex(struct parser_params *parser)
 
 		  case '.':
 		    if (nondigit) goto trailing_uc;
-		    if (seen_point || seen_e) {
+		    if (seen_div || seen_point || seen_e) {
 			goto decode_num;
 		    }
 		    else {
@@ -7541,7 +7559,7 @@ parser_yylex(struct parser_params *parser)
 			c = nondigit;
 			goto decode_num;
 		    }
-		    if (seen_e) {
+		    if (seen_div || seen_e) {
 			goto decode_num;
 		    }
 		    tokadd(c);
@@ -7552,6 +7570,27 @@ parser_yylex(struct parser_params *parser)
 		    if (c != '-' && c != '+') continue;
 		    tokadd(c);
 		    nondigit = c;
+		    break;
+
+		  case '/':
+		    if (nondigit) goto trailing_uc;
+		    if (seen_div || seen_point || seen_e) {
+			goto decode_num;
+		    }
+		    else {
+			int c0 = nextc();
+			if (c0 == -1 || c0 != '/') {
+			    pushback(c0);
+			    goto decode_num;
+			}
+			c = c0;
+		    }
+		    tokadd('/');
+		    tokadd(c);
+		    is_rational++;
+		    seen_div++;
+		    den_pos = toklen();
+		    nondigit = 0;
 		    break;
 
 		  case '_':	/* `_' in number just ignored */
@@ -7582,6 +7621,23 @@ parser_yylex(struct parser_params *parser)
 		}
                 set_yylval_literal(DBL2NUM(d));
 		return tFLOAT;
+	    }
+	    if (is_rational) {
+	        VALUE num, den;
+		if (den_pos == toklen()) {
+		    yyerror("denominator is missing");
+		    return 0;
+		}
+		tok()[den_pos - 2] = '\0';
+		num = rb_cstr_to_inum(tok(), 10, FALSE);
+		den = rb_cstr_to_inum(tok() + den_pos, 10, FALSE);
+		tok()[den_pos - 2] = '/';
+		if (FIXNUM_P(den) && den == INT2FIX(0)) {
+		    yyerror("divide by 0");
+		    return 0;
+		}
+		set_yylval_literal(rb_rational_new(num, den));
+		return tRATIONAL;
 	    }
 	    set_yylval_literal(rb_cstr_to_inum(tok(), 10, FALSE));
 	    return tINTEGER;
@@ -9297,6 +9353,7 @@ negate_lit(NODE *node)
 	node->nd_lit = LONG2FIX(-FIX2LONG(node->nd_lit));
 	break;
       case T_BIGNUM:
+      case T_RATIONAL:
 	node->nd_lit = rb_funcall(node->nd_lit,tUMINUS,0,0);
 	break;
       case T_FLOAT:
