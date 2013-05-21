@@ -28,6 +28,12 @@ assert_equal '123456789012345678901234567890', '123456789012345678901234567890'
 assert_equal 'Bignum',          '123456789012345678901234567890.class'
 assert_equal '2.0',             '2.0'
 assert_equal 'Float',           '1.3.class'
+assert_equal 'Rational',        '(0 // 1).class'
+assert_equal 'Rational',        '(1 // 1).class'
+assert_equal 'Rational',        '(0 // 2).class'
+assert_equal 'Rational',        '(1 // 2).class'
+assert_equal 'Rational',        '(2 // 2).class'
+assert_equal 'divide by 0',     %q{begin eval('0 // 0', nil, '', 0); rescue SyntaxError => e; e.message[/\A:(?:\d+:)? (.*)/, 1] end}
 
 # self
 assert_equal 'main',            'self'

@@ -759,7 +759,7 @@ static void token_info_pop(struct parser_params*, const char *token);
 %type <node> singleton strings string string1 xstring regexp
 %type <node> string_contents xstring_contents regexp_contents string_content
 %type <node> words symbols symbol_list qwords qsymbols word_list qword_list qsym_list word
-%type <node> literal numeric dsym cpath
+%type <node> literal numeric rational dsym cpath
 %type <node> top_compstmt top_stmts top_stmt
 %type <node> bodystmt compstmt stmts stmt_or_begin stmt expr arg primary command command_call method_call
 %type <node> expr_value arg_value primary_value fcall
@@ -788,6 +788,7 @@ static void token_info_pop(struct parser_params*, const char *token);
 %token tUPLUS		RUBY_TOKEN(UPLUS)  "unary+"
 %token tUMINUS		RUBY_TOKEN(UMINUS) "unary-"
 %token tPOW		RUBY_TOKEN(POW)    "**"
+%token tDIV2		RUBY_TOKEN(DIV2)   "//"
 %token tCMP		RUBY_TOKEN(CMP)    "<=>"
 %token tEQ		RUBY_TOKEN(EQ)     "=="
 %token tEQQ		RUBY_TOKEN(EQQ)    "==="
@@ -4292,6 +4293,7 @@ dsym		: tSYMBEG xstring_contents tSTRING_END
 
 numeric 	: tINTEGER
 		| tFLOAT
+		| rational
 		| tUMINUS_NUM tINTEGER	       %prec tLOWEST
 		    {
 		    /*%%%*/
@@ -4306,6 +4308,30 @@ numeric 	: tINTEGER
 			$$ = negate_lit($2);
 		    /*%
 			$$ = dispatch2(unary, ripper_intern("-@"), $2);
+		    %*/
+		    }
+		| tUMINUS_NUM rational	       %prec tLOWEST
+		    {
+		    /*%%%*/
+			$$ = negate_lit($2);
+		    /*%
+			$$ = dispatch2(unary, ripper_intern("-@"), $2);
+		    %*/
+		    }
+		;
+
+rational	: tINTEGER tDIV2 tINTEGER
+		    {
+		    /*%%%*/
+			if (FIXNUM_P($<node>3->nd_lit) && $<node>3->nd_lit == INT2FIX(0)) {
+			    yyerror("divide by 0");
+			    $$ = 0;
+			}
+			else {
+			    $$->nd_lit = rb_rational_new($<node>1->nd_lit, $<node>3->nd_lit);
+			}
+		    /*%
+			$$ = rb_rational_new($1, $3);
 		    %*/
 		    }
 		;
@@ -7642,6 +7668,9 @@ parser_yylex(struct parser_params *parser)
 	    lex_state = EXPR_BEG;
 	    return tOP_ASGN;
 	}
+	if (c == '/') {
+	    return tDIV2;
+	}
 	pushback(c);
 	if (IS_SPCARG(c)) {
 	    (void)arg_ambiguous();
@@ -9297,6 +9326,7 @@ negate_lit(NODE *node)
 	node->nd_lit = LONG2FIX(-FIX2LONG(node->nd_lit));
 	break;
       case T_BIGNUM:
+      case T_RATIONAL:
 	node->nd_lit = rb_funcall(node->nd_lit,tUMINUS,0,0);
 	break;
       case T_FLOAT:

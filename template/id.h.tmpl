@@ -16,7 +16,7 @@ require 'optparse'
 op_id_offset = 128
 
 token_op_ids = %w[
-  tDOT2 tDOT3 tUPLUS tUMINUS tPOW tDSTAR tCMP tLSHFT tRSHFT
+  tDOT2 tDOT3 tUPLUS tUMINUS tPOW tDIV2 tDSTAR tCMP tLSHFT tRSHFT
   tLEQ tGEQ tEQ tEQQ tNEQ tMATCH tNMATCH tAREF tASET
   tCOLON2 tCOLON3
 ]
@@ -55,6 +55,7 @@ enum ruby_method_ids {
     idUPlus = RUBY_TOKEN(UPLUS),
     idUMinus = RUBY_TOKEN(UMINUS),
     idPow = RUBY_TOKEN(POW),
+    idDiv2 = RUBY_TOKEN(DIV2),
     idCmp = RUBY_TOKEN(CMP),
     idPLUS = '+',
     idMINUS = '-',
