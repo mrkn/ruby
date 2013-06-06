@@ -1,6 +1,9 @@
 require 'test/unit'
 
 class TestInteger < Test::Unit::TestCase
+  class DummyInteger < Integer
+  end
+
   BDSIZE = 0x4000000000000000.coerce(0)[0].size
   def self.bdsize(x)
     ((x + 1) / 8 + BDSIZE) / BDSIZE * BDSIZE
@@ -23,6 +26,20 @@ class TestInteger < Test::Unit::TestCase
                         rescue
                           nil
                         end, "[ruby-dev:32084] [ruby-dev:34547]")
+  end
+
+  def test_quo
+    x = DummyInteger.new
+    DummyInteger.class_eval do
+      remove_method :/
+      def to_r; self; end
+      def /(y); :ahi; end
+    end
+    assert_equal(:ahi, x.quo(42))
+  ensure
+    #DummyInteger.class_eval do
+    #  remove_method :to_r
+    #end
   end
 
   def test_lshift
