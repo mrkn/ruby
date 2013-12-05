@@ -797,7 +797,11 @@ BigDecimal_coerce(VALUE self, VALUE other)
     Real *b;
 
     if (RB_TYPE_P(other, T_FLOAT)) {
+	GUARD_OBJ(b, GetVpValueWithPrec(other, FLT_DIG+1, 1));
+	obj = rb_assoc_new(ToValue(b), self);
+#if 0
 	obj = rb_assoc_new(other, BigDecimal_to_f(self));
+#endif
     }
     else {
 	if (RB_TYPE_P(other, T_RATIONAL)) {
