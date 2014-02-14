@@ -115,6 +115,7 @@ VALUE rb_big_unpack(unsigned long *buf, long num_longs);
 int rb_uv_to_utf8(char[6],unsigned long);
 VALUE rb_dbl2big(double);
 double rb_big2dbl(VALUE);
+VALUE rb_big_neg(VALUE);
 VALUE rb_big_cmp(VALUE, VALUE);
 VALUE rb_big_eq(VALUE, VALUE);
 VALUE rb_big_eql(VALUE, VALUE);

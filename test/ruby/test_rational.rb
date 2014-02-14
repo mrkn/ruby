@@ -803,7 +803,26 @@ class Rational_Test < Test::Unit::TestCase
     assert_equal('-1/2', Rational(-1,2).to_s)
     assert_equal('1/2', Rational(-1,-2).to_s)
     assert_equal('-1/2', Rational(1,-2).to_s)
-    assert_equal('1/2', Rational(-1,-2).to_s)
+
+    assert_equal('1/2', Rational(-1,-2).to_s(:rational))
+
+    assert_equal('0.5', Rational(1,2).to_s(:decimal))
+    assert_equal('-0.5', Rational(-1,2).to_s(:decimal))
+    assert_equal('-0.5', Rational(1,-2).to_s(:decimal))
+    assert_equal('0.5', Rational(-1,-2).to_s(:decimal))
+
+    pi30  = Rational(3141592653589793238462643383279502884197,
+                     1000000000000000000000000000000000000000)
+    pi30s = '3.141592653589793238462643383279502884197'
+    assert_equal(pi30s, pi30.to_s(:decimal))
+
+    r = Rational(1371742101508805200123450343, 11111111111111111111000000)
+    s = '123.456789(13579246801234509876)'
+    assert_equal(s, r.to_s(:decimal))
+
+    assert_raise(TypeError) { Rational(1, 2).to_s(1) }
+    assert_raise(ArgumentError) { Rational(1, 2).to_s(:foobar) }
+    assert_raise(ArgumentError) { Rational(1, 2).to_s(:decimal, :rational) }
   end
 
   def test_inspect

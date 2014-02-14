@@ -5488,7 +5488,7 @@ rb_big_uminus(VALUE x)
  *   sprintf("%X", ~0x1122334455)    #=> "..FEEDDCCBBAA"
  */
 
-static VALUE
+VALUE
 rb_big_neg(VALUE x)
 {
     VALUE z = rb_big_clone(x);

@@ -31,8 +31,8 @@
 VALUE rb_cRational;
 
 static ID id_abs, id_cmp, id_convert, id_eqeq_p, id_expt, id_fdiv,
-    id_floor, id_idiv, id_integer_p, id_negate, id_to_f,
-    id_to_i, id_truncate, id_i_num, id_i_den;
+    id_floor, id_idiv, id_integer_p, id_negate, id_to_f, id_to_i,
+    id_truncate, id_i_num, id_i_den, id_divmod, id_rational, id_decimal;
 
 #define f_boolcast(x) ((x) ? Qtrue : Qfalse)
 #define f_inspect rb_inspect
@@ -1633,6 +1633,113 @@ f_format(VALUE self, VALUE (*func)(VALUE))
     return s;
 }
 
+static inline VALUE
+num_n_times(VALUE num, int n)
+{
+    assert(RB_TYPE_P(num, T_FIXNUM) || RB_TYPE_P(num, T_BIGNUM));
+
+    switch (TYPE(num)) {
+    case T_FIXNUM:
+	return LONG2NUM(n*FIX2LONG(num));
+
+    case T_BIGNUM:
+	return rb_big_mul(num, INT2FIX(n));
+
+    default:
+	break;
+    }
+
+    UNREACHABLE;
+}
+
+static VALUE
+nurat_to_decimal_str(VALUE self)
+{
+    long n, negative, j, k;
+    VALUE num, den, qr, q, r, rr, s;
+
+    get_dat1(self);
+    num = dat->num;
+    den = dat->den;
+
+    switch (TYPE(num)) {
+    case T_FIXNUM:
+	n = FIX2LONG(num);
+	negative = n < 0;
+	if (negative) {
+	    num = LONG2FIX(-n);
+	}
+	break;
+
+    case T_BIGNUM:
+	negative = RBIGNUM_NEGATIVE_P(num);
+	if (negative) {
+	    num = rb_big_neg(num);
+	}
+	break;
+    }
+
+    qr = rb_funcallv(num, id_divmod, 1, &den);
+    q = RARRAY_AREF(qr, 0);
+    r = RARRAY_AREF(qr, 1);
+
+    s = rb_obj_as_string(q);
+    if (negative) {
+	s = rb_str_concat(rb_str_new2("-"), s);
+    }
+
+    if (f_zero_p(r)) return s;
+
+    rb_str_cat2(s, ".");
+
+    j = k = RSTRING_LEN(s) - 1;
+    rr = r;
+    while (!f_zero_p(r)) {
+	char digs[2];
+	long n;
+
+	r = num_n_times(r, 100);
+	qr = rb_funcallv(r, id_divmod, 1, &dat->den);
+	q = RARRAY_AREF(qr, 0);
+	r = RARRAY_AREF(qr, 1);
+
+	n = FIX2LONG(q);
+	digs[0] = '0' + (n/10);
+	digs[1] = '0' + (n%10);
+	rb_str_cat(s, digs, 2);
+
+	if (f_zero_p(r)) {
+	    if (RSTRING_PTR(s)[RSTRING_LEN(s) - 1] == '0') {
+		rb_str_set_len(s, RSTRING_LEN(s) - 1);
+	    }
+	    break;
+	}
+
+	rr = num_n_times(rr, 10);
+	qr = rb_funcallv(rr, id_divmod, 1, &dat->den);
+	rr = RARRAY_AREF(qr, 1);
+
+	k += 2;
+	++j;
+
+	if (f_eqeq_p(r, rr)) {
+	    int i;
+
+	    while (RSTRING_PTR(s)[j - 1] == RSTRING_PTR(s)[k - 1]) {
+		--j;
+		--k;
+	    }
+	    rb_str_set_len(s, k + 2);
+	    MEMMOVE(RSTRING_PTR(s) + j + 1, RSTRING_PTR(s) + j, char, k - j);
+	    RSTRING_PTR(s)[j] = '(';
+	    RSTRING_PTR(s)[k + 1] = ')';
+	    break;
+	}
+    }
+
+    return s;
+}
+
 /*
  * call-seq:
  *    rat.to_s  ->  string
@@ -1644,9 +1751,27 @@ f_format(VALUE self, VALUE (*func)(VALUE))
  *    Rational('1/2').to_s  #=> "1/2"
  */
 static VALUE
-nurat_to_s(VALUE self)
+nurat_to_s(int argc, VALUE* argv, VALUE self)
 {
-    return f_format(self, f_to_s);
+    ID mode = id_rational;
+
+    rb_check_arity(argc, 0, 1);
+
+    if (argc == 1) {
+	Check_Type(argv[0], T_SYMBOL);
+	mode = SYM2ID(argv[0]);
+    }
+
+    if (mode == id_rational) {
+	return f_format(self, f_to_s);
+    }
+
+    if (mode == id_decimal) {
+	return nurat_to_decimal_str(self);
+    }
+
+    rb_raise(rb_eArgError, "invalid argument");
+    UNREACHABLE;
 }
 
 /*
@@ -2537,6 +2662,9 @@ Init_Rational(void)
     id_to_f = rb_intern("to_f");
     id_to_i = rb_intern("to_i");
     id_truncate = rb_intern("truncate");
+    id_divmod = rb_intern("divmod");
+    id_rational = rb_intern("rational");
+    id_decimal = rb_intern("decimal");
     id_i_num = rb_intern("@numerator");
     id_i_den = rb_intern("@denominator");
 
@@ -2595,7 +2723,7 @@ Init_Rational(void)
 
     rb_define_method(rb_cRational, "hash", nurat_hash, 0);
 
-    rb_define_method(rb_cRational, "to_s", nurat_to_s, 0);
+    rb_define_method(rb_cRational, "to_s", nurat_to_s, -1);
     rb_define_method(rb_cRational, "inspect", nurat_inspect, 0);
 
     rb_define_private_method(rb_cRational, "marshal_dump", nurat_marshal_dump, 0);
