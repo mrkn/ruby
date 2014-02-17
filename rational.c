@@ -1639,13 +1639,13 @@ num_n_times(VALUE num, int n)
     assert(RB_TYPE_P(num, T_FIXNUM) || RB_TYPE_P(num, T_BIGNUM));
 
     switch (TYPE(num)) {
-    case T_FIXNUM:
+      case T_FIXNUM:
 	return LONG2NUM(n*FIX2LONG(num));
 
-    case T_BIGNUM:
+      case T_BIGNUM:
 	return rb_big_mul(num, INT2FIX(n));
 
-    default:
+      default:
 	break;
     }
 
@@ -1663,7 +1663,7 @@ nurat_to_decimal_str(VALUE self)
     den = dat->den;
 
     switch (TYPE(num)) {
-    case T_FIXNUM:
+      case T_FIXNUM:
 	n = FIX2LONG(num);
 	negative = n < 0;
 	if (negative) {
@@ -1671,7 +1671,7 @@ nurat_to_decimal_str(VALUE self)
 	}
 	break;
 
-    case T_BIGNUM:
+      case T_BIGNUM:
 	negative = RBIGNUM_NEGATIVE_P(num);
 	if (negative) {
 	    num = rb_big_neg(num);
