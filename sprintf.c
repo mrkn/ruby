@@ -1069,7 +1069,7 @@ rb_str_format(int argc, const VALUE *argv, VALUE fmt)
     rb_str_resize(result, blen);
 
     if (tainted) OBJ_TAINT(result);
-    return result;
+    return rb_str_check_conditions(result);
 }
 
 static void

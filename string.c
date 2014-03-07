@@ -123,6 +123,76 @@ VALUE rb_cSymbol;
 
 #define STR_ENC_GET(str) get_encoding(str)
 
+#define str_check_conditions(s) rb_str_check_conditions(s)
+VALUE
+rb_str_check_conditions(VALUE str)
+{
+    /*
+     *  RString
+     *
+     *  |-----------------------------------------------|
+     *  | basic.flags                                   |
+     *  |-----------------------------------------------|
+     *  | basic.klass                                   |
+     *  |---------------------------------|-------------|
+     *  | heap.len                        | ary[0..7]   |
+     *  |---------------------------------|-------------|
+     *  | heap.ptr                        | ary[8..15]  |
+     *  |---------------|-----------------|-------------|
+     *  | heap.aux.capa | heap.aux.shared | ary[16..23] |
+     *  |---------------|-----------------|-------------|
+     */
+
+    if (!RB_TYPE_P(str, T_STRING)) return str;
+
+    if (FL_TEST(str, STR_NOEMBED)) {
+	if (RSTRING_EMBED_LEN(str) != 0) {
+	    rb_bug("str_check_conditions: str is noembed but has non-zero embed length");
+	}
+
+	if (FL_TEST(str, ELTS_SHARED)) {
+	    /* shared string */
+	    VALUE shared = RSTRING(str)->as.heap.aux.shared;
+	    if (shared == NULL) {
+		rb_bug("str_check_conditions: str has shared string but it is NULL");
+	    }
+	    if (!OBJ_FROZEN(shared)) {
+		rb_bug("str_check_conditions: str has shared string but it is not frozen");
+	    }
+	}
+	else if (FL_TEST(str, STR_ASSOC)) {
+	    /* associated string */
+	    VALUE associated = RSTRING(str)->as.heap.aux.shared;
+	    if (associated == NULL) {
+		rb_bug("str_check_conditions: str has associated array but it is NULL");
+	    }
+	    if (RBASIC_CLASS(associated) != NULL) {
+		rb_bug("str_check_conditions: the associated array of str has non-null klass value");
+	    }
+	    if (!RB_TYPE_P(associated, T_ARRAY)) {
+		rb_bug("str_check_conditions: the associated array of str is not T_ARRAY");
+	    }
+	}
+	else {
+	    /* noembed string */
+	    if (RSTRING_PTR(str) == NULL) {
+		rb_bug("str_check_conditions: the ptr of str is NULL");
+	    }
+	}
+    }
+    else {
+	/* embed string */
+	if (FL_TEST(str, ELTS_SHARED)) {
+	    rb_bug("str_check_conditions: ELTS_SHARED is set for embed str");
+	}
+	if (FL_TEST(str, STR_ASSOC)) {
+	    rb_bug("str_check_conditions: STR_ASSOC is set for embed str");
+	}
+    }
+
+    return str;
+}
+
 rb_encoding *rb_enc_get_from_index(int index);
 
 static rb_encoding *
@@ -521,7 +591,7 @@ str_new0(VALUE klass, const char *ptr, long len, int termlen)
     }
     STR_SET_LEN(str, len);
     TERM_FILL(RSTRING_PTR(str) + len, termlen);
-    return str;
+    return str_check_conditions(str);
 }
 
 static VALUE
@@ -541,7 +611,7 @@ rb_usascii_str_new(const char *ptr, long len)
 {
     VALUE str = rb_str_new(ptr, len);
     ENCODING_CODERANGE_SET(str, rb_usascii_encindex(), ENC_CODERANGE_7BIT);
-    return str;
+    return str_check_conditions(str);
 }
 
 VALUE
@@ -553,7 +623,7 @@ rb_enc_str_new(const char *ptr, long len, rb_encoding *enc)
 
     str = str_new0(rb_cString, ptr, len, rb_enc_mbminlen(enc));
     rb_enc_associate(str, enc);
-    return str;
+    return str_check_conditions(str);
 }
 
 VALUE
@@ -570,7 +640,7 @@ rb_usascii_str_new_cstr(const char *ptr)
 {
     VALUE str = rb_str_new2(ptr);
     ENCODING_CODERANGE_SET(str, rb_usascii_encindex(), ENC_CODERANGE_7BIT);
-    return str;
+    return str_check_conditions(str);
 }
 
 VALUE
@@ -591,7 +661,7 @@ rb_tainted_str_new(const char *ptr, long len)
     VALUE str = rb_str_new(ptr, len);
 
     OBJ_TAINT(str);
-    return str;
+    return str_check_conditions(str);
 }
 
 VALUE
@@ -600,7 +670,7 @@ rb_tainted_str_new_cstr(const char *ptr)
     VALUE str = rb_str_new2(ptr);
 
     OBJ_TAINT(str);
-    return str;
+    return str_check_conditions(str);
 }
 
 VALUE
@@ -625,7 +695,7 @@ rb_str_conv_enc_opts(VALUE str, rb_encoding *from, rb_encoding *to, int ecflags,
 	    str = rb_str_dup(str);
 	    rb_enc_associate(str, to);
 	}
-	return str;
+	return str_check_conditions(str);
     }
 
     len = RSTRING_LEN(str);
@@ -636,7 +706,7 @@ rb_str_conv_enc_opts(VALUE str, rb_encoding *from, rb_encoding *to, int ecflags,
     econv_wrapper = rb_obj_alloc(rb_cEncodingConverter);
     RBASIC_CLEAR_CLASS(econv_wrapper);
     ec = rb_econv_open_opts(from->name, to->name, ecflags, ecopts);
-    if (!ec) return str;
+    if (!ec) return str_check_conditions(str);
     DATA_PTR(econv_wrapper) = ec;
 
     sp = (unsigned char*)RSTRING_PTR(str);
@@ -668,11 +738,11 @@ rb_str_conv_enc_opts(VALUE str, rb_encoding *from, rb_encoding *to, int ecflags,
 	len = dp - (unsigned char*)RSTRING_PTR(newstr);
 	rb_str_set_len(newstr, len);
 	rb_enc_associate(newstr, to);
-	return newstr;
+	return str_check_conditions(newstr);
 
       default:
 	/* some error, return original */
-	return str;
+	return str_check_conditions(str);
     }
 }
 
@@ -772,7 +842,7 @@ str_replace_shared_without_enc(VALUE str2, VALUE str)
 	RSTRING(str2)->as.heap.ptr = RSTRING_PTR(str);
 	STR_SET_SHARED(str2, str);
     }
-    return str2;
+    return str_check_conditions(str2);
 }
 
 static VALUE
@@ -780,7 +850,7 @@ str_replace_shared(VALUE str2, VALUE str)
 {
     str_replace_shared_without_enc(str2, str);
     rb_enc_cr_str_exact_copy(str2, str);
-    return str2;
+    return str_check_conditions(str2);
 }
 
 static VALUE
@@ -801,7 +871,7 @@ rb_str_new_shared(VALUE str)
     VALUE str2 = str_new3(rb_obj_class(str), str);
 
     OBJ_INFECT(str2, str);
-    return str2;
+    return str_check_conditions(str2);
 }
 
 static VALUE
@@ -826,7 +896,7 @@ str_new4(VALUE klass, VALUE str)
     }
     rb_enc_cr_str_exact_copy(str2, str);
     OBJ_INFECT(str2, str);
-    return str2;
+    return str_check_conditions(str2);
 }
 
 VALUE
@@ -867,7 +937,7 @@ rb_str_new_frozen(VALUE orig)
 	str = str_new4(klass, orig);
     }
     OBJ_FREEZE(str);
-    return str;
+    return str_check_conditions(str);
 }
 
 VALUE
@@ -882,7 +952,7 @@ str_new_empty(VALUE str)
     VALUE v = rb_str_new5(str, 0, 0);
     rb_enc_copy(v, str);
     OBJ_INFECT(v, str);
-    return v;
+    return str_check_conditions(v);
 }
 
 #define STR_BUF_MIN_SIZE 128
@@ -900,7 +970,7 @@ rb_str_buf_new(long capa)
     RSTRING(str)->as.heap.ptr = ALLOC_N(char, capa+1);
     RSTRING(str)->as.heap.ptr[0] = '\0';
 
-    return str;
+    return str_check_conditions(str);
 }
 
 VALUE
@@ -912,7 +982,7 @@ rb_str_buf_new_cstr(const char *ptr)
     str = rb_str_buf_new(len);
     rb_str_buf_cat(str, ptr, len);
 
-    return str;
+    return str_check_conditions(str);
 }
 
 VALUE
@@ -947,6 +1017,7 @@ rb_str_free(VALUE str)
     if (!STR_EMBED_P(str) && !STR_SHARED_P(str)) {
 	ruby_sized_xfree(STR_HEAP_PTR(str), STR_HEAP_SIZE(str));
     }
+    str_check_conditions(str);
 }
 
 RUBY_FUNC_EXPORTED size_t
@@ -963,7 +1034,7 @@ rb_str_memsize(VALUE str)
 VALUE
 rb_str_to_str(VALUE str)
 {
-    return rb_convert_type(str, T_STRING, "String", "to_str");
+    return str_check_conditions(rb_convert_type(str, T_STRING, "String", "to_str"));
 }
 
 static inline void str_discard(VALUE str);
@@ -984,6 +1055,7 @@ rb_str_shared_replace(VALUE str, VALUE str2)
 	STR_SET_EMBED_LEN(str, RSTRING_LEN(str2));
         rb_enc_associate(str, enc);
         ENC_CODERANGE_SET(str, cr);
+	str_check_conditions(str);
 	return;
     }
     STR_SET_NOEMBED(str);
@@ -1003,6 +1075,7 @@ rb_str_shared_replace(VALUE str, VALUE str2)
     STR_SET_EMBED_LEN(str2, 0);
     rb_enc_associate(str, enc);
     ENC_CODERANGE_SET(str, cr);
+    str_check_conditions(str);
 }
 
 static ID id_to_s;
@@ -1019,7 +1092,7 @@ rb_obj_as_string(VALUE obj)
     if (!RB_TYPE_P(str, T_STRING))
 	return rb_any_to_s(obj);
     if (OBJ_TAINTED(obj)) OBJ_TAINT(str);
-    return str;
+    return str_check_conditions(str);
 }
 
 static VALUE
@@ -1047,7 +1120,7 @@ str_replace(VALUE str, VALUE str2)
 
     OBJ_INFECT(str, str2);
     rb_enc_cr_str_exact_copy(str, str2);
-    return str;
+    return str_check_conditions(str);
 }
 
 static VALUE
@@ -1055,7 +1128,7 @@ str_duplicate(VALUE klass, VALUE str)
 {
     VALUE dup = str_alloc(klass);
     str_replace(dup, str);
-    return dup;
+    return str_check_conditions(dup);
 }
 
 VALUE
@@ -1088,7 +1161,7 @@ rb_str_init(int argc, VALUE *argv, VALUE str)
 
     if (argc > 0 && rb_scan_args(argc, argv, "01", &orig) == 1)
 	rb_str_replace(str, orig);
-    return str;
+    return str_check_conditions(str);
 }
 
 static inline long
@@ -1366,7 +1439,7 @@ rb_str_plus(VALUE str1, VALUE str2)
 	OBJ_TAINT(str3);
     ENCODING_CODERANGE_SET(str3, rb_enc_to_index(enc),
 			   ENC_CODERANGE_AND(ENC_CODERANGE(str1), ENC_CODERANGE(str2)));
-    return str3;
+    return str_check_conditions(str3);
 }
 
 /*
@@ -1410,7 +1483,7 @@ rb_str_times(VALUE str, VALUE times)
     OBJ_INFECT(str2, str);
     rb_enc_cr_str_copy_for_substr(str2, str);
 
-    return str2;
+    return str_check_conditions(str2);
 }
 
 /*
@@ -1476,6 +1549,8 @@ str_make_independent_expand(VALUE str, long expand)
     RSTRING(str)->as.heap.ptr = ptr;
     RSTRING(str)->as.heap.len = len;
     RSTRING(str)->as.heap.aux.capa = capa;
+
+    str_check_conditions(str);
 }
 
 #define str_make_independent(str) str_make_independent_expand((str), 0L)
@@ -1486,6 +1561,7 @@ rb_str_modify(VALUE str)
     if (!str_independent(str))
 	str_make_independent(str);
     ENC_CODERANGE_CLEAR(str);
+    str_check_conditions(str);
 }
 
 void
@@ -1511,6 +1587,7 @@ rb_str_modify_expand(VALUE str, long expand)
 	}
     }
     ENC_CODERANGE_CLEAR(str);
+    str_check_conditions(str);
 }
 
 /* As rb_str_modify(), but don't clear coderange */
@@ -1522,6 +1599,7 @@ str_modify_keep_cr(VALUE str)
     if (ENC_CODERANGE(str) == ENC_CODERANGE_BROKEN)
 	/* Force re-scan later */
 	ENC_CODERANGE_CLEAR(str);
+    str_check_conditions(str);
 }
 
 static inline void
@@ -1533,6 +1611,7 @@ str_discard(VALUE str)
 	RSTRING(str)->as.heap.ptr = 0;
 	RSTRING(str)->as.heap.len = 0;
     }
+    str_check_conditions(str);
 }
 
 void
@@ -1564,6 +1643,7 @@ rb_str_associate(VALUE str, VALUE add)
 	RBASIC_CLEAR_CLASS(add);
 	RB_OBJ_WRITE(str, &RSTRING(str)->as.heap.aux.shared, add);
     }
+    str_check_conditions(str);
 }
 
 VALUE
@@ -1632,11 +1712,15 @@ str_fill_term(VALUE str, char *s, long len, int oldtermlen, int termlen)
 	rb_str_modify_expand(str, termlen);
     }
     else if (!str_independent(str)) {
-	if (zero_filled(s + len, termlen)) return s;
+	if (zero_filled(s + len, termlen)) {
+	    str_check_conditions(str);
+	    return s;
+	}
 	str_make_independent(str);
     }
     s = RSTRING_PTR(str);
     TERM_FILL(s + len, termlen);
+    str_check_conditions(str);
     return s;
 }
 
@@ -1653,6 +1737,7 @@ rb_string_value_cstr(volatile VALUE *ptr)
 	if (str_null_char(s, len, minlen, enc)) {
 	    rb_raise(rb_eArgError, "string contains null char");
 	}
+	str_check_conditions(str);
 	return str_fill_term(str, s, len, minlen, minlen);
     }
     if (!s || memchr(s, 0, len)) {
@@ -1663,6 +1748,7 @@ rb_string_value_cstr(volatile VALUE *ptr)
 	s = RSTRING_PTR(str);
 	s[RSTRING_LEN(str)] = 0;
     }
+    str_check_conditions(str);
     return s;
 }
 
@@ -1853,7 +1939,7 @@ rb_str_subseq(VALUE str, long beg, long len)
     rb_enc_cr_str_copy_for_substr(str2, str);
     OBJ_INFECT(str2, str);
 
-    return str2;
+    return str_check_conditions(str2);
 }
 
 char *
@@ -1961,7 +2047,7 @@ rb_str_substr(VALUE str, long beg, long len)
 	RB_GC_GUARD(str);
     }
 
-    return str2;
+    return str_check_conditions(str2);
 }
 
 VALUE
@@ -2040,7 +2126,7 @@ rb_str_resize(VALUE str, long len)
 	    if (len + termlen <= RSTRING_EMBED_LEN_MAX + 1) {
 		STR_SET_EMBED_LEN(str, len);
 		TERM_FILL(RSTRING(str)->as.ary + len, termlen);
-		return str;
+		return str_check_conditions(str);
 	    }
 	    str_make_independent_expand(str, len - slen);
 	    STR_SET_NOEMBED(str);
@@ -2053,7 +2139,7 @@ rb_str_resize(VALUE str, long len)
 	    TERM_FILL(RSTRING(str)->as.ary + len, termlen);
 	    STR_SET_EMBED_LEN(str, len);
 	    if (independent) ruby_xfree(ptr);
-	    return str;
+	    return str_check_conditions(str);
 	}
 	else if (!independent) {
 	    str_make_independent_expand(str, len - slen);
@@ -2067,7 +2153,7 @@ rb_str_resize(VALUE str, long len)
 	RSTRING(str)->as.heap.len = len;
 	TERM_FILL(RSTRING(str)->as.heap.ptr + len, termlen); /* sentinel */
     }
-    return str;
+    return str_check_conditions(str);
 }
 
 static VALUE
@@ -2112,7 +2198,7 @@ str_buf_cat(VALUE str, const char *ptr, long len)
     STR_SET_LEN(str, total);
     RSTRING_PTR(str)[total] = '\0'; /* sentinel */
 
-    return str;
+    return str_check_conditions(str);
 }
 
 #define str_buf_cat2(str, ptr) str_buf_cat((str), (ptr), strlen(ptr))
@@ -2146,7 +2232,7 @@ rb_str_cat(VALUE str, const char *ptr, long len)
 	memcpy(p + RSTRING(str)->as.heap.len, ptr, len);
 	len = RSTRING(str)->as.heap.len += len;
 	TERM_FILL(p, TERM_LEN(str)); /* sentinel */
-	return str;
+	return str_check_conditions(str);
     }
 
     return rb_str_buf_cat(str, ptr, len);
@@ -2180,11 +2266,11 @@ rb_enc_cr_str_buf_cat(VALUE str, const char *ptr, long len,
         rb_encoding *ptr_enc = rb_enc_from_index(ptr_encindex);
         if (!rb_enc_asciicompat(str_enc) || !rb_enc_asciicompat(ptr_enc)) {
             if (len == 0)
-                return str;
+                return str_check_conditions(str);
             if (RSTRING_LEN(str) == 0) {
                 rb_str_buf_cat(str, ptr, len);
                 ENCODING_CODERANGE_SET(str, ptr_encindex, ptr_cr);
-                return str;
+                return str_check_conditions(str);
             }
             goto incompatible;
         }
@@ -2241,7 +2327,7 @@ rb_enc_cr_str_buf_cat(VALUE str, const char *ptr, long len,
     }
     str_buf_cat(str, ptr, len);
     ENCODING_CODERANGE_SET(str, res_encindex, res_cr);
-    return str;
+    return str_check_conditions(str);
 }
 
 VALUE
@@ -2271,7 +2357,7 @@ rb_str_buf_cat_ascii(VALUE str, const char *ptr)
                 encindex, ENC_CODERANGE_VALID, 0);
             ptr++;
         }
-        return str;
+        return str_check_conditions(str);
     }
 }
 
@@ -2312,7 +2398,7 @@ rb_str_append(VALUE str, VALUE str2)
         rb_enc_associate(str, enc);
         ENC_CODERANGE_SET(str, cr);
         OBJ_INFECT(str, str2);
-        return str;
+        return str_check_conditions(str);
     }
     return rb_str_buf_append(str, str2);
 }
@@ -2392,7 +2478,7 @@ rb_str_concat(VALUE str1, VALUE str2)
 	    cr = ENC_CODERANGE_VALID;
 	ENC_CODERANGE_SET(str1, cr);
     }
-    return str1;
+    return str_check_conditions(str1);
 }
 
 /*
@@ -2412,7 +2498,7 @@ rb_str_prepend(VALUE str, VALUE str2)
     StringValue(str2);
     StringValue(str);
     rb_str_update(str, 0L, 0L, str2);
-    return str;
+    return str_check_conditions(str);
 }
 
 st_index_t
@@ -3353,7 +3439,7 @@ rb_str_succ_bang(VALUE str)
 {
     rb_str_shared_replace(str, rb_str_succ(str));
 
-    return str;
+    return str_check_conditions(str);
 }
 
 
@@ -3653,7 +3739,7 @@ rb_str_drop_bytes(VALUE str, long len)
     }
     ptr[nlen] = 0;
     ENC_CODERANGE_CLEAR(str);
-    return str;
+    return str_check_conditions(str);
 }
 
 static void
@@ -3687,6 +3773,7 @@ rb_str_splice_0(VALUE str, long beg, long len, VALUE val)
 	RSTRING_PTR(str)[RSTRING_LEN(str)] = '\0';
     }
     OBJ_INFECT(str, val);
+    str_check_conditions(str);
 }
 
 static void
@@ -3730,6 +3817,7 @@ rb_str_splice(VALUE str, long beg, long len, VALUE val)
     cr = ENC_CODERANGE_AND(ENC_CODERANGE(str), ENC_CODERANGE(val));
     if (cr != ENC_CODERANGE_BROKEN)
 	ENC_CODERANGE_SET(str, cr);
+    str_check_conditions(str);
 }
 
 void
@@ -3774,6 +3862,7 @@ rb_str_subpat_set(VALUE str, VALUE re, VALUE backref, VALUE val)
     enc = rb_enc_check(str, val);
     rb_str_splice_0(str, start, len, val);
     rb_enc_associate(str, enc);
+    str_check_conditions(str);
 }
 
 static VALUE
@@ -3928,7 +4017,7 @@ rb_str_slice_bang(int argc, VALUE *argv, VALUE str)
 	buf[i] = rb_str_new(0,0);
 	rb_str_aset_m(argc+1, buf, str);
     }
-    return result;
+    return str_check_conditions(result);
 }
 
 static VALUE
@@ -4060,7 +4149,7 @@ rb_str_sub_bang(int argc, VALUE *argv, VALUE str)
 	ENC_CODERANGE_SET(str, cr);
 	if (tainted) OBJ_TAINT(str);
 
-	return str;
+	return str_check_conditions(str);
     }
     return Qnil;
 }
@@ -4223,7 +4312,7 @@ str_gsub(int argc, VALUE *argv, VALUE str, int bang)
     }
 
     if (tainted) OBJ_TAINT(str);
-    return str;
+    return str_check_conditions(str);
 }
 
 
@@ -4339,7 +4428,7 @@ rb_str_clear(VALUE str)
 	ENC_CODERANGE_SET(str, ENC_CODERANGE_7BIT);
     else
 	ENC_CODERANGE_SET(str, ENC_CODERANGE_VALID);
-    return str;
+    return str_check_conditions(str);
 }
 
 /*
@@ -4398,7 +4487,7 @@ rb_str_setbyte(VALUE str, VALUE index, VALUE value)
 
     RSTRING_PTR(str)[pos] = byte;
 
-    return value;
+    return str_check_conditions(value);
 }
 
 static VALUE
@@ -4453,7 +4542,7 @@ str_byte_substr(VALUE str, long beg, long len)
 
     OBJ_INFECT(str2, str);
 
-    return str2;
+    return str_check_conditions(str2);
 }
 
 static VALUE
@@ -4619,7 +4708,7 @@ rb_str_reverse_bang(VALUE str)
     else {
 	str_modify_keep_cr(str);
     }
-    return str;
+    return str_check_conditions(str);
 }
 
 
