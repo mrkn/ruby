@@ -1273,14 +1273,14 @@ random_rand(int argc, VALUE *argv, VALUE obj)
 static VALUE
 rand_random(int argc, VALUE *argv, VALUE obj, rb_random_t *rnd)
 {
-    VALUE vmax, v;
+    VALUE vmax, vlen, v;
     double max = 0.0;
 
     if (argc == 0) {
 	goto float_rand;
     }
     else {
-	rb_check_arity(argc, 0, 1);
+	rb_check_arity(argc, 0, 2);
     }
     vmax = argv[0];
     if (NIL_P(vmax)) {

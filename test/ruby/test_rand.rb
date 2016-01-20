@@ -404,6 +404,37 @@ END
     assert_nothing_raised {r.rand(-Float::MAX..Float::MAX)}
   end
 
+  def test_random_array_int
+    expected_values = [5, 0, 3, 3, 7]
+    srand(0)
+    r = Random.new(0)
+    assert_equal(expected_values, rand(10, 5))
+    assert_equal(expected_values, r.rand(10, 5))
+  end
+
+  def test_random_array_float
+    expected_values = [0.5488135039273248, 0.7151893663724195, 0.6027633760716439, 0.5448831829968969, 0.4236547993389047]
+    srand(0)
+    expected_values.zip(rand(0, 5)).each do |expected_value, random_value|
+      assert_in_delta(expected_value, random_value, 0.0001)
+    end
+
+    srand(0)
+    expected_values.zip(rand(nil, 5)).each do |expected_value, random_value|
+      assert_in_delta(expected_value, random_value, 0.0001)
+    end
+
+    r = Random.new(0)
+    expected_values.zip(r.rand(0, 5)).each do |expected_value, random_value|
+      assert_in_delta(expected_value, random_value, 0.0001)
+    end
+
+    r = Random.new(0)
+    expected_values.zip(r.rand(nil, 5)).each do |expected_value, random_value|
+      assert_in_delta(expected_value, random_value, 0.0001)
+    end
+  end
+
   def test_random_equal
     r = Random.new(0)
     assert_equal(r, r)
