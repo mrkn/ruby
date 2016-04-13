@@ -1,6 +1,7 @@
 # coding: US-ASCII
 # frozen_string_literal: false
 require 'test/unit'
+require "rbconfig/sizeof"
 
 class TestArray < Test::Unit::TestCase
   def setup
@@ -2708,6 +2709,55 @@ class TestArray < Test::Unit::TestCase
     assert_equal(1, h.dig(0, 0, :a))
     assert_nil(h.dig(2, 0))
     assert_raise(TypeError) {h.dig(1, 0)}
+  end
+
+  FIXNUM_MIN = -(1 << (8 * RbConfig::SIZEOF['long'] - 2))
+  FIXNUM_MAX = (1 << (8 * RbConfig::SIZEOF['long'] - 2)) - 1
+
+  def assert_float_equal(e, v, msg=nil)
+    assert_equal(Float, v.class, msg)
+    assert_equal(e, v, msg)
+  end
+
+  def test_sum
+    assert_kind_of(Integer, [].sum)
+    assert_kind_of(Integer, [3].sum)
+    assert_kind_of(Integer, [3, 5].sum)
+    assert_kind_of(Integer, [3, 5, 7].sum)
+    assert_kind_of(Rational, [3, 5r].sum)
+    assert_kind_of(Rational, [3r].sum)
+    assert_kind_of(Rational, [3, 5r].sum)
+    assert_kind_of(Float, [3.0].sum)
+    assert_kind_of(Float, [3, 5.0].sum)
+    assert_kind_of(Float, [3, 5r, 7.0].sum)
+    assert_kind_of(Complex, [3i].sum)
+    assert_kind_of(Complex, [3, 5i].sum)
+
+    assert_equal(0, [].sum)
+    assert_equal(3, [3].sum)
+    assert_equal(8, [3, 5].sum)
+    assert_equal(15, [3, 5, 7].sum)
+    assert_float_equal(15.0, [3, 5, 7.0].sum)
+
+    assert_equal(2*FIXNUM_MAX, Array.new(2, FIXNUM_MAX).sum)
+    assert_equal(2*(FIXNUM_MAX+1), Array.new(2, FIXNUM_MAX+1).sum)
+    assert_equal(10*FIXNUM_MAX, Array.new(10, FIXNUM_MAX).sum)
+    assert_equal(0, ([FIXNUM_MAX, 1, -FIXNUM_MAX, -1]*10).sum)
+    assert_equal(FIXNUM_MAX*10, ([FIXNUM_MAX+1, -1]*10).sum)
+    assert_equal(2*FIXNUM_MIN, Array.new(2, FIXNUM_MIN).sum)
+    assert_equal((FIXNUM_MAX+1).to_f, [FIXNUM_MAX, 1, 0.0].sum)
+    assert_float_equal((FIXNUM_MAX+1).to_f, [0.0, FIXNUM_MAX+1].sum)
+
+    assert_equal(2.0+3.0i, [2.0, 3.0i].sum)
+
+    large_number = 10000000
+    small_number = 1e-9
+    until (large_number + small_number) == large_number
+      small_number /= 10
+    end
+    assert_equal(large_number+(small_number*10), [large_number, *[small_number]*10].inject(:+))
+    assert_equal(large_number+(small_number*10), [small_number, large_number/1r, *[small_number]*10].inject(:+))
+    assert_equal(large_number+(small_number*10), [large_number/1r, *[small_number]*10].inject(:+))
   end
 
   private

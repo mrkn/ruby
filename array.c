@@ -5650,6 +5650,92 @@ rb_ary_dig(int argc, VALUE *argv, VALUE self)
     return rb_obj_dig(argc, argv, self, Qnil);
 }
 
+VALUE
+rb_ary_sum(VALUE ary)
+{
+    VALUE v, e;
+    long i, n;
+    double f, c;
+
+    if (RARRAY_LEN(ary) == 0)
+        return INT2FIX(0);
+
+    v = RARRAY_AREF(ary, 0);
+    if (RARRAY_LEN(ary) == 1)
+        return v;
+
+    i = 1;
+    if ((FIXNUM_P(v) || RB_TYPE_P(v, T_BIGNUM)) &&
+            rb_method_basic_definition_p(rb_cFixnum, idPLUS) &&
+            rb_method_basic_definition_p(rb_cBignum, idPLUS)) {
+        n = 0;
+        while (1) {
+            e = RARRAY_AREF(ary, i);
+            if (FIXNUM_P(e)) {
+                n += FIX2LONG(e);  /* should not overflow long type */
+                if (!FIXABLE(n)) {
+                    v = rb_big_plus(LONG2NUM(n), v);
+                    n = 0;
+                }
+            }
+            else if (RB_TYPE_P(e, T_BIGNUM))
+                v = rb_big_plus(e, v);
+            else
+                break;
+            ++i;
+            if (RARRAY_LEN(ary) <= i)
+                return n == 0 ? v : rb_fix_plus(LONG2FIX(n), v);
+        }
+        if (n != 0)
+            v = rb_fix_plus(LONG2FIX(n), v);
+        if (RB_FLOAT_TYPE_P(e) &&
+                rb_method_basic_definition_p(rb_cFloat, idPLUS)) {
+            f = NUM2DBL(v);
+            goto sum_float;
+        }
+    }
+    else if (RB_FLOAT_TYPE_P(v) &&
+            rb_method_basic_definition_p(rb_cFloat, idPLUS)) {
+        f = RFLOAT_VALUE(v);
+      sum_float:
+        c = 0.0;
+        while (1) {
+            double x, y, t;
+            e = RARRAY_AREF(ary, i);
+            if (RB_FLOAT_TYPE_P(e))
+                x = RFLOAT_VALUE(e);
+            else if (FIXNUM_P(e))
+                x = FIX2LONG(e);
+            else if (RB_TYPE_P(e, T_BIGNUM))
+                x = rb_big2dbl(e);
+            else if (RB_TYPE_P(e, T_RATIONAL))
+                /* TODO: rb_rational_to_double(); */
+                x = RFLOAT_VALUE(rb_to_float(e));
+            else
+                break;
+
+            y = x - c;
+            t = f + y;
+            c = (t - f) - y;
+            f = t;
+
+            ++i;
+            if (RARRAY_LEN(ary) <= i)
+                return DBL2NUM(f);
+        }
+    }
+    for (; i < RARRAY_LEN(ary); ++i) {
+        e = RARRAY_AREF(ary, i);
+        if (RB_FLOAT_TYPE_P(e) &&
+                rb_method_basic_definition_p(rb_cFloat, idPLUS)) {
+            f = NUM2DBL(v);
+            goto sum_float;
+        }
+        v = rb_funcall(v, idPLUS, 1, RARRAY_AREF(ary, i));
+    }
+    return v;
+}
+
 /*
  *  Arrays are ordered, integer-indexed collections of any object.
  *
@@ -6005,6 +6091,7 @@ Init_Array(void)
     rb_define_method(rb_cArray, "bsearch_index", rb_ary_bsearch_index, 0);
     rb_define_method(rb_cArray, "any?", rb_ary_any_p, 0);
     rb_define_method(rb_cArray, "dig", rb_ary_dig, -1);
+    rb_define_method(rb_cArray, "sum", rb_ary_sum, 0);
 
     id_cmp = rb_intern("<=>");
     id_random = rb_intern("random");
