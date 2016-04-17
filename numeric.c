@@ -878,8 +878,8 @@ flo_uminus(VALUE flt)
  * Returns a new float which is the sum of +float+ and +other+.
  */
 
-static VALUE
-flo_plus(VALUE x, VALUE y)
+VALUE
+rb_flo_plus(VALUE x, VALUE y)
 {
     if (RB_TYPE_P(y, T_FIXNUM)) {
 	return DBL2NUM(RFLOAT_VALUE(x) + (double)FIX2LONG(y));
@@ -4663,7 +4663,7 @@ Init_Numeric(void)
     rb_define_alias(rb_cFloat, "inspect", "to_s");
     rb_define_method(rb_cFloat, "coerce", flo_coerce, 1);
     rb_define_method(rb_cFloat, "-@", flo_uminus, 0);
-    rb_define_method(rb_cFloat, "+", flo_plus, 1);
+    rb_define_method(rb_cFloat, "+", rb_flo_plus, 1);
     rb_define_method(rb_cFloat, "-", flo_minus, 1);
     rb_define_method(rb_cFloat, "*", flo_mul, 1);
     rb_define_method(rb_cFloat, "/", flo_div, 1);

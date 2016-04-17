@@ -2765,15 +2765,20 @@ class TestArray < Test::Unit::TestCase
     assert_rational_equal(3/2r, [1/2r, 1].sum)
     assert_rational_equal(5/6r, [1/2r, 1/3r].sum)
 
-    assert_equal(2.0+3.0i, [2.0, 3.0i].sum)
+    assert_complex_equal(2+3.0i, [2, 3.0i].sum)
+    assert_complex_equal(2r+3.0i, [2r, 3.0i].sum)
+    assert_complex_equal(2.0+3.0i, [2.0, 3.0i].sum)
+    assert_complex_equal(2.0i+3, [2.0i, 3].sum)
+    assert_complex_equal(2.0i+3r, [2.0i, 3r].sum)
+    assert_complex_equal(2.0i+3.0, [2.0i, 3.0].sum)
 
     assert_int_equal(13, [1, 2].sum(10))
     assert_int_equal(16, [1, 2].sum(10) {|v| v * 2 })
 
     yielded = []
     three = SimpleDelegator.new(3)
-    ary = [1, 2.0, three]
-    assert_float_equal(12.0, ary.sum {|x| yielded << x; x * 2 })
+    ary = [1, 2.0, three, 4r, 5i]
+    assert_complex_equal(20.0+10i, ary.sum {|x| yielded << x; x * 2 })
     assert_equal(ary, yielded)
 
     assert_raise(TypeError) { [Object.new].sum }
@@ -2786,6 +2791,8 @@ class TestArray < Test::Unit::TestCase
     assert_float_equal(large_number+(small_number*10), [large_number, *[small_number]*10].sum)
     assert_float_equal(large_number+(small_number*10), [large_number/1r, *[small_number]*10].sum)
     assert_float_equal(large_number+(small_number*11), [small_number, large_number/1r, *[small_number]*10].sum)
+    assert_complex_equal(large_number+(small_number*10)+0i, [large_number+0i, *[small_number]*10].sum)
+    assert_complex_equal(large_number+(small_number*11)+0i, [small_number, large_number+0i, *[small_number]*10].sum)
   end
 
   private

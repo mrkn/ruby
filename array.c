@@ -5765,6 +5765,180 @@ rb_ary_sum(int argc, VALUE *argv, VALUE ary)
         v = DBL2NUM(f);
     }
 
+    if (RB_TYPE_P(e, T_COMPLEX)) {
+        long n_re, n_im;
+        VALUE v_re, v_im, r_re, r_im;
+
+        /* Kahan's compensated summation algorithm */
+        double f_re, c_re;
+        double f_im, c_im;
+
+        n_re = n_im = 0;
+        v_re = LONG2NUM(0);
+        v_im = LONG2NUM(0);
+        r_re = r_im = Qundef;
+
+        if (FIXNUM_P(v))
+            n_re = FIX2LONG(v);
+        else if (RB_TYPE_P(v, T_BIGNUM))
+            v_re = v;
+        else if (RB_TYPE_P(v, T_RATIONAL))
+            r_re = v;
+        else if (RB_FLOAT_TYPE_P(v))
+            f_re = RFLOAT_VALUE(v);
+        else
+            f_re = 0.0;
+        c_re = f_im = c_im = 0.0;
+        goto has_complex_value;
+        for (; i < RARRAY_LEN(ary); i++) {
+            VALUE e_re, e_im;
+            e = RARRAY_AREF(ary, i);
+            if (block_given)
+                e = rb_yield(e);
+            if (RB_TYPE_P(e, T_COMPLEX)) {
+              has_complex_value:
+                e_re = RCOMPLEX(e)->real;
+                e_im = RCOMPLEX(e)->imag;
+            }
+            else {
+                e_re = e;
+                e_im = Qundef;
+            }
+
+            if (FIXNUM_P(v_re) || RB_TYPE_P(v_re, T_BIGNUM) || RB_TYPE_P(v_re, T_RATIONAL)) {
+                if (FIXNUM_P(e_re)) {
+                    n_re += FIX2LONG(e_re); /* should not overflow long type */
+                    if (!FIXABLE(n_re)) {
+                        v_re = rb_big_plus(LONG2NUM(n_re), v_re);
+                        n_re = 0;
+                    }
+                }
+                else if (RB_TYPE_P(e_re, T_BIGNUM))
+                    v_re = rb_big_plus(e_re, v_re);
+                else if (RB_TYPE_P(e_re, T_RATIONAL)) {
+                    if (r_re == Qundef)
+                        r_re = e_re;
+                    else
+                        r_re = rb_rational_plus(r_re, e_re);
+                }
+                else {
+                    if (n_re != 0) {
+                        v_re = rb_fix_plus(LONG2FIX(n_re), v_re);
+                        n_re = 0;
+                    }
+                    if (r_re != Qundef) {
+                        v_re = rb_rational_plus(r_re, v_re);
+                        r_re = Qundef;
+                    }
+                    if (RB_FLOAT_TYPE_P(e_re)) {
+                        v_re = rb_to_float(v_re);
+                    }
+                    goto not_exact_real_part;
+                }
+            }
+            else if (RB_FLOAT_TYPE_P(v_re)) {
+                double x, y, t;
+              not_exact_real_part:
+                if (RB_FLOAT_TYPE_P(e_re))
+                    x = RFLOAT_VALUE(e_re);
+                else if (FIXNUM_P(e_re))
+                    x = FIX2LONG(e_re);
+                else if (RB_TYPE_P(e_re, T_BIGNUM))
+                    x = rb_big2dbl(e_re);
+                else if (RB_TYPE_P(e_re, T_RATIONAL))
+                    x = rb_num2dbl(e_re);
+                else {
+                    v_re = DBL2NUM(f_re);
+                    goto not_float_real_part;
+                }
+
+                y = x - c_re;
+                t = f_re + y;
+                c_re = (t - f_re) - y;
+                f_re = t;
+            }
+            else {
+              not_float_real_part:
+                v_re = rb_funcall(v_re, idPLUS, 1, e_re);
+            }
+
+            if (e_im != Qundef) {
+                if (FIXNUM_P(v_im) || RB_TYPE_P(v_im, T_BIGNUM) || RB_TYPE_P(v_im, T_RATIONAL)) {
+                    if (FIXNUM_P(e_im)) {
+                        n_im += FIX2LONG(e_im); /* should not overflow long type */
+                        if (!FIXABLE(n_im)) {
+                            v_im = rb_big_plus(LONG2NUM(n_im), v_im);
+                            n_im = 0;
+                        }
+                    }
+                    else if (RB_TYPE_P(e_im, T_BIGNUM))
+                        v_im = rb_big_plus(e_im, v_im);
+                    else if (RB_TYPE_P(e_im, T_RATIONAL)) {
+                        if (r_im == Qundef)
+                            r_im = e_im;
+                        else
+                            r_im = rb_rational_plus(r_im, e_im);
+                    }
+                    else {
+                        if (n_im != 0) {
+                            v_im = rb_fix_plus(LONG2FIX(n_im), v_im);
+                            n_im = 0;
+                        }
+                        if (r_im != Qundef) {
+                            v_im = rb_rational_plus(r_im, v_im);
+                            r_im = Qundef;
+                        }
+                        if (RB_FLOAT_TYPE_P(e_im)) {
+                            v_im = rb_to_float(v_im);
+                        }
+                        goto not_exact_imag_part;
+                    }
+                }
+                else if (RB_FLOAT_TYPE_P(v_im)) {
+                    double x, y, t;
+                  not_exact_imag_part:
+                    if (RB_FLOAT_TYPE_P(e_im))
+                        x = RFLOAT_VALUE(e_im);
+                    else if (FIXNUM_P(e_im))
+                        x = FIX2LONG(e_im);
+                    else if (RB_TYPE_P(e_im, T_BIGNUM))
+                        x = rb_big2dbl(e_im);
+                    else if (RB_TYPE_P(e_im, T_RATIONAL))
+                        x = rb_num2dbl(e_im);
+                    else {
+                        v_im = DBL2NUM(f_im);
+                        goto not_float_imag_part;
+                    }
+
+                    y = x - c_im;
+                    t = f_im + y;
+                    c_im = (t - f_im) - y;
+                    f_im = t;
+                }
+                else {
+                  not_float_imag_part:
+                    v_im = rb_funcall(v_im, idPLUS, 1, e_im);
+                }
+            }
+        }
+
+        if (n_re != 0)
+            v_re = rb_fix_plus(LONG2FIX(n_re), v_re);
+        if (r_re != Qundef)
+            v_re = rb_rational_plus(r_re, v_re);
+        if (f_re != 0.0)
+            v_re = rb_flo_plus(DBL2NUM(f_re), v_re);
+
+        if (n_im != 0)
+            v_im = rb_fix_plus(LONG2FIX(n_im), v_im);
+        if (r_im != Qundef)
+            v_im = rb_rational_plus(r_im, v_im);
+        if (f_im != 0.0)
+            v_im = rb_flo_plus(DBL2NUM(f_im), v_im);
+
+        return rb_complex_raw(v_re, v_im);
+    }
+
     goto has_some_value;
     for (; i < RARRAY_LEN(ary); i++) {
         e = RARRAY_AREF(ary, i);
