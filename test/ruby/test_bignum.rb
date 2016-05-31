@@ -737,5 +737,20 @@ class TestBignum < Test::Unit::TestCase
     end
     assert_equal(T1024 ^ 10, T1024 ^ obj)
   end
+
+  def test_digits
+    assert_equal([90, 78, 56, 34, 12], 1234567890.to_bignum.digits(100))
+    assert_equal([7215, 2413, 6242], T1024P.digits(10_000).first(3))
+    assert_equal([11], 11.digits(T1024P))
+    assert_equal([11], -11.digits(T1024P))
+    assert_equal([T1024P - 1, 1], (T1024P + T1024P - 1).digits(T1024P))
+    assert_raise(ArgumentError) { T1024P.to_bignum.digits(0) }
+    assert_raise(ArgumentError) { T1024P.to_bignum.digits(-1) }
+    assert_raise(ArgumentError) { T1024P.to_bignum.digits(0.to_bignum) }
+    assert_raise(ArgumentError) { T1024P.to_bignum.digits(1.to_bignum) }
+    assert_raise(ArgumentError) { T1024P.to_bignum.digits(-T1024P) }
+    assert_raise(ArgumentError) { 10.digits(0.to_bignum) }
+    assert_raise(ArgumentError) { 10.digits(1.to_bignum) }
+  end
 end
 end
