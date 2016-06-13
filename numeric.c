@@ -3565,6 +3565,36 @@ int_remainder(VALUE x, VALUE y)
     return Qnil;
 }
 
+static VALUE
+fix_divmod(VALUE x, VALUE y, VALUE *divp, VALUE *modp)
+{
+    if (FIXNUM_P(y)) {
+	VALUE div, mod;
+	if (FIX2LONG(y) == 0) rb_num_zerodiv();
+	rb_fix_divmod_fix(x, y, &div, &mod);
+	if (divp) *divp = div;
+	if (modp) *modp = mod;
+	return Qnil;
+    }
+    else if (RB_TYPE_P(y, T_BIGNUM)) {
+	x = rb_int2big(FIX2LONG(x));
+	return rb_big_divmod_inplace(x, y, divp, modp);
+    }
+    else if (RB_TYPE_P(y, T_FLOAT)) {
+	{
+	    double div, mod;
+
+	    flodivmod((double)FIX2LONG(x), RFLOAT_VALUE(y), &div, &mod);
+	    if (divp) *divp = dbl2ival(div);
+	    if (modp) *modp = DBL2NUM(mod);
+	    return Qnil;
+	}
+    }
+    else {
+	return rb_num_coerce_bin(x, y, id_divmod);
+    }
+}
+
 /*
  *  Document-method: Integer#divmod
  *  call-seq:
@@ -3575,42 +3605,33 @@ int_remainder(VALUE x, VALUE y)
 static VALUE
 fix_divmod(VALUE x, VALUE y)
 {
-    if (FIXNUM_P(y)) {
-	VALUE div, mod;
-	if (FIX2LONG(y) == 0) rb_num_zerodiv();
-	rb_fix_divmod_fix(x, y, &div, &mod);
-	return rb_assoc_new(div, mod);
-    }
-    else if (RB_TYPE_P(y, T_BIGNUM)) {
-	x = rb_int2big(FIX2LONG(x));
-	return rb_big_divmod(x, y);
-    }
-    else if (RB_TYPE_P(y, T_FLOAT)) {
-	{
-	    double div, mod;
-	    volatile VALUE a, b;
+    VALUE div, mod, res;
+    res = fix_divmod_inplace(x, y, &div, &mod);
+    if (res != Qnil)
+	return res;
+    return rb_assoc_new(div, mod);
+}
 
-	    flodivmod((double)FIX2LONG(x), RFLOAT_VALUE(y), &div, &mod);
-	    a = dbl2ival(div);
-	    b = DBL2NUM(mod);
-	    return rb_assoc_new(a, b);
-	}
+static VALUE
+int_divmod_inplace(VALUE x, VALUE y, VALUE *divp, VALUE *modp)
+{
+    if (FIXNUM_P(x)) {
+	return fix_divmod_inplace(x, y, divp, modp);
     }
-    else {
-	return rb_num_coerce_bin(x, y, id_divmod);
+    else if (RB_TYPE_P(x, T_BIGNUM)) {
+	return rb_big_divmod_inplace(x, y, divp, modp);
     }
+    return Qnil;
 }
 
 static VALUE
 int_divmod(VALUE x, VALUE y)
 {
-    if (FIXNUM_P(x)) {
-	return fix_divmod(x, y);
-    }
-    else if (RB_TYPE_P(x, T_BIGNUM)) {
-	return rb_big_divmod(x, y);
-    }
-    return Qnil;
+    VALUE div, mod, res;
+    res = int_divmod_inplace(x, y, &div, &mod);
+    if (res != Qnil)
+	return res;
+    return rb_assoc_new(div, mod);
 }
 
 /*

@@ -6073,10 +6073,9 @@ rb_big_remainder(VALUE x, VALUE y)
 }
 
 VALUE
-rb_big_divmod(VALUE x, VALUE y)
+rb_big_divmod_inplace(VALUE x, VALUE y, VALUE *divp, VALUE *modp)
 {
     VALUE div, mod;
-
     if (FIXNUM_P(y)) {
 	y = rb_int2big(FIX2LONG(y));
     }
@@ -6084,8 +6083,22 @@ rb_big_divmod(VALUE x, VALUE y)
 	return rb_num_coerce_bin(x, y, rb_intern("divmod"));
     }
     bigdivmod(x, y, &div, &mod);
+    if (divp) *divp = bignorm(div);
+    if (modp) *modp = bignorm(mod);
 
-    return rb_assoc_new(bignorm(div), bignorm(mod));
+    return Qnil;
+}
+
+VALUE
+rb_big_divmod(VALUE x, VALUE y)
+{
+    VALUE div, mod, res;
+
+    res = rb_big_divmod_inplace(x, y, &div, &mod);
+    if (res != Qnil)
+	return res;
+
+    return rb_assoc_new(div, mod);
 }
 
 static VALUE
