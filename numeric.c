@@ -162,7 +162,6 @@ static VALUE fix_mul(VALUE x, VALUE y);
 static VALUE fix_lshift(long, unsigned long);
 static VALUE fix_rshift(long, unsigned long);
 static VALUE int_pow(long x, unsigned long y);
-static VALUE int_odd_p(VALUE x);
 static VALUE int_even_p(VALUE x);
 static int int_round_zero_p(VALUE num, int ndigits);
 VALUE rb_int_floor(VALUE num, int ndigits);
@@ -271,17 +270,6 @@ rb_num_to_uint(VALUE val, unsigned int *ret)
 
 #define method_basic_p(klass) rb_method_basic_definition_p(klass, mid)
 
-static VALUE
-compare_with_zero(VALUE num, ID mid)
-{
-    VALUE zero = INT2FIX(0);
-    VALUE r = rb_check_funcall(num, mid, 1, &zero);
-    if (r == Qundef) {
-	rb_cmperr(num, zero);
-    }
-    return r;
-}
-
 static inline int
 int_pos_p(VALUE num)
 {
@@ -306,42 +294,10 @@ int_neg_p(VALUE num)
     rb_raise(rb_eTypeError, "not an Integer");
 }
 
-static inline int
-positive_int_p(VALUE num)
-{
-    const ID mid = '>';
-
-    if (FIXNUM_P(num)) {
-	if (method_basic_p(rb_cInteger))
-	    return FIXNUM_POSITIVE_P(num);
-    }
-    else if (RB_TYPE_P(num, T_BIGNUM)) {
-	if (method_basic_p(rb_cInteger))
-	    return BIGNUM_POSITIVE_P(num);
-    }
-    return RTEST(compare_with_zero(num, mid));
-}
-
-static inline int
-negative_int_p(VALUE num)
-{
-    const ID mid = '<';
-
-    if (FIXNUM_P(num)) {
-	if (method_basic_p(rb_cInteger))
-	    return FIXNUM_NEGATIVE_P(num);
-    }
-    else if (RB_TYPE_P(num, T_BIGNUM)) {
-	if (method_basic_p(rb_cInteger))
-	    return BIGNUM_NEGATIVE_P(num);
-    }
-    return RTEST(compare_with_zero(num, mid));
-}
-
 int
 rb_num_negative_p(VALUE num)
 {
-    return negative_int_p(num);
+    return rb_num_negative_int_p(num);
 }
 
 static VALUE
@@ -665,10 +621,10 @@ num_remainder(VALUE x, VALUE y)
     VALUE z = num_funcall1(x, '%', y);
 
     if ((!rb_equal(z, INT2FIX(0))) &&
-	((negative_int_p(x) &&
-	  positive_int_p(y)) ||
-	 (positive_int_p(x) &&
-	  negative_int_p(y)))) {
+	((rb_num_negative_int_p(x) &&
+	  rb_num_positive_int_p(y)) ||
+	 (rb_num_positive_int_p(x) &&
+	  rb_num_negative_int_p(y)))) {
 	return rb_funcall(z, '-', 1, y);
     }
     return z;
@@ -769,7 +725,7 @@ num_int_p(VALUE num)
 static VALUE
 num_abs(VALUE num)
 {
-    if (negative_int_p(num)) {
+    if (rb_num_negative_int_p(num)) {
 	return num_funcall0(num, idUMinus);
     }
     return num;
@@ -886,7 +842,7 @@ num_positive_p(VALUE num)
 	if (method_basic_p(rb_cInteger))
 	    return BIGNUM_POSITIVE_P(num) && !rb_bigzero_p(num) ? Qtrue : Qfalse;
     }
-    return compare_with_zero(num, mid);
+    return rb_num_compare_with_zero(num, mid);
 }
 
 /*
@@ -899,7 +855,7 @@ num_positive_p(VALUE num)
 static VALUE
 num_negative_p(VALUE num)
 {
-    return negative_int_p(num) ? Qtrue : Qfalse;
+    return rb_num_negative_int_p(num) ? Qtrue : Qfalse;
 }
 
 
@@ -2072,7 +2028,7 @@ int_round_half_down(SIGNED_VALUE x, SIGNED_VALUE y)
 static int
 int_half_p_half_even(VALUE num, VALUE n, VALUE f)
 {
-    return (int)int_odd_p(rb_int_idiv(n, f));
+    return (int)rb_int_odd_p(rb_int_idiv(n, f));
 }
 
 static int
@@ -2939,7 +2895,7 @@ rb_fix2uint(VALUE val)
     }
     num = FIX2ULONG(val);
 
-    check_uint(num, negative_int_p(val));
+    check_uint(num, rb_num_negative_int_p(val));
     return num;
 }
 #else
@@ -3025,7 +2981,7 @@ rb_fix2ushort(VALUE val)
     }
     num = FIX2ULONG(val);
 
-    check_ushort(num, negative_int_p(val));
+    check_ushort(num, rb_num_negative_int_p(val));
     return num;
 }
 
@@ -3168,8 +3124,8 @@ int_int_p(VALUE num)
  *  Returns +true+ if +int+ is an odd number.
  */
 
-static VALUE
-int_odd_p(VALUE num)
+VALUE
+rb_int_odd_p(VALUE num)
 {
     if (FIXNUM_P(num)) {
 	if (num & 2) {
@@ -3567,7 +3523,7 @@ rb_int_minus(VALUE x, VALUE y)
 }
 
 
-#define SQRT_LONG_MAX ((SIGNED_VALUE)1<<((SIZEOF_LONG*CHAR_BIT-1)/2))
+#define SQRT_LONG_MAX HALF_LONG_MSB
 /*tests if N*N would overflow*/
 #define FIT_SQRT_LONG(n) (((n)<SQRT_LONG_MAX)&&((n)>=-SQRT_LONG_MAX))
 
@@ -3976,7 +3932,7 @@ fix_pow(VALUE x, VALUE y)
 	    if (int_even_p(y)) return INT2FIX(1);
 	    else return INT2FIX(-1);
 	}
-	if (negative_int_p(y))
+	if (rb_num_negative_int_p(y))
 	    return num_funcall1(rb_rational_raw1(x), idPow, y);
 	if (a == 0) return INT2FIX(0);
 	x = rb_int2big(FIX2LONG(x));
@@ -4010,154 +3966,6 @@ rb_int_pow(VALUE x, VALUE y)
 	return rb_big_pow(x, y);
     }
     return Qnil;
-}
-
-/*
- * Integer#pow
- */
-
-static VALUE
-int_pow_tmp1(VALUE x, VALUE y, long mm, int nega_flg)
-{
-    long xx = FIX2LONG(x);
-    long tmp = 1L;
-    long yy;
-
-    for (/*NOP*/; ! FIXNUM_P(y); y = rb_funcall(y, idGTGT, 1, LONG2FIX(1L))) {
-        if (RTEST(int_odd_p(y))) {
-            tmp = (tmp * xx) % mm;
-        }
-        xx = (xx * xx) % mm;
-    }
-    for (yy = FIX2LONG(y); yy; yy >>= 1L) {
-        if (yy & 1L) {
-            tmp = (tmp * xx) % mm;
-        }
-        xx = (xx * xx) % mm;
-    }
-
-    if (nega_flg && tmp) {
-        tmp -= mm;
-    }
-    return LONG2FIX(tmp);
-}
-
-static VALUE
-int_pow_tmp2(VALUE x, VALUE y, long mm, int nega_flg)
-{
-    long tmp = 1L;
-    long yy;
-#ifdef DLONG
-    DLONG const mmm = mm;
-    long xx = FIX2LONG(x);
-
-    for (/*NOP*/; ! FIXNUM_P(y); y = rb_funcall(y, idGTGT, 1, LONG2FIX(1L))) {
-        if (RTEST(int_odd_p(y))) {
-            tmp = ((DLONG)tmp * (DLONG)xx) % mmm;
-        }
-        xx = ((DLONG)xx * (DLONG)xx) % mmm;
-    }
-    for (yy = FIX2LONG(y); yy; yy >>= 1L) {
-        if (yy & 1L) {
-            tmp = ((DLONG)tmp * (DLONG)xx) % mmm;
-        }
-        xx = ((DLONG)xx * (DLONG)xx) % mmm;
-    }
-#else
-    VALUE const m = LONG2FIX(mm);
-    VALUE tmp2 = LONG2FIX(tmp);
-
-    for (/*NOP*/; ! FIXNUM_P(y); y = rb_funcall(y, idGTGT, 1, LONG2FIX(1L))) {
-        if (RTEST(int_odd_p(y))) {
-            tmp2 = rb_fix_mul_fix(tmp2, x);
-            tmp2 = rb_int_modulo(tmp2, m);
-        }
-        x = rb_fix_mul_fix(x, x);
-        x = rb_int_modulo(x, m);
-    }
-    for (yy = FIX2LONG(y); yy; yy >>= 1L) {
-        if (yy & 1L) {
-            tmp2 = rb_fix_mul_fix(tmp2, x);
-            tmp2 = rb_int_modulo(tmp2, m);
-        }
-        x = rb_fix_mul_fix(x, x);
-        x = rb_int_modulo(x, m);
-    }
-
-    tmp = FIX2LONG(tmp2);
-#endif
-    if (nega_flg && tmp) {
-        tmp -= mm;
-    }
-    return LONG2FIX(tmp);
-}
-
-/*
- * Document-method: Integer#pow
- * call-seq:
- *    integer.pow(integer)           ->  integer
- *    integer.pow(integer, integer)  ->  integer
- *
- * Returns (modular) exponentiation as:
- *
- *   a.pow(b)     #=>  same as a**b
- *   a.pow(b, m)  #=>  same as (a**b) % m, but doesn't make huge values as temporary
- */
-static VALUE
-int_powm(int const argc, VALUE * const argv, VALUE const num)
-{
-    VALUE int_pow_tmp3(VALUE/*a*/, VALUE/*b*/, VALUE/*m*/, int/*nega flg*/); /* in bignum.c */
-
-    rb_check_arity(argc, 1, 2);
-
-    if (argc == 1) {
-        return rb_funcall(num, rb_intern("**"), 1, argv[0]);
-    }
-    else {
-        VALUE const a = num;
-        VALUE const b = argv[0];
-        VALUE m = argv[1];
-        int nega_flg = 0;
-        if ( ! RB_INTEGER_TYPE_P(b)) {
-            rb_raise(rb_eTypeError, "Integer#pow() 2nd argument not allowed unless a 1st argument is integer");
-        }
-        if (negative_int_p(b)) {
-            rb_raise(rb_eRangeError, "Integer#pow() 1st argument cannot be negative when 2nd argument specified");
-        }
-        if ( ! RB_INTEGER_TYPE_P(m)) {
-            rb_raise(rb_eTypeError, "Integer#pow() 2nd argument not allowed unless all arguments are integers");
-        }
-
-        if (negative_int_p(m)) {
-            m = rb_funcall(m, idUMinus, 0);
-            nega_flg = 1;
-        }
-
-        if ( ! positive_int_p(m)) {
-            rb_num_zerodiv();
-        }
-        if (FIXNUM_P(m)) {
-#if SIZEOF_LONG == 8
-            long const half_val = 0x80000000L;
-#elif SIZEOF_LONG == 4
-            long const half_val = 0x8000L;
-#else
-# error
-#endif
-            long const mm = FIX2LONG(m);
-            if (mm <= half_val) {
-                return int_pow_tmp1(rb_int_modulo(a, m), b, mm, nega_flg);
-            } else {
-                return int_pow_tmp2(rb_int_modulo(a, m), b, mm, nega_flg);
-            }
-        } else if (RB_TYPE_P(m, T_BIGNUM)) {
-            return int_pow_tmp3(rb_int_modulo(a, m), b, m, nega_flg);
-        } else {
-            UNREACHABLE;
-        }
-        UNREACHABLE;
-    }
-    UNREACHABLE;
 }
 
 /*
@@ -5542,7 +5350,7 @@ Init_Numeric(void)
     rb_define_method(rb_cInteger, "to_s", int_to_s, -1);
     rb_define_alias(rb_cInteger, "inspect", "to_s");
     rb_define_method(rb_cInteger, "integer?", int_int_p, 0);
-    rb_define_method(rb_cInteger, "odd?", int_odd_p, 0);
+    rb_define_method(rb_cInteger, "odd?", rb_int_odd_p, 0);
     rb_define_method(rb_cInteger, "even?", int_even_p, 0);
     rb_define_method(rb_cInteger, "upto", int_upto, 1);
     rb_define_method(rb_cInteger, "downto", int_downto, 1);
@@ -5574,7 +5382,7 @@ Init_Numeric(void)
     rb_define_method(rb_cInteger, "fdiv", rb_int_fdiv, 1);
     rb_define_method(rb_cInteger, "**", rb_int_pow, 1);
 
-    rb_define_method(rb_cInteger, "pow", int_powm, -1);
+    rb_define_method(rb_cInteger, "pow", rb_int_powm, -1);
 
     rb_define_method(rb_cInteger, "abs", rb_int_abs, 0);
     rb_define_method(rb_cInteger, "magnitude", rb_int_abs, 0);
