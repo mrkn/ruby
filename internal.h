@@ -1074,6 +1074,7 @@ VALUE rb_big_gt(VALUE x, VALUE y);
 VALUE rb_big_ge(VALUE x, VALUE y);
 VALUE rb_big_lt(VALUE x, VALUE y);
 VALUE rb_big_le(VALUE x, VALUE y);
+VALUE rb_int_powm(int const argc, VALUE * const argv, VALUE const num);
 
 /* class.c */
 VALUE rb_class_boot(VALUE);
