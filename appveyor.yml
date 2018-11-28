@@ -87,7 +87,7 @@ for:
     - cd %APPVEYOR_BUILD_FOLDER%
     - cd %Platform%-mswin_%vs%
     - ..\win32\configure.bat --without-ext=+,dbm,gdbm,readline --with-opt-dir=/usr/local --with-openssl-dir=%OPENSSL_DIR:\=/%
-    - nmake -l
+    - nmake -l V=1
     - nmake install-nodoc
     - \usr\bin\ruby -v -e "p :locale => Encoding.find('locale'), :filesystem => Encoding.find('filesystem')"
     - if not "%GEMS_FOR_TEST%" == "" \usr\bin\gem install --no-document %GEMS_FOR_TEST%
@@ -134,7 +134,7 @@ for:
     - cd ..\build
     - sh ../ruby/configure --disable-install-doc --prefix=/. --build=%MINGW_CHOST% --host=%MINGW_CHOST% --target=%MINGW_CHOST%
     - mingw32-make -j%JOBS% up
-    - mingw32-make -j%JOBS%
+    - mingw32-make -j%JOBS% V=1
     - mingw32-make DESTDIR=../install install-nodoc
     - if not "%GEMS_FOR_TEST%" == "" ..\install\bin\gem install --no-document %GEMS_FOR_TEST%
   test_script:
