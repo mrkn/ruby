@@ -288,15 +288,29 @@ k_numeric_p(VALUE x)
     struct RComplex *adat = RCOMPLEX(x), *bdat = RCOMPLEX(y)
 
 inline static VALUE
-nucomp_s_new_internal(VALUE klass, VALUE real, VALUE imag)
+nucomp_s_new_internal_float(VALUE klass, double real, double imag)
 {
     NEWOBJ_OF(obj, struct RComplex, klass, T_COMPLEX | (RGENGC_WB_PROTECTED_COMPLEX ? FL_WB_PROTECTED : 0));
-
-    RCOMPLEX_SET_REAL(obj, real);
-    RCOMPLEX_SET_IMAG(obj, imag);
+    RCOMPLEX_SET_FLOAT_REAL(obj, real);
+    RCOMPLEX_SET_FLOAT_IMAG(obj, imag);
+    RBASIC(obj)->flags |= RB_COMPLEX_FLOAT_FLAG;
     OBJ_FREEZE_RAW(obj);
-
     return (VALUE)obj;
+}
+
+inline static VALUE
+nucomp_s_new_internal(VALUE klass, VALUE real, VALUE imag)
+{
+    if (RB_FLOAT_TYPE_P(real) && RB_FLOAT_TYPE_P(imag)) {
+        return nucomp_s_new_internal_float(klass, NUM2DBL(real), NUM2DBL(imag));
+    }
+    else {
+        NEWOBJ_OF(obj, struct RComplex, klass, T_COMPLEX | (RGENGC_WB_PROTECTED_COMPLEX ? FL_WB_PROTECTED : 0));
+        RCOMPLEX_SET_REAL(obj, real);
+        RCOMPLEX_SET_IMAG(obj, imag);
+        OBJ_FREEZE_RAW(obj);
+        return (VALUE)obj;
+    }
 }
 
 static VALUE
@@ -501,11 +515,20 @@ m_cos(VALUE x)
 	return m_cos_bang(x);
     {
 	get_dat1(x);
-	return f_complex_new2(rb_cComplex,
-			      f_mul(m_cos_bang(dat->real),
-				    m_cosh_bang(dat->imag)),
-			      f_mul(f_negate(m_sin_bang(dat->real)),
-				    m_sinh_bang(dat->imag)));
+        if (RB_COMPLEX_FLOAT_FLAG(x)) {
+            const double real = dat->as.flt.real;
+            const double imag = dat->as.flt.imag;
+            return nucomp_s_new_internal_float(rb_cComplex,
+                                               cos(real) * cosh(imag),
+                                               -sin(real) * sinh(imag));
+        }
+        else {
+            return f_complex_new2(rb_cComplex,
+                                  f_mul(m_cos_bang(dat->as.obj.real),
+                                        m_cosh_bang(dat->as.obj.imag)),
+                                  f_mul(f_negate(m_sin_bang(dat->as.obj.real)),
+                                        m_sinh_bang(dat->as.obj.imag)));
+        }
     }
 }
 
@@ -516,11 +539,20 @@ m_sin(VALUE x)
 	return m_sin_bang(x);
     {
 	get_dat1(x);
-	return f_complex_new2(rb_cComplex,
-			      f_mul(m_sin_bang(dat->real),
-				    m_cosh_bang(dat->imag)),
-			      f_mul(m_cos_bang(dat->real),
-				    m_sinh_bang(dat->imag)));
+        if (RB_COMPLEX_FLOAT_FLAG(x)) {
+            const double real = dat->as.flt.real;
+            const double imag = dat->as.flt.imag;
+            return nucomp_s_new_internal_float(rb_cComplex,
+                                               sin(real) * cosh(imag),
+                                               cos(real) * sinh(imag));
+        }
+        else {
+            return f_complex_new2(rb_cComplex,
+                                  f_mul(m_sin_bang(dat->real),
+                                        m_cosh_bang(dat->imag)),
+                                  f_mul(m_cos_bang(dat->real),
+                                        m_sinh_bang(dat->imag)));
+        }
     }
 }
 

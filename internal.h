@@ -748,11 +748,25 @@ struct RFloat {
 
 struct RComplex {
     struct RBasic basic;
-    const VALUE real;
-    const VALUE imag;
+    union {
+        struct {
+            const double real;
+            const double imag;
+        } flt;
+        struct {
+            const VALUE real;
+            const VALUE imag;
+        } obj;
+    } as;
 };
 
+#define RB_COMPLEX_FLOAT_FLAG ((VALUE)FL_USER1)
+#define RB_COMPLEX_FLOAT_P(cmp) (RBASIC(cmp)->flags & COMPLEX_FLOAT_FLAG)
+
 #define RCOMPLEX(obj) (R_CAST(RComplex)(obj))
+
+#define RCOMPLEX_SET_FLOAT_REAL(cmp, r) (RCOMPLEX(cmp)->as.flt.real=(r))
+#define RCOMPLEX_SET_FLOAT_IMAG(cmp, i) (RCOMPLEX(cmp)->as.flt.imag=(i))
 
 /* shortcut macro for internal only */
 #define RCOMPLEX_SET_REAL(cmp, r) RB_OBJ_WRITE((cmp), &((struct RComplex *)(cmp))->real,(r))
