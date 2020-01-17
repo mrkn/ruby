@@ -207,7 +207,7 @@ inline static VALUE
 f_numerator(VALUE x)
 {
     if (RB_TYPE_P(x, T_RATIONAL)) {
-        return RRATIONAL(x)->num;
+        return RATIONAL_GET_NUM(x);
     }
     if (RB_FLOAT_TYPE_P(x)) {
         return rb_float_numerator(x);
@@ -219,7 +219,7 @@ inline static VALUE
 f_denominator(VALUE x)
 {
     if (RB_TYPE_P(x, T_RATIONAL)) {
-        return RRATIONAL(x)->den;
+        return RATIONAL_GET_DEN(x);
     }
     if (RB_FLOAT_TYPE_P(x)) {
         return rb_float_denominator(x);
@@ -317,7 +317,7 @@ f_negative_p(VALUE x)
     else if (RB_FLOAT_TYPE_P(x))
         return RFLOAT_VALUE(x) < 0.0;
     else if (RB_TYPE_P(x, T_RATIONAL))
-        return INT_NEGATIVE_P(RRATIONAL(x)->num);
+        return INT_NEGATIVE_P(RATIONAL_GET_NUM(x));
     return rb_num_negative_p(x);
 }
 
@@ -333,7 +333,7 @@ f_zero_p(VALUE x)
         return FIXNUM_ZERO_P(x);
     }
     else if (RB_TYPE_P(x, T_RATIONAL)) {
-        const VALUE num = RRATIONAL(x)->num;
+        const VALUE num = RATIONAL_GET_NUM(x);
         return FIXNUM_ZERO_P(num);
     }
     return (int)rb_equal(x, ZERO);
@@ -997,8 +997,8 @@ rb_complex_pow(VALUE self, VALUE other)
     if (k_numeric_p(other) && k_exact_zero_p(other))
 	return f_complex_new_bang1(CLASS_OF(self), ONE);
 
-    if (RB_TYPE_P(other, T_RATIONAL) && RRATIONAL(other)->den == LONG2FIX(1))
-	other = RRATIONAL(other)->num; /* c14n */
+    if (RB_TYPE_P(other, T_RATIONAL) && RATIONAL_GET_DEN(other) == LONG2FIX(1))
+	other = RATIONAL_GET_NUM(other); /* c14n */
 
     if (RB_TYPE_P(other, T_COMPLEX)) {
 	get_dat1(other);

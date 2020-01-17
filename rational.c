@@ -162,7 +162,7 @@ f_zero_p(VALUE x)
 	return FIXNUM_ZERO_P(x);
     }
     else if (RB_TYPE_P(x, T_RATIONAL)) {
-	VALUE num = RRATIONAL(x)->num;
+	VALUE num = RATIONAL_GET_NUM(x);
 
 	return FIXNUM_ZERO_P(num);
     }
@@ -178,8 +178,8 @@ f_one_p(VALUE x)
 	return x == LONG2FIX(1);
     }
     else if (RB_TYPE_P(x, T_RATIONAL)) {
-	VALUE num = RRATIONAL(x)->num;
-	VALUE den = RRATIONAL(x)->den;
+	VALUE num = RATIONAL_GET_NUM(x);
+	VALUE den = RATIONAL_GET_DEN(x);
 
 	return num == LONG2FIX(1) && den == LONG2FIX(1);
     }
@@ -196,8 +196,8 @@ f_minus_one_p(VALUE x)
 	return Qfalse;
     }
     else if (RB_TYPE_P(x, T_RATIONAL)) {
-	VALUE num = RRATIONAL(x)->num;
-	VALUE den = RRATIONAL(x)->den;
+	VALUE num = RATIONAL_GET_NUM(x);
+	VALUE den = RATIONAL_GET_DEN(x);
 
 	return num == LONG2FIX(-1) && den == LONG2FIX(1);
     }
@@ -391,12 +391,6 @@ f_lcm(VALUE x, VALUE y)
     return f_abs(f_mul(f_div(x, f_gcd(x, y)), y));
 }
 
-#define get_dat1(x) \
-    struct RRational *dat = RRATIONAL(x)
-
-#define get_dat2(x,y) \
-    struct RRational *adat = RRATIONAL(x), *bdat = RRATIONAL(y)
-
 inline static VALUE
 nurat_s_new_internal(VALUE klass, VALUE num, VALUE den)
 {
@@ -581,8 +575,7 @@ nurat_f_rational(int argc, VALUE *argv, VALUE klass)
 static VALUE
 nurat_numerator(VALUE self)
 {
-    get_dat1(self);
-    return dat->num;
+    return RATIONAL_GET_NUM(self);
 }
 
 /*
@@ -599,8 +592,7 @@ nurat_numerator(VALUE self)
 static VALUE
 nurat_denominator(VALUE self)
 {
-    get_dat1(self);
-    return dat->den;
+    return RATIONAL_GET_DEN(self);
 }
 
 /*
@@ -613,9 +605,10 @@ VALUE
 rb_rational_uminus(VALUE self)
 {
     const int unused = (assert(RB_TYPE_P(self, T_RATIONAL)), 0);
-    get_dat1(self);
     (void)unused;
-    return f_rational_new2(CLASS_OF(self), rb_int_uminus(dat->num), dat->den);
+    return f_rational_new2(CLASS_OF(self),
+                           rb_int_uminus(RATIONAL_GET_NUM(self)),
+                           RATIONAL_GET_DEN(self));
 }
 
 #ifndef NDEBUG
@@ -726,25 +719,18 @@ VALUE
 rb_rational_plus(VALUE self, VALUE other)
 {
     if (RB_INTEGER_TYPE_P(other)) {
-	{
-	    get_dat1(self);
-
-	    return f_rational_new_no_reduce2(CLASS_OF(self),
-					     rb_int_plus(dat->num, rb_int_mul(other, dat->den)),
-					     dat->den);
-	}
+        return f_rational_new_no_reduce2(CLASS_OF(self),
+                                         rb_int_plus(RATIONAL_GET_NUM(self),
+                                                     rb_int_mul(other, RATIONAL_GET_DEN(self))),
+                                         RATIONAL_GET_DEN(self));
     }
     else if (RB_FLOAT_TYPE_P(other)) {
 	return DBL2NUM(nurat_to_double(self) + RFLOAT_VALUE(other));
     }
     else if (RB_TYPE_P(other, T_RATIONAL)) {
-	{
-	    get_dat2(self, other);
-
-	    return f_addsub(self,
-			    adat->num, adat->den,
-			    bdat->num, bdat->den, '+');
-	}
+        return f_addsub(self,
+                        RATIONAL_GET_NUM(self), RATIONAL_GET_DEN(self),
+                        RATIONAL_GET_NUM(other), RATIONAL_GET_DEN(other), '+');
     }
     else {
 	return rb_num_coerce_bin(self, other, '+');
@@ -767,25 +753,19 @@ static VALUE
 nurat_sub(VALUE self, VALUE other)
 {
     if (RB_INTEGER_TYPE_P(other)) {
-	{
-	    get_dat1(self);
-
-	    return f_rational_new_no_reduce2(CLASS_OF(self),
-					     rb_int_minus(dat->num, rb_int_mul(other, dat->den)),
-					     dat->den);
-	}
+        return f_rational_new_no_reduce2(CLASS_OF(self),
+                                         rb_int_minus(RATIONAL_GET_NUM(self),
+                                                      rb_int_mul(other,
+                                                                 RATIONAL_GET_DEN(self))),
+                                         RATIONAL_GET_DEN(self));
     }
     else if (RB_FLOAT_TYPE_P(other)) {
 	return DBL2NUM(nurat_to_double(self) - RFLOAT_VALUE(other));
     }
     else if (RB_TYPE_P(other, T_RATIONAL)) {
-	{
-	    get_dat2(self, other);
-
-	    return f_addsub(self,
-			    adat->num, adat->den,
-			    bdat->num, bdat->den, '-');
-	}
+        return f_addsub(self,
+                        RATIONAL_GET_NUM(self), RATIONAL_GET_DEN(self),
+                        RATIONAL_GET_NUM(other), RATIONAL_GET_DEN(other), '-');
     }
     else {
 	return rb_num_coerce_bin(self, other, '-');
@@ -863,25 +843,17 @@ VALUE
 rb_rational_mul(VALUE self, VALUE other)
 {
     if (RB_INTEGER_TYPE_P(other)) {
-	{
-	    get_dat1(self);
-
-	    return f_muldiv(self,
-			    dat->num, dat->den,
-			    other, ONE, '*');
-	}
+        return f_muldiv(self,
+                        RATIONAL_GET_NUM(self), RATIONAL_GET_DEN(self),
+                        other, ONE, '*');
     }
     else if (RB_FLOAT_TYPE_P(other)) {
 	return DBL2NUM(nurat_to_double(self) * RFLOAT_VALUE(other));
     }
     else if (RB_TYPE_P(other, T_RATIONAL)) {
-	{
-	    get_dat2(self, other);
-
-	    return f_muldiv(self,
-			    adat->num, adat->den,
-			    bdat->num, bdat->den, '*');
-	}
+        return f_muldiv(self,
+                        RATIONAL_GET_NUM(self), RATIONAL_GET_DEN(self),
+                        RATIONAL_GET_NUM(other), RATIONAL_GET_DEN(other), '*');
     }
     else {
 	return rb_num_coerce_bin(self, other, '*');
@@ -905,34 +877,27 @@ static VALUE
 nurat_div(VALUE self, VALUE other)
 {
     if (RB_INTEGER_TYPE_P(other)) {
-	if (f_zero_p(other))
-            rb_num_zerodiv();
-	{
-	    get_dat1(self);
+	if (f_zero_p(other)) rb_num_zerodiv();
 
-	    return f_muldiv(self,
-			    dat->num, dat->den,
-			    other, ONE, '/');
-	}
+        return f_muldiv(self,
+                        RATIONAL_GET_NUM(self), RATIONAL_GET_DEN(self),
+                        other, ONE, '/');
     }
     else if (RB_FLOAT_TYPE_P(other)) {
         VALUE v = nurat_to_f(self);
         return rb_flo_div_flo(v, other);
     }
     else if (RB_TYPE_P(other, T_RATIONAL)) {
-	if (f_zero_p(other))
-            rb_num_zerodiv();
-	{
-	    get_dat2(self, other);
+	if (f_zero_p(other)) rb_num_zerodiv();
 
-	    if (f_one_p(self))
-		return f_rational_new_no_reduce2(CLASS_OF(self),
-						 bdat->den, bdat->num);
+        if (f_one_p(self))
+            return f_rational_new_no_reduce2(CLASS_OF(self),
+                                             RATIONAL_GET_DEN(other),
+                                             RATIONAL_GET_NUM(other));
 
-	    return f_muldiv(self,
-			    adat->num, adat->den,
-			    bdat->num, bdat->den, '/');
-	}
+        return f_muldiv(self,
+                        RATIONAL_GET_NUM(self), RATIONAL_GET_DEN(self),
+                        RATIONAL_GET_NUM(other), RATIONAL_GET_DEN(other), '/');
     }
     else {
 	return rb_num_coerce_bin(self, other, '/');
@@ -994,23 +959,21 @@ rb_rational_pow(VALUE self, VALUE other)
 	return f_rational_new_bang1(CLASS_OF(self), ONE);
 
     if (k_rational_p(other)) {
-	get_dat1(other);
-
-	if (f_one_p(dat->den))
-	    other = dat->num; /* c14n */
+	if (f_one_p(RATIONAL_GET_DEN(other)))
+	    other = RATIONAL_GET_NUM(other); /* c14n */
     }
 
     /* Deal with special cases of 0**n and 1**n */
     if (k_numeric_p(other) && k_exact_p(other)) {
-	get_dat1(self);
-	if (f_one_p(dat->den)) {
-	    if (f_one_p(dat->num)) {
+        VALUE num = RATIONAL_GET_NUM(self);
+	if (f_one_p(RATIONAL_GET_DEN(self))) {
+	    if (f_one_p(num)) {
 		return f_rational_new_bang1(CLASS_OF(self), ONE);
 	    }
-	    else if (f_minus_one_p(dat->num) && RB_INTEGER_TYPE_P(other)) {
+	    else if (f_minus_one_p(num) && RB_INTEGER_TYPE_P(other)) {
 		return f_rational_new_bang1(CLASS_OF(self), INT2FIX(f_odd_p(other) ? -1 : 1));
 	    }
-	    else if (INT_ZERO_P(dat->num)) {
+	    else if (INT_ZERO_P(num)) {
 		if (rb_num_negative_p(other)) {
                     rb_num_zerodiv();
 		}
@@ -1026,15 +989,13 @@ rb_rational_pow(VALUE self, VALUE other)
 	{
 	    VALUE num, den;
 
-	    get_dat1(self);
-
             if (INT_POSITIVE_P(other)) {
-		num = rb_int_pow(dat->num, other);
-		den = rb_int_pow(dat->den, other);
+		num = rb_int_pow(RATIONAL_GET_NUM(self), other);
+		den = rb_int_pow(RATIONAL_GET_DEN(self), other);
             }
             else if (INT_NEGATIVE_P(other)) {
-		num = rb_int_pow(dat->den, rb_int_uminus(other));
-		den = rb_int_pow(dat->num, rb_int_uminus(other));
+		num = rb_int_pow(RATIONAL_GET_DEN(self), rb_int_uminus(other));
+		den = rb_int_pow(RATIONAL_GET_NUM(self), rb_int_uminus(other));
             }
             else {
 		num = ONE;
@@ -1086,36 +1047,35 @@ VALUE
 rb_rational_cmp(VALUE self, VALUE other)
 {
     if (RB_INTEGER_TYPE_P(other)) {
-	{
-	    get_dat1(self);
-
-	    if (dat->den == LONG2FIX(1))
-		return rb_int_cmp(dat->num, other); /* c14n */
-	    other = f_rational_new_bang1(CLASS_OF(self), other);
-	    goto other_is_rational;
-	}
+        if (RATIONAL_GET_DEN(self) == LONG2FIX(1))
+            return rb_int_cmp(RATIONAL_GET_NUM(self), other); /* c14n */
+        other = f_rational_new_bang1(CLASS_OF(self), other);
+        goto other_is_rational;
     }
     else if (RB_FLOAT_TYPE_P(other)) {
 	return rb_dbl_cmp(nurat_to_double(self), RFLOAT_VALUE(other));
     }
     else if (RB_TYPE_P(other, T_RATIONAL)) {
-	other_is_rational:
-	{
-	    VALUE num1, num2;
+      other_is_rational:
+        {
+            VALUE num1, num2;
 
-	    get_dat2(self, other);
+            VALUE self_num = RATIONAL_GET_NUM(self);
+            VALUE self_den = RATIONAL_GET_DEN(self);
+            VALUE other_num = RATIONAL_GET_NUM(other);
+            VALUE other_den = RATIONAL_GET_DEN(other);
 
-	    if (FIXNUM_P(adat->num) && FIXNUM_P(adat->den) &&
-		FIXNUM_P(bdat->num) && FIXNUM_P(bdat->den)) {
-		num1 = f_imul(FIX2LONG(adat->num), FIX2LONG(bdat->den));
-		num2 = f_imul(FIX2LONG(bdat->num), FIX2LONG(adat->den));
-	    }
-	    else {
-		num1 = rb_int_mul(adat->num, bdat->den);
-		num2 = rb_int_mul(bdat->num, adat->den);
-	    }
-	    return rb_int_cmp(rb_int_minus(num1, num2), ZERO);
-	}
+            if (FIXNUM_P(self_num) && FIXNUM_P(self_den) &&
+                FIXNUM_P(other_num) && FIXNUM_P(other_den)) {
+                num1 = f_imul(FIX2LONG(self_num), FIX2LONG(other_den));
+                num2 = f_imul(FIX2LONG(other_num), FIX2LONG(self_den));
+            }
+            else {
+                num1 = rb_int_mul(self_num, other_den);
+                num2 = rb_int_mul(other_num, self_den);
+            }
+            return rb_int_cmp(rb_int_minus(num1, num2), ZERO);
+        }
     }
     else {
 	return rb_num_coerce_cmp(self, other, rb_intern("<=>"));
@@ -1138,17 +1098,18 @@ static VALUE
 nurat_eqeq_p(VALUE self, VALUE other)
 {
     if (RB_INTEGER_TYPE_P(other)) {
-        get_dat1(self);
+        VALUE num = RATIONAL_GET_NUM(self);
+        VALUE den = RATIONAL_GET_DEN(self);
 
-        if (RB_INTEGER_TYPE_P(dat->num) && RB_INTEGER_TYPE_P(dat->den)) {
-	    if (INT_ZERO_P(dat->num) && INT_ZERO_P(other))
+        if (RB_INTEGER_TYPE_P(num) && RB_INTEGER_TYPE_P(den)) {
+	    if (INT_ZERO_P(num) && INT_ZERO_P(other))
 		return Qtrue;
 
-	    if (!FIXNUM_P(dat->den))
+	    if (!FIXNUM_P(den))
 		return Qfalse;
-	    if (FIX2LONG(dat->den) != 1)
+	    if (FIX2LONG(den) != 1)
 		return Qfalse;
-	    return rb_int_equal(dat->num, other);
+	    return rb_int_equal(num, other);
 	}
         else {
             const double d = nurat_to_double(self);
@@ -1161,13 +1122,16 @@ nurat_eqeq_p(VALUE self, VALUE other)
     }
     else if (RB_TYPE_P(other, T_RATIONAL)) {
 	{
-	    get_dat2(self, other);
+            VALUE self_num = RATIONAL_GET_NUM(self);
+            VALUE self_den = RATIONAL_GET_DEN(self);
+            VALUE other_num = RATIONAL_GET_NUM(other);
+            VALUE other_den = RATIONAL_GET_DEN(other);
 
-	    if (INT_ZERO_P(adat->num) && INT_ZERO_P(bdat->num))
+	    if (INT_ZERO_P(self_num) && INT_ZERO_P(other_num))
 		return Qtrue;
 
-	    return f_boolcast(rb_int_equal(adat->num, bdat->num) &&
-			      rb_int_equal(adat->den, bdat->den));
+	    return f_boolcast(rb_int_equal(self_num, other_num) &&
+			      rb_int_equal(self_den, other_den));
 	}
     }
     else {
@@ -1210,8 +1174,7 @@ nurat_coerce(VALUE self, VALUE other)
 static VALUE
 nurat_positive_p(VALUE self)
 {
-    get_dat1(self);
-    return f_boolcast(INT_POSITIVE_P(dat->num));
+    return f_boolcast(INT_POSITIVE_P(RATIONAL_GET_NUM(self)));
 }
 
 /*
@@ -1223,8 +1186,7 @@ nurat_positive_p(VALUE self)
 static VALUE
 nurat_negative_p(VALUE self)
 {
-    get_dat1(self);
-    return f_boolcast(INT_NEGATIVE_P(dat->num));
+    return f_boolcast(INT_NEGATIVE_P(RATIONAL_GET_NUM(self)));
 }
 
 /*
@@ -1243,10 +1205,10 @@ nurat_negative_p(VALUE self)
 VALUE
 rb_rational_abs(VALUE self)
 {
-    get_dat1(self);
-    if (INT_NEGATIVE_P(dat->num)) {
-        VALUE num = rb_int_abs(dat->num);
-        return nurat_s_canonicalize_internal_no_reduce(CLASS_OF(self), num, dat->den);
+    VALUE num = RATIONAL_GET_NUM(self);
+    if (INT_NEGATIVE_P(num)) {
+        num = rb_int_abs(num);
+        return nurat_s_canonicalize_internal_no_reduce(CLASS_OF(self), num, RATIONAL_GET_DEN(self));
     }
     return self;
 }
@@ -1254,15 +1216,14 @@ rb_rational_abs(VALUE self)
 static VALUE
 nurat_floor(VALUE self)
 {
-    get_dat1(self);
-    return rb_int_idiv(dat->num, dat->den);
+    return rb_int_idiv(RATIONAL_GET_NUM(self), RATIONAL_GET_DEN(self));
 }
 
 static VALUE
 nurat_ceil(VALUE self)
 {
-    get_dat1(self);
-    return rb_int_uminus(rb_int_idiv(rb_int_uminus(dat->num), dat->den));
+    return rb_int_uminus(rb_int_idiv(rb_int_uminus(RATIONAL_GET_NUM(self)),
+                                     RATIONAL_GET_DEN(self)));
 }
 
 /*
@@ -1282,22 +1243,19 @@ nurat_ceil(VALUE self)
 static VALUE
 nurat_truncate(VALUE self)
 {
-    get_dat1(self);
-    if (INT_NEGATIVE_P(dat->num))
-	return rb_int_uminus(rb_int_idiv(rb_int_uminus(dat->num), dat->den));
-    return rb_int_idiv(dat->num, dat->den);
+    VALUE num = RATIONAL_GET_NUM(self);
+    VALUE den = RATIONAL_GET_DEN(self);
+    if (INT_NEGATIVE_P(num))
+	return rb_int_uminus(rb_int_idiv(rb_int_uminus(num), den));
+    return rb_int_idiv(num, den);
 }
 
 static VALUE
 nurat_round_half_up(VALUE self)
 {
-    VALUE num, den, neg;
-
-    get_dat1(self);
-
-    num = dat->num;
-    den = dat->den;
-    neg = INT_NEGATIVE_P(num);
+    VALUE num = RATIONAL_GET_NUM(self);
+    VALUE den = RATIONAL_GET_DEN(self);
+    VALUE neg = INT_NEGATIVE_P(num);
 
     if (neg)
 	num = rb_int_uminus(num);
@@ -1315,13 +1273,9 @@ nurat_round_half_up(VALUE self)
 static VALUE
 nurat_round_half_down(VALUE self)
 {
-    VALUE num, den, neg;
-
-    get_dat1(self);
-
-    num = dat->num;
-    den = dat->den;
-    neg = INT_NEGATIVE_P(num);
+    VALUE num = RATIONAL_GET_NUM(self);
+    VALUE den = RATIONAL_GET_DEN(self);
+    VALUE neg = INT_NEGATIVE_P(num);
 
     if (neg)
 	num = rb_int_uminus(num);
@@ -1340,20 +1294,16 @@ nurat_round_half_down(VALUE self)
 static VALUE
 nurat_round_half_even(VALUE self)
 {
-    VALUE num, den, neg, qr;
-
-    get_dat1(self);
-
-    num = dat->num;
-    den = dat->den;
-    neg = INT_NEGATIVE_P(num);
+    VALUE num = RATIONAL_GET_NUM(self);
+    VALUE den = RATIONAL_GET_DEN(self);
+    VALUE neg = INT_NEGATIVE_P(num);
 
     if (neg)
 	num = rb_int_uminus(num);
 
     num = rb_int_plus(rb_int_mul(num, TWO), den);
     den = rb_int_mul(den, TWO);
-    qr = rb_int_divmod(num, den);
+    VALUE qr = rb_int_divmod(num, den);
     num = RARRAY_AREF(qr, 0);
     if (INT_ZERO_P(RARRAY_AREF(qr, 1)))
 	num = rb_int_and(num, LONG2FIX(((int)~1)));
@@ -1541,11 +1491,12 @@ nurat_round_n(int argc, VALUE *argv, VALUE self)
 static double
 nurat_to_double(VALUE self)
 {
-    get_dat1(self);
-    if (!RB_INTEGER_TYPE_P(dat->num) || !RB_INTEGER_TYPE_P(dat->den)) {
-        return NUM2DBL(dat->num) / NUM2DBL(dat->den);
+    VALUE num = RATIONAL_GET_NUM(self);
+    VALUE den = RATIONAL_GET_DEN(self);
+    if (!RB_INTEGER_TYPE_P(num) || !RB_INTEGER_TYPE_P(den)) {
+        return NUM2DBL(num) / NUM2DBL(den);
     }
-    return rb_int_fdiv_double(dat->num, dat->den);
+    return rb_int_fdiv_double(num, den);
 }
 
 /*
@@ -1735,12 +1686,9 @@ static VALUE
 nurat_hash(VALUE self)
 {
     st_index_t v, h[2];
-    VALUE n;
-
-    get_dat1(self);
-    n = rb_hash(dat->num);
+    VALUE n = rb_hash(RATIONAL_GET_NUM(self));
     h[0] = NUM2LONG(n);
-    n = rb_hash(dat->den);
+    n = rb_hash(RATIONAL_GET_DEN(self));
     h[1] = NUM2LONG(n);
     v = rb_memhash(h, sizeof(h));
     return ST2FIX(v);
@@ -1749,12 +1697,9 @@ nurat_hash(VALUE self)
 static VALUE
 f_format(VALUE self, VALUE (*func)(VALUE))
 {
-    VALUE s;
-    get_dat1(self);
-
-    s = (*func)(dat->num);
+    VALUE s = (*func)(RATIONAL_GET_NUM(self));
     rb_str_cat2(s, "/");
-    rb_str_concat(s, (*func)(dat->den));
+    rb_str_concat(s, (*func)(RATIONAL_GET_DEN(self)));
 
     return s;
 }
@@ -1808,16 +1753,13 @@ nurat_dumper(VALUE self)
 static VALUE
 nurat_loader(VALUE self, VALUE a)
 {
-    VALUE num, den;
-
-    get_dat1(self);
-    num = rb_ivar_get(a, id_i_num);
-    den = rb_ivar_get(a, id_i_den);
+    VALUE num = rb_ivar_get(a, id_i_num);
+    VALUE den = rb_ivar_get(a, id_i_den);
     nurat_int_check(num);
     nurat_int_check(den);
     nurat_canonicalize(&num, &den);
-    RATIONAL_SET_NUM((VALUE)dat, num);
-    RATIONAL_SET_DEN((VALUE)dat, den);
+    RATIONAL_SET_NUM(self, num);
+    RATIONAL_SET_DEN(self, den);
     OBJ_FREEZE_RAW(self);
 
     return self;
@@ -1827,10 +1769,7 @@ nurat_loader(VALUE self, VALUE a)
 static VALUE
 nurat_marshal_dump(VALUE self)
 {
-    VALUE a;
-    get_dat1(self);
-
-    a = rb_assoc_new(dat->num, dat->den);
+    VALUE a = rb_assoc_new(RATIONAL_GET_NUM(self), RATIONAL_GET_DEN(self));
     rb_copy_generic_ivar(a, self);
     return a;
 }
@@ -1863,8 +1802,7 @@ nurat_marshal_load(VALUE self, VALUE a)
 VALUE
 rb_rational_reciprocal(VALUE x)
 {
-    get_dat1(x);
-    return f_rational_new_no_reduce2(CLASS_OF(x), dat->den, dat->num);
+    return f_rational_new_no_reduce2(CLASS_OF(x), RATIONAL_GET_DEN(x), RATIONAL_GET_NUM(x));
 }
 
 /*
@@ -2031,8 +1969,7 @@ VALUE
 rb_rational_canonicalize(VALUE x)
 {
     if (RB_TYPE_P(x, T_RATIONAL)) {
-        get_dat1(x);
-        if (f_one_p(dat->den)) return dat->num;
+        if (f_one_p(RATIONAL_GET_DEN(x))) return RATIONAL_GET_NUM(x);
     }
     return x;
 }

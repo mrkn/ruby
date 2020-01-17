@@ -172,8 +172,8 @@ quov(VALUE x, VALUE y)
 {
     VALUE ret = quor(x, y);
     if (RB_TYPE_P(ret, T_RATIONAL) &&
-        RRATIONAL(ret)->den == INT2FIX(1)) {
-        ret = RRATIONAL(ret)->num;
+        RATIONAL_GET_DEN(ret) == INT2FIX(1)) {
+        ret = RATIONAL_GET_NUM(ret);
     }
     return ret;
 }
@@ -312,9 +312,9 @@ static inline wideval_t
 v2w(VALUE v)
 {
     if (RB_TYPE_P(v, T_RATIONAL)) {
-        if (RRATIONAL(v)->den != LONG2FIX(1))
+        if (RATIONAL_GET_DEN(v) != LONG2FIX(1))
             return WIDEVAL_WRAP(v);
-        v = RRATIONAL(v)->num;
+        v = RATIONAL_GET_NUM(v);
     }
 #if WIDEVALUE_IS_WIDER
     if (FIXNUM_P(v)) {
@@ -544,8 +544,8 @@ num_exact(VALUE v)
     else if (RB_TYPE_P(tmp, T_RATIONAL)) {
         v = tmp;
       rational:
-        if (RRATIONAL(v)->den == INT2FIX(1))
-            v = RRATIONAL(v)->num;
+        if (RATIONAL_GET_DEN(v) == INT2FIX(1))
+            v = RATIONAL_GET_NUM(v);
     }
     else {
       typeerror:
@@ -5204,8 +5204,8 @@ time_mdump(VALUE time)
     rb_copy_generic_ivar(str, time);
     if (!rb_equal(nano, INT2FIX(0))) {
         if (RB_TYPE_P(nano, T_RATIONAL)) {
-            rb_ivar_set(str, id_nano_num, RRATIONAL(nano)->num);
-            rb_ivar_set(str, id_nano_den, RRATIONAL(nano)->den);
+            rb_ivar_set(str, id_nano_num, RATIONAL_GET_NUM(nano));
+            rb_ivar_set(str, id_nano_den, RATIONAL_GET_DEN(nano));
         }
         else {
             rb_ivar_set(str, id_nano_num, nano);
