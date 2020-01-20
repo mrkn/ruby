@@ -1,0 +1,30 @@
+prelude: |
+  def rand_nonzero(max, min)
+    r = rand(max - min) + min
+    r == 0 ? r + 1 : r
+  end
+
+  fix_max, fix_min = 1_000_000, -1_000_000
+  fix_a = Rational(rand_nonzero(fix_max, fix_min), rand_nonzero(fix_max, fix_min))
+  fix_b = Rational(rand_nonzero(fix_max, fix_min), rand_nonzero(fix_max, fix_min))
+
+  def rand_big(max, min)
+    r = rand(max - min) + min
+    r = -r if rand > 0.5
+    r += 1 if r.even?
+    r
+  end
+
+  big_max, big_min = 2<<300, 2<<200
+  big_a = Rational(rand_big(big_max, big_min), rand_big(big_max, big_min))
+  big_b = Rational(rand_big(big_max, big_min), rand_big(big_max, big_min))
+benchmark:
+  rational_fix_add: fix_c = fix_a + fix_b
+  rational_fix_sub: fix_c = fix_a - fix_b
+  rational_fix_mul: fix_c = fix_a * fix_b
+  rational_fix_div: fix_c = fix_a / fix_b
+  rational_big_add: big_c = big_a + big_b
+  rational_big_sub: big_c = big_a - big_b
+  rational_big_mul: big_c = big_a * big_b
+  rational_big_div: big_c = big_a / big_b
+loop_count: 1000000
