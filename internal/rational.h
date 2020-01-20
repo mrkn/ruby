@@ -15,14 +15,27 @@
 #include "internal/numeric.h"   /* for INT_POSITIVE_P */
 #include "ruby_assert.h"        /* for assert */
 
+#if SIZEOF_VALUE == SIZEOF_LONG_LONG
+typedef unsigned LONG_LONG rb_rational_native_component_type;
+#else
+typedef unsigned long rb_rational_native_component_type;
+#endif
+
+union rb_rational_component {
+    rb_rational_native_component_type val;
+    VALUE obj;
+};
+
 struct RRational {
     struct RBasic basic;
-    VALUE num;
-    VALUE den;
+    union rb_rational_component num;
+    union rb_rational_component den;
 };
 
 #define RRATIONAL(obj) (R_CAST(RRational)(obj))
 #define RATIONAL_SIGN_BIT FL_USER1
+#define RATIONAL_NUM_EMBED_FLAG FL_USER2
+#define RATIONAL_DEN_EMBED_FLAG FL_USER3
 
 /* rational.c */
 VALUE rb_rational_canonicalize(VALUE x);
@@ -44,6 +57,9 @@ static inline bool RATIONAL_POSITIVE_P(VALUE r);
 static inline bool RATIONAL_NEGATIVE_P(VALUE r);
 static inline void RATIONAL_SET_SIGN(VALUE r, bool sign);
 static inline void RATIONAL_NEGATE(VALUE r);
+static inline bool RATIONAL_NUM_EMBED_P(VALUE r);
+static inline bool RATIONAL_DEN_EMBED_P(VALUE r);
+static inline VALUE RATIONAL_NATIVE_COMPONENT_TO_VALUE(rb_rational_native_component_type val);
 static inline VALUE RATIONAL_GET_NUM(VALUE r);
 static inline VALUE RATIONAL_GET_DEN(VALUE r);
 static inline void RATIONAL_SET_NUM(VALUE r, VALUE n);
@@ -94,21 +110,55 @@ RATIONAL_NEGATE(VALUE r)
     FL_REVERSE_RAW(r, RATIONAL_SIGN_BIT);
 }
 
+static inline bool
+RATIONAL_NUM_EMBED_P(VALUE r)
+{
+    return FL_TEST_RAW(r, RATIONAL_NUM_EMBED_FLAG);
+}
+
+static inline bool
+RATIONAL_DEN_EMBED_P(VALUE r)
+{
+    return FL_TEST_RAW(r, RATIONAL_DEN_EMBED_FLAG);
+}
+
+static inline VALUE
+RATIONAL_NATIVE_COMPONENT_TO_VALUE(rb_rational_native_component_type val)
+{
+#if SIZEOF_VALUE == SIZEOF_LONG_LONG
+    return ULL2NUM(val);
+#else
+    return ULONG2NUM(val);
+#endif
+}
+
 static inline VALUE
 RATIONAL_GET_NUM(VALUE r)
 {
-    if (RATIONAL_POSITIVE_P(r)) {
-        return RRATIONAL(r)->num;
+    VALUE num;
+    if (RATIONAL_NUM_EMBED_P(r)) {
+        num = RATIONAL_NATIVE_COMPONENT_TO_VALUE(RRATIONAL(r)->num.val);
     }
     else {
-        return rb_int_uminus(RRATIONAL(r)->num);
+        num = RRATIONAL(r)->num.obj;
     }
+
+    if (RATIONAL_NEGATIVE_P(r)) {
+        return rb_int_uminus(num);
+    }
+
+    return num;
 }
 
 static inline VALUE
 RATIONAL_GET_DEN(VALUE r)
 {
-    return RRATIONAL(r)->den;
+    if (RATIONAL_DEN_EMBED_P(r)) {
+        return RATIONAL_NATIVE_COMPONENT_TO_VALUE(RRATIONAL(r)->den.val);
+    }
+    else {
+        return RRATIONAL(r)->den.obj;
+    }
 }
 
 static inline void
@@ -116,11 +166,36 @@ RATIONAL_SET_NUM(VALUE r, VALUE n)
 {
     assert(RB_INTEGER_TYPE_P(n));
     const bool positive_p = INT_POSITIVE_P(n);
-    if (! positive_p) {
-        n = rb_int_uminus(n);
-    }
     RATIONAL_SET_SIGN(r, positive_p);
-    RB_OBJ_WRITE(r, &RRATIONAL(r)->num, n);
+    if (FIXNUM_P(n)) {
+        if (positive_p) {
+            RRATIONAL(r)->num.val = FIX2LONG(n);
+        }
+        else {
+            RRATIONAL(r)->num.val = -FIX2LONG(n);
+        }
+        FL_SET_RAW(r, RATIONAL_NUM_EMBED_FLAG);
+    }
+    else /* RB_BIGNUM_TYPE_P(n) */ {
+        if (! positive_p) {
+            n = rb_int_uminus(n);
+        }
+#if SIZEOF_VALUE == SIZEOF_LONG_LONG
+        if (rb_big2ull_able_p(n)) {
+            RRATIONAL(r)->num.val = rb_big2ull(n);
+            FL_SET_RAW(r, RATIONAL_NUM_EMBED_FLAG);
+        }
+#else
+        if (rb_big2ulong_able_p(n)) {
+            RRATIONAL(r)->num.val = rb_big2ulong(n);
+            FL_SET_RAW(r, RATIONAL_NUM_EMBED_FLAG);
+        }
+#endif
+        else {
+            RB_OBJ_WRITE(r, &RRATIONAL(r)->num.obj, n);
+            FL_UNSET_RAW(r, RATIONAL_NUM_EMBED_FLAG);
+        }
+    }
 }
 
 static inline void
@@ -128,7 +203,21 @@ RATIONAL_SET_DEN(VALUE r, VALUE d)
 {
     assert(RB_INTEGER_TYPE_P(d));
     assert(INT_POSITIVE_P(d));
-    RB_OBJ_WRITE(r, &RRATIONAL(r)->den, d);
+#if SIZEOF_VALUE == SIZEOF_LONG_LONG
+    if (rb_int2ull_able_p(d)) {
+        RRATIONAL(r)->den.val = rb_num2ull(d);
+        FL_SET_RAW(r, RATIONAL_DEN_EMBED_FLAG);
+    }
+#else
+    if (rb_int2ulong_able_p(d)) {
+        RRATIONAL(r)->den.val = rb_num2ulong(d);
+        FL_SET_RAW(r, RATIONAL_DEN_EMBED_FLAG);
+    }
+#endif
+    else {
+        RB_OBJ_WRITE(r, &RRATIONAL(r)->den, d);
+        FL_UNSET_RAW(r, RATIONAL_DEN_EMBED_FLAG);
+    }
 }
 
 #endif /* INTERNAL_RATIONAL_H */

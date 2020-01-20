@@ -5472,8 +5472,12 @@ gc_mark_children(rb_objspace_t *objspace, VALUE obj)
 	break;
 
       case T_RATIONAL:
-	gc_mark(objspace, any->as.rational.num);
-	gc_mark(objspace, any->as.rational.den);
+        if (! RATIONAL_NUM_EMBED_P(obj)) {
+            gc_mark(objspace, any->as.rational.num.obj);
+        }
+        if (! RATIONAL_DEN_EMBED_P(obj)) {
+            gc_mark(objspace, any->as.rational.den.obj);
+        }
 	break;
 
       case T_COMPLEX:
@@ -8347,8 +8351,12 @@ gc_update_object_references(rb_objspace_t *objspace, VALUE obj)
         break;
 
       case T_RATIONAL:
-        UPDATE_IF_MOVED(objspace, any->as.rational.num);
-        UPDATE_IF_MOVED(objspace, any->as.rational.den);
+        if (! RATIONAL_NUM_EMBED_P(obj)) {
+            UPDATE_IF_MOVED(objspace, any->as.rational.num.obj);
+        }
+        if (! RATIONAL_DEN_EMBED_P(obj)) {
+            UPDATE_IF_MOVED(objspace, any->as.rational.den.obj);
+        }
         break;
 
       case T_COMPLEX:
