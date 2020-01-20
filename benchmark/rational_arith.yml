@@ -1,12 +1,29 @@
 prelude: |
-  def rand_nonzero(max, min)
-    r = rand(max - min) + min
-    r == 0 ? r + 1 : r
+  require 'rbconfig/sizeof'
+
+  FIXNUM_MIN = RbConfig::LIMITS['FIXNUM_MIN']
+  FIXNUM_MAX = RbConfig::LIMITS['FIXNUM_MAX']
+
+  if RbConfig::LIMITS['ULLONG_MAX']
+    NATIVE_MAX = RbConfig::LIMITS['ULLONG_MAX']
+  else
+    NATIVE_MAX = RbConfig::LIMITS['ULONG_MAX']
   end
 
-  fix_max, fix_min = 1_000_000, -1_000_000
-  fix_a = Rational(rand_nonzero(fix_max, fix_min), rand_nonzero(fix_max, fix_min))
-  fix_b = Rational(rand_nonzero(fix_max, fix_min), rand_nonzero(fix_max, fix_min))
+  def rand_nonzero(max, min)
+    r = rand(min .. (max-1))
+    r == 0 ? max : r
+  end
+
+  fix_a = Rational(rand_nonzero(FIXNUM_MAX, FIXNUM_MIN),
+                   rand_nonzero(FIXNUM_MAX, FIXNUM_MIN))
+  fix_b = Rational(rand_nonzero(FIXNUM_MAX, FIXNUM_MIN),
+                   rand_nonzero(FIXNUM_MAX, FIXNUM_MIN))
+
+  native_a = Rational(rand_nonzero(NATIVE_MAX, FIXNUM_MAX+1),
+                      rand_nonzero(NATIVE_MAX, FIXNUM_MAX+1))
+  native_b = Rational(rand_nonzero(NATIVE_MAX, FIXNUM_MAX+1),
+                      rand_nonzero(NATIVE_MAX, FIXNUM_MAX+1))
 
   def rand_big(max, min)
     r = rand(max - min) + min
@@ -23,6 +40,12 @@ benchmark:
   rational_fix_sub: fix_c = fix_a - fix_b
   rational_fix_mul: fix_c = fix_a * fix_b
   rational_fix_div: fix_c = fix_a / fix_b
+
+  rational_native_add: native_c = native_a + native_b
+  rational_native_sub: native_c = native_a - native_b
+  rational_native_mul: native_c = native_a * native_b
+  rational_native_div: native_c = native_a / native_b
+
   rational_big_add: big_c = big_a + big_b
   rational_big_sub: big_c = big_a - big_b
   rational_big_mul: big_c = big_a * big_b
