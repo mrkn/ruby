@@ -131,6 +131,10 @@ VALUE rb_big_ge(VALUE x, VALUE y);
 VALUE rb_big_lt(VALUE x, VALUE y);
 VALUE rb_big_le(VALUE x, VALUE y);
 VALUE rb_int_powm(int const argc, VALUE * const argv, VALUE const num);
+int rb_big2ulong_able_p(VALUE b);
+#ifdef HAVE_LONG_LONG
+int rb_big2ull_able_p(VALUE b);
+#endif
 static inline bool BIGNUM_SIGN(VALUE b);
 static inline bool BIGNUM_POSITIVE_P(VALUE b);
 static inline bool BIGNUM_NEGATIVE_P(VALUE b);

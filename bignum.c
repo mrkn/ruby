@@ -5116,6 +5116,13 @@ rb_big2str(VALUE x, int base)
     return rb_big2str1(x, base);
 }
 
+inline int
+rb_big2ulong_able_p(VALUE x)
+{
+    assert(RB_BIGNUM_TYPE_P(x));
+    return BIGSIZE(x) <= SIZEOF_LONG;
+}
+
 static unsigned long
 big2ulong(VALUE x, const char *type)
 {
@@ -5128,7 +5135,7 @@ big2ulong(VALUE x, const char *type)
 
     if (len == 0)
         return 0;
-    if (BIGSIZE(x) > sizeof(long)) {
+    if (! rb_big2ulong_able_p(x)) {
         rb_raise(rb_eRangeError, "bignum too big to convert into `%s'", type);
     }
     ds = BDIGITS(x);
@@ -5175,7 +5182,20 @@ rb_big2long(VALUE x)
     rb_raise(rb_eRangeError, "bignum too big to convert into `long'");
 }
 
+int
+rb_int2ulong_able_p(VALUE x)
+{
+    if (FIXNUM_P(x)) return 1;
+    return rb_big2ulong_able_p(x);
+}
+
 #if HAVE_LONG_LONG
+
+inline int
+rb_big2ull_able_p(VALUE x)
+{
+    return BIGSIZE(x) <= SIZEOF_LONG_LONG;
+}
 
 static unsigned LONG_LONG
 big2ull(VALUE x, const char *type)
@@ -5189,7 +5209,7 @@ big2ull(VALUE x, const char *type)
 
     if (len == 0)
         return 0;
-    if (BIGSIZE(x) > SIZEOF_LONG_LONG)
+    if (! rb_big2ull_able_p(x))
 	rb_raise(rb_eRangeError, "bignum too big to convert into `%s'", type);
 #if SIZEOF_LONG_LONG <= SIZEOF_BDIGIT
     num = (unsigned LONG_LONG)ds[0];
@@ -5232,6 +5252,13 @@ rb_big2ll(VALUE x)
             return -(LONG_LONG)(num-1)-1;
     }
     rb_raise(rb_eRangeError, "bignum too big to convert into `long long'");
+}
+
+int
+rb_int2ull_able_p(VALUE num)
+{
+    if (FIXNUM_P(num)) return 1;
+    return rb_big2ull_able_p(num);
 }
 
 #endif  /* HAVE_LONG_LONG */

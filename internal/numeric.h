@@ -79,6 +79,10 @@ VALUE rb_int_abs(VALUE num);
 VALUE rb_int_odd_p(VALUE num);
 int rb_int_positive_p(VALUE num);
 int rb_int_negative_p(VALUE num);
+int rb_int2ulong_able_p(VALUE num);
+#ifdef HAVE_LONG_LONG
+int rb_int2ull_able_p(VALUE num);
+#endif
 VALUE rb_num_pow(VALUE x, VALUE y);
 VALUE rb_float_ceil(VALUE num, int ndigits);
 VALUE rb_float_abs(VALUE flt);
