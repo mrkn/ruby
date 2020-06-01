@@ -71,6 +71,7 @@
 #include "internal/class.h"
 #include "internal/complex.h"
 #include "internal/cont.h"
+#include "internal/decimal.h"
 #include "internal/error.h"
 #include "internal/eval.h"
 #include "internal/gc.h"
@@ -2832,6 +2833,9 @@ obj_free(rb_objspace_t *objspace, VALUE obj)
 	}
 	break;
       case T_RATIONAL:
+        if (RATIONAL_DECIMAL_P(obj)) {
+            xfree(RDECIMAL(obj)->digits);
+        }
         RB_DEBUG_COUNTER_INC(obj_rational);
         break;
       case T_COMPLEX:

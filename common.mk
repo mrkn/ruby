@@ -89,6 +89,7 @@ COMMONOBJS    = array.$(OBJEXT) \
 		compile.$(OBJEXT) \
 		complex.$(OBJEXT) \
 		cont.$(OBJEXT) \
+		decimal.$(OBJEXT) \
 		debug.$(OBJEXT) \
 		debug_counter.$(OBJEXT) \
 		dir.$(OBJEXT) \

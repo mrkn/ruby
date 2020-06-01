@@ -25,6 +25,7 @@
 #include "id.h"
 #include "internal.h"
 #include "internal/complex.h"
+#include "internal/decimal.h"
 #include "internal/gc.h"
 #include "internal/numeric.h"
 #include "internal/object.h"
@@ -50,8 +51,6 @@ static ID id_abs, id_integer_p,
 #define f_boolcast(x) ((x) ? Qtrue : Qfalse)
 #define f_inspect rb_inspect
 #define f_to_s rb_obj_as_string
-
-static VALUE nurat_to_f(VALUE self);
 
 inline static VALUE
 f_add(VALUE x, VALUE y)
@@ -924,7 +923,7 @@ nurat_div(VALUE self, VALUE other)
 	}
     }
     else if (RB_FLOAT_TYPE_P(other)) {
-        VALUE v = nurat_to_f(self);
+        VALUE v = rb_rational_to_f(self);
         return rb_flo_div_flo(v, other);
     }
     else if (RB_TYPE_P(other, T_RATIONAL)) {
@@ -964,10 +963,10 @@ nurat_fdiv(VALUE self, VALUE other)
     if (f_zero_p(other))
         return nurat_div(self, rb_float_new(0.0));
     if (FIXNUM_P(other) && other == LONG2FIX(1))
-	return nurat_to_f(self);
+	return rb_rational_to_f(self);
     div = nurat_div(self, other);
     if (RB_TYPE_P(div, T_RATIONAL))
-	return nurat_to_f(div);
+	return rb_rational_to_f(div);
     if (RB_FLOAT_TYPE_P(div))
 	return div;
     return rb_funcall(div, idTo_f, 0);
@@ -1053,10 +1052,10 @@ rb_rational_pow(VALUE self, VALUE other)
     }
     else if (RB_TYPE_P(other, T_BIGNUM)) {
 	rb_warn("in a**b, b may be too big");
-	return rb_float_pow(nurat_to_f(self), other);
+	return rb_float_pow(rb_rational_to_f(self), other);
     }
     else if (RB_FLOAT_TYPE_P(other) || RB_TYPE_P(other, T_RATIONAL)) {
-	return rb_float_pow(nurat_to_f(self), other);
+	return rb_float_pow(rb_rational_to_f(self), other);
     }
     else {
 	return rb_num_coerce_bin(self, other, rb_intern("**"));
@@ -1160,7 +1159,11 @@ nurat_eqeq_p(VALUE self, VALUE other)
 	return f_boolcast(FIXNUM_ZERO_P(rb_dbl_cmp(d, RFLOAT_VALUE(other))));
     }
     else if (RB_TYPE_P(other, T_RATIONAL)) {
-	{
+        if (RATIONAL_DECIMAL_P(other)) {
+            other = rb_decimal_to_r(other);
+        }
+
+        {
 	    get_dat2(self, other);
 
 	    if (INT_ZERO_P(adat->num) && INT_ZERO_P(bdat->num))
@@ -1183,7 +1186,7 @@ nurat_coerce(VALUE self, VALUE other)
 	return rb_assoc_new(f_rational_new_bang1(CLASS_OF(self), other), self);
     }
     else if (RB_FLOAT_TYPE_P(other)) {
-        return rb_assoc_new(other, nurat_to_f(self));
+        return rb_assoc_new(other, rb_rational_to_f(self));
     }
     else if (RB_TYPE_P(other, T_RATIONAL)) {
 	return rb_assoc_new(other, self);
@@ -1559,8 +1562,8 @@ nurat_to_double(VALUE self)
  *    Rational(-3, 4).to_f  #=> -0.75
  *    Rational(20, 3).to_f  #=> 6.666666666666667
  */
-static VALUE
-nurat_to_f(VALUE self)
+VALUE
+rb_rational_to_f(VALUE self)
 {
     return DBL2NUM(nurat_to_double(self));
 }
@@ -2766,7 +2769,7 @@ Init_Rational(void)
     rb_define_method(rb_cRational, "round", nurat_round_n, -1);
 
     rb_define_method(rb_cRational, "to_i", nurat_truncate, 0);
-    rb_define_method(rb_cRational, "to_f", nurat_to_f, 0);
+    rb_define_method(rb_cRational, "to_f", rb_rational_to_f, 0);
     rb_define_method(rb_cRational, "to_r", nurat_to_r, 0);
     rb_define_method(rb_cRational, "rationalize", nurat_rationalize, -1);
 

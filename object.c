@@ -24,6 +24,7 @@
 #include "internal.h"
 #include "internal/array.h"
 #include "internal/class.h"
+#include "internal/decimal.h"
 #include "internal/error.h"
 #include "internal/eval.h"
 #include "internal/inits.h"
@@ -3866,6 +3867,14 @@ rb_num2dbl(VALUE val)
     }
     val = rb_convert_type_with_id(val, T_FLOAT, "Float", id_to_f);
     return RFLOAT_VALUE(val);
+}
+
+static VALUE
+rb_f_decimal(rb_execution_context_t *ec, VALUE obj, VALUE arg, VALUE prec, VALUE exception)
+{
+    long n = NIL_P(prec) ? 0 : NUM2LONG(prec);
+    int exception_p = rb_bool_expected(exception, "exception");
+    return rb_convert_to_decimal(arg, n, exception_p);
 }
 
 /*!

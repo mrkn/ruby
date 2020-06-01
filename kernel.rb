@@ -171,4 +171,17 @@ module Kernel
   def Float(arg, exception: true)
     Primitive.rb_f_float(arg, exception)
   end
+
+  #  call-seq:
+  #     Decimal(arg, prec: nil, exception: true)    -> decimal or nil
+  #
+  #  Returns <i>arg</i> as a decimal number.
+  #  <i>prec</i> is usually optional to specify the precision of the result number,
+  #  but it is required if <i>arg</i> is a rational number and it cannot be
+  #  represented in decimal form precisely.
+  #
+  #  If <i>arg</i> is a String, it is parsed to produce the result.
+  def Decimal(arg, prec: nil, exception: true)
+    __builtin_rb_f_decimal(arg, prec, exception)
+  end
 end

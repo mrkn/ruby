@@ -22,6 +22,9 @@ struct RRational {
 };
 
 #define RRATIONAL(obj) (R_CAST(RRational)(obj))
+#undef RRATIONAL  // for development of Decimal
+
+#define RRATIONAL_DECIMAL_FLAG FL_USER17
 
 /* rational.c */
 VALUE rb_rational_canonicalize(VALUE x);
@@ -38,9 +41,15 @@ VALUE rb_rational_pow(VALUE self, VALUE other);
 VALUE rb_numeric_quo(VALUE x, VALUE y);
 VALUE rb_float_numerator(VALUE x);
 VALUE rb_float_denominator(VALUE x);
+VALUE rb_rational_to_f(VALUE r);
 
+#ifndef RRATIONAL
+static inline struct RRational *RRATIONAL(VALUE obj);
+#endif
 static inline void RATIONAL_SET_NUM(VALUE r, VALUE n);
 static inline void RATIONAL_SET_DEN(VALUE r, VALUE d);
+static inline void RATIONAL_SET_DECIMAL(VALUE r);
+static inline bool RATIONAL_DECIMAL_P(VALUE r);
 
 RUBY_SYMBOL_EXPORT_BEGIN
 /* rational.c (export) */
@@ -50,6 +59,15 @@ VALUE rb_gcd_normal(VALUE self, VALUE other);
 VALUE rb_gcd_gmp(VALUE x, VALUE y);
 #endif
 RUBY_SYMBOL_EXPORT_END
+
+#ifndef RRATIONAL
+static inline struct RRational *
+RRATIONAL(VALUE obj)
+{
+    assert(!RATIONAL_DECIMAL_P(obj));
+    return R_CAST(RRational)(obj);
+}
+#endif
 
 static inline void
 RATIONAL_SET_NUM(VALUE r, VALUE n)
@@ -64,6 +82,18 @@ RATIONAL_SET_DEN(VALUE r, VALUE d)
     assert(RB_INTEGER_TYPE_P(d));
     assert(INT_POSITIVE_P(d));
     RB_OBJ_WRITE(r, &RRATIONAL(r)->den, d);
+}
+
+static inline void
+RATIONAL_SET_DECIMAL(VALUE r)
+{
+    FL_SET_RAW(r, RRATIONAL_DECIMAL_FLAG);
+}
+
+static inline bool
+RATIONAL_DECIMAL_P(VALUE r)
+{
+    return FL_TEST_RAW(r, RRATIONAL_DECIMAL_FLAG);
 }
 
 #endif /* INTERNAL_RATIONAL_H */

@@ -66,6 +66,7 @@ rb_call_inits(void)
     CALL(process);
     CALL(Cont);
     CALL(Rational);
+    CALL(Decimal);
     CALL(Complex);
     CALL(version);
     CALL(vm_trace);
