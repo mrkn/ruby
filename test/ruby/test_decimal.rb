@@ -338,11 +338,14 @@ class TestKernelDecimalWithFloat < TestDecimalBase
 
   test("with Float::MIN") do
     flo = Float::MIN
+
     nlz = 0
     while flo < 1.0
       flo *= Decimal::DECIMAL_RADIX
       nlz += 1
     end
+    nlz -= 1
+
     len = 0
     len10 = 0
     while len10 < Float::DIG+1
