@@ -1525,7 +1525,7 @@ Init_Decimal(void)
     rb_define_method(rb_cDecimal, "to_r", rb_decimal_to_r, 0);
 
     rb_define_method(rb_cDecimal, "to_s", decimal_to_s, 0);
-    rb_define_method(rb_cDecimal, "inspect", decimal_to_s, 0);
+    rb_define_alias(rb_cDecimal, "inspect", "to_s");
 
     BIGNUM_RADIX_IN_DECIMAL = rb_uint64_convert_to_decimal(BIGNUM_RADIX, 0, 0);
     rb_gc_register_mark_object(BIGNUM_RADIX_IN_DECIMAL);
