@@ -1258,6 +1258,10 @@ rb_decimal_to_dbl(VALUE dec)
     return DECIMAL_NEGATIVE_P(dec) ? -x : x;
 }
 
+// call-seq:
+//    dec.to_f  ->  float
+//
+// Return the value as a Float.
 VALUE
 rb_decimal_to_f(VALUE dec)
 {
@@ -1282,6 +1286,10 @@ decimal_digits_to_int(const BDIGIT *digits, const size_t len)
     return res;
 }
 
+// call-seq:
+//    dec.to_i  ->  integer
+//
+// Returns the truncated value as a Rational.
 VALUE
 rb_decimal_to_i(VALUE dec)
 {
@@ -1340,6 +1348,14 @@ decimal_to_rational(VALUE dec, VALUE *pnum, VALUE *pden)
     if (pnum) *pnum = num;
 }
 
+// call-seq:
+//    dec.numerator  ->  integer
+//
+// Returns the numerator.
+//
+//    Decimal(3).numerator  #=> 3
+//    Decimal(1.2).numerator  #=> 1200000000
+//    Decimal(1/2r).numerator  #=> 500000000
 static VALUE
 decimal_numerator(VALUE dec)
 {
@@ -1348,6 +1364,14 @@ decimal_numerator(VALUE dec)
     return num;
 }
 
+// call-seq:
+//    dec.denominator  ->  integer
+//
+// Returns the denominator.
+//
+//    Decimal(3).denominator  #=> 3
+//    Decimal(1.2).denominator  #=> 1000000000
+//    Decimal(1/2r).denominator  #=> 1000000000'
 static VALUE
 decimal_denominator(VALUE dec)
 {
@@ -1356,6 +1380,10 @@ decimal_denominator(VALUE dec)
     return den;
 }
 
+// call-Seq:
+//    dec.to_r  ->  rational
+//
+// Returns the value as a Rational.
 VALUE
 rb_decimal_to_r(VALUE dec)
 {
@@ -1392,7 +1420,10 @@ str_cat_zero_digits(VALUE s, size_t n)
     rb_str_catf(s, "%0*d", (int) n, 0);
 }
 
-// TODO: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX :TODO
+// call-seq:
+//    dec.to_s  ->   string
+//
+// Returns the value as a string.
 static VALUE
 decimal_to_s(VALUE dec)
 {
