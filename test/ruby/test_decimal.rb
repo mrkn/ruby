@@ -271,6 +271,7 @@ class TestDecimal < TestDecimalBase
     assert_equal(42.0, Decimal(42.0).to_f)
     assert_equal(0.5, Decimal(0.5).to_f)
     assert_equal(Math::PI, Decimal(Math::PI).to_f)
+    assert_equal(Float::MIN, Decimal(Float::MIN).to_f)
   end
 
   def test_to_r
