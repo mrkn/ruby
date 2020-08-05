@@ -782,7 +782,7 @@ rb_decimal_parse_cstr(const char *str, ssize_t len, const char **endp)
                 j = 0;
             }
         }
-        if (j < DECIMAL_COMP_DIG) {
+        if (1 <= j && j < DECIMAL_COMP_DIG) {
             digits[i++] = (BDIGIT) ruby_scan_digits(buf + DECIMAL_COMP_DIG - j, j, 10, &num_digits, &overflow);
             assert(!overflow);
         }
@@ -807,7 +807,7 @@ rb_decimal_parse_cstr(const char *str, ssize_t len, const char **endp)
                 j = 0;
             }
         }
-        if (j < DECIMAL_COMP_DIG) {
+        if (1 <= j && j < DECIMAL_COMP_DIG) {
             // the last digit with precision adjustment
             const unsigned int trailing_zeros = DECIMAL_COMP_DIG - num_frac_digits % DECIMAL_COMP_DIG;
             if (trailing_zeros > 0) {
@@ -1296,7 +1296,7 @@ decimal_to_s(VALUE dec)
         // non-zero integer part
         rb_str_catf(s, "%"PRIuBDIGIT, digits[len-1]);
         --len;
-        if (len == 1) {
+        if (len == 0) {
             if (exp < 0) {
                 // append omitted trailing zeros
                 size_t n = ((size_t)(-(exp+1))+1);
