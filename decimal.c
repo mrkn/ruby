@@ -131,7 +131,7 @@ static size_t DECIMAL_FRAC_LEN(VALUE dec)
     // there are omitted leading zeros
     if ((size_t)exp > len) return len;
 
-    return len - exp;
+    return exp;
 }
 
 VALUE rb_cDecimal;
