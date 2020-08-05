@@ -62,6 +62,7 @@ class TestDecimal < TestDecimalBase
 
   def test_eq_Decimal_with_rational
     assert_equal(Decimal("0.5"), Decimal(Rational(1, 2)))
+    assert_equal(Decimal("-0.5"), Decimal(-Rational(1, 2)))
     assert_equal(Decimal("0.25"), Decimal(Rational(1, 4)))
     assert_equal(Decimal("0.2"), Decimal(Rational(1, 5)))
     assert_equal(Decimal("0.125"), Decimal(Rational(1, 8)))

@@ -68,6 +68,21 @@ static inline int nlz_bdigit(BDIGIT x)
 #endif
 }
 
+static inline int ntz_bdigit(BDIGIT x)
+{
+    int n;
+#if SIZEOF_BDIGIT <= SIZEOF_INT32_T
+    n = ntz_int32((uint32_t)x);
+#elif SIZEOF_BDIGIT <= SIZEOF_INT64_T
+    n = nlz_int64((uint64_t)x);
+#elif SIZEOF_BDIGIT <= SIZEOF_INTPTR_T
+    n = nlz_long_long((uintptr_t)x);
+#endif
+    if (n >= SIZEOF_BDIGIT*CHAR_BIT)
+        return SIZEOF_BDIGIT*CHAR_BIT;
+    return n;
+}
+
 static bool
 digits_zero_p(const BDIGIT *digits, size_t len)
 {
@@ -313,6 +328,19 @@ rb_big_convert_to_decimal(VALUE big, size_t prec, int raise_exception)
     return dec;
 }
 
+static inline VALUE
+rb_inum_convert_to_decimal(VALUE inum, size_t prec, int raise_exception)
+{
+    RUBY_ASSERT(RB_INTEGER_TYPE_P(inum));
+
+    if (FIXNUM_P(inum)) {
+        return rb_int64_convert_to_decimal(FIX2LONG(inum), prec, raise_exception);
+    }
+    else /* RB_TYPE_P(val, T_BIGNUM) */ {
+        return rb_big_convert_to_decimal(inum, prec, raise_exception);
+    }
+}
+
 VALUE
 rb_dbl_convert_to_decimal(double d, size_t prec, int raise_exception)
 {
@@ -469,6 +497,133 @@ rb_dbl_convert_to_decimal(double d, size_t prec, int raise_exception)
 
     return dec;
 #endif
+}
+
+VALUE
+rb_rational_convert_to_decimal(VALUE rat, size_t prec, int raise_exception)
+{
+    // TODO: This needs Karatsuba Radix Conversion algorithm
+    //       to examine val can be extracted in a finite number of digits
+
+    RUBY_ASSERT(RB_TYPE_P(rat, T_RATIONAL));
+    RUBY_ASSERT(! DECIMAL_P(rat));
+
+    VALUE num_v = RRATIONAL(rat)->num;
+    VALUE den_v = RRATIONAL(rat)->den;
+    RUBY_ASSERT(INT_POSITIVE_P(den_v));  // denominator should be positive
+
+    ssize_t pow10 = -1;
+    if (FIXNUM_P(den_v)) {
+        int64_t den = FIX2LONG(den_v);
+
+        int pow2 = ntz_int64((uint64_t)den);
+        den >>= pow2;
+
+        int pow5 = 0;
+        while (den > 0) {
+            if (den % 5 > 0) break;
+            den /= 5;
+            ++pow5;
+        }
+
+        if (pow2 == 0 && pow5 == 0) {
+            // do nothing
+        }
+        else if (pow2 == pow5) {
+            pow10 = pow2;
+        }
+        else if (pow2 < pow5) {
+            pow10 = pow5;
+            int diff = pow5 - pow2;
+            num_v = rb_int_lshift(num_v, INT2FIX(diff));
+        }
+        else {  // pow2 > pow5
+            pow10 = pow2;
+            VALUE scale = rb_int_pow(INT2FIX(5), INT2FIX(pow2 - pow5));
+            num_v = rb_int_mul(num_v, scale);
+        }
+    }
+    else {
+        BDIGIT *dds = BIGNUM_DIGITS(den_v);
+        size_t dn = BIGNUM_LEN(den_v);
+
+        size_t i;
+        for (i = 0; dds[i] != 0 && i < dn; ++i);
+        int j = ntz_bdigit(dds[i]);
+
+        const VALUE zero = INT2FIX(0);
+        VALUE pow2_v = zero;
+        if (i > 0 || j > 0) {
+            pow2_v = SIZET2NUM(i);
+            pow2_v = rb_int_plus(pow2_v, INT2FIX(j));
+            den_v = rb_big_rshift(den_v, pow2_v);
+        }
+
+        VALUE pow5_v = zero;
+        if (FIXNUM_P(den_v)) {
+            int64_t den = FIX2LONG(den_v);
+            int pow5 = 0;
+            while (den > 0) {
+                if (den % 5 > 0) break;
+                den /= 5;
+                ++pow5;
+            }
+            pow5_v = INT2FIX(pow5);
+        }
+        else {
+            VALUE str = rb_big2str(den_v, 5);
+            const char *s = RSTRING_PTR(str);
+            const char *e = s + RSTRING_LEN(str);
+            if (*s == '1') {
+                while (*s == '0' && s < e) ++s;
+                if (s == e) {
+                    pow5_v = LONG2FIX(RSTRING_LEN(str));
+                }
+            }
+        }
+
+        int cmp = FIX2INT(rb_int_cmp(pow2_v, pow5_v));
+        if (pow2_v == zero && pow5_v == zero) {
+            // do nothing
+        }
+        else if (cmp == 0) {  // pow2_v == pow5_v
+            pow10 = NUM2SSIZET(pow2_v);
+        }
+        else if (cmp < 0) {  // pow2_v < pow5_v
+            pow10 = NUM2SSIZET(pow5_v);
+            VALUE diff_v = rb_int_minus(pow5_v, pow2_v);
+            num_v = rb_int_lshift(num_v, diff_v);
+        }
+        else {  // pow2_v > pow5_v
+            pow10 = NUM2SSIZET(pow2_v);
+            VALUE diff_v = rb_int_minus(pow2_v, pow5_v);
+            VALUE scale = rb_int_pow(INT2FIX(5), diff_v);
+            num_v = rb_int_mul(num_v, scale);
+        }
+    }
+
+    if (pow10 > 0) {
+        ssize_t exp = roomof(pow10, DECIMAL_COMP_DIG);
+        int trailing_zeros = exp * DECIMAL_COMP_DIG - pow10;
+
+        VALUE scale = rb_int_pow(INT2FIX(10), INT2FIX(trailing_zeros));
+        num_v = rb_int_mul(num_v, scale);
+
+        VALUE dec = rb_inum_convert_to_decimal(num_v, 0, raise_exception);
+        DECIMAL_SET_EXP(dec, exp);
+        DECIMAL_SET_TRAILING_ZEROS(dec,trailing_zeros);
+        return dec;
+    }
+    else if (prec == 0) {
+        rb_raise(rb_eArgError, "%"PRIsVALUE" cannot convert to a Decimal without prec", rat);
+    }
+    else {
+        num_v = rb_inum_convert_to_decimal(num_v, 0, raise_exception);
+        den_v = rb_inum_convert_to_decimal(den_v, 0, raise_exception);
+
+        // TODO: return rb_decimal_div_prec(num_v, den_v, prec);
+        return Qnil;
+    }
 }
 
 #define conv_digit(c) (ruby_digit36_to_number_table[(unsigned char)(c)])
@@ -864,19 +1019,13 @@ VALUE
 rb_convert_to_decimal(VALUE val, size_t prec, int raise_exception)
 {
     if (RB_INTEGER_TYPE_P(val)) {
-        if (FIXNUM_P(val)) {
-            return rb_int64_convert_to_decimal(FIX2LONG(val), prec, raise_exception);
-        }
-        else /* RB_TYPE_P(val, T_BIGNUM) */ {
-            return rb_big_convert_to_decimal(val, prec, raise_exception);
-        }
+        return rb_inum_convert_to_decimal(val, prec, raise_exception);
     }
     else if (RB_FLOAT_TYPE_P(val)) {
         return rb_dbl_convert_to_decimal(RFLOAT_VALUE(val), prec, raise_exception);
     }
     else if (RB_TYPE_P(val, T_RATIONAL)) {
-        // TODO: This needs Karatsuba Radix Conversion algorithm
-        //       to examine val can be extracted in a finite number of digits
+        return rb_rational_convert_to_decimal(val, prec, raise_exception);
     }
     else if (RB_TYPE_P(val, T_STRING)) {
         return rb_str_convert_to_decimal(val, prec, raise_exception);
