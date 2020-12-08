@@ -2,6 +2,7 @@
  * $Id$
  */
 
+#include <stdbool.h>
 #include <ruby/ruby.h>
 #include <ruby/io.h>
 #include <ctype.h>
@@ -24,6 +25,7 @@ struct ptr_data {
     void *ptr;
     long size;
     freefunc_t free;
+    bool freed;
     VALUE wrap[2];
 };
 
@@ -57,14 +59,19 @@ fiddle_ptr_mark(void *ptr)
 }
 
 static void
-fiddle_ptr_free(void *ptr)
+fiddle_ptr_free_ptr(void *ptr)
 {
     struct ptr_data *data = ptr;
-    if (data->ptr) {
-	if (data->free) {
-	    (*(data->free))(data->ptr);
-	}
+    if (data->ptr && data->free && !data->freed) {
+	data->freed = true;
+	(*(data->free))(data->ptr);
     }
+}
+
+static void
+fiddle_ptr_free(void *ptr)
+{
+    fiddle_ptr_free_ptr(ptr);
     xfree(ptr);
 }
 
@@ -89,6 +96,7 @@ rb_fiddle_ptr_new2(VALUE klass, void *ptr, long size, freefunc_t func)
     val = TypedData_Make_Struct(klass, struct ptr_data, &fiddle_ptr_data_type, data);
     data->ptr = ptr;
     data->free = func;
+    data->freed = false;
     data->size = size;
 
     return val;
@@ -101,13 +109,13 @@ rb_fiddle_ptr_new(void *ptr, long size, freefunc_t func)
 }
 
 static VALUE
-rb_fiddle_ptr_malloc(long size, freefunc_t func)
+rb_fiddle_ptr_malloc(VALUE klass, long size, freefunc_t func)
 {
     void *ptr;
 
     ptr = ruby_xmalloc((size_t)size);
     memset(ptr,0,(size_t)size);
-    return rb_fiddle_ptr_new(ptr, size, func);
+    return rb_fiddle_ptr_new2(klass, ptr, size, func);
 }
 
 static void *
@@ -140,6 +148,7 @@ rb_fiddle_ptr_s_allocate(VALUE klass)
     data->ptr = 0;
     data->size = 0;
     data->free = 0;
+    data->freed = false;
 
     return obj;
 }
@@ -191,17 +200,31 @@ rb_fiddle_ptr_initialize(int argc, VALUE argv[], VALUE self)
     return Qnil;
 }
 
+static VALUE
+rb_fiddle_ptr_call_free(VALUE self);
+
 /*
  * call-seq:
  *    Fiddle::Pointer.malloc(size, freefunc = nil)  => fiddle pointer instance
+ *    Fiddle::Pointer.malloc(size, freefunc) { |pointer| ... } => ...
  *
  * == Examples
+ *
+ *    # Automatically freeing the pointer when the block is exited - recommended
+ *    Fiddle::Pointer.malloc(size, Fiddle::RUBY_FREE) do |pointer|
+ *      ...
+ *    end
+ *
+ *    # Manually freeing but relying on the garbage collector otherwise
+ *    pointer = Fiddle::Pointer.malloc(size, Fiddle::RUBY_FREE)
+ *    ...
+ *    pointer.call_free
  *
  *    # Relying on the garbage collector - may lead to unlimited memory allocated before freeing any, but safe
  *    pointer = Fiddle::Pointer.malloc(size, Fiddle::RUBY_FREE)
  *    ...
  *
- *    # Manual freeing
+ *    # Only manually freeing
  *    pointer = Fiddle::Pointer.malloc(size)
  *    begin
  *      ...
@@ -214,13 +237,16 @@ rb_fiddle_ptr_initialize(int argc, VALUE argv[], VALUE self)
  *    ...
  *
  * Allocate +size+ bytes of memory and associate it with an optional
- * +freefunc+ that will be called when the pointer is garbage collected.
- * +freefunc+ must be an address pointing to a function or an instance of
- * +Fiddle::Function+. Using +freefunc+ may lead to unlimited memory being
- * allocated before any is freed as the native memory the pointer references
- * does not contribute to triggering the Ruby garbage collector. Consider
- * manually freeing the memory as illustrated above. You cannot combine
- * the techniques as this may lead to a double-free.
+ * +freefunc+.
+ *
+ * If a block is supplied, the pointer will be yielded to the block instead of
+ * being returned, and the return value of the block will be returned. A
+ * +freefunc+ must be supplied if a block is.
+ *
+ * If a +freefunc+ is supplied it will be called once, when the pointer is
+ * garbage collected or when the block is left if a block is supplied or
+ * when the user calls +call_free+, whichever happens first. +freefunc+ must be
+ * an address pointing to a function or an instance of +Fiddle::Function+.
  */
 static VALUE
 rb_fiddle_ptr_s_malloc(int argc, VALUE argv[], VALUE klass)
@@ -242,10 +268,17 @@ rb_fiddle_ptr_s_malloc(int argc, VALUE argv[], VALUE klass)
 	rb_bug("rb_fiddle_ptr_s_malloc");
     }
 
-    obj = rb_fiddle_ptr_malloc(s,f);
+    obj = rb_fiddle_ptr_malloc(klass, s,f);
     if (wrap) RPTR_DATA(obj)->wrap[1] = wrap;
 
-    return obj;
+    if (rb_block_given_p()) {
+        if (!f) {
+            rb_raise(rb_eArgError, "a free function must be supplied to Fiddle::Pointer.malloc when it is called with a block");
+        }
+        return rb_ensure(rb_yield, obj, rb_fiddle_ptr_call_free, obj);
+    } else {
+        return obj;
+    }
 }
 
 /*
@@ -368,6 +401,34 @@ rb_fiddle_ptr_free_get(VALUE self)
     rb_ary_push(arg_types, INT2NUM(TYPE_VOIDP));
 
     return rb_fiddle_new_function(address, arg_types, ret_type);
+}
+
+/*
+ * call-seq: call_free => nil
+ *
+ * Call the free function for this pointer. Calling more than once will do
+ * nothing. Does nothing if there is no free function attached.
+ */
+static VALUE
+rb_fiddle_ptr_call_free(VALUE self)
+{
+    struct ptr_data *pdata;
+    TypedData_Get_Struct(self, struct ptr_data, &fiddle_ptr_data_type, pdata);
+    fiddle_ptr_free_ptr(pdata);
+    return Qnil;
+}
+
+/*
+ * call-seq: freed? => bool
+ *
+ * Returns if the free function for this pointer has been called.
+ */
+static VALUE
+rb_fiddle_ptr_freed_p(VALUE self)
+{
+    struct ptr_data *pdata;
+    TypedData_Get_Struct(self, struct ptr_data, &fiddle_ptr_data_type, pdata);
+    return pdata->freed ? Qtrue : Qfalse;
 }
 
 /*
@@ -711,6 +772,8 @@ Init_fiddle_pointer(void)
     rb_define_method(rb_cPointer, "initialize", rb_fiddle_ptr_initialize, -1);
     rb_define_method(rb_cPointer, "free=", rb_fiddle_ptr_free_set, 1);
     rb_define_method(rb_cPointer, "free",  rb_fiddle_ptr_free_get, 0);
+    rb_define_method(rb_cPointer, "call_free",  rb_fiddle_ptr_call_free, 0);
+    rb_define_method(rb_cPointer, "freed?",  rb_fiddle_ptr_freed_p, 0);
     rb_define_method(rb_cPointer, "to_i",  rb_fiddle_ptr_to_i, 0);
     rb_define_method(rb_cPointer, "to_int",  rb_fiddle_ptr_to_i, 0);
     rb_define_method(rb_cPointer, "to_value",  rb_fiddle_ptr_to_value, 0);

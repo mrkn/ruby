@@ -35,12 +35,37 @@ module Fiddle
     def parse_struct_signature(signature, tymap=nil)
       if signature.is_a?(String)
         signature = split_arguments(signature, /[,;]/)
+      elsif signature.is_a?(Hash)
+        signature = [signature]
       end
       mems = []
       tys  = []
       signature.each{|msig|
-        msig = compact(msig)
+        msig = compact(msig) if msig.is_a?(String)
         case msig
+        when Hash
+          msig.each do |struct_name, struct_signature|
+            struct_name = struct_name.to_s if struct_name.is_a?(Symbol)
+            struct_name = compact(struct_name)
+            struct_count = nil
+            if struct_name =~ /^([\w\*\s]+)\[(\d+)\]$/
+              struct_count = $2.to_i
+              struct_name = $1
+            end
+            if struct_signature.respond_to?(:entity_class)
+              struct_type = struct_signature
+            else
+              parsed_struct = parse_struct_signature(struct_signature, tymap)
+              struct_type = CStructBuilder.create(CStruct, *parsed_struct)
+            end
+            if struct_count
+              ty = [struct_type, struct_count]
+            else
+              ty = struct_type
+            end
+            mems.push([struct_name, struct_type.members])
+            tys.push(ty)
+          end
         when /^[\w\*\s]+[\*\s](\w+)$/
           mems.push($1)
           tys.push(parse_ctype(msig, tymap))
@@ -172,6 +197,8 @@ module Fiddle
         return TYPE_UINTPTR_T
       when /\*/, /\[[\s\d]*\]/
         return TYPE_VOIDP
+      when "..."
+        return TYPE_VARIADIC
       else
         ty = ty.split(' ', 2)[0]
         if( tymap[ty] )
@@ -186,7 +213,7 @@ module Fiddle
 
     def split_arguments(arguments, sep=',')
       return [] if arguments.strip == 'void'
-      arguments.scan(/([\w\*\s]+\(\*\w*\)\(.*?\)|[\w\*\s\[\]]+)(?:#{sep}\s*|$)/).collect {|m| m[0]}
+      arguments.scan(/([\w\*\s]+\(\*\w*\)\(.*?\)|[\w\*\s\[\]]+|\.\.\.)(?:#{sep}\s*|$)/).collect {|m| m[0]}
     end
 
     def compact(signature)
