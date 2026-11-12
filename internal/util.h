@@ -21,6 +21,8 @@ char *ruby_dtoa(double d_, int mode, int ndigits, int *decpt, int *sign, char **
 char *ruby_hdtoa(double d, const char *xdigs, int ndigits, int *decpt, int *sign, char **rve);
 
 RUBY_SYMBOL_EXPORT_BEGIN
+/* float_dtoa.c: the result has the same ownership and layout as ruby_dtoa(). */
+char *ruby_zmij_dtoa(double value, int mode, int ndigits, int *decpt, int *sign, char **rve);
 /* util.c (export) */
 RUBY_SYMBOL_EXPORT_END
 

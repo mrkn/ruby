@@ -465,7 +465,7 @@ w_float(double d, struct dump_arg *arg)
     }
     else {
         int decpt, sign, digs, len = 0;
-        char *e, *p = ruby_dtoa(d, 0, 0, &decpt, &sign, &e);
+        char *e, *p = ruby_zmij_dtoa(d, 0, 0, &decpt, &sign, &e);
         if (sign) buf[len++] = '-';
         digs = (int)(e - p);
         if (decpt < -3 || decpt > digs) {
