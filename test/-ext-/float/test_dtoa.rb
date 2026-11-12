@@ -40,9 +40,36 @@ class TestFloatDtoa < Test::Unit::TestCase
 
   def test_fixed_zero_keeps_rounding_boundary
     omit "requires binary64" unless Bug::Float.respond_to?(:zmij_fixed_work)
-    [0.0, -0.0, 5e-51.prev_float, 5e-51, 5e-51.next_float].each do |value|
+    [5e-51.prev_float, 5e-51, 5e-51.next_float].each do |value|
       assert_equal([1, 50], Bug::Float.zmij_fixed_work(value, 50), value.inspect)
     end
     assert_equal([1, 0], Bug::Float.zmij_fixed_work(0.5, 0))
+  end
+
+  def test_fixed_avoids_excess_precision
+    omit "requires binary64" unless Bug::Float.respond_to?(:zmij_fixed_work)
+    [
+      [0.0, 1000, 0], [-0.0, 1000, 0], [1.0, 1000, 0],
+      [1.25, 1000, 2], [-1.25, 1000, 2], [1.25, 1, 1],
+      [0.1, 54, 54], [0.1, 55, 55], [0.1, 56, 55], [0.1, 1000, 55],
+      [Float::MAX, 1000, 0], [Float::MIN, 1000, 1000], [Float::MIN, 2000, 1022],
+      [0.0.next_float, 2000, 1074], [0.0.next_float * 2, 2000, 1073],
+    ].each do |value, requested, maximum|
+      assert_equal([1, maximum], Bug::Float.zmij_fixed_work(value, requested), [value, requested].inspect)
+    end
+  end
+
+  def test_fixed_exact_digits
+    omit "requires binary64" unless Bug::Float.respond_to?(:zmij_fixed_work)
+    [0.1, -0.1, Float::MIN, Float::MIN.prev_float,
+     0.0.next_float, 0.0.next_float * 2].each do |value|
+      scaled = value.to_r.abs * 10**1074
+      assert_equal(1, scaled.denominator)
+      digits = scaled.numerator.to_s
+      decpt = digits.length - 1074
+      digits.sub!(/0+\z/, "")
+      assert_equal([digits, decpt, value.negative? ? 1 : 0],
+                   Bug::Float.zmij_dtoa(value, 3, 2000), value.inspect)
+    end
   end
 end

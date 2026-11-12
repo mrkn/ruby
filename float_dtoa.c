@@ -5,6 +5,7 @@
 #include <string.h>
 
 #include "ruby/ruby.h"
+#include "internal/bits.h"
 #include "internal/util.h"
 
 #if SIZEOF_DOUBLE == 8 && DBL_MANT_DIG == 53 && DBL_MAX_EXP == 1024 && FLT_RADIX == 2
@@ -21,6 +22,19 @@ fixed_rounds_to_zero(uint64_t bits, int precision)
     int exponent = (int)(bits >> 52) - 1022;
     /* 10**3 < 2**10 gives a conservative bound, away from rounding ties. */
     return bits && exponent < 0 && exponent <= -1 - (10 * precision + 2) / 3;
+}
+
+static int
+fixed_exact_precision(uint64_t bits)
+{
+    uint64_t significand = bits & ((UINT64_C(1) << 52) - 1);
+    int exponent = (int)(bits >> 52);
+    if (exponent) significand |= UINT64_C(1) << 52;
+    if (!significand) return 0;
+
+    /* Cancel powers of two to find the exact fractional decimal length. */
+    int precision = DTOA_EXACT_PRECISION - (exponent ? exponent - 1 : 0) - ntz_int64(significand);
+    return precision > 0 ? precision : 0;
 }
 
 char *
@@ -68,6 +82,8 @@ ruby_zmij_dtoa(double value, int mode, int ndigits, int *decpt, int *sign, char 
             if (rve) *rve = out;
             return out;
         }
+        int exact = fixed_exact_precision(bits);
+        if (precision > exact) precision = exact;
         end = zmij_write_fixed(buffer, sizeof(buffer), magnitude, precision);
     }
 
