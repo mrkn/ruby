@@ -1031,7 +1031,7 @@ fmt_setup(char *buf, size_t size, int c, int flags, int width, int prec)
 # define u_quad_t unsigned LONG_LONG
 #endif
 #define FLOATING_POINT 1
-#define BSD__dtoa ruby_dtoa
+#define BSD__dtoa ruby_zmij_dtoa
 #define BSD__hdtoa ruby_hdtoa
 #ifdef RUBY_PRI_VALUE_MARK
 # define PRI_EXTRA_MARK RUBY_PRI_VALUE_MARK
