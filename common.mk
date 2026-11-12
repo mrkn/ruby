@@ -160,6 +160,7 @@ COMMONOBJS    = \
 		error.$(OBJEXT) \
 		eval.$(OBJEXT) \
 		file.$(OBJEXT) \
+		float_zmij.$(OBJEXT) \
 		gc.$(OBJEXT) \
 		hash.$(OBJEXT) \
 		imemo.$(OBJEXT) \
