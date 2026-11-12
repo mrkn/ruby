@@ -390,6 +390,15 @@ class TestSprintf < Test::Unit::TestCase
     end
   end
 
+  def test_float_fixed_exact_precision
+    values = [0.0, -0.0, 1.0, -1.0, 1.25, -1.25, 0.1, -0.1,
+              Float::MAX, Float::MIN, Float::MIN.prev_float,
+              0.0.next_float, 0.0.next_float * 2]
+    [0, 1, 2, 6, 17, 18, 50, 54, 55, 56, 1000].each do |precision|
+      values.each {|value| assert_float_fixed(value, precision)}
+    end
+  end
+
   BSIZ = 120
 
   def test_skip
