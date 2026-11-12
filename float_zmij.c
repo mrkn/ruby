@@ -15,6 +15,9 @@
 #  define __has_include(header) 0
 # endif
 # include "internal/zmij.h"
+# ifndef ZMIJ_RUBY_PRECISION
+#  define ZMIJ_RUBY_PRECISION 1
+# endif
 # include "missing/zmij/zmij.c"
 
 RUBY_FUNC_EXPORTED char *
