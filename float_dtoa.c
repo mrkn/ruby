@@ -14,6 +14,15 @@
 enum { DTOA_EXACT_PRECISION = DBL_MANT_DIG - DBL_MIN_EXP };
 enum { DTOA_BUFFER_SIZE = DBL_MAX_10_EXP + DTOA_EXACT_PRECISION + 16 };
 
+static int
+fixed_rounds_to_zero(uint64_t bits, int precision)
+{
+    /* The magnitude is less than 2**exponent, including for subnormals. */
+    int exponent = (int)(bits >> 52) - 1022;
+    /* 10**3 < 2**10 gives a conservative bound, away from rounding ties. */
+    return bits && exponent < 0 && exponent <= -1 - (10 * precision + 2) / 3;
+}
+
 char *
 ruby_zmij_dtoa(double value, int mode, int ndigits, int *decpt, int *sign, char **rve)
 {
@@ -49,6 +58,16 @@ ruby_zmij_dtoa(double value, int mode, int ndigits, int *decpt, int *sign, char 
     else {
         int precision = ndigits;
         if (precision > DTOA_EXACT_PRECISION) precision = DTOA_EXACT_PRECISION;
+        uint64_t bits;
+        memcpy(&bits, &magnitude, sizeof(bits));
+        if (fixed_rounds_to_zero(bits, precision)) {
+            out = malloc(1);
+            if (!out) rb_memerror();
+            out[0] = '\0';
+            *decpt = -ndigits;
+            if (rve) *rve = out;
+            return out;
+        }
         end = zmij_write_fixed(buffer, sizeof(buffer), magnitude, precision);
     }
 
