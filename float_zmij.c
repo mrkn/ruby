@@ -16,4 +16,12 @@
 # endif
 # include "internal/zmij.h"
 # include "missing/zmij/zmij.c"
+
+RUBY_FUNC_EXPORTED char *
+ruby_zmij_write_float(double value, char *buffer)
+{
+    uint64_t bits = double_to_bits(value);
+    return do_write(double_get_sig(bits), double_get_exp(bits),
+                    double_is_negative(bits), buffer, 64, true);
+}
 #endif

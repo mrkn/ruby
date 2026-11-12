@@ -23,6 +23,8 @@ char *ruby_hdtoa(double d, const char *xdigs, int ndigits, int *decpt, int *sign
 RUBY_SYMBOL_EXPORT_BEGIN
 /* float_dtoa.c: the result has the same ownership and layout as ruby_dtoa(). */
 char *ruby_zmij_dtoa(double value, int mode, int ndigits, int *decpt, int *sign, char **rve);
+/* float_zmij.c: Ruby Float notation in a caller-owned buffer of at least 34 bytes. */
+char *ruby_zmij_write_float(double value, char *buffer);
 /* util.c (export) */
 RUBY_SYMBOL_EXPORT_END
 

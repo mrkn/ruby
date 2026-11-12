@@ -2838,11 +2838,11 @@ static ZMIJ_INLINE char* do_write_hex(double value, char* buffer) {
   return write_hex_exp(buffer, (int)bin_exp);
 }
 
-// Shared implementation of the public write entry points. `num_bits` is a
-// compile-time constant after ZMIJ_INLINE; the few branches on it fold away.
+// Shared implementation of the public write entry points. `num_bits` and
+// `ruby_format` are compile-time constants after ZMIJ_INLINE.
 static ZMIJ_INLINE char* do_write(uint64_t bin_sig, int64_t bin_exp,
                                   bool negative, char* buffer,
-                                  const int num_bits) {
+                                  const int num_bits, const bool ruby_format) {
   *buffer = '-';
   buffer += negative;
 
@@ -2855,12 +2855,19 @@ static ZMIJ_INLINE char* do_write(uint64_t bin_sig, int64_t bin_exp,
   bool is_normal = (unsigned)(bin_exp - 1) < (unsigned)(exp_mask - 1);
   if (ZMIJ_UNLIKELY(!is_normal)) {
     if (bin_exp != 0) {
+      if (ruby_format) {
+        if (bin_sig != 0 && negative) --buffer;
+        const char* text = bin_sig == 0 ? "Infinity" : "NaN";
+        size_t size = bin_sig == 0 ? 8 : 3;
+        memcpy(buffer, text, size);
+        return buffer + size;
+      }
       memcpy(buffer, bin_sig == 0 ? "inf" : "nan", 4);
       return buffer + 3;
     }
     if (bin_sig == 0) {
-      memcpy(buffer, "0", 2);
-      return buffer + 1;
+      memcpy(buffer, ruby_format ? "0.0" : "0", ruby_format ? 4 : 2);
+      return buffer + (ruby_format ? 3 : 1);
     }
     dec = num_bits == 64 ? to_decimal_double(bin_sig, 1, true, d)
                          : to_decimal_float((uint32_t)bin_sig, 1, true, d);
@@ -2913,11 +2920,12 @@ static ZMIJ_INLINE char* do_write(uint64_t bin_sig, int64_t bin_exp,
   const int bcd_size = num_bits == 64 ? 16 : 8;
   const int min_fixed_dec_exp = -4;
   const int max_fixed_dec_exp = num_bits == 64 ? 15 : 6;
-  if (dec_exp >= min_fixed_dec_exp && dec_exp <= max_fixed_dec_exp) {
+  int num_digits = has_last_digit ? bcd_size : dig_num_digits - 1;
+  if (dec_exp >= min_fixed_dec_exp && dec_exp <= max_fixed_dec_exp &&
+      (!ruby_format || dec_exp < 15 || num_digits + extra_digit > 16)) {
     write8(start, zeros);  // For dec_exp < 0.
     char last_digit_char =
         (char)('0' + (-(int)has_last_digit & dec.last_digit));
-    int num_digits = has_last_digit ? bcd_size : dig_num_digits - 1;
 
     // Materialize the base early so the entry address is `base + idx*32`;
     // otherwise Clang folds the offset in and adds a cycle to the idx chain.
@@ -2939,7 +2947,12 @@ static ZMIJ_INLINE char* do_write(uint64_t bin_sig, int64_t bin_exp,
       buffer[bcd_size] = (char)_mm_extract_epi8(digits, 15);
       start[layout->point_pos] = '.';
       buffer[layout->last_digit_pos[extra_digit]] = last_digit_char;
-      return buffer + layout->end_pos[num_digits + extra_digit - 1];
+      char* end = buffer + layout->end_pos[num_digits + extra_digit - 1];
+      if (ruby_format && end <= start + layout->point_pos) {
+        *end++ = '.';
+        *end++ = '0';
+      }
+      return end;
     }
 #endif  // ZMIJ_USE_SSE4_1
     if (num_bits == 64)
@@ -2950,7 +2963,12 @@ static ZMIJ_INLINE char* do_write(uint64_t bin_sig, int64_t bin_exp,
     unsigned point_pos = layout->point_pos;
     memmove(start + layout->shift_pos, start + point_pos, bcd_size);
     start[point_pos] = '.';
-    return buffer + layout->end_pos[num_digits + extra_digit - 1];
+    char* end = buffer + layout->end_pos[num_digits + extra_digit - 1];
+    if (ruby_format && end <= start + point_pos) {
+      *end++ = '.';
+      *end++ = '0';
+    }
+    return end;
   }
 
   buffer += extra_digit;
@@ -2962,7 +2980,11 @@ static ZMIJ_INLINE char* do_write(uint64_t bin_sig, int64_t bin_exp,
   buffer += has_last_digit ? bcd_size + 1 : dig_num_digits;
   start[0] = start[1];
   start[1] = '.';
-  buffer -= (buffer - 1 == start + 1);  // Remove trailing point.
+  if (ruby_format) {
+    if (buffer - 1 == start + 1) *buffer++ = '0';
+  } else {
+    buffer -= (buffer - 1 == start + 1);  // Remove trailing point.
+  }
 
   // Write exponent.
 #if ZMIJ_USE_EXP_STRING_TABLE
@@ -2995,7 +3017,7 @@ char* zmij_detail_write_f(float value, char* buffer) {
   uint32_t bits = float_to_bits(value);
   int64_t bin_exp = float_get_exp(bits);   // binary exponent
   uint32_t bin_sig = float_get_sig(bits);  // binary significand
-  return do_write(bin_sig, bin_exp, float_is_negative(bits), buffer, 32);
+  return do_write(bin_sig, bin_exp, float_is_negative(bits), buffer, 32, false);
 }
 
 // It is slightly faster to return a pointer to the end than the size.
@@ -3003,7 +3025,7 @@ char* zmij_detail_write(double value, char* buffer) {
   uint64_t bits = double_to_bits(value);
   int64_t bin_exp = double_get_exp(bits);   // binary exponent
   uint64_t bin_sig = double_get_sig(bits);  // binary significand
-  return do_write(bin_sig, bin_exp, double_is_negative(bits), buffer, 64);
+  return do_write(bin_sig, bin_exp, double_is_negative(bits), buffer, 64, false);
 }
 
 char* zmij_detail_write_scientific_f(float value, char* buffer,
