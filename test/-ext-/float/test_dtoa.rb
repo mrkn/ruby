@@ -29,4 +29,20 @@ class TestFloatDtoa < Test::Unit::TestCase
     assert_equal(["0", 1, 1], Bug::Float.zmij_dtoa(-0.0, 3, 2))
     assert_equal(["10000000000000000555", 0, 0], Bug::Float.zmij_dtoa(0.1, 3, 20))
   end
+
+  def test_fixed_zero_avoids_writer
+    omit "requires binary64" unless Bug::Float.respond_to?(:zmij_fixed_work)
+    [1e-100, -1e-100, Float::MIN, 0.0.next_float].each do |value|
+      assert_equal(["", -50, value.negative? ? 1 : 0], Bug::Float.zmij_dtoa(value, 3, 50))
+      assert_equal([0, nil], Bug::Float.zmij_fixed_work(value, 50), value.inspect)
+    end
+  end
+
+  def test_fixed_zero_keeps_rounding_boundary
+    omit "requires binary64" unless Bug::Float.respond_to?(:zmij_fixed_work)
+    [0.0, -0.0, 5e-51.prev_float, 5e-51, 5e-51.next_float].each do |value|
+      assert_equal([1, 50], Bug::Float.zmij_fixed_work(value, 50), value.inspect)
+    end
+    assert_equal([1, 0], Bug::Float.zmij_fixed_work(0.5, 0))
+  end
 end

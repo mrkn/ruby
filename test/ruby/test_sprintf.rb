@@ -371,6 +371,25 @@ class TestSprintf < Test::Unit::TestCase
     assert_equal("1234567892", sprintf("%.0f", 1234567892.00000), bug12889)
   end
 
+  def assert_float_fixed(value, precision)
+    rounded = (value.to_r.abs * 10**precision).round(half: :even)
+    expected = rounded.to_s.rjust(precision + 1, "0")
+    expected.insert(expected.length - precision, ".") if precision > 0
+    expected.prepend("-") if value.negative? || (value.zero? && (1.0 / value).negative?)
+    assert_equal(expected, sprintf("%.*f", precision, value), [value, precision].inspect)
+  end
+
+  def test_float_fixed_zero_rounding
+    [0, 1, 2, 6, 50, 100, 307, 308, 322, 323].each do |precision|
+      boundary = Rational(1, 2 * 10**precision).to_f
+      values = [boundary.prev_float, boundary, boundary.next_float,
+                0.0, 0.0.next_float, Float::MIN.prev_float, Float::MIN]
+      (values + values.map {|value| -value}).each do |value|
+        assert_float_fixed(value, precision)
+      end
+    end
+  end
+
   BSIZ = 120
 
   def test_skip
