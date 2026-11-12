@@ -952,6 +952,11 @@ rb_float_new_in_heap(double d)
 static VALUE
 flo_to_s(VALUE flt)
 {
+#if SIZEOF_DOUBLE == 8 && DBL_MANT_DIG == 53 && DBL_MAX_EXP == 1024 && FLT_RADIX == 2
+    char buffer[64];
+    char *end = ruby_zmij_write_float(RFLOAT_VALUE(flt), buffer);
+    return rb_usascii_str_new(buffer, end - buffer);
+#else
     enum {decimal_mant = DBL_MANT_DIG-DBL_DIG};
     enum {float_dig = DBL_DIG+1};
     char buf[float_dig + roomof(decimal_mant, CHAR_BIT) + 10];
@@ -968,7 +973,7 @@ flo_to_s(VALUE flt)
     else if (isnan(value))
         return rb_usascii_str_new2("NaN");
 
-    p = ruby_dtoa(value, 0, 0, &decpt, &sign, &e);
+    p = ruby_zmij_dtoa(value, 0, 0, &decpt, &sign, &e);
     s = sign ? rb_usascii_str_new_cstr("-") : rb_usascii_str_new(0, 0);
     if ((digs = (int)(e - p)) >= (int)sizeof(buf)) digs = (int)sizeof(buf) - 1;
     memcpy(buf, p, digs);
@@ -1021,6 +1026,7 @@ flo_to_s(VALUE flt)
     rb_str_cat(s, buf, digs + 1);
     rb_str_catf(s, "e%+03d", decpt - 1);
     return s;
+#endif
 }
 
 /*
