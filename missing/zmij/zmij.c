@@ -2487,6 +2487,10 @@ static size_t write_number(writer* w, const char* digits, int num_digits,
   return write_zeros(w, decimal_places - num_lead_zeros - num_frac_digits);
 }
 
+#if defined(ZMIJ_RUBY_PRECISION) && ZMIJ_RUBY_PRECISION
+#  include "../../float_zmij_precision.h"
+#endif
+
 static size_t write_big(writer* w, bigint num, int bin_exp, int precision,
                         char* digits, int digits_size, zmij_format fmt) {
   bool general = fmt == zmij_format_general;
@@ -2594,6 +2598,13 @@ static size_t do_write_big(char* out, size_t n, double value, int precision,
     bin_sig ^= double_implicit_bit;
   }
   bin_sig ^= double_implicit_bit;
+
+#if defined(ZMIJ_RUBY_PRECISION) && ZMIJ_RUBY_PRECISION
+  size_t size;
+  if (ruby_zmij_try_write_precision(&w, bin_sig,
+                                  (int)(bin_exp - double_exp_offset),
+                                  precision, fmt, &size)) return size;
+#endif
 
   // One scratch block holds the big integer's limbs followed by the decimal
   // digits.
