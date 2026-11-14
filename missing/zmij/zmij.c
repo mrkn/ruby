@@ -1837,7 +1837,7 @@ static ZMIJ_INLINE __m128i to_bcd_4x4(__m128i y, const zmij_data* d) {
 static ZMIJ_MAYBE_UNUSED ZMIJ_INLINE int ctz(uint64_t x) {
 #if ZMIJ_HAS_BUILTIN(__builtin_ctzll)
   return __builtin_ctzll(x);
-#elif ZMIJ_MSC_VER
+#elif ZMIJ_MSC_VER && (defined(_M_AMD64) || defined(_M_ARM64))
   unsigned long index;
   _BitScanForward64(&index, x);
   return (int)index;
