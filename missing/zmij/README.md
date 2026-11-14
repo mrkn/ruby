@@ -8,6 +8,9 @@ This copy uses the MIT license reproduced in LICENSE. `zmij-c.h` is unchanged.
 by ../../float_zmij.c. The original public entry points retain their upstream
 formatting. The precision adapter is in ../../float_dtoa.c.
 
+The MSVC 64-bit bit-scan intrinsic is limited to x64 and ARM64; 32-bit
+targets use the existing portable fallback.
+
 `ZMIJ_RUBY_PRECISION=1` enables Ruby's bounded conversion for 19--50
 significant digits in scientific and general notation. The extra code and
 tables are in ../../float_zmij_precision.h and ../../float_zmij_powers.h;
